@@ -150,16 +150,26 @@ imaginary part, we have
   \int_{-\infty}^{\infty}
   w(\zhat)\hat{z}\He_n(\hat{z})\frac{d\He_n}{d\zhat} d\hat{z}
 \end{align}
-Integrating the right hand side by parts and recognizing $\He_2 =
-\hat{z}^2 -1$, we have
-\begin{align}
-  \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
-  \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
-  \He_n^2(\hat{z}) d\hat{z} \notag\\
-  = \frac{1}{2}\delta q h \hat{k} 
-  \int_{-\infty}^{\infty}
-  w(\zhat)\He_2(\hat{z})\He_n^2(\hat{z})d\hat{z}. 
-\end{align}
+Recognizing $\hat{z} = \He_1$ and using $d\He_n/d\hat{z} = n
+\He_{n-1}$ we have
+ \begin{align}
+   \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
+   \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
+   \He_n^2(\hat{z}) d\hat{z} \notag\\
+   =\delta q h \hat{k} 
+   \int_{-\infty}^{\infty}
+   w(\zhat)\He_1(\hat{z})\He_n(\hat{z})n\He_{n-1}(\hat{z})d\hat{z}. 
+ \end{align}
+% Integrating the right hand side by parts and recognizing $\He_2 =
+% \hat{z}^2 -1$, we have
+% \begin{align}
+%   \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
+%   \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
+%   \He_n^2(\hat{z}) d\hat{z} \notag\\
+%   = \frac{1}{2}\delta q h \hat{k} 
+%   \int_{-\infty}^{\infty}
+%   w(\zhat)\He_2(\hat{z})\He_n^2(\hat{z})d\hat{z}. 
+% \end{align}
 Finally, we evaluate the integrals using following properties of Hermite polynomials
 \begin{align}
   \int_{-\infty}^{\infty}
@@ -172,10 +182,14 @@ and
   \frac{\sqrt{2\pi}m!k!l!}{(s-m)!(s-k)!(s-l)!}, 
 \end{align}
 where $s = (m+k+l)/2$. We then obtain
-\begin{align}
- \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
- \left(1+\hat{k}^2\right) = \delta q h \hat{k} \frac{n!}{(n-1)!}.
-\end{align}
+% \begin{align}
+%  \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
+%  \left(1+\hat{k}^2\right) = \delta q h \hat{k} \frac{n!}{(n-1)!}.
+% \end{align
+ \begin{align}
+  \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
+  \left(1+\hat{k}^2\right) = \delta q h \hat{k} n.
+ \end{align}
 Inserting the original eigenfrequency $\sigma = \pm
 \sqrt{n}\Omega_k(1+\hat{k}^2)^{-1/2}$ gives
 \begin{align}
