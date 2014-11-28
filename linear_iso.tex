@@ -113,11 +113,13 @@ When $q=0$, the governing equation is
   \frac{d}{d\hat{z}}\left[w(\hat{z})\frac{dV}{d\hat{z}}\right] + nV
   w(\hat{z}) =0, 
 \end{align}
-i.e. Hermite's differential equation. For bounded solutions we have 
+i.e. Hermite's differential equation. If we impose that the kinetic
+energy density remain bounded at infinity, then  
 \begin{align}
   V\propto \He_n(\hat{z}),
 \end{align}
-and $n$ is a non-negative integer. This translates to
+and $n$ is a non-negative integer. This translates to a real
+eigenfrequency $\sigma$ such that
 \begin{align}
   \left|\frac{\sigma}{\Omega_k}\right| = \sqrt{n}
   \left(1+\hat{k}^2\right)^{-1/2}. 
@@ -127,8 +129,40 @@ valid for large wavenumbers such that $\hat{k}^2\gg
 n-1$. Physically, this corresponds to radial length-scales much
 smaller than the local disk scale height. From   
 
+\subsection{Simple solutions with vertical shear}
+The differential equation, Eq. \ref{iso_ode3}, can be solved by
+\begin{align}
+  Q\propto \hat{z}. 
+\end{align} 
+%Although $Q$ diverges at infinity, this solution is
+%acceptable because the implied kinetic energy densities remain
+%bounded, since the density decays rapidly. 
+In this case the eigenfrequency must satisfy 
+\begin{align}
+  \left(\frac{\sigma}{\Omega_k}\right)^2 = \frac{1+\ii q h
+    \hat{k}}{1+\hat{k}^2}, 
+\end{align}
+and $\sigma$ is generally complex\footnote{
+We note that an even simpler solution to Eq. \ref{iso_ode3} is
+$Q=\mathrm{constant}$, but this implies $\sigma^2=0$ and therefore
+stability, so this case is of no interest.}, with  
+%If we write $\sigma =
+%(\hat{\omega} + \ii \hat{\nu})\Omega_k$ with $\hat{\omega},\hat{\nu}$
+%real, we have
+\begin{align}
+  \left[\frac{\imag(\delta\sigma)}{\Omega_k}\right]^2 =
+  \frac{\sqrt{1+q^2h^2\hat{k}^2} - 1}{2\left(1+\hat{k}^2\right)}. 
+\end{align}
+This expression can be simplified in the limit $|q|\ll 1$. Then we have
+\begin{align}\label{simple_growth}
+  \frac{\imag(\sigma)}{\Omega_k} = \pm
+  \frac{qh\hat{k}}{2\sqrt{1+\hat{k}^2}} \quad\quad (|q|\ll 1).  
+\end{align}
+
 \subsection{Instability in the presence of weak vertical shear}
-To investigate the destabilizing effect of vertical shear, we first
+We can also investigate the destabilizing effect of vertical shear
+without explicitly solving the full governing equation,
+Eq. \ref{iso_ode3}. We first
 consider a system with $q\equiv0$, for which the eigenfunctions are
 Hermite polynomials and the real eigenfrequencies are known. We then
 perturb this system by introducing a weak vertical shear ($|q|\ll1$)
@@ -196,7 +230,8 @@ Inserting the original eigenfrequency $\sigma = \pm
   \frac{\imag(\delta\sigma)}{\Omega_k} = \pm \frac{1}{2}\delta q h
   \sqrt{n} \frac{\hat{k}}{\sqrt{1+\hat{k}^2}}. 
 \end{align}
- For $\hat{k}\gg 1$ we have
+This result agrees with Eq. \ref{simple_growth} for $n=1$, since the
+function $\He_1$ solves the governing equation exactly. For $\hat{k}\gg 1$ we have
 \begin{align}
   \frac{\imag(\delta\sigma)}{\Omega_k} \simeq \pm \frac{1}{2}\delta q h
   \sqrt{n} \sgn{\hat{k}}. 
