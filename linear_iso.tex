@@ -77,7 +77,7 @@ Writing
 we have an alternative form of the governing equation 
 \begin{align}\label{iso_alt}
   \frac{d}{d\hat{z}}\left[w(\hat{z})\left(\frac{dV}{d\hat{z}} + \ii q h
-    \hat{k}\hat{z}V\right)\right] + n^2V w(\hat{z}) =0, 
+    \hat{k}\hat{z}V\right)\right] + nV w(\hat{z}) =0, 
 \end{align}
 where 
 \begin{align}
@@ -85,25 +85,32 @@ where
 \end{align}
 and we have defined a new eigenvalue
 \begin{align}
-  n^2 \equiv \left(\frac{\sigma}{\Omega_k}\right)^2(1+\hat{k}^2). 
+  n \equiv \left(\frac{\sigma}{\Omega_k}\right)^2(1+\hat{k}^2). 
 \end{align}
 
 Next, we multiply Eq. \ref{iso_alt} by $V^{*}$, integrate
 vertically and assume boundary terms vanish to obtain
 \begin{align}\label{integral_relation}
-  n^2\int_{-\infty}^{\infty}w|V|^2d\hat{z} 
+  n \int_{-\infty}^{\infty}w|V|^2d\hat{z} 
   =&\int_{-\infty}^{\infty}w\left|\frac{dV}{d\hat{z}}\right|^2d\hat{z}\notag\\
   +&\ii q h \hat{k}\int_{-\infty}^{\infty}w\hat{z}V\frac{dV^*}{d\hat{z}}d\hat{z}.   
 \end{align}
 It follows that for instability ($\imag\sigma>0$ and therefore $\imag
-n^2 \neq 0$), it is neccessary to have $q\neq 0$, i.e. vertical
+n \neq 0$), it is neccessary to have $q\neq 0$, i.e. vertical
 shear. We will use this integral relation to estimate growth
 rates. 
+
+We also recognize that in Eq. \ref{integral_relation}, 
+the factor $q\hat{z}$ represents vertical shear and $w(\hat{z})$ is
+the background density profile. Assuming $V$ is either odd or even in
+$\hat{z}$,  then for the second integral on the right
+hand side to be non-zero, it is neccessary to have a vertical shear
+profile that has odd symmetry in the vertical co-ordinate.  
 
 \subsection{Stability in the absence of vertical shear}
 When $q=0$, the governing equation is
 \begin{align}
-  \frac{d}{d\hat{z}}\left[w(\hat{z})\frac{dV}{d\hat{z}}\right] + n^2V
+  \frac{d}{d\hat{z}}\left[w(\hat{z})\frac{dV}{d\hat{z}}\right] + nV
   w(\hat{z}) =0, 
 \end{align}
 i.e. Hermite's differential equation. For bounded solutions we have 
@@ -112,12 +119,12 @@ i.e. Hermite's differential equation. For bounded solutions we have
 \end{align}
 and $n$ is a non-negative integer. This translates to
 \begin{align}
-  \left|\frac{\sigma}{\Omega_k}\right| = n
+  \left|\frac{\sigma}{\Omega_k}\right| = \sqrt{n}
   \left(1+\hat{k}^2\right)^{-1/2}. 
 \end{align}
 Since we have assumed $|\sigma^2|\ll \kappa^2$, our analysis is only
 valid for large wavenumbers such that $\hat{k}^2\gg 
-n^2-1$. Physically, this corresponds to radial length-scales much
+n-1$. Physically, this corresponds to radial length-scales much
 smaller than the local disk scale height. From   
 
 \subsection{Instability in the presence of weak vertical shear}
@@ -135,6 +142,48 @@ where for this exercise we restore $\sigma$ as the eigenfrequency.
 
 Linearizing the integral Eq. \ref{integral_relation} and taking the
 imaginary part, we have
-
-
-   
+\begin{align}
+  \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
+  \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
+  \He_n^2(\hat{z}) d\hat{z} \notag\\
+  = \delta q h \hat{k} 
+  \int_{-\infty}^{\infty}
+  w(\zhat)\hat{z}\He_n(\hat{z})\frac{d\He_n}{d\zhat} d\hat{z}
+\end{align}
+Integrating the right hand side by parts and recognizing $\He_2 =
+\hat{z}^2 -1$, we have
+\begin{align}
+  \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
+  \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
+  \He_n^2(\hat{z}) d\hat{z} \notag\\
+  = \frac{1}{2}\delta q h \hat{k} 
+  \int_{-\infty}^{\infty}
+  w(\zhat)\He_2(\hat{z})\He_n^2(\hat{z})d\hat{z}. 
+\end{align}
+Finally, we evaluate the integrals using following properties of Hermite polynomials
+\begin{align}
+  \int_{-\infty}^{\infty}
+  w(\xi) \He_k(\xi)\He_l(\xi) d\xi = \sqrt{2\pi}k!\delta_{kl}, 
+\end{align}
+and
+\begin{align}
+  \int_{-\infty}^{\infty}
+  w(\xi) \He_m(\xi)\He_k(\xi)\He_l(\xi) d\xi =
+  \frac{\sqrt{2\pi}m!k!l!}{(s-m)!(s-k)!(s-l)!}, 
+\end{align}
+where $s = (m+k+l)/2$. We then obtain
+\begin{align}
+ \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
+ \left(1+\hat{k}^2\right) = \delta q h \hat{k} \frac{n!}{(n-1)!}.
+\end{align}
+Inserting the original eigenfrequency $\sigma = \pm
+\sqrt{n}\Omega_k(1+\hat{k}^2)^{-1/2}$ gives
+\begin{align}
+  \frac{\imag(\delta\sigma)}{\Omega_k} = \pm \frac{1}{2}\delta q h
+  \sqrt{n} \frac{\hat{k}}{\sqrt{1+\hat{k}^2}}. 
+\end{align}
+ For $\hat{k}\gg 1$ we have
+\begin{align}
+  \frac{\imag(\delta\sigma)}{\Omega_k} \simeq \pm \frac{1}{2}\delta q h
+  \sqrt{n} \sgn{\hat{k}}. 
+\end{align}
