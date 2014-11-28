@@ -1,0 +1,117 @@
+ \section{Baroclinic disk equilibra}
+ We consider power-law disks with midplane density
+ \begin{align}
+   \rho_0(r) = \rho_{00}\left(\frac{r}{r_0}\right)^p,
+ \end{align}
+ where $\rho_{00}$ is the midplane density at the fiducial radius
+ $r=r_0$, and midplane sound-speed 
+ \begin{align}
+   c_{s0}^2(r)=c_{s00}^2\left(\frac{r}{r_0}\right)^q, 
+ \end{align}
+ where $c_{s00}$ is the midplane sound-speed at $r=r_0$. 
+ The three-dimensional equilibrium pressure $P$ and density $p$ are
+ related by 
+ \begin{align}
+   P(r,z) = 
+   \frac{c_{s0}^2(r)}{\Gamma}\rho_0(r)^{1-\Gamma}\rho^\Gamma(r,z), 
+ \end{align}
+ where we refer to $\Gamma$ as the polytropic index. 
+ 
+ \subsection{Locally isothermal disks}
+ For the special case $\Gamma=1$ the disk is isothermal in the
+ vertical direction. The equilibrium density $\rho(r,z)$ and rotation
+ $\Omega(r,z)$ is then 
+ \begin{align}
+   \rho(r,z) &=
+   \rho_0(r)\exp{\left[\frac{v_k^2}{c_{s0}^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]}\\   
+   \Omega^2(r,z)& = \Omega_k^2(r) \left[(p+q)h^2(r) + (1 + q) -
+     \frac{1}{\sqrt{1+z^2/r^2}}\right],
+ \end{align}
+ where $\Omega_k\equiv\sqrt{GM/r^3}=v_k/r$ is the Keplerian rotation 
+ and 
+ \begin{align}
+   h(r) = \frac{c_{s0}(r)}{v_k(r)} 
+ \end{align}
+ is the local disk aspect ratio. The disk scale height is $H=hr$. 
+ 
+ The radial shear is 
+ \begin{align}
+   S(r,z) \equiv r\frac{\p\Omega}{\p r},  
+ \end{align}
+ and we note that the square of the epicyclic frequency $\kappa$ is
+ given by
+ \begin{align}
+   \kappa^2(r,z) \equiv 2\Omega(2\Omega + S). 
+ \end{align}
+ The vertical shear is 
+ \begin{align}
+   \frac{\p\Omega^2}{\p z} =
+   \frac{q\Omega_k^2z}{r^2\left(1+z^2/r^2\right)^{3/2}}. 
+ \end{align}
+ 
+ \section{The vertically global shearing box} 
+% We are interested in the stability problem on radial length-scales
+% much smaller than the local disk scale-height $H$. 
+ We work within the framework of the \emph{vertically global shearing
+   box} (VGSB) developed by \cite{mcnally14}. 
+ In this approximation the background density, pressure, radial shear
+ and vertical shear are all assumed to only 
+ depend on height. That is, the expressions for these quantities are
+ evaluated at $r=r_0$. 
+ 
+ The axisymmetric VGSB equations read
+ \begin{align}
+   & \frac{\p\rho}{\p t} + \frac{\p}{\p x}\left(\rho v_x\right) +
+   \frac{\p}{\p z}\left(\rho v_z\right)=0,\\
+   & \frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bm{v} +
+   v_zr_0\frac{d\Omega_0}{dz} \hat{\bm{y}} = - 
+   2\Omega_0\hat{\bm{z}}\times\bm{v} - S_0v_x\hat{\bm{y}} \notag\\ 
+   &\phantom{\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bm{v} +
+   v_zr_0\frac{d\Omega_0}{dz} \hat{\bm{y}}=}-\frac{1}{\rho}\nabla P - \frac{\p\Phi_0}{\p z}\hat{\bm{z}},\\
+   & \frac{\p P}{\p t} + \bm{v}\cdot\nabla P = -\gamma P
+   \nabla\cdot\bm{v} -
+   \frac{\rho}{t_c}\left(\frac{P}{\rho}-\left.\frac{P}{\rho}\right|_{t=0}\right), 
+ \end{align}
+ where $\bm{v}$ is the velocity field relative to the bulk flow
+ (i.e. $\bm{v}=\bm{0}$ in equilibrium),  
+ subscript $0$ indicates evaluation at $r=r_0$. In the energy equation
+ the ratio of specific heats $\gamma$ is assumed constant, 
+ and we have included a thermal relaxation term with timescale $t_c$.  
+
+ \subsection{Linearization}
+ We perturb the system such that
+ \begin{align}
+   \rho \to \rho(z) + \delta\rho(z)\exp{\left(\ii k_x x - \ii\sigma
+       t\right)},    
+ \end{align}
+ and similarly for other fluid variables, where $k_x$ is a horizontal
+ wavenumber and $\sigma$ is a (generally) complex frequency. For
+ clarity we drop the subscript $0$ on the frequencies and shear rates
+ below. 
+ 
+ {\bf below: at the moment only valid for locally isothermal
+   equilibrium ($\Gamma=1$)} 
+ Writing $\delta P /\rho \equiv W$ and $c_s^2\delta\rho/\rho\equiv Q$, 
+ the linearized system of equations is 
+ \begin{align}
+   -&\ii\sigma \frac{Q}{c_s^2} + \ii k_x \delta v_x + \frac{d\dd
+     v_z}{dz} + \frac{d\ln{\rho}}{dz}\delta v_z = 0,\\
+   &\ii\sigma \delta v_x + 2\Omega\delta v_y = \ii k_x W,\\
+   -&\frac{\kappa^2}{2\Omega}\delta v_x + \ii \sigma\delta v_y =
+   r\frac{d\Omega}{dz}\delta v_z, \\
+   & \ii\sigma\delta v_z = \frac{dW}{dz} +
+   \frac{d\ln{\rho}}{dz}\left(W-Q\right), \\
+   -&\ii\sigma W + \frac{1}{t_c}\left(W-Q\right) = -\ii\sigma\gamma Q +
+   c_s^2\frac{d\ln{\rho}}{dz}\left(\gamma-1\right)\delta v_z.
+ \end{align}
+
+ It is convenient to express $\delta v_x$ as a function of $W$ and
+ $\delta v_z$,
+ \begin{align}
+   \delta v_x = -\frac{1}{D}\left(\sigma k_x W +
+     r\frac{d\Omega^2}{dz}\delta v_z\right),
+ \end{align}
+ where
+ \begin{align}
+   D \equiv \kappa^2 - \sigma^2.
+ \end{align}
