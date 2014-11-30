@@ -1,23 +1,30 @@
 \section{Vertical shear instability of locally
   isothermal perturbations}
+{\bf need to update notation, use $\epsilon$ instead of $h$}
 The linear problem simplifies considerably for the case
-$\gamma=1$. That is, for locally isothermal perturbations where
+$\Gamma=\gamma=1$. Then 
 \begin{align}
-  W=Q,
+  W=Q. 
 \end{align}
-so that
-\begin{align}
-  \delta v_z = \frac{1}{\ii\sigma}\frac{dQ}{dz}. 
-\end{align}
-Inserting this into the expression for $\delta v_x$ and the continuity
-equation, we arrive at a single equation for the linear stability
-problem,
+%so that
+%\begin{align}
+ % \delta v_z = \frac{1}{\ii\sigma}\frac{dQ}{dz}. 
+%\end{align}
+%Inserting this into the expression for $\delta v_x$ and the continuity
+%equation, 
+Inserting this into Eq. \ref{ode_w} gives a single equation for the linear stability
+problem for isothermal perturbations in a vertically isothermal disk, 
 \begin{align}\label{iso_ode}
   \frac{d^2Q}{dz^2} + \left(\frac{d\ln{\rho}}{dz} - \frac{\ii k_x
       r}{D}\frac{d\Omega^2}{dz}\right) \frac{dQ}{dz} +
   \sigma^2\left(\frac{1}{c_s^2} + \frac{k_x^2}{D}\right)Q=0, 
 \end{align} 
 subject to appropriate boundary conditions. 
+
+We remark that Eq .\ref{iso_ode} is also applicable for
+$\gamma=\Gamma\neq 1$ in the limit $t_c\to\infty$, since in that case
+$W\simeq Q$ as well. The following discussion therefore also holds for
+vertically non-isothermal, adiabatic disks.   
 
 \subsection{Approximations}
 Eq. \ref{iso_ode} is still complicated because the coefficients depend
@@ -244,11 +251,11 @@ Finally, we evaluate the integrals using following properties of Hermite polynom
 \end{align}
 and
 \begin{align}
-  \int_{-\infty}^{\infty}
-  w(\xi) \He_m(\xi)\He_k(\xi)\He_l(\xi) d\xi =
-  \frac{\sqrt{2\pi}m!k!l!}{(s-m)!(s-k)!(s-l)!}, 
+  &\int_{-\infty}^{\infty}
+  w(\xi) \He_m(\xi)\He_k(\xi)\He_l(\xi) d\xi\notag\\& =
+  \frac{\sqrt{2\pi}m!k!l!}{(j-m)!(j-k)!(j-l)!}, 
 \end{align}
-where $s = (m+k+l)/2$. We then obtain
+where $j = (m+k+l)/2$. We then obtain
 % \begin{align}
 %  \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
 %  \left(1+\hat{k}^2\right) = \delta q h \hat{k} \frac{n!}{(n-1)!}.
