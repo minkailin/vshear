@@ -8,57 +8,116 @@
  \begin{align}
    c_{s0}^2(r)=c_{s00}^2\left(\frac{r}{r_0}\right)^q, 
  \end{align}
- where $c_{s00}$ is the midplane sound-speed at $r=r_0$. 
- The three-dimensional equilibrium pressure $P$ and density $p$ are
- related by 
- \begin{align}
-   P(r,z) = 
-   \frac{c_{s0}^2(r)}{\Gamma}\rho_0(r)^{1-\Gamma}\rho^\Gamma(r,z), 
- \end{align}
- where we refer to $\Gamma$ as the polytropic index. 
- 
- \subsection{Locally isothermal disks}
- For the special case $\Gamma=1$ the disk is isothermal in the
- vertical direction. The equilibrium density $\rho(r,z)$ and rotation
+ where $c_{s00}$ is the midplane sound-speed at $r=r_0$. We also
+ define
+\begin{align}
+  \epsilon(r) \equiv \frac{c_{s0}(r)}{v_k(r)}
+\end{align}
+to parametrize the magnitude of the sound speed, where
+$v_k=r\Omega_k=\sqrt{GM/r}$ is the Keplerian azimuthal velocity. 
+
+The three-dimensional equilibrium pressure $P$ and density $p$ are
+related by 
+\begin{align}
+  P(r,z) = 
+  \frac{c_{s0}^2(r)}{\Gamma}\rho_0(r)^{1-\Gamma}\rho^\Gamma(r,z), 
+\end{align}
+where we refer to $\Gamma$ as the polytropic index. We define the
+equilibrium sound-speed
+\begin{align}
+  c_s^2\equiv \frac{dP}{d\rho} =
+  c_{s0}^2(r)\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1}.  
+\end{align}
+
+The equilibrium density is given by vertical hydrostatic balance. This
+gives, for $\Gamma\neq1$,  
+\begin{align}\label{eqm_dens}
+  &\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} = 1 +
+  \frac{\left(\Gamma-1\right)}{\epsilon^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right). 
+\end{align}
+Note that for $\Gamma\neq1$ the disk has a surface $z=H(r)$ such that
+$\rho(r,H)=0$. If we parametrize
+\begin{align}
+  H(r)\equiv h r,
+\end{align}
+then the imposed sound-speed and disk thickness are related by 
+\begin{align}
+  h^2(r) = \left[1-\frac{\epsilon^2(r)}{\Gamma-1}\right]^{-2}-1. 
+\end{align}
+
+The equilibrium rotation profile is obtained by balancing radial
+pressure force, centrifugal force and radial gravity from the central
+star. This gives 
+\begin{align}\label{eqm_rot}
+  \frac{\Omega^2(r,z)}{\Omega_k^2(r)}=1 +
+  \left(p+\frac{s}{\Gamma}\right)\epsilon^2(r) 
+  +\frac{s}{\Gamma} \left(1-\frac{1}{\sqrt{1+z^2/r^2}}\right), 
+\end{align}
+where $s\equiv q+p(1-\Gamma)$. We also define the radial shear rate  
+\begin{align}
+  S(r,z) \equiv r\frac{\p\Omega}{\p r},  
+\end{align}
+and the square of the epicyclic frequency $\kappa$ 
+\begin{align}
+  \kappa^2(r,z) \equiv 2\Omega(2\Omega + S). 
+\end{align}
+We note that rotation profile generally depends on both $r$ and $z$,
+unless the equilibrium is barotropic with $s=0$, in which case
+$\Omega$ only depends on $r$. 
+
+\subsection{Vertically isothermal disks}
+For the special case $\Gamma=1$ the disk is isothermal in the
+vertical direction. The equilibrium density $\rho(r,z)$ and rotation
  $\Omega(r,z)$ is then 
  \begin{align}
-   \rho(r,z) &=
-   \rho_0(r)\exp{\left[\frac{v_k^2}{c_{s0}^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]}\\   
-   \Omega^2(r,z)& = \Omega_k^2(r) \left[(p+q)h^2(r) + (1 + q) -
-     \frac{1}{\sqrt{1+z^2/r^2}}\right],
+   \frac{\rho(r,z)}{\rho_0(r)} &= \exp{\left[\frac{1}{\epsilon^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]}\\   
+   \frac{\Omega^2(r,z)}{\Omega_k^2(r)}& =1+ (p+q)\epsilon^2(r) + q\left(1 -
+     \frac{1}{\sqrt{1+z^2/r^2}}\right),
  \end{align}
- where $\Omega_k\equiv\sqrt{GM/r^3}=v_k/r$ is the Keplerian rotation 
- and 
- \begin{align}
-   h(r) = \frac{c_{s0}(r)}{v_k(r)} 
- \end{align}
- is the local disk aspect ratio. The disk scale height is $H=hr$. 
+which may be obtained from Eq. \ref{eqm_dens} and Eq. \ref{eqm_rot} by
+taking the limit $\Gamma\to 1$. 
+
+The vertically isothermal disk has no surface, but we can define a
+characteristic scale-height
+\begin{align}
+  \Hiso \equiv \epsilon r \quad\quad(\Gamma \equiv 1),   
+\end{align} 
+and in this case the characteristic aspect-ratio $h = \epsilon$. 
+
+% where $\Omega_k\equiv\sqrt{GM/r^3}=v_k/r$ is the Keplerian rotation 
+ % and 
+ % \begin{align}
+ %   h(r) = \frac{c_{s0}(r)}{v_k(r)} 
+ % \end{align}
+ % is the local disk aspect ratio. 
+%The disk scale height is $H=hr$. 
  
- The radial shear is 
- \begin{align}
-   S(r,z) \equiv r\frac{\p\Omega}{\p r},  
- \end{align}
- and we note that the square of the epicyclic frequency $\kappa$ is
- given by
- \begin{align}
-   \kappa^2(r,z) \equiv 2\Omega(2\Omega + S). 
- \end{align}
- The vertical shear is 
- \begin{align}
-   \frac{\p\Omega^2}{\p z} =
-   \frac{q\Omega_k^2z}{r^2\left(1+z^2/r^2\right)^{3/2}}. 
- \end{align}
+ % The vertical shear is 
+ % \begin{align}
+ %   \frac{\p\Omega^2}{\p z} =
+ %   \frac{q\Omega_k^2z}{r^2\left(1+z^2/r^2\right)^{3/2}}. 
+ % \end{align}
  
  \section{The vertically global shearing box} 
 % We are interested in the stability problem on radial length-scales
 % much smaller than the local disk scale-height $H$. 
  We work within the framework of the \emph{vertically global shearing
-   box} (VGSB) developed by \cite{mcnally14}. 
- In this approximation the background density, pressure, radial shear
- and vertical shear are all assumed to only 
- depend on height. That is, the expressions for these quantities are
- evaluated at $r=r_0$. 
- 
+   box} (VGSB) developed by \cite{mcnally14}. In this approximation
+ one sets up a local Cartesian co-ordinate  system $(x,y,z)$ centered
+ on a fiducial point $(r,\phi,z)=(r_0,\phi_0,0)$ in the global disk, with $\phi_0(t) =
+ \Omega(r_0,0)t$. The local $x,y,z$ axis correspond to the
+ global radial, azimuthal and vertical directions.  
+
+ In this shearing box the equilibrium density, pressure and 
+ temperatures are assumed to depend only on $z$, by evaluating these
+ quantities at $r=r_0$. The background rotation is approximated by a
+ linear shear in $x$, but left unaltered in $z$. 
+% This corresponds to
+%  setting 
+% \begin{align}
+%   \rho(r,z)\to\rho(r_0,z),\,P \to P(r_0,z), c_s(r,z)^2 \to
+%   c_s^2(r_0,z),  \\
+% \end{align}
  The axisymmetric VGSB equations read
  \begin{align}
    & \frac{\p\rho}{\p t} + \frac{\p}{\p x}\left(\rho v_x\right) +
@@ -89,8 +148,8 @@
  clarity we drop the subscript $0$ on the frequencies and shear rates
  below. 
  
- {\bf below: at the moment only valid for locally isothermal
-   equilibrium ($\Gamma=1$)} 
+ % {\bf below: at the moment only valid for locally isothermal
+ %  equilibrium ($\Gamma=1$)} 
  Writing $\delta P /\rho \equiv W$ and $c_s^2\delta\rho/\rho\equiv Q$, 
  the linearized system of equations is 
  \begin{align}
@@ -101,17 +160,54 @@
    r\frac{d\Omega}{dz}\delta v_z, \\
    & \ii\sigma\delta v_z = \frac{dW}{dz} +
    \frac{d\ln{\rho}}{dz}\left(W-Q\right), \\
-   -&\ii\sigma W + \frac{1}{t_c}\left(W-Q\right) = -\ii\sigma\gamma Q +
-   c_s^2\frac{d\ln{\rho}}{dz}\left(\gamma-1\right)\delta v_z.
+   -&\ii\sigma W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\sigma\frac{\gamma}{\Gamma} Q +
+   c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma}-1\right)\delta v_z.
  \end{align}
+It is understood that the quantities $\rho,\,c_s^2,\,\Omega,\kappa$
+are evaluated at $r=r_0$ using their global expressions above.  
 
- It is convenient to express $\delta v_x$ as a function of $W$ and
- $\delta v_z$,
- \begin{align}
-   \delta v_x = -\frac{1}{D}\left(\sigma k_x W +
-     r\frac{d\Omega^2}{dz}\delta v_z\right),
- \end{align}
- where
- \begin{align}
-   D \equiv \kappa^2 - \sigma^2.
- \end{align}
+We can eliminate the perturbed velocities between the linearized
+equations to obtain a pair or ordinary differential equations
+for $W,Q$ as
+\begin{align}
+  &\frac{\sigma^2}{c_s^2}Q + \frac{\sigma^2k_x^2}{D}W \notag\\ 
+  &=\left(\frac{\ii
+    k_x r}{D}\frac{d\Omega^2}{dz} -
+  \frac{d\ln{\rho}}{dz}\right)\left[\frac{dW}{dz} +
+  \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] \notag\\
+&- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
+  \frac{dQ}{dz}\right) - \frac{d^2\ln{\rho}}{dz^2}\left(W-Q\right),\label{ode_w}\\
+&\sigma^2W - \frac{\gamma}{\Gamma}\sigma^2 Q +
+\frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right)\notag\\
+&=c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} - 1\right) 
+\left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],\label{ode_Q} 
+\end{align}
+ % It is convenient to express $\delta v_x$ as a function of $W$ and
+ % $\delta v_z$,
+ % \begin{align}
+ %   \delta v_x = -\frac{1}{D}\left(\sigma k_x W +
+ %     r\frac{d\Omega^2}{dz}\delta v_z\right),
+ % \end{align}
+where
+\begin{align}
+  D \equiv \kappa^2 - \sigma^2.
+\end{align}
+
+\subsection{Boundary conditions}
+In numerical calculations a finite vertical domain $z\in[-1,1]\zmax$
+is adopted. For $\Gamma\neq1$ we take $\zmax$ to be slightly less than
+$H$ to avoid the zero-density surface. At $z=\pm\zmax$ we impose
+\begin{align}
+  \delta v_z = 0,
+\end{align}
+for a solid boundary, or 
+\begin{align}
+  \Delta P \equiv \delta P + \bm{\xi}\cdot\nabla P= 0,  
+\end{align}
+for a free surface, where $\bm{\xi}$ is the Lagrangian
+displacement.
+
+%These boundary conditions are also numerically
+%convenient because they can be recast to contain the eigenfrequency
+%$\sigma$. This means that the the full set of ODEs, including boundary
+%conditions can be written in the form $L(\bm{U}) = \sigma R (\bm{U})$  
