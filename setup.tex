@@ -80,9 +80,9 @@ taking the limit $\Gamma\to 1$.
 The vertically isothermal disk has no surface, but we can define a
 characteristic scale-height
 \begin{align}
-  H \equiv \epsilon r \quad\quad(\Gamma \equiv 1),   
+  \Hiso \equiv \epsilon r \quad\quad(\Gamma \equiv 1),   
 \end{align} 
-and in this case $h = \epsilon$. 
+and in this case the characteristic aspect-ratio $h = \epsilon$. 
 
 % where $\Omega_k\equiv\sqrt{GM/r^3}=v_k/r$ is the Keplerian rotation 
  % and 
@@ -192,3 +192,22 @@ where
 \begin{align}
   D \equiv \kappa^2 - \sigma^2.
 \end{align}
+
+\subsection{Boundary conditions}
+In numerical calculations a finite vertical domain $z\in[-1,1]\zmax$
+is adopted. For $\Gamma\neq1$ we take $\zmax$ to be slightly less than
+$H$ to avoid the zero-density surface. At $z=\pm\zmax$ we impose
+\begin{align}
+  \delta v_z = 0,
+\end{align}
+for a solid boundary, or 
+\begin{align}
+  \Delta P \equiv \delta P + \bm{\xi}\cdot\nabla P= 0,  
+\end{align}
+for a free surface, where $\bm{\xi}$ is the Lagrangian
+displacement.
+
+%These boundary conditions are also numerically
+%convenient because they can be recast to contain the eigenfrequency
+%$\sigma$. This means that the the full set of ODEs, including boundary
+%conditions can be written in the form $L(\bm{U}) = \sigma R (\bm{U})$  
