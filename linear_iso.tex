@@ -3,27 +3,22 @@
 The linear problem simplifies considerably for the case
 $\Gamma=\gamma=1$. Then 
 \begin{align}
-  W=Q. 
+  Q=W. 
 \end{align}
-%so that
-%\begin{align}
- % \delta v_z = \frac{1}{\ii\sigma}\frac{dQ}{dz}. 
-%\end{align}
-%Inserting this into the expression for $\delta v_x$ and the continuity
-%equation, 
+
 Inserting this into Eq. \ref{ode_w} gives a single equation for the linear stability
 problem for isothermal perturbations in a vertically isothermal disk, 
 \begin{align}\label{iso_ode}
-  \frac{d^2Q}{dz^2} + \left(\frac{d\ln{\rho}}{dz} - \frac{\ii k_x
-      r}{D}\frac{d\Omega^2}{dz}\right) \frac{dQ}{dz} +
-  \sigma^2\left(\frac{1}{c_s^2} + \frac{k_x^2}{D}\right)Q=0, 
+  \frac{d^2W}{dz^2} + \left(\frac{d\ln{\rho}}{dz} - \frac{\ii k_x
+      r}{D}\frac{d\Omega^2}{dz}\right) \frac{dW}{dz} +
+  \sigma^2\left(\frac{1}{c_s^2} + \frac{k_x^2}{D}\right)W=0, 
 \end{align} 
-subject to appropriate boundary conditions. 
-We remark that Eq .\ref{iso_ode} is also applicable for
-$\gamma=\Gamma\neq 1$ in the limit $t_c\to\infty$, since in that case
-$W\simeq Q$ as well. 
-%The following discussion therefore also holds for
-%vertically non-isothermal, adiabatic disks.   
+subject to appropriate boundary conditions. We remark that Eq
+.\ref{iso_ode} is also applicable for    
+$\gamma=\Gamma\neq 1$ in the limit $t_c\to\infty$ (i.e. adiabatic
+disks with adiabatic vertical stratification), since in that case  
+$W\simeq W$ as well. 
+
 
 \subsection{Neccessity of vertical shear for instability}\label{integral_relation}
 We can establish a neccessary condition for instability with the
@@ -43,71 +38,28 @@ $\kappa^2$. For clarity, we will replace  $\kappa^2$ with $\Omega_k^2$.
 
 With these approximations we can re-write the governing equation as
 \begin{align}\label{iso_ode1}
-&\frac{d}{dz}\left(\rho e^{-\ii k_x r
-    \Omega^2/\Omega_k^2}\frac{dQ}{dz}\right) +
-\sigma^2\left(\frac{1}{c_s^2}+\frac{k_x^2}{\Omega_k^2}\right) \rho Q e^{-\ii k_x r
-  \Omega^2/\Omega_k^2} \notag\\
-&=0.
+  &\frac{d}{dz}\left(\rho e^{-\ii k_x r
+      \Omega^2/\Omega_k^2}\frac{dW}{dz}\right) +
+  \sigma^2\left(\frac{1}{c_s^2}+\frac{k_x^2}{\Omega_k^2}\right) \rho W e^{-\ii k_x r
+    \Omega^2/\Omega_k^2} \notag\\
+  &=0.
 \end{align}
-% Writing
-% \begin{align}
-%   V \equiv Q\exp{\left[-\frac{\hat{z}^2}{2}(\ii q \epsilon
-%       \hat{k})\right]},
-% \end{align}
-% we have an alternative form of the governing equation 
-% \begin{align}\label{iso_alt}
-%   \frac{d}{d\hat{z}}\left[w(\hat{z})\left(\frac{dV}{d\hat{z}} + \ii q \epsilon
-%     \hat{k}\hat{z}V\right)\right] + nV w(\hat{z}) =0, 
-% \end{align}
-% where 
-% \begin{align}
-%   w(\hat{z}) \equiv \exp{\left(-\frac{\hat{z}^2}{2}\right)},  
-% \end{align}
-% and we have defined a new eigenvalue
-% \begin{align}
-%   n \equiv \left(\frac{\sigma}{\Omega_k}\right)^2(1+\hat{k}^2). 
-% \end{align}
-
-Next, we multiply Eq. \ref{iso_ode1} by $Q^{*}\exp{\left(\ii k_x r
+Next, we multiply Eq. \ref{iso_ode1} by $W^{*}\exp{\left(\ii k_x r
     \Omega^2/\Omega_k\right)}$, integrate 
 vertically and assume boundary terms vanish to obtain
 \begin{align}\label{neccessary_cond}
-   &\sigma^2\left(\frac{1}{c_s^2}+\frac{k_x^2}{\Omega_k^2}\right)\int_{-\infty}^{\infty}\rho|Q|^2dz \notag\\
-  &=\int_{-\infty}^{\infty}\rho\left|\frac{dQ}{dz}\right|^2dz 
-  +\frac{\ii k_x r}{\Omega_k^2}\int_{-\infty}^{\infty}\rho\frac{d\Omega^2}{dz}Q^*\frac{dQ}{dz}dz. 
+   &\sigma^2\left(\frac{1}{c_s^2}+\frac{k_x^2}{\Omega_k^2}\right)\int_{-\infty}^{\infty}\rho|W|^2dz \notag\\
+  &=\int_{-\infty}^{\infty}\rho\left|\frac{dW}{dz}\right|^2dz 
+  +\frac{\ii k_x r}{\Omega_k^2}\int_{-\infty}^{\infty}\rho\frac{d\Omega^2}{dz}W^*\frac{dW}{dz}dz. 
 \end{align}
-%\begin{align}\label{integral_relation}
- % n \int_{-\infty}^{\infty}w|V|^2d\hat{z} 
- % =&\int_{-\infty}^{\infty}w\left|\frac{dV}{d\hat{z}}\right|^2d\hat{z}\notag\\
- % +&\ii q \epsilon \hat{k}\int_{-\infty}^{\infty}w\hat{z}V\frac{dV^*}{d\hat{z}}d\hat{z}.   
-%\end{align}
-
 It follows that for instability ($\imag\sigma>0$), it is neccessary to
-have $d\Omega^2/dz\neq 0$, i.e. vertical 
-shear. 
+have $d\Omega^2/dz\neq 0$, i.e. vertical shear.  
 
-% We recognize that in Eq. \ref{integral_relation}, $w(\hat{z})$
-% represents the background density profile and
-% the factor $\epsilon q \hat{z}$ represents vertical shear. 
-% Making the replacement $w\to \rho$ and 
-% $\epsilon q \hat{z}\to (r/\Omega_k^2)d\Omega^2/dz$ in
-% Eq. \ref{integral_relation}  gives the corresponding integral relation
-% without the thin-disk approximation for the the equilibrium density
-% and vertical shear profile (Eq. \ref{thin_vshear} ---
-% \ref{thin_dens}).  
-
-%Assuming $V$ is either odd or even in
-%$\hat{z}$,  then for the second integral on the right
-%hand side to be non-zero, it is neccessary to have a vertical shear
-%profile that has odd symmetry in the vertical co-ordinate.  
 
 \subsection{Thin-disk limit}
 The full expressions for the equilibrium density and vertical shear
 depends on $z$ in a non-trivial manner. Thus, to simplify the problem 
 we consider thin-disks ($\epsilon\ll1$), 
-% Furthermore, the eigenfrequency
-% $\sigma^2$ appears in $D$. In order to make progress, in this section
-% we make the following approximations. 
 so we may expand the background density and vertical shear in powers
 of $z/r$. To lowest order we obtain
 \begin{align}
@@ -115,49 +67,40 @@ of $z/r$. To lowest order we obtain
   &\frac{d\Omega^2}{dz} \simeq \frac{q\Omega_k^2z}{r^2}. \label{thin_vshear}
 \end{align}
 
-% \emph{Nearly constant $\kappa$}. We are mainly interested in the
-% effect of vertical shear, i.e. $q\neq 0$. This is already captured
-% explicitly in Eq. \ref{iso_ode}. We therefore simplify further by
-% ignoring the vertical dependence of $\kappa^2$. In a thin disk, this
-% quantity is nearly Keplerian.
 
 With this approximation and those in \S\ref{integral_relation}, the
 governing equation becomes
 \begin{align}\label{iso_ode3}
-  \frac{d^2Q}{d\hat{z}^2} - \left(1 + \ii q\epsilon
-    \hat{k}\right)\hat{z}\frac{dQ}{d\hat{z}} +
-  \left(\frac{\sigma}{\Omega_k}\right)^2\left(1+\hat{k}^2\right)Q = 
+  \frac{d^2W}{d\hat{z}^2} - \left(1 + \ii q\epsilon
+    \hat{k}\right)\hat{z}\frac{dW}{d\hat{z}} +
+  \left(\frac{\sigma}{\Omega_k}\right)^2\left(1+\hat{k}^2\right)W = 
   0, 
 \end{align}
 where we have introduced the dimensionless vertical co-ordinate
-$\hat{z} \equiv z/\Hiso$ and wavenumber $\hat{k} \equiv k_x \Hiso$. 
+$\hat{z} \equiv z/\Hiso$ and wavenumber $\hat{k} \equiv k_x \Hiso$. We 
+remark that for large $|\hat{k}|$, Eq. \ref{iso_ode3} is the same as
+that derived by \cite{nelson13}, although we have taken a different
+route.  
 
 In the thin-disk approximation the integral relation
 Eq. \ref{neccessary_cond} becomes
 \begin{align}\label{integral_relation_thin}
  & \left(\frac{\sigma}{\Omega_k}\right)^2\left(1+\hat{k}^2\right)
-  \int_{-\infty}^{\infty}w|Q|^2d\hat{z}  \notag\\ 
-  & =\int_{-\infty}^{\infty}w\left|\frac{dQ}{d\hat{z}}\right|^2d\hat{z}
+  \int_{-\infty}^{\infty}w|W|^2d\hat{z}  \notag\\ 
+  & =\int_{-\infty}^{\infty}w\left|\frac{dW}{d\hat{z}}\right|^2d\hat{z}
   +\ii q \epsilon
-  \hat{k}\int_{-\infty}^{\infty}w\hat{z}Q^*\frac{dQ}{d\hat{z}}d\hat{z}.    
+  \hat{k}\int_{-\infty}^{\infty}w\hat{z}W^*\frac{dW}{d\hat{z}}d\hat{z}.    
 \end{align}
 where 
 \begin{align}
   w(\hat{z}) \equiv \exp{\left(-\frac{\hat{z}^2}{2}\right)}.  
 \end{align}
 
-% the governing equation becomes
-% \begin{align}\label{iso_ode2}
-%   &\frac{d^2Q}{d\hat{z}^2} - \left[ 1 + \ii q\epsilon
-%     \left(k_x\Hiso\right)\frac{\Omega_k^2}{\kappa^2}\right]\hat{z}\frac{dQ}{d\hat{z}}\notag\\
-%   &+ \sigma^2\Hiso^2\left(\frac{1}{c_s^2}+\frac{k_x^2}{\kappa^2}\right)Q =
-%   0. 
-% \end{align}
 
 \subsection{Stability in the absence of vertical shear}
 When $q=0$, Eq. \ref{iso_ode3} is
 \begin{align}\label{hermite_ode}
-  \frac{d}{d\hat{z}}\left[w(\hat{z})\frac{dQ}{d\hat{z}}\right] + nQ
+  \frac{d}{d\hat{z}}\left[w(\hat{z})\frac{dW}{d\hat{z}}\right] + nW
   w(\hat{z}) =0, 
 \end{align}
 where we have defined a new eigenvalue
@@ -167,7 +110,7 @@ where we have defined a new eigenvalue
 Eq. \ref{iso_ode3} is Hermite's differential equation. If we impose
 that the kinetic energy density remain bounded at infinity, then  
 \begin{align}
-  Q \propto \He_n(\hat{z}),
+  W \propto \He_n(\hat{z}),
 \end{align}
 and $n$ is a non-negative integer. This translates to a real
 eigenfrequency $\sigma$ such that
@@ -183,7 +126,7 @@ smaller than the local disk scale height.
 \subsection{Polynomial solutions with vertical shear}
 We can seek power-series solution to Eq. \ref{iso_ode3},
 \begin{align}
-  Q(\zhat) = \sum_{m=0}^\infty a_m\zhat^m. 
+  W(\zhat) = \sum_{m=0}^\infty a_m\zhat^m. 
 \end{align}
 Then the coefficients must satisfy the recurrence relation
 \begin{align}
@@ -200,48 +143,30 @@ must satisfy
 The eigenfrequency $\sigma$ is therefore complex. We are interested in
 unstable modes for which $\imag{\sigma}$ is the growth rate and is
 given by 
-\begin{align}
-%   &\left[\frac{\real(\sigma)}{\Omega_k}\right]^2 =
-%  \frac{M}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2h^2\hat{k}^2} + 1\right)\\
-   \left[\frac{\imag(\sigma)}{\Omega_k}\right]^2 =
+\begin{align}\label{simple_growth}
+   \frac{\imag(\sigma)}{\Omega_k} =\sqrt{
    \frac{M}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2\epsilon^2\hat{k}^2} - 
-    1\right). 
+    1\right)}. 
 \end{align}
-This expression can be simplified in the limit $|q|\ll 1$, 
- \begin{align}\label{simple_growth}
-   \frac{\imag(\sigma)}{\Omega_k} = \pm \sqrt{M} 
-   \frac{q\epsilon\hat{k}}{2\sqrt{1+\hat{k}^2}} \quad\quad (|q|\ll 1), 
- \end{align}
- with $M$ being an integer. 
+For fixed $q$ and $\epsilon$, the growth rate vanishes for both
+$\hat{k}^2\to0$ and $\hat{k}^2\to\infty$. The maximum growth rate
+occurs at the optimum wavenumber $\hat{k}_\mathrm{opt}$
+\begin{align}
+  |\hat{k}_\mathrm{opt}| = \sqrt{\frac{2+|\epsilon q|}{|\epsilon q|}},
+\end{align}
+and
+\begin{align}
+\mathrm{max}\left[\imag(\sigma)\right] =\frac{\sqrt{M}|\epsilon
+  q|}{2\sqrt{1+|\epsilon q|}}\Omega_k. 
+\end{align}
 
-% The differential equation, Eq. \ref{iso_ode3}, can be solved by
-% \begin{align}
-%   Q\propto \hat{z}. 
-% \end{align} 
-% %Although $Q$ diverges at infinity, this solution is
-% %acceptable because the implied kinetic energy densities remain
-% %bounded, since the density decays rapidly. 
-% In this case the eigenfrequency must satisfy 
-% \begin{align}
-%   \left(\frac{\sigma}{\Omega_k}\right)^2 = \frac{1+\ii q h
-%     \hat{k}}{1+\hat{k}^2}, 
-% \end{align}
-% and $\sigma$ is generally complex\footnote{
-% We note that an even simpler solution to Eq. \ref{iso_ode3} is
-% $Q=\mathrm{constant}$, but this implies $\sigma^2=0$ and therefore
-% stability, so this case is of no interest.}, with  
-% %If we write $\sigma =
-% %(\hat{\omega} + \ii \hat{\nu})\Omega_k$ with $\hat{\omega},\hat{\nu}$
-% %real, we have
-% \begin{align}
-%   \left[\frac{\imag(\delta\sigma)}{\Omega_k}\right]^2 =
-%   \frac{\sqrt{1+q^2h^2\hat{k}^2} - 1}{2\left(1+\hat{k}^2\right)}. 
-% \end{align}
-% This expression can be simplified in the limit $|q|\ll 1$. Then we have
-% \begin{align}\label{simple_growth}
-%   \frac{\imag(\sigma)}{\Omega_k} = \pm
-%   \frac{qh\hat{k}}{2\sqrt{1+\hat{k}^2}} \quad\quad (|q|\ll 1).  
-%\end{align}
+% This expression can be simplified in the limit $|q|\ll 1$, 
+%  \begin{align}\label{simple_growth}
+%    \frac{\imag(\sigma)}{\Omega_k} = \pm \sqrt{M} 
+%    \frac{q\epsilon\hat{k}}{2\sqrt{1+\hat{k}^2}} \quad\quad (|q|\ll 1), 
+%  \end{align}
+%  with $M$ being an integer. 
+
 
 \subsection{Instability in the presence of weak vertical shear}
 We can also investigate the destabilizing effect of vertical shear
@@ -253,7 +178,7 @@ perturb this system by introducing a weak vertical shear ($|q|\ll1$)
 and linearize the governing equation. This procedure is
 \begin{align}   
   &q \to 0 + \delta q\\
-  &Q \to \He_n + \delta V \\
+  &W \to \He_n + \delta V \\
   &\sigma \to \sigma + \delta\sigma, 
 \end{align}
 where for this exercise we restore $\sigma$ as the eigenfrequency. 
@@ -278,17 +203,8 @@ Recognizing $\hat{z} = \He_1$ and using $d\He_n/d\hat{z} = n
    \int_{-\infty}^{\infty}
    w(\zhat)\He_1(\hat{z})\He_n(\hat{z})n\He_{n-1}(\hat{z})d\hat{z}. 
  \end{align}
-% Integrating the right hand side by parts and recognizing $\He_2 =
-% \hat{z}^2 -1$, we have
-% \begin{align}
-%   \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
-%   \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
-%   \He_n^2(\hat{z}) d\hat{z} \notag\\
-%   = \frac{1}{2}\delta q h \hat{k} 
-%   \int_{-\infty}^{\infty}
-%   w(\zhat)\He_2(\hat{z})\He_n^2(\hat{z})d\hat{z}. 
-% \end{align}
-Finally, we evaluate the integrals using following properties of Hermite polynomials
+
+Finally, we evaluate the integrals using the results
 \begin{align}
   \int_{-\infty}^{\infty}
   w(\xi) \He_k(\xi)\He_l(\xi) d\xi = \sqrt{2\pi}k!\delta_{kl}, 
@@ -300,10 +216,7 @@ and
   \frac{\sqrt{2\pi}m!k!l!}{(j-m)!(j-k)!(j-l)!}, 
 \end{align}
 where $j = (m+k+l)/2$. We then obtain
-% \begin{align}
-%  \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
-%  \left(1+\hat{k}^2\right) = \delta q h \hat{k} \frac{n!}{(n-1)!}.
-% \end{align
+
  \begin{align}
   \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
   \left(1+\hat{k}^2\right) = \delta q \epsilon \hat{k} n.
@@ -314,7 +227,8 @@ Inserting the original eigenfrequency $\sigma = \pm
   \frac{\imag(\delta\sigma)}{\Omega_k} = \pm \frac{1}{2}\delta q \epsilon
   \sqrt{n} \frac{\hat{k}}{\sqrt{1+\hat{k}^2}}. 
 \end{align}
-This result agrees with Eq. \ref{simple_growth}.  
+This result agrees with Eq. \ref{simple_growth} in the limit
+$|q|\to0$. 
 %for $n=1$, since the
 %function $\He_1$ solves the governing equation exactly. 
 For $\hat{k}\gg 1$ we have
@@ -322,3 +236,75 @@ For $\hat{k}\gg 1$ we have
   \frac{\imag(\delta\sigma)}{\Omega_k} \simeq \pm \frac{1}{2}\delta q \epsilon
   \sqrt{n} \sgn{\hat{k}}. 
 \end{align}
+
+\subsection{Numerical solutions}
+In this section we numerically solve the linear stability problem
+corresponding to Eq. \ref{iso_ode1}. We thus relax the thin-disk
+assumption, using the full expressions for $\rho$, $\Omega$ and
+$\kappa$, so that we may consider vertical domains up to $z\sim r$.
+However, we retain the low-frequency approximation
+$|\sigma^2|\ll\kappa^2$ to obtain a linear eigenvalue problem. This
+level of approximation lies in between the full problem 
+Eq. \ref{iso_ode}, solved by \cite{mcnally14}, and the thin-disk
+limit Eq. \ref{iso_ode3}, solved by \cite{nelson13}.   
+
+We solve Eq. \ref{iso_ode1} using a pseudo-spectral method by
+expanding $W$ in Chebyshev polynomials $T_l$ up to $l=512$ and
+discretizing the equation on a grid with
+$\zmax=10H_\mathrm{iso}$. This procedure converts the linear problem
+to a standard matrix eigenvalue problem. %In the low-frequency
+%approximation the eigenvalue is $\sigma^2$. 
+
+\subsubsection{Fiducial calculation}
+We first validate the low-frequency approximation by solving a 
+fiducial problem with $q=-1$, $p=-1.5$, $\epsilon=0.1$ and $k_x =
+200\pi/r$ with solid boundaries. This is the setup considered by
+\cite{mcnally14} who solved the full problem. 
+
+Fig. \ref{lowfreq_eigen} shows the eigenvalues $\sigma = \omega +
+\ii\nu$. This plot is effectively identical to that in
+\cite{mcnally14}. The low-frequency approximation reproduces the
+three solution branches defined by \citep{nelson13}: corrugation modes
+with odd symmetry, breathing modes with even symmetry, and surface
+modes which correspond to the nearly-vertical locus in
+Fig. \ref{lowfreq_eigen}. 
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/eigenvalues_iso}
+  \caption{Eigenvalues in the low-frequency approximation for the
+    vertical shear instability in a vertically isothermal disk evolved
+    isothermally ($\gamma=\Gamma=1$). The disk parameters are $q=-1$,
+    $p=-1.5$ and $\epsilon=0.1$, while the perturbation radial
+    wavenumber is $k_x=200\pi/r$. This is the set up considered in
+    \cite{mcnally14}. \label{lowfreq_eigen}
+  }
+\end{figure}
+
+We plot in Fig. \ref{lowfreq_eigenfunc} the structurally simplest
+eigenfunction --- the fundamental corrugation mode corresponding to
+the eigenvalue with $\mathrm{min}|\sigma|$. The perturbation $W$ is
+roughly proportional to $z$, except close the boundaries where it
+flattens because $\delta v_z=dW/dz=0$ is imposed there. 
+
+For $k_x = 200\pi/r$ and $\epsilon = 0.1$, the dimensionless
+wavenumber $\hat{k} = k_xH_\mathrm{iso}=20\pi$. Then the expected
+growth rate according to Eq. \ref{simple_growth} with $M=1$ is
+\begin{align*}
+  \nu = 0.2606\epsilon\Omega_k,
+\end{align*}
+as obtained numerically (Fig. \ref{lowfreq_eigen}). This agreement is
+surpsingly good, given that Eq. \ref{simple_growth} assumes the
+thin-disk approximation and imposes a different boundary condition to
+that in the numerical calculations. 
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/eigenvector_iso}
+  \caption{Eigenfunction of the fundamental corrugation mode,
+    corresponding to the 
+    bottom-left eigenvalue displayed in Fig. \ref{lowfreq_eigen}. The
+    solid and dashed lines are $\real W$ and $\imag W$, respectively. 
+    \label{lowfreq_eigenfunc}
+  }
+\end{figure}
+
+\subsubsection{Influence of vertical boundaries}
