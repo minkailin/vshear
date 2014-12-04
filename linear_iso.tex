@@ -56,6 +56,85 @@ It follows that for instability ($\imag\sigma>0$), it is neccessary to
 have $d\Omega^2/dz\neq 0$, i.e. vertical shear.  
 
 
+\subsection{Maximum growth rate in the limit of weak shear}   
+In the above discussions we have assumed a vertical domain   
+$\hat{z}\in[-\infty,\infty]$ which permits analytical expressions for
+the growth rates. Here we consider a finite vertical domain
+$\hat{z}\in[-\hat{z}_\mathrm{max},\hat{z}_\mathrm{max}]$ and show that
+the growth rate is limited by the maximum vertical shear in
+the domain. Since we do not persue explicit solutions to the linear
+problem, we relax the thin-disk approximation and restore the full
+expressions for $\rho$ and $d\Omega^2/dz$. 
+
+We begin with the integral relation Eq. \ref{neccessary_cond} with a
+finite vertical domain but still assuming boundary terms vanish,
+\begin{align}
+  &\left(\frac{\sigma}{\Omega_k}\right)^2\left(1+\hat{k}^2\right)
+  \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho|W|^2d\hat{z}  
+  \notag\\ 
+  &=\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left|\frac{dW}{d\hat{z}}\right|^2d\hat{z}      
+  +\ii
+  \epsilon\hat{k}q\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+  f(\hat{z}) W^*\frac{dW}{d\hat{z}}d\hat{z},    
+\end{align}   
+where $f(\hat{z})$ is defined such that
+\begin{align}
+  \frac{d\Omega^2}{d\hat{z}} = \epsilon^2q f(\hat{z})\Omega_k^2.
+\end{align}
+In the thin-disk limit, $f(\hat{z})=\hat{z}$.  
+
+We now take the same approach as in the previous section. We first
+assume an neutral solution corresponding to $q\equiv0$, for which
+$\sigma$ is real and we can take $W$ to be real as well. We then
+set $q\to\delta q$ and linearize. This procedure means
+\begin{align}
+  &\left(\frac{\sigma}{\Omega_k}\right)^2\left(1+\hat{k}^2\right)
+  \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho W^2d\hat{z}  
+  =\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left(\frac{dW}{d\hat{z}}\right)^2d\hat{z},\\ 
+  &\frac{2\sigma\imag{\delta\sigma}}{\Omega_k^2}\left(1+\hat{k}^2\right)
+  \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho W^2d\hat{z}\notag\\
+  &=\epsilon\hat{k}\delta q\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+  f(\hat{z}) W\frac{dW}{d\hat{z}}d\hat{z}. 
+\end{align}
+Eliminating $\sigma^2$ between the above equations, we obtain
+\begin{align}\label{sigma_finite_domain}
+  &4
+  \left[\frac{\imag{\left(\delta\sigma\right)}}{\Omega_k}\right]^2\left(1+\hat{k}^2\right) 
+  \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+  W^2d\hat{z}\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left(\frac{dW}{d\hat{z}}\right)^2d\hat{z}\notag\\
+  &=\left(\epsilon\hat{k}\delta q\right)^2\left(\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+  f(\hat{z}) W\frac{dW}{d\hat{z}}d\hat{z}\right)^2. 
+\end{align}
+On the left hand side of this equation, we apply the Cauchy-Schwarz
+inequality to obtain
+\begin{align}
+  &\left( \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+    |W|\left|\frac{dW}{d\hat{z}}\right|d\hat{z}\right)^2\notag\\&\leq
+  \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho 
+  W^2d\hat{z}\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left(\frac{dW}{d\hat{z}}\right)^2d\hat{z}.
+\end{align}
+On the right hand side of Eq. \ref{sigma_finite_domain} we have
+\begin{align}
+  \left|\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+    f(\hat{z}) W\frac{dW}{d\hat{z}}d\hat{z}\right|\leq \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+  |f(\hat{z})| |W|\left|\frac{dW}{d\hat{z}}\right|d\hat{z} \notag\\
+  \leq
+  \mathrm{max}\left(|f|\right)\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+  |W|\left|\frac{dW}{d\hat{z}}\right|d\hat{z},
+\end{align}
+where $\mathrm{max}(|f|)$ is the maximum value of $|f|$ in
+$z\in[-\zmax,\zmax]$. Inserting these inequalities into
+Eq. \ref{sigma_finite_domain} gives
+\begin{align}
+  \left|\frac{\imag{(\delta\sigma)}}{\Omega_k}\right| \leq
+  \frac{\epsilon |\hat{k}\delta
+    q|}{2\sqrt{1+\hat{k}^2}}\mathrm{max}(|f|). 
+\end{align}
+
+
+
+
+
 \subsection{Thin-disk limit}
 The full expressions for the equilibrium density and vertical shear
 depends on $z$ in a non-trivial manner. Thus, to simplify the problem 
@@ -236,6 +315,9 @@ For $\hat{k}\gg 1$ we have
   \frac{\imag(\delta\sigma)}{\Omega_k} \simeq \pm \frac{1}{2}\delta q \epsilon
   \sqrt{n} \sgn{\hat{k}}. 
 \end{align}
+
+
+
 
 \subsection{Numerical solutions}
 In this section we numerically solve the linear stability problem
