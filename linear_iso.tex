@@ -45,30 +45,26 @@ With these approximations we can re-write the governing equation as
   &=0.
 \end{align}
 Next, we multiply Eq. \ref{iso_ode1} by $W^{*}\exp{\left(\ii k_x r
-    \Omega^2/\Omega_k\right)}$, integrate 
-vertically and assume boundary terms vanish to obtain
+    \Omega^2/\Omega_k\right)}$ and integrate 
+vertically from $z=-\zmax$ to $z=\zmax$. We assume either $W$ or
+$dW/dz$ vanishes at $z=\pm \zmax$, or that $\zmax$ is sufficiently
+large so that the boundary terms are negligible because of the
+decaying background density with increasing height. Then,
 \begin{align}\label{neccessary_cond}
-   &\sigma^2\left(\frac{1}{c_s^2}+\frac{k_x^2}{\Omega_k^2}\right)\int_{-\infty}^{\infty}\rho|W|^2dz \notag\\
-  &=\int_{-\infty}^{\infty}\rho\left|\frac{dW}{dz}\right|^2dz 
-  +\frac{\ii k_x r}{\Omega_k^2}\int_{-\infty}^{\infty}\rho\frac{d\Omega^2}{dz}W^*\frac{dW}{dz}dz. 
+   &\sigma^2\left(\frac{1}{c_s^2}+\frac{k_x^2}{\Omega_k^2}\right)\int_{-\zmax}^{\zmax}\rho|W|^2dz \notag\\
+  &=\int_{-\zmax}^{\zmax}\rho\left|\frac{dW}{dz}\right|^2dz 
+  +\frac{\ii k_x r}{\Omega_k^2}\int_{-\zmax}^{\zmax}\rho\frac{d\Omega^2}{dz}W^*\frac{dW}{dz}dz. 
 \end{align}
 It follows that for instability ($\imag\sigma>0$), it is neccessary to
 have $d\Omega^2/dz\neq 0$, i.e. vertical shear.  
 
-
-\subsection{Maximum growth rate in the limit of weak shear}   
-In the above discussions we have assumed a vertical domain   
-$\hat{z}\in[-\infty,\infty]$ which permits analytical expressions for
-the growth rates. Here we consider a finite vertical domain
-$\hat{z}\in[-\hat{z}_\mathrm{max},\hat{z}_\mathrm{max}]$ and show that
-the growth rate is limited by the maximum vertical shear in
-the domain. Since we do not persue explicit solutions to the linear
-problem, we relax the thin-disk approximation and restore the full
-expressions for $\rho$ and $d\Omega^2/dz$. 
-
-We begin with the integral relation Eq. \ref{neccessary_cond} with a
-finite vertical domain but still assuming boundary terms vanish,
-\begin{align}
+\subsection{Maximum growth rate}   
+Here we show that the growth rate is limited by the maximum vertical
+shear in the domain. It is convenient to introduce the dimensionless
+vertical co-ordinate $\hat{z} = z/\Hiso$ and wavenumber
+$\hat{k}=k_x\Hiso$. Then 
+the integral relation Eq. \ref{neccessary_cond} becomes 
+\begin{align}\label{integral_relation1}
   &\left(\frac{\sigma}{\Omega_k}\right)^2\left(1+\hat{k}^2\right)
   \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho|W|^2d\hat{z}  
   \notag\\ 
@@ -78,46 +74,84 @@ finite vertical domain but still assuming boundary terms vanish,
   f(\hat{z}) W^*\frac{dW}{d\hat{z}}d\hat{z},    
 \end{align}   
 where $f(\hat{z})$ is defined such that
-\begin{align}
+\begin{align}\label{fz_shear}
   \frac{d\Omega^2}{d\hat{z}} = \epsilon^2q f(\hat{z})\Omega_k^2.
 \end{align}
-In the thin-disk limit, $f(\hat{z})=\hat{z}$.  
 
-We now take the same approach as in the previous section. We first
-assume an neutral solution corresponding to $q\equiv0$, for which
-$\sigma$ is real and we can take $W$ to be real as well. We then
-set $q\to\delta q$ and linearize. This procedure means
+For convenience, we write $\hat{\sigma}\equiv\sigma/\Omega_k = \hat{\omega} +
+\ii\hat{\nu}$ with $\hat{\omega},\hat{\nu}$ being the dimensionless
+mode frequency and growth rates. Then the real and imaginary parts of
+Eq. \ref{integral_relation1} are
 \begin{align}
-  &\left(\frac{\sigma}{\Omega_k}\right)^2\left(1+\hat{k}^2\right)
-  \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho W^2d\hat{z}  
-  =\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left(\frac{dW}{d\hat{z}}\right)^2d\hat{z},\\ 
-  &\frac{2\sigma\imag{\delta\sigma}}{\Omega_k^2}\left(1+\hat{k}^2\right)
-  \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho W^2d\hat{z}\notag\\
-  &=\epsilon\hat{k}\delta q\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
-  f(\hat{z}) W\frac{dW}{d\hat{z}}d\hat{z}. 
+  &\left(\hat{\omega}^2-\hat{\nu}^2\right)\left(1+\hat{k}^2\right)
+   \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho|W|^2d\hat{z} -
+  \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left|\frac{dW}{d\hat{z}}\right|^2d\hat{z}
+  \notag\\
+  &=\real\left[\ii
+  \epsilon\hat{k}q\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+ f(\hat{z}) W^*\frac{dW}{d\hat{z}}d\hat{z}\right], \notag\\
+& 2\hat{\omega}\hat{\nu}\left(1+\hat{k}^2\right)
+   \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho|W|^2d\hat{z}\notag\\
+   &=\imag\left[\ii
+  \epsilon\hat{k}q\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+ f(\hat{z}) W^*\frac{dW}{d\hat{z}}d\hat{z}\right].
 \end{align}
-Eliminating $\sigma^2$ between the above equations, we obtain
-\begin{align}\label{sigma_finite_domain}
-  &4
-  \left[\frac{\imag{\left(\delta\sigma\right)}}{\Omega_k}\right]^2\left(1+\hat{k}^2\right) 
+Adding the square of these equations give
+\begin{align}
+&\left[|\hat{\sigma}|^2\left(1+\hat{k}^2\right)
+   \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho|W|^2d\hat{z} -
+  \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left|\frac{dW}{d\hat{z}}\right|^2d\hat{z}\right]^2\notag\\
+&+4\hat{\nu}^2\left(1+\hat{k}^2\right) 
   \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
-  W^2d\hat{z}\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left(\frac{dW}{d\hat{z}}\right)^2d\hat{z}\notag\\
-  &=\left(\epsilon\hat{k}\delta q\right)^2\left(\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
-  f(\hat{z}) W\frac{dW}{d\hat{z}}d\hat{z}\right)^2. 
+   |W|^2d\hat{z}\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left|\frac{dW}{d\hat{z}}\right|^2d\hat{z}\notag\\
+   &=\left|\ii
+  \epsilon\hat{k}q\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+ f(\hat{z}) W^*\frac{dW}{d\hat{z}}d\hat{z}\right|^2.
 \end{align}
-On the left hand side of this equation, we apply the Cauchy-Schwarz
+It is clear that
+\begin{align}\label{sigma_finite_domain} 
+&4\hat{\nu}^2\left(1+\hat{k}^2\right) 
+  \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+   |W|^2d\hat{z}\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left|\frac{dW}{d\hat{z}}\right|^2d\hat{z}\notag\\
+   &\leq\left|
+  \epsilon\hat{k}q\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+ f(\hat{z}) W^*\frac{dW}{d\hat{z}}d\hat{z}\right|^2.
+\end{align}
+% We now take the same approach as in the previous section. We first
+% assume an neutral solution corresponding to $q\equiv0$, for which
+% $\sigma$ is real and we can take $W$ to be real as well. We then
+% set $q\to\delta q$ and linearize. This procedure means
+% \begin{align}
+%   &\left(\frac{\sigma}{\Omega_k}\right)^2\left(1+\hat{k}^2\right)
+%   \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho W^2d\hat{z}  
+%   =\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left(\frac{dW}{d\hat{z}}\right)^2d\hat{z},\\ 
+%   &\frac{2\sigma\imag{\delta\sigma}}{\Omega_k^2}\left(1+\hat{k}^2\right)
+%   \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho W^2d\hat{z}\notag\\
+%   &=\epsilon\hat{k}\delta q\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+%   f(\hat{z}) W\frac{dW}{d\hat{z}}d\hat{z}. 
+% \end{align}
+% Eliminating $\sigma^2$ between the above equations, we obtain
+% \begin{align}\label{sigma_finite_domain}
+%   &4
+%   \left[\frac{\imag{\left(\delta\sigma\right)}}{\Omega_k}\right]^2\left(1+\hat{k}^2\right) 
+%   \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+%   W^2d\hat{z}\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left(\frac{dW}{d\hat{z}}\right)^2d\hat{z}\notag\\
+%   &=\left(\epsilon\hat{k}\delta q\right)^2\left(\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+%   f(\hat{z}) W\frac{dW}{d\hat{z}}d\hat{z}\right)^2. 
+% \end{align}
+On the left hand side of this inequality, we apply the Cauchy-Schwarz
 inequality to obtain
 \begin{align}
   &\left( \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
     |W|\left|\frac{dW}{d\hat{z}}\right|d\hat{z}\right)^2\notag\\&\leq
   \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho 
-  W^2d\hat{z}\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left(\frac{dW}{d\hat{z}}\right)^2d\hat{z}.
+  |W|^2d\hat{z}\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho\left|\frac{dW}{d\hat{z}}\right|^2d\hat{z}.
 \end{align}
 On the right hand side of Eq. \ref{sigma_finite_domain} we have
 \begin{align}
   \left|\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
-    f(\hat{z}) W\frac{dW}{d\hat{z}}d\hat{z}\right|\leq \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
-  |f(\hat{z})| |W|\left|\frac{dW}{d\hat{z}}\right|d\hat{z} \notag\\
+    f(\hat{z}) W^*\frac{dW}{d\hat{z}}d\hat{z}\right|\leq \int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
+  \left|f(\hat{z})W^*\frac{dW}{d\hat{z}}\right|d\hat{z} \notag\\
   \leq
   \mathrm{max}\left(|f|\right)\int_{-z_\mathrm{max}}^{z_\mathrm{max}}\rho
   |W|\left|\frac{dW}{d\hat{z}}\right|d\hat{z},
@@ -125,56 +159,60 @@ On the right hand side of Eq. \ref{sigma_finite_domain} we have
 where $\mathrm{max}(|f|)$ is the maximum value of $|f|$ in
 $z\in[-\zmax,\zmax]$. Inserting these inequalities into
 Eq. \ref{sigma_finite_domain} gives
-\begin{align}
-  \left|\frac{\imag{(\delta\sigma)}}{\Omega_k}\right| \leq
-  \frac{\epsilon |\hat{k}\delta
-    q|}{2\sqrt{1+\hat{k}^2}}\mathrm{max}(|f|). 
+\begin{align}\label{max_growth}
+  \hat{\nu}\equiv\left|\frac{\imag{(\sigma)}}{\Omega_k}\right| \leq
+  \frac{\epsilon |\hat{k} q|}{2\sqrt{1+\hat{k}^2}}\mathrm{max}(|f|). 
 \end{align}
+Recalling that $f$ represents vertical shear (Eq. \ref{fz_shear}), it
+follows that the maximum possible growth rate of unstable modes,
+satisfying the above boundary conditions, is limited by the maximum
+value of the vertical shear in the domain considered. 
 
-
-
-
+For the vertical shear profile of the vertically isothermal
+disk, $f(\hat{z}) =
+\hat{z}\left(1+\epsilon^2\hat{z}^2\right)^{-3/2}$. If we consider
+$\zmax\to\infty$,  then the growth rate is limited by the global
+maximum of the vertical shear, which occurs at $\zhat
+=1/\sqrt{2}\epsilon$ for the vertically isothermal disk.  
+For vertical domains smaller than this height, the growth rate is
+limited by $|f|$ at the vertical boundaries considered. For 
+$|\epsilon\hat{z}|\ll1$ we have $f\simeq \hat{z}$, in which case we
+expect growth rates to increase linearly with the vertical domain
+size.  
 
 \subsection{Thin-disk limit}
-The full expressions for the equilibrium density and vertical shear
-depends on $z$ in a non-trivial manner. Thus, to simplify the problem 
-we consider thin-disks ($\epsilon\ll1$), 
+We can make further progress for thin-disks ($\epsilon\ll1$), 
 so we may expand the background density and vertical shear in powers
-of $z/r$. To lowest order we obtain
+of $z/r$. To lowest order we obtain 
 \begin{align}
-  &\rho(z) \simeq \rho_{00} \exp{\left(-\frac{z^2}{2\Hiso^2}\right)},\label{thin_dens}\\
-  &\frac{d\Omega^2}{dz} \simeq \frac{q\Omega_k^2z}{r^2}. \label{thin_vshear}
+  &\rho(\hat{z}) \simeq \rho_{00}
+  \exp{\left(-\frac{\hat{z}^2}{2}\right)} \equiv \rho_{00}w(\hat{z}),\label{thin_dens}\\
+  &\frac{d\Omega^2}{d\hat{z}} \simeq \epsilon^2q\Omega_k^2\hat{z}. \label{thin_vshear}
 \end{align}
-
-
 With this approximation and those in \S\ref{integral_relation}, the
-governing equation becomes
+governing equation becomes 
 \begin{align}\label{iso_ode3}
   \frac{d^2W}{d\hat{z}^2} - \left(1 + \ii q\epsilon
     \hat{k}\right)\hat{z}\frac{dW}{d\hat{z}} +
   \left(\frac{\sigma}{\Omega_k}\right)^2\left(1+\hat{k}^2\right)W = 
-  0, 
+  0.
 \end{align}
-where we have introduced the dimensionless vertical co-ordinate
-$\hat{z} \equiv z/\Hiso$ and wavenumber $\hat{k} \equiv k_x \Hiso$. We 
-remark that for large $|\hat{k}|$, Eq. \ref{iso_ode3} is the same as
+We remark that for large $|\hat{k}|$, Eq. \ref{iso_ode3} is the same as
 that derived by \cite{nelson13}, although we have taken a different
 route.  
 
-In the thin-disk approximation the integral relation
-Eq. \ref{neccessary_cond} becomes
-\begin{align}\label{integral_relation_thin}
- & \left(\frac{\sigma}{\Omega_k}\right)^2\left(1+\hat{k}^2\right)
-  \int_{-\infty}^{\infty}w|W|^2d\hat{z}  \notag\\ 
-  & =\int_{-\infty}^{\infty}w\left|\frac{dW}{d\hat{z}}\right|^2d\hat{z}
-  +\ii q \epsilon
-  \hat{k}\int_{-\infty}^{\infty}w\hat{z}W^*\frac{dW}{d\hat{z}}d\hat{z}.    
-\end{align}
-where 
-\begin{align}
-  w(\hat{z}) \equiv \exp{\left(-\frac{\hat{z}^2}{2}\right)}.  
-\end{align}
+To complete the problem we must specify boundary conditions. The
+maximum vertical domain size we should consider is limited by the thin disk
+approximation (i.e. $z\lesssim r$). It is most common to take $\zmax\to\infty$
+and impose that the kinetic  energy remain bounded at infinity.  This
+is appropriate for the density because both the true density profile
+and its thin-disk approximation decay rapidly away from the midplane.   
 
+However, the thin-disk representation of vertical shear diverges with 
+$\hat{z}$, unlike the true vertical shear profile which eventually
+decays.  Thus taking $\zmax\to$ will permit unphysically large growth
+rates (as demonstrated below). Nevertheless, the infinite disk is
+useful to consider since it permits an analytical discussion. 
 
 \subsection{Stability in the absence of vertical shear}
 When $q=0$, Eq. \ref{iso_ode3} is
@@ -262,7 +300,8 @@ and linearize the governing equation. This procedure is
 \end{align}
 where for this exercise we restore $\sigma$ as the eigenfrequency. 
 
-Linearizing the integral relation in the thin-disk limit, Eq. \ref{integral_relation_thin}, and taking the
+Linearizing the integral relation Eq. \ref{integral_relation1} in the
+thin-disk limit, and taking the
 imaginary part, we have
 \begin{align}
   \frac{2\sigma\imag(\delta\sigma)}{\Omega_k^2}
