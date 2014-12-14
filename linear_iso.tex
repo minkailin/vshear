@@ -36,6 +36,9 @@ therefore simplify further by ignoring the vertical dependence of
 $\kappa^2$. For clarity, we will replace  $\kappa^2$ with $\Omega_k^2$.  
 \end{enumerate}
 
+{\bf implicit limit on domain size. cannot be too large, otherwise omega reaches small values. should remain of order
+omegak}
+
 With these approximations we can re-write the governing equation as
 \begin{align}\label{iso_ode1}
   &\frac{d}{dz}\left(\rho e^{-\ii k_x r
@@ -179,6 +182,17 @@ limited by $|f|$ at the vertical boundaries considered. For
 $|\epsilon\hat{z}|\ll1$ we have $f\simeq \hat{z}$, in which case we
 expect growth rates to increase linearly with the vertical domain
 size.  
+
+
+{\bf get very similar result for if we replaced $\kappa^2(z)$ by $\Omega^2(z)$ instead. then the $(1+\hat{k}^2)$ factor should be 
+inside integral with extra factor of $\Omega_k^2/\Omega^2$ multiplying the $\hat{k}^2$. but for subkeplerian disks $\Omega^2<\Omega_k^2$ so can replace
+$\Omega^2$ by $\Omega^2_k$ without affecting the inequality on the lhs. on rhs need to replace $f$ by $\tilde{f}\equiv f\Omega_k^2/\Omega^2$. inequality is then not very 
+useful if zmax is very large since $\Omega^2$ may reach small values or even zero at finite height , so $\mathrm{max}|\tilde{f}|$ is large or infinite. 
+but still useful for zmax not too large such that $\Omega^2$ is similar to $\Omega^2$.}
+
+{\bf zmax is limited by: $\Omega^2$ and $\kappa^2$ do not become small, since low frequency assumption will fail if domain reaches heights such that $\Omega\sim0$. also can't assume
+$\Omega$ or $\kappa^2$ is roughly constant in coefficient of ode. (vertical derivatives always kept explicitly) 	
+}
 
 \subsection{Thin-disk limit}
 We can make further progress for thin-disks ($\epsilon\ll1$), 
