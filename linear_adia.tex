@@ -1,0 +1,85 @@
+\section{Adiabatic disks} 
+We now examine the VSI in adiabatic disks ($t_c\to\infty$). For 
+analytical discussion we consider the initially isothermal case with 
+$\Gamma=1$. We eliminate variables in favor of $\delta v_z$ and
+$\Delta \equiv \nabla\cdot\delta\bm{v}$ to obtain
+\begin{align}
+&\Delta\left(1 + \frac{\gamma c_s^2 k_x^2}{D}\right) = \frac{d\delta
+  v_z}{dz} + \frac{\ii k_x^2}{D}\left(\ii c_s^2 \frac{d\ln\rho}{dz}
+  - \frac{r}{k_x}\frac{d\Omega^2}{dz}\right)\delta v_z,\label{adia_iso1}\\
+& -\sigma^2\delta v_z = \gamma c_s^2 \frac{d\Delta}{dz} +
+ c_s^2\frac{d}{dz}\left(\frac{d\ln\rho}{dz}\delta v_z\right) +
+ \left(\gamma-1\right)\frac{d\ln\rho}{dz} \Delta.\label{adia_iso2}
+\end{align}
+
+We again make the low-frequency approximation
+and ignore the vertical dependence of $\Omega$ and $\kappa$ except
+where their vertical derivatives appear explicitly in the above
+equations. We thus make the replacement $D\to \Omega_k^2$, as before
+for isothermal perturbations. Here, we also use
+the fact that in the global disk,
+\begin{align}
+  r\frac{\p \Omega^2}{\p z} = - \frac{\p\ln\rho}{\p z}\frac{\p
+    c_s^2}{\p r} = -\frac{\p \ln\rho}{\p z} \frac{qc_s^2}{r},
+\end{align}
+where the second equality follows from the power-law prescription of
+the sound-speed for $\Gamma=1$. 
+
+Combining Eq. \ref{adia_iso1} and Eq. \ref{adia_iso2} with the above
+substitutions we obtain, in terms of dimensionless variables defined previously, an equation for $\delta v_z$,
+\begin{align}
+  0 =& \dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
+    \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime\notag\\
+  &+\left\{\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right)\right.\notag\\
+  &\phantom{0=}\left.-\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii\epsilon
+          q}{\hat{k}}\right)\ln\rho^{\prime 2}\right]\right\}\delta v_z.\label{adia_iso3}
+\end{align}
+We multiply Eq. \ref{adia_iso3} by $\rho\delta v_z^*$ and
+integrate vertically, assume boundary terms vanish when integrating by
+parts, to obtain
+\begin{align}
+  &\hat{\sigma}^2\left(\frac{1}{\gamma} +
+    \hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|\delta
+  v_z|^2 d\zhat \notag\\
+  &=  \left(\frac{\gamma-1}{\gamma}\right)
+  \int_{\zhat_1}^{\zhat_2}\rho|\delta v_z^\prime|^2 d\zhat
+  +\frac{1}{\gamma}\int_{\zhat_1}^{\zhat_2}\frac{1}{\rho}|(\rho\delta
+  v_z)^\prime|^2 d\zhat\notag\\
+  &\phantom{=} +
+  \left(\frac{\gamma-1}{\gamma}\right)\hat{k}^2\left(1-\frac{\ii\epsilon
+      q}{\hat{k}}\right) \int_{\zhat_1}^{\zhat_2}\rho\ln\rho^{\prime
+    2}|\delta v_z|^2 d\zhat\notag\\
+  &\phantom{=} + \ii\epsilon q \hat{k}
+  \int_{\zhat_1}^{\zhat_2}\ln\rho^\prime(\rho\delta v_z^*)^\prime
+  \delta v_z d\zhat.
+\end{align}
+
+\subsection{Explicit solutions in the thin disk limit}
+To simplify further, we consider the problem in the thin-disk limit so
+that $\ln \rho \simeq -\zhat^2/2$. Eq. \ref{adia_iso3} becomes 
+\begin{align}
+  0 = \delta v_z^{\prime\prime} - \zhat A \delta v_z^\prime + \left(B
+    - C \zhat^2\right)\delta v_z,
+\end{align}
+with
+\begin{align}
+  &A \equiv 1 + \ii \epsilon q \hat{k},\\
+  &B \equiv \hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right) -
+  \left(\frac{1}{\gamma} + \ii \hat{k} \epsilon q\right)\\
+  &C \equiv \frac{\left(\gamma-1\right)}{\gamma}\hat{k}^2\left(1 - \frac{\ii
+      \epsilon q}{\hat{k}}\right).
+\end{align}
+
+
+
+% \begin{align}
+%   0 =& \frac{d^2\delta v_z}{d\zhat^2} - \hat{z}\left(1 + \ii \hat{k}
+%     \epsilon q \right)\frac{d\delta v_z}{d\hat{z}} \notag\\ 
+% &+ \left[\hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right) -
+%   \left(\frac{1}{\gamma} + \ii \hat{k} \epsilon q\right)\right.\notag\\
+%   &\phantom{0=}-\left.\frac{\left(\gamma-1\right)}{\gamma}\hat{k}^2\left(1 - \frac{\ii
+%       \epsilon q}{\hat{k}}\right)\zhat^2\right]\delta v_z.\label{adia_iso_final}
+% \end{align}
+% Eq. \ref{adia_iso_final} will be the basis for discussion below. 
+
+
