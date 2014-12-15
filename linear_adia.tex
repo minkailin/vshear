@@ -11,6 +11,8 @@ $\Delta \equiv \nabla\cdot\delta\bm{v}$ to obtain
  c_s^2\frac{d}{dz}\left(\frac{d\ln\rho}{dz}\delta v_z\right) +
  \left(\gamma-1\right)\frac{d\ln\rho}{dz} \Delta.\label{adia_iso2}
 \end{align}
+{\bf note: incompressible mode, set delta to zero. only works for
+  constant gravity.}
 
 We again make the low-frequency approximation
 and ignore the vertical dependence of $\Omega$ and $\kappa$ except
@@ -51,10 +53,24 @@ parts, to obtain
     2}|\delta v_z|^2 d\zhat\notag\\
   &\phantom{=} + \ii\epsilon q \hat{k}
   \int_{\zhat_1}^{\zhat_2}\ln\rho^\prime(\rho\delta v_z^*)^\prime
-  \delta v_z d\zhat.
+  \delta v_z d\zhat.\label{adia_integral}
 \end{align}
+When $q\equiv0$, all the terms on the right-hand-side (RHS) are real. Then
+$\hat{\sigma}^2$ is real, and  $\hat{\sigma}^2>0$ if $\gamma>1$. As
+expected, a sub-adiabatically stratified disk is stable in the absense
+of vertical shear. In the presence of vertical shear $q\neq0$ and
+$\hat{\sigma}$ is generally complex, which implies the possibility of
+instability.  
 
-\subsection{Explicit solutions in the thin disk limit}
+Note that the term with $\ln\rho^{\prime 2}$ in the integrand (third
+term on the RHS) represents stabilization by the vertical entropy
+gradient when there is no vertical shear. It gives an imaginary
+contribution to $\hat{\sigma}$ when $q\neq0$, but this is a factor
+$\hat{k}$ smaller than the real (stabilizing) contribution, since we
+consider $\hat{k}\gg1$. Thus, instability is expected to be due to the
+last term on the RHS of Eq. \ref{adia_integral}. 
+  
+\subsection{Explicit solutions in the thin-disk limit}
 To simplify further, we consider the problem in the thin-disk limit so
 that $\ln \rho \simeq -\zhat^2/2$. Eq. \ref{adia_iso3} becomes 
 \begin{align}
@@ -67,19 +83,64 @@ with
   &B \equiv \hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right) -
   \left(\frac{1}{\gamma} + \ii \hat{k} \epsilon q\right)\\
   &C \equiv \frac{\left(\gamma-1\right)}{\gamma}\hat{k}^2\left(1 - \frac{\ii
-      \epsilon q}{\hat{k}}\right).
+      \epsilon q}{\hat{k}}\right).\label{adia_thin}
+\end{align}
+Let
+\begin{align}
+  \delta v_z(\zhat) =
+  g(\zhat)\exp\left(\frac{\alpha\zhat^2}{2}\right), \label{adia_ansatz}
+\end{align}
+where $\alpha$ is a constant to be chosen for convenience. We require
+the vertical kinetic energy density $\rho|\delta v_z|^2$ to remain
+finite.  Then assuming
+$g(\zhat)$ is a polynomial, we require 
+\begin{align}
+  \real\alpha < \frac{1}{2}. 
 \end{align}
 
-
-
+Inserting the ansatz Eq. \ref{adia_ansatz} into Eq. \ref{adia_thin}
+gives
+\begin{align}
+  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime + \left(B +
+      \alpha\right)g
+    +\underbrace{\left(\alpha^2 - \alpha A - C\right)}_\text{set to zero}\zhat^2 g.
+\end{align}
+We choose $\alpha$ to make the coefficient of $\zhat^2g$ vanish. That
+is,
+\begin{align}
+  \alpha = \frac{1}{2}\left(A - \sqrt{A^2 + 4C}\right).
+\end{align} 
+We now have an equation in the same form as Eq. \ref{iso_ode3}:
+\begin{align}
+  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime +
+  \left(B + \alpha\right)g.
+\end{align}
+We seek polynomial solutions 
+\begin{align}
+  g(\zhat) = \sum_{m=0}^M b_m \zhat^m,
+\end{align}
+% We again seek power-series solutions 
 % \begin{align}
-%   0 =& \frac{d^2\delta v_z}{d\zhat^2} - \hat{z}\left(1 + \ii \hat{k}
-%     \epsilon q \right)\frac{d\delta v_z}{d\hat{z}} \notag\\ 
-% &+ \left[\hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right) -
-%   \left(\frac{1}{\gamma} + \ii \hat{k} \epsilon q\right)\right.\notag\\
-%   &\phantom{0=}-\left.\frac{\left(\gamma-1\right)}{\gamma}\hat{k}^2\left(1 - \frac{\ii
-%       \epsilon q}{\hat{k}}\right)\zhat^2\right]\delta v_z.\label{adia_iso_final}
+%   g(\zhat) = \sum_{m=0}^\infty b_m \zhat^m,
 % \end{align}
-% Eq. \ref{adia_iso_final} will be the basis for discussion below. 
+% which requires
+% \begin{align}
+%   (m+2)(m+1)b_{m+2} + \left[\left(2\alpha - A\right)m + B + \alpha\right]=0.
+% \end{align}
+which requires
+\begin{align}
+  B + \alpha = M\left(A-2\alpha\right).\label{adia_disp}
+\end{align}
+Inserting the definition of $B$ we get
+\begin{align}
+  &\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right) \notag\\ &=
+  \left(\frac{1}{\gamma}-\frac{1}{2}\right) +\frac{\ii}{2}\epsilon q
+  \hat{k} + \frac{1}{2}\left(2M+1\right)\left(A^2 + 4C\right)^{1/2}. 
+\end{align}
+%Recalling that $B$ depends $\hat{\sigma}$, Eq. \ref{adia_disp} gives
+%the eigenfrequency as a function of disk paramters. 
 
-
+% \subsection{Special case of a thin-disk with $\gamma=2$} 
+% In principle, we can solve Eq. \ref{adia_disp} for the mode
+% frequencies and growth rates. This is complicated in the
+% general case, but simplifies considerably for $\gamma=2$. 
