@@ -245,18 +245,18 @@ smaller than the local disk scale height.
 \subsubsection{Polynomial solutions with vertical shear}
 We can seek power-series solution to Eq. \ref{iso_ode3},
 \begin{align}
-  W(\zhat) = \sum_{m=0}^\infty a_m\zhat^m. 
+  W(\zhat) = \sum_{l=0}^\infty a_l\zhat^l. 
 \end{align}
 Then the coefficients must satisfy the recurrence relation
 \begin{align}
-  (m+2)(m+1)a_{m+2} +
-  \left[n - m\left(1+\ii \epsilon q  \hat{k}\right)\right] a_m = 0, 
+  (l+2)(l+1)a_{l+2} +
+  \left[n - l\left(1+\ii \epsilon q  \hat{k}\right)\right] a_l = 0, 
 \end{align}
 where $n$ is not neccessarily an integer. Indeed, if we demand
-a polynomial of degree $M$ as the solution, then the eigenfrequency
+a polynomial of degree $L$ as the solution, then the eigenfrequency
 must satisfy
 \begin{align}
-\hat{\sigma}^2 = M\left(\frac{1+\ii q \epsilon
+\hat{\sigma}^2 = L\left(\frac{1+\ii q \epsilon
     \hat{k}}{1+\hat{k}^2}\right).
 \end{align}
 The eigenfrequency $\sigma$ is therefore complex. We are interested in
@@ -264,7 +264,7 @@ unstable modes for which $\imag{\hat{\sigma}}>0$ is the growth rate and is
 given by 
 \begin{align}\label{simple_growth}
   \hat{\nu} =\sqrt{
-   \frac{M}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2\epsilon^2\hat{k}^2} - 
+   \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2\epsilon^2\hat{k}^2} - 
     1\right)}. 
 \end{align}
 For fixed $q$ and $\epsilon$, the growth rate vanishes for both
@@ -275,7 +275,7 @@ occurs at the optimum wavenumber $\hat{k}_\mathrm{opt}$
 \end{align}
 and
 \begin{align}
-\mathrm{max}\left(\hat{\nu}\right) =\frac{\sqrt{M}|\epsilon
+\mathrm{max}\left(\hat{\nu}\right) =\frac{\sqrt{L}|\epsilon
   q|}{2\sqrt{1+|\epsilon q|}}. \label{iso_max_growth}
 \end{align}
 
