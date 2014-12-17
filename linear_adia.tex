@@ -1,15 +1,15 @@
 \subsection{Adiabatic perturbations} 
-We now extend the above discussion to vertically isothermal disks
-($\Gamma=1$) with $\gamma\neq1$ and $t_c\to\infty$, i.e. adiabatic
-evolution. We eliminate variables in favor of $\delta v_z$ and
-$\Delta \equiv \nabla\cdot\delta\bm{v}$ to obtain
+We now extend the above discussion to general $\gamma$, but in the
+adiabatic limit ($t_c\to\infty$). We eliminate variables from 
+Eq. \ref{lin_mass}---\ref{lin_energy} in favor of $\delta v_z$ 
+and $\Delta \equiv \nabla\cdot\delta\bm{v}$ to obtain
 \begin{align}
-&\Delta\left(1 + \frac{\gamma c_s^2 k_x^2}{D}\right) = \frac{d\delta
-  v_z}{dz} + \frac{\ii k_x^2}{D}\left(\ii c_s^2 \frac{d\ln\rho}{dz}
-  - \frac{r}{k_x}\frac{d\Omega^2}{dz}\right)\delta v_z,\label{adia_iso1}\\
-& -\sigma^2\delta v_z = \gamma c_s^2 \frac{d\Delta}{dz} +
-c_s^2\frac{d}{dz}\left(\frac{d\ln\rho}{dz}\delta v_z\right) +
-\left(\gamma-1\right)\frac{d\ln\rho}{dz} \Delta.\label{adia_iso2}
+  &\Delta\left(1 + \frac{\gamma c_s^2 k_x^2}{D}\right) = \frac{d\delta
+    v_z}{dz} + \frac{\ii k_x^2}{D}\left(\ii c_s^2 \frac{d\ln\rho}{dz}
+    - \frac{r}{k_x}\frac{d\Omega^2}{dz}\right)\delta v_z,\label{adia_iso1}\\
+  & -\sigma^2\delta v_z = \gamma c_s^2 \frac{d\Delta}{dz} +
+  c_s^2\frac{d}{dz}\left(\frac{d\ln\rho}{dz}\delta v_z\right) +
+  \left(\gamma-1\right)\frac{d\ln\rho}{dz} \Delta.\label{adia_iso2}
 \end{align}
 {\bf note: incompressible mode, set delta to zero. only works for
   constant gravity.}
@@ -18,22 +18,22 @@ We again make the low-frequency approximation
 and ignore the vertical dependence of $\Omega$ and $\kappa$ except
 where their vertical derivatives appear explicitly in the above
 equations. We thus make the replacement $D\to \Omega_k^2$, as before
-for isothermal perturbations. Here, we also use
-the fact that in the global disk,
+for isothermal perturbations. Here, we also use the fact that in the
+global disk, 
 \begin{align}
-  r\frac{\p \Omega^2}{\p z} = - \frac{\p\ln\rho}{\p z}\frac{\p
-    c_s^2}{\p r} = -\frac{\p \ln\rho}{\p z} \frac{qc_s^2}{r},
+  r\frac{\p \Omega^2}{\p z} = -\frac{\p \ln\rho}{\p z} \frac{qc_s^2}{r},
 \end{align}
-where the second equality follows from the power-law prescription of
-the sound-speed for $\Gamma=1$. 
-
+for the power-law prescription of the midplane sound-speed for
+$\Gamma=1$.  
+ 
 Combining Eq. \ref{adia_iso1} and Eq. \ref{adia_iso2} with the above
-substitutions we obtain, in terms of dimensionless variables defined previously, an equation for $\delta v_z$,
+substitutions we obtain, in terms of dimensionless variables defined
+previously, an equation for $\delta v_z$, 
 \begin{align}
   0 =& \dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
     \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime\notag\\
   &+\left\{\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right)\right.\notag\\
-  &\phantom{0=}\left.-\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii\epsilon
+  &\phantom{0=}\left.-\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii\epsilon  
           q}{\hat{k}}\right)\ln\rho^{\prime 2}\right]\right\}\delta v_z.\label{adia_iso3}
 \end{align}
 We multiply Eq. \ref{adia_iso3} by $\rho\delta v_z^*$ and
@@ -68,12 +68,12 @@ gradient when there is no vertical shear. It gives an imaginary
 contribution to $\hat{\sigma}$ when $q\neq0$, but this is a factor
 $|\epsilon/\hat{k}|$ smaller than the real (stabilizing) contribution,
 since $\epsilon\ll 1$ for a thin disk and we (usually) consider
-$\hat{k}\gg1$. Thus, instability is expected to be due to the 
+$\hat{k}\gg1$. Thus, instability is expected to associated with the 
 last term on the RHS of Eq. \ref{adia_integral}. 
   
 \subsubsection{Explicit solutions in the thin-disk limit}
-To simplify further, we consider the problem in the thin-disk limit so
-that $\ln \rho \simeq -\zhat^2/2$. Eq. \ref{adia_iso3} becomes 
+We can construct  solutions in the thin-disk limit, in which 
+$\ln(\rho/\rho_0) \simeq -\zhat^2/2$. Eq. \ref{adia_iso3} becomes   
 \begin{align}
   0 = \delta v_z^{\prime\prime} - \zhat A \delta v_z^\prime + \left(B
     - C \zhat^2\right)\delta v_z,
@@ -91,26 +91,25 @@ Let
   \delta v_z(\zhat) =
   g(\zhat)\exp\left(\frac{\alpha\zhat^2}{2}\right), \label{adia_ansatz}
 \end{align}
-where $\alpha$ is a constant to be chosen for convenience. We require
+where $\alpha$ is a constant to be chosen for convenience. Inserting
+Eq. \ref{adia_ansatz} into Eq. \ref{adia_thin} gives
+\begin{align}
+  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime + \left(B +
+    \alpha\right)g
+  +\left(\alpha^2 - \alpha A - C\right)\zhat^2 g.
+\end{align}
+We choose $\alpha$ to make the coefficient of $\zhat^2g$
+vanish. Furthermore, we require 
 the vertical kinetic energy density $\rho|\delta v_z|^2$ to remain
-finite.  Then assuming
-$g(\zhat)$ is a polynomial, we require 
+finite. Then assuming $g(\zhat)$ is a polynomial, we require 
 \begin{align}
   \real\alpha < \frac{1}{2}. 
 \end{align}
-
-Inserting the ansatz Eq. \ref{adia_ansatz} into Eq. \ref{adia_thin}
-gives
+We therefore choose 
 \begin{align}
-  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime + \left(B +
-      \alpha\right)g
-    +\underbrace{\left(\alpha^2 - \alpha A - C\right)}_\text{set to zero}\zhat^2 g.
-\end{align}
-We choose $\alpha$ to make the coefficient of $\zhat^2g$ vanish. That
-is,
-\begin{align}
-  \alpha = \frac{1}{2}\left(A - \sqrt{A^2 + 4C}\right).
+  \alpha = \frac{1}{2}\left(A - \sqrt{A^2 + 4C}\right). 
 \end{align} 
+
 We now have an equation in the same form as Eq. \ref{iso_ode3}:
 \begin{align}
   0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime +
@@ -141,7 +140,6 @@ Inserting the definition of $B$ we get
 %Recalling that $B$ depends $\hat{\sigma}$, Eq. \ref{adia_disp} gives
 %the eigenfrequency as a function of disk paramters. 
 
-
 \subsubsection{The case of $\gamma=2$}
 In principle, we can solve Eq. \ref{adia_disp} for the mode
 frequencies and growth rates. This is complicated in 
@@ -155,7 +153,7 @@ $A^2+4C$ is real. In this case we find
   \left.- \sqrt{1 - \frac{\hat{k}^2\epsilon^2q^2}{(1+2\hat{k}^2)}}\right].
 \end{align}
 In the limit of a thin disk $\epsilon\to0$ or weak shear $|q|\to0$, we
-have
+have 
 \begin{align}
   \hat{\nu}^2 = \frac{\epsilon^2
     q^2}{4(2M+1)}\frac{\hat{k}^2}{(1+2\hat{k}^2)^{3/2}},\label{gam2_growth}
@@ -167,17 +165,26 @@ and the maximum growth rate occurs at $\hat{k}=\hat{k}_\mathrm{opt}=1$,
   % & \leq \frac{|\epsilon
   % q|}{2\times3^{3/4}}\notag.
 \end{align}
-Eq. \ref{gam2_max_growth} show that growth rates decrease with $M$,
-and there exists a maximum possible growth rate at $M=0$. This is
-despite the fact that in the thin-disk approximation, for which
-$d\Omega^2/dz\propto z$, there is infinite vertical shear
-available.  
+Unlike for isothermal perturbations, Eq. \ref{gam2_max_growth} show
+that growth rates decrease with $M$, and there exists a maximum
+possible growth rate at $M=0$. This is despite the fact that in the
+thin-disk approximation, for which $d\Omega^2/dz\propto z$, there is
+infinite vertical shear available.  
+
+The acceptable solution for $\alpha$ is
+\begin{align}
+  \alpha = \frac{1}{2}\left[\left(1+\ii\epsilon q \hat{k}\right) -
+    \sqrt{1 + \hat{k}^2\left(2-\epsilon^2 q^2\right)}\right]. 
+\end{align}
+Since $\epsilon\ll 1$, $\real\alpha<0$, so the vertical velocity
+eventually decays for large heights. This is unlike for isothermal
+perturbations, in which perturbation magnitudes increase with $|z|$.  
 
 \subsubsection{Comparison with $\gamma=1$}
 We can compare growth rates obtained for $\gamma=2$ to those for
 $\gamma=1$ in the previous section. If we compare growth rates at their 
 respective optimum radial wavelengths, we find
-that for $\gamma=2$ the \emph{maximum} possible growth rate, occuring
+that for $\gamma=2$ the \emph{maximum} growth rate, occuring
 at $M=0$, is still $\sim2$ times smaller than the \emph{minimum} growth
 rate for $\gamma=1$. That is,
 \begin{align}

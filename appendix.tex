@@ -1,0 +1,69 @@
+\section{Alternative inference of instability in the presence of weak
+  vertical shear}\label{pert_theory}
+We can also investigate the destabilizing effect of vertical shear
+without explicitly solving the full governing equation,
+Eq. \ref{iso_ode3}. We first
+consider a system with $q\equiv0$, for which the eigenfunctions are
+Hermite polynomials and the real eigenfrequencies are known. We then
+perturb this system by introducing a weak vertical shear ($|q|\ll1$)
+and linearize the governing equation. This procedure is
+\begin{align}   
+  q \to 0 + \delta q,\quad
+  W \to \He_n + \delta W,\quad
+  \hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}. 
+\end{align}
+%where for this exercise we restore $\sigma$ as the eigenfrequency. 
+
+Linearizing the integral relation Eq. \ref{integral_relation1} in the
+thin-disk limit, and taking the
+imaginary part, we have
+\begin{align}
+  2\hat{\sigma}\imag(\delta\hat{\sigma})
+  \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
+  \He_n^2(\hat{z}) d\hat{z}
+  = \delta q \epsilon \hat{k} 
+  \int_{-\infty}^{\infty}
+  w(\zhat)\hat{z}\He_n(\hat{z})\He_n^\prime(\zhat) d\hat{z}
+\end{align}
+Recognizing $\hat{z} = \He_1(\hat{z})$ and using $\He_n^\prime = n
+\He_{n-1}$ we have
+ \begin{align}
+   2\hat{\sigma}\imag(\delta\hat{\sigma})
+   \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
+   \He_n^2(\hat{z}) d\hat{z}
+   =\delta q \epsilon \hat{k} 
+   \int_{-\infty}^{\infty}
+   w(\zhat)\He_1(\hat{z})\He_n(\hat{z})n\He_{n-1}(\hat{z})d\hat{z}. 
+ \end{align}
+
+Finally, we evaluate the integrals using the results
+\begin{align}
+  \int_{-\infty}^{\infty}
+  w(\xi) \He_k(\xi)\He_l(\xi) d\xi = \sqrt{2\pi}k!\delta_{kl} \quad
+% \end{align}
+\text{and} \quad
+% \begin{align}
+  \int_{-\infty}^{\infty}
+  w(\xi) \He_m(\xi)\He_k(\xi)\He_l(\xi) d\xi =
+  \frac{\sqrt{2\pi}m!k!l!}{(j-m)!(j-k)!(j-l)!}, 
+\end{align}
+where $j = (m+k+l)/2$. We then obtain
+ \begin{align}
+   2\hat{\sigma}\imag(\delta\hat{\sigma})
+  \left(1+\hat{k}^2\right) = \delta q \epsilon \hat{k} n.
+ \end{align}
+Inserting the original eigenfrequency $\hat{\sigma} = \pm
+\sqrt{n}(1+\hat{k}^2)^{-1/2}$ gives
+\begin{align}
+  \imag(\delta\hat{\sigma})= \pm \frac{1}{2}\delta q \epsilon
+  \sqrt{n} \frac{\hat{k}}{\sqrt{1+\hat{k}^2}}. 
+\end{align}
+This result agrees with Eq. \ref{simple_growth} in the limit
+$|q|\to0$. 
+%for $n=1$, since the
+%function $\He_1$ solves the governing equation exactly. 
+For $\hat{k}\gg 1$ we have
+\begin{align}
+  \imag(\delta\hat{\sigma})\simeq \pm \frac{1}{2}\delta q \epsilon
+  \sqrt{n} \sgn{\hat{k}}. 
+\end{align}
