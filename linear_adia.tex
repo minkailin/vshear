@@ -7,27 +7,31 @@ and $\Delta \equiv \nabla\cdot\delta\bm{v}$ to obtain
   &\Delta\left(1 + \frac{\gamma c_s^2 k_x^2}{D}\right) = \frac{d\delta
     v_z}{dz} + \frac{\ii k_x^2}{D}\left(\ii c_s^2 \frac{d\ln\rho}{dz}
     - \frac{r}{k_x}\frac{d\Omega^2}{dz}\right)\delta v_z,\label{adia_iso1}\\
-  & -\sigma^2\delta v_z = \gamma c_s^2 \frac{d\Delta}{dz} +
-  c_s^2\frac{d}{dz}\left(\frac{d\ln\rho}{dz}\delta v_z\right) +
+  & -\frac{\sigma^2}{c_s^2}\delta v_z = \gamma \frac{d\Delta}{dz} +
+  \frac{d}{dz}\left(\frac{d\ln\rho}{dz}\delta v_z\right) +
   \left(\gamma-1\right)\frac{d\ln\rho}{dz} \Delta.\label{adia_iso2}
 \end{align}
-{\bf note: incompressible mode, set delta to zero. only works for
-  constant gravity.}
+%{\bf note: incompressible mode, set delta to zero. only works for
+% constant gravity.}
 
-We again make the low-frequency approximation
-and ignore the vertical dependence of $\Omega$ and $\kappa$ except
-where their vertical derivatives appear explicitly in the above
-equations. We thus make the replacement $D\to \Omega_k^2$, as before
-for isothermal perturbations. Here, we also use the fact that in the
+We make the low-frequency approximation and the replacement
+$D\to \Omega_k^2$ in Eq. \ref{adia_iso1}---\ref{adia_iso2}. For the
+analysis to be carried out, the latter is a more limiting
+approximation than for isothermal perturbations because we make the
+replacement before combining the pair of equations above. 
+
+
+
+Here, we also use the fact that in the
 global disk, 
 \begin{align}
   r\frac{\p \Omega^2}{\p z} = -\frac{\p \ln\rho}{\p z} \frac{qc_s^2}{r},
 \end{align}
 for the power-law prescription of the midplane sound-speed for
 $\Gamma=1$.  
- 
-Combining Eq. \ref{adia_iso1} and Eq. \ref{adia_iso2} with the above
-substitutions we obtain, in terms of dimensionless variables defined
+
+Making the above substitutions and combining Eq. \ref{adia_iso1}---
+Eq. \ref{adia_iso2} we obtain, in terms of dimensionless variables defined
 previously, an equation for $\delta v_z$, 
 \begin{align}
   0 =& \dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
@@ -36,6 +40,7 @@ previously, an equation for $\delta v_z$,
   &\phantom{0=}\left.-\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii\epsilon  
           q}{\hat{k}}\right)\ln\rho^{\prime 2}\right]\right\}\delta v_z.\label{adia_iso3}
 \end{align}
+
 We multiply Eq. \ref{adia_iso3} by $\rho\delta v_z^*$ and
 integrate vertically, assume boundary terms vanish when integrating by
 parts, to obtain
