@@ -32,17 +32,19 @@ equation Eq. \ref{iso_ode} with the following approximations:
 \item We consider eigenvalues such that
   $|\sigma^2|\ll \kappa^2$. Then we can replace $D=\kappa^2 -\sigma^2\to
   \kappa^2$. The problem simplifies because the eigenvalue now only
-  appears in the last term in Eq. \ref{iso_ode}. 
+  appears in the last term in Eq. \ref{iso_ode}. We call this the
+  low-frequency approximation. 
 \item We are mainly interested in the effect of vertical shear, i.e. $q\neq
   0$. This is already captured explicitly in Eq. \ref{iso_ode} through
   the factor $d\Omega^2/dz$. We therefore simplify further by ignoring
   the vertical dependence of $\kappa^2$ elsewhere. For clarity, we
-  will replace $\kappa^2$ with $\Omega_k^2$.%, although the discussion
+  will replace $\kappa^2$ with $\Omega_k^2$. 
+  % , although the discussion
   % is unchanged if we replaced 
   % $\kappa^2$ with $\kappa^2(0)$, for example.    
 \end{enumerate}
-These assumptions amount to making the replacement $D\to\Omega_k^2$.  
-We will consider sound-speed profiles with $q<0$ in the global 
+Making both of these approximations is equivalent to the replacement
+$D\to\Omega_k^2$.  We will consider sound-speed profiles with $q<0$ in the global 
 disk. Then $\Omega^2(z)$ decreases away from the midplane,
 and may reach small values for sufficiently large $|z|$, which
 invalidates the low-frequency approximation. In principle, then, the

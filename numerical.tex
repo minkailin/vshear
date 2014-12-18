@@ -22,7 +22,8 @@ perturbations ($\gamma=1$). The parameters are $q=-1$,
 $p=-1.5$, $\epsilon=0.1$ and $k_x = 200\pi/r$ (or $\hat{k} = 20\pi$),
 with solid vertical boundaries. 
 
-For this problem we solve Eq. \ref{iso_ode1}, using a pseudo-spectral
+For this problem we solve Eq. \ref{iso_ode}, with $D$ replaced by
+$\kappa^2$, using a pseudo-spectral
 method by expanding $W$ in Chebyshev polynomials $T_l$ up to $l=512$
 and discretizing the equation on a grid with
 $\zmax=10H_\mathrm{iso}$. This procedure converts the linear problem
