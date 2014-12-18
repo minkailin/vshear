@@ -1,4 +1,4 @@
-\subsection{Adiabatic perturbations} 
+\subsection{Adiabatic perturbations}\label{analytic_adia}
 We now extend the above discussion to general $\gamma$, but in the
 adiabatic limit ($t_c\to\infty$). We eliminate variables from 
 Eq. \ref{lin_mass}---\ref{lin_energy} in favor of $\delta v_z$ 
@@ -14,15 +14,12 @@ and $\Delta \equiv \nabla\cdot\delta\bm{v}$ to obtain
 %{\bf note: incompressible mode, set delta to zero. only works for
 % constant gravity.}
 
-We make the low-frequency approximation and the replacement
-$D\to \Omega_k^2$ in Eq. \ref{adia_iso1}---\ref{adia_iso2}. For the
-analysis to be carried out, the latter is a more limiting
-approximation than for isothermal perturbations because we make the
-replacement before combining the pair of equations above. 
-
-
-
-Here, we also use the fact that in the
+We make the low-frequency approximation and the replacement 
+$D\to \Omega_k^2$ in Eq. \ref{adia_iso1}---\ref{adia_iso2}. For
+simplicity we do this before combining these equations later. We  
+show in Appendix \ref{adia_improve} that making these approximations
+after combining  Eq. \ref{adia_iso1}---\ref{adia_iso2} adds unecessary
+complexity for thin disks. Here, we also use the fact that in the
 global disk, 
 \begin{align}
   r\frac{\p \Omega^2}{\p z} = -\frac{\p \ln\rho}{\p z} \frac{qc_s^2}{r},
@@ -30,7 +27,7 @@ global disk,
 for the power-law prescription of the midplane sound-speed for
 $\Gamma=1$.  
 
-Making the above substitutions and combining Eq. \ref{adia_iso1}---
+Making the above substitutions and eliminating $\Delta$ between Eq. \ref{adia_iso1}---
 Eq. \ref{adia_iso2} we obtain, in terms of dimensionless variables defined
 previously, an equation for $\delta v_z$, 
 \begin{align}
@@ -67,17 +64,18 @@ of vertical shear. In the presence of vertical shear $q\neq0$ and
 $\hat{\sigma}$ is generally complex, which implies the possibility of
 instability.  
 
-Note that the term with $\ln\rho^{\prime 2}$ in the integrand (third
-term on the RHS) represents stabilization by the vertical entropy
-gradient when there is no vertical shear. It gives an imaginary
-contribution to $\hat{\sigma}$ when $q\neq0$, but this is a factor
-$|\epsilon/\hat{k}|$ smaller than the real (stabilizing) contribution,
+Note that when $\gamma>1$ and $q=0$, the term with $\ln\rho^{\prime
+  2}$ in the integrand (third term on the RHS) represents
+stabilization by the vertical entropy gradient (real bouyancy frequency). 
+It gives an imaginary contribution to $\hat{\sigma}$ when $q\neq0$,
+but this is a factor $|\epsilon/\hat{k}|$ smaller than the real
+(stabilizing) contribution, 
 since $\epsilon\ll 1$ for a thin disk and we (usually) consider
-$\hat{k}\gg1$. Thus, instability is expected to associated with the 
+$\hat{k}\gg1$. Thus, instability is expected to be associated with the 
 last term on the RHS of Eq. \ref{adia_integral}. 
-  
+
 \subsubsection{Explicit solutions in the thin-disk limit}
-We can construct  solutions in the thin-disk limit, in which 
+We can construct solutions in the thin-disk limit, in which 
 $\ln(\rho/\rho_0) \simeq -\zhat^2/2$. Eq. \ref{adia_iso3} becomes   
 \begin{align}
   0 = \delta v_z^{\prime\prime} - \zhat A \delta v_z^\prime + \left(B
@@ -104,9 +102,9 @@ Eq. \ref{adia_ansatz} into Eq. \ref{adia_thin} gives
   +\left(\alpha^2 - \alpha A - C\right)\zhat^2 g.
 \end{align}
 We choose $\alpha$ to make the coefficient of $\zhat^2g$
-vanish. Furthermore, we require 
-the vertical kinetic energy density $\rho|\delta v_z|^2$ to remain
-finite. Then assuming $g(\zhat)$ is a polynomial, we require 
+vanish, and impose the vertical kinetic energy density
+$\rho|\delta v_z|^2$ to remain finite. Then assuming $g(\zhat)$ is a
+polynomial, we require  
 \begin{align}
   \real\alpha < \frac{1}{2}. 
 \end{align}
@@ -142,12 +140,16 @@ Inserting the definition of $B$ we get
   \left(\frac{1}{\gamma}-\frac{1}{2}\right) +\frac{\ii}{2}\epsilon q
   \hat{k} + \frac{1}{2}\left(2M+1\right)\left(A^2 + 4C\right)^{1/2}\label{adia_disp}. 
 \end{align}
+This gives the eigenfrequency $\hat{sigma}$ and completes the solution
+description.  
+
 %Recalling that $B$ depends $\hat{\sigma}$, Eq. \ref{adia_disp} gives
 %the eigenfrequency as a function of disk paramters. 
 
 \subsubsection{The case of $\gamma=2$}
 In principle, we can solve Eq. \ref{adia_disp} for the mode
-frequencies and growth rates. This is complicated in 
+frequencies and growth rates as a function of the disk parameters and
+the radial wavenumber. This is complicated in 
 general, but simplifies for $\gamma=2$, for which the quantity
 $A^2+4C$ is real. In this case we find
 \begin{align}
@@ -170,20 +172,24 @@ and the maximum growth rate occurs at $\hat{k}=\hat{k}_\mathrm{opt}=1$,
   % & \leq \frac{|\epsilon
   % q|}{2\times3^{3/4}}\notag.
 \end{align}
-Unlike for isothermal perturbations, Eq. \ref{gam2_max_growth} show
-that growth rates decrease with $M$, and there exists a maximum
-possible growth rate at $M=0$. This is despite the fact that in the
-thin-disk approximation, for which $d\Omega^2/dz\propto z$, there is
-infinite vertical shear available.  
+Unlike isothermal perturbations, Eq. \ref{gam2_max_growth} shows that
+there is a maximum possible growth rate for $M=0$, and growth rates decrease with increasing $M$. This
+is despite the fact that in the thin-disk approximation 
+$d\Omega^2/dz\propto z$, so there is infinite vertical shear
+available.     
 
-The acceptable solution for $\alpha$ is
+The acceptable solution for $\alpha$ when $\gamma=2$ is
 \begin{align}
   \alpha = \frac{1}{2}\left[\left(1+\ii\epsilon q \hat{k}\right) -
     \sqrt{1 + \hat{k}^2\left(2-\epsilon^2 q^2\right)}\right]. 
 \end{align}
 Since $\epsilon\ll 1$, $\real\alpha<0$, so the vertical velocity
-eventually decays for large heights. This is unlike for isothermal
-perturbations, in which perturbation magnitudes increase with $|z|$.  
+eventually decays for large heights. For $\hat{k}\gg 1$ the
+perturbation decays rapidly away from the midplane. This is again
+unlike isothermal perturbations, whose magnitude increase with $|z|$.  
+
+%gauss decay means boundary conditions have no influence, all perts go
+%to zero
 
 \subsubsection{Comparison with $\gamma=1$}
 We can compare growth rates obtained for $\gamma=2$ to those for
@@ -212,15 +218,17 @@ $\gamma=2$ disk is at most $2^{-5/4}\sqrt{|\epsilon q|}$ times that in a
 $\gamma=1$ disk. For $\epsilon = 0.1$ and $|q|=1$, this factor is
 $\sim 0.1$.  
 
-In Fig. \ref{adia_growth} we plot the growth rate $|\hat{\nu}|$ as a
+In Fig. \ref{adia_growth} we plot the eigenfrequencies as a
 function of the radial wavenumber $\hat{k}$, for a range of adiabatic
-indices, using Eq. \ref{adia_disp}. The presence of a positive
-vertical entropy gradient is strongly stabilizing. This is because the
-vertical shear grows as $z$ away from the midplane (and has a maximum
-when the thin-disk approximation is relaxed), but the
-square of the bouyancy frequency, which is stabilizing, grows as $z^2$
-away from the midplane. The entropy $P/\rho^\gamma$ formally diverges
-for $z\to\infty$ even without the thin-disk approximation.        
+indices, using Eq. \ref{adia_disp}. The low-frequency approximation
+is questionable for $\hat{k}\lesssim4$ since
+$|\hat{\sigma}|^2\gtrsim0.2$. For large $\hat{k}$ the presence of a
+positive vertical entropy gradient is strongly stabilizing. This is
+because the vertical shear grows as $z$ away from the midplane (and
+has a maximum when the thin-disk approximation is relaxed), but square
+of the bouyancy frequency, which is stabilizing, grows as $z^2$ away
+from the midplane. %The entropy $P/\rho^\gamma$ formally diverges   
+%for $z\to\infty$ even without the thin-disk approximation.        
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/rate_theory_om}

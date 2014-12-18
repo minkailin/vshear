@@ -67,3 +67,66 @@ For $\hat{k}\gg 1$ we have
   \imag(\delta\hat{\sigma})\simeq \pm \frac{1}{2}\delta q \epsilon
   \sqrt{n} \sgn{\hat{k}}. 
 \end{align}
+
+\section{Improving the nearly-Keplerian approximation for adiabatic
+  disks}\label{adia_improve}
+In \S\ref{analytic_adia} we made the replacement $D\to\Omega_k^2$
+before combining Eq. \ref{adia_iso1}---\ref{adia_iso2} to derive
+Eq. \ref{adia_iso3}. This procedure ignores the vertical dependence of
+$D$. We show here that this has no significant consequence for thin
+disks. 
+
+Differentiating Eq. \ref{adia_iso1} properly gives
+\begin{align}
+  \left(D + \gamma k_x^2 c_s^2\right)\frac{d\Delta}{dz}=& D
+  \frac{d^2\delta v_z}{dz^2} + k_x^2c_s^2\left[\frac{\gamma}{\left(D + \gamma k_x^2 c_s^2\right)}\frac{dD}{dz} + \ii
+    \frac{d\ln\rho}{dz}\left(\ii +
+      \frac{q}{k_xr}\right)\right]\frac{d\delta v_z}{dz}\notag\\
+  &+ \ii k_x^2 c_s^2 \left(\ii +
+      \frac{q}{k_xr}\right)\left[\frac{d^2\ln\rho}{dz^2} -
+      \frac{1}{\left(D + \gamma
+          k_x^2c_s^2\right)}\frac{dD}{dz}\frac{d\ln\rho}{dz}\right]\delta
+    v_z. \label{adia_diso1}
+\end{align}
+The terms that were ignored in deriving Eq. \ref{adia_iso3} are those
+proportional to $dD/dz$ in Eq. \ref{adia_diso1}. We estimate the
+importance of these terms by noting that 
+\begin{align}
+  \frac{dD}{dz}\equiv \frac{d\kappa^2}{dz} \simeq \frac{d\Omega^2}{dz}
+  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2},
+\end{align}
+for thin disks. Then Eq. \ref{adia_diso1} becomes
+\begin{align}
+\left(D + \gamma k_x^2 c_s^2\right)\frac{d\Delta}{dz}=& D
+  \frac{d^2\delta v_z}{dz^2} - k_x^2c_s^2\frac{d\ln\rho}{dz}\left[ 1 - 
+      \frac{\ii q}{k_xr}  +  \frac{\gamma q c_s^2}{r^2\left(D +
+        \gamma k_x^2 c_s^2\right)}\right]\frac{d\delta
+    v_z}{dz}\notag\\ 
+  &- k_x^2 c_s^2 \left(1 - 
+      \frac{\ii q}{k_xr}\right)\left[\frac{d^2\ln\rho}{dz^2} + 
+      \frac{qc_s^2}{r^2\left(D + \gamma
+          k_x^2c_s^2\right)}\left(\frac{d\ln\rho}{dz}\right)^2\right]\delta
+    v_z. \label{adia_diso2}
+\end{align}
+Since $D\sim \Omega_k^2$ in the low-frequency limit, we 
+see from Eq. \ref{adia_diso2} that the neglected terms are
+$O(\epsilon^2)$. We can make this explicit by combining
+Eq. \ref{adia_diso1}---\ref{adia_diso2} and Eq. \ref{adia_iso2}, then
+set $D\to\Omega_k^2$. In terms of non-dimensional variables, the result
+is  
+\begin{align}
+   &\delta v_z ^{\prime\prime} + \left(1 + \ii\epsilon q\hat{k} -
+    \frac{\gamma q \epsilon^2\hat{k}^2}{1+\gamma
+      \hat{k}^2}\right)\ln\rho^{\prime}\delta v_z^\prime +
+  \left[\left(\frac{1}{\gamma} + \ii \epsilon q
+      \hat{k}\right)\ln\rho^{\prime\prime} - \hat{k}^2\left(1 -
+      \frac{\ii\epsilon
+        q}{\hat{k}}\right)\left(\frac{\gamma-1}{\gamma} +
+      \frac{q\epsilon^2}{1+\gamma\hat{k}^2}\right)\ln\rho^{\prime
+      2}\right]\delta v_z \notag\\&=
+  -\hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right)\delta v_z\label{adia_diso3}.
+\end{align}   
+Eq. \ref{adia_diso3} differs from Eq. \ref{adia_iso3} by terms
+proportional to $\epsilon^2$. For a thin disk, $\epsilon\ll1$, so
+neglecting these terms has no qualitative effect on the discussion in
+\S\ref{analytic_adia}. 
