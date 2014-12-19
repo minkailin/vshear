@@ -14,7 +14,8 @@ moderate values of $k_x$. % This level of approximation lies in between
 %We will solve different versions of the linearized equations depending
 %on the disk properties, but in all cases we use 
 
-\subsection{Vertically isothermal disks with isothermal perturbations}   
+\subsection{Vertically isothermal disks with isothermal
+  perturbations}\label{vertiso_pertiso} 
 We first validate the low-frequency approximation by re-producing
 results from \cite{mcnally14} who solved the full problem for
 vertically isothermal disks ($\Gamma=1$) subject to isothermal
@@ -26,7 +27,7 @@ For this problem we solve Eq. \ref{iso_ode}, with $D$ replaced by
 $\kappa^2$, using a pseudo-spectral
 method by expanding $W$ in Chebyshev polynomials $T_l$ up to $l=512$
 and discretizing the equation on a grid with
-$\zmax=10H_\mathrm{iso}$. This procedure converts the linear problem
+$\zmax=10\epsilon r$. This procedure converts the linear problem
 to a standard matrix eigenvalue problem.   
 
 Fig. \ref{lowfreq_eigen} shows the eigenvalues $\sigma = \omega +
@@ -68,3 +69,65 @@ solutions discussed in \S\ref{iso_poly}.
 
 \subsection{Stabilization of the VSI by a positive vertical entropy
   gradient}
+We demonstrate the (strong) stabilizing effect of a  
+positive vertical entropy gradient. We solve the more general form of
+the linear problem, Eq. \ref{ode_w}---\ref{ode_Q}, again with the
+replacement $D\to\kappa^2$. We consider an effectively vertically
+isothermal disk by setting $\Gamma=1.011$ with adiabatic index
+$\gamma=2$. We also set $\beta=10^9$ so the cooling term is
+effectively switched off. Other disk and perturbation parameters are
+the same as in \S\ref{vertiso_pertiso}. 
+
+We use the same pseudo-spectral method as before. Here we set
+$\zmax = 2\epsilon r$ and impose a free surface. This boundary
+condition was found to be most convenient for numerical
+implementation. Since we expect the perturbations to decay rapidly
+away from the midplane (see \S\ref{analytic_adia}), we do not expect 
+boundary conditions to play an important role, provided that $\zmax$ is
+sufficiently large. 
+
+Fig. \ref{lowfreq_eigen_adia} show the eigenvalues for this
+problem. The growth rates are about an order of magnitude smaller than
+the previous case. The fundamental VSI mode is that with
+$\mathrm{max}|\nu|$. Its expected and numerically-calculated growth
+rates compares well, with 
+\begin{align*}
+  \nu = 0.03751 \epsilon \Omega_k &\quad \text{(from
+    Eq. \ref{gam2_growth_rate})},\\
+  \nu = 0.03682 \epsilon \Omega_k &\quad \text{(numerical)}.
+\end{align*}
+The fundamental mode is plotted in Fig. \ref{lowfreq_eigenfunc_adia},
+and clearly show that perturbations are rapidly stabilized away from
+the midplane. For the adopted disk and perturbation parameters 
+($|q|=1$ and $\hat{k} = 20\pi$), Eq. \ref{gam2_alpha} gives $\real{\alpha}\simeq - 43.8$,
+corresponding to a characteristic decay lengthscale of $\simeq
+0.15\epsilon r$, which is consistent with that observed in 
+Fig. \ref{lowfreq_eigenfunc_adia}. 
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/eigenvalues_adia}
+  \caption{Eigenvalues in the low-frequency approximation for the
+    vertical shear instability in a nearly-vertically isothermal disk
+    ($\Gamma=1.011$) evolved adiabatically with $\gamma=2$ and
+    $\beta=10^9$. The disk
+    parameters are $q=-1$, 
+    $p=-1.5$ and $\epsilon=0.1$, while the perturbation radial
+    wavenumber is $k_x=200\pi/r$. \label{lowfreq_eigen_adia}
+  }
+\end{figure}
+  
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/eigenvectorvz_adia}
+  \caption{Fundamental VSI mode in a nearly-vertically
+    isothermal disk ($\Gamma=1.011$) evolved adiabatically
+    ($\gamma=2$, $\beta=10^9$). This eigenfunction 
+    corresponds to the top-left eigenvalue displayed in 
+    Fig. \ref{lowfreq_eigen_adia} (largest $|\nu|$).  
+    The solid and dashed lines are $\real \delta v_z$ and $\imag
+    \delta v_z$, respectively.  
+    \label{lowfreq_eigenfunc_adia}
+  }
+\end{figure}
+
+\subsection{Effect of cooling} 

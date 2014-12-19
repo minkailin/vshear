@@ -36,8 +36,17 @@ $G$ is the gravitational constant.
 The global sound-speed $c_s(r,z)$ is given by
 \begin{align}
   c_s^2\equiv \frac{dP}{d\rho} =
-  c_{s0}^2(r)\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1}. 
+  c_{s0}^2(r)\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} = \frac{\Gamma P}{\rho}. 
 \end{align}
+For discussion purposes it is useful to define the vertical buoyancy frequency $N_z$ via
+\begin{align}
+  N_z^2 = c_s^2 \left(\frac{\gamma -
+      \Gamma}{\gamma}\right)\left(\frac{\p\ln\rho}{\p z}\right)^2,   
+\end{align}
+and we are interested in neutrally or sub-adiabatically stratified
+disks with $\Gamma\leq \gamma$ so that $N_z^2\geq0$.  
+
+
 
 The equilibrium disk satisfies
 \begin{align}
@@ -141,7 +150,9 @@ where $\bm{v}$ is the velocity field relative to the bulk flow
 (i.e. $\bm{v}=\bm{0}$ in equilibrium),  
 subscript $0$ indicates evaluation at $r=r_0$. In the energy equation
 the ratio of specific heats $\gamma$ is assumed constant, 
-and we have included a thermal relaxation term with timescale $t_c$.  
+and we have included a thermal relaxation term with timescale
+$t_c=\beta\Omega_k^{-1}$ with $\beta$  being a dimensionless input
+parameter.    
 
 \subsection{Linearization}
 We perturb the system such that
