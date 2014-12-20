@@ -252,27 +252,28 @@ surpressed. This is the limit where the term proportional to
 $t_c^{-1}$ in the linearized energy equation (Eq. \ref{lin_energy})
 becomes negligible compared to the term proportional to
 $\gamma/\Gamma-1$. The latter term is associated with the vertical
-entropy gradient, or buoyancy frequency $N_z$. 
+entropy gradient, or buoyancy frequency squared, $N_z^2$. 
 
 Reversing the argument, we expect to recover the VSI when the bouyancy
 frequency becomes negligible compared to the cooling rate, or 
 \begin{align}
-  t_c \ll \frac{1}{N_z}. 
+  t_c \ll \frac{\Omega}{\gamma N_z^2}. 
 \end{align} 
 Parametrizing $t_c = \beta\Omega_k^{-1}$ and inserting the expression
-for $N_z$ appropriate for vertically isothermal disks, we expect
+for $N_z^2$ appropriate for vertically isothermal disks, we expect
 \begin{align}
   \beta \ll
-  \frac{1}{H_\mathrm{iso}\sqrt{\frac{\gamma-1}{\gamma}}\left|\frac{\p\ln\rho}{\p
-          z}\right|} 
+  \frac{1}{H^2_\mathrm{iso}\left(\gamma-1\right)\left(\frac{\p\ln\rho}{\p
+          z}\right)^2} 
 \end{align}
-is required to enable the VSI. This inequality is satisfied at the
+is required to enable the VSI, where we used $\Omega\sim\Omega_k$.  
+This inequality is satisfied at the
 midplane and as $|z|\to\infty$. It can be satisifed at all heights if
 it is satisfied at the height of $\mathrm{max}|\p\ln\rho/\p z|$. 
-Using the expression for the density field for vertically isothermal
+Using the full expression for the density field for vertically isothermal
 disks (Eq. \ref{vertiso_eqm}), we expect 
 \begin{align}
-  \beta \ll \epsilon\frac{3^{3/2}}{2}\sqrt{\frac{\gamma}{\gamma-1}},
+  \beta \ll \frac{27}{4(\gamma-1)}\epsilon^2,
 \end{align}
-i.e. $\beta\ll O(\epsilon)$, is a sufficient condition for
+i.e. $\beta\ll O(\epsilon^2)$, is a sufficient condition for
 bouyancy to be negligible.  

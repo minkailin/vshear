@@ -36,7 +36,7 @@ problem.
 
 Unless otherwise stated, our fiducial disk model is a
 nearly-vertically isothermal disk with $\Gamma=1.011$, $p=-1.5$,
-$q=-1$, $\epsilon=0.1$, and the perturbation wavenumber $k_x = 200\pi$
+$q=-1$, $\epsilon=0.1$, and the perturbation wavenumber $k_x = 200\pi/r$
 (or $\hat{k}=20\pi$). 
 
 
@@ -132,9 +132,32 @@ The fundamental mode is plotted in Fig. \ref{lowfreq_eigenfunc_adia},
 and clearly show that perturbations are rapidly stabilized away from
 the midplane. For the adopted disk and perturbation parameters 
 ($|q|=1$ and $\hat{k} = 20\pi$), Eq. \ref{gam2_alpha} gives $\real{\alpha}\simeq - 43.8$,
-corresponding to a characteristic decay lengthscale of $\simeq
+corresponding to a characteristic decay length scale of $\simeq
 0.15\epsilon r$, which is consistent with that observed in 
 Fig. \ref{lowfreq_eigenfunc_adia}. 
+
+Note that the decay lengthscale is rougly the height within which
+vertical shear is larger than the buoyancy frequency squared. That is,
+\begin{align*}
+\left|r\frac{d\Omega^2}{dz}\right|\gtrsim N_z^2
+\end{align*}
+for
+\begin{align*}
+  \left|\frac{z}{\epsilon r}\right| \lesssim \frac{\epsilon|q|\gamma}{\gamma-1},
+\end{align*}
+in a thin, vertically isothermal disk. This evaluates to $z\sim
+0.2\epsilon r$ for the current disk model, consistent with
+Fig. \ref{lowfreq_eigenfunc_adia}. 
+
+Furthermore, the growth rate to should be no larger than the
+maximum vertical shear available within this decay lengthscale. Using 
+Eq. \ref{max_growth} as a rough guide, 
+\begin{align}
+  \frac{\nu}{\epsilon\Omega_k}<\frac{\epsilon |q|^2}\gamma{2(\gamma-1)},
+\end{align}
+or $\nu< 0.1\epsilon\Omega_k$ is expected in our disk model,
+consistent with numerical results. 
+
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/eigenvalues_adia}
