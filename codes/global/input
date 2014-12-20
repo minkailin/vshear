@@ -1,0 +1,7 @@
+&params	smallq = -1.0	    !temperature gradient 
+	smallp = -1.5       !midplane density gradient
+	smallh =  0.05	    !aspect ratio  
+	    kx =  1.5707965 !radial wavenumber, physical wavenumber kx = (input kx)/(smallh*bigH). kopt for h=0.1 is 0.45825757. mcnally used 6.2831853
+           zmax=  5.        !max height
+           vbc = 'nograd'/  !vertical boundary condition (nograd, nopert or nolagp) 
+&grid       nz =  513 /     !vertical grid points

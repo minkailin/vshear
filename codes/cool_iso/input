@@ -1,0 +1,9 @@
+&params	smallq = -1.0	    !temperature gradient
+	smallp = -1.5       !midplane density	gradient
+	smallh =  0.1	    !aspect ratio     
+	gmma  =  2.0        !ratio of specific heats
+	bcool  = 10        !beta-cooling rate   
+	    kx = 6.2831858  !radial wavenumber	 
+	   zmax= 10.0        !max height 
+	    vbc= 'nolagp'/  !vertical bc
+&grid       nz = 513  /     !vertical grid points

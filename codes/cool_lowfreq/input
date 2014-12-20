@@ -1,0 +1,10 @@
+&params	smallq = -1.0	    !temperature gradient
+	smallp =  0.0       !midplane density gradient
+	eps    =  0.1	    !cs/vkep at z=0   
+	gmma   =  1.11       !ratio of specific heats
+        bgmma   = 1.1       !structural index  
+	bcool  =  0.1       !beta-cooling time
+	    kx = 100.0      !radial wavenumber	(in units of 2pi/r)  
+	   zmax= 0.999     !max height (zmax = 1 is zero density surface) 
+	    vbc= 'nolagp'/  !vertical bc (nolagp, nozvel)
+&grid       nz =  513    /  !vertical grid points
