@@ -1,12 +1,12 @@
 module global
   character*6 :: vbc
-  logical :: gterms
-  integer :: nz, nzeff, bignz, nkx
+  logical :: gterms, eigen_trial, eigenv_out
+  integer :: nz, nzeff, bignz, nkx, nb
   real*8, parameter :: pi = 2d0*acos(0d0)
   real*8 :: smallq, smallp, eps, smallh, kx, zmax, gmma, bgmma, bcool, smalls
-  real*8 :: kxmin, kxmax, dlogkx
+  real*8 :: kxmin, kxmax, dlogkx, bmin, bmax, db
   real*8, allocatable :: zaxis(:), logrho(:), dlogrho(:), d2logrho(:), omega2(:), domega2(:), kappa2(:), csq(:), freq(:), growth(:)
-  real*8, allocatable :: kaxis(:)
+  real*8, allocatable :: kaxis(:), baxis(:)
   complex*16, parameter :: ii = (0d0,1d0)
   complex*16, allocatable :: bigW(:), dbigW(:), bigQ(:), vx(:), vy(:), vz(:), dvz(:) 
 end module global
@@ -16,9 +16,11 @@ program vsi
   implicit none
   character*1, parameter :: JOBVL = 'N', JOBVR = 'V'
   integer, allocatable :: ipiv(:), eigen_test(:)
-  integer :: i,ip1, j,k, loc(1), lmax, nzmid, lwork, info
+  integer :: i,ip1, j,k, n, loc(1), lmax, nzmid, lwork, info
   real*8 :: T_l, dT_l, d2T_l, T_lp2, dT_lp2, d2T_lp2, m, zbar,lmode
+  real*8 :: w_re, w_im, dummy
   real*8, allocatable :: rwork(:)
+  complex*16 :: wold
   complex*16, allocatable :: T(:,:), Tp(:,:), Tpp(:,:)
   complex*16, allocatable :: L1(:,:), L2(:,:), L3(:,:), L4(:,:), &
        L5(:,:), L6(:,:), L7(:,:), L8(:,:), &
@@ -26,10 +28,10 @@ program vsi
        L1bar(:,:), L2bar(:,:), L3bar(:,:), L4bar(:,:), L5bar(:,:), &
        L6bar(:,:)
   complex*16,allocatable :: work(:), matrix(:,:), w(:), vl(:,:), &
-       vr(:,:), rhs(:,:)
+       vr(:,:), rhs(:,:), wtrial(:)
   real*8, external :: dlogrho_dz, domega2_dz, omega2_z, logrho_z, kappa2_z, d2logrho_dz2, csq_z 
-  namelist /params/ smallq, smallp, eps, gmma, bgmma, bcool, zmax, vbc, gterms
-  namelist /loop/ kxmin, kxmax, nkx 
+  namelist /params/ smallq, smallp, eps, gmma, bgmma, zmax, vbc, gterms
+  namelist /loop/ kxmin, kxmax, nkx, bmin, bmax, nb, eigen_trial, eigenv_out
   namelist /grid/ nz
   
   !read input parameters.
@@ -69,6 +71,8 @@ program vsi
 
   !allocate grids
   allocate(kaxis(nkx))
+  allocate(baxis(nb))
+  allocate(wtrial(nkx))
 
   allocate(zaxis(nz))
   allocate(logrho(nz))
@@ -127,15 +131,35 @@ program vsi
   allocate(ipiv(bignz))
   
   !setup kaxis. input is kxHiso. then output
-  dlogkx = log10(kxmax/kxmin)/(nkx-1d0)
+  dlogkx = (kxmax-kxmin)/(nkx-1d0)
   do i=1, nkx
-  kaxis(i) =10**(log10(kxmin) + dlogkx*(i-1d0))
+  kaxis(i) = kxmin + dlogkx*(i-1d0)
   enddo
   open(10,file='kaxis.dat')
   do i=1, nkx
      write(10,fmt='(e22.15,x)'), kaxis(i)
   enddo
   close(10)
+
+  !setup bcool axis
+  if(nb.gt.1) then
+  db = (bmax - bmin)/(nb-1d0)
+  else
+  db = 0d0
+  endif
+  do i=1, nb
+  baxis(i) = bmin + db*(i-1d0)
+  enddo
+
+  !read in trial eigenvalues if desired
+  if(eigen_trial.eq..true.) then
+  open(20, file='eigenvalues.dat')
+     do i=1, nkx 
+        read(20, fmt='(3(e22.15,x))') w_re, w_im, dummy 
+        wtrial(i) =dcmplx(w_re, w_im)
+     enddo
+  close(20)  
+  endif 
 
   !setup z axis.
   lmax = nz-1
@@ -185,12 +209,15 @@ program vsi
      enddo
   endif
 
+  open(10,file='baxis.dat')
   open(20,file='eigenvalues.dat')
-  open(30,file='eigenvectors.dat')
-  
+  if(eigenv_out.eq..true.) open(30,file='eigenvectors.dat')
+
+  do n=1, nb  !loop over bcool values
+  bcool = baxis(n) 
+
   do k=1, nkx !loop over kx values
      kx = kaxis(k)*smallh !convert input into code units 
-     print*, 'iteration, kxHiso=', k, kaxis(k)
      
      !set up sub-matrices for linear operators
      do i=1, nzeff
@@ -293,27 +320,48 @@ program vsi
      
      !eigenvalue problem
      call zgeev (JOBVL, JOBVR, bignz, matrix, bignz, W, vl, bignz, VR, bignz, WORK, LWORK, RWORK, INFO) 
-     print*, 'eigen success?',info
+     if (info.ne.0)  print*, 'eigen failed'
      
      freq = dble(w)
      growth=dimag(w)
 
+     if(eigen_trial.eqv..false.)then !find mode from scratch 
+     if(k.eq.1) then !find first mode
      !discard modes with eigenvalues too large or too small
      !discard modes that decay
      !discard modes with too small imaginary part
+     !discard modes that grow faster than the expected maximum
      do i=1, bignz
-        if((abs(w(i)).gt.1d0/eps).or.(growth(i).lt.0d0).or.(abs(w(i)).lt.eps**2d0)) then
+        if((abs(w(i)).gt.1d0/eps).or.(growth(i).lt.0d0).or.(abs(w(i)).lt.eps**2d0).or.(growth(i).gt.0.5d0)) then
            w(i) = (1d6,1d6)
         endif
      enddo
-
      freq = dble(w)
      growth=dimag(w)
      
-     !now pick the mode with smallest |real freq| (fundamental mode)
+     !now pick the mode with smallest |freq| (fundamental mode)
      loc = minloc(abs(freq))
      i = loc(1)
-     write(20,fmt='(2(e22.15,x))'), freq(i), growth(i)
+     else
+     freq = dble(w)
+     growth=dimag(w)
+     loc  = minloc(abs((w-wold)/wold))
+     i    = loc(1)
+     endif
+     wold = w(i)
+     else !find mode based on previous list of eigenvalues (find closest one)
+     freq = dble(w)
+     growth=dimag(w)
+     loc  = minloc(abs((w-wtrial(k))/wtrial(k)))
+     i    = loc(1)
+     endif
+     wtrial(k) = w(i)
+ 
+     if( (mod(n,10).eq.0).or.(n.eq.1)) then !output
+     write(20,fmt='(3(e22.15,x))'), freq(i), growth(i), kaxis(k) 
+     if(n.eq.1) print*, 'kloop, kxHiso=', k, kaxis(k), growth(i)
+
+     if(eigenv_out.eq..true.) then
      bigW = matmul(T,vr(1:nzeff,i))
      dbigW= matmul(Tp,vr(1:nzeff,i))
      
@@ -327,11 +375,18 @@ program vsi
         write(30,fmt='(14(e22.15,x))') dble(bigW(j)), dimag(bigW(j)), dble(dbigW(j)), dimag(dbigW(j)), dble(bigQ(j)), dimag(bigQ(j)), & 
              dble(vx(j)), dimag(vx(j)), dble(vy(j)), dimag(vy(j)), dble(vz(j)), dimag(vz(j)), dble(dvz(j)), dimag(dvz(j)) 
      enddo
-  enddo
-  
-  
+     endif
+     endif
+  enddo!kx loop
+  if( (mod(n,10).eq.0).or.(n.eq.1)) write(10,fmt='(e22.15,x)'), baxis(n)
+  if(n.eq.1) print*, 'bcool, kxHsio, max growth='
+  loc = maxloc(dimag(wtrial))  
+  print*,   baxis(n), kaxis(loc(1)), dimag(wtrial(loc(1))) 
+  enddo!bcool loop
+ 
+  close(10)  
   close(20)
-  close(30)
+  if(eigenv_out.eq..true.) close(30)
 
 end program vsi
 
