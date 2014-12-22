@@ -131,9 +131,9 @@ program vsi
   allocate(ipiv(bignz))
   
   !setup kaxis. input is kxHiso. then output
-  dlogkx = (kxmax-kxmin)/(nkx-1d0)
+  dlogkx = log10(kxmax/kxmin)/(nkx-1d0)
   do i=1, nkx
-  kaxis(i) = kxmin + dlogkx*(i-1d0)
+  kaxis(i) = 10d0**(log10(kxmin) + dlogkx*(i-1d0))
   enddo
   open(10,file='kaxis.dat')
   do i=1, nkx
@@ -357,7 +357,7 @@ program vsi
      endif
      wtrial(k) = w(i)
  
-     if( (mod(n,10).eq.0).or.(n.eq.1)) then !output
+     if(mod(n-1,10).eq.0) then !output
      write(20,fmt='(3(e22.15,x))'), freq(i), growth(i), kaxis(k) 
      if(n.eq.1) print*, 'kloop, kxHiso=', k, kaxis(k), growth(i)
 
@@ -378,10 +378,10 @@ program vsi
      endif
      endif
   enddo!kx loop
-  if( (mod(n,10).eq.0).or.(n.eq.1)) write(10,fmt='(e22.15,x)'), baxis(n)
   if(n.eq.1) print*, 'bcool, kxHsio, max growth='
   loc = maxloc(dimag(wtrial))  
   print*,   baxis(n), kaxis(loc(1)), dimag(wtrial(loc(1))) 
+  if(mod(n-1,10).eq.0) write(10,fmt='(4(e22.15,x))'), baxis(n), kaxis(loc(1)), dble(wtrial(loc(1))), dimag(wtrial(loc(1)))
   enddo!bcool loop
  
   close(10)  
