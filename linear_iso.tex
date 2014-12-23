@@ -284,10 +284,17 @@ infer instability in the presence of vertical shear without explicitly
 solving the governing equation. 
 
 \subsection{Nearly-isothermal perturbations}
-We can use the explicit solution developed above to examine the effect
-of cooling $t_c$ on perturbations with $\gamma>1$. We shall consider
-the limit $t_c\to0$, for which perturbations can be considered
-nearly-isothermal.  
+The explicit solution developed in \S\ref{iso_poly} is valid for
+non-isothermal perturbations $\gamma>1$ if the thermal relaxation
+(cooling) timescale $t_c\equiv0$. We may ask how
+do the eigenfrequencies and eigenfunctions change when we change
+$t_c$ from zero to a small but finite value? For sufficiently small
+$t_c$, for which the perturbations may be considered
+nearly-isothermal, we expect the new solutions to only differ slighly
+from that above. 
+
+% Then we may linearize Eq. \ref{nearly_iso1}---\ref{nearly_iso2} to
+% determine the effect of adding small finite cooling. 
 
 We begin by writing the pair of ODEs for $W$ and $Q$
 (Eq. \ref{ode_w}---\ref{ode_Q}) in the thin-disk, low-frequency, 
@@ -308,20 +315,14 @@ where we recall $\beta = t_c\Omega_k$ is the dimensionless cooling
 time. It is evident that for $\beta\equiv 0$, we recover
 Eq. \ref{iso_ode3}. 
 
-Since we have developed solutions for $\beta\equiv 0$, we may ask how
-do the eigenfrequencies and eigenfunctions change when we change
-$\beta$ from zero to a small but finite value? For sufficiently small
-$\beta$, we expect the new solutions to only differ slighly from that
-above. Then we may linearize Eq. \ref{nearly_iso1}---\ref{nearly_iso2} to
-determine the effect of adding small finite cooling. 
-
-Let 
+We linearize Eq. \ref{nearly_iso1}---\ref{nearly_iso2} about a known
+solution for $\beta\equiv0$. Let 
 \begin{align}\label{nearly_iso_pert}
   \beta \to 0 + \delta\beta,\, W\to W+\delta W,\, Q \to Q+\delta
   Q,\,\hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}, 
 \end{align} 
 where $W=Q$ is the polynomial solution described in \S\ref{iso_poly}
-and $\hat{\sigma}^2$ is given by Eq. \ref{sig2_iso}. Inserting
+with $\hat{\sigma}^2$ given by Eq. \ref{sig2_iso}. Inserting
 Eq. \ref{nearly_iso_pert} into
 Eq. \ref{nearly_iso1}---\ref{nearly_iso2} and keeping only first order
 terms, we obtain
@@ -336,16 +337,18 @@ terms, we obtain
 &\ii\hat{\sigma} \left(\delta W - \delta Q\right) =
 \delta\beta\left(\gamma-1\right)\left(\hat{\sigma}^2W - \hat{z}W^\prime\right).\label{nearly_iso4}
 \end{align}
+This is a pair of inhomogeneous ODEs with a forcing by $W$. The
+homogeneous problem is, of course, just the ODE for $\beta=0$ solved
+in \S\ref{iso_poly}. Hence we only seek the particular solution. 
 
-We could proceed further by considering the entire set of polynomial
-solutions for $W$ described in \S\ref{iso_poly}, but it is
-simplest to look at the fundamental mode. Thus
-we consider the `basic state'
+We could proceed by considering the entire set of polynomial
+solutions for $W$, but it is simplest to look at the fundamental
+mode. Thus we consider the `basic state' 
 \begin{align*}
   W = \hat{z},\quad \hat{\sigma}^2\left(1+\hat{k}^2\right) = 1 +
   \ii\epsilon q \hat{k},
 \end{align*}
-then we can assume
+then
 \begin{align}
   \delta W = b \zhat^3,
 \end{align}
@@ -360,7 +363,8 @@ $\zhat$ and $\zhat^3$, we find
 & 0=  2b\hat{\sigma}+\ii\delta\beta
 \left(\gamma-1\right)\left(\hat{\sigma}^2 - 1\right),
 \end{align}
-which gives
+where the expression for $\hat{\sigma}^2$ was used. Solving for
+$\delta\hat{\sigma}$ gives 
 \begin{align}\label{nearly_iso_dsig}
   \delta \hat{\sigma} =
   -\frac{\ii\left(\gamma-1\right)\hat{k}^2\left(\ii\epsilon
@@ -374,17 +378,31 @@ The imaginary part of Eq. \ref{nearly_iso_dsig} is
         \hat{k}^2\right)\left(1+\hat{k}^2\right)^2}\delta\beta.  
 \end{align}
 Since $\epsilon \ll 1$, introducing finite cooling $\delta\beta>0$
-implies $\delta\nu < 0$, i.e. stabilization. Interestingly, for both
+implies $\delta\hat{\nu} < 0$, i.e. stabilization. Interestingly, for both
 $\hat{k}\to0$ and $\hat{k}\to\infty$ we find $\delta\hat{\nu}\to0$, so
-stabilization by finite cooling is ineffective at very large or very small scales. 
+stabilization by finite cooling is ineffective at very large or very
+small scales. We plot Eq. \ref{nearly_iso_dsig} in Fig. \ref{domegadbeta} with
+$\epsilon=0.05$, $q=-1.0$ and $\gamma=1.4$. For this disk model the
+optimum wavenumber for stabilization is $\hat{k}\sim 6$. 
 
+% This contrasts to the case without vertical shear
+% ($q=0$), in which $\p\hat{\sigma}/\p\beta\to\mathrm{constant}$ as 
+% $\hat{k}\to\infty$.  
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/domegadbeta}
-  \caption{Rate of change of the eigenfrequency $\sigma$ with respect to the
-    introduction of a small but finite cooling time. The plotted 
-    quantity is $\p\hat{\sigma}/\p\beta$ at $\beta=0$, evaluated using
+  \caption{Rate of change of the fundamental VSI eigenfrequency
+    $\sigma$ with respect to the introduction of a small but finite
+    cooling time. The plotted quantity is $\p\hat{\sigma}/\p\beta$ at $\beta=0$, evaluated using
     Eq. \ref{nearly_iso_dsig} with 
-    disk parameters $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$.  
+    disk parameters $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. The real
+    (imaginary) part of $\p\hat{\sigma}/\p\beta$ is shown as the solid
+    (dotted) lines. 
     \label{domegadbeta}}  
 \end{figure}   
+
+One effect of introducing finite thermal relaxation is buoyancy. We
+show in the next section that buoyancy strongly stabilizes the
+VSI. The solution $\delta W\propto\zhat^3$ then makes sense because it
+is most significant for large $\zhat$, i.e. away from the midplane
+where the effect of bouyancy first appears as $t_c$ is increased. 

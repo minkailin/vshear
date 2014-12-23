@@ -192,14 +192,60 @@ $D\to\kappa^2$. We again obtained very similar results.
 
 
 \subsubsection{Other adiabatic indices}
+In Fig. \ref{adia_growth_num} we plot the eigenfrequencies of the
+fundamental VSI mode for a range of $\gamma$ values. This plot is to
+be compared with Fig. \ref{adia_growth}. 
 
+% The numerically-determined eigenfrequencies are qualitatively
+% consistent with the discussion in \S\ref{adia_compare_gam1}.
+There is good agreement between Fig. \ref{adia_growth_num} and
+Fig. \ref{adia_growth} for $k_xH_\mathrm{iso}\gtrsim10$. There is a
+mistach for smaller wavenumbers, especially in the growth
+rates. Actual growth rates decrease slower as $k_xH_\mathrm{iso}\to0$
+than that in Fig. \ref{adia_growth}. Disagreement at small
+$k_xH_\mathrm{iso}$ is not surprising because the low-frequency
+approximation used to obtain Fig. \ref{adia_growth} becomes invalid since
+$|\omega|\sim\Omega_k$ for small $k_x$. 
+
+Given the number of approximations made in \S\ref{adia_compare_gam1},
+Fig. \ref{adia_growth_num} compares well with
+Fig. \ref{adia_growth}. The main qualitative features of the full
+numerical solution in Fig. \ref{adia_growth_num} are captured by
+Fig. \ref{adia_growth}: stabilization for
+$k_xH_\mathrm{iso}\to0$ and $k_xH_\mathrm{iso}\to\infty$,
+stabilization for increasing $\gamma$ (but ineffective at small $k_x$), 
+and the shift of the most unstable wavenumber to smaller values as
+$\gamma$ is increased. 
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/compare_eigen_real1}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/compare_eigen_imag1}
+  \caption{Real frequency (top) and growth rate 
+    (bottom) of the fundamental VSI mode in nearly-vertically   
+    isothermal disks ($\Gamma=1.011$) with $\epsilon=0.1$ and  
+    $q=-1$, subject to adiabatic perturbations
+    ($\beta=10^9$). The eigenfrequencies are calculated by numerically
+    solving the full linear eigenvalue problem. \label{adia_growth_num}}   
+\end{figure}   
 
 \subsection{Effect of thermal relaxation}
-{\bf vertical isothermal disk with tcool}
+We now introduce thermal relaxation. Here we consider a slightly
+different disk model with $\epsilon=0.05$ and
+$\gamma=1.4$. This model was used by \citep{nelson13}, where the
+authors find a cooling timescale of $\beta\geq 0.1$ was sufficient to
+stabilize the VSI in non-linear hydrodynamic simulations. 
 
-\subsection{Vertically non-isothermal disks}
-{\bf big gamma larger than 1 but equal to small gamma, with tcool} 
 
-\subsection{Non-uniform thermal relaxation} 
-{\bf variable tcool, large at midplane, small in atmosphere. simplest
-  model is to multiply tcool by background density} 
+
+
+
+
+
+
+% \subsection{Vertically non-isothermal disks}
+% {\bf big gamma larger than 1 but equal to small gamma, with tcool} 
+
+% \subsection{Non-uniform thermal relaxation} 
+% {\bf variable tcool, large at midplane, small in atmosphere. simplest
+%   model is to multiply tcool by background density} 
