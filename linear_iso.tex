@@ -2,11 +2,12 @@
 We begin with a discussion of vertically isothermal disks
 where $\Gamma=1$, then $c_s$ is a constant in the shearing box. We
 examine separately the limiting case of isothermal perturbations
-($\gamma\equiv1$) and adiabatic perturbations ($\gamma\neq 1$ and
-$t_c\to\infty$).   
+($\gamma\equiv1$ and any value of $t_c$), nearly-isothermal
+perturbations ($\gamma\geq 1$ and $t_c\to0$), and 
+adiabatic perturbations ($\gamma\neq 1$ and $t_c\to\infty$).   
 \subsection{Isothermal perturbations}\label{iso_discuss}
 The linear problem simplifies considerably for the case
-$\Gamma=\gamma=1$. Then 
+$\Gamma=\gamma=1$.  Then 
 \begin{align}
   Q=W. 
 \end{align}
@@ -17,8 +18,10 @@ problem for isothermal perturbations in a vertically isothermal disk,
       r}{D}\frac{d\Omega^2}{dz}\right) \frac{dW}{dz} +
   \sigma^2\left(\frac{1}{c_s^2} + \frac{k_x^2}{D}\right)W=0, 
 \end{align} 
-subject to appropriate boundary conditions. We remark that Eq
-.\ref{iso_ode} is also applicable for    
+subject to appropriate boundary conditions. Eq. \ref{iso_ode} also
+applies to $\gamma>1$ for $t_c\to0$. 
+
+We remark that Eq.\ref{iso_ode} is also applicable for    
 $\gamma=\Gamma\neq 1$ in the limit $t_c\to\infty$ (i.e. neutrally
 stratified adiabatic disks), since in that case  
 $Q\simeq W$ as well. However, the following discussion is only
@@ -239,7 +242,7 @@ Then the coefficients must satisfy the recurrence relation
 where $n$ is not neccessarily an integer. Indeed, if we demand
 a polynomial of degree $L$ as the solution, then the eigenfrequency
 must satisfy
-\begin{align}
+\begin{align}\label{sig2_iso}
 \hat{\sigma}^2 = L\left(\frac{1+\ii q \epsilon
     \hat{k}}{1+\hat{k}^2}\right).
 \end{align}
@@ -279,3 +282,98 @@ numerical solutions of the governing equation for small $L$.
 In Appendix \ref{pert_theory} we give an alternative method to
 infer instability in the presence of vertical shear without explicitly
 solving the governing equation. 
+
+\subsection{Nearly-isothermal perturbations}
+We can use the explicit solution developed above to examine the effect
+of cooling $t_c$ on perturbations with $\gamma>1$. We shall consider
+the limit $t_c\to0$, for which perturbations can be considered
+nearly-isothermal.  
+
+We begin by writing the pair of ODEs for $W$ and $Q$
+(Eq. \ref{ode_w}---\ref{ode_Q}) in the thin-disk, low-frequency, 
+nearly-Keplerian approximations as used previously, as well as
+adopting dimensionless co-ordinates and variables, 
+\begin{align}
+  &\hat{\sigma}^2\left(Q +  \hat{k}^2W\right) \notag\\ 
+  &= \hat{z} \left(1 +
+    \ii\epsilon q \hat{k} \right)\left[W^\prime - \zhat \left(W -
+      Q\right)\right] - \left[W^\prime - \zhat \left(W -
+      Q\right)\right]^\prime\label{nearly_iso1},\\
+&\beta \hat{\sigma}^2\left(W - \gamma Q\right) + \ii\hat{\sigma}
+    \left(W-Q\right)\notag\\
+   & = -\beta\zhat\left(\gamma-1\right) \left[W^\prime - \zhat \left(W -
+      Q\right)\right]\label{nearly_iso2},
+\end{align}
+where we recall $\beta = t_c\Omega_k$ is the dimensionless cooling
+time. It is evident that for $\beta\equiv 0$, we recover
+Eq. \ref{iso_ode3}. 
+
+Since we have developed solutions for $\beta\equiv 0$, we may ask how
+do the eigenfrequencies and eigenfunctions change when we change
+$\beta$ from zero to a small but finite value? For sufficiently small
+$\beta$, we expect the new solutions to only differ slighly from that
+above. Then we may linearize Eq. \ref{nearly_iso1}---\ref{nearly_iso2} to
+determine the effect of adding small finite cooling. 
+
+Let 
+\begin{align}\label{nearly_iso_pert}
+  \beta \to 0 + \delta\beta,\, W\to W+\delta W,\, Q \to Q+\delta
+  Q,\,\hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}, 
+\end{align} 
+where $W=Q$ is the polynomial solution described in \S\ref{iso_poly}
+and $\hat{\sigma}^2$ is given by Eq. \ref{sig2_iso}. Inserting
+Eq. \ref{nearly_iso_pert} into
+Eq. \ref{nearly_iso1}---\ref{nearly_iso2} and keeping only first order
+terms, we obtain
+\begin{align}
+  &2\hat{\sigma}\delta\hat{\sigma}\left(1+\hat{k}^2\right)W +
+  \hat{\sigma}^2 \left(\delta Q + \hat{k}^2\delta W\right)\notag\\
+  &= \zhat \left(1+\ii\epsilon q \hat{k}\right)\left[\delta W^\prime -
+    \zhat \left(\delta W - 
+      \delta Q\right)\right] - \delta W^{\prime\prime}\notag\\
+  &\phantom{=} + \left[\zhat \left(\delta W -
+     \delta Q\right)\right]^\prime,\label{nearly_iso3}\\
+&\ii\hat{\sigma} \left(\delta W - \delta Q\right) =
+\delta\beta\left(\gamma-1\right)\left(\hat{\sigma}^2W - \hat{z}W^\prime\right).\label{nearly_iso4}
+\end{align}
+
+We could proceed further by considering the set of polynomial
+solutions for $W$ described in \S\ref{iso_poly} altogether, but it is
+simplest to look at the fundamental mode. Thus
+we consider the `basic state'
+\begin{align*}
+  W = \hat{z},\quad \hat{\sigma}^2\left(1+\hat{k}^2\right) = 1 +
+  \ii\epsilon q \hat{k},
+\end{align*}
+then we can assume
+\begin{align}
+  \delta W = b \zhat^3,
+\end{align}
+where $b$ is a constant to be determined. Eliminating $\delta Q$ from
+Eq. \ref{nearly_iso3}---\ref{nearly_iso4}, inserting the above
+expressions for $W$ and $\delta W$ and balancing coefficients of
+$\zhat$ and $\zhat^3$, we find
+\begin{align}
+ & 2\left(1+\ii\epsilon q \hat{k}\right) \delta\hat{\sigma} \notag\\& = -6b\hat{\sigma} -
+2\ii \delta \beta\left(\gamma-1\right)\left(\hat{\sigma}^2-1\right) - \ii
+  \hat{\sigma}^2\delta\beta\left(\gamma-1\right),\\
+& 0=  2b\hat{\sigma}+\ii\delta\beta
+\left(\gamma-1\right)\left(\hat{\sigma}^2 - 1\right),
+\end{align}
+which gives
+\begin{align}\label{nearly_iso_dsig}
+  \delta \hat{\sigma} =
+  -\frac{\ii\left(\gamma-1\right)\hat{k}^2\left(\ii\epsilon
+    q - \hat{k}\right)^2}{2\left(1+\ii\epsilon q \hat{k}\right)\left(1+\hat{k}^2\right)^2}\delta\beta.
+\end{align}
+The imaginary part of Eq. \ref{nearly_iso_dsig} is
+\begin{align}
+   \delta\hat{\nu} =
+  -\frac{\left(\gamma-1\right)\hat{k}^2 \left(\hat{k}^2 -
+      2\epsilon^2q^2\hat{k}^2 - \epsilon^2q^2\right)}{2\left(1+\epsilon^2 q^2
+        \hat{k}^2\right)\left(1+\hat{k}^2\right)^2}\delta\beta.  
+\end{align}
+Since $\epsilon \ll 1$, introducing finite cooling $\delta\beta>0$
+implies $\delta\nu < 0$, i.e. stabilization. Interestingly, for both
+$\hat{k}\to0$ and $\hat{k}\to\infty$ we find $\delta\hat{\nu}\to0$, so
+stabilization by finite cooling is ineffective at very large or very small scales. 
