@@ -3,50 +3,82 @@ We begin with a discussion of vertically isothermal disks
 where $\Gamma=1$, then $c_s$ is a constant in the shearing box. We
 examine separately the limiting case of isothermal perturbations
 ($\gamma\equiv1$ and any value of $t_c$, or any value of $\gamma$ with
-$t_c = 0$) and adiabatic perturbations ($\gamma\neq 1$ and $t_c\to\infty$).   
-\subsection{Isothermal perturbations}\label{iso_discuss}
-The linear problem simplifies considerably for the case
-$\Gamma=\gamma=1$.  Then 
-\begin{align}
-  Q=W. 
-\end{align}
-Inserting this into Eq. \ref{ode_w} gives a single equation for the linear stability
-problem for isothermal perturbations in a vertically isothermal disk, 
-\begin{align}\label{iso_ode}
-  \frac{d^2W}{dz^2} + \left(\frac{d\ln{\rho}}{dz} - \frac{\ii k_x
-      r}{D}\frac{d\Omega^2}{dz}\right) \frac{dW}{dz} +
-  \sigma^2\left(\frac{1}{c_s^2} + \frac{k_x^2}{D}\right)W=0, 
-\end{align} 
-subject to appropriate boundary conditions. Eq. \ref{iso_ode} also
-applies to $\gamma>1$ for $t_c\to0$. 
+$t_c = 0$) and adiabatic perturbations ($\gamma\neq 1$ and
+$t_c\to\infty$), before considering the effect of thermal relaxation. 
 
-We remark that Eq.\ref{iso_ode} is also applicable for    
-$\gamma=\Gamma\neq 1$ in the limit $t_c\to\infty$ (i.e. neutrally
-stratified adiabatic disks), since in that case  
-$Q\simeq W$ as well. However, the following discussion is only
-valid for $\gamma=\Gamma=1$ because $c_s$ is taken to be a constant.   
-
-\subsubsection{Approximations}
-To facilitate an analytical discussion, we simplify the governing
-equation Eq. \ref{iso_ode} with the following approximations:
+\subsection{Approximate governing equation for general perturbations}\label{approx_gov}
+To facilitate a simple discussion, we derive a governing
+equation with the following approximations: 
 
 \begin{enumerate}
 \item We consider eigenvalues such that
   $|\sigma^2|\ll \kappa^2$. Then we can replace $D=\kappa^2 -\sigma^2\to
-  \kappa^2$. The problem simplifies because the eigenvalue now only
-  appears in the last term in Eq. \ref{iso_ode}. We call this the
+  \kappa^2$. % The problem simplifies because the eigenvalue now only
+  % appears in the last term in Eq. \ref{iso_ode}.
+  We call this the
   low-frequency approximation. 
 \item We are mainly interested in the effect of vertical shear, i.e. $q\neq
-  0$. This is already captured explicitly in Eq. \ref{iso_ode} through
-  the factor $d\Omega^2/dz$. We therefore simplify further by ignoring
-  the vertical dependence of $\kappa^2$ elsewhere. For clarity, we
-  will replace $\kappa^2$ with $\Omega_k^2$. 
+  0$. This is already captured explicitly in the linearized equations through
+  the factor $d\Omega/dz$ in Eq. \ref{lin_vy}. We therefore simplify
+  further by ignoring the vertical dependence of $\Omega$ and $\kappa$
+  elsewhere. For clarity, we replace $\kappa^2$ with $\Omega_k^2$. 
   % , although the discussion
   % is unchanged if we replaced 
   % $\kappa^2$ with $\kappa^2(0)$, for example.    
 \end{enumerate}
 Making both of these approximations is equivalent to the replacement
-$D\to\Omega_k^2$.  We will consider sound-speed profiles with $q<0$ in the global 
+$D\to\Omega_k^2$.  After making this replacement, we eliminate $W$ and
+$Q$ between  Eq. \ref{lin_vz} and Eq. \ref{ode_w}---\ref{ode_Q},
+making use of Eq. \ref{vertical_shear}, to
+obtain an equation for $\delta v_z$ when $\Gamma=1$,
+\begin{align}
+  0 =& \frac{d^2\delta v_z}{dz^2} + \left(1 + \frac{\ii k_x c_s^2
+      q}{\Omega_k^2r}\right)\frac{d\ln\rho}{dz}\frac{d\delta
+    v_z}{dz} \notag\\
+  &+ \left[\sigma^2\left(\frac{k_x^2}{\Omega_k^2} +
+      \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
+        q}{\Omega_k^2r}\right)\frac{d^2\ln\rho}{dz^2}\right. \notag\\
+    &\phantom{+=}\left.-
+    \frac{c_s^2}{\Omega_k^2}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
+      \frac{\ii k_x q}{r}\right)
+   \left(1-\chi\right) 
+   \right]\delta v_z,\label{vertiso_gov}
+\end{align}
+where
+\begin{align}
+  \chi \equiv \frac{1-\ii\sigma t_c}{1-\ii\sigma t_c\gamma}.
+\end{align}
+
+It is convenient to introduce the dimensionless variables
+\begin{align}
+  \hat{z} = z/\Hiso,\quad \hat{k}=k_x\Hiso, \quad \hat{\sigma} = \sigma/\Omega_k,
+\end{align}
+then Eq. \ref{vertiso_gov} becomes
+\begin{align}
+  0=& \delta v_z ^{\prime\prime} + \left(1 + \ii\epsilon
+    q\hat{k}\right)\ln\rho^{\prime}\delta v_z^\prime \notag\\
+  &+
+  \left[\hat{\sigma}^2\left(\hat{k}^2+\chi\right) +
+    \left(  \chi + \ii \epsilon q\hat{k}\right)\ln\rho^{\prime\prime}\right.
+    \notag\\
+    &\left.- \ln\rho^{\prime
+      2}\left(\khat^2 -
+      \ii\epsilon
+      q\hat{k}\right)\left(1 - \chi\right)\right]\delta v_z,\label{vertiso_gov_nondim}
+\end{align}
+where $^\prime$ denotes $d/d\zhat$. Eq. \ref{vertiso_gov_nondim} will
+be the basis for our discussion of vertically isothermal disks,
+although further simplifications or maniputations will be performed
+depending the type of perturbations being considered. 
+
+In deriving Eq. \ref{vertiso_gov}, the vertical dependence of
+$D=\kappa^2(z)-\sigma^2$ was ignored because the replacement
+$D\to\Omega_k^2$ was made before eliminating variables in favor of
+$\delta v_z$. In Appendix \ref{adia_improve} we show that making this
+replacement after eliminating variables, which requires the vertical
+derivative of $D$, adds unecessary complexity for thin disks.  
+
+We will consider sound-speed profiles with $q<0$ in the global 
 disk. Then $\Omega^2(z)$ decreases away from the midplane,
 and may reach small values for sufficiently large $|z|$, which
 invalidates the low-frequency approximation. In principle, then, the
@@ -54,23 +86,62 @@ above approximations implicitly limits us to consider thin disks ($\epsilon
 \ll 1$) with vertical domain sizes not too large, so that the rotation
 is nearly-Keplerian.   
 
-
-\subsubsection{Neccessity of vertical shear for
-  instability}\label{integral_relation} 
-With the above approximations and introducing the dimensionless variables
+\subsection{Isothermal perturbations}\label{iso_discuss}
+Isothermal perturbations corresponds to $\gamma=1$ for any thermal
+relaxation timescale $\beta$, or for any adiabatc index $\gamma$ when
+$\beta=0$. In this case Eq. \ref{ode_Q} implies 
 \begin{align}
-  \hat{z} = z/\Hiso,\quad \hat{k}=k_x\Hiso, \quad \hat{\sigma} = \sigma/\Omega_k,
+  Q = W, 
 \end{align}
-the governing equation can be re-written as
+ and so 
+ \begin{align}
+   \ii\hat{\sigma}c_s\delta v_z = W^\prime
+   % \quad   \text{(isothermal perturbations)},
+ \end{align}
+from Eq. \ref{lin_vz}. For isothermal perturbations 
+the parameter $\chi=1$ so it is easiest to work with
+$W$ by integrating Eq. \ref{vertiso_gov_nondim}. For later discussion
+it is convenient to write the result as 
+
 \begin{align}
   0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii \epsilon q \hat{k}
     f(\zhat)\right]W^\prime + \hat{\sigma}^2\left(1+\hat{k}^2\right)W,\label{iso_ode1}
 \end{align}
-where the primes denote $d/d\zhat$ and $f(\zhat)$ is defined such that
+where $f(\zhat)$ is defined such that
 \begin{align}\label{fz_shear}
   \frac{d\Omega^2}{d\hat{z}} = \epsilon^2q f(\hat{z})\Omega_k^2.
 \end{align}
 
+% The linear problem simplifies considerably for the case
+% $\Gamma=\gamma=1$.  Then 
+% \begin{align}
+%   Q=W. 
+% \end{align}
+% Inserting this into Eq. \ref{ode_w} gives a single equation for the linear stability
+% problem for isothermal perturbations in a vertically isothermal disk, 
+% \begin{align}\label{iso_ode}
+%   \frac{d^2W}{dz^2} + \left(\frac{d\ln{\rho}}{dz} - \frac{\ii k_x
+%       r}{D}\frac{d\Omega^2}{dz}\right) \frac{dW}{dz} +
+%   \sigma^2\left(\frac{1}{c_s^2} + \frac{k_x^2}{D}\right)W=0, 
+% \end{align} 
+% subject to appropriate boundary conditions. Eq. \ref{iso_ode} also
+% applies to $\gamma>1$ for $t_c\to0$. 
+
+Note that for isothermal perturbations the issue of ignoring the
+vertical dependence of $D$ described in \S\ref{approx_gov} and Appendix
+\ref{adia_improve} is irrelevant, since
+Eq. \ref{iso_ode1} may be derived directly by substituting $Q=W$ in
+Eq. \ref{ode_w}, i.e. no derivatives of $D$ needs to be taken. 
+
+We remark that Eq. \ref{iso_ode1} is also applicable for  $\gamma=\Gamma\neq 1$ in the
+limit $t_c\to\infty$ (i.e. neutrally stratified adiabatic disks),
+since in that case $Q\simeq W$ as well. However, the following
+discussion is only  valid for $\gamma=\Gamma=1$ because $c_s$ is taken
+to be a constant.    
+
+
+\subsubsection{Neccessity of vertical shear for
+  instability}\label{integral_relation} 
 We can establish a necessary condition for instability by multipling
 Eq. \ref{iso_ode1} by $\rho W^*$ and integrate vertically from
 $\zhat=\zhat_1$ to $z=\zhat_2$. We neglect boundary 

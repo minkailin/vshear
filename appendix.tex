@@ -1,3 +1,67 @@
+\section{Full governing equation for vertically isothermal disks}\label{adia_improve}
+% \section{Improving the nearly-Keplerian approximation for adiabatic
+%   disks}\label{adia_improve}
+ In \S\ref{analytic_adia} we made the replacement $D\to\Omega_k^2$
+ before combining Eq. \ref{adia_iso1}---\ref{adia_iso2} to derive
+ Eq. \ref{adia_iso3}. 
+
+This procedure ignores the vertical dependence of
+ $D=\kappa^2(z) - \sigma^2$. 
+
+We show here that this has no significant
+ consequence for thin disks. 
+
+In the global disk with $\Gamma=1$ we have
+\begin{align}\label{dkappa2}
+  \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
+    r}\frac{\p\Omega^2}{\p z} = -
+  \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(2 + q +
+    \frac{z^2/r^2-2}{z^2/r^2+1}\right). 
+\end{align}
+For the local problem we may then write
+\begin{align}
+  \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z;q),
+\end{align}
+where the function $F$ corresponds to the bracket in
+Eq. \ref{dkappa2}. This function varies from $F=q$ at $z=0$ to $F\to
+3+q$ as $|z|\to\infty$, i.e. its magnitude is of order unity. 
+
+ Eliminating $W$ and $Q$ from Eq. \ref{ode_w}---\ref{ode_Q} and
+ Eq. \ref{lin_vz} for vertically isothermal disks, retaining the
+ vertical dependence of $D$ and including thermal relaxation, we
+ obtain 
+\begin{align}
+  0 =& \frac{d^2\delta v_z}{dz^2} + \left[1 + \frac{\ii k_x c_s^2
+      q}{Dr} - \frac{k_x^2c_s^2}{\left(k_x^2c_s^2 + \chi
+        D\right)}\frac{qc_s^2F}{Dr^2}\right]\frac{d\ln\rho}{dz}\frac{d\delta
+    v_z}{dz} \notag\\
+  &+ \left\{\sigma^2\left(\frac{k_x^2}{D} +
+      \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
+        q}{Dr}\right)\frac{d^2\ln\rho}{dz^2} -
+    \frac{c_s^2}{D}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
+      \frac{\ii k_x q}{r}\right)
+   \left[\left(1-\chi\right) +
+     \frac{\chi}{\left(k_x^2c_s^2 + \chi D\right)}\frac{qc_s^2 F}{r^2}\right] 
+   \right\}\delta v_z,
+\end{align}
+where we recall $\chi = \left(1-\ii\sigma t_c\right)/\left(1-\ii\sigma
+t_c \gamma\right)$. Making the low-frequency approximation with the
+replacement $D\to \Omega_k^2$ gives, in terms of dimensionless
+variables,
+\begin{align}
+   &\delta v_z ^{\prime\prime} + \left[1 + \ii\epsilon q\hat{k} -
+    \frac{ \hat{k}^2}{
+      \left(\hat{k}^2+\chi\right)}q \epsilon^2F\right]\ln\rho^{\prime}\delta v_z^\prime +
+  \left\{\left(\chi + \ii \epsilon q
+      \hat{k}\right)\ln\rho^{\prime\prime} - \ln\rho^{\prime
+      2}\left(\khat^2 -
+      \ii\epsilon
+      q\hat{k}\right)\left[1 - \chi +
+      \frac{\chi}{\left(\hat{k}^2+\chi\right)}q\epsilon^2F\right]\right\}\delta v_z \notag\\&=
+  -\hat{\sigma}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
+\end{align}   
+
+
 \section{Alternative inference of instability in the presence of weak
   vertical shear}\label{pert_theory}
 We can also investigate the destabilizing effect of vertical shear
@@ -68,84 +132,79 @@ For $\hat{k}\gg 1$ we have
   \sqrt{n} \sgn{\hat{k}}. 
 \end{align}
 
-\section{Improving the nearly-Keplerian approximation for adiabatic
-  disks}\label{adia_improve}
-In \S\ref{analytic_adia} we made the replacement $D\to\Omega_k^2$
-before combining Eq. \ref{adia_iso1}---\ref{adia_iso2} to derive
-Eq. \ref{adia_iso3}. This procedure ignores the vertical dependence of
-$D$. We show here that this has no significant consequence for thin
-disks. 
 
-Differentiating Eq. \ref{adia_iso1} properly gives
-\begin{align}
-  \left(D + \gamma k_x^2 c_s^2\right)\frac{d\Delta}{dz}=& D
-  \frac{d^2\delta v_z}{dz^2} + k_x^2c_s^2\left[\frac{\gamma}{\left(D + \gamma k_x^2 c_s^2\right)}\frac{dD}{dz} + \ii
-    \frac{d\ln\rho}{dz}\left(\ii +
-      \frac{q}{k_xr}\right)\right]\frac{d\delta v_z}{dz}\notag\\
-  &+ \ii k_x^2 c_s^2 \left(\ii +
-      \frac{q}{k_xr}\right)\left[\frac{d^2\ln\rho}{dz^2} -
-      \frac{1}{\left(D + \gamma
-          k_x^2c_s^2\right)}\frac{dD}{dz}\frac{d\ln\rho}{dz}\right]\delta
-    v_z. \label{adia_diso1}
-\end{align}
-The terms that were ignored in deriving Eq. \ref{adia_iso3} are those
-proportional to $dD/dz$ in Eq. \ref{adia_diso1}. Now, in the global
-disk with $\Gamma=1$ we have
-\begin{align}\label{dkappa2}
-  \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
-    r}\frac{\p\Omega^2}{\p z} = -
-  \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(2 + q +
-    \frac{z^2/r^2-2}{z^2/r^2+1}\right). 
-\end{align}
-For the local problem we may then write
-\begin{align}
-  \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z;q),
-\end{align}
-where the function $F$ corresponds to the bracket in
-Eq. \ref{dkappa2}. This function varies from $F=q$ at $z=0$ to $F\to
-3+q$ as $|z|\to\infty$, i.e. its magnitude is of order unity. 
-% We estimate the
-% importance of these terms by noting that 
+
+
+% Differentiating Eq. \ref{adia_iso1} properly gives
 % \begin{align}
-%   \frac{dD}{dz}\equiv \frac{d\kappa^2}{dz} \simeq \frac{d\Omega^2}{dz}
-%   = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2},
+%   \left(D + \gamma k_x^2 c_s^2\right)\frac{d\Delta}{dz}=& D
+%   \frac{d^2\delta v_z}{dz^2} + k_x^2c_s^2\left[\frac{\gamma}{\left(D + \gamma k_x^2 c_s^2\right)}\frac{dD}{dz} + \ii
+%     \frac{d\ln\rho}{dz}\left(\ii +
+%       \frac{q}{k_xr}\right)\right]\frac{d\delta v_z}{dz}\notag\\
+%   &+ \ii k_x^2 c_s^2 \left(\ii +
+%       \frac{q}{k_xr}\right)\left[\frac{d^2\ln\rho}{dz^2} -
+%       \frac{1}{\left(D + \gamma
+%           k_x^2c_s^2\right)}\frac{dD}{dz}\frac{d\ln\rho}{dz}\right]\delta
+%     v_z. \label{adia_diso1}
 % \end{align}
-% for thin disks. 
-Eq. \ref{adia_diso1} becomes
-\begin{align}
-\left(D + \gamma k_x^2 c_s^2\right)\frac{d\Delta}{dz}=& D
-  \frac{d^2\delta v_z}{dz^2} - k_x^2c_s^2\frac{d\ln\rho}{dz}\left[ 1 - 
-      \frac{\ii q}{k_xr}  +  \frac{\gamma q c_s^2F}{r^2\left(D +
-        \gamma k_x^2 c_s^2\right)}\right]\frac{d\delta
-    v_z}{dz}\notag\\ 
-  &- k_x^2 c_s^2 \left(1 - 
-      \frac{\ii q}{k_xr}\right)\left[\frac{d^2\ln\rho}{dz^2} + 
-      \frac{qc_s^2F}{r^2\left(D + \gamma
-          k_x^2c_s^2\right)}\left(\frac{d\ln\rho}{dz}\right)^2\right]\delta
-    v_z. \label{adia_diso2}
-\end{align}
-Since $D\sim \Omega_k^2$ in the low-frequency limit, we 
-see from Eq. \ref{adia_diso2} that the neglected terms are
-$O(\epsilon^2)$. We can make this explicit by combining
-Eq. \ref{adia_diso1}---\ref{adia_diso2} and Eq. \ref{adia_iso2}, then
-set $D\to\Omega_k^2$. In terms of non-dimensional variables, the result
-is  
-\begin{align}
-   &\delta v_z ^{\prime\prime} + \left(1 + \ii\epsilon q\hat{k} -
-    \frac{\gamma q \epsilon^2\hat{k}^2F}{1+\gamma
-      \hat{k}^2}\right)\ln\rho^{\prime}\delta v_z^\prime +
-  \left[\left(\frac{1}{\gamma} + \ii \epsilon q
-      \hat{k}\right)\ln\rho^{\prime\prime} - \hat{k}^2\left(1 -
-      \frac{\ii\epsilon
-        q}{\hat{k}}\right)\left(\frac{\gamma-1}{\gamma} +
-      \frac{q\epsilon^2F}{1+\gamma\hat{k}^2}\right)\ln\rho^{\prime
-      2}\right]\delta v_z \notag\\&=
-  -\hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right)\delta v_z\label{adia_diso3}.
-\end{align}   
-Eq. \ref{adia_diso3} differs from Eq. \ref{adia_iso3} by terms
-proportional to $\epsilon^2$. For a thin disk, $\epsilon\ll1$, so
-neglecting these terms has no qualitative effect on the discussion in
-\S\ref{analytic_adia}. 
+% The terms that were ignored in deriving Eq. \ref{adia_iso3} are those
+% proportional to $dD/dz$ in Eq. \ref{adia_diso1}. Now, in the global
+% disk with $\Gamma=1$ we have
+% \begin{align}\label{dkappa2}
+%   \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
+%     r}\frac{\p\Omega^2}{\p z} = -
+%   \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(2 + q +
+%     \frac{z^2/r^2-2}{z^2/r^2+1}\right). 
+% \end{align}
+% For the local problem we may then write
+% \begin{align}
+%   \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z;q),
+% \end{align}
+% where the function $F$ corresponds to the bracket in
+% Eq. \ref{dkappa2}. This function varies from $F=q$ at $z=0$ to $F\to
+% 3+q$ as $|z|\to\infty$, i.e. its magnitude is of order unity. 
+% % We estimate the
+% % importance of these terms by noting that 
+% % \begin{align}
+% %   \frac{dD}{dz}\equiv \frac{d\kappa^2}{dz} \simeq \frac{d\Omega^2}{dz}
+% %   = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2},
+% % \end{align}
+% % for thin disks. 
+% Eq. \ref{adia_diso1} becomes
+% \begin{align}
+% \left(D + \gamma k_x^2 c_s^2\right)\frac{d\Delta}{dz}=& D
+%   \frac{d^2\delta v_z}{dz^2} - k_x^2c_s^2\frac{d\ln\rho}{dz}\left[ 1 - 
+%       \frac{\ii q}{k_xr}  +  \frac{\gamma q c_s^2F}{r^2\left(D +
+%         \gamma k_x^2 c_s^2\right)}\right]\frac{d\delta
+%     v_z}{dz}\notag\\ 
+%   &- k_x^2 c_s^2 \left(1 - 
+%       \frac{\ii q}{k_xr}\right)\left[\frac{d^2\ln\rho}{dz^2} + 
+%       \frac{qc_s^2F}{r^2\left(D + \gamma
+%           k_x^2c_s^2\right)}\left(\frac{d\ln\rho}{dz}\right)^2\right]\delta
+%     v_z. \label{adia_diso2}
+% \end{align}
+% Since $D\sim \Omega_k^2$ in the low-frequency limit, we 
+% see from Eq. \ref{adia_diso2} that the neglected terms are
+% $O(\epsilon^2)$. We can make this explicit by combining
+% Eq. \ref{adia_diso1}---\ref{adia_diso2} and Eq. \ref{adia_iso2}, then
+% set $D\to\Omega_k^2$. In terms of non-dimensional variables, the result
+% is  
+% \begin{align}
+%    &\delta v_z ^{\prime\prime} + \left(1 + \ii\epsilon q\hat{k} -
+%     \frac{\gamma q \epsilon^2\hat{k}^2F}{1+\gamma
+%       \hat{k}^2}\right)\ln\rho^{\prime}\delta v_z^\prime +
+%   \left[\left(\frac{1}{\gamma} + \ii \epsilon q
+%       \hat{k}\right)\ln\rho^{\prime\prime} - \hat{k}^2\left(1 -
+%       \frac{\ii\epsilon
+%         q}{\hat{k}}\right)\left(\frac{\gamma-1}{\gamma} +
+%       \frac{q\epsilon^2F}{1+\gamma\hat{k}^2}\right)\ln\rho^{\prime
+%       2}\right]\delta v_z \notag\\&=
+%   -\hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right)\delta v_z\label{adia_diso3}.
+% \end{align}   
+% Eq. \ref{adia_diso3} differs from Eq. \ref{adia_iso3} by terms
+% proportional to $\epsilon^2$. For a thin disk, $\epsilon\ll1$, so
+% neglecting these terms has no qualitative effect on the discussion in
+% \S\ref{analytic_adia}. 
 
 \section{Coefficients for the dispersion relation for perturbations
 with thermal relaxation}\label{relax_coeff}
@@ -170,3 +229,4 @@ given by:
 &c_5 = 2\ii\beta\left(1+\khat^2\right)\left(1+\gamma\khat^2\right),\\
 &c_6 = \beta^2\left(1+\gamma\khat^2\right)^2.
 \end{align}
+

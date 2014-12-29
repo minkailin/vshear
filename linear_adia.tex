@@ -1,36 +1,39 @@
 \subsection{Adiabatic perturbations}\label{analytic_adia}
-We now consider general $\gamma$ in the
-adiabatic limit ($t_c\to\infty$). This is the opposite regime to
-isothermal perturbations. We eliminate variables from 
-Eq. \ref{lin_mass}---\ref{lin_energy} in favor of $\delta v_z$ 
-and $\Delta \equiv \nabla\cdot\delta\bm{v}$ to obtain
-\begin{align}
-  &\Delta\left(1 + \frac{\gamma c_s^2 k_x^2}{D}\right) = \frac{d\delta
-    v_z}{dz} + \frac{\ii k_x^2}{D}\left(\ii c_s^2 \frac{d\ln\rho}{dz}
-    - \frac{r}{k_x}\frac{d\Omega^2}{dz}\right)\delta v_z,\label{adia_iso1}\\
-  & -\frac{\sigma^2}{c_s^2}\delta v_z = \gamma \frac{d\Delta}{dz} +
-  \frac{d}{dz}\left(\frac{d\ln\rho}{dz}\delta v_z\right) +
-  \left(\gamma-1\right)\frac{d\ln\rho}{dz} \Delta.\label{adia_iso2}
-\end{align}
-%{\bf note: incompressible mode, set delta to zero. only works for
-% constant gravity.}
+We now consider % general $\gamma$
+perturbations in the adiabatic limit ($t_c,\beta\to\infty$). This is the opposite regime to
+isothermal perturbations. In this case the parameter $\chi = 1/\gamma$
+and Eq. \ref{vertiso_gov_nondim} can be written as 
+% We eliminate variables from 
+% Eq. \ref{lin_mass}---\ref{lin_energy} in favor of $\delta v_z$ 
+% and $\Delta \equiv \nabla\cdot\delta\bm{v}$ to obtain
+% \begin{align}
+%   &\Delta\left(1 + \frac{\gamma c_s^2 k_x^2}{D}\right) = \frac{d\delta
+%     v_z}{dz} + \frac{\ii k_x^2}{D}\left(\ii c_s^2 \frac{d\ln\rho}{dz}
+%     - \frac{r}{k_x}\frac{d\Omega^2}{dz}\right)\delta v_z,\label{adia_iso1}\\
+%   & -\frac{\sigma^2}{c_s^2}\delta v_z = \gamma \frac{d\Delta}{dz} +
+%   \frac{d}{dz}\left(\frac{d\ln\rho}{dz}\delta v_z\right) +
+%   \left(\gamma-1\right)\frac{d\ln\rho}{dz} \Delta.\label{adia_iso2}
+% \end{align}
+% %{\bf note: incompressible mode, set delta to zero. only works for
+% % constant gravity.}
 
-We make the low-frequency approximation and the replacement 
-$D\to \Omega_k^2$ in Eq. \ref{adia_iso1}---\ref{adia_iso2}. For
-simplicity we do this before combining these equations later. We  
-show in Appendix \ref{adia_improve} that making these approximations
-after combining  Eq. \ref{adia_iso1}---\ref{adia_iso2} adds unecessary
-complexity for thin disks. Here, we also use the fact that in the
-global disk, 
-\begin{align}
-  r\frac{\p \Omega^2}{\p z} = -\frac{\p \ln\rho}{\p z} \frac{qc_s^2}{r},
-\end{align}
-for the power-law prescription of the midplane sound-speed for
-$\Gamma=1$.  
+% We make the low-frequency approximation and the replacement 
+% $D\to \Omega_k^2$ in Eq. \ref{adia_iso1}---\ref{adia_iso2}. For
+% simplicity we do this before combining these equations later. We  
+% show in Appendix \ref{adia_improve} that making these approximations
+% after combining  Eq. \ref{adia_iso1}---\ref{adia_iso2} adds unecessary
+% complexity for thin disks. Here, we also use the fact that in the
+% global disk, 
+% \begin{align}
+%   r\frac{\p \Omega^2}{\p z} = -\frac{\p \ln\rho}{\p z} \frac{qc_s^2}{r},
+% \end{align}
+% for the power-law prescription of the midplane sound-speed for
+% $\Gamma=1$.  
 
-Making the above substitutions and eliminating $\Delta$ between Eq. \ref{adia_iso1}---
-Eq. \ref{adia_iso2} we obtain, in terms of dimensionless variables defined
-previously, an equation for $\delta v_z$, 
+% Making the above substitutions and eliminating $\Delta$ between Eq. \ref{adia_iso1}---
+% Eq. \ref{adia_iso2} we obtain, in terms of dimensionless variables defined
+% previously, an equation for $\delta v_z$, 
+
 \begin{align}
   0 =& \dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
     \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime\notag\\
@@ -314,7 +317,7 @@ velocity perturbation (Eq. \ref{lin_vz}) we have
 \subsubsection{Perturbative effect of introducing a small but finite
   thermal relaxation time} 
 
-It is instructive to first ask: how
+It is instructive to first ask the more analytically tractable question: how
 do the eigenfrequencies and eigenfunctions change when we change
 $t_c$ from zero to a small but finite value? For sufficiently small
 $t_c$, for which the perturbations may be considered
