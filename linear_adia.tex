@@ -70,7 +70,7 @@ instability.
 
 Note that when $\gamma>1$ and $q=0$, the term with $\ln\rho^{\prime
   2}$ in the integrand (third term on the RHS) represents
-stabilization by the vertical entropy gradient (real bouyancy frequency). 
+stabilization by the vertical entropy gradient (real buoyancy frequency). 
 It gives an imaginary contribution to $\hat{\sigma}$ when $q\neq0$,
 but this is a factor $|\epsilon/\hat{k}|$ smaller than the real
 (stabilizing) contribution, 
@@ -177,7 +177,7 @@ and the maximum growth rate occurs at $\hat{k}=\hat{k}_\mathrm{opt}=1$,
   % q|}{2\times3^{3/4}}\notag.
 \end{align}
 Unlike isothermal perturbations, Eq. \ref{gam2_max_growth} shows that
-there is a maximum possible growth rate for $M=0$, and growth rates decrease with increasing $M$. This
+maximum growth rate occurs at $M=0$, and growth rates decrease with increasing $M$. This
 is despite the fact that in the thin-disk approximation 
 $d\Omega^2/dz\propto z$, so there is infinite vertical shear
 available.     
@@ -280,7 +280,7 @@ disks (Eq. \ref{vertiso_eqm}), we expect
   \beta \ll \frac{27}{4(\gamma-1)}\epsilon^2,
 \end{align}
 i.e. $\beta\ll O(\epsilon^2)$, is a sufficient condition for
-bouyancy to be negligible.  
+buoyancy to be negligible.  
 
 
 \subsection{Perturbations with thermal relaxation}\label{analytic_relax}
@@ -413,7 +413,7 @@ One effect of introducing finite thermal relaxation is buoyancy. % We
 % VSI.
 The $\zhat^2$ depedence in $\delta v_{z1}$ then makes sense because it
 is most significant for large $\zhat$, i.e. away from the midplane
-where the effect of bouyancy first appears as $t_c$ is increased. 
+where the effect of buoyancy first appears as $t_c$ is increased. 
 
 \subsubsection{Dispersion relation with thermal relaxation}\label{disp_relax}
 Eq. \ref{nearly_iso_explicit} is same form
@@ -439,20 +439,22 @@ It is simplest to solve Eq. \ref{relax_disp} numerically. In
 Fig. \ref{relax_disp_fig} we plot the growth rate of the fundamental
 ($M=0$) VSI mode as a function of $k_xH_\mathrm{iso}$ for a range of
 dimensionless thermal relaxation timescales $\beta$, in a disk with
-$\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. Consistent with the previous
-discussion, for $\beta\to0$ thermal relaxation has no effect as
-$k_x\to0$ or $k_x\to\infty$. 
+$\epsilon=0.05$, $q=-1$ and $\gamma=1.4$.  Similarly, 
+in Fig. \ref{relax_bcrit} we solve the dispersion relation for the
+critical $\beta$ such that the growth rate of the fundamental VSI mode
+is zero.  
 
-Fig. \ref{relax_disp_fig} shows that a growing fundamental VSI mode
-exists both in the isothermal ($\beta\to0$) and adiabatic
+Fig. \ref{relax_disp_fig}---\ref{relax_bcrit} shows that a growing fundamental
+VSI mode exists both in the isothermal ($\beta\to0$) and adiabatic
 ($\beta\to\infty$) limits, although the latter growth rates are
-significantly smaller and perturbations are restricted to the
-midplane. However, for $0.1 \lesssim \beta\lesssim
-\beta 30$, this mode is stabilized for $k_xH_\mathrm{iso}\gtrsim
-10$. Although results for small $k_x$ violates the low-frequency
-approximation, Fig. \ref{relax_disp_fig} suggests that thermal
-relaxation needs to be significantly shorter than the dynamical time
-in order for the VSI with appreciable growth rates to develop.
+smaller by at least a factor of two. Furthermore, the adiabatic VSI is 
+is limited to a thin layer about the disk midplane so it may be
+considered stable. Then Fig. \ref{relax_bcrit} shows that 
+$\beta\lesssim 0.1$ is required for instability in this disk model. This critical
+timescale is indepedent of $k_x$ for
+$k_xH_\mathrm{iso}\gtrsim10$. Fig. \ref{relax_disp_fig} is also consistent with previous
+discussions which show that thermal relaxation has no effect for
+$k_x\to0$ or $k_x\to\infty$ as $\beta\to0$,
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/rate_theory_grow_relax}
@@ -468,6 +470,29 @@ Other disk disk parameters are
 
 %ate_theory, eps=0.05, smallq=-1d0, gmma=1.4, bmax=1.0, ncases=11,
 %mmode=0.0, root=1, legend=[0.102,0.14,5.4,0.355], yrange=[0,6]
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/bcrit_theory}
+  \caption{Condition on the thermal relaxation timescale $\beta$ for the existence of unstable fundamental VSI
+    modes in a vertically isothermal disk with $\epsilon=0.05$, $q=-1$
+    and $\gamma=1.4$. For sufficiently small $\beta$ the isothermal VSI opertates,
+    while for sufficiently large $\beta$ the adiabatic VSI
+    operates. For intermediate values of $\beta$ the VSI growth rate
+    is negative (i.e. stabilized). 
+    \label{relax_bcrit}}  
+\end{figure}   
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
