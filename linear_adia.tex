@@ -283,7 +283,7 @@ i.e. $\beta\ll O(\epsilon^2)$, is a sufficient condition for
 bouyancy to be negligible.  
 
 
-\subsection{Perturbations with thermal relaxation}
+\subsection{Perturbations with thermal relaxation}\label{analytic_relax}
 Having examined the extreme limits of isothermal ($t_c\to0$) and
 adiabatic ($t_c\to\infty$) perturbations, we now generalize further to consider
 perturbations with intermediate thermodynamic responses with general
@@ -348,7 +348,7 @@ only first order terms, we obtain
 \end{align}
 
 We could proceed by considering the entire set of polynomial solutions
-for $W$, and hence $\delta v_z$, discussed in \S\ref{iso_poly}, but it
+for $W$, and hence for $\delta v_z$, as derived in \S\ref{iso_poly}, but it
 is simplest to look at the fundamental mode. Thus we consider the `basic state' 
  \begin{align*}
    \delta v_z = 1,\quad \hat{\sigma}^2\left(1+\hat{k}^2\right) = 1 +
@@ -415,7 +415,7 @@ The $\zhat^2$ depedence in $\delta v_{z1}$ then makes sense because it
 is most significant for large $\zhat$, i.e. away from the midplane
 where the effect of bouyancy first appears as $t_c$ is increased. 
 
-\subsubsection{General dispersion relation with thermal relaxation}\label{disp_relax}
+\subsubsection{Dispersion relation with thermal relaxation}\label{disp_relax}
 Eq. \ref{nearly_iso_explicit} is same form
 as the governing equation for the adiabatic case
 (Eq. \ref{adia_iso4}). However, the coefficients $\widetilde{B}$ and $\widetilde{C}$
@@ -427,7 +427,7 @@ Applying the same solution method as in \S\ref{adia_explicit}, we
 % results may be obtained in the limit $\beta\to0$. 
 find the adiabatic dispersion relation,
 Eq. \ref{adia_disp0}, generalizes to a $6^\mathrm{th}$ order
-polynomial in $\hat{\sigma}$:
+polynomial in $\hat{\sigma}$ with finite thermal relaxation:
 \begin{align}
   0 = \sum_{l=0}^{6}c_l\hat{\sigma}^l,\label{relax_disp}
 \end{align}
@@ -439,7 +439,20 @@ It is simplest to solve Eq. \ref{relax_disp} numerically. In
 Fig. \ref{relax_disp_fig} we plot the growth rate of the fundamental
 ($M=0$) VSI mode as a function of $k_xH_\mathrm{iso}$ for a range of
 dimensionless thermal relaxation timescales $\beta$, in a disk with
-$\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. 
+$\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. Consistent with the previous
+discussion, for $\beta\to0$ thermal relaxation has no effect as
+$k_x\to0$ or $k_x\to\infty$. 
+
+Fig. \ref{relax_disp_fig} shows that a growing fundamental VSI mode
+exists both in the isothermal ($\beta\to0$) and adiabatic
+($\beta\to\infty$) limits, although the latter growth rates are
+significantly smaller and perturbations are restricted to the
+midplane. However, for $0.1 \lesssim \beta\lesssim
+\beta 30$, this mode is stabilized for $k_xH_\mathrm{iso}\gtrsim
+10$. Although results for small $k_x$ violates the low-frequency
+approximation, Fig. \ref{relax_disp_fig} suggests that thermal
+relaxation needs to be significantly shorter than the dynamical time
+in order for the VSI with appreciable growth rates to develop.
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/rate_theory_grow_relax}

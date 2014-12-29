@@ -1,15 +1,11 @@
 \section{Full governing equation for vertically isothermal disks}\label{adia_improve}
 % \section{Improving the nearly-Keplerian approximation for adiabatic
 %   disks}\label{adia_improve}
- In \S\ref{analytic_adia} we made the replacement $D\to\Omega_k^2$
- before combining Eq. \ref{adia_iso1}---\ref{adia_iso2} to derive
- Eq. \ref{adia_iso3}. 
-
-This procedure ignores the vertical dependence of
- $D=\kappa^2(z) - \sigma^2$. 
-
-We show here that this has no significant
- consequence for thin disks. 
+In \S\ref{approx_gov} we made the replacement $D\to\Omega_k^2$ before
+eliminating variables to obtain a single equation for $\delta v_z$,
+Eq. \ref{vertiso_gov}.  This procedure ignores the vertical dependence of
+$D=\kappa^2(z) - \sigma^2$. We show here that this has no significant
+consequence for thin disks. 
 
 In the global disk with $\Gamma=1$ we have
 \begin{align}\label{dkappa2}
@@ -60,7 +56,12 @@ variables,
       \frac{\chi}{\left(\hat{k}^2+\chi\right)}q\epsilon^2F\right]\right\}\delta v_z \notag\\&=
   -\hat{\sigma}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
 \end{align}   
-
+Eq. \ref{adia_diso3} differs from Eq. \ref{vertiso_gov_nondim} by terms
+proportional to $\epsilon^2$. For a thin disk, $\epsilon\ll1$, so
+neglecting these terms has no qualitative effect on the discussion in
+\S\ref{analytic_adia} and \S\ref{analytic_relax}.  This issue does not
+arise for isothermal perturbations discussed in \S\ref{iso_discuss}
+since in that case we work with a governing equation for $W$ instead. 
 
 \section{Alternative inference of instability in the presence of weak
   vertical shear}\label{pert_theory}
