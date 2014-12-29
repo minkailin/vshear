@@ -78,7 +78,7 @@ since $\epsilon\ll 1$ for a thin disk and we (usually) consider
 $\hat{k}\gg1$. Thus, instability is expected to be associated with the 
 last term on the RHS of Eq. \ref{adia_integral}. 
 
-\subsubsection{Explicit solutions in the thin-disk limit}
+\subsubsection{Explicit solutions in the thin-disk limit}\label{adia_explicit}
 We can construct solutions in the thin-disk limit, in which 
 $\ln(\rho/\rho_0) \simeq -\zhat^2/2$. Eq. \ref{adia_iso3} becomes   
 \begin{align}
@@ -287,112 +287,102 @@ bouyancy to be negligible.
 Having examined the extreme limits of isothermal ($t_c\to0$) and
 adiabatic ($t_c\to\infty$) perturbations, we now generalize further to consider
 perturbations with intermediate thermodynamic responses with general
-values of $t_c$. 
+values of $t_c$ or $\beta$.  
 
-In this section we will pursue explicit solutions in the low-frequency,
-thin-disk, nearly-Keplerian approximations as used in the development
-for adiabatic solutions. The pair of ODEs for $W$ and $Q$
-(Eq. \ref{ode_w}---\ref{ode_Q}) with these approximations and 
-written with dimensionless variables, are
+In this section we will pursue explicit solutions in the thin-disk
+approximation. The governing equation, Eq. \ref{vertiso_gov_nondim}, is
+then 
 \begin{align}
-  &\hat{\sigma}^2\left(Q +  \hat{k}^2W\right) \notag\\ 
-  &= \hat{z} \left(1 +
-    \ii\epsilon q \hat{k} \right)\left[W^\prime - \zhat \left(W -
-      Q\right)\right] - \left[W^\prime - \zhat \left(W -
-      Q\right)\right]^\prime\label{nearly_iso1},\\
-&\beta \hat{\sigma}^2\left(W - \gamma Q\right) + \ii\hat{\sigma}
-    \left(W-Q\right)\notag\\
-   & = -\beta\zhat\left(\gamma-1\right) \left[W^\prime - \zhat \left(W -
-      Q\right)\right]\label{nearly_iso2},
+  0 = \delta v_z^{\prime\prime} - z \widetilde{A}\delta v_z^\prime +
+  (\widetilde{B} - \widetilde{C}\zhat^2)\delta v_z = 0,\label{nearly_iso_explicit}
 \end{align}
-where we recall $\beta = t_c\Omega_k$ is the dimensionless cooling
-time. It is evident that for $\beta\equiv 0$, we recover
-Eq. \ref{iso_ode3}. In addition, from the expression of the vertical
-velocity perturbation (Eq. \ref{lin_vz}) we have
+with
 \begin{align}
-  W^\prime - \zhat \left(W -
-      Q\right) = \ii\hat{\sigma}c_s\delta v_z. \label{nearly_vz}
+  &\widetilde{A} \equiv 1 + \ii \epsilon q \hat{k},\\
+  &\widetilde{B} \equiv \hat{\sigma}^2\left(\chi + \hat{k}^2\right) -
+  \left(\chi + \ii \epsilon q \hat{k}\right),\\
+  &\widetilde{C} \equiv \left(1-\chi\right)\left(\hat{k}^2 - \ii
+      \epsilon q\hat{k}\right), 
 \end{align}
+and $\chi =
+\left(1-\ii\hat{\sigma}\beta\right)/\left(1-\ii\hat{\sigma}\beta\gamma\right)
+$ in terms of dimensionless variables.  
 
-\subsubsection{Perturbative effect of introducing a small but finite
+
+\subsubsection{The effect of introducing a small but finite
   thermal relaxation time} 
-
-It is instructive to first ask the more analytically tractable question: how
+It is instructive to first ask  the more analytically tractable
+question: how 
 do the eigenfrequencies and eigenfunctions change when we change
 $t_c$ from zero to a small but finite value? For sufficiently small
-$t_c$, for which the perturbations may be considered
-nearly-isothermal, we expect the new solutions to only differ slighly
+$\beta$, for which the perturbations may be considered 
+nearly-isothermal, we expect the new solutions to only differ slightly
 from the explicit isothermal solutions developed in \S\ref{iso_poly}. 
 
-%is valid for
-%non-isothermal perturbations $\gamma>1$ if the thermal relaxation
-%(cooling) timescale $t_c\equiv0$. 
-
-
-% Then we may linearize Eq. \ref{nearly_iso1}---\ref{nearly_iso2} 
 
 To determine the (assumed) small effect of introducing a short thermal
-relaxation, we linearize Eq. \ref{nearly_iso1}---\ref{nearly_iso2} about a known
-solution for $\beta\equiv0$. Let 
+relaxation, we linearize Eq. \ref{nearly_iso_explicit} about a known 
+solution for $\beta\equiv0$  ($\chi\equiv 1$). 
+Let 
 \begin{align}\label{nearly_iso_pert}
-  \beta \to 0 + \delta\beta,\, W\to W+\delta W,\, Q \to Q+\delta
-  Q,\,\hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}, 
-\end{align} 
-where $W=Q$ is the polynomial solution described in \S\ref{iso_poly}
-with $\hat{\sigma}^2$ given by Eq. \ref{sig2_iso}. Inserting
-Eq. \ref{nearly_iso_pert} into
-Eq. \ref{nearly_iso1}---\ref{nearly_iso2} and keeping only first order
-terms, we obtain
-\begin{align}
-  &2\hat{\sigma}\delta\hat{\sigma}\left(1+\hat{k}^2\right)W +
-  \hat{\sigma}^2 \left(\delta Q + \hat{k}^2\delta W\right)\notag\\
-  &= \zhat \left(1+\ii\epsilon q \hat{k}\right)\left[\delta W^\prime -
-    \zhat \left(\delta W - 
-      \delta Q\right)\right] - \delta W^{\prime\prime}\notag\\
-  &\phantom{=} + \left[\zhat \left(\delta W -
-     \delta Q\right)\right]^\prime,\label{nearly_iso3}\\
-&\ii\hat{\sigma} \left(\delta W - \delta Q\right) =
-\delta\beta\left(\gamma-1\right)\left(\hat{\sigma}^2W - \hat{z}W^\prime\right).\label{nearly_iso4}
+  \beta \to 0 + \delta\beta,\, \delta v_z\to \delta v_z+\delta
+  v_{z1},\,\hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}, 
 \end{align}
-This is a pair of inhomogeneous ODEs with a forcing by $W$. The
-homogeneous problem is, of course, just the ODE for $\beta=0$ solved
-in \S\ref{iso_poly}. Hence we only seek the particular solution. 
+which implies 
+\begin{align}
+  \chi \to 1 + \delta\chi = 1 + \ii \hat{\sigma}\left(\gamma-1\right)\delta\beta.
+\end{align}
+Here $\delta v_z$ corresponds to the explicit solution developed in
+\S\ref{iso_poly} with  $\hat{\sigma}^2$ given by Eq. \ref{sig2_iso}. Inserting
+Eq. \ref{nearly_iso_pert} into Eq. \ref{nearly_iso_explicit}  and keeping
+only first order terms, we obtain 
+\begin{align}
+ 0 =& \delta v_{z1}^{\prime\prime} - z\left(1 + \ii\epsilon q
+   k\right)\delta v_{z1}^\prime\notag\\
+ &+ \left[2\hat{\sigma}\delta\hat{\sigma}\left(1 + \khat^2\right) +
+   \left(\hat{\sigma}^2 - 1\right)\delta\chi \right.\notag\\
+&\phantom{++} \left. + \zhat^2\left(\khat^2 -
+     \ii\epsilon q \khat\right)\delta\chi\right]\delta v_z\notag\\
+ &+\left[\hat{\sigma}^2\left(1 + \khat^2\right) - \left(1+\ii\epsilon
+     q \khat\right)\right]\delta v_{z1}.\label{nearly_iso4}
+\end{align}
 
-We could proceed by considering the entire set of polynomial
-solutions for $W$, but it is simplest to look at the fundamental
-mode. Thus we consider the `basic state' 
-\begin{align*}
-  W = \hat{z},\quad \hat{\sigma}^2\left(1+\hat{k}^2\right) = 1 +
-  \ii\epsilon q \hat{k},
-\end{align*}
-then
+We could proceed by considering the entire set of polynomial solutions
+for $W$, and hence $\delta v_z$, discussed in \S\ref{iso_poly}, but it
+is simplest to look at the fundamental mode. Thus we consider the `basic state' 
+ \begin{align*}
+   \delta v_z = 1,\quad \hat{\sigma}^2\left(1+\hat{k}^2\right) = 1 +
+   \ii\epsilon q \hat{k},
+ \end{align*}
+ then we may seek 
+ \begin{align}
+   \delta v_{z1} = a \zhat^2 + b,
+ \end{align}
+where $a$, $b$ are constants. 
+
+Inserting the above expressions for $\delta v_z$, $\delta v_{z1}$ and
+$\hat{\sigma}^2$ into Eq. \ref{nearly_iso4}, then balancing
+coefficients of $\zhat^2$ and constants, we require
 \begin{align}
-  \delta W = b \zhat^3,
-\end{align}
-where $b$ is a constant to be determined. Eliminating $\delta Q$ from
-Eq. \ref{nearly_iso3}---\ref{nearly_iso4}, inserting the above
-expressions for $W$ and $\delta W$ and balancing coefficients of
-$\zhat$ and $\zhat^3$, we find
-\begin{align}
- & 2\left(1+\ii\epsilon q \hat{k}\right) \delta\hat{\sigma} \notag\\& = -6b\hat{\sigma} -
-2\ii \delta \beta\left(\gamma-1\right)\left(\hat{\sigma}^2-1\right) - \ii
-  \hat{\sigma}^2\delta\beta\left(\gamma-1\right),\\
-& 0=  2b\hat{\sigma}+\ii\delta\beta
-\left(\gamma-1\right)\left(\hat{\sigma}^2 - 1\right),
-\end{align}
-where the expression for $\hat{\sigma}^2$ was used. Solving for
-$\delta\hat{\sigma}$ gives 
+0 &= 2a + 2\hat{\sigma}\left(1+\khat^2\right)\delta\hat{\sigma} +
+\left(\hat{\sigma}^2 -1\right)\delta\chi,\notag\\
+0&= 2a\left(1+\ii\epsilon q \khat\right) - \left(\khat^2 - \ii\epsilon
+q \khat\right)\delta\chi.
+\end{align} 
+
+Using the expressions for $\delta\chi$ and $\hat{\sigma}$ we can solve
+for $\delta\hat{\sigma}$. This gives 
 \begin{align}\label{nearly_iso_dsig}
   \delta \hat{\sigma} =
   -\frac{\ii\left(\gamma-1\right)\hat{k}^2\left(\ii\epsilon
-    q - \hat{k}\right)^2}{2\left(1+\ii\epsilon q \hat{k}\right)\left(1+\hat{k}^2\right)^2}\delta\beta.
+      q - \hat{k}\right)^2}{2\left(1+\ii\epsilon q \hat{k}\right)\left(1+\hat{k}^2\right)^2}\delta\beta.
 \end{align}
 The imaginary part of Eq. \ref{nearly_iso_dsig} is
 \begin{align}
-   \delta\hat{\nu} =
+  \delta\hat{\nu} =
   -\frac{\left(\gamma-1\right)\hat{k}^2 \left(\hat{k}^2 -
       2\epsilon^2q^2\hat{k}^2 - \epsilon^2q^2\right)}{2\left(1+\epsilon^2 q^2
-        \hat{k}^2\right)\left(1+\hat{k}^2\right)^2}\delta\beta.  
+      \hat{k}^2\right)\left(1+\hat{k}^2\right)^2}\delta\beta.  
 \end{align}
 Since $\epsilon \ll 1$, introducing finite cooling $\delta\beta>0$
 implies $\delta\hat{\nu} < 0$, i.e. stabilization. Interestingly, for both
@@ -421,36 +411,21 @@ optimum wavenumber for stabilization is $\hat{k}\sim 5$---$6$.
 One effect of introducing finite thermal relaxation is buoyancy. % We
 % show in the next section that buoyancy strongly stabilizes the
 % VSI.
-The solution $\delta W\propto\zhat^3$ then makes sense because it
+The $\zhat^2$ depedence in $\delta v_{z1}$ then makes sense because it
 is most significant for large $\zhat$, i.e. away from the midplane
 where the effect of bouyancy first appears as $t_c$ is increased. 
 
-\subsubsection{General explicit solutions with thermal relaxation}
-To develop explicit solutions of
-Eq. \ref{nearly_iso1}---\ref{nearly_vz}, we eliminate variables in
-favor of $\delta v_z$ to obtain
-\begin{align}
-  0 = \delta v_z^{\prime\prime} - z \widetilde{A}\delta v_z^\prime +
-  (\widetilde{B} - \widetilde{C}\zhat^2)\delta v_z = 0,\label{nearly_iso_explicit}
-\end{align}
-with
-\begin{align}
-  &\widetilde{A} \equiv 1 + \ii \epsilon q \hat{k},\\
-  &\widetilde{B} \equiv \hat{\sigma}^2\left(\chi + \hat{k}^2\right) -
-  \left(\chi + \ii \epsilon q \hat{k}\right),\\
-  &\widetilde{C} \equiv \left(1-\chi\right)\left(\hat{k}^2 - \ii
-      \epsilon q\hat{k}\right),
-\end{align}
-where
-\begin{align}
-  \chi \equiv \frac{1-\ii\hat{\sigma}\beta}{1-\ii\hat{\sigma}\beta\gamma}.
-\end{align}
-
-The governing equation Eq. \ref{nearly_iso_explicit} has the same form
-as in the adiabatic case (Eq. \ref{adia_iso4}), so we can apply the
-same solution method. However, the coefficients
-$\widetilde{B}$ and $\widetilde{C}$ now have a more complicated
-dependence on $\hat{\sigma}$.  The adiabatic dispersion relation,
+\subsubsection{General dispersion relation with thermal relaxation}\label{disp_relax}
+Eq. \ref{nearly_iso_explicit} is same form
+as the governing equation for the adiabatic case
+(Eq. \ref{adia_iso4}). However, the coefficients $\widetilde{B}$ and $\widetilde{C}$
+have a complicated dependence on $\hat{\sigma}$. 
+Applying the same solution method as in \S\ref{adia_explicit}, we 
+% Thus calculating the
+% eigenfrequency $\hat{\sigma}$ generally requires a numerical
+% approach, which we do  in \S\ref{disp_relax}. However, analytical
+% results may be obtained in the limit $\beta\to0$. 
+find the adiabatic dispersion relation,
 Eq. \ref{adia_disp0}, generalizes to a $6^\mathrm{th}$ order
 polynomial in $\hat{\sigma}$:
 \begin{align}
@@ -466,8 +441,6 @@ Fig. \ref{relax_disp_fig} we plot the growth rate of the fundamental
 dimensionless thermal relaxation timescales $\beta$, in a disk with
 $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. 
 
-
-
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/rate_theory_grow_relax}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/rate_theory_grow_relax2}
@@ -480,4 +453,92 @@ Other disk disk parameters are
     \label{relax_disp_fig}}  
 \end{figure}   
 
-%ate_theory, eps=0.05, smallq=-1d0, gmma=1.4, bmax=1.0, ncases=11, mmode=0.0, root=1, legend=[0.102,0.14,5.4,0.355], yrange=[0,6]
+%ate_theory, eps=0.05, smallq=-1d0, gmma=1.4, bmax=1.0, ncases=11,
+%mmode=0.0, root=1, legend=[0.102,0.14,5.4,0.355], yrange=[0,6]
+
+
+
+
+
+
+
+% The pair of ODEs for $W$ and $Q$
+% (Eq. \ref{ode_w}---\ref{ode_Q}) with these approximations and 
+% written with dimensionless variables, are
+% \begin{align}
+%   &\hat{\sigma}^2\left(Q +  \hat{k}^2W\right) \notag\\ 
+%   &= \hat{z} \left(1 +
+%     \ii\epsilon q \hat{k} \right)\left[W^\prime - \zhat \left(W -
+%       Q\right)\right] - \left[W^\prime - \zhat \left(W -
+%       Q\right)\right]^\prime\label{nearly_iso1},\\
+% &\beta \hat{\sigma}^2\left(W - \gamma Q\right) + \ii\hat{\sigma}
+%     \left(W-Q\right)\notag\\
+%    & = -\beta\zhat\left(\gamma-1\right) \left[W^\prime - \zhat \left(W -
+%       Q\right)\right]\label{nearly_iso2},
+% \end{align}
+% where we recall $\beta = t_c\Omega_k$ is the dimensionless cooling
+% time. It is evident that for $\beta\equiv 0$, we recover
+% Eq. \ref{iso_ode3}. In addition, from the expression of the vertical
+% velocity perturbation (Eq. \ref{lin_vz}) we have
+% \begin{align}
+%   W^\prime - \zhat \left(W -
+%       Q\right) = \ii\hat{\sigma}c_s\delta v_z. \label{nearly_vz}
+% \end{align}
+
+% %is valid for
+% %non-isothermal perturbations $\gamma>1$ if the thermal relaxation
+% %(cooling) timescale $t_c\equiv0$. 
+
+
+% % Then we may linearize Eq. \ref{nearly_iso1}---\ref{nearly_iso2} 
+
+% To determine the (assumed) small effect of introducing a short thermal
+% relaxation, we linearize Eq. \ref{nearly_iso1}---\ref{nearly_iso2} about a known
+% solution for $\beta\equiv0$. Let 
+% \begin{align}\label{nearly_iso_pert}
+%   \beta \to 0 + \delta\beta,\, W\to W+\delta W,\, Q \to Q+\delta
+%   Q,\,\hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}, 
+% \end{align} 
+% where $W=Q$ is the polynomial solution described in \S\ref{iso_poly}
+% with $\hat{\sigma}^2$ given by Eq. \ref{sig2_iso}. Inserting
+% Eq. \ref{nearly_iso_pert} into
+% Eq. \ref{nearly_iso1}---\ref{nearly_iso2} and keeping only first order
+% terms, we obtain
+% \begin{align}
+%   &2\hat{\sigma}\delta\hat{\sigma}\left(1+\hat{k}^2\right)W +
+%   \hat{\sigma}^2 \left(\delta Q + \hat{k}^2\delta W\right)\notag\\
+%   &= \zhat \left(1+\ii\epsilon q \hat{k}\right)\left[\delta W^\prime -
+%     \zhat \left(\delta W - 
+%       \delta Q\right)\right] - \delta W^{\prime\prime}\notag\\
+%   &\phantom{=} + \left[\zhat \left(\delta W -
+%      \delta Q\right)\right]^\prime,\label{nearly_iso3}\\
+% &\ii\hat{\sigma} \left(\delta W - \delta Q\right) =
+% \delta\beta\left(\gamma-1\right)\left(\hat{\sigma}^2W - \hat{z}W^\prime\right).\label{nearly_iso4}
+% \end{align}
+% This is a pair of inhomogeneous ODEs with a forcing by $W$. The
+% homogeneous problem is, of course, just the ODE for $\beta=0$ solved
+% in \S\ref{iso_poly}. Hence we only seek the particular solution. 
+
+% We could proceed by considering the entire set of polynomial
+% solutions for $W$, but it is simplest to look at the fundamental
+% mode. Thus we consider the `basic state' 
+% \begin{align*}
+%   W = \hat{z},\quad \hat{\sigma}^2\left(1+\hat{k}^2\right) = 1 +
+%   \ii\epsilon q \hat{k},
+% \end{align*}
+% then
+% \begin{align}
+%   \delta W = b \zhat^3,
+% \end{align}
+% where $b$ is a constant to be determined. Eliminating $\delta Q$ from
+% Eq. \ref{nearly_iso3}---\ref{nearly_iso4}, inserting the above
+% expressions for $W$ and $\delta W$ and balancing coefficients of
+% $\zhat$ and $\zhat^3$, we find
+% \begin{align}
+%  & 2\left(1+\ii\epsilon q \hat{k}\right) \delta\hat{\sigma} \notag\\& = -6b\hat{\sigma} -
+% 2\ii \delta \beta\left(\gamma-1\right)\left(\hat{\sigma}^2-1\right) - \ii
+%   \hat{\sigma}^2\delta\beta\left(\gamma-1\right),\\
+% & 0=  2b\hat{\sigma}+\ii\delta\beta
+% \left(\gamma-1\right)\left(\hat{\sigma}^2 - 1\right),
+% \end{align}
+% where the expression for $\hat{\sigma}^2$ was used.
