@@ -247,41 +247,41 @@ from the midplane. %The entropy $P/\rho^\gamma$ formally diverges
     and there is no vertical entropy gradient.\label{adia_growth}}  
 \end{figure}   
 
-\subsubsection{Qualitative condition for buoyancy to be negligible in
-  the presence of thermal relaxation}
-{\bf this section might be wrong, but keep for reference for now}
-We have shown that when $\gamma>1$ so that there is a positive
-vertical entropy gradient and perturbations evolve
-adiabatically ($t_c\to\infty$) that the VSI is strongly
-surpressed. This is the limit where the term proportional to
-$t_c^{-1}$ in the linearized energy equation (Eq. \ref{lin_energy})
-becomes negligible compared to the term proportional to
-$\gamma/\Gamma-1$. The latter term is associated with the vertical
-entropy gradient, or buoyancy frequency squared, $N_z^2$. 
+% \subsubsection{Qualitative condition for buoyancy to be negligible in
+%   the presence of thermal relaxation}
+% {\bf this section might be wrong, but keep for reference for now}
+% We have shown that when $\gamma>1$ so that there is a positive
+% vertical entropy gradient and perturbations evolve
+% adiabatically ($t_c\to\infty$) that the VSI is strongly
+% surpressed. This is the limit where the term proportional to
+% $t_c^{-1}$ in the linearized energy equation (Eq. \ref{lin_energy})
+% becomes negligible compared to the term proportional to
+% $\gamma/\Gamma-1$. The latter term is associated with the vertical
+% entropy gradient, or buoyancy frequency squared, $N_z^2$. 
 
-Reversing the argument, we expect to recover the VSI when the bouyancy
-frequency becomes negligible compared to the cooling rate, or 
-\begin{align}
-  t_c \ll \frac{\Omega}{\gamma N_z^2}. 
-\end{align} 
-Parametrizing $t_c = \beta\Omega_k^{-1}$ and inserting the expression
-for $N_z^2$ appropriate for vertically isothermal disks, we expect
-\begin{align}
-  \beta \ll
-  \frac{1}{H^2_\mathrm{iso}\left(\gamma-1\right)\left(\frac{\p\ln\rho}{\p
-          z}\right)^2} 
-\end{align}
-is required to enable the VSI, where we used $\Omega\sim\Omega_k$.  
-This inequality is satisfied at the
-midplane and as $|z|\to\infty$. It can be satisifed at all heights if
-it is satisfied at the height of $\mathrm{max}|\p\ln\rho/\p z|$. 
-Using the full expression for the density field for vertically isothermal
-disks (Eq. \ref{vertiso_eqm}), we expect 
-\begin{align}
-  \beta \ll \frac{27}{4(\gamma-1)}\epsilon^2,
-\end{align}
-i.e. $\beta\ll O(\epsilon^2)$, is a sufficient condition for
-buoyancy to be negligible. 
+% Reversing the argument, we expect to recover the VSI when the bouyancy
+% frequency becomes negligible compared to the cooling rate, or 
+% \begin{align}
+%   t_c \ll \frac{\Omega}{\gamma N_z^2}. 
+% \end{align} 
+% Parametrizing $t_c = \beta\Omega_k^{-1}$ and inserting the expression
+% for $N_z^2$ appropriate for vertically isothermal disks, we expect
+% \begin{align}
+%   \beta \ll
+%   \frac{1}{H^2_\mathrm{iso}\left(\gamma-1\right)\left(\frac{\p\ln\rho}{\p
+%           z}\right)^2} 
+% \end{align}
+% is required to enable the VSI, where we used $\Omega\sim\Omega_k$.  
+% This inequality is satisfied at the
+% midplane and as $|z|\to\infty$. It can be satisifed at all heights if
+% it is satisfied at the height of $\mathrm{max}|\p\ln\rho/\p z|$. 
+% Using the full expression for the density field for vertically isothermal
+% disks (Eq. \ref{vertiso_eqm}), we expect 
+% \begin{align}
+%   \beta \ll \frac{27}{4(\gamma-1)}\epsilon^2,
+% \end{align}
+% i.e. $\beta\ll O(\epsilon^2)$, is a sufficient condition for
+% buoyancy to be negligible. 
 
 \subsection{Perturbations with thermal relaxation}\label{analytic_relax}
 Having examined the extreme limits of isothermal ($t_c\to0$) and
@@ -463,7 +463,7 @@ $k_x\to0$ or $k_x\to\infty$ as $\beta\to0$.
   \caption{Growth rate of the fundamental VSI mode in a disk with
     dimensionless thermal relaxation timescales
     $\beta\in[10^{-3},1]$ (top) and $\beta\in[1,10^3]$ (bottom).
-Other disk disk parameters are
+Other disk parameters are
     $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. The growth rates are
     calculated from the dispersion relation Eq. \ref{relax_disp}. 
     \label{relax_disp_fig}}  
@@ -485,7 +485,7 @@ Other disk disk parameters are
 
 
 \subsubsection{Upper limit on the thermal relaxation timescale for the
-  fundamental isothermal VSI mode}
+  fundamental isothermal VSI mode}\label{iso_vsi_beta_crit}
 Notice in Fig. \ref{relax_bcrit} the upper limit on $\beta$ for the
 fundamental isothermal VSI tends to a constant for large
 $\khat$. Using this clue, we can calculate this critical $\beta$ by
@@ -529,8 +529,28 @@ $\epsilon = 0.05$, $q=-1$ and $\gamma=1.4$ we find
 $\beta_\mathrm{crit}=0.125$, in agreement with Fig. \ref{relax_bcrit}
 at large $\khat$. 
 
-
-
+\subsubsection{Lower limit on the thermal relaxation timescale for the
+  fundamental adiabatic VSI mode}
+{\bf Note: for reference only. Not to be included in paper.} 
+Fig. \ref{relax_bcrit} indicates there exists a lower limit on the
+thermal relaxation time for the system to behave adiabatically and
+support the fundamental adiabatic VSI. This critical
+timescale satisfies Eq. \ref{relax_cond1}---\ref{relax_cond2} with 
+\begin{align}
+  \beta \sim \beta_0\khat^{1/2},\quad \hat{\omega}  \sim
+  \hat{\omega}_0\khat^{-1/2} \text{ as } \khat\to\infty.
+\end{align}
+The constants $\beta_0$ and $\hat{\omega}_0$ are determined by the
+simultaneous equations
+\begin{align}
+  & 0 = \gamma\beta_0^2(1-\gamma) + 2\epsilon q \gamma
+  \beta_0\hat{\omega}_0 - \hat{\omega}_0^2 +
+  \beta_0^2\gamma^2\hat{\omega}_0^4.\\
+  & 0= \beta_0(1-\gamma) + \epsilon q \hat{\omega}_0 - \epsilon q
+  \gamma^2 \beta_0^2\hat{\omega}_0^3. 
+\end{align}
+For $\epsilon = 0.05$, $q=-1$ and $\gamma=1.4$, the appropriate
+solution is $\beta_0 = 10.33$ and $\hat{\omega}_0 = 0.74$.  
 
 
 % The pair of ODEs for $W$ and $Q$

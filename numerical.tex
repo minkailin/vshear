@@ -36,8 +36,8 @@ problem.
 
 Unless otherwise stated, our fiducial disk model is a
 nearly-vertically isothermal disk with $\Gamma=1.011$, $p=-1.5$,
-$q=-1$, $\epsilon=0.1$, and the perturbation wavenumber $k_x = 200\pi/r$
-(or $\hat{k}=20\pi$). 
+$q=-1$, $\epsilon=0.1$, $\zmax = 10\epsilon r$, and the perturbation
+wavenumber $k_x = 200\pi/r$ (or $\hat{k}=20\pi$). 
 
 
 \subsection{VSI in a neutrally stratified disk}\label{vertiso_pertiso} 
@@ -191,10 +191,10 @@ using Eq. \ref{ode_w}---\ref{ode_Q} with the replacement
 $D\to\kappa^2$. We again obtained very similar results. 
 
 
-\subsubsection{Other adiabatic indices}
+\subsection{Other adiabatic indices}
 In Fig. \ref{adia_growth_num} we plot the eigenfrequencies of the
-fundamental VSI mode for a range of $\gamma$ values. This plot is to
-be compared with Fig. \ref{adia_growth}. 
+fundamental VSI mode for $\gamma\in[1,2]$. To select the appropriate
+eigenvalues we vary the parameters slowly away from a reference solution.   
 
 % The numerically-determined eigenfrequencies are qualitatively
 % consistent with the discussion in \S\ref{adia_compare_gam1}.
@@ -226,26 +226,66 @@ $\gamma$ is increased.
     isothermal disks ($\Gamma=1.011$) with $\epsilon=0.1$ and  
     $q=-1$, subject to adiabatic perturbations
     ($\beta=10^9$). The eigenfrequencies are calculated by numerically
-    solving the full linear eigenvalue problem. \label{adia_growth_num}}   
+    solving the full linear eigenvalue problem. This plot is to
+    be compared with Fig. \ref{adia_growth}. \label{adia_growth_num}}   
 \end{figure}   
 
 \subsection{Effect of thermal relaxation}
 We now introduce thermal relaxation. Here we consider a slightly
-different disk model with $\epsilon=0.05$ and
-$\gamma=1.4$. This model was used by \citep{nelson13}, where the
-authors find a cooling timescale of $\beta\geq 0.1$ was sufficient to
-stabilize the VSI in non-linear hydrodynamic simulations. 
+different disk model with $\epsilon=0.05$ and $\gamma=1.4$, as used by
+\cite{nelson13}. Fig. \ref{relax_growth_num} plots the growth rates
+of the fundamental mode function of $k_x$. %corrugation mode
+% We first obtain the eigenvalues for the
+% fundamental mode for $k_xH_\mathrm{iso}=0$, then vary parameters
+% slowly to obtain eigenvalues for other values of $k_x$ or $\beta$.   
+
+As above, Fig. \ref{relax_growth_num} compares well with
+Fig. \ref{relax_disp_fig} except at $k_xH_\mathrm{iso}\lesssim 1$
+where the low-frequency approximation fails. The non-smoothness in the
+curve for $\beta=0.063$ at $k_xH_\mathrm{iso}\gtrsim50$ was found to be
+associated with perturbations near the vertical boundaries. This is
+likely attributable to the free surface boundary condition 
+(cf. regularity condition at infinity in \S\ref{disp_relax}). 
+
+Fig. \ref{relax_growth_num} confirms our analytical discussion that
+introducing a small but finite cooling time stabilizes the fundamental
+VSI, but there is a preferable wavenumber around $k_xH_\mathrm{iso} =
+O(10)$ that maximizes this effect. 
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/compare_eigen_imag_bloop2}
+  \caption{Growth rates of the fundamental VSI mode in
+    nearly-vertically isothermal disks ($\Gamma=1.011$) with
+    $\epsilon=0.05$ and $q=-1$, with thermal relaxation timescale
+    $\beta$. The eigenfrequencies are calculated by numerically
+    solving the full linear eigenvalue problem. This plot is to
+    be compared with Fig. \ref{relax_disp_fig}. \label{relax_growth_num}}   
+\end{figure}   
+
+We visiualize the effect of thermal relaxation in
+Fig. \ref{relax_eigenW_num} by comparing the eigenfunction $W$ for
+$\beta=0.01$ and $\beta=0.125$, the latter is close to the critical
+value beyond which the isothermal fundamental VSI is stabilized
+(\S\ref{iso_vsi_beta_crit}).  
 
 
 
 
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/eigenvectorW_beta0d01}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 0cm]{figures/eigenvectorW_beta0d125}
+  \caption{Numerically-calculated eigenfunction of the fundamental VSI
+    mode in a disk with dimensionless thermal relaxation timescale
+    $\beta \equiv t_c\Omega_k = 0.01$ (top) and $0.125$ (bottom) for
+    perturbations with a radial wavenumber $k_xH_\mathrm{iso}=10$. The
+    real (imaginary) part of $W$ is plotted as the solid (dotted)
+    line. Other disk parameters are
+    $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$.
+    \label{relax_eigenW_num}}  
+\end{figure}
 
 
-
-
-% \subsection{Vertically non-isothermal disks}
-% {\bf big gamma larger than 1 but equal to small gamma, with tcool} 
-
-% \subsection{Non-uniform thermal relaxation} 
-% {\bf variable tcool, large at midplane, small in atmosphere. simplest
-%   model is to multiply tcool by background density} 
+\citeauthor{nelson13} find a thermal relaxation timescale of
+$\beta\gtrsim 0.6$ stabilized the VSI for this disk model in non-linear
+hydrodynamic simulations. This is consistent with our numerical
+results.    
