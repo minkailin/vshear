@@ -232,20 +232,22 @@ $\gamma$ is increased.
 
 \subsection{Effect of thermal relaxation}
 We now introduce thermal relaxation. Here we consider a slightly
-different disk model with $\epsilon=0.05$ and $\gamma=1.4$, as used by
-\cite{nelson13}. Fig. \ref{relax_growth_num} plots the growth rates
-of the fundamental mode function of $k_x$. %corrugation mode
+different disk model with $\epsilon=0.05$ and $\gamma=1.4$, as
+adopted in \cite{nelson13}. Fig. \ref{relax_growth_num} plots the
+growth rates of the fundamental mode function of $k_x$. %corrugation
+                                %mode 
 % We first obtain the eigenvalues for the
 % fundamental mode for $k_xH_\mathrm{iso}=0$, then vary parameters
 % slowly to obtain eigenvalues for other values of $k_x$ or $\beta$.   
 
-As above, Fig. \ref{relax_growth_num} compares well with
-Fig. \ref{relax_disp_fig} except at $k_xH_\mathrm{iso}\lesssim 1$
+As above, Fig. \ref{relax_growth_num} is largely consistent with 
+Fig. \ref{relax_disp_fig} except for $k_xH_\mathrm{iso}\lesssim 1$
 where the low-frequency approximation fails. The non-smoothness in the
-curve for $\beta=0.063$ at $k_xH_\mathrm{iso}\gtrsim50$ was found to be
-associated with perturbations near the vertical boundaries. This is
-likely attributable to the free surface boundary condition 
-(cf. regularity condition at infinity in \S\ref{disp_relax}). 
+curve for $\beta=0.063$ at $k_xH_\mathrm{iso}\sim50$ was found to be
+associated with large perturbations near the vertical boundaries. This is
+likely attributable to the free surface boundary condition imposed in
+the numerical calculation (cf. regularity condition at infinity in
+\S\ref{disp_relax}).    
 
 Fig. \ref{relax_growth_num} confirms our analytical discussion that
 introducing a small but finite cooling time stabilizes the fundamental
@@ -253,23 +255,23 @@ VSI, but there is a preferable wavenumber around $k_xH_\mathrm{iso} =
 O(10)$ that maximizes this effect. 
 
 \begin{figure}
+   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/compare_eigen_imag_bloop}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/compare_eigen_imag_bloop2}
   \caption{Growth rates of the fundamental VSI mode in
     nearly-vertically isothermal disks ($\Gamma=1.011$) with
     $\epsilon=0.05$ and $q=-1$, with thermal relaxation timescale
     $\beta$. The eigenfrequencies are calculated by numerically
-    solving the full linear eigenvalue problem. This plot is to
-    be compared with Fig. \ref{relax_disp_fig}. \label{relax_growth_num}}   
+    solving the full linear eigenvalue problem. \label{relax_growth_num}}   
 \end{figure}   
 
-We visiualize the effect of thermal relaxation in
+We visualize the effect of thermal relaxation in 
 Fig. \ref{relax_eigenW_num} by comparing the eigenfunction $W$ for
-$\beta=0.01$ and $\beta=0.125$, the latter is close to the critical
-value beyond which the isothermal fundamental VSI is stabilized
-(\S\ref{iso_vsi_beta_crit}).  
-
-
-
+$\beta=0.01$ and $\beta=0.125$. The latter value is close to the critical
+value beyond which the fundamental isothermal VSI is stabilized
+(\S\ref{iso_vsi_beta_crit}).  Increasing $\beta$ restricts 
+the region in which $W\sim z$ closer to the midplane, with oscillatory
+behavior emerging at the boundaries, where buoyancy first becomes
+important.  
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/eigenvectorW_beta0d01}
@@ -284,8 +286,12 @@ value beyond which the isothermal fundamental VSI is stabilized
     \label{relax_eigenW_num}}  
 \end{figure}
 
+%\citeauthor{nelson13} find a thermal relaxation timescale of
+% $\beta\gtrsim 0.6$ stabilized the VSI for this disk model in non-linear
+% hydrodynamic simulations. This is consistent with our numerical
+% results.  
 
-\citeauthor{nelson13} find a thermal relaxation timescale of
-$\beta\gtrsim 0.6$ stabilized the VSI for this disk model in non-linear
-hydrodynamic simulations. This is consistent with our numerical
-results.    
+\subsection{Vertically non-isothermal disks}
+%gamma = Gamma = 1.4, vary bcool
+
+%gamma = 2.0, Gamma = 1.4, vary bcool 
