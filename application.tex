@@ -1,10 +1,71 @@
 \section{Application to protoplanetary disks}
-As an application of our results, we estimate where in a 
-protoplanetary disk the VSI may operate.  
+As an application of our results, we estimate where in a
+protoplanetary disk do the thermodynamic conditions allow the VSI to 
+operate. Specifically, we consider the fundamental isothermal VSI, 
+for which we can use the simple criterion Eq. \ref{iso_vsi_cond}. The
+condition derived below may be considered as a sufficient condition for the VSI.  
+
+In our disk models we have adopted a simple thermal relaxation
+function in the energy equation. To connect our model with a realistic
+disk, we consider the more physically-motivated form of the energy
+equation with radiative cooling 
+\begin{align}\label{real_energy}
+\rho T \frac{DS}{Dt} = - \left(\nabla\cdot\bm{F} - Q_+\right), 
+\end{align}
+where the temperature $T$ is defined such that $P=\mathcal{R}\rho
+T/\mu$, where $\mathcal{R}$ is the ideal gas constant and $\mu$ is
+the mean molecular weight. In Eq. \ref{real_energy} $S$ is the
+specific entropy,
+\begin{align}
+  S \equiv c_v\ln{\left(\frac{p}{\rho^{\gamma}}\right)} 
+\end{align}
+where $c_v \equiv \left(\gamma-1\right)^{-1}\mathcal{R}/\mu$ is the specific heat capcity at
+constant volume, $D/Dt$ is the convective derivative, $\bm{F}$ is the
+radiative flux, and $Q_+$ is a heating term such that an equilibrium
+solution exists.  
+
+\subsection{Newtonian cooling}
+Our aim is to extract from Eq. \ref{real_energy} the dimensionless
+cooling time $\beta$ as used in our linear calculations. To do so, we
+consider perturbations with small radial lengthscales $L\equiv
+2\pi/k_x<l_\mathrm{rad}$ where 
+\begin{align}
+l_\mathrm{rad} \equiv \frac{1}{\kappa_d\rho} 
+\end{align} 
+is the photon mean-free-path and $\kappa_d$ is the (dust) opacity. For
+$L< l_\mathrm{rad}$ the radiative cooling is given by {\bf (reference?)}
+\begin{align}
+\nabla\cdot\bm{F} = 4 \rho \kappa_d \sigma_s T^4,
+\end{align}   
+where $\sigma_s$ is the Stefan-Boltzmann constant. We choose the
+heating term 
+\begin{align}
+  Q_+ = 4\rho\kappa_d\sigma_s T^{4}_{t=0}. 
+\end{align}
+Then Eq. \ref{real_energy} becomes
+\begin{align}
+  \frac{DP}{Dt} = -\gamma P \nabla\cdot\bm{v} -
+  \frac{4P\kappa_d\sigma_s}{Tc_v}\left(T^4 - T_{t=0}^4\right). 
+\end{align}
+When linearized, the last term on the right hand side becomes
+\begin{align}
+  -\frac{16\sigma_s}{c_v}\kappa_d T^3\left(\delta P -
+    \frac{P}{\rho}\delta\rho\right). 
+\end{align}
+By comparing this expression with the linearized version of the energy
+equation used in our calculations (Eq. \ref{energy_eq}), we identify 
+\begin{align}
+  t_c = \frac{c_v}{16\sigma_s\kappa_dT^3}.
+\end{align}
+For the fundamental isothermal VSI to operate, we need $\beta =
+t_c\Omega_k< \beta_\mathrm{crit}$ as given by
+Eq. \ref{iso_vsi_cond}. This translates to
+\begin{align} 
+  \frac{\mathcal{R}\Omega_k}{16\mu\sigma_s\kappa_dT^3} < \epsilon|q|. 
+\end{align}
 
 
 
 
-We consider 
 the Minimum Mass Solar Nebula (MMSN) described in \cite{chiang10}
 
