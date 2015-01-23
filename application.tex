@@ -1,13 +1,4 @@
 \section{Application to protoplanetary disks}\label{application} 
-
-\subsection{Numerical example}
-
-
-
-
-
-
-\subsection{Connection with radiative cooling}
 As an application of our results, we estimate where in a 
 protoplanetary disk do the thermodynamic conditions allow the VSI to 
 operate. Specifically, we consider the fundamental isothermal VSI, 
@@ -33,7 +24,7 @@ constant volume, $D/Dt$ is the convective derivative, $\bm{F}$ is the
 radiative flux, and $Q_+$ is a heating term such that an equilibrium
 solution exists.  
 
-\subsubsection{Newtonian cooling}
+\subsection{Newtonian cooling}
 Our aim is to extract from Eq. \ref{real_energy} the dimensionless
 cooling time $\beta$ as used in our linear calculations. To do so, we
 consider perturbations with small radial lengthscales $L\equiv
@@ -63,7 +54,7 @@ When linearized, the last term on the right hand side becomes
 \end{align}
 By comparing this expression with the linearized version of the energy
 equation used in our calculations (Eq. \ref{energy_eq}), we identify 
-\begin{align}
+\begin{align}\label{tc_newton_cool}
   t_c = \frac{c_v}{16\sigma_s\kappa_dT^3}.
 \end{align}
 For the fundamental isothermal VSI to operate, we need $\beta =
@@ -109,7 +100,32 @@ For the MMSN and $\khat=10$, say, this is
 % These rough estimates suggest that the VSI can operate in the outer
 % parts of protoplanetary disks. 
 
-\subsubsection{Radiative diffusion}
+\subsubsection{Numerical example 1}
+Consider the MMSN at $r=50\mathrm{AU}$, with $\gamma=1.4$ and
+$\mu=2$. Then we find
+the dimensionless thermal relaxation time, using
+Eq. \ref{tc_newton_cool}, is
+\begin{align*}
+  \beta \simeq 0.057. 
+\end{align*}
+At $r=50\mathrm{AU}$, the disk aspect ratio is $\epsilon \simeq
+0.067$ which implies, using Eq. \ref{iso_vsi_cond}, a critical 
+relaxation timescale of  
+\begin{align*}
+  \beta_\mathrm{crit} \simeq 0.072. 
+\end{align*}
+Thus, the disk supports the fundamental isothermal VSI, but only
+marginally. Using the above value of $\beta$ and the disk parameters
+for the MMSN at $50\mathrm{AU}$ in our linear code we find, for a
+perturbation wavenumber $\khat=10$, a growth rate of
+\begin{align*}
+  \nu = 2.6\times10^{-3}\Omega_k.
+\end{align*}
+This corresponds to a characteristic growth time of $t_g\simeq 60$
+orbits. 
+%only find one unstable mode -> close to marginal 
+
+\subsection{Radiative diffusion}
 For perturbation lengthscales $L>l_\mathrm{rad}$,  
 let us assume that temperature fluctuations are smoothed out by
 radiative diffusion. To model this in linear theory we can redefine
@@ -146,7 +162,7 @@ Now, the dimensional diffusion cofficient is {\bf(reference needed?)}
   \eta = \frac{16\sigma_s T^3}{3\kappa_d\rho^2 c_v}, 
 \end{align}
 so that
-\begin{align}
+\begin{align}\label{diff_coeff_dimensionless}
   \hat{\eta} \simeq  \frac{16\sigma_s T^3}{3\kappa_d\Sigma^2
     c_v\Omega_k}. 
 \end{align}
@@ -182,3 +198,27 @@ For the fiducial disk model this is
   \left(\hat{\kappa}_d\hat{T}^2\hat{\Sigma}\right)^{14/33}, 
 \end{align}
 so the above estimate is valid for the MMSN. 
+
+\subsubsection{Numerical example 2}
+Consider the MMSN at $r=25\mathrm{AU}$, with $\gamma=1.4$ and $\mu=2$
+as before. Evaluating Eq. \ref{diff_coeff_dimensionless} at
+$25\mathrm{AU}$ for the MMSN, we find
+\begin{align*}
+  \frac{1}{\hat{\eta}} \simeq 1.12. 
+\end{align*}
+At $r=25\mathrm{AU}$ the disk aspect ratio is
+$\epsilon\simeq0.055$. Then Eq. \ref{iso_vsi_cond_diff} becomes
+\begin{align*}
+  \khat^2\gtrsim 15. 
+\end{align*}
+
+Using the above disk parameters with $\beta =
+1/\hat{\eta}\khat^2\simeq0.011$ in our linear code, we find, for
+$\khat=10$ a growth rate of 
+\begin{align*}
+\nu = 8.5\times10^{-3}\Omega_k. 
+\end{align*} 
+This corresponds to a characteristic growth time of $t_g\simeq19$
+orbits. 
+%other modes exist but fundamental isothermal is among the fastest
+%(second harmonic only slightly faster)
