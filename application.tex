@@ -1,5 +1,14 @@
-\section{Application to protoplanetary disks}
-As an application of our results, we estimate where in a
+\section{Application to protoplanetary disks}\label{application} 
+
+\subsection{Numerical example}
+
+
+
+
+
+
+\subsection{Connection with radiative cooling}
+As an application of our results, we estimate where in a 
 protoplanetary disk do the thermodynamic conditions allow the VSI to 
 operate. Specifically, we consider the fundamental isothermal VSI, 
 for which we can use the simple criterion Eq. \ref{iso_vsi_cond}. The
@@ -24,7 +33,7 @@ constant volume, $D/Dt$ is the convective derivative, $\bm{F}$ is the
 radiative flux, and $Q_+$ is a heating term such that an equilibrium
 solution exists.  
 
-\subsection{Newtonian cooling}
+\subsubsection{Newtonian cooling}
 Our aim is to extract from Eq. \ref{real_energy} the dimensionless
 cooling time $\beta$ as used in our linear calculations. To do so, we
 consider perturbations with small radial lengthscales $L\equiv
@@ -60,12 +69,116 @@ equation used in our calculations (Eq. \ref{energy_eq}), we identify
 For the fundamental isothermal VSI to operate, we need $\beta =
 t_c\Omega_k< \beta_\mathrm{crit}$ as given by
 Eq. \ref{iso_vsi_cond}. This translates to
-\begin{align} 
+\begin{align}\label{newton_vsi_app} 
   \frac{\mathcal{R}\Omega_k}{16\mu\sigma_s\kappa_dT^3} < \epsilon|q|. 
 \end{align}
 
 
+We evaluate Eq. \ref{newton_vsi_app} for the Minimum Mass Solar Nebula
+(MMSN) described in \cite{chiang10} and summarized in Appendix
+\ref{mmsn} to find
+\begin{align}
+  \frac{r}{\mathrm{AU}}\lesssim 14.24\left(\mu\hat{\kappa}_d
+  \right)^{14/5}\hat{T}^{14}.
+\end{align}
+For the MMSN with $\mu=2$ this is
+\begin{align*}
+r\lesssim 100\mathrm{AU}. 
+\end{align*}
 
+On the other hand, we have assumed the perturbation lengthscale
+$L<l_\mathrm{rad}$, or
+\begin{align} 
+  \frac{2\pi}{\khat} < \frac{l_\mathrm{rad}}{H_\mathrm{iso}} =
+  \frac{1}{\kappa_d\rho H_\mathrm{iso}} \sim
+  \frac{1}{\kappa_d\Sigma}. 
+\end{align}
+For the fiducial disk model, this becomes 
+% \begin{align}
+%   \khat \gtrsim 3.98\times10^4
+%   \hat{\kappa_d}\hat{\Sigma}\hat{T}^2\left(\frac{r}{\mathrm{AU}}\right)^{-33/14}. 
+% \end{align}
+\begin{align}
+  \left(\frac{r}{\mathrm{AU}}\right) \gtrsim 
+  89.4\left(\hat{\kappa}_d\hat{\Sigma}\right)^{14/33}\hat{T}^{28/33}\khat^{-14/33}.  
+\end{align}
+For the MMSN and $\khat=10$, say, this is
+\begin{align*}
+  r \gtrsim 34 \mathrm{AU}. 
+\end{align*}
+% These rough estimates suggest that the VSI can operate in the outer
+% parts of protoplanetary disks. 
 
-the Minimum Mass Solar Nebula (MMSN) described in \cite{chiang10}
+\subsubsection{Radiative diffusion}
+For perturbation lengthscales $L>l_\mathrm{rad}$,  
+let us assume that temperature fluctuations are smoothed out by
+radiative diffusion. To model this in linear theory we can redefine
+the cooling time as the operator 
+\begin{align}
+  t_c^{-1} \to -\eta \nabla^2, 
+\end{align}
+where $\eta$ is the diffusion coefficient. This, of course,
+fundamentally changes the linear problem by introducing higher order
+derivatives. We defer a proper analysis of this problem to a follow-up
+study. Here, we are interested in order-of-magnitude estimates. We
+thus proceed by assuming vertical derivatives can be neglected in the
+Laplacian. Then
+\begin{align}
+  t_c^{-1} \sim \eta k_x^2 = \hat{\eta} \Omega_k \khat^2,
+\end{align}
+where $\hat{\eta} = \eta/H_\mathrm{iso}^2\Omega_k$ is the
+dimensionless diffusion coefficient, so that
+\begin{align}
+  \beta = \frac{1}{\hat{\eta}\khat^2}. 
+\end{align}
 
+Our linearized equations remain valid for thermal relaxation by
+radiative diffusion with the above approximation, provided we replace
+the dimensionless cooling timescale $\beta$ by
+$1/\hat{\eta}\khat^2$. Then the criterion for the fundamental
+isothermal VSI, Eq. \ref{iso_vsi_cond} becomes
+\begin{align}\label{iso_vsi_cond_diff}
+  \frac{(\gamma-1)}{\epsilon |q|\khat^2}< \hat{\eta}. 
+\end{align}
+
+Now, the dimensional diffusion cofficient is {\bf(reference needed?)}
+\begin{align}
+  \eta = \frac{16\sigma_s T^3}{3\kappa_d\rho^2 c_v}, 
+\end{align}
+so that
+\begin{align}
+  \hat{\eta} \simeq  \frac{16\sigma_s T^3}{3\kappa_d\Sigma^2
+    c_v\Omega_k}. 
+\end{align}
+The criterion Eq. \ref{iso_vsi_cond_diff} becomes
+\begin{align}
+\frac{3\kappa_d\Sigma^2\mathcal{R}
+  \Omega_k}{16\mu\sigma_s T^3} < \epsilon |q| \khat^2. 
+\end{align}
+For the fiducial disk model this translates to
+\begin{align}
+  \left(\frac{r}{\mathrm{AU}}\right) \gtrsim
+  76.5\left(\frac{\hat{\kappa}_d\hat{\Sigma}^2}{\hat{T}}\right)^{14/57}\mu^{-14/57}\khat^{-28/57}. 
+\end{align} 
+Inserting $\mu=2$ and $\khat=10$ we find, for the MMSN, that
+\begin{align*}
+  r\gtrsim 21 \mathrm{AU}. 
+\end{align*}
+
+We have, however, assumed that perturbation lengthscales
+$L>l_\mathrm{rad}$, which is the opposite limit to the previous
+section. Thus, for the MMSN and $\khat=10$ the above estimate is
+restricted to $r\lesssim 34\mathrm{AU}$. This suggests that the VSI
+can operate between $\sim 20$---$30\mathrm{AU}$ in the MMSN. 
+
+Finally, we need to verify the radiative diffusion approximation. This
+requires an optical depth greater than unity, or
+\begin{align}
+  l_\mathrm{rad}< H_\mathrm{iso}. 
+\end{align}
+For the fiducial disk model this is
+\begin{align}
+  \left(\frac{r}{\mathrm{AU}}\right) \lesssim 41
+  \left(\hat{\kappa}_d\hat{T}^2\hat{\Sigma}\right)^{14/33}, 
+\end{align}
+so the above estimate is valid for the MMSN. 
