@@ -24,16 +24,18 @@ constant volume, $D/Dt$ is the convective derivative, $\bm{F}$ is the
 radiative flux, and $Q_+$ is a heating term such that an equilibrium
 solution exists.  
 
-\subsection{Newtonian cooling}
-Our aim is to extract from Eq. \ref{real_energy} the dimensionless
-cooling time $\beta$ as used in our linear calculations. To do so, we
-consider perturbations with small radial lengthscales $L\equiv
-2\pi/k_x<l_\mathrm{rad}$ where 
-\begin{align}
-l_\mathrm{rad} \equiv \frac{1}{\kappa_d\rho} 
+Our aim is to relate the right hand side (RHS) of Eq. \ref{real_energy} to
+the thermal relaxation time $t_c$ as used in our linear
+calculations. To do so, we first consider separately perturbations
+with radial lengthscales $L\equiv 2\pi/k_x\ll l_\mathrm{rad}$ and 
+$L\gg l_\mathrm{rad}$, where      
+\begin{align}\label{lrad}
+  l_\mathrm{rad} \equiv \frac{1}{\kappa_d\rho} 
 \end{align} 
-is the photon mean-free-path and $\kappa_d$ is the (dust) opacity. For
-$L< l_\mathrm{rad}$ the radiative cooling is given by {\bf (reference?)}
+is the photon mean-free-path and $\kappa_d$ is the (dust) opacity. 
+
+\subsection{Newtonian cooling}
+For $L\ll l_\mathrm{rad}$ the radiative cooling is given by {\bf (reference?)}
 \begin{align}
 \nabla\cdot\bm{F} = 4 \rho \kappa_d \sigma_s T^4,
 \end{align}   
@@ -47,178 +49,157 @@ Then Eq. \ref{real_energy} becomes
   \frac{DP}{Dt} = -\gamma P \nabla\cdot\bm{v} -
   \frac{4P\kappa_d\sigma_s}{Tc_v}\left(T^4 - T_{t=0}^4\right). 
 \end{align}
-When linearized, the last term on the right hand side becomes
+When linearized, the last term on the RHS becomes
 \begin{align}
   -\frac{16\sigma_s}{c_v}\kappa_d T^3\left(\delta P -
     \frac{P}{\rho}\delta\rho\right). 
 \end{align}
 By comparing this expression with the linearized version of the energy
 equation used in our calculations (Eq. \ref{energy_eq}), we identify 
-\begin{align}\label{tc_newton_cool}
-  t_c = \frac{c_v}{16\sigma_s\kappa_dT^3}.
+\begin{align}\label{tc_newton_cool} 
+  t_\mathrm{cool} = \frac{c_v}{16\sigma_s\kappa_dT^3}
 \end{align}
-For the fundamental isothermal VSI to operate, we need $\beta =
-t_c\Omega_k< \beta_\mathrm{crit}$ as given by
-Eq. \ref{iso_vsi_cond}. This translates to
-\begin{align}\label{newton_vsi_app} 
-  \frac{\mathcal{R}\Omega_k}{16\mu\sigma_s\kappa_dT^3} < \epsilon|q|. 
-\end{align}
-
-
-We evaluate Eq. \ref{newton_vsi_app} for the Minimum Mass Solar Nebula
-(MMSN) described in \cite{chiang10} and summarized in Appendix
-\ref{mmsn} to find
-\begin{align}
-  \frac{r}{\mathrm{AU}}\lesssim 14.24\left(\mu\hat{\kappa}_d
-  \right)^{14/5}\hat{T}^{14}.
-\end{align}
-For the MMSN with $\mu=2$ this is
-\begin{align*}
-r\lesssim 100\mathrm{AU}. 
-\end{align*}
-
-On the other hand, we have assumed the perturbation lengthscale
-$L<l_\mathrm{rad}$, or
-\begin{align} 
-  \frac{2\pi}{\khat} < \frac{l_\mathrm{rad}}{H_\mathrm{iso}} =
-  \frac{1}{\kappa_d\rho H_\mathrm{iso}} \sim
-  \frac{1}{\kappa_d\Sigma}. 
-\end{align}
-For the fiducial disk model, this becomes 
-% \begin{align}
-%   \khat \gtrsim 3.98\times10^4
-%   \hat{\kappa_d}\hat{\Sigma}\hat{T}^2\left(\frac{r}{\mathrm{AU}}\right)^{-33/14}. 
-% \end{align}
-\begin{align}
-  \left(\frac{r}{\mathrm{AU}}\right) \gtrsim 
-  89.4\left(\hat{\kappa}_d\hat{\Sigma}\right)^{14/33}\hat{T}^{28/33}\khat^{-14/33}.  
-\end{align}
-For the MMSN and $\khat=10$, say, this is
-\begin{align*}
-  r \gtrsim 34 \mathrm{AU}. 
-\end{align*}
-% These rough estimates suggest that the VSI can operate in the outer
-% parts of protoplanetary disks. 
-
-\subsubsection{Numerical example 1}
-Consider the MMSN at $r=50\mathrm{AU}$, with $\gamma=1.4$ and
-$\mu=2$. Then we find
-the dimensionless thermal relaxation time, using
-Eq. \ref{tc_newton_cool}, is
-\begin{align*}
-  \beta \simeq 0.057. 
-\end{align*}
-At $r=50\mathrm{AU}$, the disk aspect ratio is $\epsilon \simeq
-0.067$ which implies, using Eq. \ref{iso_vsi_cond}, a critical 
-relaxation timescale of  
-\begin{align*}
-  \beta_\mathrm{crit} \simeq 0.072. 
-\end{align*}
-Thus, the disk supports the fundamental isothermal VSI, but only
-marginally. Using the above value of $\beta$ and the disk parameters
-for the MMSN at $50\mathrm{AU}$ in our linear code we find, for a
-perturbation wavenumber $\khat=10$, a growth rate of
-\begin{align*}
-  \nu = 2.6\times10^{-3}\Omega_k.
-\end{align*}
-This corresponds to a characteristic growth time of $t_g\simeq 60$
-orbits. 
-%only find one unstable mode -> close to marginal 
+as the thermal relaxation timescale for perturbation lengthscales
+$L\ll l_\mathrm{rad}$. 
 
 \subsection{Radiative diffusion}
-For perturbation lengthscales $L>l_\mathrm{rad}$,  
-let us assume that temperature fluctuations are smoothed out by
-radiative diffusion. To model this in linear theory we can redefine
-the cooling time as the operator 
+For perturbation lengthscales $L\gg l_\mathrm{rad}$, let us assume that
+temperature fluctuations are smoothed out by radiative diffusion. To
+model this in linear theory, we choose the heating term such that
 \begin{align}
-  t_c^{-1} \to -\eta \nabla^2, 
-\end{align}
-where $\eta$ is the diffusion coefficient. This, of course,
-fundamentally changes the linear problem by introducing higher order
-derivatives. We defer a proper analysis of this problem to a follow-up
-study. Here, we are interested in order-of-magnitude estimates. We
-thus proceed by assuming vertical derivatives can be neglected in the
-Laplacian. Then
+  Q_+ - \nabla\cdot\bm{F} \equiv \nabla\cdot\left[k_\mathrm{rad}\nabla
+    \left(T-T_{t=0}\right)\right], 
+\end{align} 
+where $k_\mathrm{rad}$ is the conduction coefficient to be defined
+implicitly. Eq. \ref{real_energy} becomes
 \begin{align}
-  t_c^{-1} \sim \eta k_x^2 = \hat{\eta} \Omega_k \khat^2,
+  \frac{DP}{Dt} = -\gamma P \nabla\cdot\bm{v} + \frac{P}{\rho T
+    c_v}\nabla\cdot\left[k_\mathrm{rad}\nabla\left(T-T_{t=0}\right)\right].     
 \end{align}
-where $\hat{\eta} = \eta/H_\mathrm{iso}^2\Omega_k$ is the
-dimensionless diffusion coefficient, so that
-\begin{align}
-  \beta = \frac{1}{\hat{\eta}\khat^2}. 
+When linearized, the last term on the RHS becomes
+\begin{align}\label{diff_cool_proper}
+  \frac{P}{\rho T c_v} \nabla\cdot\left(k_\mathrm{rad}\nabla\delta
+    T\right). 
 \end{align}
-
-Our linearized equations remain valid for thermal relaxation by
-radiative diffusion with the above approximation, provided we replace
-the dimensionless cooling timescale $\beta$ by
-$1/\hat{\eta}\khat^2$. Then the criterion for the fundamental
-isothermal VSI, Eq. \ref{iso_vsi_cond} becomes
-\begin{align}\label{iso_vsi_cond_diff}
-  \frac{(\gamma-1)}{\epsilon |q|\khat^2}< \hat{\eta}. 
+This, of course, fundamentally changes the linear problem by
+introducing higher order derivatives. We defer a proper analysis of
+this problem to a follow-up study. Here, we are interested in
+order-of-magnitude estimates. We thus proceed by assuming vertical
+derivatives can be neglected in Eq. \ref{diff_cool_proper} and write
+\begin{align}\label{diff_cool_approx}
+  \frac{P}{\rho T c_v} \nabla\cdot\left(k_\mathrm{rad}\nabla\delta
+    T\right) &\to -\frac{k_\mathrm{rad}}{\rho
+    c_v}k_x^2P\left(\frac{\delta T}{T}\right)\notag\\
+  &\equiv -\eta k_x^2 \left(\delta P - \frac{P}{\rho}\delta\rho\right), 
 \end{align}
-
-Now, the dimensional diffusion cofficient is {\bf(reference needed?)}
-\begin{align}
-  \eta = \frac{16\sigma_s T^3}{3\kappa_d\rho^2 c_v}, 
+%we are interested in radially-thin perturbations  
+where $\eta=k_\mathrm{rad}/\rho c_v$ is the diffusion coefficient and
+is given in terms of physical disk parameters as 
+\begin{align}\label{eta_def}
+  \eta = \frac{16\sigma_s T^3}{3\kappa_d\rho^2 c_v}. 
 \end{align}
-so that
+From Eq. \ref{diff_cool_approx} we identify the thermal relaxation
+time for diffusion as 
+\begin{align}\label{tc_diff_cool} 
+  t_\mathrm{diff} = \frac{1}{\eta k_x^2}\equiv \frac{\Omega_k^{-1}}{\hat{\eta}\khat^2}, 
+\end{align}
+where $\hat{\eta} = \eta/H_\mathrm{iso}^2\Omega_k$ is the 
+dimensionless diffusion coefficient defined for convenience, and is
+approximately 
 \begin{align}\label{diff_coeff_dimensionless}
   \hat{\eta} \simeq  \frac{16\sigma_s T^3}{3\kappa_d\Sigma^2
     c_v\Omega_k}. 
 \end{align}
-The criterion Eq. \ref{iso_vsi_cond_diff} becomes
-\begin{align}
-\frac{3\kappa_d\Sigma^2\mathcal{R}
-  \Omega_k}{16\mu\sigma_s T^3} < \epsilon |q| \khat^2. 
+
+\subsection{Toy model for realistic thermal relaxation}
+To unify $t_\mathrm{cool}$ and $t_\mathrm{diff}$, we define the
+effective thermal relaxation timescale in linear theory as
+\begin{align}\label{tc_def}
+  t_c &\equiv t_\mathrm{cool} + t _\mathrm{diff} =
+  \frac{l_\mathrm{rad}^2}{3\eta} + \frac{1}{\eta k_x^2},  
 \end{align}
-For the fiducial disk model this translates to
-\begin{align}
-  \left(\frac{r}{\mathrm{AU}}\right) \gtrsim
-  76.5\left(\frac{\hat{\kappa}_d\hat{\Sigma}^2}{\hat{T}}\right)^{14/57}\mu^{-14/57}\khat^{-28/57}. 
-\end{align} 
-Inserting $\mu=2$ and $\khat=10$ we find, for the MMSN, that
-\begin{align*}
-  r\gtrsim 21 \mathrm{AU}. 
-\end{align*}
+where the relation between $t_\mathrm{cool}$, $l_\mathrm{rad}$ and
+$\eta$ can be inferred from Eq. \ref{lrad}, Eq. \ref{tc_newton_cool}
+and Eq. \ref{eta_def}. Eq. \ref{tc_def} is a simple prescription so
+that for small scales (large $k_x$), $t_c\to t_\mathrm{cool}$, while
+for large scales (small $k_x$), $t_c\to t_\mathrm{diff}$. 
 
-We have, however, assumed that perturbation lengthscales
-$L>l_\mathrm{rad}$, which is the opposite limit to the previous
-section. Thus, for the MMSN and $\khat=10$ the above estimate is
-restricted to $r\lesssim 34\mathrm{AU}$. This suggests that the VSI
-can operate between $\sim 20$---$30\mathrm{AU}$ in the MMSN. 
-
-Finally, we need to verify the radiative diffusion approximation. This
-requires an optical depth greater than unity, or
-\begin{align}
-  l_\mathrm{rad}< H_\mathrm{iso}. 
+The dimensionless thermal relaxation time $\beta$ is then
+\begin{align}\label{real_beta}
+  \beta \equiv t_c\Omega_k =
+  \frac{1}{\hat{\eta}}\left(\frac{l_\mathrm{rad}^2}{3H_\mathrm{iso}^2}
+    + \frac{1}{\khat^2}\right)  \simeq
+  \frac{1}{\hat{\eta}}\left(\frac{1}{3\kappa_d^2\Sigma^2} 
+    + \frac{1}{\khat^2}\right).
 \end{align}
-For the fiducial disk model this is
-\begin{align}
-  \left(\frac{r}{\mathrm{AU}}\right) \lesssim 41
-  \left(\hat{\kappa}_d\hat{T}^2\hat{\Sigma}\right)^{14/33}, 
+
+\subsection{Evaluation for a fiducial disk model}
+We evaluate Eq. \ref{real_beta} for the protoplanetary disk model
+described in \cite{chiang10} and summarized in Appendix \ref{mmsn}
+(where an opacity model is also chosen). Defining $\zeta\equiv
+r/\mathrm{AU}$, we find Eq. \ref{real_beta} becomes
+\begin{align}\label{beta_mmsn}
+\beta =
+\frac{4.4\times10^5}{\mu(\gamma-1)}\left(\frac{\hat{\kappa}_d\hat{\Sigma}^2}{\hat{T}}\right)\zeta^{-57/14}\left(\frac{8.3\times10^{-9}}{\hat{\kappa}_d^2\hat{T}^4\hat{\Sigma}^2}\zeta^{33/7}+\frac{1}{\khat^2}\right).  
 \end{align}
-so the above estimate is valid for the MMSN. 
+We also evaluate the criterion Eq. \ref{iso_vsi_cond} for the fiducial
+disk model, 
+\begin{align}\label{bcrit_mmsn}
+  \beta_\mathrm{crit} = \frac{9.4\times10^{-3}}{(\gamma
+    -1)}\zeta^{2/7},
+\end{align}
+and we recall $\beta < \beta_\mathrm{crit}$ permits the fundamental 
+isothermal VSI to operate. 
 
-\subsubsection{Numerical example 2}
-Consider the MMSN at $r=25\mathrm{AU}$, with $\gamma=1.4$ and $\mu=2$
-as before. Evaluating Eq. \ref{diff_coeff_dimensionless} at
-$25\mathrm{AU}$ for the MMSN, we find
-\begin{align*}
-  \frac{1}{\hat{\eta}} \simeq 1.12. 
-\end{align*}
-At $r=25\mathrm{AU}$ the disk aspect ratio is
-$\epsilon\simeq0.055$. Then Eq. \ref{iso_vsi_cond_diff} becomes
-\begin{align*}
-  \khat^2\gtrsim 15. 
-\end{align*}
+In Fig. \ref{mmsn_bcrit_bcool} we plot Eq. \ref{beta_mmsn} and
+Eq. \ref{bcrit_mmsn} for the MMSN with $\mu = 2$ and
+$\gamma=1.4$. Although it is possible to satisfy
+$\beta<\beta_\mathrm{crit}$ at small radii by choosing a sufficiently
+large $\khat$, our linear calculations suggest growth rates eventually
+decay as $\khat\to\infty$. We thus restrict our attention to
+$\khat\lesssim 10^2$. 
 
-Using the above disk parameters with $\beta =
-1/\hat{\eta}\khat^2\simeq0.011$ in our linear code, we find, for
-$\khat=10$ a growth rate of 
+Fig. \ref{mmsn_bcrit_bcool} suggests that the fundamental isothermal
+VSI can operate in the outer parts of the MMSN at radii on the order
+of tens of AU. However, the thermal relaxation time $\beta$ is not
+much shorter than $\beta_\mathrm{crit}$, suggesting the VSI may be
+weak.   
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/bcrit_mmsn}  
+  \caption{Dimensionless thermal relaxation timescales $\beta$ in the MMSN
+    using Eq. \ref{beta_mmsn} for three values of the 
+    perturbation radial wavenumber: $\khat=1$ (dotted), $\khat=10$
+    (dashed) and $\khat=100$ (dashed-dot). The relaxation timescale
+    $\beta_\mathrm{crit}$, below which the fundamental isothermal VSI
+    operates, is shown as the solid line. 
+    \label{mmsn_bcrit_bcool}}   
+\end{figure}  
+
+\subsection{Numerical example}
+Consider perturbations with $\khat=10$ in the 
+the MMSN at $r=30\mathrm{AU}$, with $\gamma=1.4$ and
+$\mu=2$. Then we find
+the dimensionless thermal relaxation time, using
+Eq. \ref{tc_newton_cool}, is
 \begin{align*}
-\nu = 8.5\times10^{-3}\Omega_k. 
-\end{align*} 
-This corresponds to a characteristic growth time of $t_g\simeq19$
+  \beta \simeq 0.046. 
+\end{align*}
+At $r=30\mathrm{AU}$, the disk aspect ratio is $\epsilon \simeq
+0.058$ which implies, using Eq. \ref{iso_vsi_cond}, a critical 
+relaxation timescale of  
+\begin{align*}
+  \beta_\mathrm{crit} \simeq 0.062. 
+\end{align*}
+Thus, the disk supports the fundamental isothermal VSI, but only
+marginally. Using the above value of $\beta$, MMSN disk parameters
+and $\khat=10$ in our linear code, we find a growth rate of
+\begin{align*}
+  \nu = 2.7\times10^{-3}\Omega_k.
+\end{align*}
+This corresponds to a characteristic growth time of $t_g\simeq 60$
 orbits. 
-%other modes exist but fundamental isothermal is among the fastest
-%(second harmonic only slightly faster)
+
+ %only find one unstable mode -> close to marginal 
+
+ %larger kx 
