@@ -84,7 +84,7 @@ pro result, mmode=mmode, xrange=xrange, yrange=yrange, scale=scale
 
 
   nmodes = file_lines('eigenvalues.dat')
-  eigenvalues = dblarr(2,nmodes)
+  eigenvalues = dblarr(3,nmodes)
   openr,1,'eigenvalues.dat'
   readf,1,eigenvalues
   close,1
@@ -140,8 +140,7 @@ pro result, mmode=mmode, xrange=xrange, yrange=yrange, scale=scale
   growthrate = (eigenvalues(1,mmode-1))
   title = '\omega='+string(realfreq,format='(f6.2)')+'\epsilon\Omega_k, '
   title+= '\nu='+string(growthrate,format='(f4.2)')+'\epsilon\Omega_k, '
-  title+= 't_c\Omega_k='+string(bcool,format='(f5.3)')+', '
-  title+= 'k_xH_{iso}='+string(kx/smallh,format='(f4.1)')
+  title+= 't_c\Omega_k='+string(bcool,format='(f5.3)')
   title = textoidl(title)
   set_plot, 'ps'
   device, filename='eigenvectorW.ps' $

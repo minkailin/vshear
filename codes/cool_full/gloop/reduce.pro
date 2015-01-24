@@ -16,7 +16,7 @@ pro reduce, nk=nk
 
  new_kaxis = dblarr(nk)
  dlogkx = alog10(kmax/kmin)/(nk-1d0)
- for i=0, nk-1 do new_kaxis(i) = 10d0^(alog10(kmin) + dlogkx*(i-1d0))
+ for i=0, nk-1 do new_kaxis(i) = 10d0^(alog10(kmin) + dlogkx*i)
 
  new_freq    = spline(kaxis, freq, new_kaxis)
  new_growth  = spline(kaxis, growth, new_kaxis)

@@ -29,9 +29,9 @@ pro compare_eigen, legend=legend, mmode=mmode, yrange=yrange, xrange=xrange, cas
   readf,1,kaxis
   close,1
   
-  nb = file_lines('gaxis.dat')
+  nb = file_lines('baxis.dat')
   baxis = dblarr(4,nb)
-  openr,1,'gaxis.dat'
+  openr,1,'baxis.dat'
   readf,1,baxis
   close,1 
 
@@ -41,22 +41,32 @@ pro compare_eigen, legend=legend, mmode=mmode, yrange=yrange, xrange=xrange, cas
   readf,1,eigenvalues
   close,1
 
+  if keyword_set(cases) then  begin
   ncases = n_elements(cases)
+  endif else begin
+  ncases = nb
+  endelse 
+
   bvals  = dblarr(ncases)
   freq   = dblarr(ncases, nk)
   growth = dblarr(ncases, nk) 
 
+
   for i=0, ncases-1 do begin
+  if keyword_set(cases) then begin 
   temp = min(abs(baxis(0,*) - cases(i)),grid)
+  endif else begin
+  grid = i
+  endelse
   bvals(i) = baxis(0,grid)
-  
+
   ibeg = grid*nk 
   freq(i,*)  = eigenvalues(0,ibeg:ibeg+nk-1)
   growth(i,*)= eigenvalues(1,ibeg:ibeg+nk-1) 
 
   endfor  
 
-  label = '\gamma='+string(bvals,format='(f4.2)')
+  label = '\beta='+string(bvals,format='(f5.3)')
   color_arr = dindgen(ncases)
   for i=0, ncases-1 do color_arr(i) *= 256/ncases
  
@@ -65,21 +75,27 @@ pro compare_eigen, legend=legend, mmode=mmode, yrange=yrange, xrange=xrange, cas
   device, filename='compare_eigen_imag.ps'$
           ,bits_per_pixel=8,xsize=8, ysize=4.5,xoffset=0,yoffset=0,/inches,/color
 
-  plot, kaxis, 10d0*abs(growth(0,*)) ,xmargin=[7,3],ymargin=[3.5,2] $
-        ,ytitle=textoidl('10\times|\nu|/(\epsilon\Omega_k)'),xtitle=textoidl('k_xH_{iso}') $
+  plot, kaxis, 10d0*growth(0,*) ,xmargin=[7,3],ymargin=[3.5,2] $
+        ,ytitle=textoidl('10\times\nu/(\epsilon\Omega_k)'),xtitle=textoidl('k_xH_{iso}') $
         ,charsize=1.5, thick=4, xrange=xrange,xtickinterval=xtickinterval $
         ,yrange=yrange,ytickinterval=ytickinterval, title=title, color=color_arr(0), /xlog
   for i=1, ncases-1 do begin
-     oplot, kaxis, 10d0*abs(growth(i,*)), thick=4,color=color_arr(i)
+     oplot, kaxis, 10d0*growth(i,*), thick=4,color=color_arr(i)
   endfor
   if keyword_set(legend) then begin
      x0=legend(0)
      x1=legend(1)
      y0=legend(2)
      dy=legend(3)
+     yskip = 0.0
+     xskip = 0.0
      for j=0, ncases-1 do begin
-        oplot, [x0,x1], [y0,y0]-dy*j, thick=4, color=color_arr(j)
-        xyouts, x1, y0-dy*j,textoidl(label(j)),charsize=1.5
+        if (j gt 6) then begin
+        yskip = 1.0 
+        xskip = 8.0
+        endif
+        oplot, [x0+xskip,(x0+xskip)*(x1/x0)], [y0,y0]-dy*j-yskip, thick=4, color=color_arr(j)
+        xyouts, (x0+xskip)*(x1/x0), y0-dy*j-yskip,textoidl(label(j)),charsize=1.5
      endfor
   endif
   device,/close 
@@ -106,6 +122,5 @@ pro compare_eigen, legend=legend, mmode=mmode, yrange=yrange, xrange=xrange, cas
      endfor
   endif
   device,/close
-
 
 end

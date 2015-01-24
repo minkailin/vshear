@@ -3,15 +3,16 @@
 	eps    =  0.05	    	!cs/vkep at z=0   
 	gmma   =  1.4     	!ratio of specific heats
         bgmma  =  1.011     	!structural index  
-	   zmax=  0.30434884    !max height (zmax = 1 is zero density surface) 
+	   zmax=  0.608698    !max height (zmax = 1 is zero density surface) 
 	    vbc= 'nolagp'   	!vertical bc (nolagp, nozvel)
         gterms =.false.   / 	!extra terms in x-mom and energy eqn due to radial entrop gradient (still NO radial density gradient) 
-&loop     kxmin= 1.        	!minimum value of kx*Hiso 
-          kxmax= 100.        	!maximum value of kx*Hiso
-          nkx =  50             !sample number
-        bmin  =  0.001          !minimum bcool
-        bmax  =  0.101          !maximum bcool
-          nb  =  1001           !total number of bcool to calculate, but output every 10 (hardwired)   
+&loop     kxmin= 0.1        	!minimum value of kx*Hiso 
+          kxmax= 100         	!maximum value of kx*Hiso
+          nkx =  51             !sample number
+        bmin  =  0.001 !0.630957344480193E-01!3.162277585068318e-02           !minimum bcool
+        bmax  =  1.000 !0.630957344480193E-01            !maximum bcool
+          nb  =  11            !total number of bcool to calculate, but output every 10 (hardwired)   
    eigen_trial=.true.           !mode selection based on previous list of eigenvalues?
-   eigenv_out =.false.     /    !output eigenvectors?
-&grid       nz = 129      /   	!vertical grid points
+   eigenv_out =.false.          !output eigenvectors?
+  eigen_refine=.true.     /    !are we updating solutions to higher resolution? if so, nb needs to match num. of lines in 'baxis.dat'
+&grid       nz =513       /     !vertical grid points

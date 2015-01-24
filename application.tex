@@ -162,7 +162,7 @@ $\khat\lesssim 10^2$.
 Fig. \ref{mmsn_bcrit_bcool} suggests that the fundamental isothermal
 VSI can operate in the outer parts of the MMSN at radii on the order
 of tens of AU. However, the thermal relaxation time $\beta$ is not
-much shorter than $\beta_\mathrm{crit}$, suggesting the VSI may be
+much shorter than $\beta_\mathrm{crit}$, so the VSI may be
 weak.   
 
 \begin{figure}
@@ -177,29 +177,38 @@ weak.
 \end{figure}  
 
 \subsection{Numerical example}
-Consider perturbations with $\khat=10$ in the 
-the MMSN at $r=30\mathrm{AU}$, with $\gamma=1.4$ and
-$\mu=2$. Then we find
-the dimensionless thermal relaxation time, using
-Eq. \ref{tc_newton_cool}, is
-\begin{align*}
-  \beta \simeq 0.046. 
-\end{align*}
-At $r=30\mathrm{AU}$, the disk aspect ratio is $\epsilon \simeq
-0.058$ which implies, using Eq. \ref{iso_vsi_cond}, a critical 
+Consider  the MMSN at $r=30\mathrm{AU}$, with $\gamma=1.4$ and
+$\mu=2$. Eq. \ref{mmsn_epsilon} gives $\epsilon \simeq
+0.058$ which implies, using Eq. \ref{bcrit_mmsn}, a critical 
 relaxation timescale of  
 \begin{align*}
   \beta_\mathrm{crit} \simeq 0.062. 
-\end{align*}
-Thus, the disk supports the fundamental isothermal VSI, but only
-marginally. Using the above value of $\beta$, MMSN disk parameters
-and $\khat=10$ in our linear code, we find a growth rate of
+\end{align*} 
+To estimate a thermal relaxation timescale, we set $\khat=20$ 
+in Eq. \ref{beta_mmsn} to obtain 
 \begin{align*}
-  \nu = 2.7\times10^{-3}\Omega_k.
+  \beta \simeq 0.042
 \end{align*}
-This corresponds to a characteristic growth time of $t_g\simeq 60$
-orbits. 
+at $r=30\mathrm{AU}$. This indicates the disk supports the fundamental
+isothermal VSI, but only marginally. Using the above value of $\beta$,
+MMSN disk parameters and $\khat=20$ in our linear code, we find a
+growth rate of 
+\begin{align*}
+  \nu = 3.3\times10^{-3}\Omega_k.
+\end{align*}
+This corresponds to a characteristic growth time of $t_g\sim 50$
+orbits. In fact, this mode was found to be the most unstable for
+$\khat=20$. 
+% and
+% physically acceptable -> other modes
+% are crazy  
+
+We also solved the linear problem with varying $\khat$  
+and $\beta$ determined by Eq. \ref{beta_mmsn}. We find the most
+unstable wavenumber occurs at $\khat\simeq60$ with $\nu\simeq
+3.6\times10^{-3}\Omega_k$, i.e. only slightly faster than that above. 
+However, the eigenfunctions for large $\khat$ were found to have large
+amplitude oscillations near the vertical boundaries. 
 
  %only find one unstable mode -> close to marginal 
-
  %larger kx 

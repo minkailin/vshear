@@ -283,7 +283,8 @@ program vsi
   do i=1, bignz
      !discard modes with eigenvalues too large (approx eqns assume |sigma^2|<<kappa2
      !discard modes that grow too slowly
-     if((abs(w(i)).le.1d0/eps).and.(growth(i).ge.eps**2d0)) then
+!     if((abs(w(i)).le.1d0/eps).and.(growth(i).ge.eps**3d0)) then
+      if(growth(i).gt.0d0) then
         eigen_test(i) = 1 
         write(20,fmt='(2(e22.15,x))'), freq(i), growth(i)
         bigW = matmul(T,vr(1:nzeff,i))

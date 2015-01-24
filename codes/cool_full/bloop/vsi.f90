@@ -1,7 +1,7 @@
 module global
   character*6 :: vbc
-  logical :: gterms, eigen_trial, eigenv_out
-  integer :: nz, nzeff, bignz, nkx, nb
+  logical :: gterms, eigen_trial, eigenv_out, eigen_refine
+  integer :: nz, nzeff, bignz, nkx, nb, ntrials, output_freq
   real*8, parameter :: pi = 2d0*acos(0d0)
   real*8 :: smallq, smallp, eps, smallh, kx, zmax, gmma, bgmma, bcool, smalls
   real*8 :: kxmin, kxmax, dlogkx, bmin, bmax, db
@@ -28,10 +28,10 @@ program vsi
        L1bar(:,:), L2bar(:,:), L3bar(:,:), L4bar(:,:), L5bar(:,:), &
        L6bar(:,:)
   complex*16,allocatable :: work(:), matrix(:,:), w(:), vl(:,:), &
-       vr(:,:), rhs(:,:), wtrial(:)
+       vr(:,:), rhs(:,:), wtrial(:), wtrial_tot(:)
   real*8, external :: dlogrho_dz, domega2_dz, omega2_z, logrho_z, kappa2_z, d2logrho_dz2, csq_z 
   namelist /params/ smallq, smallp, eps, gmma, bgmma, zmax, vbc, gterms
-  namelist /loop/ kxmin, kxmax, nkx, bmin, bmax, nb, eigen_trial, eigenv_out
+  namelist /loop/ kxmin, kxmax, nkx, bmin, bmax, nb, eigen_trial, eigenv_out, eigen_refine
   namelist /grid/ nz
   
   !read input parameters.
@@ -69,11 +69,22 @@ program vsi
   nzeff = nz
   bignz = 5*nzeff
 
+  if(eigen_refine.eq..false.) then
+  ntrials=nkx
+  output_freq = 1
+  else
+  ntrials     = nkx*nb
+  output_freq = 1
+  endif
+
+  
+
   !allocate grids
   allocate(kaxis(nkx))
   allocate(baxis(nb))
   allocate(wtrial(nkx))
-
+  allocate(wtrial_tot(ntrials))
+  
   allocate(zaxis(nz))
   allocate(logrho(nz))
   allocate(dlogrho(nz))
@@ -132,8 +143,10 @@ program vsi
   
   !setup kaxis. input is kxHiso. then output
   dlogkx = log10(kxmax/kxmin)/(nkx-1d0)
+!  dlogkx = (kxmax-kxmin)/(nkx-1d0)
   do i=1, nkx
   kaxis(i) = 10d0**(log10(kxmin) + dlogkx*(i-1d0))
+!  kaxis(i) = kxmin + dlogkx*(i-1d0)
   enddo
   open(10,file='kaxis.dat')
   do i=1, nkx
@@ -143,23 +156,27 @@ program vsi
 
   !setup bcool axis
   if(nb.gt.1) then
-  db = (bmax - bmin)/(nb-1d0)
+  db = log10(bmax/ bmin)/(nb-1d0)
+!  db = (bmax-bmin)/(nb-1d0)
   else
   db = 0d0
   endif
   do i=1, nb
-  baxis(i) = bmin + db*(i-1d0)
+  baxis(i) =10d0**(log10(bmin) + db*(i-1d0))
+!  baxis(i) = bmin + db*(i-1d0)
   enddo
 
   !read in trial eigenvalues if desired
   if(eigen_trial.eq..true.) then
   open(20, file='eigenvalues.dat')
-     do i=1, nkx 
+     do i=1, ntrials
         read(20, fmt='(3(e22.15,x))') w_re, w_im, dummy 
-        wtrial(i) =dcmplx(w_re, w_im)
+        wtrial_tot(i) =dcmplx(w_re, w_im)
      enddo
   close(20)  
+  if(eigen_refine.eq..false.) wtrial = wtrial_tot
   endif 
+ 
 
   !setup z axis.
   lmax = nz-1
@@ -215,6 +232,8 @@ program vsi
 
   do n=1, nb  !loop over bcool values
   bcool = baxis(n) 
+
+  if(eigen_refine.eq..true.) wtrial(:) = wtrial_tot((n-1)*nkx+1: n*nkx)
 
   do k=1, nkx !loop over kx values
      kx = kaxis(k)*smallh !convert input into code units 
@@ -326,38 +345,40 @@ program vsi
      growth=dimag(w)
 
      if(eigen_trial.eqv..false.)then !find mode from scratch 
-     if(k.eq.1) then !find first mode
-     !discard modes with eigenvalues too large or too small
-     !discard modes that decay
-     !discard modes with too small imaginary part
-     !discard modes that grow faster than the expected maximum
-     do i=1, bignz
-        if((abs(w(i)).gt.1d0/eps).or.(growth(i).lt.0d0).or.(abs(w(i)).lt.eps**2d0).or.(growth(i).gt.0.5d0)) then
-           w(i) = (1d6,1d6)
-        endif
-     enddo
-     freq = dble(w)
-     growth=dimag(w)
+        if(k.eq.1) then !find first mode
      
-     !now pick the mode with smallest |freq| (fundamental mode)
-     loc = minloc(abs(freq))
-     i = loc(1)
-     else
-     freq = dble(w)
-     growth=dimag(w)
-     loc  = minloc(abs((w-wold)/wold))
-     i    = loc(1)
-     endif
-     wold = w(i)
+
+           !discard modes with eigenvalues too large or too small
+           !discard modes that decay
+           !discard modes with too small imaginary part
+           !discard modes that grow faster than the expected maximum
+           do i=1, bignz
+              if((abs(w(i)).gt.1d0/eps).or.(growth(i).lt.0d0).or.(abs(w(i)).lt.eps**2d0).or.(growth(i).gt.0.5d0)) then
+                 w(i) = (1d6,1d6)
+              endif
+           enddo
+           freq = dble(w)
+           growth=dimag(w)
+           
+           !now pick the mode with smallest |freq| (fundamental mode)
+           loc = minloc(abs(w)) 
+           i = loc(1)
+        else
+           freq = dble(w)
+          growth=dimag(w)
+           loc  =minloc(abs((w-wold)/wold))
+           i    = loc(1)
+       endif
+        wold = w(i)
      else !find mode based on previous list of eigenvalues (find closest one)
-     freq = dble(w)
-     growth=dimag(w)
-     loc  = minloc(abs((w-wtrial(k))/wtrial(k)))
-     i    = loc(1)
+        freq = dble(w)
+        growth=dimag(w)
+        loc  = minloc(abs((w-wtrial(k))/wtrial(k)))
+        i    = loc(1)
      endif
      wtrial(k) = w(i)
  
-     if(mod(n-1,10).eq.0) then !output
+     if(mod(n-1,output_freq).eq.0) then !output
      write(20,fmt='(3(e22.15,x))'), freq(i), growth(i), kaxis(k) 
      if(n.eq.1) print*, 'kloop, kxHiso=', k, kaxis(k), growth(i)
 
@@ -381,7 +402,7 @@ program vsi
   if(n.eq.1) print*, 'bcool, kxHsio, max growth='
   loc = maxloc(dimag(wtrial))  
   print*,   baxis(n), kaxis(loc(1)), dimag(wtrial(loc(1))) 
-  if(mod(n-1,10).eq.0) write(10,fmt='(4(e22.15,x))'), baxis(n), kaxis(loc(1)), dble(wtrial(loc(1))), dimag(wtrial(loc(1)))
+  if(mod(n-1,output_freq).eq.0) write(10,fmt='(4(e22.15,x))'), baxis(n), kaxis(loc(1)), dble(wtrial(loc(1))), dimag(wtrial(loc(1)))
   enddo!bcool loop
  
   close(10)  
