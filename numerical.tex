@@ -6,20 +6,6 @@ approximations used in the discussion above, and
 use the full, non-Keplerian expressions of $\rho$, $\Omega$ and
 $\kappa$, so that we may consider vertical domains up to $z\sim r$.  
 
-% \subsection{Boundary conditions}
-% In numerical calculations a finite vertical domain $z\in[-1,1]\zmax$
-% is adopted. For $\Gamma\neq1$ we take $\zmax$ to be slightly less than
-% $H$ to avoid the zero-density surface. At $z=\pm\zmax$ we impose
-% \begin{align}
-%   \delta v_z = 0,
-% \end{align}
-% for a solid boundary, or 
-% \begin{align}
-%   \Delta P \equiv \delta P + \bm{\xi}\cdot\nabla P= 0,  
-% \end{align}
-% for a free surface, where $\bm{\xi}$ is the Lagrangian
-% displacement.
-
 We solve the linear problem by expanding the
 perturbations in Chebyshev polynomials $T_l$ up to $l=512$
 and discretizing the equations on a grid with
@@ -34,28 +20,35 @@ implementation. The above discretization procedure converts the linear
 system of differential equations to a standard matrix eigenvalue
 problem.     
 
-Unless otherwise stated, our fiducial disk model is a
-nearly-vertically isothermal disk with $\Gamma=1.011$, $p=-1.5$,
-$q=-1$, $\epsilon=0.1$, $\zmax = 10\epsilon r$, and the perturbation
-wavenumber $k_x = 200\pi/r$ (or $\hat{k}=20\pi$). 
+Unless otherwise stated, our disk model is a nearly-vertically
+isothermal disk with $\Gamma=1.011$, $p=-1.5$, $q=-1$,
+$\epsilon=0.1$. 
 
+%mention mode selection -> focus on fundamental corrugation ->
+%simulations eventually dominated by them 
+%choice of kx is O(10), since nelson observe kxH \sim 30
 
 \subsection{VSI in a neutrally stratified disk}\label{vertiso_pertiso} 
-We first test our numerical code, as well as the discussion in
-\S\ref{iso_discuss}, by considering nearly-isothermal
-perturbations. We set $\gamma=1.011=\Gamma$, and effectively switch
-off thermal relaxation by choosing $\beta=10^9$. The vertical domain is
-$\zmax = 10\epsilon r$. This setup is very similar to that adopted in
-\cite{mcnally14}, who calculated the VSI in vertically isothermal
-disks subject to isothermal perturbations ($\Gamma=\gamma=1$).  
-
+We first calculate the VSI in a neutrally straitified disk ($N_z^2\equiv0$) by setting
+$\gamma=\Gamma$, and effectively switch off thermal relaxation by
+choosing $\beta=10^9$. We set the vertical domain to $\zmax =
+10\epsilon r$.  Here, we consider a perturbation wavenumber
+$\khat=20\pi$ or $k_x = 200\pi/r$. This setup is very similar to that
+adopted in \cite{mcnally14}, who calculated the VSI in vertically
+isothermal disks subject to isothermal perturbations
+($\Gamma=\gamma=1$).  This allows us to test our numerical code. 
 
 Fig. \ref{lowfreq_eigen} shows the eigenvalues $\sigma = \omega +
-\ii\nu$. This plot is effectively identical to that in
-\cite{mcnally14}. The fundamental VSI mode, with one node in $W$, has
-the smallest $|\sigma|$ and is shown in Fig. \ref{lowfreq_eigenfunc}.  
-Its expected growth rate, calculated from Eq. \ref{simple_growth} with  
-$L=1$, and the numerically-obtained value are 
+\ii\nu$. The fundamental VSI mode, with one node in $W$, has
+the smallest $|\sigma|$ and is shown in Fig. \ref{lowfreq_eigenfunc}. 
+The eigenfunction $W$ is qualitatively proportional to 
+$z$ (especially for $z\to0$),  as expected for the fundamental mode
+according to explicit solutions developed in \S\ref{iso_poly}.    
+These plots are consistent with those in \cite{mcnally14}.  
+ 
+The expected growth rate of the fundamental VSI, calculated from
+Eq. \ref{simple_growth} with $L=1$, and the numerically-obtained value
+are  
 \begin{align*}
   \nu = 0.2606\epsilon\Omega_k &\quad \text{(from
     Eq. \ref{simple_growth})},\\
@@ -68,20 +61,14 @@ imposes a different boundary condition to that in the numerical
 calculation. The eigenfrequency is not very sensitive to the vertical boundary
 condition because the expression for $\sigma$, given by
 Eq. \ref{integral_relation1}, involve integrands with $\rho$ as the 
-weight function, which rapidly decays away from the midplane. The
-eigenfunction $W$ is qualitatively proportional to 
-$z$, as expected for the fundamental mode according to explicit
-solutions discussed in \S\ref{iso_poly}.    
+weight function, which rapidly decays away from the midplane.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/eigenvalues_iso}
-  \caption{Eigenvalues of the
-    vertical shear instability in a neutrally-stratified,
+  \caption{Eigenvalues of the VSI in a neutrally-stratified,
     nearly-vertically isothermal disk  ($\gamma=\Gamma=1.011$). The
-    disk parameters are $q=-1$,  
-    $p=-1.5$ and $\epsilon=0.1$, while the perturbation radial
-    wavenumber is $k_x=200\pi/r$. This is the set up considered in
-    \cite{mcnally14}. \label{lowfreq_eigen}
+    disk parameters are $q=-1$, $p=-1.5$, $\epsilon=0.1$, and the perturbation radial
+    wavenumber is $\khat=20\pi$. \label{lowfreq_eigen}
   }
 \end{figure}
 
@@ -89,39 +76,25 @@ solutions discussed in \S\ref{iso_poly}.
   \includegraphics[width=\linewidth]{figures/eigenvector_iso}
   \caption{Eigenfunction of the fundamental VSI,
     corresponding to the bottom-left eigenvalue displayed in
-    Fig. \ref{lowfreq_eigen} (smallest $|\sigma|$). The
-    solid and dashed lines are $\real W$ and $\imag W$, respectively. 
+    Fig. \ref{lowfreq_eigen} (smallest $|\sigma|$). The real
+    (imaginary) parts of $W$ are plotted as solid (dotted) lines. 
     \label{lowfreq_eigenfunc}
   }
 \end{figure}
 
-% We have also solved this problem with in the low-frequency 
-% approximation by setting $D\to\kappa^2$ in Eq. \ref{ode_w} (with $Q=W$). We
-% obtained very similar results, as expected for modes with
-% $|\sigma/\Omega_k|\ll1$. 
-
-\subsection{Stabilization of the VSI by a positive vertical entropy
-  gradient}
+\subsection{VSI in a stably stratified disk}
 We demonstrate the (strong) stabilizing effect of a  
-positive vertical entropy gradient by setting $\gamma=2$.  
+positive vertical entropy gradient ($N_z^2\geq0$) by setting $\gamma=2$.  
 Since we expect the perturbations to decay rapidly
 away from the midplane (see \S\ref{analytic_adia}), we consider a
 smaller domain with $\zmax = 2\epsilon r$. 
 Other disk and perturbation parameters are the same as in
 \S\ref{vertiso_pertiso}.    
 
-% We use the same pseudo-spectral method as before. Here we set
-% $\zmax = 2\epsilon r$ and impose a free surface. This boundary
-% condition was found to be most convenient for numerical
-% implementation. Since we expect the perturbations to decay rapidly
-% away from the midplane (see \S\ref{analytic_adia}), we do not expect 
-% boundary conditions to play an important role, provided that $\zmax$ is
-% sufficiently large. 
-
 Fig. \ref{lowfreq_eigen_adia} show the eigenvalues for this
-problem. The growth rates are about an order of magnitude smaller than
-the previous case. The fundamental VSI mode is that with
-$\mathrm{max}|\nu|$. Its expected and numerically-calculated growth
+problem. The growth rates are much smaller than
+those in the previous section. The fundamental VSI mode is that with
+$\mathrm{max}\nu$. Its expected and numerically-calculated growth
 rates compares well, with 
 \begin{align*}
   \nu = 0.03751 \epsilon \Omega_k &\quad \text{(from
@@ -130,13 +103,12 @@ rates compares well, with
 \end{align*}
 The fundamental mode is plotted in Fig. \ref{lowfreq_eigenfunc_adia},
 and clearly show that perturbations are rapidly stabilized away from
-the midplane. For the adopted disk and perturbation parameters 
-($|q|=1$ and $\hat{k} = 20\pi$), Eq. \ref{gam2_alpha} gives $\real{\alpha}\simeq - 43.8$,
-corresponding to a characteristic decay length scale of $\simeq
-0.15\epsilon r$, which is consistent with that observed in 
-Fig. \ref{lowfreq_eigenfunc_adia}. 
+the midplane. For the adopted disk and perturbation parameters,
+Eq. \ref{gam2_alpha} gives $\real{\alpha}\simeq - 43.8$, corresponding
+to a characteristic decay length scale of $\sqrt{2/|\alpha|}\epsilon r\simeq 0.2\epsilon r$,
+which is consistent with that observed in  Fig. \ref{lowfreq_eigenfunc_adia}. 
 
-Coincidentally, this decay lengthscale is rougly the height within which
+This decay lengthscale is rougly the height within which
 vertical shear is larger than the buoyancy frequency squared. That is,
 \begin{align*}
 \left|r\frac{d\Omega^2}{dz}\right|\gtrsim N_z^2
@@ -145,7 +117,7 @@ for
 \begin{align*}
   \left|\frac{z}{\epsilon r}\right| \lesssim \frac{\epsilon|q|\gamma}{\gamma-1},
 \end{align*}
-in a thin, vertically isothermal disk. This evaluates to $z\sim
+in a thin, vertically isothermal disk. This evaluates to $|z|\lesssim
 0.2\epsilon r$ for the current disk model, consistent with
 Fig. \ref{lowfreq_eigenfunc_adia}. 
 
@@ -155,40 +127,41 @@ Eq. \ref{max_growth} as a rough guide,
 \begin{align}
   \frac{\nu}{\epsilon\Omega_k}<\frac{\epsilon |q|^2\gamma}{2(\gamma-1)},
 \end{align}
-or $\nu< 0.1\epsilon\Omega_k$ is expected in our disk model,
+or $\nu< 0.1\epsilon\Omega_k$ in our disk model,
 consistent with numerical results. 
-
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/eigenvalues_adia}
   \caption{Eigenvalues in for the
-    vertical shear instability in a nearly-vertically isothermal disk
-    ($\Gamma=1.011$) evolved adiabatically with $\gamma=2$ and
-    $\beta=10^9$. The disk
+    VSI in a nearly vertically isothermal disk
+    ($\Gamma=1.011$) evolved adiabatically with $\gamma=2$. The disk
     parameters are $q=-1$, 
-    $p=-1.5$ and $\epsilon=0.1$, while the perturbation radial
-    wavenumber is $k_x=200\pi/r$. \label{lowfreq_eigen_adia}
+    $p=-1.5$, $\epsilon=0.1$, and the perturbation radial
+    wavenumber is $\khat=20\pi$. \label{lowfreq_eigen_adia}
   }
 \end{figure}
   
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/eigenvectorvz_adia}
-  \caption{Fundamental VSI mode in a nearly-vertically
+  \caption{Fundamental VSI mode in a nearly vertically
     isothermal disk ($\Gamma=1.011$) evolved adiabatically
-    ($\gamma=2$, $\beta=10^9$). This eigenfunction 
+    with $\gamma=2$. This eigenfunction 
     corresponds to the top-left eigenvalue displayed in 
     Fig. \ref{lowfreq_eigen_adia} (largest $|\nu|$).  
-    The solid and dashed lines are $\real \delta v_z$ and $\imag
-    \delta v_z$, respectively.  
+    The  real (imaginary) part of $\delta v_z$ are shown as solid
+    (dotted) lines. 
     \label{lowfreq_eigenfunc_adia}
   }
 \end{figure}
 
-
-% We have also solved this problem in the low-frequency approximation
-% using Eq. \ref{ode_w}---\ref{ode_Q} with the replacement
-% $D\to\kappa^2$. We again obtained very similar results. 
+Although a positive vertical entropy gradient is stabilizing, we note
+that $N_z^2\propto z^2$  while vertical shear $rd\Omega^2/dz\propto
+z$, so that there is always a region sufficiently close to the
+midplane in which vertical shear dominates over bouyancy and the VSI
+can operate. However, the growth rates are small and the instability
+only affects the regions close the midplane. These modes may not be
+important in practice.  
 
 
 \subsection{Other adiabatic indices}

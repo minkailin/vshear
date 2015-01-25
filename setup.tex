@@ -5,7 +5,14 @@ We adopt cylindrical
 co-ordinates $(r,\phi, z)$ centered on the star to describe the global
 disk. The equilibrium disk is steady and axisymmetric with density,
 pressure and rotation profiles $\rho(r,z)$, $P(r,z)$ and
-$\Omega(r,z)$, respectively. 
+$\Omega(r,z)$, respectively. The equilibrium disk satisfies
+\begin{align}
+  0 &= \frac{1}{\rho}\frac{\p P}{\p z} + \frac{\p \Phi_*}{\p z},\label{vert_equilibrium}\\
+  r\Omega^2&= \frac{1}{\rho}\frac{\p P}{\p r} + \frac{\p \Phi_*}{\p
+    r},\label{hori_equilibrium} 
+\end{align} 
+where $\Phi_* = -GM_*(r^2 + z^2)^{-1/2}$ is the gravitational
+potential of the central star.
 
 We examine disks with power-law profiles for the midplane density
 $\rho_0(r)\equiv\rho(r,0)$: 
@@ -28,16 +35,19 @@ the midplane sound-speed $c_{s0}(r)$ is taken to be another power-law:
 where $c_{s00}\equiv c_{s0}(r_0)$  and $q$ is the power-law index for
 the midplane temperature. We define
 \begin{align}
-  \epsilon(r) \equiv \frac{c_{s0}(r)}{v_k(r)}
+  \epsilon(r) \equiv \frac{c_{s0}(r)}{v_k(r)} \equiv
+  \frac{H_\mathrm{iso}}{r} 
 \end{align}
 to parametrize the magnitude of the sound-speed, where
 $v_k=r\Omega_k=\sqrt{GM_*/r}$ is the Keplerian azimuthal velocity and
-$G$ is the gravitational constant. From $\epsilon$ we can define a
-characteristic scale-height  
-\begin{align}
-  \Hiso \equiv \epsilon r.% \quad\quad(\Gamma \equiv 1),   
-\end{align} 
-
+$G$ is the gravitational constant, and $H_\mathrm{iso}$ is a
+characteristic scale-height.  Thus, $\epsilon$ is also the
+characteristic disk aspect-ratio.  
+% From $\epsilon$ we can define a
+% characteristic scale-height  
+% \begin{align}
+%   \Hiso \equiv \epsilon r.% \quad\quad(\Gamma \equiv 1),   
+% \end{align} 
 The global sound-speed $c_s(r,z)$ is given by
 \begin{align}
   c_s^2\equiv \frac{dP}{d\rho} =
@@ -50,24 +60,6 @@ For discussion purposes it is useful to define the vertical buoyancy frequency $
 \end{align}
 and we are interested in neutrally or sub-adiabatically stratified
 disks with $\Gamma\leq \gamma$ so that $N_z^2\geq0$.  
-
-
-
-The equilibrium disk satisfies
-\begin{align}
-  0 &= \frac{1}{\rho}\frac{\p P}{\p z} + \frac{\p \Phi_*}{\p z},\label{vert_equilibrium}\\
-  r\Omega^2&= \frac{1}{\rho}\frac{\p P}{\p r} + \frac{\p \Phi_*}{\p
-    r},\label{hori_equilibrium} 
-\end{align} 
-where $\Phi_* = -GM_*(r^2 + z^2)^{-1/2}$ is the gravitational
-potential of the central star. Note that the disk is in general
-baroclinic with $\Omega = \Omega(r,z)$, since
-Eq. \ref{vert_equilibrium}---\ref{hori_equilibrium} imply, with
-Eq. \ref{eqm_press},  
-\begin{align}
-  r\frac{\p\Omega^2}{\p z} = - \rho^{\Gamma-1}\frac{\p\ln\rho}{\p z}\frac{dK}{dr}.\label{vertical_shear}
-\end{align}
-
 
 The explicit expression for the density field for
 $\Gamma\neq1$ is given  by
@@ -84,7 +76,6 @@ then the imposed sound-speed and disk thickness are related by
 \begin{align}
   h^2(r) = \left[1-\frac{\epsilon^2(r)}{\Gamma-1}\right]^{-2}-1. 
 \end{align}
-
 Similarly, the equilibrium rotation is 
 \begin{align}\label{eqm_rot}
   \frac{\Omega^2(r,z)}{\Omega_k^2(r)}=1 +
@@ -99,6 +90,16 @@ and the square of the epicyclic frequency $\kappa$
 \begin{align}
   \kappa^2(r,z) \equiv 2\Omega(2\Omega + S). 
 \end{align}
+
+Note that the disk is in general baroclinic with $\Omega =
+\Omega(r,z)$. This is explicit from Eq. \ref{eqm_rot}, but is also
+implied by Eq. \ref{vert_equilibrium}---\ref{hori_equilibrium} and 
+Eq. \ref{eqm_press},  
+\begin{align}
+  r\frac{\p\Omega^2}{\p z} = - \rho^{\Gamma-1}\frac{\p\ln\rho}{\p
+    z}\frac{dK}{dr}.\label{vertical_shear}
+\end{align}
+
 
 % {\bf need to mention: generally consider sub-keplerian disks -> caveat is that it's entirely possble for angular 
 % velocity to reach zero at finite height. give example later for isothermal disk. this limits domain size, but this critical height is usually
@@ -115,7 +116,8 @@ $\Omega(r,z)$ is then
     \frac{1}{\sqrt{1+z^2/r^2}}\right),\label{vertiso_eqm}
 \end{align}
 which may be obtained from Eq. \ref{eqm_dens} and Eq. \ref{eqm_rot} by
-taking the limit $\Gamma\to 1$. 
+taking the limit $\Gamma\to 1$. We will, in fact, primarily focus on
+vertically isothermal disks for simplicitly. 
 
 \section{The vertically global shearing box} 
 We are interested in the axisymmetric stability of the above system,
