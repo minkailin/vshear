@@ -187,17 +187,19 @@ relaxation timescale of
 To estimate a thermal relaxation timescale, we set $\khat=20$ 
 in Eq. \ref{beta_mmsn} to obtain 
 \begin{align*}
-  \beta \simeq 0.042
+  \beta \simeq 0.042.
 \end{align*}
-at $r=30\mathrm{AU}$. This indicates the disk supports the fundamental
-isothermal VSI, but only marginally. Using the above value of $\beta$,
-MMSN disk parameters and $\khat=20$ in our linear code, we find a
+(In fact, Fig. \ref{mmsn_bcrit_bcool} shows that $\beta$  is not
+sensitive to $\khat$ at $r=30\mathrm{AU}$, provided that $\khat\gg1$.)
+The disk supports the fundamental isothermal VSI, but only
+marginally. Using the above value of $\beta$, MMSN disk parameters and
+$\khat=20$ in our linear code, we find a  
 growth rate of 
 \begin{align*}
   \nu = 3.3\times10^{-3}\Omega_k.
 \end{align*}
 This corresponds to a characteristic growth time of $t_g\sim 50$
-orbits. In fact, this mode was found to be the most unstable for
+orbits. This mode was found to be the most unstable for
 $\khat=20$. 
 % and
 % physically acceptable -> other modes
@@ -206,9 +208,20 @@ $\khat=20$.
 We also solved the linear problem with varying $\khat$  
 and $\beta$ determined by Eq. \ref{beta_mmsn}. We find the most
 unstable wavenumber occurs at $\khat\simeq60$ with $\nu\simeq
-3.6\times10^{-3}\Omega_k$, i.e. only slightly faster than that above. 
+3.6\times10^{-3}\Omega_k$, i.e. only slightly faster than $\khat=20$.   
 However, the eigenfunctions for large $\khat$ were found to have large
-amplitude oscillations near the vertical boundaries. 
+amplitude oscillations near the vertical boundaries. This is shown in
+Fig. \ref{mmsn_eigenW}. These modes may not be important since they
+mostly affect the disk atmosphere where there is little mass. 
 
- %only find one unstable mode -> close to marginal 
- %larger kx 
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/eigenvectorW_mmsnkx20.ps}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 0cm]{figures/eigenvectorW_mmsnkx60.ps}
+  \caption{Most unstable VSI modes in the MMSN at
+    $r=30\mathrm{AU}$. The eigenfunction $W$ for $\khat=20$ (top) and
+    $\khat=60$ (bottom) are shown. The real (imaginary) part of $W$
+    is plotted as the solid (dotted) lines.\label{mmsn_eigenW}}  
+\end{figure}
+
+% only find one unstable mode -> close to marginal 
+% larger kx 

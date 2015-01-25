@@ -292,6 +292,60 @@ important.
 % results.  
 
 \subsection{Vertically non-isothermal disks}
-%gamma = Gamma = 1.4, vary bcool
+We briefly consider vertically non-isothermal disks with
+$\Gamma=1.4$. Other disk parameters are $p=0$, $q=-1.0$ and $\epsilon
+= 0.05$. These are again chosen for comparison with \cite{nelson13}. 
+In this case we set $\zmax\simeq2.2\epsilon r$, which is close to the
+zero-density surface.     
+
+
+\subsubsection{$N_z^2\equiv 0$}
+
+Consider first the case $\gamma=1.4$ so that there is no vertical
+entropy gradient. We plot in Fig. the growth rates for the
+fundamental VSI for $\beta\in[10^{-2},10^{2}]$. We find growth rates
+do not reach zero, implying the VSI operates regardless of the thermal
+relaxation timescale if $\gamma=\Gamma$. This result is consistent
+with \cite{nelson13}. 
+
+We also note that growth rates for $\beta = 10^{-2}$ and
+$\beta=10^{2}$ behave similarly. This is not surprising because
+the linearized energy equation (Eq. \ref{lin_energy}) implies that 
+\begin{align}
+  W = \frac{\left(\Gamma^{-1} -
+      \ii\hat{\sigma}\beta\right)}{\left(1-\ii\hat{\sigma}\beta\right)}
+  Q \text{ for } \gamma\equiv \Gamma.   
+\end{align}
+Thus, $W \to Q/\Gamma$ as $\beta\to0$ and $W\to Q$ as
+$\beta\to\infty$. Since $\Gamma=O(1)$, these two limits are expected
+to produce qualitatively similar results.  
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  0cm]{figures/growth_vnoniso1} 
+  \caption{Numerically-determined growth rates of the fundamental VSI
+    mode in neutrally-buoyant, vertically non-isothermal disks
+    ($\Gamma=\gamma=1.4$), with $p=0$, $q=-1$ and  $\epsilon=0.05$, for
+    a range of thermal relaxation timescales
+    $\beta$. \label{growth_vnoniso1}}     
+\end{figure} 
+
+Interestingly, Fig. \ref{growth_vnoniso1} show that growth rates
+maximize for $\beta=O(1)$. However, all growth rates are similar to
+order-of-magnitude for $0.1\lesssim\khat\lesssim 100$. 
+
+\subsubsection{$N_z^2\geq0$}
 
 %gamma = 2.0, Gamma = 1.4, vary bcool 
+
+Finally, we introduce buoyancy in a vertically non-isothermal disk by
+setting $\gamma=2$. This situation was not simulated in 
+\cite{nelson13}, but is similar in spirit with vertically isothermal 
+disks evolved with $\gamma>1$, as considered in the previous section. 
+
+Fig. plots the growth rates for this case. The trend is
+qualitatively similar to that for vertically isothermal disks with
+$N_z^2\geq 0$ (Fig. \ref{relax_growth_num}), namely growth rates reach
+zero at finite $\khat$. 
+
+  
