@@ -233,31 +233,34 @@ given by:
 
 \section{Fiducial model for a protoplanetary disk}\label{mmsn}
 For results application in \S\ref{application} we use the disk model
-of \cite{chiang10}. This disk model orbits a Solar-mass star and 
-has a surface density distribution
+described in \cite{chiang10}. This disk model orbits a Solar-mass star and 
+has the surface density distribution
 \begin{align}\label{mmsn_sigma}
   \Sigma = 2200
   \hat{\Sigma}\left(\frac{r}{\mathrm{AU}}\right)^{-3/2}\mathrm{g}\,\mathrm{cm}^{-2},  
 \end{align}
-a mid-plane density distribution
-\begin{align}
-  \rho_0 = 2.7\times10^{-9}
-  \hat{\Sigma}\left(\frac{r}{\mathrm{AU}}\right)^{-39/14}\mathrm{g}\,\mathrm{cm}^{-3},  
-\end{align}
-which implies $p=-39/14$, {\bf ASK: should there be $\hat{T}$ and $\mu$ dependence for midplane density?}
-a temperature profile
+and the temperature profile
 \begin{align}\label{mmsn_temp}
   T = 120\hat{T}\left(\frac{r}{\mathrm{AU}}\right)^{-3/7} \mathrm{K},
 \end{align}
-which implies $q=-3/7$, 
-and the fiducial disk aspect-ratio 
-\begin{align}\label{mmsn_epsilon}
-  \epsilon = 3.36\times10^{-2}\left(\frac{\hat{T}}{\mu}\right)^{1/2}\left(\frac{r}{\mathrm{AU}}\right)^{2/7}.
-\end{align}
-%0.033576258
-In the above expressions, $\hat{\Sigma}$ and
+which implies $q=-3/7$. In the above expressions, $\hat{\Sigma}$ and
 $\hat{T}$ are dimensionless coefficients used to scale the model
-relative to the MMSN. Their nomial values are unity. In addition, we
+relative to the MMSN. Their nomial values are unity. By assuming a
+vertically isothermal disk, we deduce the disk aspect-ratio 
+\begin{align}\label{mmsn_epsilon}
+  \epsilon =
+  3.36\times10^{-2}\left(\frac{\hat{T}}{\mu}\right)^{1/2}\left(\frac{r}{\mathrm{AU}}\right)^{2/7}, 
+\end{align}
+and the mid-plane density distribution 
+\begin{align}
+%  \rho_0 = 2.7\times10^{-9}
+%  \hat{\Sigma}\left(\frac{r}{\mathrm{AU}}\right)^{-39/14}\mathrm{g}\,\mathrm{cm}^{-3},  
+\rho_0 = 1.7\times10^{-9}
+  \hat{\Sigma}\left(\frac{\hat{T}}{\mu}\right)^{-1/2}\left(\frac{r}{\mathrm{AU}}\right)^{-39/14}\mathrm{g}\,\mathrm{cm}^{-3},
+\end{align}
+which implies $p=-39/14$. 
+%0.033576258
+In addition, we
 use the opacity model {\bf(reference?)}
  \begin{align}
    \kappa_d &= 2 \hat{\kappa}_d \left(\frac{T}{100\mathrm{K}}\right)^2
