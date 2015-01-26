@@ -145,14 +145,14 @@ r/\mathrm{AU}$, we find Eq. \ref{real_beta} becomes
 We also evaluate the criterion Eq. \ref{iso_vsi_cond} for the fiducial
 disk model, 
 \begin{align}\label{bcrit_mmsn}
-  \beta_\mathrm{crit} = \frac{9.4\times10^{-3}}{(\gamma
-    -1)}\zeta^{2/7},
+  \beta_\mathrm{crit} = \frac{1.44\times10^{-2}}{(\gamma
+    -1)}\left(\frac{\hat{T}}{\mu}\right)^{1/2}\zeta^{2/7},
 \end{align}
 and we recall $\beta < \beta_\mathrm{crit}$ permits the fundamental 
 isothermal VSI to operate. 
 
 In Fig. \ref{mmsn_bcrit_bcool} we plot Eq. \ref{beta_mmsn} and
-Eq. \ref{bcrit_mmsn} for the MMSN with $\mu = 2$ and
+Eq. \ref{bcrit_mmsn} for the MMSN with $\mu = 2.33$ and
 $\gamma=1.4$. Although it is possible to satisfy
 $\beta<\beta_\mathrm{crit}$ at small radii by choosing a sufficiently
 large $\khat$, our linear calculations suggest growth rates eventually
@@ -177,46 +177,48 @@ weak.
 \end{figure}  
 
 \subsection{Numerical example}
-Consider  the MMSN at $r=30\mathrm{AU}$, with $\gamma=1.4$ and
-$\mu=2$. Eq. \ref{mmsn_epsilon} gives $\epsilon \simeq
-0.058$ which implies, using Eq. \ref{bcrit_mmsn}, a critical 
+Consider  the MMSN at $r=50\mathrm{AU}$, with $\gamma=1.4$ and
+$\mu=2.33$. Eq. \ref{mmsn_epsilon} gives $\epsilon \simeq
+0.067$ which implies, using Eq. \ref{bcrit_mmsn}, a critical 
 relaxation timescale of  
 \begin{align*}
-  \beta_\mathrm{crit} \simeq 0.062. 
+  \beta_\mathrm{crit} \simeq 0.072. 
 \end{align*} 
-To estimate a thermal relaxation timescale, we set $\khat=20$ 
+To estimate a thermal relaxation timescale, we set $\khat=10$ 
 in Eq. \ref{beta_mmsn} to obtain 
 \begin{align*}
-  \beta \simeq 0.042.
+  \beta \simeq 0.049.
 \end{align*}
 (In fact, Fig. \ref{mmsn_bcrit_bcool} shows that $\beta$  is not
-sensitive to $\khat$ at $r=30\mathrm{AU}$, provided that $\khat\gg1$.)
+sensitive to $\khat$ at $r=50\mathrm{AU}$ for $\khat\gg1$.)
 The disk supports the fundamental isothermal VSI, but only
 marginally. Using the above value of $\beta$, MMSN disk parameters and
-$\khat=20$ in our linear code, we find a  
+$\khat=10$ in our linear code, we find a 
 growth rate of 
 \begin{align*}
-  \nu = 3.3\times10^{-3}\Omega_k.
+  \nu = 4.0\times10^{-3}\Omega_k.
 \end{align*}
-This corresponds to a characteristic growth time of $t_g\sim 50$
-orbits. This mode was found to be the most unstable for
-$\khat=20$. 
+This corresponds to a characteristic growth time $\sim 40$
+orbits. 
+%This mode was found to be the most unstable for
+%$\khat=10$. 
+
 % and
 % physically acceptable -> other modes
 % are crazy  
 
-We also solved the linear problem with varying $\khat$  
-and $\beta$ determined by Eq. \ref{beta_mmsn}. We find the most
-unstable wavenumber occurs at $\khat\simeq60$ with $\nu\simeq
-3.6\times10^{-3}\Omega_k$, i.e. only slightly faster than $\khat=20$.   
-However, the eigenfunctions for large $\khat$ were found to have large
-amplitude oscillations near the vertical boundaries. This is shown in
-Fig. \ref{mmsn_eigenW}. These modes may not be important since they
-mostly affect the disk atmosphere where there is little mass. 
+%We also solved the linear problem with varying $\khat$  
+%and $\beta$ determined by Eq. \ref{beta_mmsn}. We find the most
+%unstable wavenumber occurs at $\khat\simeq60$ with $\nu\simeq
+%3.6\times10^{-3}\Omega_k$, i.e. only slightly faster than $\khat=20$.   
+%However, the eigenfunctions for large $\khat$ were found to have large
+%amplitude oscillations near the vertical boundaries. This is shown in
+%Fig. \ref{mmsn_eigenW}. These modes may not be important since they
+%mostly affect the disk atmosphere where there is little mass. 
 
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/eigenvectorW_mmsnkx20.ps}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 0cm]{figures/eigenvectorW_mmsnkx60.ps}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/eigenvectorW_mmsnkx10.ps}
+%  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 0cm]{figures/eigenvectorW_mmsnkx60.ps}
   \caption{Most unstable VSI modes in the MMSN at
     $r=30\mathrm{AU}$. The eigenfunction $W$ for $\khat=20$ (top) and
     $\khat=60$ (bottom) are shown. The real (imaginary) part of $W$
