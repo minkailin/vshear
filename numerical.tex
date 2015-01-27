@@ -237,11 +237,14 @@ VSI, but there is a preferable wavenumber that maximizes this effect (\S\ref{rel
 This occurs at $\khat= O(10)$ for the current disk model. 
 
 \begin{figure}
-   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/compare_eigen_imag_bloop}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/compare_eigen_imag_bloop2}
+   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
+   0cm]{figures/compare_eigen_imag_bloop} 
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  1cm]{figures/compare_eigen_imag_bloop2} 
   \caption{Growth rates of the fundamental VSI mode in 
     nearly-vertically isothermal disks ($\Gamma=1.011$) with
-    $(p,q,\epsilon)=(-1.5,-1,0.05)$ and a range of thermal relaxation timescales 
+    $(p,q,\epsilon)=(-1.5,-1,0.05)$, evolved with $\gamma=1.4$ under a
+    range of thermal relaxation timescales   
     $\beta$. The eigenfrequencies are calculated by numerically 
     solving the full linear eigenvalue problem. \label{relax_growth_num}}   
 \end{figure}   
@@ -250,21 +253,26 @@ We visualize the effect of thermal relaxation in
 Fig. \ref{relax_eigenW_num} by comparing the eigenfunction $W$ for
 $\beta=0.01$ and $\beta=0.125$. The latter value is close to the critical
 value beyond which the fundamental isothermal VSI is stabilized
-(\S\ref{iso_vsi_beta_crit}).  Increasing $\beta$ restricts 
+(\S\ref{iso_vsi_beta_crit}). Hence the latter growth rate is smaller
+than the former by a factor $\sim 20$. Increasing $\beta$ restricts 
 the region in which $W\sim z$ closer to the midplane, with oscillatory
 behavior emerging at the boundaries, where buoyancy first becomes
-important.  
+important. % We also find this trend for fixed $\beta$ but increasing
+% $\khat$.  
 
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/eigenvectorW_beta0d01}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 0cm]{figures/eigenvectorW_beta0d125}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
+  0cm]{figures/eigenvectorW_beta0d01} 
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  0cm]{figures/eigenvectorW_beta0d125} 
   \caption{Numerically-calculated eigenfunction of the fundamental VSI
-    mode in a disk with dimensionless thermal relaxation timescale
-    $\beta \equiv t_c\Omega_k = 0.01$ (top) and $0.125$ (bottom) for
-    perturbations with a radial wavenumber $k_xH_\mathrm{iso}=10$. The
+    mode in a nearly vertically isothermal disk ($\Gamma=1.011$) with
+    $(p,q,\epsilon)=(-1.5,-1,0.05)$, evolved with $\gamma=1.4$ and a dimensionless 
+    thermal relaxation timescale $\beta \equiv t_c\Omega_k = 0.01$
+    (top) and $0.125$ (bottom). The
+    perturbation radial wavenumber is $\khat_\mathrm{iso}=10$. The
     real (imaginary) part of $W$ is plotted as the solid (dotted)
-    line. Other disk parameters are
-    $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$.
+    line.
     \label{relax_eigenW_num}}  
 \end{figure}
 
@@ -275,20 +283,17 @@ important.
 
 \subsection{Vertically non-isothermal disks}
 We briefly consider vertically non-isothermal disks with
-$\Gamma=1.4$. Other disk parameters are $p=0$, $q=-1.0$ and $\epsilon
-= 0.05$. These are again chosen for comparison with \cite{nelson13}. 
-In this case we set $\zmax\simeq2.2\epsilon r$, which is close to the
-zero-density surface.     
-
+$\Gamma=1.4$ and $(p,q,\epsilon)=(0,-1,0.05)$ as simulated in
+\cite{nelson13}. In this case we set $\zmax\simeq2.2\epsilon r$, which
+is close to the zero-density surface.     
 
 \subsubsection{$\gamma=\Gamma \neq 1$, $N_z^2\equiv 0$}
-
 Consider first the case $\gamma=1.4$ so that there is no vertical
 entropy gradient. We plot in Fig. the growth rates for the
 fundamental VSI for $\beta\in[10^{-2},10^{2}]$. We find growth rates
 do not reach zero, implying the VSI operates regardless of the thermal
 relaxation timescale if $\gamma=\Gamma$. This result is consistent
-with \cite{nelson13}. 
+with \cite{nelson13}.  
 
 We also note that growth rates for $\beta = 10^{-2}$ and
 $\beta=10^{2}$ behave similarly. This is not surprising because
@@ -300,7 +305,10 @@ the linearized energy equation (Eq. \ref{lin_energy}) implies that
 \end{align}
 Thus, $W \to Q/\Gamma$ as $\beta\to0$ and $W\to Q$ as
 $\beta\to\infty$. Since $\Gamma=O(1)$, these two limits are expected
-to produce qualitatively similar results.  
+to produce qualitatively similar results. Interestingly,
+Fig. \ref{growth_vnoniso1} show that growth rates 
+maximize for $\beta=O(1)$. However, all growth rates are similar to
+order-of-magnitude for $0.1\lesssim\khat\lesssim 100$. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
@@ -312,23 +320,16 @@ to produce qualitatively similar results.
     $\beta$. \label{growth_vnoniso1}}     
 \end{figure} 
 
-Interestingly, Fig. \ref{growth_vnoniso1} show that growth rates
-maximize for $\beta=O(1)$. However, all growth rates are similar to
-order-of-magnitude for $0.1\lesssim\khat\lesssim 100$. 
-
 \subsubsection{$\gamma\neq\Gamma \neq 1$, $N_z^2\geq0$}
-
 %gamma = 2.0, Gamma = 1.4, vary bcool 
-
 Finally, we introduce buoyancy in a vertically non-isothermal disk by
-setting $\gamma=2$. This situation was not simulated in 
+setting $\gamma=2$. This scenario was not considered by  
 \cite{nelson13}, but is similar in spirit with vertically isothermal 
 disks evolved with $\gamma>1$, as considered in the previous section. 
-
-Fig. plots the growth rates for this case. The trend is
-qualitatively similar to that for vertically isothermal disks with
-$N_z^2\geq 0$ (Fig. \ref{relax_growth_num}), namely growth rates reach
-zero at finite $\khat$. 
+Fig. \ref{growth_vnoniso2} plots the fundamental VSI growth rates for
+this case. We observe the same trend as for vertically isothermal
+disks with $N_z^2\geq 0$ (Fig. \ref{relax_growth_num}), namely growth
+rates reach zero at finite $\khat$. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
