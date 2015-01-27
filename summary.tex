@@ -50,33 +50,104 @@ slowly and is constrained to regions immediately about the disk
 midplane. Thus, the adiabatic VSI is likely unimportant in practice.  
 
 For non-isothermal ($\gamma\neq1$) perturbations with intermediate
-thermal relaxation timescales, the general dispersion relation
+$\beta$, the general dispersion relation
 (Eq. \ref{relax_disp}) is complicated and requires a numerical
-study. However, for the fundamental VSI, characterized by  $\delta
+treatment. However, for the fundamental VSI, characterized by  $\delta
 v_z\sim\mathrm{constant}$ near $z=0$, some simplification is
 possible. In particular, we quantified the thermal relaxation
 timescale $\beta_\mathrm{crit}=\epsilon|q|/(\gamma-1)$, below
 which small-scale perturbations ($\khat\gg 1$) may be regarded as isothermal
 and the standard VSI operates. We believe this explicit expression for
 $\beta_\mathrm{crit}$ is the most useful result from our
-investigation.
+investigation. 
 
+We also solved the linear stability problem numerically using a
+pseudo-spectral approach. Numerical solutions are mostly consistent
+with our analytical expectations, except for perturbations with small
+radial wavenumber ($\khat\to0$) where the low-frequency approximation
+is inappropriate.  
 
- 
-
-
-
-
-
-
-
-%summary of results 
-
-
-
-
-
+We briefly studied vertically non-isothermal disks using our linear
+code. We confirm the finding by \cite{nelson13} that in the absence
+of vertical entropy gradients, the VSI operates and is insensitive to thermal relaxation. When a
+stable stratification is introduced, the dependence of VSI growth
+rates on the thermal relaxation timescale is qualitatively similar to
+that observed for vertically isothermal disks. 
 
 %application to MMSN 
 
-\subsection{Caveats and outlooks} 
+We applied our linear results to assess the relevance of the VSI in
+protoplanetary disks, specifically the Minimum Mass Solar Nebulae (MMSN),
+using disk models described in \cite{chiang10}. We find the MMSN is
+unstable to the VSI at $10$s of AU, with characteristic
+growth times of $10$s of orbits. However, we note the strong
+temperature dependence of the physical thermal relaxation timescale
+in the disk model ($\beta$ decreases as $T^{-5}$ for perturbations with small
+radial scale). Thus, increasing the disk temperature can signifcantly 
+shorten the typical growth times for the VSI. This is also attributed
+to a larger value of $\beta_\mathrm{crit}$, since increasing $T$ also
+increases the aspect-ratio $\epsilon$. 
+
+\subsection{Future extensions} 
+We highlight below some improvements to the present  
+linear models that should be pursued:
+
+\emph{Realistic thermal evolution.} We have treated the thermal
+relaxation time $t_c$ as a constant for simplicity. However, a
+physical expression for $t_c$ will depend on 
+$z$. For example, the Newtonian cooling timescale
+(\S\ref{newton_cool}) will depend on $z$ for vertically non-isothermal
+disks, and through the opacity since 
+$\kappa_d=\kappa_d(\rho,T)$ in general. 
+
+For vertically isothermal disks and a temperature-dependent opacity
+model, as considered in \S\ref{toy_relax} and Appendix \ref{mmsn},
+there is still a vertical dependence of the effective thermal relaxation time
+because the radiative diffusion coefficient depends on $\rho$. We
+artificially discarded this vertical dependence by 
+replacing $\rho\to\Sigma/H_\mathrm{iso}$, but can restore it
+by making the transformation
+$\beta(\khat)\to\beta(\khat/\sqrt{2\pi}\hat{\rho})\equiv
+\tilde{\beta}(\khat,z)$ in  Eq. \ref{real_beta}, where
+$\hat{\rho}=\rho/\rho(z=0)$.  We have repeated the example calculation
+in \S\ref{mmsn_example}  with $\beta\to\tilde{\beta}$, but found
+similar results. 
+
+A proper treatment for radiative diffusion will ultimately involve
+the Laplacian operator. In this case additional boundary conditions 
+must be supplemented. We will consider this in a future work. 
+
+\emph{Additional physics.} Depending on where the VSI operates in a
+disk, additional effects may become important. For example, in the
+outer parts of a protoplanetary disk, where we estimate the VSI may
+operate, disk self-gravity (SG) may play a role. Specifically, the vertical
+shear profile depends on the vertical density stratification
+(Eq. \ref{vertical_shear}), which wil be enhanced by vertical SG,
+which will enhance the VSI. Inclusion of the Poisson equation should
+therefore be considered. 
+
+We have neglected viscosity. \cite{nelson13} have shown that an
+alpha viscosity of $\lesssim O(10^{-4})$ is required for the VSI to
+operate. It is of interest to quantify the effect of viscosity
+on the linear VSI. This would help identify, more accurately, the
+appropriate regions in a protoplanetary disk that are sufficiently
+laminar to develop the VSI.  This problem is, however, complicated by
+the fact that proper inclusion of viscosity introduces viscous heating
+in the energy equation. 
+
+
+
+
+
+% \emph{Theoretical generalizations.} Our analytical discussion
+% (\S\ref{analytical}) can be extended in several ways. One could
+% relax the low-frequency approximation to improve the agreement between
+% numerical and analytical eigenfrequencies at small $\khat$. However,
+% such modes are radially more global, and would need a global
+% cylindrical disk model to study them. Another minor improvement is to 
+
+
+%analytical extensions -> nonisothermal, all frequency, non-keplerian,
+%diffusion 
+%viscosity self-gravity 
+%disk models: polytropic connected with isothermal 
