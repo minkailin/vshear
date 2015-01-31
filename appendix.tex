@@ -1,3 +1,68 @@
+\section{Local model for a global problem}
+Here, we discuss the relation between the linear problem in the
+VGSB framework and the global linear problem. We begin with the
+axisymmetric linearized fluid equations in cylindrical co-ordinates, including
+thermal relaxation, 
+\begin{align}
+\ii\sigma\delta P &=\frac{\p P}{\p z}\delta v_z + \gamma P
+\left[\frac{1}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p
+    \delta v_z}{\p z}\right] + \frac{1}{t_c}\left(\delta P -
+  \frac{P}{\rho}\delta\rho\right) + \hat{g}_c \frac{\p P}{\p r}\delta v_r,\\
+  \ii\sigma\delta\rho &= \frac{\rho}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p}{\p
+  z}\left(\rho\delta v_z\right)  + \hat{g}_c\frac{\p\rho}{\p r}\delta v_r,\\
+\ii\sigma\delta v_r &= \frac{1}{\rho}\frac{\p\delta P}{\p r} - 2\Omega
+\delta v_\phi - \hat{g}_c\frac{\delta\rho}{\rho^2}\frac{\p P}{\p r},\\ 
+\ii\sigma\delta v_\phi  &= \frac{\kappa^2}{2\Omega}\delta v_r +
+r\frac{\p\Omega}{\p z}\delta v_z,\\
+\ii \sigma\delta v_z &= \frac{1}{\rho}\frac{\p\delta P}{\p z} -
+\frac{\delta \rho}{\rho^2}\frac{\p P}{\p z},
+\end{align}
+where the coefficients $\hat{g}_c=1$ are inserted to label terms
+associated with the background radial disk structure. 
+
+We assume perturbations have the form $W(z)\exp{\ii k_r r}$ such
+that $|k_rr|\gg1$, so that curvature terms can be ignored. For these
+small radial lengthscale perturbations we also approximate the
+background structure and radial gradients as uniform in $r$, and
+evaluate all cofficients in the above equations at the fiducial radius
+$r=r_0$. This procedure produces $\phi$ and $z$ momentum equations
+that are equilvalent to those for $y$ and $z$ momenta in the VGSB. 
+
+Using the notation and disk models in the main text, the
+energy, density and $r$ momentum equations become 
+\begin{align}
+  \ii \sigma W  &=c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
+      z}\right|_0 \delta v_z + \frac{\gamma}{\Gamma} \frac{d\delta
+    v_z}{dz}\right) + \left[\ii k_rc_s^2(r_0,z)
+  \frac{\gamma}{\Gamma} + \hat{g}_c\left.\frac{1}{\rho}\frac{\p P}{\p
+      r}\right|_0\right]\delta v_r  +
+\frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right),\\
+\ii \sigma Q &= c_s^2(r_0,z)\left(\ii k_r + \hat{g}_c
+  \left.\frac{\p\ln{\rho}}{\p r}\right|_0\right)\delta v_r + c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
+      z}\right|_0 \delta v_z + \frac{d\delta
+    v_z}{dz}\right), \\
+\ii \sigma \delta v_r & = \ii k_r W  -
+\hat{g}_c\frac{1}{c_s^2(r_0,z)}\left.\frac{1}{\rho}\frac{\p P}{\p
+  r}\right|_0Q - 2\Omega(r_0,z)\delta v_\phi,
+\end{align}
+where subscript $0$ denotes evaluation at $r=r_0$. To obtain the
+linear problem in the VGSB, we take the radially-local 
+approximation further and formally set $\hat{g}_c=0$, and define the
+new co-ordinate $x=r - r_0$ with $k_r\to k_x$. It is clear that
+this approximation improves with increasing $|k_x|$. 
+
+We may also reverse this procedure by reinstating the `global
+correction' terms proportional to $\hat{g}_c$ in the linear VGSB
+equations. Of course, doing so implies the basic state is not uniform
+in $x$, which would be inconsistent with the full VGSB equations in
+equilibrium. 
+ 
+%nevertheless we have calculated
+%plot growth rate v.s. bcool 
+
+
+
+
 \section{Full governing equation for vertically isothermal disks}\label{adia_improve}
 % \section{Improving the nearly-Keplerian approximation for adiabatic
 %   disks}\label{adia_improve}
