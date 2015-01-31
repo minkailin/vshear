@@ -58,7 +58,8 @@ For discussion purposes it is useful to define the vertical buoyancy frequency $
   N_z^2 = c_s^2 \left(\frac{\gamma -
       \Gamma}{\gamma}\right)\left(\frac{\p\ln\rho}{\p z}\right)^2,   
 \end{align}
-and we are interested in neutrally or sub-adiabatically stratified
+where $\gamma$ is the constant adiabatic index. We are interested in
+neutrally or sub-adiabatically stratified 
 disks with $\Gamma\leq \gamma$ so that $N_z^2\geq0$.  
 
 The explicit expression for the density field for
@@ -101,7 +102,7 @@ Eq. \ref{eqm_press},
 \end{align}
 
 
-% {\bf need to mention: generally consider sub-keplerian disks -> caveat is that it's entirely possble for angular 
+% {\bf need to mention: generally consider sub-keplerian disks -> caveat is that it's entirely possble for angular  
 % velocity to reach zero at finite height. give example later for isothermal disk. this limits domain size, but this critical height is usually
 % very large for thin disks}
 
@@ -119,6 +120,38 @@ which may be obtained from Eq. \ref{eqm_dens} and Eq. \ref{eqm_rot} by
 taking the limit $\Gamma\to 1$. We will, in fact, primarily focus on
 vertically isothermal disks for simplicitly. 
 
+
+\subsection{Stability condition against axisymmetric adiabatic
+  perturbations}
+A rotating flow is stable against axisymmetric adiabatic perturbations
+if both Solberg-Hoiland criteria  are satisfied:
+\begin{align}
+  \kappa^2 - \frac{1}{\rho c_p}\nabla P \cdot \nabla S &> 0,\\
+  -\frac{\p P}{\p z}\left(\frac{\p j^2}{\p r}\frac{\p S}{ \p z} -
+    \frac{\p j^2}{\p z}\frac{\p S}{\p R} \right)&>0.  
+\end{align}
+\citep{tassoul78}, where $S = c_p\ln{P^{1/\gamma}/\rho}$ is the
+specific entropy, $c_p$ is the heat capacity at constant
+pressure (assumed to be constant), and $j\equiv r^2\Omega$ is the
+specific angular momentum.   
+
+For rotationally-supported, thin disks, pressure gradients are small 
+compared to rotation, so the first criterion is generally
+satisfied. Thus, to assess stability, we evaluate the second criterion
+for the above disk models in $z>0$ where $\p_zP<0$, without loss of
+generality,   
+\begin{align}
+  \gamma - \Gamma > \frac{s\epsilon^2}{\Gamma}
+  \left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left[s
+    -\left(\gamma-\Gamma\right)\frac{\p\ln{P}}{\p\ln{r}} \right]. 
+\end{align} 
+For typical model parameters the right hand side is
+$O(\epsilon^2)$. Hence, to have instability in the adiabatic limit 
+requires $\gamma < \Gamma + O(\epsilon^2)$. Since we consider
+$\epsilon\ll1$, this implies the equilibrium disk must have a small
+entropy gradient in order to be unstable to axisymmetric adiabatic
+perturbations. 
+
 \section{The vertically global shearing box} 
 We are interested in the axisymmetric stability of the above system,
 on radial length-scales much smaller than the local radius $r$, but
@@ -130,10 +163,12 @@ on a fiducial point $(r,\phi,z)=(r_0,\phi_0,0)$ in the global disk, with $\phi_0
 \Omega(r_0,0)t$. The local $x,y,z$ axis correspond to the
 global radial, azimuthal and vertical directions.  
 
-In the this shearing box the equilibrium density, pressure and
+In this shearing box the equilibrium density, pressure and
 sound-speed are assumed to depend only on $z$, by evaluating these
 quantities at $r=r_0$ in the global disk. The background rotation is
-approximated by a linear shear in $x$, but left unaltered in $z$.     
+approximated by a linear shear in $x$, but left unaltered in
+$z$. However, the vertical shear $\p_z\Omega$ is also assumed to only
+depend on $z$.     
 
 The axisymmetric VGSB equations read 
 \begin{align}
@@ -150,11 +185,44 @@ The axisymmetric VGSB equations read
 \end{align}
 where $\bm{v}$ is the velocity field relative to the bulk flow
 (i.e. $\bm{v}=\bm{0}$ in equilibrium),  
-subscript $0$ indicates evaluation at $r=r_0$. In the energy equation
-the ratio of specific heats $\gamma$ is assumed constant, 
-and we have included a thermal relaxation term with timescale
+subscript $0$ indicates evaluation at $r=r_0$. In the energy equation 
+we have added a thermal relaxation term with timescale
 $t_c=\beta\Omega_k^{-1}$ with $\beta$  being a dimensionless input
-parameter.    
+parameter.  
+
+\subsection{Limitations}
+Before using the VGSB to study the VSI, it is very important to be
+aware of several limitations of the box model. The VGSB momentum  
+equation have the same form as that for the standard shearing box 
+\citep{goldreich65}, except for the appearence of the term 
+$v_zr_0d\Omega_0/dz$. This term appears in the global stability
+problem and is the only term associated with vertical shear that is 
+ported from the global disk into the local model.   
+
+%horizontal structure not ported 
+
+Note that, within the VGSB framework, the vertical shear 
+$d\Omega_0/dz$ is a free parameter (as are $\Omega_0$ and $S_0$). 
+This is different to the global problem because in that case, the
+vertical shear is a result of the disk radial structure, which is
+ignored in the VGSB equilibria. 
+%because there is only one
+%equilibrium condition, which determines the vertical density/pressure
+%structure. 
+In effect, we are studying dynamics in the standard shearing box
+subject to an additional azimuthal force $-v_zr_0 d \Omega_0/dz$. This
+force is inspired by the vertical shear in the global disk, and its
+functional form is taken from global equilibrium. 
+%but should be considered as a model parameter 
+
+%horizontal structure that gives rises 
+%vertical shear is an input force
+%only porting vertical shear  
+%vertical shear doesn't depend on x 
+%not all results can be extrapolated to the global context 
+
+In Appendix we make the connection between the linear problem in the
+VGSB to that in the global disk model.  
 
 \subsection{Linearization}
 We perturb the system such that
