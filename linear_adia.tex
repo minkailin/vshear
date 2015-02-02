@@ -1,279 +1,30 @@
-\subsection{Adiabatic perturbations}\label{analytic_adia}
-We now consider % general $\gamma$
-perturbations in the adiabatic limit ($t_c,\beta\to\infty$). This is the opposite regime to
-isothermal perturbations. In this case the parameter $\chi = 1/\gamma$
-and Eq. \ref{vertiso_gov_nondim} can be written as 
-% We eliminate variables from 
-% Eq. \ref{lin_mass}---\ref{lin_energy} in favor of $\delta v_z$ 
-% and $\Delta \equiv \nabla\cdot\delta\bm{v}$ to obtain
-% \begin{align}
-%   &\Delta\left(1 + \frac{\gamma c_s^2 k_x^2}{D}\right) = \frac{d\delta
-%     v_z}{dz} + \frac{\ii k_x^2}{D}\left(\ii c_s^2 \frac{d\ln\rho}{dz}
-%     - \frac{r}{k_x}\frac{d\Omega^2}{dz}\right)\delta v_z,\label{adia_iso1}\\
-%   & -\frac{\sigma^2}{c_s^2}\delta v_z = \gamma \frac{d\Delta}{dz} +
-%   \frac{d}{dz}\left(\frac{d\ln\rho}{dz}\delta v_z\right) +
-%   \left(\gamma-1\right)\frac{d\ln\rho}{dz} \Delta.\label{adia_iso2}
-% \end{align}
-% %{\bf note: incompressible mode, set delta to zero. only works for
-% % constant gravity.}
-
-% We make the low-frequency approximation and the replacement 
-% $D\to \Omega_k^2$ in Eq. \ref{adia_iso1}---\ref{adia_iso2}. For
-% simplicity we do this before combining these equations later. We  
-% show in Appendix \ref{adia_improve} that making these approximations
-% after combining  Eq. \ref{adia_iso1}---\ref{adia_iso2} adds unecessary
-% complexity for thin disks. Here, we also use the fact that in the
-% global disk, 
-% \begin{align}
-%   r\frac{\p \Omega^2}{\p z} = -\frac{\p \ln\rho}{\p z} \frac{qc_s^2}{r},
-% \end{align}
-% for the power-law prescription of the midplane sound-speed for
-% $\Gamma=1$.  
-
-% Making the above substitutions and eliminating $\Delta$ between Eq. \ref{adia_iso1}---
-% Eq. \ref{adia_iso2} we obtain, in terms of dimensionless variables defined
-% previously, an equation for $\delta v_z$, 
-
+\subsection{Perturbations with thermal relaxation}\label{analytic_relax}
+We now introduce thermal relaxation ($\beta>0$). We pursue explicit
+solutions in the thin-disk approximation. The governing equation,
+Eq. \ref{vertiso_gov_nondim}, is then 
 \begin{align}
-  0 =& \dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
-    \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime\notag\\
-  &+\left\{\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right)\right.\notag\\
-  &\phantom{0=}\left.-\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii\epsilon  
-          q}{\hat{k}}\right)\ln\rho^{\prime 2}\right]\right\}\delta v_z.\label{adia_iso3}
-\end{align}
-
-We multiply Eq. \ref{adia_iso3} by $\rho\delta v_z^*$ and
-integrate vertically, assume boundary terms vanish when integrating by
-parts, to obtain
-\begin{align}
-  &\hat{\sigma}^2\left(\frac{1}{\gamma} +
-    \hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|\delta
-  v_z|^2 d\zhat \notag\\
-  &=  \left(\frac{\gamma-1}{\gamma}\right)
-  \int_{\zhat_1}^{\zhat_2}\rho|\delta v_z^\prime|^2 d\zhat
-  +\frac{1}{\gamma}\int_{\zhat_1}^{\zhat_2}\frac{1}{\rho}|(\rho\delta
-  v_z)^\prime|^2 d\zhat\notag\\
-  &\phantom{=} +
-  \left(\frac{\gamma-1}{\gamma}\right)\hat{k}^2\left(1-\frac{\ii\epsilon
-      q}{\hat{k}}\right) \int_{\zhat_1}^{\zhat_2}\rho\ln\rho^{\prime
-    2}|\delta v_z|^2 d\zhat\notag\\
-  &\phantom{=} + \ii\epsilon q \hat{k}
-  \int_{\zhat_1}^{\zhat_2}\ln\rho^\prime(\rho\delta v_z^*)^\prime
-  \delta v_z d\zhat.\label{adia_integral}
-\end{align}
-When $q\equiv0$, all the terms on the right-hand-side (RHS) are real. Then
-$\hat{\sigma}^2$ is real, and  $\hat{\sigma}^2>0$ if $\gamma>1$. As
-expected, a sub-adiabatically stratified disk is stable in the absense
-of vertical shear. In the presence of vertical shear $q\neq0$ and
-$\hat{\sigma}$ is generally complex, which implies the possibility of
-instability.  
-
-Note that when $\gamma>1$ and $q=0$, the term with $\ln\rho^{\prime
-  2}$ in the integrand (third term on the RHS) represents
-stabilization by the vertical entropy gradient (real buoyancy frequency). 
-It gives an imaginary contribution to $\hat{\sigma}$ when $q\neq0$,
-but this is a factor $|\epsilon/\hat{k}|$ smaller than the real
-(stabilizing) contribution, 
-since $\epsilon\ll 1$ for a thin disk and we (usually) consider
-$\hat{k}\gg1$. Thus, instability is expected to be associated with the 
-last term on the RHS of Eq. \ref{adia_integral}. 
-
-\subsubsection{Explicit solutions in the thin-disk limit}\label{adia_explicit}
-We can construct solutions in the thin-disk limit, in which 
-$\ln(\rho/\rho_0) \simeq -\zhat^2/2$. Eq. \ref{adia_iso3} becomes   
-\begin{align}
-  0 = \delta v_z^{\prime\prime} - \zhat A \delta v_z^\prime + \left(B
-    - C \zhat^2\right)\delta v_z, \label{adia_iso4} 
+  0 = \delta v_z^{\prime\prime} - z A\delta v_z^\prime +
+  (B - C\zhat^2)\delta v_z = 0,\label{nearly_iso_explicit}
 \end{align}
 with
 \begin{align}
   &A \equiv 1 + \ii \epsilon q \hat{k},\\
-  &B \equiv \hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right) -
-  \left(\frac{1}{\gamma} + \ii \hat{k} \epsilon q\right)\\
-  &C \equiv \frac{\left(\gamma-1\right)}{\gamma}\hat{k}^2\left(1 - \frac{\ii
-      \epsilon q}{\hat{k}}\right).\label{adia_thin}
-\end{align}
-Let
-\begin{align}
-  \delta v_z(\zhat) =
-  g(\zhat)\exp\left(\frac{\alpha\zhat^2}{2}\right), \label{adia_ansatz}
-\end{align}
-where $\alpha$ is a constant to be chosen for convenience. Inserting
-Eq. \ref{adia_ansatz} into Eq. \ref{adia_thin} gives
-\begin{align}
-  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime + \left(B +
-    \alpha\right)g
-  +\left(\alpha^2 - \alpha A - C\right)\zhat^2 g.
-\end{align}
-We choose $\alpha$ to make the coefficient of $\zhat^2g$
-vanish, and impose the vertical kinetic energy density
-$\rho|\delta v_z|^2$ to remain finite. Then assuming $g(\zhat)$ is a
-polynomial, we require  
-\begin{align}
-  \real\alpha < \frac{1}{2}. 
-\end{align}
-We therefore choose 
-\begin{align}
-  \alpha = \frac{1}{2}\left(A - \sqrt{A^2 + 4C}\right). 
-\end{align} 
-
-We now have an equation in the same form as Eq. \ref{iso_ode3}:
-\begin{align}
-  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime +
-  \left(B + \alpha\right)g.
-\end{align}
-We seek polynomial solutions 
-\begin{align}
-  g(\zhat) = \sum_{m=0}^M b_m \zhat^m,
-\end{align}
-% We again seek power-series solutions 
-% \begin{align}
-%   g(\zhat) = \sum_{m=0}^\infty b_m \zhat^m,
-% \end{align}
-% which requires
-% \begin{align}
-%   (m+2)(m+1)b_{m+2} + \left[\left(2\alpha - A\right)m + B + \alpha\right]=0.
-% \end{align}
-which requires
-\begin{align}
-  B + \alpha = M\left(A-2\alpha\right).\label{adia_disp0}
-\end{align}
-Inserting the definition of $B$ we get
-\begin{align}
-  &\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right) \notag\\ &=
-  \left(\frac{1}{\gamma}-\frac{1}{2}\right) +\frac{\ii}{2}\epsilon q
-  \hat{k} + \frac{1}{2}\left(2M+1\right)\left(A^2 + 4C\right)^{1/2}\label{adia_disp}. 
-\end{align}
-This gives the eigenfrequency $\hat{\sigma}$ and completes the solution
-description.  
-
-%Recalling that $B$ depends $\hat{\sigma}$, Eq. \ref{adia_disp} gives
-%the eigenfrequency as a function of disk paramters. 
-
-\subsubsection{The case of $\gamma=2$}
-In principle, we can solve Eq. \ref{adia_disp} for the mode
-frequencies and growth rates as a function of the disk parameters and
-the radial wavenumber. This is complicated in 
-general, but simplifies for $\gamma=2$, for which the quantity
-$A^2+4C$ is real. In this case we find
-\begin{align}
-  \hat{\nu}^2 =
-  \frac{1}{2}\frac{(2M+1)}{\sqrt{1+2\hat{k}^2}}&\left[
-    \sqrt{1-\frac{4M(M+1)\hat{k}^2\epsilon^2q^2}{(2M+1)^2(1+2\hat{k}^2)}}\right.\notag\\
-  &\phantom{=}
-  \left.- \sqrt{1 - \frac{\hat{k}^2\epsilon^2q^2}{(1+2\hat{k}^2)}}\right].
-\end{align}
-In the limit of a thin disk $\epsilon\to0$ or weak shear $|q|\to0$, we
-have 
-\begin{align}
-  \hat{\nu}^2 = \frac{\epsilon^2
-    q^2}{4(2M+1)}\frac{\hat{k}^2}{(1+2\hat{k}^2)^{3/2}},\label{gam2_growth}
-\end{align}
-and the maximum growth rate occurs at $\hat{k}=\hat{k}_\mathrm{opt}=1$,  
-\begin{align}
-  \mathrm{max}(\hat{\nu}) &= \frac{|\epsilon
-    q|}{2(3^{3/4}\sqrt{2M+1})}\label{gam2_max_growth}.
-  % & \leq \frac{|\epsilon
-  % q|}{2\times3^{3/4}}\notag.
-\end{align}
-Unlike isothermal perturbations, Eq. \ref{gam2_max_growth} shows that
-maximum growth rate occurs at $M=0$, and growth rates decrease with increasing $M$. This
-is despite the fact that in the thin-disk approximation 
-$d\Omega^2/dz\propto z$, so there is infinite vertical shear
-available.     
-
-The acceptable solution for $\alpha$ when $\gamma=2$ is
-\begin{align}
-  \alpha = \frac{1}{2}\left[\left(1+\ii\epsilon q \hat{k}\right) -
-    \sqrt{1 + \hat{k}^2\left(2-\epsilon^2 q^2\right)}\right].\label{gam2_alpha}
-\end{align}
-Since $\epsilon\ll 1$, $\real\alpha<0$, so the vertical velocity
-eventually decays for large heights. For $\hat{k}\gg 1$ the
-perturbation decays rapidly away from the midplane. This is again
-unlike isothermal perturbations, whose magnitude increase with $|z|$.  
-
-%gauss decay means boundary conditions have no influence, all perts go
-%to zero
-
-\subsubsection{Comparison with $\gamma=1$}\label{adia_compare_gam1}
-We can compare growth rates obtained for $\gamma=2$ to those for
-$\gamma=1$ in the previous section. If we compare growth rates at their 
-respective optimum radial wavelengths, we find
-that for $\gamma=2$ the \emph{maximum} growth rate, occuring
-at $M=0$, is still $\sim2$ times smaller than the \emph{minimum} growth
-rate for $\gamma=1$. That is,
-\begin{align}
-  &\mathrm{max}(\hat{\nu}) \geq \frac{|\epsilon q|}{2\sqrt{1+|\epsilon
-      q|}} & \text{at }\hat{k} = \hat{k}_\mathrm{opt} \text{ for }   \gamma=1,  \\
-  &\mathrm{max}(\hat{\nu}) \leq \frac{|\epsilon q|}{2\times 3^{3/4}}
-           & \text{at }\hat{k} = \hat{k}_\mathrm{opt} \text{ for } \gamma=2.
-\end{align}
-
-We can also compare growth rates in the limit $\hat{k}\gg1$ using
-Eq. \ref{simple_growth} and Eq. \ref{gam2_growth},
-\begin{align}
-  &\hat{\nu} \geq \sqrt{\frac{|\epsilon q|}{2\hat{k}}}
-  &  \text{as }  \hat{k}\to\infty  \text{ for }  \gamma=1, \\
-  &\hat{\nu} \leq \frac{|\epsilon q|}{2^{7/4}\sqrt{\hat{k}}}
-  &\text{as }  \hat{k}\to\infty  \text{ for }  \gamma=2.\label{gam2_growth_rate}
-\end{align}
-Then the growth rate of perturbations with large $|\hat{k}|$ in a
-$\gamma=2$ disk is at most $2^{-5/4}\sqrt{|\epsilon q|}$ times that in a
-$\gamma=1$ disk. For $\epsilon = 0.1$ and $|q|=1$, this factor is
-$\sim 0.1$.  
-
-In Fig. \ref{adia_growth} we plot the eigenfrequencies as a
-function of the radial wavenumber $\hat{k}$, for a range of adiabatic
-indices, using Eq. \ref{adia_disp}. The low-frequency approximation
-is questionable for $\hat{k}\lesssim4$ since
-$|\hat{\sigma}|^2\gtrsim0.2$. For large $\hat{k}$ the presence of a
-positive vertical entropy gradient is strongly stabilizing. This is
-because the vertical shear grows as $z$ away from the midplane (and
-has a maximum when the thin-disk approximation is relaxed), but square
-of the bouyancy frequency, which is stabilizing, grows as $z^2$ away
-from the midplane. %The entropy $P/\rho^\gamma$ formally diverges   
-%for $z\to\infty$ even without the thin-disk approximation.        
-
-\begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/rate_theory_om}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/rate_theory_nu}
-  \caption{Real frequency (top) and growth rate (bottom) of the fundamental VSI mode in vertically 
-    isothermal disks ($\Gamma=1$) subject to adiabatic perturbations,
-    calculated in thin disk approximation from Eq. \ref{adia_disp}
-    with $M=0$, $\epsilon=0.1$ and  
-    $|q|=1$. Frequencies are shown as a function of the radial
-    wavenumber for different values of the adiabatic index
-    $\gamma$. For $\gamma\equiv 1$ the perturbations are isothermal
-    and there is no vertical entropy gradient.\label{adia_growth}}  
-\end{figure}   
-
-
-
-\subsection{Perturbations with thermal relaxation}\label{analytic_relax}
-Having examined the extreme limits of isothermal ($t_c\to0$) and
-adiabatic ($t_c\to\infty$) perturbations, we now generalize further to consider
-perturbations with intermediate thermodynamic responses with general
-values of $t_c$ or $\beta$.  
-
-In this section we will pursue explicit solutions in the thin-disk
-approximation. The governing equation, Eq. \ref{vertiso_gov_nondim}, is
-then 
-\begin{align}
-  0 = \delta v_z^{\prime\prime} - z \widetilde{A}\delta v_z^\prime +
-  (\widetilde{B} - \widetilde{C}\zhat^2)\delta v_z = 0,\label{nearly_iso_explicit}
-\end{align}
-with
-\begin{align}
-  &\widetilde{A} \equiv 1 + \ii \epsilon q \hat{k},\\
-  &\widetilde{B} \equiv \hat{\sigma}^2\left(\chi + \hat{k}^2\right) -
+  &B \equiv \hat{\sigma}^2\left(\chi + \hat{k}^2\right) -
   \left(\chi + \ii \epsilon q \hat{k}\right),\\
-  &\widetilde{C} \equiv \left(1-\chi\right)\left(\hat{k}^2 - \ii
-      \epsilon q\hat{k}\right), 
+  &C \equiv \left(1-\chi\right)\left(\hat{k}^2 - \ii
+    \epsilon q\hat{k}\right), 
 \end{align}
 and $\chi =
 \left(1-\ii\hat{\sigma}\beta\right)/\left(1-\ii\hat{\sigma}\beta\gamma\right)
-$ in terms of dimensionless variables.  
+$ in terms of dimensionless variables. 
 
+We remark that Eq. \ref{nearly_iso_explicit} is in the same
+form as Eq. 41 in \cite{lubow93}, which describes adiabatic axisymmetric waves in
+a vertically isothermal disk without vertical shear. The two equations
+become identical after  setting $q=0$ (no vertical shear) and
+$\chi=1/\gamma$ (adiabatic flow) in our Eq. \ref{nearly_iso_explicit},
+and making the low-frequency, Keplerian disk approximation in
+\citeauthor{lubow93} after a change of variables.    
 
 \subsubsection{The effect of introducing a small but finite
   thermal relaxation time}\label{relax_pert}
@@ -284,7 +35,6 @@ $t_c$ from zero to a small but finite value? For sufficiently small
 $\beta$, for which the perturbations may be considered 
 nearly-isothermal, we expect the new solutions to only differ slightly
 from the explicit isothermal solutions developed in \S\ref{iso_poly}. 
-
 
 To determine the (assumed) small effect of introducing a short thermal
 relaxation, we linearize Eq. \ref{nearly_iso_explicit} about a known 
@@ -374,89 +124,109 @@ optimum wavenumber for stabilization is $\hat{k}\sim 5$---$6$.
     \label{domegadbeta}}  
 \end{figure}   
 
-One effect of introducing finite thermal relaxation is buoyancy. % We
-% show in the next section that buoyancy strongly stabilizes the
-% VSI.
+One effect of introducing finite thermal relaxation is buoyancy. 
 The $\zhat^2$ depedence in $\delta v_{z1}$ then makes sense because it
 is most significant for large $\zhat$, i.e. away from the midplane
 where the effect of buoyancy first appears as $t_c$ is increased. 
 
-\subsubsection{Dispersion relation with thermal relaxation}\label{disp_relax}
-Eq. \ref{nearly_iso_explicit} is same form
-as the governing equation for the adiabatic case
-(Eq. \ref{adia_iso4}). However, the coefficients $\widetilde{B}$ and $\widetilde{C}$
-have a complicated dependence on $\hat{\sigma}$. 
-Applying the same solution method as in \S\ref{adia_explicit}, we 
-% Thus calculating the
-% eigenfrequency $\hat{\sigma}$ generally requires a numerical
-% approach, which we do  in \S\ref{disp_relax}. However, analytical
-% results may be obtained in the limit $\beta\to0$. 
-find the adiabatic dispersion relation,
-Eq. \ref{adia_disp0}, generalizes to a $6^\mathrm{th}$ order
-polynomial in $\hat{\sigma}$ with finite thermal relaxation:
+\subsubsection{Dispersion relation with thermal
+  relaxation}\label{disp_relax}
+To obtain a dispersion relation similar to Eq. \ref{sig2_iso} for
+isothermal perturbations, we first write 
+\begin{align}
+  \delta v_z(\zhat) =
+  g(\zhat)\exp\left(\frac{\alpha\zhat^2}{2}\right), \label{adia_ansatz}
+\end{align}
+where $\alpha$ is a constant to be chosen for convenience. Inserting
+Eq. \ref{adia_ansatz} into Eq. \ref{nearly_iso_explicit} gives
+\begin{align}
+  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime + \left(B +
+    \alpha\right)g
+  +\left(\alpha^2 - \alpha A - C\right)\zhat^2 g.
+\end{align}
+We choose $\alpha$ to make the coefficient of $\zhat^2g$
+vanish, and impose the vertical kinetic energy density
+$\rho|\delta v_z|^2$ to remain finite. Then assuming $g(\zhat)$ is a
+polynomial, we require  
+\begin{align}
+  \real\alpha < \frac{1}{2}. 
+\end{align}
+We choose 
+\begin{align}
+  \alpha = \frac{1}{2}\left(A - \sqrt{A^2 + 4C}\right),  
+\end{align} 
+by considering the case $q=0$ and $\beta\to\infty$ as examined in
+\cite{lubow93}.   
+
+We now have an equation in the same form as that for isothermal
+perturbations (Eq. \ref{iso_ode3}):
+\begin{align}
+  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime +
+  \left(B + \alpha\right)g.
+\end{align}
+We seek polynomial solutions 
+\begin{align}
+  g(\zhat) = \sum_{m=0}^M b_m \zhat^m,
+\end{align}
+which requires
+\begin{align}
+  B + \alpha = M\left(A-2\alpha\right).\label{adia_disp0}
+\end{align}
+% We remark that for $q=0$ and $\beta\to\infty$, Eq. \ref{adia_disp0} is
+% the same as Eq. 54 in \cite{lubow93} when the low-frequency, Keplerian
+% approximation is made in the latter. 
+% Eq. \ref{nearly_iso_explicit} is same form
+% as the governing equation for the adiabatic case
+% (Eq. \ref{adia_iso4}). However, the coefficients $\widetilde{B}$ and $\widetilde{C}$
+% have a complicated dependence on $\hat{\sigma}$. 
+% Applying the same solution method as in \S\ref{adia_explicit}, we 
+% find the adiabatic dispersion relation, 
+This is a $6^\mathrm{th}$ order 
+polynomial in $\hat{\sigma}$:  
 \begin{align}
   0 = \sum_{l=0}^{6}c_l\hat{\sigma}^l,\label{relax_disp}
 \end{align}
 where the coefficients $c_l$ are given in Appendix \ref{relax_coeff}.
-Eq. \ref{relax_disp} contrasts to Eq. \ref{adia_disp}, which is
-quadratic in $\hat{\sigma}$ for adiabatic perturbations. 
+% Eq. \ref{relax_disp} contrasts to Eq. \ref{adia_disp}, which is
+% quadratic in $\hat{\sigma}$ for adiabatic perturbations. 
 
 It is simplest to solve Eq. \ref{relax_disp} numerically. In
 Fig. \ref{relax_disp_fig} we plot the growth rate of the fundamental
-($M=0$) VSI mode as a function of $k_xH_\mathrm{iso}$ for a range of
+($M=0$) VSI mode as a function of $\khat$ for a range of
 dimensionless thermal relaxation timescales $\beta$, in a disk with
-$\epsilon=0.05$, $q=-1$ and $\gamma=1.4$.  Similarly, 
-in Fig. \ref{relax_bcrit} we solve the dispersion relation for the
-critical $\beta$ such that the growth rate of the fundamental VSI mode
-is zero.  
-
-Fig. \ref{relax_disp_fig}---\ref{relax_bcrit} shows that a growing fundamental
-VSI mode exists both in the isothermal ($\beta\to0$) and adiabatic
-($\beta\to\infty$) limits, although the latter growth rates are
-smaller by at least a factor of two. Furthermore, the adiabatic VSI is 
-is limited to a thin layer about the disk midplane so it may be
-considered stable. Then Fig. \ref{relax_bcrit} shows that 
-$\beta\lesssim 0.1$ is required for instability in this disk model. This critical
-timescale is indepedent of $k_x$ for
-$k_xH_\mathrm{iso}\gtrsim10$. The top panel of Fig. \ref{relax_disp_fig} is also
-consistent with the previous
-discussion that show thermal relaxation has no effect for
-$k_x\to0$ or $k_x\to\infty$ as $\beta\to0$. 
+$\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. Increasing $\beta$ even
+slightly above zero significantly reduces the growth rates for
+$\khat\gg 1$. (There is little effect at small $\khat$ but this case is
+not of interest because the local model breaks down.) Thus, 
+a growing fundamental VSI mode exists only for nearly
+isothermal perturbations ($\beta\ll 1$).  The plot is also consistent with our previous
+discussion that there exists an intermediate wavenumber for which
+finite thermal relaxation has maximal effect (for small $\beta$). 
+%$k_x\to0$ or $k_x\to\infty$ as $\beta\to0$. 
 
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/rate_theory_grow_relax}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/rate_theory_grow_relax2}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm 0cm]{figures/rate_theory_grow_relax}
+%  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/rate_theory_grow_relax2}
   \caption{Growth rate of the fundamental VSI mode in a disk with
     dimensionless thermal relaxation timescales
-    $\beta\in[10^{-3},1]$ (top) and $\beta\in[1,10^3]$ (bottom).
-Other disk parameters are
+    $\beta\in[10^{-3},1]$.  Other disk parameters are
     $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. The growth rates are
     calculated from the dispersion relation Eq. \ref{relax_disp}. 
     \label{relax_disp_fig}}  
 \end{figure}   
 
-%ate_theory, eps=0.05, smallq=-1d0, gmma=1.4, bmax=1.0, ncases=11,
+% ate_theory, eps=0.05, smallq=-1d0, gmma=1.4, bmax=1.0, ncases=11,
 %mmode=0.0, root=1, legend=[0.102,0.14,5.4,0.355], yrange=[0,6]
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{figures/bcrit_theory}
-  \caption{Condition on the thermal relaxation timescale $\beta$ for the existence of unstable fundamental VSI
-    modes in a vertically isothermal disk with $\epsilon=0.05$, $q=-1$
-    and $\gamma=1.4$. For sufficiently small $\beta$ the isothermal VSI opertates,
-    while for sufficiently large $\beta$ the adiabatic VSI
-    operates. For intermediate values of $\beta$ the VSI growth rate
-    is negative (i.e. stabilized). 
-    \label{relax_bcrit}}  
-\end{figure}   
-
-
 \subsubsection{Upper limit on the thermal relaxation timescale for the
-  fundamental isothermal VSI mode}\label{iso_vsi_beta_crit}
-Notice in Fig. \ref{relax_bcrit} the upper limit on $\beta$ for the
-fundamental isothermal VSI tends to a constant for large
-$\khat$. Using this clue, we can calculate this critical $\beta$ by
-considering $\khat\to\infty$. We proceed as follows. 
+  fundamental VSI mode}\label{iso_vsi_beta_crit}
 
+Here we estimate the maximum thermal relaxation timescale
+$\beta$ that allows the fundamental VSI for $\khat\gg1$.   
+% Notice in Fig. \ref{relax_bcrit} the upper limit on $\beta$ for the
+% fundamental isothermal VSI tends to a constant for large
+% $\khat$. Using this clue, we can calculate this critical $\beta$ by
+% considering $\khat\to\infty$. We proceed as follows. 
 At marginal stability, the eigenfrequency $\hat{\sigma}=\hat{\omega}$
 is real. The dispersion relation for the fundamental mode is then
 \begin{align}\label{relax_disp_fund}
@@ -473,27 +243,44 @@ the limit $\khat\to\infty$ we find
 \end{align}
 We seek solutions with
 \begin{align}
-  \khat \to \infty, \quad \hat{\omega}\to 0 ,\quad \khat\hat{\omega} \text{ finite}.
+  \khat \to \infty, \quad \hat{\omega}\to 0 ,\quad \hat{\omega} \khat\text{ finite}.
 \end{align}
 Then
 \begin{align}
-  \khat\hat{\omega} = \frac{(\gamma-1)\beta}{\epsilon q}
+  \hat{\omega}\khat = \frac{(\gamma-1)\beta}{\epsilon q}
 \end{align}
 from Eq. \ref{relax_cond2}, which implies, from Eq. \ref{relax_cond1}
 that
 \begin{align}
   \beta = \frac{1}{(\gamma-1)}\left[\frac{1}{\left(\epsilon
-        q\right)^2} - \frac{\gamma}{(\gamma-1)}\right]^{-1/2}. 
+        q\right)^2} - \frac{\gamma}{(\gamma-1)}\right]^{-1/2} 
 \end{align}
+at marginal stability for perturbations with large $\khat$. 
 For a thin disk $\epsilon\ll 1$, we infer 
 \begin{align}\label{iso_vsi_cond}
   \beta \lesssim \frac{|\epsilon q|}{\gamma-1} \equiv
   \beta_\mathrm{crit} 
 \end{align}
-is required for the fundamental isothermal VSI to operate.  For
-$\epsilon = 0.05$, $q=-1$ and $\gamma=1.4$ we find
-$\beta_\mathrm{crit}=0.125$, in agreement with Fig. \ref{relax_bcrit}
-at large $\khat$. 
+is required for the fundamental VSI to operate.  
+
+In Fig. \ref{relax_bcrit} we plot the critical thermal relaxation
+timescale obtained from solving Eq. \ref{relax_disp_fund} numerically 
+for a disk with $\epsilon = 0.05$, $q=-1$ and $\gamma=1.4$, for which
+we have $\beta_\mathrm{crit}=0.125$ from Eq. \ref{iso_vsi_cond}. Our
+upper estimate agrees well with the numerical solution for $\khat\gtrsim
+10$. From our discussion for isothermal perturbations
+(\S\ref{iso_discuss}), we expect $\beta<\beta_\mathrm{crit}$ to be a
+sufficient condition for the VSI. 
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/bcrit_theory}
+  \caption{Condition on the thermal relaxation timescale $\beta$ for
+    the existence of unstable fundamental VSI mode in a vertically
+    isothermal disk with $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$.  
+    The dotted line denotes the asymptotic value
+    $\beta_\mathrm{crit}=\epsilon|q|/(\gamma-1)$ for large $\khat$. 
+    \label{relax_bcrit}}  
+\end{figure}   
 
 % \subsubsection{Lower limit on the thermal relaxation timescale for the
 %   fundamental adiabatic VSI mode}
@@ -518,3 +305,201 @@ at large $\khat$.
 % For $\epsilon = 0.05$, $q=-1$ and $\gamma=1.4$, the appropriate
 % solution is $\beta_0 = 10.33$ and $\hat{\omega}_0 = 0.74$.  
 
+
+
+\subsection{Spurious growth of adiabatic perturbations in the local
+  model}\label{analytic_adia} 
+For adiabatic perturbations ($\gamma>1$, $\beta\to\infty$) we may
+simply use the Soilberg-Hoiland critera to assess stability
+(\S\ref{solberg}). Nevertheless, we briefly consider this case in the
+local framework to demonstrate its limitations. For $\beta\to\infty$
+the parameter $\chi = 1/\gamma$ and Eq. \ref{vertiso_gov_nondim} can
+be written as   
+
+\begin{align}
+  0 =& \dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
+    \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime\notag\\
+  &+\left\{\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right)\right.\notag\\
+  &\phantom{0=}\left.-\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii\epsilon  
+          q}{\hat{k}}\right)\ln\rho^{\prime 2}\right]\right\}\delta v_z.\label{adia_iso3}
+\end{align}
+
+We multiply Eq. \ref{adia_iso3} by $\rho\delta v_z^*$ and
+integrate vertically, assume boundary terms vanish when integrating by
+parts, to obtain
+\begin{align}
+  &\hat{\sigma}^2\left(\frac{1}{\gamma} +
+    \hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|\delta
+  v_z|^2 d\zhat \notag\\
+  &=  \left(\frac{\gamma-1}{\gamma}\right)
+  \int_{\zhat_1}^{\zhat_2}\rho|\delta v_z^\prime|^2 d\zhat
+  +\frac{1}{\gamma}\int_{\zhat_1}^{\zhat_2}\frac{1}{\rho}|(\rho\delta
+  v_z)^\prime|^2 d\zhat\notag\\
+  &\phantom{=} +
+  \left(\frac{\gamma-1}{\gamma}\right)\hat{k}^2\left(1-\frac{\ii\epsilon
+      q}{\hat{k}}\right) \int_{\zhat_1}^{\zhat_2}\rho\ln\rho^{\prime
+    2}|\delta v_z|^2 d\zhat\notag\\
+  &\phantom{=} + \ii\epsilon q \hat{k}
+  \int_{\zhat_1}^{\zhat_2}\ln\rho^\prime(\rho\delta v_z^*)^\prime
+  \delta v_z d\zhat.\label{adia_integral}
+\end{align}
+When $q\equiv0$, all the terms on the right-hand-side (RHS) are real. Then
+$\hat{\sigma}^2$ is real, and  $\hat{\sigma}^2>0$ if $\gamma>1$. As
+expected, a sub-adiabatically stratified disk is stable in the absense
+of vertical shear. 
+
+% If we follow through the solution method as before, we obtain a
+% dispersion relation 
+% \begin{align}
+%   &\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right) \notag\\ &=
+%   \left(\frac{1}{\gamma}-\frac{1}{2}\right) +\frac{\ii}{2}\epsilon q
+%   \hat{k} + \frac{1}{2}\left(2M+1\right)\left(A^2 + 4C\right)^{1/2}\label{adia_disp}.
+% \end{align}
+% This equation is the same as Eq. 54 in \cite{lubow93} when $q=0$ and
+% the low-frequency, Keplerian approximation is made for the latter.  
+
+However, in the presence of vertical shear $q\neq0$,
+Eq. \ref{adia_integral} suggests $\hat{\sigma}$ is complex for real
+$\khat$, which implies the possibility of instability, regardless of
+how much $\gamma$ deviates from unity. This is contradicts the second 
+Solberg-Hoiland criterion (Eq. \ref{solberg2}) and is a result of the
+radially-local approximation (Appendix \ref{global_corr}). To 
+avoid this, we must restrict our attention to short thermal relaxation
+timescales ($\beta\lesssim1$) and/or neutrally-stratified disks
+($\gamma=\Gamma$) when allowing vertical shear. 
+
+
+% Note that when $\gamma>1$ and $q=0$, the term with $\ln\rho^{\prime
+%   2}$ in the integrand (third term on the RHS) represents
+% stabilization by the vertical entropy gradient (real buoyancy frequency). 
+% It gives an imaginary contribution to $\hat{\sigma}$ when $q\neq0$,
+% but this is a factor $|\epsilon/\hat{k}|$ smaller than the real
+% (stabilizing) contribution, 
+% since $\epsilon\ll 1$ for a thin disk and we (usually) consider
+% $\hat{k}\gg1$. Thus, instability is expected to be associated with the 
+% last term on the RHS of Eq. \ref{adia_integral}. 
+
+% \subsubsection{Explicit solutions in the thin-disk limit}\label{adia_explicit}
+% We can construct solutions in the thin-disk limit, in which 
+% $\ln(\rho/\rho_0) \simeq -\zhat^2/2$. Eq. \ref{adia_iso3} becomes   
+% \begin{align}
+%   0 = \delta v_z^{\prime\prime} - \zhat A \delta v_z^\prime + \left(B
+%     - C \zhat^2\right)\delta v_z, \label{adia_iso4} 
+% \end{align}
+% with
+% \begin{align}
+%   &A \equiv 1 + \ii \epsilon q \hat{k},\\
+%   &B \equiv \hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right) -
+%   \left(\frac{1}{\gamma} + \ii \hat{k} \epsilon q\right)\\
+%   &C \equiv \frac{\left(\gamma-1\right)}{\gamma}\hat{k}^2\left(1 - \frac{\ii
+%       \epsilon q}{\hat{k}}\right).\label{adia_thin}
+% \end{align}
+
+% Inserting the definition of $B$ we get
+% \begin{align}
+%   &\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right) \notag\\ &=
+%   \left(\frac{1}{\gamma}-\frac{1}{2}\right) +\frac{\ii}{2}\epsilon q
+%   \hat{k} + \frac{1}{2}\left(2M+1\right)\left(A^2 + 4C\right)^{1/2}\label{adia_disp}. 
+% \end{align}
+% This gives the eigenfrequency $\hat{\sigma}$ and completes the solution
+% description.  
+
+% %Recalling that $B$ depends $\hat{\sigma}$, Eq. \ref{adia_disp} gives
+% %the eigenfrequency as a function of disk paramters. 
+
+% \subsubsection{The case of $\gamma=2$}
+% In principle, we can solve Eq. \ref{adia_disp} for the mode
+% frequencies and growth rates as a function of the disk parameters and
+% the radial wavenumber. This is complicated in 
+% general, but simplifies for $\gamma=2$, for which the quantity
+% $A^2+4C$ is real. In this case we find
+% \begin{align}
+%   \hat{\nu}^2 =
+%   \frac{1}{2}\frac{(2M+1)}{\sqrt{1+2\hat{k}^2}}&\left[
+%     \sqrt{1-\frac{4M(M+1)\hat{k}^2\epsilon^2q^2}{(2M+1)^2(1+2\hat{k}^2)}}\right.\notag\\
+%   &\phantom{=}
+%   \left.- \sqrt{1 - \frac{\hat{k}^2\epsilon^2q^2}{(1+2\hat{k}^2)}}\right].
+% \end{align}
+% In the limit of a thin disk $\epsilon\to0$ or weak shear $|q|\to0$, we
+% have 
+% \begin{align}
+%   \hat{\nu}^2 = \frac{\epsilon^2
+%     q^2}{4(2M+1)}\frac{\hat{k}^2}{(1+2\hat{k}^2)^{3/2}},\label{gam2_growth}
+% \end{align}
+% and the maximum growth rate occurs at $\hat{k}=\hat{k}_\mathrm{opt}=1$,  
+% \begin{align}
+%   \mathrm{max}(\hat{\nu}) &= \frac{|\epsilon
+%     q|}{2(3^{3/4}\sqrt{2M+1})}\label{gam2_max_growth}.
+%   % & \leq \frac{|\epsilon
+%   % q|}{2\times3^{3/4}}\notag.
+% \end{align}
+% Unlike isothermal perturbations, Eq. \ref{gam2_max_growth} shows that
+% maximum growth rate occurs at $M=0$, and growth rates decrease with increasing $M$. This
+% is despite the fact that in the thin-disk approximation 
+% $d\Omega^2/dz\propto z$, so there is infinite vertical shear
+% available.     
+
+% The acceptable solution for $\alpha$ when $\gamma=2$ is
+% \begin{align}
+%   \alpha = \frac{1}{2}\left[\left(1+\ii\epsilon q \hat{k}\right) -
+%     \sqrt{1 + \hat{k}^2\left(2-\epsilon^2 q^2\right)}\right].\label{gam2_alpha}
+% \end{align}
+% Since $\epsilon\ll 1$, $\real\alpha<0$, so the vertical velocity
+% eventually decays for large heights. For $\hat{k}\gg 1$ the
+% perturbation decays rapidly away from the midplane. This is again
+% unlike isothermal perturbations, whose magnitude increase with $|z|$.  
+
+% %gauss decay means boundary conditions have no influence, all perts go
+% %to zero
+
+% \subsubsection{Comparison with $\gamma=1$}\label{adia_compare_gam1}
+% We can compare growth rates obtained for $\gamma=2$ to those for
+% $\gamma=1$ in the previous section. If we compare growth rates at their 
+% respective optimum radial wavelengths, we find
+% that for $\gamma=2$ the \emph{maximum} growth rate, occuring
+% at $M=0$, is still $\sim2$ times smaller than the \emph{minimum} growth
+% rate for $\gamma=1$. That is,
+% \begin{align}
+%   &\mathrm{max}(\hat{\nu}) \geq \frac{|\epsilon q|}{2\sqrt{1+|\epsilon
+%       q|}} & \text{at }\hat{k} = \hat{k}_\mathrm{opt} \text{ for }   \gamma=1,  \\
+%   &\mathrm{max}(\hat{\nu}) \leq \frac{|\epsilon q|}{2\times 3^{3/4}}
+%            & \text{at }\hat{k} = \hat{k}_\mathrm{opt} \text{ for } \gamma=2.
+% \end{align}
+
+% We can also compare growth rates in the limit $\hat{k}\gg1$ using
+% Eq. \ref{simple_growth} and Eq. \ref{gam2_growth},
+% \begin{align}
+%   &\hat{\nu} \geq \sqrt{\frac{|\epsilon q|}{2\hat{k}}}
+%   &  \text{as }  \hat{k}\to\infty  \text{ for }  \gamma=1, \\
+%   &\hat{\nu} \leq \frac{|\epsilon q|}{2^{7/4}\sqrt{\hat{k}}}
+%   &\text{as }  \hat{k}\to\infty  \text{ for }  \gamma=2.\label{gam2_growth_rate}
+% \end{align}
+% Then the growth rate of perturbations with large $|\hat{k}|$ in a
+% $\gamma=2$ disk is at most $2^{-5/4}\sqrt{|\epsilon q|}$ times that in a
+% $\gamma=1$ disk. For $\epsilon = 0.1$ and $|q|=1$, this factor is
+% $\sim 0.1$.  
+
+% In Fig. \ref{adia_growth} we plot the eigenfrequencies as a
+% function of the radial wavenumber $\hat{k}$, for a range of adiabatic
+% indices, using Eq. \ref{adia_disp}. The low-frequency approximation
+% is questionable for $\hat{k}\lesssim4$ since
+% $|\hat{\sigma}|^2\gtrsim0.2$. For large $\hat{k}$ the presence of a
+% positive vertical entropy gradient is strongly stabilizing. This is
+% because the vertical shear grows as $z$ away from the midplane (and
+% has a maximum when the thin-disk approximation is relaxed), but square
+% of the bouyancy frequency, which is stabilizing, grows as $z^2$ away
+% from the midplane. %The entropy $P/\rho^\gamma$ formally diverges   
+% %for $z\to\infty$ even without the thin-disk approximation.        
+
+% \begin{figure}
+%   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0cm]{figures/rate_theory_om}
+%   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/rate_theory_nu}
+%   \caption{Real frequency (top) and growth rate (bottom) of the fundamental VSI mode in vertically 
+%     isothermal disks ($\Gamma=1$) subject to adiabatic perturbations,
+%     calculated in thin disk approximation from Eq. \ref{adia_disp}
+%     with $M=0$, $\epsilon=0.1$ and  
+%     $|q|=1$. Frequencies are shown as a function of the radial
+%     wavenumber for different values of the adiabatic index
+%     $\gamma$. For $\gamma\equiv 1$ the perturbations are isothermal
+%     and there is no vertical entropy gradient.\label{adia_growth}}  
+% \end{figure}   

@@ -1,10 +1,12 @@
 \section{Analytical discussion of vertically isothermal disks}\label{analytical}
 We begin with a discussion of vertically isothermal disks
 where $\Gamma=1$, then $c_s$ is a constant in the shearing box. We
-examine separately the limiting case of isothermal perturbations
-($\gamma\equiv1$ and any value of $t_c$, or any value of $\gamma$ with
-$t_c = 0$) and adiabatic perturbations ($\gamma\neq 1$ and
-$t_c\to\infty$), before considering the effect of thermal relaxation. 
+first examine the limiting case of isothermal perturbations
+($\gamma\equiv1$ and any value of $\beta$, or any value of $\gamma$ with
+$\beta = 0$) before considering the effect of thermal relaxation. In the
+final section we consider adiabatic disks ($\gamma>1$ and
+$\beta\to\infty$) to demonstrate an important limitation of the 
+local model. 
 
 \subsection{Approximate governing equation for general perturbations}\label{approx_gov}
 To facilitate a simple discussion, we derive a governing
@@ -22,9 +24,7 @@ equation with the following approximations:
   the term $d\Omega/dz$. We therefore simplify
   further by ignoring the vertical dependence of $\Omega$ and $\kappa$
   elsewhere. For clarity, we replace $\kappa^2$ with $\Omega_k^2$. 
-  % , although the discussion
-  % is unchanged if we replaced 
-  % $\kappa^2$ with $\kappa^2(0)$, for example.    
+ 
 \end{enumerate}
 Making both of these approximations is equivalent to setting 
 $D\to\Omega_k^2$.  After making this replacement, we eliminate $W$ and
@@ -35,8 +35,10 @@ obtain an equation for $\delta v_z$ when $\Gamma=1$,
   0 =& \frac{d^2\delta v_z}{dz^2} + \left(1 + \frac{\ii k_x c_s^2
       q}{\Omega_k^2r}\right)\frac{d\ln\rho}{dz}\frac{d\delta
     v_z}{dz} \notag\\
-  &+ \left[\sigma^2\left(\frac{k_x^2}{\Omega_k^2} +
-      \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
+  % &+ \left[\sigma^2\left(\frac{k_x^2}{\Omega_k^2} +
+  %     \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
+  &+ \left[\frac{\sigma^2}{c_s^2}\left(\frac{k_x^2c_s^2}{\Omega_k^2} +
+      \chi\right) + \left(\chi + \frac{\ii k_x c_s^2
         q}{\Omega_k^2r}\right)\frac{d^2\ln\rho}{dz^2}\right. \notag\\
     &\phantom{+=}\left.-
     \frac{c_s^2}{\Omega_k^2}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
@@ -78,18 +80,30 @@ $\delta v_z$. In Appendix \ref{adia_improve} we show that making this
 replacement after eliminating variables, which requires the vertical
 derivative of $D$, adds unecessary complexity for thin disks.  
 
-We will consider sound-speed profiles with $q<0$ in the global 
-disk. Then $\Omega^2(z)$ decreases away from the midplane,
-and may reach small values for sufficiently large $|z|$, which
-invalidates the low-frequency approximation. In principle, then, the
-above approximations implicitly limits us to consider thin disks ($\epsilon
-\ll 1$) with vertical domain sizes not too large, so that the rotation
-is nearly-Keplerian.   
+% We will consider sound-speed profiles with $q<0$ in the global 
+% disk. Then $\Omega^2(z)$ decreases away from the midplane,
+% and may reach small values for sufficiently large $|z|$, which
+% invalidates the low-frequency approximation. In principle, then, the
+% above approximations implicitly limits us to consider thin disks ($\epsilon
+% \ll 1$) with vertical domain sizes not too large, so that the rotation
+% is nearly-Keplerian.  
+
+Note that we can generalize Eq. \ref{vertiso_gov_nondim} to other
+(non-Keplerian) rotation profiles by redfining $\khat$
+ as $k_xc_s/\kappa$, $\hat{\sigma}$ as $\sigma/\kappa$, and 
+ $\epsilon$ as $c_s/r\kappa$.    
+
+% Consider rotation profiles with radial dependence
+% $\propto r^{-m}$. Then the same dimensionless governing equation 
+% (Eq. \ref{vertiso_gov_nondim}) holds, provided we redfine $\khat$
+% as $k_xc_s/\kappa$, $\hat{\sigma}$ as $\sigma/\kappa$, and reset
+% $\epsilon$ to $\epsilon/sqrt{4-2m}$.   
+
 
 \subsection{Isothermal perturbations}\label{iso_discuss}
 Isothermal perturbations corresponds to $\gamma=1$ for any thermal
 relaxation timescale $\beta$, or for any adiabatc index $\gamma$ when
-$\beta=0$. In this case Eq. \ref{ode_Q} implies 
+$\beta=0$. In either case $\chi=1$ and Eq. \ref{ode_Q} implies 
 \begin{align}
   Q = W, 
 \end{align}
