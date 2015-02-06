@@ -127,8 +127,8 @@ are unchanged from the previous section.
 Fig. \ref{relax_growth_num} shows the growth rates of the fundamental  
 mode as a function of $\khat$. This plot is largely consistent with  
 Fig. \ref{relax_disp_fig} except for $\khat\lesssim 1$
-where the low-frequency approximation fails. (The local model not valid
-for $\khat\ll1$ anyway). For $\khat\gtrsim 10$ introducing thermal
+where the low-frequency approximation fails. (In any case, the local model not valid
+for $\khat\ll1$.) For $\khat\gtrsim 10$ introducing thermal
 relaxation rapidly stabilizes the fundamental mode. 
 
 % For $\beta=0.063$ at $\khat\gtrsim50$ we found eigenfunctions had 
@@ -192,31 +192,39 @@ timescale of $\beta\gtrsim 0.6$ stabilized the VSI in non-linear
 hydrodynamic simulations. This is consistent with our numerical and
 analytic results.    
 
-\subsubsection{Dependence on disk parameters}
-We test our estimate for the critical relaxation time
-$\beta_\mathrm{crit}$ (Eq. \ref{iso_vsi_cond}). We use the above disk
+\subsection{Critical thermal relaxation timescale}
+We test our estimate for the maximum thermal relaxation timescale 
+$\beta_\mathrm{crit}$ for the fundamental
+VSI (Eq. \ref{iso_vsi_cond}). We use the previous disk
 parameters as a fiducial case and vary $q\in[-0.2,-1.2]$,
 $\gamma\in[1.2,2.0]$ and $\epsilon\in[]$
 separately. The numerically-obtained $\beta_\mathrm{crit}$ is shown in
 Fig. \ref{bcrit_compare} in comparison with Eq. \ref{iso_vsi_cond}.  
 
+We find Fig. \ref{bcrit_compare} generally agrees with
+Eq. \ref{iso_vsi_cond}.  The match is better for smaller
+$\beta_\mathrm{crit}$. There is a noticeable difference as
+$\gamma\to1$ because the  derivation of $\beta_\mathrm{crit}$ assumed
+$\gamma>1$.  
 
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0cm
   0cm]{figures/bcrit_compare_q.ps} 
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
+  0.8cm]{figures/bcrit_compare_g.ps} 
   \caption{Dependence of the upper limit to the thermal relaxation timescale
     $\beta_\mathrm{crit}$ for the fundamental VSI mode on disk
     parameters. The fiducial parameters are $\Gamma=1.011$,
     $\gamma=1.4$ and $(p,q,\epsilon)=(-1.5,-1,0.05)$. Top: varying
     $q\in[-1.2,-0.2]$; middle: varying $\gamma\in[1.2,2.0]$; bottom:
     varying $\epsilon\in[]$. The perturbation wavenumber is
-    $\khat=20$. {\bf waiting for high resolution}
+    $\khat=20$. {\bf still need variable epsilon case}
     \label{bcrit_compare}}  
 \end{figure}
 
 
 \subsection{Vertically non-isothermal disks}
-We briefly consider vertically non-isothermal disks with
+We briefly consider vertically non-isothermal disks with 
 $\Gamma=1.4$ and $(p,q,\epsilon)=(0,-1,0.05)$ as simulated in
 \cite{nelson13}. In this case we set $\zmax\simeq2.2\epsilon r$, which
 is close to the zero-density surface.     
@@ -225,11 +233,13 @@ is close to the zero-density surface.
 Consider first the case $\gamma=1.4$ so that there is no vertical
 entropy gradient. We plot in Fig. the growth rates for the
 fundamental VSI for $\beta\in[10^{-2},10^{2}]$. We find growth rates
-do not reach zero, implying the VSI operates regardless of the thermal
+do not reach zero, implying instability regardless of the thermal
 relaxation timescale if $\gamma=\Gamma$. This result is consistent
-with \cite{nelson13}.  
+with \cite{nelson13}.  Note that for $\beta\to\infty$ (adiabatic
+perturbations) and $\gamma=\Gamma$, the disk can be unstable according
+to the Solberg-Hoiland criterion  Eq. \ref{solberg2}.
 
-We also note that growth rates for $\beta = 10^{-2}$ and
+Growth rates for $\beta = 10^{-2}$ and
 $\beta=10^{2}$ behave similarly. This is not surprising because
 the linearized energy equation (Eq. \ref{lin_energy}) implies that 
 \begin{align}
@@ -263,7 +273,9 @@ disks evolved with $\gamma>1$, as considered in the previous section.
 Fig. \ref{growth_vnoniso2} plots the fundamental VSI growth rates for
 this case. We observe the same trend as for vertically isothermal
 disks with $N_z^2\geq 0$ (Fig. \ref{relax_growth_num}), namely growth
-rates reach zero at finite $\khat$. 
+rates reach zero at finite $\khat$. From Fig.\ref{growth_vnoniso2} we
+expect the VSI to be strongly stabilized even for small, finite
+thermal relaxation times.  
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm

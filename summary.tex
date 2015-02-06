@@ -19,45 +19,52 @@ In accordance with the above studies, which show that the VSI
 applies to perturbations with small radial lengthscales, we retained
 the radially-local approximation by using the `vertically-global
 shearing box' (VGSB) formalism developed by \cite{mcnally14}, who 
-showed the linear isothermal VSI studied in \cite{nelson13}, can
-be captured by the VGSB. We added 
-an energy source term in the VGSB equations which relaxes the disk
+showed the linear VSI studied by \cite{nelson13} in a locally
+isothermal disk can be captured by the VGSB. 
+
+% The presence of a
+% vertical shear, but 
+% is not consistent with the
+% global 
+
+We added an energy source term in the VGSB equations which relaxes the disk
 temperature to its initial value on a timescale
 $t_c=\beta\Omega_k^{-1}$. This form of thermal relaxation was also 
 employed in the global numerical simulations of \cite{nelson13}, and allows
-the thermodynamic response of the disk to be varied in a controlled 
-manner. 
+the thermodynamic response of the disk to be controlled. 
 
 We mostly focused on vertically isothermal disks ($\Gamma=1$) because
 it permits a largely analytical discussion. Our analysis is an
 extension of the linear models considered in \cite{lubow93} by
-including vertical shear, but in the limit of low-frequency
-perturbations in  nearly-Keplerian disks. These approximations were
+adding vertical shear, but in the limit of low-frequency
+perturbations in nearly-Keplerian disks. These approximations were
 made for simplicity, but also motivated by previous work
 \citep{nelson13}.   
 
 For isothermal perturbations ($\gamma=1$ or $\beta=0$) we explicitly
-demonstrated instability 
-associated with vertical shear, and that the VSI growth rate is
-limited by the maximum vertical shear within the vertical domain of
-interest. In the opposite limit of adiabatic perturbations ($\gamma>1$
-and $\beta\to\infty$), we find VSI growth rates are dramatically
-reduced on account of a stabilizing 
-vertical entropy gradient. The VSI is not completely
-surpressed because vertical shear dominates over buoyancy 
-sufficiently close the disk midplane. However, perturbations grow
-slowly and is constrained to regions immediately about the disk
-midplane. Thus, the adiabatic VSI is likely unimportant in practice.  
+demonstrated instability  associated with vertical shear, and that the
+VSI growth rate is limited by the maximum vertical shear within the
+vertical domain of interest. The fundamental VSI mode is characterized
+by one node in the density perturbation at the mid-plane
+(i.e. anti-symmetric about $z=0$), which corresponds to a vertical
+velocity perturbation  $\delta v_z\sim\mathrm{constant}$ near $z=0$.  
 
-For non-isothermal ($\gamma\neq1$) perturbations with intermediate
-$\beta$, the general dispersion relation
-(Eq. \ref{relax_disp}) is complicated and requires a numerical
-treatment. However, for the fundamental VSI, characterized by  $\delta
-v_z\sim\mathrm{constant}$ near $z=0$, some simplification is
-possible. In particular, we quantified the thermal relaxation
+% In the opposite limit of adiabatic perturbations ($\gamma>1$
+% and $\beta\to\infty$), we find VSI growth rates are dramatically
+% reduced on account of a stabilizing 
+% vertical entropy gradient. The VSI is not completely
+% surpressed because vertical shear dominates over buoyancy 
+% sufficiently close the disk midplane. However, perturbations grow
+% slowly and is constrained to regions immediately about the disk
+% midplane. Thus, the adiabatic VSI is likely unimportant in practice. 
+
+For non-isothermal  perturbations with thermal relaxation ($\gamma>1$,
+$\beta>0$) , the general dispersion relation (Eq. \ref{relax_disp}) is
+complicated and requires a numerical treatment. However, for the
+fundamental VSI some simplification is  possible. In particular, we quantified the critical thermal relaxation
 timescale $\beta_\mathrm{crit}=\epsilon|q|/(\gamma-1)$, below
 which small-scale perturbations ($\khat\gg 1$) may be regarded as isothermal
-and the standard VSI operates. We believe this explicit expression for
+and the fundamental VSI operates. We believe this explicit expression for
 $\beta_\mathrm{crit}$ is the most useful result from our
 investigation. 
 
@@ -65,25 +72,27 @@ We also solved the linear stability problem numerically using a
 pseudo-spectral approach. Numerical solutions are mostly consistent
 with our analytical expectations, except for perturbations with small
 radial wavenumber ($\khat\to0$) where the low-frequency approximation
-is inappropriate.  
+is inappropriate. The local model is also not valid for such modes.  
 
-We briefly studied vertically non-isothermal disks using our linear
+
+We briefly studied vertically non-isothermal disks using our linear 
 code. We confirm the finding by \cite{nelson13} that in the absence
-of vertical entropy gradients, the VSI operates and is insensitive to thermal relaxation. When a
-stable stratification is introduced, the reduction of VSI growth
-rates by a finite thermal relaxation timescale is qualitatively similar to
-that observed for vertically isothermal disks. 
+of vertical entropy gradients, the VSI operates and is insensitive to
+thermal relaxation. When a stable stratification is introduced, the
+rapid reduction in VSI growth rates by a finite thermal relaxation timescale
+is qualitatively similar to that observed for vertically isothermal
+disks.  
 
 %application to MMSN 
 
 We applied our linear results to assess the applicability of the VSI in
 protoplanetary disks, specifically the Minimum Mass Solar Nebulae (MMSN),
 using disk models described in \cite{chiang10}. We find the MMSN is
-unstable to the VSI at $10$s of AU, with characteristic
+unstable to the fundamental VSI at $10$s of AU, with characteristic
 growth times of $10$s of orbits. However, we note the strong
 temperature dependence of the physical thermal relaxation timescale
 in the disk model ($\beta$ decreases as $T^{-5}$ for perturbations with small
-radial scale). Thus, increasing the disk temperature can signifcantly 
+radial scale). Thus, increasing the disk temperature even slightly can signifcantly 
 shorten the typical growth times for the VSI. This is also attributed
 to a larger value of $\beta_\mathrm{crit}$, since increasing $T$ also
 increases the aspect-ratio $\epsilon$. 
@@ -107,6 +116,8 @@ A proper treatment for radiative diffusion, on the other hand, will
 ultimately involve the Laplacian operator. In this case additional
 boundary conditions must be supplemented. We will consider this in a
 future work.  
+
+%need to compare kley sims 
 
 
 \emph{Additional physics.} Depending on where the VSI operates in a

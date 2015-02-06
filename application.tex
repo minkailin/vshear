@@ -1,7 +1,7 @@
 \section{Application to protoplanetary disks}\label{application} 
 As an application of our results, we estimate where in a 
 protoplanetary disk do thermodynamic conditions allow the VSI to 
-operate. Specifically, we consider the fundamental isothermal VSI, 
+operate. Specifically, we consider the fundamental VSI, 
 for which we can use the criterion Eq. \ref{iso_vsi_cond}.   
 
 In our disk models we have adopted a simple thermal relaxation 
@@ -12,22 +12,23 @@ equation with radiative cooling
 \rho T \frac{DS}{Dt} = - \left(\nabla\cdot\bm{F} - Q_+\right), 
 \end{align}
 where the temperature $T$ is defined through $P=\mathcal{R}\rho
-T/\mu$, where $\mathcal{R}$ is the ideal gas constant and $\mu$ is
-the mean molecular weight. In Eq. \ref{real_energy} $S$ is the
-specific entropy,
-\begin{align}
-  S \equiv c_v\ln{\left(\frac{p}{\rho^{\gamma}}\right)} 
-\end{align}
-where $c_v \equiv \left(\gamma-1\right)^{-1}\mathcal{R}/\mu$ is the
-specific heat capcity at constant volume, $D/Dt$ is the convective
+T/\mu$, $\mathcal{R}$ is the ideal gas constant and $\mu$ is
+the mean molecular weight, % In Eq. \ref{real_energy} $S$ is the
+% specific entropy,
+% \begin{align}
+%   S \equiv c_v\ln{\left(\frac{p}{\rho^{\gamma}}\right)} 
+% \end{align}
+% where $c_v \equiv \left(\gamma-1\right)^{-1}\mathcal{R}/\mu$ is the
+% specific heat capcity at constant volume
+$D/Dt$ is the convective
 derivative, $\bm{F}$ is the radiative flux, and $Q_+$ is a heating
 term such that an equilibrium solution exists when $D/Dt=0$. 
 
 Our aim is to relate the right hand side (RHS) of Eq. \ref{real_energy} to
 the thermal relaxation time $t_c$ as used in our linear
 calculations. To do so, we first consider separately perturbations
-with radial lengthscales $L\equiv 2\pi/k_x\ll l_\mathrm{rad}$ and 
-$L\gg l_\mathrm{rad}$, where      
+with radial lengthscales $l\equiv 2\pi/k_x\ll l_\mathrm{rad}$ and 
+$l\gg l_\mathrm{rad}$, where      
 \begin{align}\label{lrad}
   l_\mathrm{rad} \equiv \frac{1}{\kappa_d\rho} 
 \end{align} 
@@ -35,7 +36,7 @@ is the photon mean-free-path and $\kappa_d$ is the (dust) opacity.
 %need to comment on kappa_d(rho,T) 
 
 \subsection{Newtonian cooling}\label{newton_cool}
-For $L\ll l_\mathrm{rad}$ the radiative cooling is given by {\bf (reference?)}
+For $l\ll l_\mathrm{rad}$ the radiative cooling is given by {\bf (reference?)}
 \begin{align}
 \nabla\cdot\bm{F} = 4 \rho \kappa_d \sigma_s T^4,
 \end{align}   
@@ -63,7 +64,7 @@ as the thermal relaxation timescale for perturbation lengthscales
 $L\ll l_\mathrm{rad}$. 
 
 \subsection{Radiative diffusion}
-For perturbation lengthscales $L\gg l_\mathrm{rad}$, let us assume that
+For perturbation lengthscales $l\gg l_\mathrm{rad}$, we assume 
 temperature fluctuations are smoothed out by radiative diffusion. To
 model this in linear theory, we choose the heating term such that
 \begin{align}
@@ -160,16 +161,16 @@ disk model,
   \beta_\mathrm{crit} = \frac{1.44\times10^{-2}}{(\gamma
     -1)}\left(\frac{\hat{T}}{\mu}\right)^{1/2}\zeta^{2/7}. 
 \end{align}
-We recall $\beta < \beta_\mathrm{crit}$ is a neccessary condition for the
-fundamental isothermal VSI when $\khat\gg 1$. For $\khat\to0$, this
+We recall $\beta < \beta_\mathrm{crit}$ is neccessary for the
+fundamental VSI when $\khat\gg 1$. For $\khat\to0$, this
 becomes a sufficient condition (see Fig. \ref{relax_bcrit} and
 \S\ref{iso_vsi_beta_crit}). 
 
 In Fig. \ref{mmsn_bcrit_bcool} we plot Eq. \ref{beta_mmsn} and
 Eq. \ref{bcrit_mmsn} for the Minimum Mass Solar Nebula (MMSN) by setting
 the scalings $\hat{T}=\hat{\Sigma}=\hat{\kappa}_d=1$, with $\mu =
-2.33$ and $\gamma=1.4$. The figure suggests that the fundamental
-isothermal VSI operates in the outer parts of the MMSN at radii on
+2.33$ and $\gamma=1.4$. The figure suggests that the fundamental VSI
+operates in the outer parts of the MMSN at radii on 
 the order of tens of AU. However, the thermal relaxation time $\beta$
 is not much shorter than $\beta_\mathrm{crit}$, so the VSI may be 
 weak.   
@@ -208,7 +209,7 @@ in Eq. \ref{beta_mmsn} to obtain
 \end{align*}
 (In fact, Fig. \ref{mmsn_bcrit_bcool} shows that $\beta$  is not
 sensitive to $\khat$ at $r=50\mathrm{AU}$ for $\khat\gg1$.)
-The disk is unstable to the fundamental isothermal VSI, but not
+The MMSN is unstable to the fundamental VSI, but not
 strongly. 
 
 Using the MMSN disk parameters at $r=50\mathrm{AU}$ and the
