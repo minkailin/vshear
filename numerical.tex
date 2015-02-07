@@ -2,9 +2,11 @@
 In this section we numerically solve the linear stability problem
 corresponding to Eq. \ref{lin_mass}---\ref{lin_energy}. 
 We relax the thin-disk, low-frequency and nearly-Keplerian
-approximations used in the discussion above, and 
-use the full, non-Keplerian expressions of $\rho$, $\Omega$ and
-$\kappa$.
+approximations used in the analytical discussion above, and  
+use the full expressions of $\rho$, $\Omega$ and
+$\kappa$ given in \S\ref{eqm}. We also restore $\hat{g}_c=1$ to
+account for the background radial disk structure.  
+
 %, so that we may consistently consider vertical domains up to
 %$z\sim r$.   
 
@@ -23,36 +25,36 @@ converts the linear system of differential equations to a set of
 algebraic equations, for which we use matrix routines in the LAPACK
 package to solve. 
 
-%mention mode selection -> focus on fundamental corrugation ->
-%simulations eventually dominated by them 
-%choice of kx is O(10), since nelson observe kxH \sim 30
+% mention mode selection -> focus on fundamental corrugation ->
+% simulations eventually dominated by them 
+% choice of kx is O(10), since nelson observe kxH \sim 30
 
 \subsection{VSI in a locally isothermal, neutrally stratified disk}\label{vertiso_pertiso} 
-%  disk model is a nearly-vertically
+% disk model is a nearly-vertically
 % isothermal disk with $\Gamma=1.011$, $p=-1.5$, $q=-1$,
 % $\epsilon=0.1$. 
 We first calculate the VSI in a nearly vertcally isothermal, neutrally
 straitified disk ($N_z^2\equiv0$) by setting
 $\gamma=\Gamma=1.011$ and $\beta=10^{-3}$. Other disk parameters are 
 $(p,q,\epsilon)=(-1.5,-1,0.1)$ and the vertical domain is $\zmax =
-10\epsilon r$. This setup is very similar to that adopted in
+5\epsilon r$. This setup is similar to that adopted in
 \cite{mcnally14}, who calculated the VSI in vertically isothermal
 disks subject to isothermal perturbations ($\Gamma=\gamma=1$).  This
 allows us to test our numerical code.  
 
-
 %behaviour as func of kx 
 
 Fig. \ref{iso_eigen_kx} compares the numerically-obtained eigenvalues
-for the fundamental mode and that caluclated from
-Eq. \ref{simple_growth} (with $L=1$). For completeness we
-included cases with $\khat\ll 1$ even though the local
-approximation does not hold in this regime. The agreement is good for
-$\khat\gtrsim10$. The mismatch is significant for $\khat\ll1$ since
-the low-frequency approximation used to obtain Eq. \ref{simple_growth}
-is no longer valid: $|\omega|\sim\Omega_k$ as $\khat\to 0$. This means
-that our analytic results should only be applied to perturbations with
-$\khat\gg 1$, i.e. small radial-lengthscales. 
+for the fundamental mode and that calculated from 
+Eq. \ref{sig2_iso} (with $L=1$). There is good agreement for 
+$\khat\gtrsim10$. The match worsens for smaller $\khat$ because the 
+the low-frequency approximation used to obtain Eq. \ref{sig2_iso} 
+is no longer valid, as $|\omega|$ is not small compared to $\Omega_k$
+for $\khat\lesssim 10$.  
+
+% This means
+% that our analytic results should only be applied to perturbations with
+% $\khat\gg 1$, i.e. small radial-lengthscales. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -68,97 +70,118 @@ $\khat\gg 1$, i.e. small radial-lengthscales.
   }
 \end{figure}
 
-%particular kx 
-As an example of an unstable mode, we consider a perturbation
-wavenumber $\khat=20\pi$ \citep[or $k_x = 200\pi/r$ as used
-in][]{mcnally14}. Fig. \ref{lowfreq_eigen} shows the eigenvalues
-$\sigma = \omega + \ii\nu$. The fundamental VSI mode, with one node in $W$, has
-the smallest $|\sigma|$ and is shown in Fig. \ref{lowfreq_eigenfunc}. 
-The eigenfunction $W$ is qualitatively proportional to 
-$z$ (especially for $z\to0$),  as expected for the fundamental mode
-according to explicit solutions developed in \S\ref{iso_poly}.    
-These plots are consistent with those in \cite{mcnally14}.  
- 
-The growth rate of the fundamental VSI calculated from
-Eq. \ref{simple_growth} with $L=1$ and the numerically-obtained value
-are  
-\begin{align*}
-  \nu = 0.2606\epsilon\Omega_k &\quad \text{(from
-    Eq. \ref{simple_growth})},\\
-  \nu = 0.2575 \epsilon \Omega_k &\quad \text{(numerical)}.
-\end{align*}
-This agreement is surpsingly good, given that
-Eq. \ref{simple_growth} assumes a thin, nearly-Keplerian disk in the 
-low-frequency approximation, and 
-imposes a different boundary condition to that in the numerical
-calculation. These values are also close to that found by
-\cite{mcnally14}. The eigenfrequency is not sensitive to the
-vertical boundary condition because the expression for $\sigma$, given
-by Eq. \ref{integral_relation1}, involve integrands with $\rho$ as the  
-weight function, which rapidly decays away from the midplane.
+Fig. \ref{lowfreq_eigenfunc} compares the fundamental VSI eigenfunction
+$W$ for $\khat=1$ and $\khat=20\pi$. The latter value, corresponding
+to $k_x= 200\pi/r$, was used by \cite{mcnally14}. We find $W$ is
+similar for all $\khat\gtrsim10$ and is proportional to $z$, as
+expected for the fundamental mode according to explicit solutions
+developed in \S\ref{iso_poly}.  
+
+However, for $\khat\lesssim 10$, e.g. $\khat=1$ in 
+Fig. \ref{lowfreq_eigenfunc}, the perturbation magnitude near the
+boundaries begin to dominate. For even smaller $\khat\lesssim 1$ (not
+shown) we find the perturbation is almost entirely concentrated at the
+boundaries. Our radially-local approximation is likely invalid for 
+these small wavenumber perturbations and we do not consider such modes
+further.      
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{figures/eigenvalues_iso}
-  \caption{Eigenvalues of the VSI in a neutrally-stratified,
-    nearly-vertically isothermal disk  ($\gamma=\Gamma=1.011$) with 
-    $(p,q,\epsilon)=(-1.5,-1,0.1)$ and $\beta=10^{-3}$. The
-    perturbation wavenumber is $\khat=20\pi$. \label{lowfreq_eigen} 
-  }
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{figures/eigenvector_iso}
-  \caption{Eigenfunction of the fundamental VSI,
-    corresponding to the bottom-left eigenvalue displayed in
-    Fig. \ref{lowfreq_eigen} (smallest $|\sigma|$). The real
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
+  0cm]{figures/eigenvector_iso_kx1} 
+  \includegraphics[width=\linewidth]{figures/eigenvector_iso_kx60}
+  \caption{Eigenfunction of the fundamental VSI for perturbation
+    wavenumber $\khat=1$ (top) and $\khat=20\pi$ (bottom). The real 
     (imaginary) parts of $W$ are plotted as solid (dotted) lines. 
     \label{lowfreq_eigenfunc}
   }
 \end{figure}
 
+In Fig. \ref{lowfreq_eigen} we plot the eigenvalues 
+$\sigma = \omega + \ii\nu$ found for $\khat=20\pi$. This plot is
+similar to Fig. 3 in \cite{mcnally14}. The fundamental
+VSI mode, with one node in $W$, has the smallest $|\sigma|$. The
+eigenvalue calculated from Eq. \ref{sig2_iso} with $L=1$ and the 
+numerically-obtained value are  
+\begin{align*}
+  (\omega,\nu) = (-0.3053,0.2606)\epsilon\Omega_k &\quad \text{(from
+    Eq. \ref{sig2_iso})},\\
+  (\omega,\nu) = (-0.3010,0.2575) \epsilon \Omega_k &\quad \text{(numerical)}.
+\end{align*}
+This agreement is surpsingly good given the number of approximations
+used to obtain Eq. \ref{sig2_iso}, which also imposes a different
+boundary condition to that in the numerical calculation. These values
+are also close to that found by \cite{mcnally14}. The eigenfrequency
+is not sensitive to the vertical boundary condition because the
+expression for $\sigma$, given by Eq. \ref{integral_relation1},
+involve integrands with $\rho$ as the   weight function, which rapidly
+decays away from the midplane. 
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/eigenvalues_iso}
+  \caption{Eigenvalues of perturbations with wavenumber $\khat=20\pi$
+    in a neutrally-stratified, nearly-vertically isothermal disk
+    ($\gamma=\Gamma=1.011$) with $(p,q,\epsilon)=(-1.5,-1,0.1)$ and
+    $\beta=10^{-3}$. \label{lowfreq_eigen} 
+  }
+\end{figure}
 
 \subsection{Effect of thermal relaxation}
 We now consider stably stratified disks ($\gamma > \Gamma$) with
-thermal relaxation $\beta\in[10^{-3},1]$. Here we use a slightly 
-different disk model with $\epsilon=0.05$ and $\gamma=1.4$, as
-adopted in simulations performed by \cite{nelson13}. Other parameters
+thermal relaxation $\beta\in[10^{-3},1]$. Here we use a slightly  
+different disk model with $\epsilon=0.05$ and $\gamma=1.4$, as 
+adopted in simulations performed by \cite{nelson13}. Other parameters 
 are unchanged from the previous section.  
 
-Fig. \ref{relax_growth_num} shows the growth rates of the fundamental  
-mode as a function of $\khat$. This plot is largely consistent with  
-Fig. \ref{relax_disp_fig} except for $\khat\lesssim 1$
-where the low-frequency approximation fails. (In any case, the local model not valid
-for $\khat\ll1$.) For $\khat\gtrsim 10$ introducing thermal
-relaxation rapidly stabilizes the fundamental mode. 
+Fig. \ref{bcrit_compare} shows the growth rate $\nu$ of the
+fundamental VSI mode as a function of $\beta$ for $\khat=30$. This is
+approximately the perturbation wavenumber observed in the fiducial
+numerical simulation of \cite{nelson13}. We also plot the growth rate 
+obtained by numerically solving the dispersion relation 
+Eq. \ref{relax_disp} and the estimate for the upper limit of
+the thermal relaxation timescale $\beta_\mathrm{crit}$ given by
+Eq. \ref{iso_vsi_cond}. For the present disk parameters
+$\beta_\mathrm{crit}=0.125$. We find good agreement between the
+numerical and analytical growth rates, as well as the critical
+relaxation timescale.   
 
-% For $\beta=0.063$ at $\khat\gtrsim50$ we found eigenfunctions had 
-% large perturbations near the vertical boundaries, which may be 
-% responsible for the non-smoothness in the curve at large $\khat$. 
-%corrugation mode
-% We first obtain the eigenvalues for the
-% fundamental mode for $k_xH_\mathrm{iso}=0$, then vary parameters
-% slowly to obtain eigenvalues for other values of $k_x$ or $\beta$.  
-%likely attributable to the free surface boundary condition imposed in
-%the numerical calculation (cf. regularity condition at infinity in
-%\S\ref{disp_relax}).    
+ \begin{figure}
+   \includegraphics[width=\linewidth]{figures/bcrit_compare} 
+   \caption{Growth rate of the fundamental VSI mode with $\khat=30$ as
+     a function of the thermal relaxation timescale $\beta$. The disk
+     parameters are $\Gamma=1.011$, $\gamma=1.4$, and 
+     $(p,q,\epsilon)=(-1.5,-1,0.05)$. The numerical (analytical) growth
+     rates are show as solid (dotted) lines, while the vertical line
+     is the maximum thermal timescale $\beta_\mathrm{crit}$ for the
+     fundamental mode according to Eq. \ref{iso_vsi_cond}. 
+     \label{bcrit_compare}}   
+ \end{figure} 
 
-Fig. \ref{relax_growth_num} also confirms our analytical discussion that
-introducing a small but finite cooling time stabilizes the fundamental
-VSI, but there is a preferable wavenumber that maximizes this effect (\S\ref{relax_pert}).
-This occurs at $\khat= O(10)$ for the current disk model. 
+% Fig. \ref{relax_growth_num} shows the growth rates of the fundamental  
+% mode as a function of $\khat$. This plot is largely consistent with  
+% Fig. \ref{relax_disp_fig} except for $\khat\lesssim 1$
+% where the low-frequency approximation fails. (In any case, the local model not valid
+% for $\khat\ll1$.) For $\khat\gtrsim 10$ introducing thermal
+% relaxation rapidly stabilizes the fundamental mode. 
 
-\begin{figure}
-   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
-   0cm]{figures/compare_eigen_imag_bloop} 
-  % \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-  % 1cm]{figures/compare_eigen_imag_bloop2} 
-  \caption{Growth rates of the fundamental VSI mode in 
-    nearly-vertically isothermal disks ($\Gamma=1.011$) with
-    $(p,q,\epsilon)=(-1.5,-1,0.05)$, evolved with $\gamma=1.4$ under a
-    range of thermal relaxation timescales   
-    $\beta$. The eigenfrequencies are calculated by numerically 
-    solving the full linear eigenvalue problem. \label{relax_growth_num}}   
-\end{figure}   
+
+% Fig. \ref{relax_growth_num} also confirms our analytical discussion that
+% introducing a small but finite cooling time stabilizes the fundamental
+% VSI, but there is a preferable wavenumber that maximizes this effect (\S\ref{relax_pert}).
+% This occurs at $\khat= O(10)$ for the current disk model. 
+
+% \begin{figure}
+%    \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
+%    0cm]{figures/compare_eigen_imag_bloop} 
+%   % \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+%   % 1cm]{figures/compare_eigen_imag_bloop2} 
+%   \caption{Growth rates of the fundamental VSI mode in 
+%     nearly-vertically isothermal disks ($\Gamma=1.011$) with
+%     $(p,q,\epsilon)=(-1.5,-1,0.05)$, evolved with $\gamma=1.4$ under a
+%     range of thermal relaxation timescales   
+%     $\beta$. The eigenfrequencies are calculated by numerically 
+%     solving the full linear eigenvalue problem. \label{relax_growth_num}}   
+% \end{figure} 
+
 
 We visualize the effect of thermal relaxation in 
 Fig. \ref{relax_eigenW_num} by comparing the eigenfunction $W$ for
@@ -175,13 +198,13 @@ important. % We also find this trend for fixed $\beta$ but increasing
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
   0cm]{figures/eigenvectorW_beta0d01} 
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-  0cm]{figures/eigenvectorW_beta0d125} 
+  0cm]{figures/eigenvectorW_beta0d1} 
   \caption{Numerically-calculated eigenfunction of the fundamental VSI
     mode in a nearly vertically isothermal disk ($\Gamma=1.011$) with
     $(p,q,\epsilon)=(-1.5,-1,0.05)$, evolved with $\gamma=1.4$ and a dimensionless 
     thermal relaxation timescale $\beta \equiv t_c\Omega_k = 0.01$
-    (top) and $0.125$ (bottom). The
-    perturbation radial wavenumber is $\khat_\mathrm{iso}=10$. The
+    (top) and $0.1$ (bottom). The
+    perturbation radial wavenumber is $\khat=30$. The
     real (imaginary) part of $W$ is plotted as the solid (dotted)
     line.
     \label{relax_eigenW_num}}  

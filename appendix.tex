@@ -1,31 +1,8 @@
-\section{Local model for a global problem}\label{global_corr}
+\section{Limitations of the vertically global shearing box}\label{global_corr}
 Here, we discuss the relation between the linear problem in the
-VGSB framework and the global linear problem. We begin with the
-axisymmetric linearized fluid equations in cylindrical co-ordinates, including
-thermal relaxation, 
-\begin{align}
-\ii\sigma\delta P &=\frac{\p P}{\p z}\delta v_z + \gamma P
-\left[\frac{1}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p
-    \delta v_z}{\p z}\right] + \frac{1}{t_c}\left(\delta P -
-  \frac{P}{\rho}\delta\rho\right) + \hat{g}_c \frac{\p P}{\p r}\delta v_r,\\
-  \ii\sigma\delta\rho &= \frac{\rho}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p}{\p
-  z}\left(\rho\delta v_z\right)  + \hat{g}_c\frac{\p\rho}{\p r}\delta v_r,\\
-\ii\sigma\delta v_r &= \frac{1}{\rho}\frac{\p\delta P}{\p r} - 2\Omega
-\delta v_\phi - \hat{g}_c\frac{\delta\rho}{\rho^2}\frac{\p P}{\p r},\\ 
-\ii\sigma\delta v_\phi  &= \frac{\kappa^2}{2\Omega}\delta v_r +
-r\frac{\p\Omega}{\p z}\delta v_z,\\
-\ii \sigma\delta v_z &= \frac{1}{\rho}\frac{\p\delta P}{\p z} -
-\frac{\delta \rho}{\rho^2}\frac{\p P}{\p z},
-\end{align}
-where the coefficients $\hat{g}_c=1$ are inserted to label terms
-associated with the background radial disk structure. 
+VGSB framework and the global linear problem.
 
-We assume perturbations have the form $W(z)\exp{\ii k_r r}$ such
-that $|k_rr|\gg1$, so that curvature terms can be ignored. For these
-small radial lengthscale perturbations we also approximate the
-background structure and radial gradients as uniform in $r$, and
-evaluate all cofficients in the above equations at the fiducial radius
-$r=r_0$. This procedure produces $\phi$ and $z$ momentum equations
+ This procedure produces $\phi$ and $z$ momentum equations
 that are equilvalent to those for $y$ and $z$ momenta in the VGSB. 
 
 Using the notation and disk models in the main text, the
@@ -50,6 +27,15 @@ linear problem in the VGSB, we take the radially-local
 approximation further and formally set $\hat{g}_c=0$, $r\to x$ and
 $k_r\to k_x$. It is clear that this approximation improves with
 increasing $|k_x|$.   
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Effect of global radial gradients}
@@ -98,6 +84,67 @@ of \cite{nelson13}.
 
 %nevertheless we have calculated
 %plot growth rate v.s. bcool 
+
+
+
+
+\subsection{Spurious growth of adiabatic perturbations in the local
+  model with vertical shear}\label{analytic_adia} 
+For adiabatic perturbations ($\gamma>1$, $\beta\to\infty$) we may
+simply use the Soilberg-Hoiland critera to assess stability
+(\S\ref{solberg}). Nevertheless, we briefly consider this case in the
+local framework to demonstrate its limitations. For $\beta\to\infty$
+the parameter $\chi = 1/\gamma$ and Eq. \ref{vertiso_gov_nondim} can
+be written as   
+
+\begin{align}
+  0 =& \dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
+    \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime\notag\\
+  &+\left\{\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right)\right.\notag\\
+  &\phantom{0=}\left.-\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii\epsilon  
+          q}{\hat{k}}\right)\ln\rho^{\prime 2}\right]\right\}\delta v_z.\label{adia_iso3}
+\end{align}
+
+We multiply Eq. \ref{adia_iso3} by $\rho\delta v_z^*$ and
+integrate vertically, assume boundary terms vanish when integrating by
+parts, to obtain
+\begin{align}
+  &\hat{\sigma}^2\left(\frac{1}{\gamma} +
+    \hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|\delta
+  v_z|^2 d\zhat \notag\\
+  &=  \left(\frac{\gamma-1}{\gamma}\right)
+  \int_{\zhat_1}^{\zhat_2}\rho|\delta v_z^\prime|^2 d\zhat
+  +\frac{1}{\gamma}\int_{\zhat_1}^{\zhat_2}\frac{1}{\rho}|(\rho\delta
+  v_z)^\prime|^2 d\zhat\notag\\
+  &\phantom{=} +
+  \left(\frac{\gamma-1}{\gamma}\right)\hat{k}^2\left(1-\frac{\ii\epsilon
+      q}{\hat{k}}\right) \int_{\zhat_1}^{\zhat_2}\rho\ln\rho^{\prime
+    2}|\delta v_z|^2 d\zhat\notag\\
+  &\phantom{=} + \ii\epsilon q \hat{k}
+  \int_{\zhat_1}^{\zhat_2}\ln\rho^\prime(\rho\delta v_z^*)^\prime
+  \delta v_z d\zhat.\label{adia_integral}
+\end{align}
+When $q\equiv0$, all the terms on the right-hand-side (RHS) are real. Then
+$\hat{\sigma}^2$ is real, and  $\hat{\sigma}^2>0$ if $\gamma>1$. As
+expected, a sub-adiabatically stratified disk is stable in the absense
+of vertical shear. 
+
+However, in the presence of vertical shear $q\neq0$,
+Eq. \ref{adia_integral} suggests $\hat{\sigma}$ is complex for real
+$\khat$, which implies the possibility of instability, regardless of
+how much $\gamma$ deviates from unity. This is contradicts the second 
+Solberg-Hoiland criterion (Eq. \ref{solberg2}) and is a result of the
+radially-local approximation (Appendix \ref{global_corr}). To 
+avoid this, we must restrict our attention to short thermal relaxation
+timescales ($\beta\lesssim1$) and/or neutrally-stratified disks
+($\gamma=\Gamma$) when $q\neq0$. 
+
+
+
+
+
+
+
 
 
 

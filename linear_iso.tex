@@ -1,17 +1,108 @@
-\section{Analytical discussion of vertically isothermal disks}\label{analytical}
+\section{Analytical discussion of vertically isothermal
+  disks in the framework of the vertically global shearing
+  box}\label{analytical}  
 We begin with a discussion of vertically isothermal disks
-where $\Gamma=1$, then $c_s$ is a constant in the shearing box. We
-first examine the limiting case of isothermal perturbations
-($\gamma\equiv1$ and any value of $\beta$, or any value of $\gamma$ with
-$\beta = 0$) before considering the effect of thermal relaxation. In the
-final section we consider adiabatic disks ($\gamma>1$ and
-$\beta\to\infty$) to demonstrate an important limitation of the 
-local model. 
+where $\Gamma=1$, then $c_s$ is a constant. We  
+first examine isothermal perturbations ($\gamma\equiv1$ and any value
+of $\beta$, or any value of $\gamma$ with $\beta = 0$) before
+considering the effect of finite thermal relaxation. 
+In order to facilitate an analytical discussion, we introduce a number
+of approximations below that allows a simple governing equation to be
+derived and directly compared with previous works.  
 
-\subsection{Approximate governing equation for general perturbations}\label{approx_gov}
-To facilitate a simple discussion, we derive a governing
-equation with the following approximations: 
+\subsection{The linear problem in the vertically global
+  shearing box} 
+We connect the above linearized equations to the vertically global
+shearing box (VGSB) formalism developed by \cite{mcnally14}. The VGSB
+is a generalization of the standard shearing box \citep{goldreich65}
+by allowing the shear flow in the shearing box to be height-dependent.    
 
+The linear problem in the VGSB framework can be derived from 
+Eq. \ref{lin_mass}---\ref{lin_vz} by setting $\hat{g}_c=0$, since 
+the VGSB, like the standard shearing box, is homogeneous in the radial 
+direction in equilibrium. The resulting linear problem is very similar
+to that for local axisymmetric waves in accretion disks already
+discussed by \cite{lubow93}, but modified by the presence of vertical
+shear and thermal relaxation. This is convenient as it allows us to
+directly apply their solution methods.    
+
+% but modified by the vertical shear term
+% $r\p_z\Omega\delta \delta v_z$. 
+
+After setting $\hat{g}_c=0$ in Eq. \ref{lin_mass}, \ref{lin_vx} and
+\ref{lin_energy}, we can eliminate the perturbed velocities between
+the linearized equations to obtain a pair or ordinary differential
+equations for $W,Q$ as
+\begin{align}
+  &\frac{\sigma^2}{c_s^2}Q + \frac{\sigma^2k_x^2}{D}W \notag\\ 
+  &=\left(\frac{\ii
+      k_x r}{D}\frac{d\Omega^2}{dz} -
+    \frac{d\ln{\rho}}{dz}\right)\left[\frac{dW}{dz} +
+    \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] \notag\\
+  &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
+    \frac{dQ}{dz}\right) - \frac{d^2\ln{\rho}}{dz^2}\left(W-Q\right),\label{ode_w}\\
+  &\sigma^2W - \frac{\gamma}{\Gamma}\sigma^2 Q +
+  \frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right)\notag\\
+  &=c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} - 1\right) 
+  \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],\label{ode_Q} 
+\end{align}
+where
+\begin{align}
+  D \equiv \kappa^2 - \sigma^2,
+\end{align}
+and we have replaced the notation $\p_z$ by $d/dz$ since we are
+considering solutions at a fixed radius. 
+
+The VGSB is a self-consistent framework but extrapolating results 
+obtained from the VGSB to the global disk has limitations. This is
+because within the VGSB framework, $d\Omega/dz$ can be freely
+specified. In effect, by adopting the VGSB framework, we are studying
+dynamics in the standard shearing box subject to an additional
+azimuthal force $\delta v_zr d \Omega/dz$ with $d\Omega/dz$ as an
+input parameter. This is different to the global problem because in
+that case, the vertical shear is a result of the background radial
+disk structure, which is ignored in the VGSB.    
+
+We further discuss caveats of the VGSB in Appendix \ref{global_corr}.
+However, we find that for perturbations with small radial lengthscales
+(large $|k_x|$) and fast thermal relaxation ($\beta\ll1$), which
+characterizes the VSI, the VGSB framework is adequate for the purpose
+of a simple analytical discussion. 
+
+% In effect, we are studying dynamics in the standard shearing box
+% subject to an additional azimuthal force $-v_zr_0 d \Omega_0/dz$.
+
+% $d\Omega_0/dz$ is a free parameter (as are $\Omega_0$ and $S_0$). 
+% This is different to the global problem because in that case, the
+% vertical shear is a result of the disk radial structure, which is
+% ignored in the VGSB equilibria. 
+% In effect, we are studying dynamics in the standard shearing box
+% subject to an additional azimuthal force $-v_zr_0 d \Omega_0/dz$. This
+% force is inspired by the vertical shear in the global disk, and its
+% functional form is taken from global equilibrium. 
+
+
+% \subsection{Limitations}
+% Before using the above equations to study the VSI, it is very important to be
+% aware of several limitations of the VGSB model. The VGSB momentum  
+% equations have the same form as that for the standard shearing box 
+% \citep{goldreich65}, except for the appearence of the term 
+% $v_zr_0d\Omega_0/dz$. This term appears in the global stability
+% problem and is the only term associated with vertical shear that is 
+% ported from the global disk into the local model.   
+
+% In Appendix \ref{global_corr} we make the connection between the
+% linear problem in the VGSB to that in the global disk model. We
+% emphasize that not all calculations in the local model can be 
+% consistently interpreted in the global context. However, for
+% perturbations with small radial lengthscales (large $|k_x|$) and fast
+% thermal relaxation ($\beta\ll1$), which characterizes the VSI, the
+% VGSB framework is adequate.   
+
+
+
+\subsection{Approximate governing equation}\label{approx_gov}
+We now derive a governing equation with further approximations:
 \begin{enumerate}
 \item We consider eigenvalues such that
   $|\sigma^2|\ll \kappa^2$. Then we can replace $D=\kappa^2 -\sigma^2\to
@@ -24,7 +115,7 @@ equation with the following approximations:
   the term $d\Omega/dz$. We therefore simplify
   further by ignoring the vertical dependence of $\Omega$ and $\kappa$
   elsewhere. For clarity, we replace $\kappa^2$ with $\Omega_k^2$. 
- 
+  
 \end{enumerate}
 Making both of these approximations is equivalent to setting 
 $D\to\Omega_k^2$.  After making this replacement, we eliminate $W$ and
@@ -40,11 +131,11 @@ obtain an equation for $\delta v_z$ when $\Gamma=1$,
   &+ \left[\frac{\sigma^2}{c_s^2}\left(\frac{k_x^2c_s^2}{\Omega_k^2} +
       \chi\right) + \left(\chi + \frac{\ii k_x c_s^2
         q}{\Omega_k^2r}\right)\frac{d^2\ln\rho}{dz^2}\right. \notag\\
-    &\phantom{+=}\left.-
+  &\phantom{+=}\left.-
     \frac{c_s^2}{\Omega_k^2}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
       \frac{\ii k_x q}{r}\right)
-   \left(1-\chi\right) 
-   \right]\delta v_z,\label{vertiso_gov}
+    \left(1-\chi\right) 
+  \right]\delta v_z,\label{vertiso_gov}
 \end{align}
 where
 \begin{align}
@@ -62,16 +153,16 @@ then Eq. \ref{vertiso_gov} becomes
   &+
   \left[\hat{\sigma}^2\left(\hat{k}^2+\chi\right) +
     \left(  \chi + \ii \epsilon q\hat{k}\right)\ln\rho^{\prime\prime}\right.
-    \notag\\
-    &\left.- \ln\rho^{\prime
+  \notag\\
+  &\left.- \ln\rho^{\prime
       2}\left(\khat^2 -
       \ii\epsilon
       q\hat{k}\right)\left(1 - \chi\right)\right]\delta v_z,\label{vertiso_gov_nondim}
 \end{align}
 where $^\prime$ denotes $d/d\zhat$. Eq. \ref{vertiso_gov_nondim} will
-be the basis for our discussion of vertically isothermal disks,
-although further simplifications or maniputations will be performed
-depending the type of perturbations being considered. 
+be the basis for our discussion of vertically isothermal disks. % ,
+% although further simplifications or maniputations will be performed
+% depending the type of perturbations being considered. 
 
 In deriving Eq. \ref{vertiso_gov}, the vertical dependence of
 $D=\kappa^2(z)-\sigma^2$ was ignored because the replacement
@@ -90,8 +181,8 @@ derivative of $D$, adds unecessary complexity for thin disks.
 
 Note that we can generalize Eq. \ref{vertiso_gov_nondim} to other
 (non-Keplerian) rotation profiles by redfining $\khat$
- as $k_xc_s/\kappa$, $\hat{\sigma}$ as $\sigma/\kappa$, and 
- $\epsilon$ as $c_s/r\kappa$.    
+as $k_xc_s/\kappa$, $\hat{\sigma}$ as $\sigma/\kappa$, and 
+$\epsilon$ as $c_s/r\kappa$.    
 
 % Consider rotation profiles with radial dependence
 % $\propto r^{-m}$. Then the same dimensionless governing equation 
@@ -297,7 +388,7 @@ where we have defined a new eigenvalue
 \begin{align}
   n \equiv \hat{\sigma}^2(1+\hat{k}^2). 
 \end{align} 
-Eq. \ref{iso_ode3} is Hermite's differential equation. If we impose
+Eq. \ref{hermite_ode} is Hermite's differential equation. If we impose
 that the kinetic energy density remain bounded at infinity, then  
 \begin{align}
   W \propto \He_n(\hat{z}),

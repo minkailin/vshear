@@ -103,26 +103,28 @@ The imaginary part of Eq. \ref{nearly_iso_dsig} is
 Since $\epsilon \ll 1$, introducing finite cooling $\delta\beta>0$
 implies $\delta\hat{\nu} < 0$, i.e. stabilization. Interestingly, for both
 $\hat{k}\to0$ and $\hat{k}\to\infty$ we find $\delta\hat{\nu}\to0$, so
-stabilization by finite cooling is ineffective at very large or very
-small scales. We plot Eq. \ref{nearly_iso_dsig} in Fig. \ref{domegadbeta} with
-$\epsilon=0.05$, $q=-1.0$ and $\gamma=1.4$. For this disk model the
-optimum wavenumber for stabilization is $\hat{k}\sim 5$---$6$.  
+stabilization by small finite cooling is ineffective at very large or
+very small scales. 
+% We plot Eq. \ref{nearly_iso_dsig} in
+% Fig. \ref{domegadbeta} with 
+% $\epsilon=0.05$, $q=-1.0$ and $\gamma=1.4$. For this disk model the
+% optimum wavenumber for stabilization is $\hat{k}\sim 5$---$6$.  
 
 % This contrasts to the case without vertical shear
 % ($q=0$), in which $\p\hat{\sigma}/\p\beta\to\mathrm{constant}$ as 
 % $\hat{k}\to\infty$.  
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{figures/domegadbeta}
-  \caption{Rate of change of the fundamental VSI eigenfrequency
-    $\sigma$ with respect to the introduction of a small but finite
-    cooling time. The plotted quantity is $\p\hat{\sigma}/\p\beta$ at $\beta=0$, evaluated using
-    Eq. \ref{nearly_iso_dsig} with 
-    disk parameters $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. The real
-    (imaginary) part of $\p\hat{\sigma}/\p\beta$ is shown as the solid
-    (dotted) lines. 
-    \label{domegadbeta}}  
-\end{figure}   
+% \begin{figure}
+%   \includegraphics[width=\linewidth]{figures/domegadbeta}
+%   \caption{Rate of change of the fundamental VSI eigenfrequency
+%     $\sigma$ with respect to the introduction of a small but finite
+%     cooling time. The plotted quantity is $\p\hat{\sigma}/\p\beta$ at $\beta=0$, evaluated using
+%     Eq. \ref{nearly_iso_dsig} with 
+%     disk parameters $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. The real
+%     (imaginary) part of $\p\hat{\sigma}/\p\beta$ is shown as the solid
+%     (dotted) lines. 
+%     \label{domegadbeta}}  
+% \end{figure}   
 
 One effect of introducing finite thermal relaxation is buoyancy. 
 The $\zhat^2$ depedence in $\delta v_{z1}$ then makes sense because it
@@ -131,8 +133,8 @@ where the effect of buoyancy first appears as $t_c$ is increased.
 
 \subsubsection{Dispersion relation with thermal
   relaxation}\label{disp_relax}
-To obtain a dispersion relation similar to Eq. \ref{sig2_iso} for
-isothermal perturbations, we first write 
+To obtain a dispersion relation similar to that for 
+isothermal perturbations (Eq. \ref{sig2_iso}), we first write 
 \begin{align}
   \delta v_z(\zhat) =
   g(\zhat)\exp\left(\frac{\alpha\zhat^2}{2}\right), \label{adia_ansatz}
@@ -187,33 +189,33 @@ polynomial in $\hat{\sigma}$:
   0 = \sum_{l=0}^{6}c_l\hat{\sigma}^l,\label{relax_disp}
 \end{align}
 where the coefficients $c_l$ are given in Appendix \ref{relax_coeff}.
-% Eq. \ref{relax_disp} contrasts to Eq. \ref{adia_disp}, which is
-% quadratic in $\hat{\sigma}$ for adiabatic perturbations. 
+This dispersion relation generally requires a numerical
+solution. However, for the fundamental mode ($M=0$) some analytical
+progress can be made, which we consider next. 
 
-It is simplest to solve Eq. \ref{relax_disp} numerically. In
-Fig. \ref{relax_disp_fig} we plot the growth rate of the fundamental
-($M=0$) VSI mode as a function of $\khat$ for a range of
-dimensionless thermal relaxation timescales $\beta$, in a disk with
-$\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. Increasing $\beta$ even
-slightly above zero significantly reduces the growth rates for
-$\khat\gg 1$. (There is little effect at small $\khat$ but this case is
-not of interest because the local model breaks down.) Thus, 
-a growing fundamental VSI mode exists only for nearly
-isothermal perturbations ($\beta\ll 1$).  The plot is also consistent with our previous
-discussion that there exists an intermediate wavenumber for which
-finite thermal relaxation has maximal effect (for small $\beta$). 
-%$k_x\to0$ or $k_x\to\infty$ as $\beta\to0$. 
+% It is simplest to solve Eq. \ref{relax_disp} numerically. In
+% Fig. \ref{relax_disp_fig} we plot the growth rate of the fundamental
+% ($M=0$) VSI mode as a function of $\khat$ for a range of
+% dimensionless thermal relaxation timescales $\beta$, in a disk with
+% $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. Increasing $\beta$ even
+% slightly above zero significantly reduces the growth rates for
+% $\khat\gg 1$. (There is little effect at small $\khat$ but this case is
+% not of interest because the local model breaks down.) Thus, 
+% a growing fundamental VSI mode exists only for nearly
+% isothermal perturbations ($\beta\ll 1$).  The plot is also consistent with our previous
+% discussion that there exists an intermediate wavenumber for which
+% finite thermal relaxation has maximal effect (for small $\beta$). 
 
-\begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm 0cm]{figures/rate_theory_grow_relax}
-%  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/rate_theory_grow_relax2}
-  \caption{Growth rate of the fundamental VSI mode in a disk with
-    dimensionless thermal relaxation timescales
-    $\beta\in[10^{-3},1]$.  Other disk parameters are
-    $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. The growth rates are
-    calculated from the dispersion relation Eq. \ref{relax_disp}. 
-    \label{relax_disp_fig}}  
-\end{figure}   
+% \begin{figure}
+%   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm 0cm]{figures/rate_theory_grow_relax}
+% %  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/rate_theory_grow_relax2}
+%   \caption{Growth rate of the fundamental VSI mode in a disk with
+%     dimensionless thermal relaxation timescales
+%     $\beta\in[10^{-3},1]$.  Other disk parameters are
+%     $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. The growth rates are
+%     calculated from the dispersion relation Eq. \ref{relax_disp}. 
+%     \label{relax_disp_fig}}  
+% \end{figure}   
 
 % ate_theory, eps=0.05, smallq=-1d0, gmma=1.4, bmax=1.0, ncases=11,
 %mmode=0.0, root=1, legend=[0.102,0.14,5.4,0.355], yrange=[0,6]
@@ -261,26 +263,34 @@ For a thin disk $\epsilon\ll 1$, we infer
   \beta \lesssim \frac{|\epsilon q|}{\gamma-1} \equiv
   \beta_\mathrm{crit} 
 \end{align}
-is required for the fundamental VSI to operate.  
+is required for the fundamental VSI to operate. From our discussion
+for isothermal perturbations (\S\ref{iso_discuss}), we expect
+$\beta<\beta_\mathrm{crit}$ to be a sufficient condition for the
+VSI. That is, when $\beta<\beta_\mathrm{crit}$, perturbations are
+effectively isothermal. For a thin disk 
+$\beta_\mathrm{crit}\ll 1$, which suggests that finite thermal
+relaxation rapidly stabilizes the VSI.  
+ 
 
-In Fig. \ref{relax_bcrit} we plot the critical thermal relaxation
-timescale obtained from solving Eq. \ref{relax_disp_fund} numerically 
-for a disk with $\epsilon = 0.05$, $q=-1$ and $\gamma=1.4$, for which
-we have $\beta_\mathrm{crit}=0.125$ from Eq. \ref{iso_vsi_cond}. Our
-upper estimate agrees well with the numerical solution for $\khat\gtrsim
-10$. From our discussion for isothermal perturbations
-(\S\ref{iso_discuss}), we expect $\beta<\beta_\mathrm{crit}$ to be a
-sufficient condition for the VSI. 
+% In Fig. \ref{relax_bcrit} we plot the critical thermal relaxation
+% timescale obtained from solving Eq. \ref{relax_disp_fund} numerically 
+% for a disk with $\epsilon = 0.05$, $q=-1$ and $\gamma=1.4$, for which
+% we have $\beta_\mathrm{crit}=0.125$ from Eq. \ref{iso_vsi_cond}. Our
+% upper estimate agrees well with the numerical solution for $\khat\gtrsim
+% 10$. 
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{figures/bcrit_theory}
-  \caption{Condition on the thermal relaxation timescale $\beta$ for
-    the existence of unstable fundamental VSI mode in a vertically
-    isothermal disk with $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$.  
-    The dotted line denotes the asymptotic value
-    $\beta_\mathrm{crit}=\epsilon|q|/(\gamma-1)$ for large $\khat$. 
-    \label{relax_bcrit}}  
-\end{figure}   
+
+% \begin{figure}
+%   \includegraphics[width=\linewidth]{figures/bcrit_theory}
+%   \caption{Condition on the thermal relaxation timescale $\beta$ for
+%     the existence of unstable fundamental VSI mode in a vertically
+%     isothermal disk with $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$.  
+%     The dotted line denotes the asymptotic value
+%     $\beta_\mathrm{crit}=\epsilon|q|/(\gamma-1)$ for large $\khat$. 
+%     \label{relax_bcrit}}  
+% \end{figure}   
+
+
 
 % \subsubsection{Lower limit on the thermal relaxation timescale for the
 %   fundamental adiabatic VSI mode}
@@ -307,46 +317,7 @@ sufficient condition for the VSI.
 
 
 
-\subsection{Spurious growth of adiabatic perturbations in the local
-  model with vertical shear}\label{analytic_adia} 
-For adiabatic perturbations ($\gamma>1$, $\beta\to\infty$) we may
-simply use the Soilberg-Hoiland critera to assess stability
-(\S\ref{solberg}). Nevertheless, we briefly consider this case in the
-local framework to demonstrate its limitations. For $\beta\to\infty$
-the parameter $\chi = 1/\gamma$ and Eq. \ref{vertiso_gov_nondim} can
-be written as   
 
-\begin{align}
-  0 =& \dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
-    \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime\notag\\
-  &+\left\{\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right)\right.\notag\\
-  &\phantom{0=}\left.-\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii\epsilon  
-          q}{\hat{k}}\right)\ln\rho^{\prime 2}\right]\right\}\delta v_z.\label{adia_iso3}
-\end{align}
-
-We multiply Eq. \ref{adia_iso3} by $\rho\delta v_z^*$ and
-integrate vertically, assume boundary terms vanish when integrating by
-parts, to obtain
-\begin{align}
-  &\hat{\sigma}^2\left(\frac{1}{\gamma} +
-    \hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|\delta
-  v_z|^2 d\zhat \notag\\
-  &=  \left(\frac{\gamma-1}{\gamma}\right)
-  \int_{\zhat_1}^{\zhat_2}\rho|\delta v_z^\prime|^2 d\zhat
-  +\frac{1}{\gamma}\int_{\zhat_1}^{\zhat_2}\frac{1}{\rho}|(\rho\delta
-  v_z)^\prime|^2 d\zhat\notag\\
-  &\phantom{=} +
-  \left(\frac{\gamma-1}{\gamma}\right)\hat{k}^2\left(1-\frac{\ii\epsilon
-      q}{\hat{k}}\right) \int_{\zhat_1}^{\zhat_2}\rho\ln\rho^{\prime
-    2}|\delta v_z|^2 d\zhat\notag\\
-  &\phantom{=} + \ii\epsilon q \hat{k}
-  \int_{\zhat_1}^{\zhat_2}\ln\rho^\prime(\rho\delta v_z^*)^\prime
-  \delta v_z d\zhat.\label{adia_integral}
-\end{align}
-When $q\equiv0$, all the terms on the right-hand-side (RHS) are real. Then
-$\hat{\sigma}^2$ is real, and  $\hat{\sigma}^2>0$ if $\gamma>1$. As
-expected, a sub-adiabatically stratified disk is stable in the absense
-of vertical shear. 
 
 % If we follow through the solution method as before, we obtain a
 % dispersion relation 
@@ -358,15 +329,6 @@ of vertical shear.
 % This equation is the same as Eq. 54 in \cite{lubow93} when $q=0$ and
 % the low-frequency, Keplerian approximation is made for the latter.  
 
-However, in the presence of vertical shear $q\neq0$,
-Eq. \ref{adia_integral} suggests $\hat{\sigma}$ is complex for real
-$\khat$, which implies the possibility of instability, regardless of
-how much $\gamma$ deviates from unity. This is contradicts the second 
-Solberg-Hoiland criterion (Eq. \ref{solberg2}) and is a result of the
-radially-local approximation (Appendix \ref{global_corr}). To 
-avoid this, we must restrict our attention to short thermal relaxation
-timescales ($\beta\lesssim1$) and/or neutrally-stratified disks
-($\gamma=\Gamma$) when $q\neq0$. 
 
 
 % Note that when $\gamma>1$ and $q=0$, the term with $\ln\rho^{\prime

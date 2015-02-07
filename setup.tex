@@ -1,19 +1,38 @@
-\section{Baroclinic disk equilibra}
+\section{Governing equations and disk models}
 We consider  an inviscid, non-self-gravitating three-dimensional (3D)
-disk orbiting a central star of mass $M_*$. 
-We adopt cylindrical
+disk orbiting a central star of mass $M_*$. We adopt cylindrical
 co-ordinates $(r,\phi, z)$ centered on the star to describe the global
-disk. The equilibrium disk is steady and axisymmetric with density,
+disk. The governing fluid equations are
+\begin{align}
+  &\frac{\p\rho}{\p t} + \nabla\cdot{\left(\rho\bm{v}\right)} = 0,\\
+  &\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bm{v} =
+  -\frac{1}{\rho}\nabla P - \nabla\Phi_*,\\
+  &\frac{\p P}{\p t} + \bm{v}\cdot\nabla P  = - \gamma P
+  \nabla\cdot\bm{v} - \frac{\rho}{t_c}\left(\frac{P}{\rho} -
+    \left.\frac{P}{\rho}\right|_{t=0}\right), \label{full_energy}
+\end{align}
+where $\rho$ is the mass density, $\bm{v}$ is the velocity field (the
+rotation frequency being $\Omega=v_\phi/r$), $P$
+is the pressure, $\gamma$ is the constant adiabatic index, and $\Phi_*
+= -GM_*(r^2 + z^2)^{-1/2}$ is the gravitational potential of the
+central star and $G$ is the gravitational constant. 
+In the energy equation (Eq. \ref{full_energy}) we have
+included a thermal relaxation term which restores the disk temperature
+$T\propto P/\rho$ to its initial value on a characteristic timescale
+$t_c=\beta\Omega_k^{-1}$ where $\beta$ is a dimensionless coefficient
+and $\Omega_k=\sqrt{GM_*/r^3}$ is the Keplerian frequency. 
+
+\subsection{Baroclinic disk equilibria}\label{eqm}
+The equilibrium disk is steady and axisymmetric with density,
 pressure and rotation profiles $\rho(r,z)$, $P(r,z)$ and
 $\Omega(r,z)$, respectively. The equilibrium disk satisfies
 \begin{align}
   0 &= \frac{1}{\rho}\frac{\p P}{\p z} + \frac{\p \Phi_*}{\p z},\label{vert_equilibrium}\\
   r\Omega^2&= \frac{1}{\rho}\frac{\p P}{\p r} + \frac{\p \Phi_*}{\p
-    r},\label{hori_equilibrium} 
+    r}.\label{hori_equilibrium} 
 \end{align} 
-where $\Phi_* = -GM_*(r^2 + z^2)^{-1/2}$ is the gravitational
-potential of the central star.
-
+%where $\Phi_* = -GM_*(r^2 + z^2)^{-1/2}$ is the gravitational
+%potential of the central star.
 We examine disks with power-law profiles for the midplane density
 $\rho_0(r)\equiv\rho(r,0)$: 
 \begin{align}
@@ -97,7 +116,7 @@ Eq. \ref{eqm_press},
     z}\frac{dK}{dr}.\label{vertical_shear}
 \end{align}
 
-\subsection{Vertically isothermal disks}
+\subsubsection{Vertically isothermal disks}
 For the special case $\Gamma=1$ the disk is isothermal in the
 vertical direction. The equilibrium density $\rho(r,z)$ and rotation
 $\Omega(r,z)$ is then 
@@ -143,121 +162,148 @@ $\epsilon\ll1$, this implies the equilibrium disk must have a small
 entropy gradient in order to be unstable to axisymmetric adiabatic
 perturbations. 
 
-\section{The vertically global shearing box} 
-We are interested in the axisymmetric stability of the above system,
-on radial length-scales much smaller than the local radius $r$, but
-may be global in the vertical direction. As such, we work within the
-framework of the \emph{vertically global shearing 
-  box} (VGSB) developed by \cite{mcnally14}. In this approximation
-one sets up a local Cartesian co-ordinate  system $(x,y,z)$ centered
-on a fiducial point $(r,\phi,z)=(r_0,\phi_0,0)$ in the global disk, with $\phi_0(t) =
-\Omega(r_0,0)t$. The local $x,y,z$ axis correspond to the
-global radial, azimuthal and vertical directions.  
-
-In this shearing box the equilibrium density, pressure and
-sound-speed are assumed to depend only on $z$, by evaluating these
-quantities at $r=r_0$ in the global disk. The background rotation
-$\Omega$ is approximated by a linear shear in $x$, but left unaltered
-in $z$. However, the vertical shear $\p_z\Omega$ is also assumed to
-only depend on $z$.     
-
-The axisymmetric VGSB equations read 
+\section{Linear problem} 
+We consider axisymmetric perturbations to the above equilibria in the
+form 
 \begin{align}
-  & \frac{\p\rho}{\p t} + \frac{\p}{\p x}\left(\rho v_x\right) +
-  \frac{\p}{\p z}\left(\rho v_z\right)=0,\\
-  & \frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bm{v} +
-  v_zr_0\frac{d\Omega_0}{dz} \hat{\bm{y}} = - 
-  2\Omega_0\hat{\bm{z}}\times\bm{v} - S_0v_x\hat{\bm{y}} \notag\\ 
-  &\phantom{\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bm{v} +
-    v_zr_0\frac{d\Omega_0}{dz} \hat{\bm{y}}=}-\frac{1}{\rho}\nabla P - \frac{\p\Phi_0}{\p z}\hat{\bm{z}},\\
-  & \frac{\p P}{\p t} + \bm{v}\cdot\nabla P = -\gamma P
-  \nabla\cdot\bm{v} -
-  \frac{\rho}{t_c}\left(\frac{P}{\rho}-\left.\frac{P}{\rho}\right|_{t=0}\right), \label{energy_eq}
-\end{align}
-where $\bm{v}$ is the velocity field relative to the bulk flow
-(i.e. $\bm{v}=\bm{0}$ in equilibrium),  
-subscript $0$ indicates evaluation at $r=r_0$. In the energy equation 
-we have added a thermal relaxation term with timescale
-$t_c=\beta\Omega_k^{-1}$ with $\beta$  being a dimensionless input
-parameter.  
-
-\subsection{Linearization}
-We perturb the system such that
-\begin{align}
-  \rho \to \rho(z) + \delta\rho(z)\exp{\left(\ii k_x x - \ii\sigma
+  \rho \to \rho(z) + \delta\rho(r,z)\exp{\left( - \ii\sigma
       t\right)},    
 \end{align}
-and similarly for other fluid variables, where $k_x$ is a horizontal
-wavenumber and $\sigma = \omega + \ii \nu$ is a (generally) complex
-frequency, with $\omega$ amd $\nu$ being the real frequency and growth
-rate, respectively. For clarity we drop the subscript $0$ on the
-frequencies and shear rates below. Then writing $\delta P /\rho \equiv W$
-and $c_s^2\delta\rho/\rho\equiv Q$, the linearized system of equations
-is   
- \begin{align}
-   -&\ii\sigma \frac{Q}{c_s^2} + \ii k_x \delta v_x + \frac{d\dd
-     v_z}{dz} + \frac{d\ln{\rho}}{dz}\delta v_z = 0,\label{lin_mass}\\
-   &\ii\sigma \delta v_x + 2\Omega\delta v_y = \ii k_x W,\label{lin_vx}\\
-   -&\frac{\kappa^2}{2\Omega}\delta v_x + \ii \sigma\delta v_y =
-   r\frac{d\Omega}{dz}\delta v_z, \label{lin_vy}\\
-   & \ii\sigma\delta v_z = \frac{dW}{dz} +
-   \frac{d\ln{\rho}}{dz}\left(W-Q\right), \label{lin_vz}\\
-   -&\ii\sigma W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\sigma\frac{\gamma}{\Gamma} Q +
-   c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma}-1\right)\delta v_z.\label{lin_energy}
- \end{align}
-It is understood that the quantities $\rho,\,c_s^2,\,\Omega,\kappa$
-are evaluated at $r=r_0$ using their global expressions above.  
+and similarly for other fluid variables, where $\sigma = \omega + \ii
+\nu$ is a (generally) complex frequency, with $\omega$ amd $\nu$ being
+the real frequency and growth rate, respectively.
 
-We can eliminate the perturbed velocities between the linearized
-equations to obtain a pair or ordinary differential equations
-for $W,Q$ as
+The linearized fluid equations in cylindrical co-ordinates are  
 \begin{align}
-  &\frac{\sigma^2}{c_s^2}Q + \frac{\sigma^2k_x^2}{D}W \notag\\ 
-  &=\left(\frac{\ii
-    k_x r}{D}\frac{d\Omega^2}{dz} -
-  \frac{d\ln{\rho}}{dz}\right)\left[\frac{dW}{dz} +
-  \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] \notag\\
-&- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
-  \frac{dQ}{dz}\right) - \frac{d^2\ln{\rho}}{dz^2}\left(W-Q\right),\label{ode_w}\\
-&\sigma^2W - \frac{\gamma}{\Gamma}\sigma^2 Q +
-\frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right)\notag\\
-&=c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} - 1\right) 
-\left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],\label{ode_Q} 
+  \ii\sigma\delta\rho &= \frac{\rho}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p}{\p
+    z}\left(\rho\delta v_z\right)  + \hat{g}_c\frac{\p\rho}{\p r}\delta v_r,\\
+  \ii\sigma\delta v_r &= \frac{1}{\rho}\frac{\p\delta P}{\p r} - 2\Omega
+  \delta v_\phi - \hat{g}_c\frac{\delta\rho}{\rho^2}\frac{\p P}{\p r},\\ 
+  \ii\sigma\delta v_\phi  &= \frac{\kappa^2}{2\Omega}\delta v_r +
+  r\frac{\p\Omega}{\p z}\delta v_z,\\
+  \ii \sigma\delta v_z &= \frac{1}{\rho}\frac{\p\delta P}{\p z} -
+  \frac{\delta \rho}{\rho^2}\frac{\p P}{\p z},\\
+  \ii\sigma\delta P &=\frac{\p P}{\p z}\delta v_z + \gamma P
+  \left[\frac{1}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p
+      \delta v_z}{\p z}\right]\notag \\
+  &+ \frac{1}{t_c}\left(\delta P -  
+    \frac{P}{\rho}\delta\rho\right) + \hat{g}_c \frac{\p P}{\p r}\delta v_r,
 \end{align}
-where
+where the coefficients $\hat{g}_c=1$ are inserted to label terms
+associated with the background radial disk structure. 
+
+\subsection{Radially-local approximation}  
+We assume perturbations have spatial dependence in the form
 \begin{align}
-  D \equiv \kappa^2 - \sigma^2.
+  \delta \rho(r,z) \to \delta\rho(z)\exp{\ii k_r r} 
 \end{align}
+such that $|k_rr|\gg1$, so that curvature terms can be ignored. For
+these small radial lengthscale perturbations we also ignore the radial
+variations in the background structure and radial gradients, and
+evaluate all cofficients in the above equations at the fiducial radius
+$r=r_0$. However, the full vertical dependence of the coefficients are
+retained.   
 
-\subsection{Limitations}
-Before using the above equations to study the VSI, it is very important to be
-aware of several limitations of the VGSB model. The VGSB momentum  
-equations have the same form as that for the standard shearing box 
-\citep{goldreich65}, except for the appearence of the term 
-$v_zr_0d\Omega_0/dz$. This term appears in the global stability
-problem and is the only term associated with vertical shear that is 
-ported from the global disk into the local model.   
+In order to emphasize on the radially-local approximation, we
+introduce the local Cartesian co-ordinate $(x,y,z)$ corresponding to
+the the local $(r,\phi,z)$ directions, respectively. Then writing
+$\delta P /\rho \equiv W$ and $c_s^2\delta\rho/\rho\equiv Q$, the
+linearized system of equations are 
+\begin{align}
+  \ii\sigma \frac{Q}{c_s^2}  &=  \ii k_x \delta v_x + \frac{d\dd
+    v_z}{dz} + \frac{\p\ln{\rho}}{\p z}\delta v_z + \hat{g}_c
+  \frac{\p\ln{\rho}}{\p r} \delta v_x,\label{lin_mass}\\
+  \ii\sigma \delta v_x  &= \ii k_x W - 2\Omega\delta v_y -
+  \hat{g}_c\frac{1}{\rho}\frac{\p P}{\p r}\frac{Q}{c_s^2}\label{lin_vx}\\
+   \ii \sigma\delta v_y &= r\frac{\p \Omega}{\p z}\delta v_z +
+  \frac{\kappa^2}{2\Omega}\delta v_x, \label{lin_vy}\\
+   \ii\sigma\delta v_z &= \frac{dW}{dz} +
+  \frac{\p\ln{\rho}}{\p z}\left(W-Q\right), \label{lin_vz}\\
+  \ii \sigma W &= c_s^2\frac{\p\ln{\rho}}{\p z}\delta v_z +
+  c_s^2\frac{\gamma}{\Gamma} \left(\ii k_x\delta v_x + \frac{d\delta
+      v_z}{dz}\right) \notag\\
+  &+ \frac{1}{t_c}\left(W - \frac{Q}{\Gamma}\right) +
+  \hat{g}_c\frac{1}{\rho}\frac{\p P}{\p r}\delta v_x.\label{lin_energy}
+  % -&\ii\sigma W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\sigma\frac{\gamma}{\Gamma} Q +
+  % c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma}-1\right)\delta v_z.\label{lin_energy}
+\end{align}
+It is understood that the quantities $\rho,\,c_s^2,\,\Omega,\kappa,\, 
+\p_z\Omega,\, \p_r\ln{\rho} $ and $ \p_r P$ are evaluated at $r=r_0$.   
+Eq. \ref{lin_mass}---\ref{lin_vz} will form the basis of our numerical
+study of the vertical shear instability, but for analytical discussion
+we will make further simplifications. 
 
-Note that, within the VGSB framework, the vertical shear 
-$d\Omega_0/dz$ is a free parameter (as are $\Omega_0$ and $S_0$). 
-This is different to the global problem because in that case, the
-vertical shear is a result of the disk radial structure, which is
-ignored in the VGSB equilibria. 
-In effect, we are studying dynamics in the standard shearing box
-subject to an additional azimuthal force $-v_zr_0 d \Omega_0/dz$. This
-force is inspired by the vertical shear in the global disk, and its
-functional form is taken from global equilibrium. 
 
-%horizontal structure that gives rises 
-%vertical shear is an input force
-%only porting vertical shear  
-%vertical shear doesn't depend on x 
-%not all results can be extrapolated to the global context 
 
-In Appendix \ref{global_corr} we make the connection between the
-linear problem in the VGSB to that in the global disk model. We
-emphasize that not all calculations in the local model can be 
-consistently interpreted in the global context. However, for
-perturbations with small radial lengthscales (large $|k_x|$) and fast
-thermal relaxation ($\beta\ll1$), which characterizes the VSI, the
-VGSB framework is adequate.    
+
+
+
+
+
+
+
+% We are interested in the axisymmetric stability of the above system,
+% on radial length-scales much smaller than the local radius $r$, but
+% may be global in the vertical direction. As such, we work within the
+% framework of the \emph{vertically global shearing 
+%   box} (VGSB) developed by \cite{mcnally14}. In this approximation
+% one sets up a local Cartesian co-ordinate  system $(x,y,z)$ centered
+% on a fiducial point $(r,\phi,z)=(r_0,\phi_0,0)$ in the global disk, with $\phi_0(t) =
+% \Omega(r_0,0)t$. The local $x,y,z$ axis correspond to the
+% global radial, azimuthal and vertical directions.  
+
+% In this shearing box the equilibrium density, pressure and
+% sound-speed are assumed to depend only on $z$, by evaluating these
+% quantities at $r=r_0$ in the global disk. The background rotation
+% $\Omega$ is approximated by a linear shear in $x$, but left unaltered
+% in $z$. However, the vertical shear $\p_z\Omega$ is also assumed to
+% only depend on $z$.     
+
+% The axisymmetric VGSB equations read 
+% \begin{align}
+%   & \frac{\p\rho}{\p t} + \frac{\p}{\p x}\left(\rho v_x\right) +
+%   \frac{\p}{\p z}\left(\rho v_z\right)=0,\\
+%   & \frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bm{v} +
+%   v_zr_0\frac{d\Omega_0}{dz} \hat{\bm{y}} = - 
+%   2\Omega_0\hat{\bm{z}}\times\bm{v} - S_0v_x\hat{\bm{y}} \notag\\ 
+%   &\phantom{\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bm{v} +
+%     v_zr_0\frac{d\Omega_0}{dz} \hat{\bm{y}}=}-\frac{1}{\rho}\nabla P - \frac{\p\Phi_0}{\p z}\hat{\bm{z}},\\
+%   & \frac{\p P}{\p t} + \bm{v}\cdot\nabla P = -\gamma P
+%   \nabla\cdot\bm{v} -
+%   \frac{\rho}{t_c}\left(\frac{P}{\rho}-\left.\frac{P}{\rho}\right|_{t=0}\right), \label{energy_eq}
+% \end{align}
+% where $\bm{v}$ is the velocity field relative to the bulk flow
+% (i.e. $\bm{v}=\bm{0}$ in equilibrium),  
+% subscript $0$ indicates evaluation at $r=r_0$. In the energy equation 
+% we have added a thermal relaxation term with timescale
+% $t_c=\beta\Omega_k^{-1}$ with $\beta$  being a dimensionless input
+% parameter.  
+
+% \subsection{Linearization}
+% We perturb the system such that
+%  For clarity we drop the subscript $0$ on the
+% frequencies and shear rates below.  
+
+% We can eliminate the perturbed velocities between the linearized
+% equations to obtain a pair or ordinary differential equations
+% for $W,Q$ as
+% \begin{align}
+%   &\frac{\sigma^2}{c_s^2}Q + \frac{\sigma^2k_x^2}{D}W \notag\\ 
+%   &=\left(\frac{\ii
+%     k_x r}{D}\frac{d\Omega^2}{dz} -
+%   \frac{d\ln{\rho}}{dz}\right)\left[\frac{dW}{dz} +
+%   \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] \notag\\
+% &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
+%   \frac{dQ}{dz}\right) - \frac{d^2\ln{\rho}}{dz^2}\left(W-Q\right),\label{ode_w}\\
+% &\sigma^2W - \frac{\gamma}{\Gamma}\sigma^2 Q +
+% \frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right)\notag\\
+% &=c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} - 1\right) 
+% \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],\label{ode_Q} 
+% \end{align}
+% where
+% \begin{align}
+%   D \equiv \kappa^2 - \sigma^2.
+% \end{align}
+
+
+
