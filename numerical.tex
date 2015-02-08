@@ -140,15 +140,15 @@ obtained by numerically solving the dispersion relation
 Eq. \ref{relax_disp} and the upper limit to 
 the thermal relaxation timescale $\beta_\mathrm{crit}$ given by
 Eq. \ref{iso_vsi_cond}. For the present disk parameters
-$\beta_\mathrm{crit}=0.125$. We find good agreement between the
-numerical and analytical growth rates, as well as the critical
-relaxation timescale. Growth rates are insensitive to $\beta$ for
-$\beta\lesssim 0.05$, beyond which growth rates rapidly decrease.
+$\beta_\mathrm{crit}=0.125$. 
 
-For this disk model, \citeauthor{nelson13} found a thermal relaxation
-timescale of $\beta\gtrsim 0.6$ stabilized the VSI in non-linear
-hydrodynamic simulations. This is consistent with our numerical and
-analytic results.  
+We find good agreement between the numerical and analytical growth
+rates, as well as the critical relaxation timescale. Growth rates are
+insensitive to $\beta$ for $\beta\lesssim 0.05$, beyond which growth
+rates rapidly decrease. For this disk model, \citeauthor{nelson13}
+found a thermal relaxation timescale of $\beta\gtrsim 0.6$ stabilized
+the VSI in non-linear hydrodynamic simulations. This is consistent
+with our results.   
 
 %implications for nonlinear sims?
 
@@ -194,10 +194,13 @@ We visualize the effect of thermal relaxation in
 Fig. \ref{relax_eigenW_num} by comparing the eigenfunction $W$ for
 $\beta=0.01$ and $\beta=0.1$. The latter value is close to the
 critical value beyond which the fundamental VSI is stabilized
-(\S\ref{iso_vsi_beta_crit}). Increasing $\beta$
+(\S\ref{iso_vsi_beta_crit}). Increasing $\beta$ 
 restricts  the region in which $W\sim z$ closer to the midplane, with
 oscillatory behavior emerging at the boundaries, where buoyancy first
-becomes important. 
+becomes important. Finite thermal relaxation increases $|W|$ near the
+vertical boundaries relative to that about the midplane, but
+perturbations near the disk surface is unlikely important in practice
+because the disk atmosphere contains little mass. 
 
 % We also find this trend for fixed $\beta$ but
 % increasing 
@@ -219,22 +222,46 @@ becomes important.
     \label{relax_eigenW_num}}  
 \end{figure}
 
-  
-
 \subsection{Critical thermal relaxation timescale}
+% may need to explain why choose k=10
+% bcrit independent of k for k>>1 
+% for some parameter regimes (e.g. large q, large epsilon) 
+% behavior at larger kx and finite bcool not understood. 
 We test our estimate for the maximum thermal relaxation timescale 
 $\beta_\mathrm{crit}$ for the fundamental
 VSI (Eq. \ref{iso_vsi_cond}). We use the previous disk
-parameters as a fiducial case and vary $q\in[-0.2,-1.2]$,
-$\gamma\in[1.2,2.0]$ and $\epsilon\in[0.02,0.1]$
-separately. The numerically-obtained $\beta_\mathrm{crit}$ is shown in
+parameters as a reference point and vary $q\in[-0.2,-1.2]$,
+$\gamma\in[1.2,2.0]$, and $\epsilon\in[0.02,0.1]$
+separately. 
+
+Here we use a wavenumber $\khat=10$. 
+
+% , in which case we find $\nu$
+% changes sign as $\beta$ is increased from zero. We find that with
+% $\khat=30$, as used in the previous section, when $\beta$ is not small $\nu$ did not reach zero but instead decreases
+% rapidly after the expected value of $\beta_\mathrm{crit}$.  These
+% modes were found to have large amplitudes near the boundaries.  
+
+
+
+%we suspect boundary conditions may play a role for 
+
+% For large $\khat$ \emph{and} finite
+% thermal relaxation (e.g. $\khat=30$, $\beta\gtrsim 0.2$) we found
+% $\nu$ did not reach zero, but still decreases rapidly after the
+% expected $\beta_\mathrm{crit}$. These modes have large perturbations
+% near the boundaries, which may play a role not accounted for in our
+% analytical discussion.  
+
+
+The numerically-obtained $\beta_\mathrm{crit}$ is shown in
 Fig. \ref{bcrit_compare} in comparison with Eq. \ref{iso_vsi_cond}.  
 
-We find Fig. \ref{bcrit_compare} generally agrees with
-Eq. \ref{iso_vsi_cond}.  The match is better for smaller
-$\beta_\mathrm{crit}$. There is a noticeable difference as
-$\gamma\to1$ because the  derivation of $\beta_\mathrm{crit}$ assumed
-$\gamma>1$.  
+Our numerical results generally agree with 
+Eq. \ref{iso_vsi_cond}. The agreement improves with decreasing  $|q|$,
+$\epsilon$ and increasing $\gamma$, i.e. weaker instability. 
+There is a noticeable difference as $\gamma\to1$ because the
+derivation of $\beta_\mathrm{crit}$ assumed $\gamma>1$.  
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0cm
