@@ -28,6 +28,8 @@ package to solve.
 % mention mode selection -> focus on fundamental corrugation ->
 % simulations eventually dominated by them 
 % choice of kx is O(10), since nelson observe kxH \sim 30
+%not possible to survey all modes/kx/disk parameters
+%focus on effect of thermal relaxation
 
 \subsection{VSI in a locally isothermal, neutrally stratified disk}\label{vertiso_pertiso} 
 % disk model is a nearly-vertically
@@ -81,7 +83,7 @@ However, for $\khat\lesssim 10$, e.g. $\khat=1$ in
 Fig. \ref{lowfreq_eigenfunc}, the perturbation magnitude near the
 boundaries begin to dominate. For even smaller $\khat\lesssim 1$ (not
 shown) we find the perturbation is almost entirely concentrated at the
-boundaries. Our radially-local approximation is likely invalid for 
+boundaries. Our radially-local approximation is not valid for 
 these small wavenumber perturbations and we do not consider such modes
 further.      
 
@@ -127,25 +129,32 @@ decays away from the midplane.
 
 \subsection{Effect of thermal relaxation}
 We now consider stably stratified disks ($\gamma > \Gamma$) with
-thermal relaxation $\beta\in[10^{-3},1]$. Here we use a slightly  
+thermal relaxation. Here, we use a slightly  
 different disk model with $\epsilon=0.05$ and $\gamma=1.4$, as 
 adopted in simulations performed by \cite{nelson13}. Other parameters 
 are unchanged from the previous section.  
 
 Fig. \ref{bcrit_compare1} shows the growth rate $\nu$ of the
-fundamental VSI mode as a function of $\beta$ for $\khat=30$. This is
-approximately the perturbation wavenumber observed in the fiducial
-numerical simulation of \cite{nelson13}. We also plot the growth rates
-obtained by numerically solving the dispersion relation 
-Eq. \ref{relax_disp} and the upper limit to 
-the thermal relaxation timescale $\beta_\mathrm{crit}$ given by
-Eq. \ref{iso_vsi_cond}. For the present disk parameters
-$\beta_\mathrm{crit}=0.125$. 
+fundamental VSI as a function of $\beta$ for $\khat\in[1,10^2]$. We
+also plot the critical thermal relaxation timescale
+$\beta_\mathrm{crit}$ given by Eq. \ref{iso_vsi_cond}. For the present
+disk parameters $\beta_\mathrm{crit}=0.125$.   
 
-We find good agreement between the numerical and analytical growth
-rates, as well as the critical relaxation timescale. Growth rates are
-insensitive to $\beta$ for $\beta\lesssim 0.05$, beyond which growth
-rates rapidly decrease. For this disk model, \citeauthor{nelson13}
+For $5\lesssim\khat\lesssim30$, we find $\beta_\mathrm{crit}$ provides an
+accurate prediction of the upper limit to the thermal relaxation 
+timescale for  the fundamental mode. For smaller $\khat$,
+$\beta<\beta_\mathrm{crit}$ is a sufficient condition for
+instability. For larger $\khat$, we find $\nu$ does not reach zero but
+rapidly decreases as $\beta$ approaches and increases beyond
+$\beta_\mathrm{crit}$. In the latter case we find the perturbation is
+concentrated at the vertical boundaries, which may play a role not
+accounted by our analytical discussion. 
+
+Fig. \ref{bcrit_compare1} shows that 
+$\beta_\mathrm{crit}$ is a good indication for the maximum
+thermal relaxation timescale to permit the fundamental VSI. For
+$\beta\lesssim O(10^{-2})$, growth rates are insensitive to thermal
+relaxation. For this disk model, \citeauthor{nelson13}
 found a thermal relaxation timescale of $\beta\gtrsim 0.6$ stabilized
 the VSI in non-linear hydrodynamic simulations. This is consistent
 with our results.   
@@ -154,12 +163,11 @@ with our results.
 
  \begin{figure}
    \includegraphics[width=\linewidth]{figures/bcrit_compare} 
-   \caption{Growth rate of the fundamental VSI mode with $\khat=30$ as
+   \caption{Growth rate of the fundamental VSI as
      a function of the thermal relaxation timescale $\beta$. The disk
      parameters are $\Gamma=1.011$, $\gamma=1.4$, and 
-     $(p,q,\epsilon)=(-1.5,-1,0.05)$. The numerical (analytical) growth
-     rates are show as solid (dotted) lines, while the vertical line
-     is the maximum thermal timescale $\beta_\mathrm{crit}$ for the
+     $(p,q,\epsilon)=(-1.5,-1,0.05)$. The vertical line
+     is the critical thermal timescale $\beta_\mathrm{crit}$ for the
      fundamental mode according to Eq. \ref{iso_vsi_cond}. 
      \label{bcrit_compare1}}   
  \end{figure} 
@@ -190,6 +198,10 @@ with our results.
 %     solving the full linear eigenvalue problem. \label{relax_growth_num}}   
 % \end{figure} 
 
+
+%approximately the perturbation wavenumber observed in the fiducial
+%numerical simulation of \cite{nelson13}. 
+
 We visualize the effect of thermal relaxation in 
 Fig. \ref{relax_eigenW_num} by comparing the eigenfunction $W$ for
 $\beta=0.01$ and $\beta=0.1$. The latter value is close to the
@@ -214,8 +226,8 @@ because the disk atmosphere contains little mass.
   \caption{Numerically-calculated eigenfunction of the fundamental VSI
     mode in a nearly vertically isothermal disk ($\Gamma=1.011$) with
     $(p,q,\epsilon)=(-1.5,-1,0.05)$, evolved with $\gamma=1.4$ and a dimensionless 
-    thermal relaxation timescale $\beta \equiv t_c\Omega_k = 0.01$
-    (top) and $0.1$ (bottom). The
+    thermal relaxation timescale $\beta = 0.01$
+    (top) and $\beta=0.1$ (bottom). The
     perturbation radial wavenumber is $\khat=30$. The
     real (imaginary) part of $W$ is plotted as the solid (dotted)
     line.
@@ -227,41 +239,34 @@ because the disk atmosphere contains little mass.
 % bcrit independent of k for k>>1 
 % for some parameter regimes (e.g. large q, large epsilon) 
 % behavior at larger kx and finite bcool not understood. 
-We test our estimate for the maximum thermal relaxation timescale 
-$\beta_\mathrm{crit}$ for the fundamental
-VSI (Eq. \ref{iso_vsi_cond}). We use the previous disk
-parameters as a reference point and vary $q\in[-0.2,-1.2]$,
+We test the dependence of the critical thermal relaxation timescale 
+$\beta_\mathrm{crit}$ for the fundamental VSI on disk parameters
+(Eq. \ref{iso_vsi_cond}).  We use the previous case study as a
+reference point and vary $q\in[-0.2,-1.2]$, 
 $\gamma\in[1.2,2.0]$, and $\epsilon\in[0.02,0.1]$
-separately. 
-
-Here we use a wavenumber $\khat=10$. 
-
-% , in which case we find $\nu$
-% changes sign as $\beta$ is increased from zero. We find that with
-% $\khat=30$, as used in the previous section, when $\beta$ is not small $\nu$ did not reach zero but instead decreases
-% rapidly after the expected value of $\beta_\mathrm{crit}$.  These
-% modes were found to have large amplitudes near the boundaries.  
-
-
-
-%we suspect boundary conditions may play a role for 
-
-% For large $\khat$ \emph{and} finite
-% thermal relaxation (e.g. $\khat=30$, $\beta\gtrsim 0.2$) we found
-% $\nu$ did not reach zero, but still decreases rapidly after the
-% expected $\beta_\mathrm{crit}$. These modes have large perturbations
-% near the boundaries, which may play a role not accounted for in our
-% analytical discussion.  
-
+separately. Here, we use a wavenumber $\khat=10$, for which we
+find growth rates reach zero for the range of disk parameters
+considered, so that a numerical $\beta_\mathrm{crit}$ can be defined precisely. 
 
 The numerically-obtained $\beta_\mathrm{crit}$ is shown in
-Fig. \ref{bcrit_compare} in comparison with Eq. \ref{iso_vsi_cond}.  
+Fig. \ref{bcrit_compare} in comparison with Eq. \ref{iso_vsi_cond}.
+Our numerical results generally agree with Eq. \ref{iso_vsi_cond}. The
+agreement improves with decreasing  $|q|$,  $\epsilon$ and increasing
+$\gamma$, i.e. weaker instability, although there is a noticeable difference
+as $\gamma\to1$ because the derivation of $\beta_\mathrm{crit}$
+assumed $\gamma>1$.   
 
-Our numerical results generally agree with 
-Eq. \ref{iso_vsi_cond}. The agreement improves with decreasing  $|q|$,
-$\epsilon$ and increasing $\gamma$, i.e. weaker instability. 
-There is a noticeable difference as $\gamma\to1$ because the
-derivation of $\beta_\mathrm{crit}$ assumed $\gamma>1$.  
+Fig. \ref{bcrit_compare}, together with the previous section
+(Fig. \ref{bcrit_compare1}), shows that $\beta_\mathrm{crit}$ as given
+by Eq. \ref{iso_vsi_cond} gives a measure of the characteristic
+thermal timescale below which perturbations are effectively isothermal
+so that the fundamental VSI operates. 
+
+% From the previous section (Fig. \ref{relax_eigenW_num}) we
+% expect that for other wavenumbers,  still gives a characteristic
+% thermal timescale below which the perturbations are effectively
+% isothermal. 
+
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0cm
@@ -276,82 +281,50 @@ derivation of $\beta_\mathrm{crit}$ assumed $\gamma>1$.
     $\gamma=1.4$ and $(p,q,\epsilon)=(-1.5,-1,0.05)$. Top: varying
     $q\in[-1.2,-0.2]$; middle: varying $\gamma\in[1.2,2.0]$; bottom:
     varying $\epsilon\in[0.02,0.1]$. The perturbation wavenumber is
-    $\khat=10$. 
+    $\khat=10$.  
     \label{bcrit_compare}}  
 \end{figure}
 
-
-\subsection{Vertically non-isothermal disks}
+\subsection{Vertically non-isothermal disks} 
 We briefly consider vertically non-isothermal disks with 
 $\Gamma=1.4$ and $(p,q,\epsilon)=(0,-1,0.05)$ as simulated in
 \cite{nelson13}. In this case we set $\zmax\simeq2.2\epsilon r$, which
-is close to the zero-density surface.     
+is close to the zero-density surface.      
 
-% \subsubsection{$\gamma=\Gamma \neq 1$, $N_z^2\equiv 0$}
-% Consider first the case $\gamma=1.4$ so that there is no vertical
-% entropy gradient. We plot in Fig. the growth rates for the
-% fundamental VSI for $\beta\in[10^{-2},10^{2}]$. We find growth rates
-% do not reach zero, implying instability regardless of the thermal
-% relaxation timescale if $\gamma=\Gamma$. This result is consistent
-% with \cite{nelson13}.  Note that for $\beta\to\infty$ (adiabatic
-% perturbations) and $\gamma=\Gamma$, the disk can be unstable according
-% to the Solberg-Hoiland criterion  Eq. \ref{solberg2}.
+Fig. \ref{gcorr_compare_vnoniso} plots the fundamental VSI growth
+rates as a function of $\beta$ for $\gamma\in[1.4,2.5]$. For
+comparison with \cite{nelson13} we consider 
+$\beta\in[10^{-2},10^2]$. In agreement with \citeauthor{nelson13}, in
+the neutrally-stratified case $\gamma=\Gamma$ the disk is unstable
+even for $\beta\gg 1$. (Note that in the adiabatic limit
+$\beta\to\infty$ this disk can be unstable according to the
+Solberg-Hoiland criterion, Eq. \ref{solberg2}.) 
 
-% Growth rates for $\beta = 10^{-2}$ and
-% $\beta=10^{2}$ behave similarly. This is not surprising because
-% the linearized energy equation (Eq. \ref{lin_energy}) implies that 
-% \begin{align}
-%   W = \frac{\left(\Gamma^{-1} -
-%       \ii\hat{\sigma}\beta\right)}{\left(1-\ii\hat{\sigma}\beta\right)}
-%   Q \text{ for } \gamma\equiv \Gamma.   
-% \end{align}
-% Thus, $W \to Q/\Gamma$ as $\beta\to0$ and $W\to Q$ as
-% $\beta\to\infty$. Since $\Gamma=O(1)$, these two limits are expected
-% to produce qualitatively similar results. Interestingly,
-% Fig. \ref{growth_vnoniso1} show that growth rates 
-% maximize for $\beta=O(1)$. However, all growth rates are similar to
-% order-of-magnitude for $0.1\lesssim\khat\lesssim 100$. 
+For $\gamma>\Gamma$, i.e. stably stratified disks,
+Fig. \ref{gcorr_compare_vnoniso} shows that introducing finite thermal
+relaxation rapidly stabilizes the fundamental VSI mode. This is
+similar to that observed for nearly vertically isothermal disks
+(Fig. \ref{bcrit_compare1}). For $\gamma=1.7,\,2.0,\,2.5$, growth
+rates reach zero for  $\beta\simeq0.17,\,0.083,\,0.045$, respectively.
+Interestingly, these values are equal to
+$\epsilon|q|/(\gamma-\Gamma)$. This suggests that the critial thermal
+relaxation timescale for vertically non-isothermal disks can also be
+estimated by Eq. \ref{iso_vsi_cond} but with $\gamma-1$ replaced by
+$\gamma-\Gamma$. 
 
-% \begin{figure}
-%   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-%   0cm]{figures/growth_vnoniso1} 
-%   \caption{Numerically-determined growth rates of the fundamental VSI
-%     mode in neutrally-buoyant ($N_z^2\equiv0$), vertically non-isothermal disks
-%     ($\Gamma=\gamma=1.4$), with $(p,q,\epsilon)=(0,-1,0.05)$, for
-%     a range of thermal relaxation timescales 
-%     $\beta$. \label{growth_vnoniso1}}     
-% \end{figure} 
-
-% \subsubsection{$\gamma\neq\Gamma \neq 1$, $N_z^2\geq0$}
-% %gamma = 2.0, Gamma = 1.4, vary bcool 
-% Finally, we introduce buoyancy in a vertically non-isothermal disk by
-% setting $\gamma=2$. This scenario was not considered by  
-% \cite{nelson13}, but is similar in spirit with vertically isothermal 
-% disks evolved with $\gamma>1$, as considered in the previous section. 
-% Fig. \ref{growth_vnoniso2} plots the fundamental VSI growth rates for
-% this case. We observe the same trend as for vertically isothermal
-% disks with $N_z^2\geq 0$ (Fig. \ref{relax_growth_num}), namely growth
-% rates reach zero at finite $\khat$. From Fig.\ref{growth_vnoniso2} we
-% expect the VSI to be strongly stabilized even for small, finite
-% thermal relaxation times.  
-
-% \begin{figure}
-%   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-%   0cm]{figures/growth_vnoniso2}
-%   \caption{Same as Fig. \ref{growth_vnoniso1}, but with $\gamma=2$ so that
-%     $N_z^2\geq0$. \label{growth_vnoniso2}}
-% \end{figure} 
-
- 
-
-
-
-
-
-
-
-
-
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  0cm]{figures/gcorr_compare_vnoniso}
+  \caption{Growth rate of the fundamental VSI mode as a function of
+    the thermal relaxation timescale $\beta$, in vertically
+    non-isothermal disks with $\Gamma=1.4$ and
+    $\gamma\in[1.4,2.5]$. The disk is neutrally
+    stratified for $\gamma=1.4$ and stably stratified for
+    $\gamma>1.4$. Other disk parameters are
+    $(p,q,\epsilon)=(0,-1,0.05)$ and the perturbation wavenumber is
+    $\khat=30$.  
+    \label{gcorr_compare_vnoniso}}
+\end{figure}
 
 
 
