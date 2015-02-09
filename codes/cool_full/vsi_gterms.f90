@@ -1,12 +1,10 @@
 module global
   character*6 :: vbc
-  logical :: gterms, eigen_trial, eigenv_out, eigen_refine
-  integer :: nz, nzeff, bignz, nkx, nb, ntrials, output_freq
-  real*8, parameter :: pi = 2d0*acos(0d0), mu=2.33d0
-  real*8 :: smallq, smallp, eps, smallh, kx, zmax, gmma, bgmma, bcool, smalls, dist 
-  real*8 :: kxmin, kxmax, dlogkx, bmin, bmax, db, ghat
+  logical :: gterms
+  integer :: nz, nzeff, bignz
+  real*8, parameter :: pi = 2d0*acos(0d0)
+  real*8 :: smallq, smallp, eps, smallh, kx, zmax, gmma, bgmma, bcool, smalls, ghat  
   real*8, allocatable :: zaxis(:), logrho(:), dlogrho(:), d2logrho(:), omega2(:), domega2(:), kappa2(:), csq(:), freq(:), growth(:), gcorr(:)
-  real*8, allocatable :: kaxis(:), baxis(:)
   complex*16, parameter :: ii = (0d0,1d0)
   complex*16, allocatable :: bigW(:), dbigW(:), bigQ(:), vx(:), vy(:), vz(:), dvz(:) 
 end module global
@@ -16,32 +14,26 @@ program vsi
   implicit none
   character*1, parameter :: JOBVL = 'N', JOBVR = 'V'
   integer, allocatable :: ipiv(:), eigen_test(:)
-  integer :: i,ip1, j,k, n, loc(1), lmax, nzmid, lwork, info
+  integer :: i,ip1, j,k, loc(1), lmax, nzmid, lwork, info
   real*8 :: T_l, dT_l, d2T_l, T_lp2, dT_lp2, d2T_lp2, m, zbar,lmode
-  real*8 :: w_re, w_im, dummy
   real*8, allocatable :: rwork(:)
-  complex*16 :: wold
   complex*16, allocatable :: T(:,:), Tp(:,:), Tpp(:,:)
-  complex*16, allocatable :: L1(:,:), L2(:,:), L2d5(:,:), L3(:,:), L4(:,:), &
-       L5(:,:), L6(:,:), L7(:,:), L8(:,:), &
+  complex*16, allocatable :: L1(:,:), L2(:,:),L2d5(:,:) ,L3(:,:), L4(:,:), &
+       L5(:,:), L6(:,:), L6d5(:,:), L7(:,:), L8(:,:), &
        L9(:,:), L10(:,:), L11(:,:), &
-       L1bar(:,:), L6d5(:,:), L3bar(:,:), L4bar(:,:), L5bar(:,:), &
+       L1bar(:,:), L3bar(:,:), L4bar(:,:), L5bar(:,:), &
        L6bar(:,:)
   complex*16,allocatable :: work(:), matrix(:,:), w(:), vl(:,:), &
-       vr(:,:), rhs(:,:), wtrial(:), wtrial_tot(:)
-  real*8, external :: dlogrho_dz, domega2_dz, omega2_z, logrho_z, kappa2_z, d2logrho_dz2, csq_z, gcorr_z 
-  namelist /params/ smallq, smallp, dist, gmma, bgmma, zmax, vbc, gterms
-  namelist /loop/ kxmin, kxmax, nkx, bmin, bmax, nb, eigen_trial, eigenv_out, eigen_refine
+       vr(:,:), rhs(:,:)
+  real*8, external :: dlogrho_dz, domega2_dz, omega2_z, logrho_z, kappa2_z, d2logrho_dz2, csq_z, gcorr_z  
+  namelist /params/ smallq, smallp, eps, gmma, bgmma, bcool, kx, zmax, vbc, gterms
   namelist /grid/ nz
   
   !read input parameters.
   open(7, file="input")
   read(7, nml=params)
-  read(7, nml=loop)
   read(7, nml=grid)
   close(7)
-
-  eps = 3.36d-2*dist**(2d0/7d0)/sqrt(mu)
 
   if(mod(nz,2).eq.0) then
      print*, 'Nz needs to be odd but Nz=', nz
@@ -62,9 +54,12 @@ program vsi
 
   smalls = smallq + smallp*(1d0 - bgmma) 
 
-  print*, 'smallh, smalls, eps =', smallh, smalls 
+  !convert input kx to code units
+  kx = kx*smallh 
 
-  zmax = zmax*eps/smallh !height in units of isothermal scale heights  
+  print*, 'smallh, smalls=', smallh, smalls 
+
+  zmax = zmax*eps/smallh !height in units of isothermal scale heights 
 
   open(10,file='params.dat') 
   write(10,fmt='(7(e22.15,x))'), gmma, bgmma, eps, smallh, smalls, bcool, kx 
@@ -78,20 +73,7 @@ program vsi
   nzeff = nz
   bignz = 5*nzeff
 
-  if(eigen_refine.eq..false.) then
-  ntrials=nkx
-  output_freq = 1
-  else
-  ntrials     = nkx*nb
-  output_freq = 1
-  endif
-
   !allocate grids
-  allocate(kaxis(nkx))
-  allocate(baxis(nb))
-  allocate(wtrial(nkx))
-  allocate(wtrial_tot(ntrials))
-  
   allocate(zaxis(nz))
   allocate(logrho(nz))
   allocate(dlogrho(nz))
@@ -150,42 +132,6 @@ program vsi
   allocate(rwork(2*bignz))
   allocate(ipiv(bignz))
   
-  !setup kaxis. input is kxHiso. then output
-  if(nkx.gt.1) then
-     dlogkx = log10(kxmax/kxmin)/(nkx-1d0)
-  else
-     dlogkx = 0d0
-  endif
-  do i=1, nkx
-     kaxis(i) = 10d0**(log10(kxmin) + dlogkx*(i-1d0))
-  enddo
-  open(10,file='kaxis.dat')
-  do i=1, nkx
-     write(10,fmt='(e22.15,x)'), kaxis(i)
-  enddo
-  close(10)
-  
-  !setup bcool axis
-  if(nb.gt.1) then
-     db = log10(bmax/ bmin)/(nb-1d0)
-  else
-     db = 0d0
-  endif
-  do i=1, nb
-     baxis(i) =10d0**(log10(bmin) + db*(i-1d0))
-  enddo
-
-  !read in trial eigenvalues if desired
-  if(eigen_trial.eq..true.) then
-     open(20, file='eigenvalues.dat')
-     do i=1, ntrials
-        read(20, fmt='(3(e22.15,x))') w_re, w_im, dummy 
-        wtrial_tot(i) =dcmplx(w_re, w_im)
-     enddo
-     close(20)  
-     if(eigen_refine.eq..false.) wtrial = wtrial_tot
-  endif
-  
   !setup z axis.
   lmax = nz-1
   zaxis(Nzmid) = 0d0
@@ -203,231 +149,181 @@ program vsi
      d2logrho(i)= d2logrho_dz2(zaxis(i))
      omega2(i)  = omega2_z(zaxis(i))
      if(omega2(i).le.0d0) then
-        print*, 'omega2<=0'
-        stop
+     print*, 'omega2<=0'
+     stop
      endif
      domega2(i) = domega2_dz(zaxis(i))
      kappa2(i)  = kappa2_z(zaxis(i))
      csq(i)     = csq_z(zaxis(i))
   enddo
-  
+ 
+  !set up global correction array
+  do i=1, nz
+     gcorr(i) = gcorr_z(zaxis(i))
+  enddo
+ 
   !output basic state
   open(10,file='basic.dat')
   do i=1, nz
      write(10,fmt='(8(e22.15,x))'), zaxis(i), logrho(i), dlogrho(i), d2logrho(i),omega2(i), domega2(i), kappa2(i), csq(i)
   enddo
   close(10)
-  
-  !set up global correction array 
-  do i=1, nz 
-     gcorr(i) = gcorr_z(zaxis(i))
-  enddo
-  
+
   if ((vbc.eq.'nolagp').or.(vbc.eq.'nozvel')) then !vanishing lagragian pressure pert, vanishing vertical vel 
      do j=1, nz !jth physical grid
         zbar = zaxis(j)/zmax
         do k=1, nzeff !kth basis
            m = dble(k-1d0)
            call chebyshev_poly(m,     zbar, T_l, dT_l, d2T_l)
-           T(j,k)  =   T_l
-           Tp(j,k) =  dT_l
-           Tpp(j,k)= d2T_l
-           
-           Tp(j,k)  = Tp(j,k)/zmax          !convert to deriv wrt physical grid
-           Tpp(j,k) = Tpp(j,k)/zmax**2d0    !convert to deriv wrt physical grid
+              T(j,k)  =   T_l
+              Tp(j,k) =  dT_l
+              Tpp(j,k)= d2T_l
+
+              Tp(j,k)  = Tp(j,k)/zmax          !convert to deriv wrt physical grid
+              Tpp(j,k) = Tpp(j,k)/zmax**2d0    !convert to deriv wrt physical grid
         enddo
      enddo
   endif
-  
-  open(10,file='baxis.dat')
-  open(20,file='eigenvalues.dat')
-  if(eigenv_out.eq..true.) open(30,file='eigenvectors.dat')
-  
-  do n=1, nb  !loop over bcool values
-     
-     if(eigen_refine.eq..true.) wtrial(:) = wtrial_tot((n-1)*nkx+1: n*nkx)
-     
-     do k=1, nkx !loop over kx values
-        kx = kaxis(k)*smallh !convert input into code units 
-        
-        bcool= (4.4d5/(mu*(gmma-1d0)))*dist**(-57./14.)
-        bcool=bcool*(8.3d-9*dist**(33./7.) + 1d0/kaxis(k)**2d0)
 
-        !set up sub-matrices for linear operators
-        do i=1, nzeff
+  !set up sub-matrices for linear operators
+  
+            do i=1, nzeff
            L1(i,:)  = T(i,:)/bcool
-           L2(i,:)  =-T(i,:)/bcool/bgmma 
+           L2(i,:)  =-T(i,:)/bcool/bgmma
            L2d5(i,:)= ii*(gmma/bgmma)*csq(i)*kx/smallh*T(i,:)  + ghat*gcorr(i)*T(i,:)
-           L3(i,:)  = csq(i)*(eps/smallh)*((gmma/bgmma)*Tp(i,:) + dlogrho(i)*T(i,:)) 
-           
+           L3(i,:)  = csq(i)*(eps/smallh)*((gmma/bgmma)*Tp(i,:) + dlogrho(i)*T(i,:))
+
            L4(i,:) = ii*kx*T(i,:)/eps + ghat*smallh*(gcorr(i)/csq(i)/eps - smalls/bgmma)*T(i,:)
            L5(i,:) = Tp(i,:) + dlogrho(i)*T(i,:)
-           
-           L6(i,:)  = ii*kx*T(i,:)/smallh 
+
+           L6(i,:)  = ii*kx*T(i,:)/smallh
            L6d5(i,:)= -ghat*gcorr(i)*T(i,:)/csq(i)
-           L7(i,:)  = -2d0*sqrt(omega2(i))*T(i,:)  
-           
-           L8(i,:) = kappa2(i)*T(i,:)/(2d0*sqrt(omega2(i))) 
+           L7(i,:)  = -2d0*sqrt(omega2(i))*T(i,:)
+
+           L8(i,:) = kappa2(i)*T(i,:)/(2d0*sqrt(omega2(i)))
            L9(i,:) = domega2(i)*T(i,:)/(2d0*smallh*sqrt(omega2(i)))
-           
+
            L10(i,:) = Tp(i,:) + dlogrho(i)*T(i,:)
-           L11(i,:) = -dlogrho(i)*T(i,:) 
-           
-        
+           L11(i,:) = -dlogrho(i)*T(i,:)
+
+
            L1bar(i,:) =  ii*eps*T(i,:)
            L3bar(i,:) =  ii*smallh*T(i,:)/csq(i)
-           L4bar(i,:) =  ii*eps*T(i,:) 
-           L5bar(i,:) =  ii*eps*T(i,:) 
+           L4bar(i,:) =  ii*eps*T(i,:)
+           L5bar(i,:) =  ii*eps*T(i,:)
            L6bar(i,:) =  ii*smallh*T(i,:)
      enddo
-     
-     !set up big matrices
-     matrix(:,:) = 0d0
-     rhs(:,:)    = 0d0 
-     
-     matrix(1:nzeff,1:nzeff)                       = L1
+
+
+
+
+
+  !set up big matrices
+  matrix(:,:) = 0d0
+  rhs(:,:)    = 0d0 
+
+   matrix(1:nzeff,1:nzeff)                       = L1
      matrix(1:nzeff,nzeff+1:2*nzeff)               = L2
-     matrix(1:nzeff,2*nzeff+1:3*nzeff)             = L2d5 
-     matrix(1:nzeff,4*nzeff+1:bignz)               = L3 
-     
-     matrix(nzeff+1:2*nzeff, 2*nzeff+1:3*nzeff)    = L4 
+     matrix(1:nzeff,2*nzeff+1:3*nzeff)             = L2d5
+     matrix(1:nzeff,4*nzeff+1:bignz)               = L3
+
+     matrix(nzeff+1:2*nzeff, 2*nzeff+1:3*nzeff)    = L4
      matrix(nzeff+1:2*nzeff, 4*nzeff+1:bignz)      = L5
-     
+
      matrix(2*nzeff+1:3*nzeff,1:nzeff)             = L6
      matrix(2*nzeff+1:3*nzeff,nzeff+1:2*nzeff)     = L6d5
      matrix(2*nzeff+1:3*nzeff,3*nzeff+1:4*nzeff)   = L7
-     
+
      matrix(3*nzeff+1:4*nzeff,2*nzeff+1:3*nzeff)   = L8
      matrix(3*nzeff+1:4*nzeff,4*nzeff+1:bignz)     = L9
-     
+
      matrix(4*nzeff+1:bignz,1:nzeff)               = L10
      matrix(4*nzeff+1:bignz,nzeff+1:2*nzeff)       = L11
-     
+
      rhs(1:nzeff,1:nzeff)                          = L1bar
-     
-     rhs(nzeff+1:2*nzeff,nzeff+1:2*nzeff)          = L3bar 
-     
+
+     rhs(nzeff+1:2*nzeff,nzeff+1:2*nzeff)          = L3bar
+
      rhs(2*nzeff+1:3*nzeff,2*nzeff+1:3*nzeff)      = L4bar
-     
-     rhs(3*nzeff+1:4*nzeff,3*nzeff+1:4*nzeff)      = L5bar 
-     
+
+     rhs(3*nzeff+1:4*nzeff,3*nzeff+1:4*nzeff)      = L5bar
+
      rhs(4*nzeff+1:bignz,4*nzeff+1:bignz)          = L6bar
-     
-     !explicit boundary condition for 'nolagp'
+
+
+      !explicit boundary condition for 'nolagp'
      if (vbc.eq.'nolagp') then
         do i=1,nzeff,nzeff-1
-           matrix(i,:) = 0d0 
-           matrix(i,2*nzeff+1:3*nzeff)= ghat*smallh*gcorr(i)*T(i,:)/eps 
-           matrix(i,4*nzeff+1:bignz)  = csq(i)*dlogrho(i)*T(i,:) 
-           
-           rhs(i,:) = 0d0 
-           rhs(i,1:nzeff) = ii*smallh*T(i,:) 
+           matrix(i,:) = 0d0
+           matrix(i,2*nzeff+1:3*nzeff)= ghat*smallh*gcorr(i)*T(i,:)/eps
+           matrix(i,4*nzeff+1:bignz)  = csq(i)*dlogrho(i)*T(i,:)
+
+           rhs(i,:) = 0d0
+           rhs(i,1:nzeff) = ii*smallh*T(i,:)
         enddo
      endif
-     
+
      !explicit bc for vz=0  (!set vz =0 in energy eq )
      if (vbc.eq.'nozvel') then
         do i=1,nzeff,nzeff-1
-           matrix(i,:) = 0d0           
+           matrix(i,:) = 0d0
            matrix(i,1:nzeff)          =  T(i,:)/bcool
-           matrix(i,nzeff+1:2*nzeff)  = -T(i,:)/bcool/bgmma 
+           matrix(i,nzeff+1:2*nzeff)  = -T(i,:)/bcool/bgmma
            matrix(i,2*nzeff+1:3*nzeff)= (ii*kx*(gmma/bgmma)*csq(i)/smallh + ghat*gcorr(i))*T(i,:)
            matrix(i,4*nzeff+1:bignz)  = csq(i)*(eps/smallh)*(gmma/bgmma)*Tp(i,:)
 
            rhs(i,:) = 0d0
-           rhs(i,1:nzeff) = ii*eps*T(i,:) 
+           rhs(i,1:nzeff) = ii*eps*T(i,:)
+        enddo
+     endif 
+
+
+
+
+  !invert rhs and get final matrix
+  call zgetrf(bignz, bignz, rhs, bignz, IPIV, INFO)
+  print*, 'inversion success?', info
+  call ZGETRI(bignz, rhs, bignz, IPIV, WORK, LWORK, INFO )
+  print*, 'inversion success?', info
+  matrix = matmul(rhs,matrix)
+
+  !eigenvalue problem
+  call zgeev (JOBVL, JOBVR, bignz, matrix, bignz, W, vl, bignz, VR, bignz, WORK, LWORK, RWORK, INFO) 
+  print*, 'eigen success?',info
+
+  freq = dble(w)
+  growth=dimag(w)
+  
+  open(20,file='eigenvalues.dat')
+  open(30,file='eigenvectors.dat')
+  do i=1, bignz
+     !discard modes with eigenvalues too large (approx eqns assume |sigma^2|<<kappa2
+     !discard modes that grow too slowly
+     if((abs(w(i)).le.1d0/eps).and.(growth(i).ge.eps**3d0)) then
+!      if((abs(w(i)).le.1d0/eps).and.(growth(i).gt.0d0)) then
+        eigen_test(i) = 1 
+        write(20,fmt='(2(e22.15,x))'), freq(i), growth(i)
+        bigW = matmul(T,vr(1:nzeff,i))
+        dbigW= matmul(Tp,vr(1:nzeff,i))
+
+        bigQ = matmul(T,vr(nzeff+1:2*nzeff,i))
+
+        vx   = matmul(T,vr(2*nzeff+1:3*nzeff,i))
+        vy   = matmul(T,vr(3*nzeff+1:4*nzeff,i))
+        vz   = matmul(T,vr(4*nzeff+1:bignz,i))
+        dvz  = matmul(Tp,vr(4*nzeff+1:bignz,i)) 
+        do j=1,nz
+           write(30,fmt='(14(e22.15,x))') dble(bigW(j)), dimag(bigW(j)), dble(dbigW(j)), dimag(dbigW(j)), dble(bigQ(j)), dimag(bigQ(j)), & 
+                                          dble(vx(j)), dimag(vx(j)), dble(vy(j)), dimag(vy(j)), dble(vz(j)), dimag(vz(j)), dble(dvz(j)), dimag(dvz(j)) 
         enddo
      endif
-     
-     
-     !invert rhs and get final matrix
-     call zgetrf(bignz, bignz, rhs, bignz, IPIV, INFO)
-     if(info.ne.0) print*, 'inversion fail'
-     call ZGETRI(bignz, rhs, bignz, IPIV, WORK, LWORK, INFO )
-     if(info.ne.0) print*, 'inversion fail'
-     matrix = matmul(rhs,matrix)
-     
-     !eigenvalue problem
-     call zgeev (JOBVL, JOBVR, bignz, matrix, bignz, W, vl, bignz, VR, bignz, WORK, LWORK, RWORK, INFO) 
-     if (info.ne.0)  print*, 'eigen failed'
-     
-     freq = dble(w)
-     growth=dimag(w)
-           
-     do i=1, bignz
-        bigW = matmul(T,vr(1:nzeff,i))
-        if((abs(w(i)).gt.1d0/eps).or.(growth(i).lt.0d0).or.(abs(w(i)).lt.eps**2d0).or.(dble(bigW(1))*dble(bigW(nzeff)).gt.0d0)) then 
-           w(i) = (1d6,-1d6)
-        endif
-     enddo
-     
-     
-     if(eigen_trial.eqv..false.)then !find mode from scratch 
-        if(k.eq.1) then !find first mode
-           
-           !discard modes with eigenvalues too large or too small
-           !discard modes that decay
-           !discard modes with too small imaginary part
-           !discard modes that grow faster than the expected maximum
-           
-!!$           do i=1, bignz
-!!$              bigW = matmul(T,vr(1:nzeff,i))
-!!$              if((abs(w(i)).gt.1d0/eps).or.(growth(i).lt.0d0).or.(abs(w(i)).lt.eps**2d0).or.(dble(bigW(1))*dble(bigW(nzeff)).gt.0d0)) then 
-!!$                 w(i) = (1d6,-1d6)
-!!$              endif
-!!$           enddo
-           
-           freq = dble(w)
-           growth=dimag(w)
-           
-           !now pick the mode with smallest |freq| (fundamental mode)
-           loc = minloc(abs(w)) 
-           i = loc(1)
-        else
-           freq = dble(w)
-           growth=dimag(w)
-           loc  =minloc(abs((w-wold)/wold))
-           i    = loc(1)
-       endif
-        wold = w(i)
-     else !find mode based on previous list of eigenvalues (find closest one)
-        freq = dble(w)
-        growth=dimag(w)
-        loc  = minloc(abs((w-wtrial(k))/wtrial(k)))
-        i    = loc(1)
-     endif
-     wtrial(k) = w(i)
- 
-     if(mod(n-1,output_freq).eq.0) then !output
-     write(20,fmt='(3(e22.15,x))'), freq(i), growth(i), kaxis(k) 
-     if(n.eq.1) print*, 'kloop, kxHiso=', k, kaxis(k), growth(i)
-
-     if(eigenv_out.eq..true.) then
-     bigW = matmul(T,vr(1:nzeff,i))
-     dbigW= matmul(Tp,vr(1:nzeff,i))
-     
-     bigQ = matmul(T,vr(nzeff+1:2*nzeff,i))
-     
-     vx   = matmul(T,vr(2*nzeff+1:3*nzeff,i))
-     vy   = matmul(T,vr(3*nzeff+1:4*nzeff,i))
-     vz   = matmul(T,vr(4*nzeff+1:bignz,i))
-     dvz  = matmul(Tp,vr(4*nzeff+1:bignz,i)) 
-     do j=1,nz
-        write(30,fmt='(14(e22.15,x))') dble(bigW(j)), dimag(bigW(j)), dble(dbigW(j)), dimag(dbigW(j)), dble(bigQ(j)), dimag(bigQ(j)), & 
-             dble(vx(j)), dimag(vx(j)), dble(vy(j)), dimag(vy(j)), dble(vz(j)), dimag(vz(j)), dble(dvz(j)), dimag(dvz(j)) 
-     enddo
-     endif
-     endif
-  enddo!kx loop
-  if(n.eq.1) print*, 'bcool, kxHsio, max growth='
-  loc = maxloc(dimag(wtrial))  
-  print*,   baxis(n), kaxis(loc(1)), dimag(wtrial(loc(1))) 
-  if(mod(n-1,output_freq).eq.0) write(10,fmt='(4(e22.15,x))'), baxis(n), kaxis(loc(1)), dble(wtrial(loc(1))), dimag(wtrial(loc(1)))
-  enddo!bcool loop
- 
-  close(10)  
+  enddo
+  if (maxval(eigen_test).eq.0) then
+  print*, 'no good eigenvalues found'
+  stop
+  endif
   close(20)
-  if(eigenv_out.eq..true.) close(30)
+  
 
 end program vsi
 
@@ -524,18 +420,17 @@ real*8 function kappa2_z(zhat)
   kappa2_z = 4d0*omega2_z(zhat) + rdomega2_dr 
 end function kappa2_z
 
-
 real*8 function gcorr_z(zhat)
   use global
   implicit none
   real*8, intent(in) :: zhat
-  real*8 :: zsq 
+  real*8 :: zsq
   real*8, external :: omega2_z
-  
+
   zsq   = (smallh*zhat)**2d0
-  
+
   gcorr_z = omega2_z(zhat) - (1d0 + zsq)**(-1.5d0)
-  gcorr_z = gcorr_z/eps 
+  gcorr_z = gcorr_z/eps
 end function gcorr_z
 
 subroutine chebyshev_poly(l, zbar, T_l, dT_l, d2T_l)

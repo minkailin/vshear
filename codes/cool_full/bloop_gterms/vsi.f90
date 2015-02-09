@@ -2,8 +2,8 @@ module global
   character*6 :: vbc
   logical :: gterms, eigen_trial, eigenv_out, eigen_refine
   integer :: nz, nzeff, bignz, nkx, nb, ntrials, output_freq
-  real*8, parameter :: pi = 2d0*acos(0d0), mu=2.33d0
-  real*8 :: smallq, smallp, eps, smallh, kx, zmax, gmma, bgmma, bcool, smalls, dist 
+  real*8, parameter :: pi = 2d0*acos(0d0)
+  real*8 :: smallq, smallp, eps, smallh, kx, zmax, gmma, bgmma, bcool, smalls
   real*8 :: kxmin, kxmax, dlogkx, bmin, bmax, db, ghat
   real*8, allocatable :: zaxis(:), logrho(:), dlogrho(:), d2logrho(:), omega2(:), domega2(:), kappa2(:), csq(:), freq(:), growth(:), gcorr(:)
   real*8, allocatable :: kaxis(:), baxis(:)
@@ -30,7 +30,7 @@ program vsi
   complex*16,allocatable :: work(:), matrix(:,:), w(:), vl(:,:), &
        vr(:,:), rhs(:,:), wtrial(:), wtrial_tot(:)
   real*8, external :: dlogrho_dz, domega2_dz, omega2_z, logrho_z, kappa2_z, d2logrho_dz2, csq_z, gcorr_z 
-  namelist /params/ smallq, smallp, dist, gmma, bgmma, zmax, vbc, gterms
+  namelist /params/ smallq, smallp, eps, gmma, bgmma, zmax, vbc, gterms
   namelist /loop/ kxmin, kxmax, nkx, bmin, bmax, nb, eigen_trial, eigenv_out, eigen_refine
   namelist /grid/ nz
   
@@ -40,8 +40,6 @@ program vsi
   read(7, nml=loop)
   read(7, nml=grid)
   close(7)
-
-  eps = 3.36d-2*dist**(2d0/7d0)/sqrt(mu)
 
   if(mod(nz,2).eq.0) then
      print*, 'Nz needs to be odd but Nz=', nz
@@ -62,7 +60,7 @@ program vsi
 
   smalls = smallq + smallp*(1d0 - bgmma) 
 
-  print*, 'smallh, smalls, eps =', smallh, smalls 
+  print*, 'smallh, smalls=', smallh, smalls 
 
   zmax = zmax*eps/smallh !height in units of isothermal scale heights  
 
@@ -244,15 +242,13 @@ program vsi
   if(eigenv_out.eq..true.) open(30,file='eigenvectors.dat')
   
   do n=1, nb  !loop over bcool values
+     bcool = baxis(n) 
      
      if(eigen_refine.eq..true.) wtrial(:) = wtrial_tot((n-1)*nkx+1: n*nkx)
      
      do k=1, nkx !loop over kx values
         kx = kaxis(k)*smallh !convert input into code units 
         
-        bcool= (4.4d5/(mu*(gmma-1d0)))*dist**(-57./14.)
-        bcool=bcool*(8.3d-9*dist**(33./7.) + 1d0/kaxis(k)**2d0)
-
         !set up sub-matrices for linear operators
         do i=1, nzeff
            L1(i,:)  = T(i,:)/bcool
@@ -353,30 +349,31 @@ program vsi
      
      freq = dble(w)
      growth=dimag(w)
-           
+
      do i=1, bignz
-        bigW = matmul(T,vr(1:nzeff,i))
-        if((abs(w(i)).gt.1d0/eps).or.(growth(i).lt.0d0).or.(abs(w(i)).lt.eps**2d0).or.(dble(bigW(1))*dble(bigW(nzeff)).gt.0d0)) then 
-           w(i) = (1d6,-1d6)
-        endif
-     enddo
-     
-     
+              bigW = matmul(T,vr(1:nzeff,i))
+              if((abs(w(i)).gt.1d0/eps).or.(abs(w(i)).lt.eps**2d0).or.(dble(bigW(1))*dble(bigW(nzeff)).gt.0d0)) then
+                 w(i) = (1d6,1d6)
+              endif
+           enddo
+
+
+
      if(eigen_trial.eqv..false.)then !find mode from scratch 
         if(k.eq.1) then !find first mode
-           
+     
            !discard modes with eigenvalues too large or too small
            !discard modes that decay
            !discard modes with too small imaginary part
            !discard modes that grow faster than the expected maximum
-           
-!!$           do i=1, bignz
-!!$              bigW = matmul(T,vr(1:nzeff,i))
-!!$              if((abs(w(i)).gt.1d0/eps).or.(growth(i).lt.0d0).or.(abs(w(i)).lt.eps**2d0).or.(dble(bigW(1))*dble(bigW(nzeff)).gt.0d0)) then 
-!!$                 w(i) = (1d6,-1d6)
-!!$              endif
-!!$           enddo
-           
+
+!           do i=1, bignz
+!              bigW = matmul(T,vr(1:nzeff,i)) 
+!              if((abs(w(i)).gt.1d0/eps).or.(growth(i).lt.0d0).or.(abs(w(i)).lt.eps**2d0).or.(dble(bigW(1))*dble(bigW(nzeff)).gt.0d0)) then
+!                 w(i) = (1d6,1d6)
+!              endif
+!           enddo
+
            freq = dble(w)
            growth=dimag(w)
            

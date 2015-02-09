@@ -6,7 +6,7 @@ module global
   real*8 :: smallq, smallp, eps, smallh, kx, zmax, gmma, bgmma, bcool, smalls, dist 
   real*8 :: kxmin, kxmax, dlogkx, bmin, bmax, db, ghat
   real*8, allocatable :: zaxis(:), logrho(:), dlogrho(:), d2logrho(:), omega2(:), domega2(:), kappa2(:), csq(:), freq(:), growth(:), gcorr(:)
-  real*8, allocatable :: kaxis(:), baxis(:)
+  real*8, allocatable :: kaxis(:), baxis(:), bcool_arr(:)
   complex*16, parameter :: ii = (0d0,1d0)
   complex*16, allocatable :: bigW(:), dbigW(:), bigQ(:), vx(:), vy(:), vz(:), dvz(:) 
 end module global
@@ -101,6 +101,7 @@ program vsi
   allocate(kappa2(nz))
   allocate(csq(nz))
   allocate(gcorr(nz))
+  allocate(bcool_arr(nz))
 
   allocate(bigQ(nz))
   allocate(bigW(nz))
@@ -250,13 +251,15 @@ program vsi
      do k=1, nkx !loop over kx values
         kx = kaxis(k)*smallh !convert input into code units 
         
-        bcool= (4.4d5/(mu*(gmma-1d0)))*dist**(-57./14.)
-        bcool=bcool*(8.3d-9*dist**(33./7.) + 1d0/kaxis(k)**2d0)
+     
+        bcool_arr(:)=(4.4d5/(mu*(gmma-1d0)))*dist**(-57./14.)
+        bcool_arr(:)=bcool_arr(:)*(8.3d-9*dist**(33./7.)+2d0*pi*exp(logrho(:))**2d0/kaxis(k)**2d0)
+
 
         !set up sub-matrices for linear operators
         do i=1, nzeff
-           L1(i,:)  = T(i,:)/bcool
-           L2(i,:)  =-T(i,:)/bcool/bgmma 
+           L1(i,:)  = T(i,:)/bcool_arr(i)
+           L2(i,:)  =-T(i,:)/bcool_arr(i)/bgmma 
            L2d5(i,:)= ii*(gmma/bgmma)*csq(i)*kx/smallh*T(i,:)  + ghat*gcorr(i)*T(i,:)
            L3(i,:)  = csq(i)*(eps/smallh)*((gmma/bgmma)*Tp(i,:) + dlogrho(i)*T(i,:)) 
            
@@ -329,8 +332,8 @@ program vsi
      if (vbc.eq.'nozvel') then
         do i=1,nzeff,nzeff-1
            matrix(i,:) = 0d0           
-           matrix(i,1:nzeff)          =  T(i,:)/bcool
-           matrix(i,nzeff+1:2*nzeff)  = -T(i,:)/bcool/bgmma 
+           matrix(i,1:nzeff)          =  T(i,:)/bcool_arr(i)
+           matrix(i,nzeff+1:2*nzeff)  = -T(i,:)/bcool_arr(i)/bgmma 
            matrix(i,2*nzeff+1:3*nzeff)= (ii*kx*(gmma/bgmma)*csq(i)/smallh + ghat*gcorr(i))*T(i,:)
            matrix(i,4*nzeff+1:bignz)  = csq(i)*(eps/smallh)*(gmma/bgmma)*Tp(i,:)
 

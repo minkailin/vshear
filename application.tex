@@ -48,20 +48,20 @@ heating term
 Then Eq. \ref{real_energy} becomes
 \begin{align}
   \frac{DP}{Dt} = -\gamma P \nabla\cdot\bm{v} -
-  \frac{4P\kappa_d\sigma_s}{Tc_v}\left(T^4 - T_{t=0}^4\right). 
+  \frac{4P\kappa_d\sigma_s}{Tc_v}\left(T^4 - T_{t=0}^4\right), 
 \end{align}
-When linearized, the last term on the RHS becomes
+where $c_v$ is the heat capacity at constant volume. When linearized, the last term on the RHS becomes
 \begin{align}
   -\frac{16\sigma_s}{c_v}\kappa_d T^3\left(\delta P -
     \frac{P}{\rho}\delta\rho\right). 
 \end{align}
 By comparing this expression with the linearized version of the energy
-equation used in our calculations (Eq. \ref{lin_energy}), we identify 
+equation used in our calculations (Eq. \ref{full_energy1}), we identify 
 \begin{align}\label{tc_newton_cool} 
   t_\mathrm{cool} = \frac{c_v}{16\sigma_s\kappa_dT^3}
 \end{align}
 as the thermal relaxation timescale for perturbation lengthscales
-$L\ll l_\mathrm{rad}$. 
+$l\ll l_\mathrm{rad}$. 
 
 \subsection{Radiative diffusion}
 For perturbation lengthscales $l\gg l_\mathrm{rad}$, we assume 
@@ -227,11 +227,10 @@ The most unstable mode occurs at $\khat\simeq30$ with growth rate
   \nu =0.058\epsilon\Omega_k = 3.9\times10^{-3}\Omega_k.  
 \end{align*}
 This corresponds to a characteristic growth time $\sim
-40$ orbits. However, growth rates are weakly depedent on $\khat$ for
-$10\lesssim \khat 60$ so this may be taken as a representative growth
-rate of the fundamental VSI in the MMSN at $r=50\mathrm{AU}$. The
+40$ orbits. However, since growth rates are weakly depedent on $\khat$ for
+$10\lesssim \khat \lesssim 60$, this may be taken as a representative growth
+time of the fundamental VSI in the MMSN at $r=50\mathrm{AU}$. The
 eigenfunction for $\khat=30$ is shown in Fig. \ref{mmsn_eigenW}. 
-
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
