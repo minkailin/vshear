@@ -202,7 +202,7 @@ relaxation timescale of
 \begin{align*}
   \beta_\mathrm{crit} \simeq 0.072. 
 \end{align*} 
-To estimate a thermal relaxation timescale, we set $\khat=10$ 
+To estimate a thermal relaxation timescale, we set $\khat=30$ 
 in Eq. \ref{beta_mmsn} to obtain 
 \begin{align*}
   \beta \simeq 0.049.
@@ -212,17 +212,26 @@ sensitive to $\khat$ at $r=50\mathrm{AU}$ for $\khat\gg1$.)
 The MMSN is unstable to the fundamental VSI, but not
 strongly. 
 
-Using the MMSN disk parameters at $r=50\mathrm{AU}$ and the
-scale-dependent thermal relaxation $\beta(\khat)$ given by
-Eq. \ref{beta_mmsn} in our linear code, we calculate the fundamental
-VSI growth rates in Fig. \ref{mmsn_growth}. Growth rates
-are weakly depedent on $\khat$ until $\khat\gtrsim50$ beyond which the
-mode is rapidly stabilized. A representative growth rate is 
+In Fig. \ref{mmsn_growth}, we calculate the fundamental
+VSI growth rates using the MMSN disk parameters at $r=50\mathrm{AU}$
+and the scale-dependent thermal relaxation $\beta(\khat)$ given by
+Eq. \ref{beta_mmsn} in our linear code.  In this case we found a 
+larger vertical domain with $\zmax=7\epsilon r$ was needed to capture
+modes with $\khat\gtrsim60$, which have perturbations
+concentrated near the vertical boundaries. However, modes with
+$\khat\lesssim 60$ were found to be insensitive to boundary
+conditions. 
+
+The most unstable mode occurs at $\khat\simeq30$ with growth rate 
 \begin{align*}
-  \nu =0.059\epsilon\Omega_k = 4.0\times10^{-3}\Omega_k 
+  \nu =0.058\epsilon\Omega_k = 3.9\times10^{-3}\Omega_k.  
 \end{align*}
-for $\khat=10$. This corresponds to a characteristic growth time $\sim
-40$ orbits. 
+This corresponds to a characteristic growth time $\sim
+40$ orbits. However, growth rates are weakly depedent on $\khat$ for
+$10\lesssim \khat 60$ so this may be taken as a representative growth
+rate of the fundamental VSI in the MMSN at $r=50\mathrm{AU}$. The
+eigenfunction for $\khat=30$ is shown in Fig. \ref{mmsn_eigenW}. 
+
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
@@ -234,23 +243,21 @@ for $\khat=10$. This corresponds to a characteristic growth time $\sim
     \label{mmsn_growth}}  
 \end{figure}
 
-Fig. \ref{mmsn_eigenW} show several eigenfunctions for the modes in
-Fig. \ref{mmsn_growth}. As $\khat$ is increased, the disturbance
-become more concentrated near the vertical boundaries. Thus, modes
-with very large $\khat$ may not be important in practice because they
-predominantly affect the disk atmosphere, which contains little mass.  
+% Fig. \ref{mmsn_eigenW} show several eigenfunctions for the modes in
+% Fig. \ref{mmsn_growth}. As $\khat$ is increased, the disturbance
+% become more concentrated near the vertical boundaries. Thus, modes
+% with very large $\khat$ may not be important in practice because they
+% predominantly affect the disk atmosphere, which contains little mass.  
 
 \begin{figure}
-   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
-  0cm]{figures/eigenvectorW_mmsnkx1.ps}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
-  0cm]{figures/eigenvectorW_mmsnkx10.ps} 
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-  0cm]{figures/eigenvectorW_mmsnkx50.ps} 
-  \caption{Fundamental VSI modes in the MMSN at
-    $r=50\mathrm{AU}$. The eigenfunction $W$ for $\khat=1$ (top),
-    $\khat=10$ 
-    (middle) and $\khat=50$ (bottom) are shown. The real (imaginary)
+   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
+  0cm]{figures/eigenvectorW_mmsnkx30.ps}
+  % \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
+  % 0cm]{figures/eigenvectorW_mmsnkx10.ps} 
+  % \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  % 0cm]{figures/eigenvectorW_mmsnkx50.ps} 
+  \caption{Fundamental VSI mode in the MMSN at 
+    $r=50\mathrm{AU}$. The eigenfunction $W$ for $\khat=30$ is shown. The real (imaginary)
     part of $W$ is plotted as the solid (dotted)
     lines. The thermal relaxation timescale $\beta(\khat)$ is given by
     Eq. \ref{beta_mmsn} and is scale-dependent. \label{mmsn_eigenW}}    
@@ -265,9 +272,10 @@ dependence in  $\eta$, see Eq. \ref{eta_def}) by making the transformation
 $\beta(\khat)\to\beta(\khat/\sqrt{2\pi}\hat{\rho})\equiv 
 \tilde{\beta}(\khat,z)$ in  Eq. \ref{real_beta}, where
 $\hat{\rho}=\rho/\rho(z=0)$.  We have have repeated the example
-calculation above with $\beta\to\tilde{\beta}$. We find growth rates
-were reduced, but at most by $\sim 15\%$ at $\khat=1$. Eigenfunctions
-were similar.  
+calculation above with $\beta\to\tilde{\beta}$. 
+%We find growth rates
+%were reduced, but at most by $\sim 15\%$ at $\khat=1$. Eigenfunctions
+%were similar.  
 
 
 %at most by 15%
