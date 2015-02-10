@@ -1,4 +1,4 @@
-\section{Governing equations and disk models}
+\section{Governing equations and disk models}\label{setup}
 We consider  an inviscid, non-self-gravitating three-dimensional (3D)
 disk orbiting a central star of mass $M_*$. We adopt cylindrical
 co-ordinates $(r,\phi, z)$ centered on the star to describe the global
@@ -137,7 +137,7 @@ if both Solberg-Hoiland criteria  are satisfied:
 \begin{align}
   \kappa^2 - \frac{1}{\rho c_p}\nabla P \cdot \nabla S &> 0,\\
   -\frac{\p P}{\p z}\left(\frac{\p j^2}{\p r}\frac{\p S}{ \p z} -
-    \frac{\p j^2}{\p z}\frac{\p S}{\p R} \right)&>0.  
+    \frac{\p j^2}{\p z}\frac{\p S}{\p r} \right)&>0. \label{second_SH} 
 \end{align}
 \citep{tassoul78}, where $S = c_p\ln{P^{1/\gamma}/\rho}$ is the
 specific entropy, $c_p$ is the heat capacity at constant
@@ -146,22 +146,34 @@ specific angular momentum.
 
 For rotationally-supported, thin disks, pressure gradients are small 
 compared to rotation, so the first criterion is generally
-satisfied. Thus, to assess stability, we evaluate the second criterion
-for the above disk models in $z>0$ where $\p_zP<0$, without loss of
-generality,   
+satisfied. Thus, to assess stability, we consider the second
+criterion. For our disk models,
+\begin{align}
+  &\frac{\p S}{\p r} = c_p\left[\frac{s}{\gamma r} +
+    \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p
+       r}\right],\\
+  &\frac{\p S}{\p z} = c_p
+  \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p z}. 
+\end{align} 
+Without loss of generality, we evaluate Eq. \ref{second_SH} in $z>0$
+where $\p_zP<0$. Here we approximate $\p_r j^2\simeq r^3\Omega_k^2$ but
+use Eq. \ref{vertical_shear} for $\p_zj^2$. Then 
 \begin{align}\label{solberg2}
-  \gamma - \Gamma > \frac{s\epsilon^2}{\Gamma}
-  \left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left[s
-    -\left(\gamma-\Gamma\right)\frac{\p\ln{P}}{\p\ln{r}} \right]. 
+  % \gamma - \Gamma > \frac{s\epsilon^2}{\Gamma}
+  % \left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left[s
+  %   -\left(\gamma-\Gamma\right)\frac{\p\ln{\rho}}{\p\ln{r}} \right]. 
+  \gamma - \Gamma > \frac{\epsilon^2}{\Gamma}
+  \left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left[s^2
+    -s\left(\gamma-\Gamma\right)\frac{\p\ln{\rho}}{\p\ln{r}} \right]. 
 \end{align} 
 For typical model parameters the right hand side is
-$O(\epsilon^2)$. Hence, to have instability in the adiabatic limit 
+$O(\epsilon^2)$. Hence, instability in the adiabatic limit 
 requires $\gamma < \Gamma + O(\epsilon^2)$. Since we consider
 $\epsilon\ll1$, this implies the equilibrium disk must have a small
 entropy gradient in order to be unstable to axisymmetric adiabatic
 perturbations. 
 
-\section{Linear problem} 
+\section{Linear problem}\label{linear}
 We consider axisymmetric perturbations to the above equilibria in the
 form 
 \begin{align}
@@ -192,18 +204,19 @@ where the coefficients $\hat{g}_c=1$ are inserted to label terms
 associated with the background radial disk structure. 
 
 \subsection{Radially-local approximation}  
-We assume perturbations have spatial dependence in the form
+We consider perturbations with small radial lengthscales 
+so that we can ignore the radial variations in the background
+structure and radial gradients. We thus evaluate all cofficients in
+the above equations at the fiducial radius $r=r_0$. However, the full
+vertical dependence of the coefficients are retained. Then we can
+assume perturbations have spatial dependence in the form
 \begin{align}
-  \delta \rho(r,z) \to \delta\rho(z)\exp{\ii k_r r} 
+  \delta \rho(r,z) \to \delta\rho(z)\exp{\ii k_r r},
 \end{align}
-such that $|k_rr|\gg1$, so that curvature terms can be ignored. For
-these small radial lengthscale perturbations we also ignore the radial
-variations in the background structure and radial gradients, and
-evaluate all cofficients in the above equations at the fiducial radius
-$r=r_0$. However, the full vertical dependence of the coefficients are
-retained.   
+and we assume $|k_rr|\gg1$ so that curvature terms can also be
+ignored.       
 
-In order to emphasize on the radially-local approximation, we
+In order to emphasize the radially-local approximation, we
 introduce the local Cartesian co-ordinate $(x,y,z)$ corresponding to
 the the local $(r,\phi,z)$ directions, respectively. Then writing
 $\delta P /\rho \equiv W$ and $c_s^2\delta\rho/\rho\equiv Q$, the
@@ -229,7 +242,7 @@ linearized system of equations are
 It is understood that the quantities $\rho,\,c_s^2,\,\Omega,\kappa,\, 
 \p_z\Omega,\, \p_r\ln{\rho} $ and $ \p_r P$ are evaluated at $r=r_0$.   
 Eq. \ref{lin_mass}---\ref{lin_energy} will form the basis of our numerical
-study of the vertical shear instability, but for analytical discussion
+study, but for analytical discussion
 we will make further simplifications. 
 
 

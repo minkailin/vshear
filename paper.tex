@@ -124,7 +124,7 @@ shear instability (VSI). The VSI is an axisymmetric linear instability
 in three-dimensional (3D) disks in which the rotation frequency
 $\Omega$ depends on the height from the disk midplane. The VSI is the
 disk analog of the Goldreich-Schubert-Fricke instability
-\citep[GSF,]{goldreich67,fricke68} in differentially rotating stars.   
+\citep[GSF,][]{goldreich67,fricke68} in differentially rotating stars.   
 The height-dependence of $\Omega$, or vertical shear, enables
 perturbations with large vertical lengthscales (relative to radial
 lengthscales) to become unstable.    
@@ -137,8 +137,7 @@ vertical displacement.
 %history 
 
 The VSI has been studied analytically in local approximation
-\citep{urpin98,urpin03}, where a Fourier analysis was performed in 
-both the radial and vertical directions. Simulations of the  
+\citep{urpin98,urpin03}. Simulations of the  
 VSI have been performed by \cite{arlt04}, and more recently by 
 \cite{nelson13}. In these simulations the authors indeed observe the
 growth of vertically-global but radially-localized perturbations when
@@ -161,18 +160,59 @@ with the inclusion of heating from stellar irradiation.
 %why linear approach? computationally fast (need very high resolution) 
 %can be used as a first estimate 
 
-From these works it is clear that the VSI is sensitive 
-to the thermodynamic response of the disk except in the special case of neutrally
-stratified disks. It is therefore important to understand this dependence in order to evaluate
-the viability of the VSI in realistic disks. However, 
+The VSI is sensitive to disk thermodynamics except
+in the special case of neutrally stratified disks. It is therefore
+important to understand and quantify this dependence, for example on
+disk parameters, in order to evaluate the viability of the VSI in
+realistic disks. Numerical simulations of the VSI are challenging,
+however, because global disk simulations should be carried out while
+resolving radial scales much smaller than the local disk scale height.   
 
-
-
+On the other hand, should a given disk be
+unstable to the VSI, it must pass through the linear instability
+first. Thus, studying the thermodynamic dependence of the linear VSI
+is a useful first step. Furthermore, linear stability calculations are
+essential to complement future numerical simulations.  
 
 %what we're doing
-
+In this work we study the linear VSI in radially-local,
+vertically-global models of astrophysical disks. We include an energy
+equation with a source term that allows the thermodynamic response of
+perturbations between varied from isothermal to adiabatic. Our
+formulation generalizes previous linear calculations of the 
+VSI carried out by \cite{nelson13} and \cite{mcnally14} which assume
+isothermal perturbations. Our models are also an extension of early
+analysis of \cite{urpin98} and \cite{urpin03} who consider
+vertically-localized disturbances. Our vertically-global approach is
+necessary to study disturbances with vertical wavelengths
+comparable to or larger than the disk scaleheight. We thus focus on
+vertically-global perturbations, which were found by \cite{nelson13}
+to dominate their numerical simulations. 
 
 %paper organization 
+
+%say "grossly simplified 
+
+This paper is organized as follows. In \S\ref{setup} we list the
+governing equations and global equilibrium disk models under
+consideration. We formulate the linear stability problem in
+\S\ref{linear} and simplify it by making the radially-local
+approximation. We study the linear problem using two approaches. In
+\S\ref{analytical} we present an analytical discussion of vertically
+isothermal disks. Our treatment is grossly simplified owing to a
+number of approximations made, but closely parallels previous work and 
+allows us to highlight the essential effects of vertical shear. In
+particular, we quantify a characteristic thermal timescale below which
+the VSI is expected to operate. In \S\ref{numerical} we numerically
+solve the linearized fluid equations in the radially-local
+approximation. We find basic agreement with our analysis, including
+the aforementioned characteristic thermal timescale. In
+\S\ref{application} we apply our linear models to the Minimum Mass
+Solar Nebulae (MMSN) and find that the VSI may operate in the outer
+parts of the MMSN. We summarize and discuss our results in
+\S\ref{summary}, including caveats and possible directions for future
+work.  
+
 
 
 \input{setup}

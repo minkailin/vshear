@@ -1,4 +1,4 @@
-\section{Numerical solutions}
+\section{Numerical solutions}\label{numerical}
 In this section we numerically solve the linear stability problem
 corresponding to Eq. \ref{lin_mass}---\ref{lin_energy}. 
 We relax the thin-disk, low-frequency and nearly-Keplerian
@@ -159,10 +159,22 @@ found a thermal relaxation timescale of $\beta\gtrsim 0.6$ stabilized
 the VSI in non-linear hydrodynamic simulations. This is consistent
 with our results.   
 
+It is interesting to note that there is a thermal relaxation timescale that
+maximizes the mode decay rate for $1\lesssim \khat \lesssim 30$. Here,
+it is $\beta\simeq1$---$2$ or about $0.1$---$0.3$ orbital
+periods. This is in fact consistent with Fig. 12 of \cite{nelson13}
+where the perturbed kinetic energy in their numerical simulations was
+observed to decay most rapidly for a thermal timescale of $\sim 0.1$
+orbits.     
+
+
+
+
+
 %implications for nonlinear sims?
 
  \begin{figure}
-   \includegraphics[width=\linewidth]{figures/bcrit_compare} 
+   \includegraphics[width=\linewidth]{figures/gcorr_compare2} 
    \caption{Growth rate of the fundamental VSI as
      a function of the thermal relaxation timescale $\beta$. The disk
      parameters are $\Gamma=1.011$, $\gamma=1.4$, and 
@@ -314,7 +326,7 @@ $\gamma-\Gamma$.
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-  0cm]{figures/gcorr_compare_vnoniso}
+  0cm]{figures/gcorr_compare_vnoniso2}
   \caption{Growth rate of the fundamental VSI mode as a function of
     the thermal relaxation timescale $\beta$, in vertically
     non-isothermal disks with $\Gamma=1.4$ and
