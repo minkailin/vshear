@@ -382,6 +382,63 @@ since in that case we work with a governing equation for $W$ instead.
 % neglecting these terms has no qualitative effect on the discussion in
 % \S\ref{analytic_adia}. 
 
+\section{Eigenfrequency in locally
+  isothermal disks in global cylindrical geometry}
+Consider a locally isothermal disk in 3D such that $P=c_s^2\rho$ at
+all times, so in the perturbed state $\delta P =
+c_s^2\delta\rho$, with $c_s(r)$ begin a prescribed function. 
+The linearized fluid equations in cylindrical
+geometry is then 
+\begin{align}
+ \ii\sigma \delta v_r + 2\Omega\delta v_\phi &= c_s^2\frac{\p}{\p r}\left(\frac{\delta\rho}{\rho}\right),\\
+ \ii\sigma \delta v_\phi &= \frac{1}{r}\delta\bm{v}\cdot\nabla j,\\
+ \ii\sigma \delta v_z &= c_s^2\frac{\p}{\p
+   z}\left(\frac{\delta\rho}{\rho}\right),\\
+ \ii\sigma\delta\rho &= \nabla\cdot\left(\rho\delta\bm{v}\right).
+\end{align}
+We can eliminate $\delta v_\phi$ from these equations and obtain
+\begin{align}
+  -\sigma^2\rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) +
+  \kappa^2\rho|\delta v_r|^2 + \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
+  \delta v_r^*\delta v_z =
+  c_s^2\rho\delta\bm{v}^*\cdot\nabla\left(\frac{\ii\sigma\delta\rho}{\rho}\right)
+  =c_s^2\rho\delta\bm{v}^*\cdot\nabla\left[\frac{1}{\rho}\nabla\cdot\left(\rho\delta\bm{v}\right)\right].\label{global_integral}
+\end{align}
+At this point if we make the anelastic approximation by assuming
+$\nabla\cdot\left(\rho\delta\bm{v}\right)$ is negligible in this equation \citep{nelson13},
+then the only contribution to instability comes from the third term on
+the left hand side, i.e. the explicit vertical shear term $\p_zj$. The 
+term proportional to $\kappa^2$ is stabilizing. Because radial shear
+is much larger than vertical shear, this implies that significant
+instability can only be achieved with large vertical
+motions (i.e. $|\delta v_z|\gg|\delta v_r|$). 
+
+If we integrate Eq. \ref{global_integral} over a volume
+and assume boundary terms vanish when integrating by parts, we obtain 
+\begin{align}
+  -\sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV +
+  \int \kappa^2\rho|\delta v_r|^2 dV + \int \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
+  \delta v_r^*\delta v_z dV = -\int
+  \frac{c_s^2}{\rho}\left|\nabla\cdot\left(\rho\delta\bm{v}\right)\right|^2
+  dV - \int \nabla\cdot\left(\rho\delta\bm{v}\right) \delta
+  \bm{v}^*\cdot\nabla c_s^2.
+\end{align}
+Recalling $j=r^2\Omega$ and $r\p_z\Omega^2 = -\p_z\ln{\rho}\p_r c_s^2$
+for a locally isothermal disk, we obtain
+\begin{align}
+  \sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV =
+  \int \kappa^2\rho|\delta v_r|^2 dV + \int
+  \frac{c_s^2}{\rho}\left|\nabla\cdot\left(\rho\delta\bm{v}\right)\right|^2
+  dV + \int \left[ \rho \left(\nabla\cdot\delta\bm{v}\right)\delta
+    v_r^* + |\delta v_r|^2\frac{\p \rho}{\p r}\right]\frac{dc_s^2}{dr}  dV.
+\end{align}
+We see that instability is only possible if
+$dc_s^2/dr\neq0$. Furthermore, since density and temperature typically
+decrease outwards in astrophysical disks, instability is associated
+with the term proportional to $\nabla\cdot\delta\bm{v}$. It is also
+clear that $\sigma^2$ will be complex in general. 
+
+
 \section{Coefficients for the dispersion relation for perturbations
 with thermal relaxation}\label{relax_coeff}
 The coefficients of the dispersion relation Eq. \ref{relax_disp} is
