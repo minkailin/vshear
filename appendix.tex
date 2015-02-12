@@ -383,16 +383,16 @@ since in that case we work with a governing equation for $W$ instead.
 Consider a locally isothermal disk in 3D such that $P=c_s^2\rho$ at
 all times, so in the perturbed state $\delta P =
 c_s^2\delta\rho$, with $c_s$ begin a prescribed function of position. 
-The linearized fluid equations in cylindrical
+The axisymmetric linearized fluid equations in cylindrical
 geometry is then 
 \begin{align}
  \ii\sigma \delta v_r + 2\Omega\delta v_\phi &= c_s^2\frac{\p}{\p r}\left(\frac{\delta\rho}{\rho}\right),\\
  \ii\sigma \delta v_\phi &= \frac{1}{r}\delta\bm{v}\cdot\nabla j,\\
  \ii\sigma \delta v_z &= c_s^2\frac{\p}{\p
    z}\left(\frac{\delta\rho}{\rho}\right),\\
- \ii\sigma\delta\rho &= \nabla\cdot\left(\rho\delta\bm{v}\right).
+ \ii\sigma\delta\rho &= \nabla\cdot\left(\rho\delta\bm{v}\right),
 \end{align}
-We can eliminate $\delta v_\phi$ from these equations to obtain
+and we recall $j=r^2\Omega$. We can eliminate $\delta v_\phi$ from these equations to obtain
 \begin{align}
   -\sigma^2\rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) +
   \kappa^2\rho|\delta v_r|^2 + \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
@@ -426,8 +426,8 @@ and assume boundary terms vanish when integrating by parts, we obtain
 Note that the treatment so far is in fact valid for any prescribed
 $c_s(r,z)$. However, to proceed further we specialize to the case
 $c_s=c_s(r)$ for simplicity, i.e. vertically isothermal
-disks. Recalling $j=r^2\Omega$ and $r\p_z\Omega^2 = -\p_z\ln{\rho}\p_r
-c_s^2$  for a vertically isothermal disk, we obtain 
+disks. Recalling $r\p_z\Omega^2 = -\p_z\ln{\rho}\p_r
+c_s^2$  for a vertically isothermal disk (Eq. \ref{vertical_shear}), we obtain 
 \begin{align}
   \sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV =
   \int \kappa^2\rho|\delta v_r|^2 dV + \int
