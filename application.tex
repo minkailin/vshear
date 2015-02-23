@@ -264,15 +264,54 @@ eigenfunction for $\khat=30$ is shown in Fig. \ref{mmsn_eigenW}.
 % only find one unstable mode -> close to marginal 
 % larger kx 
 
-\subsubsection{Vertically-dependent thermal relaxation} 
-Note that for a vertically isothermal disk and opacity $\kappa_d(T)$, 
-we can restore the $z$ dependence in $\beta$ (due to the $\rho$
-dependence in  $\eta$, see Eq. \ref{eta_def}) by making the transformation
-$\beta(\khat)\to\beta(\khat/\sqrt{2\pi}\hat{\rho})\equiv 
-\tilde{\beta}(\khat,z)$ in  Eq. \ref{real_beta}, where
-$\hat{\rho}=\rho/\rho(z=0)$.  We have repeated the example
-calculation above with $\beta\to\tilde{\beta}$, but found similar
-results. 
+\subsection{Applicability of the VSI to the MMSN}
+To obtain an overall picture of the relevance of the VSI to the MMSN,
+we calculate characteristic growth times $t_\mathrm{grow} = 1/\nu$ of 
+the fundamental mode in units of the local Keplerian orbital period
+$P_\mathrm{orb}= 2\pi/\Omega_k$. The results are shown in 
+Fig. \ref{mmsn_overall} for perturbation wavenumbers $5\lesssim
+\khat\lesssim 50$. We consider this range because for  
+$\khat=O(1)$ or $\khat=O(10^2)$ we found eigenfunctions have large
+amplitudes near the vertical boundaries, so such modes may be affected
+by boundary conditions. 
+
+In the MMSN the fundamental VSI operates at tens of AU, with
+characteristic growth times of tens of orbits. %In our example, the VSI
+% is most favored at $r\simeq 20\mathrm{AU}$ with a growth time
+% $t_\mathrm{grow}\simeq 30$ orbits.
+Fig. \ref{mmsn_overall} indicates that with decreasing radius, the VSI
+shifts to smaller scales (larger $\khat$), since the disk becomes optically
+thick so only small-scale disturbances have sufficiently short thermal
+relaxation timescales. At larger radii ($r\gtrsim 
+40\mathrm{AU}$,) the VSI can operate on larger scales (smaller
+$\khat$) and growth times do not depend strongly on
+$\khat$, since the disk is optically thin. However, approaching
+$r\simeq 100\mathrm{AU}$ growth times become long, at $O(100)$ orbits so
+the VSI may not be dynamically important in the outermost parts of the
+MMSN. 
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/eigen_compare_grow.ps}
+  \caption{Characteristic growth times of the fundamental VSI mode in
+    the MMSN for a range of perturbation wavenumbers.  
+    \label{mmsn_overall}}    
+\end{figure}
+
+
+
+ % \subsection{Vertically-dependent thermal relaxation} 
+% Note that for a vertically isothermal disk and opacity $\kappa_d(T)$, 
+% we can restore the $z$ dependence in $\beta$ (due to the $\rho$
+% dependence in  $\eta$, see Eq. \ref{eta_def}) by making the transformation
+% $\beta(\khat)\to\beta(\khat/\sqrt{2\pi}\hat{\rho})\equiv 
+% \tilde{\beta}(\khat,z)$ in  Eq. \ref{real_beta}, where
+% $\hat{\rho}=\rho/\rho(z=0)$.  We have repeated the example
+% calculation in \S\ref{mmsn_example} with $\beta\to\tilde{\beta}$, but
+% found similar results.
+
+
+
+
 %We find growth rates
 %were reduced, but at most by $\sim 15\%$ at $\khat=1$. Eigenfunctions
 %were similar.  

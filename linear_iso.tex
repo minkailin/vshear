@@ -262,8 +262,8 @@ decaying background density with increasing height. Then,
 \end{align}
 It follows that for instability ($\imag\hat{\sigma}>0$), it is necessary to
 have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. vertical
-shear. In Appendix \ref{global_vertiso} we reach a similar conclusion
-in the global linear problem.   
+shear. A similar conclusion can be reached in the equivalent linear  
+problem in global cylindrical disk geometry. 
 
 \subsubsection{Maximum growth rate}   
 Here we show that the growth rate is limited by the maximum vertical
@@ -380,7 +380,7 @@ decays.  Thus, taking $\zhat_{1,2}\to \pm\infty$ will permit unphysically large 
 rates (as demonstrated below). Nevertheless, the infinite disk is
 useful to consider since it permits an analytical discussion. 
 
-\subsubsection{Stability in the absence of vertical shear}
+\subsubsection{Stability in the absence of vertical shear}\label{iso_stable}
 When $q=0$, Eq. \ref{iso_ode3} is
 \begin{align}\label{hermite_ode}
   \left[w(\hat{z})W^\prime \right]^\prime + nW
@@ -399,12 +399,18 @@ and $n$ is a non-negative integer. This translates to a real
 eigenfrequency $\sigma$ such that
 \begin{align}
   \left|\hat{\sigma}\right| = \sqrt{n}
-  \left(1+\hat{k}^2\right)^{-1/2}. 
+  \left(1+\hat{k}^2\right)^{-1/2}. \label{iso_stable_disp}
 \end{align}
 Since we have assumed $|\sigma^2|\ll \kappa^2\sim \Omega_k^2$, our
 analysis is only valid for large wavenumbers such that $\hat{k}^2\gg   
 n-1$. Physically, this corresponds to radial length-scales much
 smaller than the local disk scale height. 
+
+We remark that for fixed $n$ and $\khat\gg 1$ the dispersion relation 
+Eq. \ref{iso_stable_disp} imply $\hat{\omega}\propto 1/\khat$. This inverse relation 
+has also been qualitatively observed in numerical simulations performed by 
+\cite{stoll14}. 
+
 
 \subsubsection{Polynomial solutions with vertical shear}\label{iso_poly}
 We can seek power-series solution to Eq. \ref{iso_ode3},

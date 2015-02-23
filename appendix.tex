@@ -87,7 +87,7 @@ how much $\gamma$ deviates from unity. This is contradicts the second
 Solberg-Hoiland criterion (Eq. \ref{solberg2}), which states that
 instability in the adiabatic limit requires the disk to be close to
 neutrally stratified. %also need real freq^2 in adia limit 
-This is because the VGSB retains the destabilizing effect of vertical shear
+This is because the VGSB retains the vertical shear
 ($\p_z\Omega$) from the global disk, but ignores the global radial disk
 structure responsible for it. Nevertheless, we demonstrate below that
 this inconsistency is unimportant for the vertical shear instability,
@@ -378,68 +378,69 @@ since in that case we work with a governing equation for $W$ instead.
 % neglecting these terms has no qualitative effect on the discussion in
 % \S\ref{analytic_adia}. 
 
-\section{Axisymmetric instability in vertically 
-  isothermal disks in global cylindrical geometry}\label{global_vertiso}
-Consider a locally isothermal disk in 3D such that $P=c_s^2\rho$ at
-all times, so in the perturbed state $\delta P =
-c_s^2\delta\rho$, with $c_s$ begin a prescribed function of position. 
-The axisymmetric linearized fluid equations in cylindrical
-geometry is then 
-\begin{align}
- \ii\sigma \delta v_r + 2\Omega\delta v_\phi &= c_s^2\frac{\p}{\p r}\left(\frac{\delta\rho}{\rho}\right),\\
- \ii\sigma \delta v_\phi &= \frac{1}{r}\delta\bm{v}\cdot\nabla j,\\
- \ii\sigma \delta v_z &= c_s^2\frac{\p}{\p
-   z}\left(\frac{\delta\rho}{\rho}\right),\\
- \ii\sigma\delta\rho &= \nabla\cdot\left(\rho\delta\bm{v}\right),
-\end{align}
-and we recall $j=r^2\Omega$. We can eliminate $\delta v_\phi$ from these equations to obtain
-\begin{align}
-  -\sigma^2\rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) +
-  \kappa^2\rho|\delta v_r|^2 + \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
-  \delta v_r^*\delta v_z =
-  c_s^2\rho\delta\bm{v}^*\cdot\nabla\left(\frac{\ii\sigma\delta\rho}{\rho}\right)
-  =c_s^2\rho\delta\bm{v}^*\cdot\nabla\left[\frac{1}{\rho}\nabla\cdot\left(\rho\delta\bm{v}\right)\right].\label{global_integral} 
-\end{align}
-At this point if we make the anelastic approximation by assuming
-$\nabla\cdot\left(\rho\delta\bm{v}\right)$ is negligible in this
-equation \citep[as argued by][]{nelson13}, 
-then the only contribution to instability comes from the third term on
-the left hand side, i.e. the explicit vertical shear term
-$\p_zj$. This is the same conclusion reached in
-\S\ref{integral_relation}. 
+% \section{Axisymmetric instability in vertically 
+%   isothermal disks in global cylindrical geometry}\label{global_vertiso}
+% Consider a locally isothermal disk in 3D such that $P=c_s^2\rho$ at
+% all times, so in the perturbed state $\delta P =
+% c_s^2\delta\rho$, with $c_s$ begin a prescribed function of position. 
+% The axisymmetric linearized fluid equations in cylindrical
+% geometry is then 
+% \begin{align}
+%  \ii\sigma \delta v_r + 2\Omega\delta v_\phi &= c_s^2\frac{\p}{\p r}\left(\frac{\delta\rho}{\rho}\right),\\
+%  \ii\sigma \delta v_\phi &= \frac{1}{r}\delta\bm{v}\cdot\nabla j,\\
+%  \ii\sigma \delta v_z &= c_s^2\frac{\p}{\p
+%    z}\left(\frac{\delta\rho}{\rho}\right),\\
+%  \ii\sigma\delta\rho &= \nabla\cdot\left(\rho\delta\bm{v}\right),
+% \end{align}
+% and we recall $j=r^2\Omega$. We can eliminate $\delta v_\phi$ from these equations to obtain
+% \begin{align}
+%   -\sigma^2\rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) +
+%   \kappa^2\rho|\delta v_r|^2 + \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
+%   \delta v_r^*\delta v_z =
+%   c_s^2\rho\delta\bm{v}^*\cdot\nabla\left(\frac{\ii\sigma\delta\rho}{\rho}\right)
+%   =c_s^2\rho\delta\bm{v}^*\cdot\nabla\left[\frac{1}{\rho}\nabla\cdot\left(\rho\delta\bm{v}\right)\right].\label{global_integral} 
+% \end{align}
+% At this point if we make the anelastic approximation by assuming
+% $\nabla\cdot\left(\rho\delta\bm{v}\right)$ is negligible in this
+% equation \citep[as argued by][]{nelson13}, 
+% then the only contribution to instability comes from the third term on
+% the left hand side, i.e. the explicit vertical shear term
+% $\p_zj$. This is the same conclusion reached in
+% \S\ref{integral_relation}. 
 
-The term proportional to $\kappa^2$ is stabilizing. Because radial shear
-is much larger than vertical shear, this implies that significant
-instability can only be achieved with large vertical
-motions (i.e. $|\delta v_z|\gg|\delta v_r|$). 
+% The term proportional to $\kappa^2$ is stabilizing. Because radial shear
+% is much larger than vertical shear, this implies that significant
+% instability can only be achieved with large vertical
+% motions (i.e. $|\delta v_z|\gg|\delta v_r|$). 
 
-If we integrate Eq. \ref{global_integral} over the fluid volume 
-and assume boundary terms vanish when integrating by parts, we obtain 
-\begin{align}
-  -\sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV +
-  \int \kappa^2\rho|\delta v_r|^2 dV + \int \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
-  \delta v_r^*\delta v_z dV = -\int
-  \frac{c_s^2}{\rho}\left|\nabla\cdot\left(\rho\delta\bm{v}\right)\right|^2
-  dV - \int \nabla\cdot\left(\rho\delta\bm{v}\right) \delta
-  \bm{v}^*\cdot\nabla c_s^2.
-\end{align}
-Note that the treatment so far is in fact valid for any prescribed
-$c_s(r,z)$. However, to proceed further we specialize to the case
-$c_s=c_s(r)$ for simplicity, i.e. vertically isothermal
-disks. Recalling $r\p_z\Omega^2 = -\p_z\ln{\rho}\p_r
-c_s^2$  for a vertically isothermal disk (Eq. \ref{vertical_shear}), we obtain 
-\begin{align}
-  \sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV =
-  \int \kappa^2\rho|\delta v_r|^2 dV + \int
-  \frac{c_s^2(r)}{\rho}\left|\nabla\cdot\left(\rho\delta\bm{v}\right)\right|^2
-  dV + \int \left[ \rho \left(\nabla\cdot\delta\bm{v}\right)\delta
-    v_r^* + |\delta v_r|^2\frac{\p \rho}{\p r}\right]\frac{dc_s^2(r)}{dr}  dV.
-\end{align}
-We see that instability is only possible if
-$dc_s^2/dr\neq0$. Furthermore, since density and temperature typically
-decrease outwards in astrophysical disks, instability is associated
-with the term proportional to $\nabla\cdot\delta\bm{v}$. It is also
-clear that $\sigma^2$ will be complex in general. 
+% If we integrate Eq. \ref{global_integral} over the fluid volume 
+% and assume boundary terms vanish when integrating by parts, we obtain 
+% \begin{align}
+%   -\sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV +
+%   \int \kappa^2\rho|\delta v_r|^2 dV + \int \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
+%   \delta v_r^*\delta v_z dV = -\int
+%   \frac{c_s^2}{\rho}\left|\nabla\cdot\left(\rho\delta\bm{v}\right)\right|^2
+%   dV - \int \nabla\cdot\left(\rho\delta\bm{v}\right) \delta
+%   \bm{v}^*\cdot\nabla c_s^2.
+% \end{align}
+% Note that the treatment so far is in fact valid for any prescribed
+% $c_s(r,z)$. However, to proceed further we specialize to the case
+% $c_s=c_s(r)$ for simplicity, i.e. vertically isothermal
+% disks. Recalling $r\p_z\Omega^2 = -\p_z\ln{\rho}\p_r
+% c_s^2$  for a vertically isothermal disk (Eq. \ref{vertical_shear}), we obtain 
+% \begin{align}
+%   \sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV =
+%   \int \kappa^2\rho|\delta v_r|^2 dV + \int
+%   \frac{c_s^2(r)}{\rho}\left|\nabla\cdot\left(\rho\delta\bm{v}\right)\right|^2
+%   dV + \int \left[ \rho \left(\nabla\cdot\delta\bm{v}\right)\delta
+%     v_r^* + |\delta v_r|^2\frac{\p \rho}{\p r}\right]\frac{dc_s^2(r)}{dr}  dV.
+% \end{align}
+% We see that instability is only possible if
+% $dc_s^2/dr\neq0$. Furthermore, since density and temperature typically
+% decrease outwards in astrophysical disks, instability is associated
+% with the term proportional to $\nabla\cdot\delta\bm{v}$. It is also
+% clear that $\sigma^2$ will be complex in general.
+
 
 \section{Coefficients for the dispersion relation for perturbations
 with thermal relaxation}\label{relax_coeff}
