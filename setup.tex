@@ -211,9 +211,9 @@ the above equations at the fiducial radius $r=r_0$. However, the full
 vertical dependence of the coefficients are retained. Then we can
 assume perturbations have spatial dependence in the form
 \begin{align}
-  \delta \rho(r,z) \to \delta\rho(z)\exp{\ii k_r r},
+  \delta \rho(r,z) \to \delta\rho(z)\exp{\ii k_r r}.
 \end{align}
-and we assume $|k_rr|\gg1$ so that curvature terms can also be
+We take $k_r>0$ without loss of generality, and further assume $k_rr\gg1$ so that curvature terms can also be 
 ignored.       
 
 In order to emphasize the radially-local approximation, we
@@ -235,12 +235,13 @@ linearized system of equations are
   c_s^2\frac{\gamma}{\Gamma} \left(\ii k_x\delta v_x + \frac{d\delta
       v_z}{dz}\right) \notag\\
   &+ \frac{1}{t_c}\left(W - \frac{Q}{\Gamma}\right) +
-  \hat{g}_c\frac{1}{\rho}\frac{\p P}{\p r}\delta v_x.\label{lin_energy}
+  \hat{g}_c\frac{1}{\rho}\frac{\p P}{\p r}\delta v_x,\label{lin_energy}
   % -&\ii\sigma W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\sigma\frac{\gamma}{\Gamma} Q +
   % c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma}-1\right)\delta v_z.\label{lin_energy}
 \end{align}
+where we have made the notation change $k_r\to k_x$. 
 It is understood that the quantities $\rho,\,c_s^2,\,\Omega,\kappa,\, 
-\p_z\Omega,\, \p_r\ln{\rho} $ and $ \p_r P$ are evaluated at $r=r_0$.   
+\p_z\Omega,\, \p_r\ln{\rho} $ and $ \p_r P$ are evaluated at $r=r_0$ using their expressions in the global disk. 
 Eq. \ref{lin_mass}---\ref{lin_energy} will form the basis of our numerical
 study, but for analytical discussion
 we will make further simplifications. 
