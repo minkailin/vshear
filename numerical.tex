@@ -77,26 +77,45 @@ $W$ for $\khat=1$ and $\khat=20\pi$. The latter value, corresponding
 to $k_x= 200\pi/r$, was used by \cite{mcnally14}. We find $W$ is
 similar for all $\khat\gtrsim10$ and is proportional to $z$, as
 expected for the fundamental mode according to explicit solutions
-developed in \S\ref{iso_poly}.  
+developed in \S\ref{iso_poly}. For completeness we show the
+corresponding eigenfunctions in vertical velocity in
+Fig. \ref{lowfreq_eigenfuncvz}, which show that the fundamental mode
+consists of zero nodes in $\delta v_z$. 
 
-However, for $\khat\lesssim 10$, e.g. $\khat=1$ in 
+For $\khat\lesssim 10$, e.g. $\khat=1$ in 
 Fig. \ref{lowfreq_eigenfunc}, the perturbation magnitude near the
 boundaries begin to dominate. For even smaller $\khat\lesssim 1$ (not
 shown) we find the perturbation is almost entirely concentrated at the
 boundaries. Our radially-local approximation is not valid for 
 these small wavenumber perturbations and we do not consider such modes
-further.      
+further.   
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
   0cm]{figures/eigenvector_iso_kx1} 
   \includegraphics[width=\linewidth]{figures/eigenvector_iso_kx60}
-  \caption{Eigenfunction of the fundamental VSI for perturbation
+  \caption{Eigenfunction $W$ of the fundamental VSI for perturbation
     wavenumber $\khat=1$ (top) and $\khat=20\pi$ (bottom). The real 
-    (imaginary) parts of $W$ are plotted as solid (dotted) lines. 
+    (imaginary) parts of $W$ are plotted as solid (dotted) lines. The
+    eigenfunction has been normalized such that $\imag(W)=0$ at the
+    vertical boundaries and $\mathrm{max}|W|=1$.
     \label{lowfreq_eigenfunc}
   }
 \end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
+  0cm]{figures/eigenvectorvz_iso_kx1} 
+  \includegraphics[width=\linewidth]{figures/eigenvectorvz_iso_kx60}
+  \caption{Same as Fig. \ref{lowfreq_eigenfunc} but for the vertical
+    velocity eigenfunctions.
+    \label{lowfreq_eigenfuncvz}
+  }
+\end{figure}
+
+
+
+
 
 In Fig. \ref{lowfreq_eigen} we plot the eigenvalues 
 $\sigma = \omega + \ii\nu$ found for $\khat=20\pi$. This plot is
@@ -232,17 +251,19 @@ because the disk atmosphere contains little mass.
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
-  0cm]{figures/eigenvectorW_beta0d01} 
+  0cm]{figures/eigenvectorvz_beta0d01} 
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-  0cm]{figures/eigenvectorW_beta0d1} 
-  \caption{Numerically-calculated eigenfunction of the fundamental VSI
+  0cm]{figures/eigenvectorvz_beta0d1} 
+  \caption{Numerically-calculated fundamental VSI
     mode in a nearly vertically isothermal disk ($\Gamma=1.011$) with
     $(p,q,\epsilon)=(-1.5,-1,0.05)$, evolved with $\gamma=1.4$ and a dimensionless 
     thermal relaxation timescale $\beta = 0.01$
     (top) and $\beta=0.1$ (bottom). The
-    perturbation radial wavenumber is $\khat=30$. The
-    real (imaginary) part of $W$ is plotted as the solid (dotted)
-    line.
+    real (imaginary) part of the vertical velocity perturbation
+    $\delta v_z$ is plotted as the solid (dotted)
+    line. The eigenfunction has been normalized such that
+    $\imag(\delta v_z)=0$ at the vertical boundaries, and
+    $\mathrm{max}|\delta v_z|=1$.
     \label{relax_eigenW_num}}  
 \end{figure}
 
