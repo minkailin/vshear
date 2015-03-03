@@ -1,4 +1,4 @@
-\subsection{Perturbations with thermal relaxation}\label{analytic_relax}
+\subsection{Perturbations with thermal relaxation in the thin-disk limit}\label{analytic_relax}
 We now introduce thermal relaxation ($\beta>0$). We pursue explicit
 solutions in the thin-disk approximation. The governing equation,
 Eq. \ref{vertiso_gov_nondim}, is then 
@@ -18,8 +18,8 @@ and $\chi =
 \left(1-\ii\hat{\sigma}\beta\right)/\left(1-\ii\hat{\sigma}\beta\gamma\right)
 $ in terms of dimensionless variables. 
 
-We remark that Eq. \ref{nearly_iso_explicit} is in the same
-form as Eq. 41 in \cite{lubow93}, which describes adiabatic axisymmetric waves in
+We remark that Eq. \ref{nearly_iso_explicit} is in the same 
+form as Eq. 41 in \cite{lubow93}, which describe adiabatic axisymmetric waves in
 a vertically isothermal disk without vertical shear. The two equations
 become identical after  setting $q=0$ (no vertical shear) and
 $\chi=1/\gamma$ (adiabatic flow) in our Eq. \ref{nearly_iso_explicit},
@@ -31,10 +31,11 @@ and making the low-frequency, Keplerian disk approximation in
 It is instructive to first ask  the more analytically tractable
 question: how 
 do the eigenfrequencies and eigenfunctions change when we change
-$t_c$ from zero to a small but finite value? For sufficiently small
-$\beta$, for which the perturbations may be considered 
-nearly-isothermal, we expect the new solutions to only differ slightly
-from the explicit isothermal solutions developed in \S\ref{iso_poly}. 
+$t_c=\beta\Omega_k^{-1}$ from zero to a small but finite value? For
+sufficiently small $\beta$, for which the perturbations may be
+considered nearly-isothermal, we expect the new solutions to only
+differ slightly from the explicit isothermal solutions developed in
+\S\ref{iso_poly}.  
 
 To determine the (assumed) small effect of introducing a short thermal
 relaxation, we linearize Eq. \ref{nearly_iso_explicit} about a known 
@@ -126,10 +127,12 @@ very small scales.
 %     \label{domegadbeta}}  
 % \end{figure}   
 
-One effect of introducing finite thermal relaxation is buoyancy. 
-The $\zhat^2$ dependence in $\delta v_{z1}$ then makes sense because it
-is most significant for large $\zhat$, i.e. away from the midplane
-where the effect of buoyancy first appears as $t_c$ is increased. 
+Introducing a finite thermal relaxation time introduces buoyancy
+forces, which is stabilizing for sub-adiabatically stratified disks
+($\gamma > 1$). The $\zhat^2$ dependence in $\delta v_{z1}$ then makes
+sense because it is most significant for large $\zhat$, i.e. away from
+the midplane where the effect of buoyancy first appears as $\beta$ is
+increased from zero. 
 
 \subsubsection{Dispersion relation with thermal
   relaxation}\label{disp_relax}
@@ -148,17 +151,18 @@ Eq. \ref{adia_ansatz} into Eq. \ref{nearly_iso_explicit} gives
 \end{align}
 We choose $\alpha$ to make the coefficient of $\zhat^2g$
 vanish, and impose the vertical kinetic energy density
-$\rho|\delta v_z|^2$ to remain finite. Then assuming $g(\zhat)$ is a
-polynomial, we require  
+$\rho|\delta v_z|^2\propto |g|^2 \exp{\left(\real\alpha -
+    1/2\right)\zhat^2}$ to remain finite. Then assuming $g(\zhat)$
+is a polynomial, we require  
 \begin{align}
-  \real\alpha < \frac{1}{2}. 
+  \real\alpha < \frac{1}{2}, 
 \end{align}
-We choose 
+which amounts to choosing 
 \begin{align}
-  \alpha = \frac{1}{2}\left(A - \sqrt{A^2 + 4C}\right),  
+  \alpha = \frac{1}{2}\left(A - \sqrt{A^2 + 4C}\right).  
 \end{align} 
-by considering the case $q=0$ and $\beta\to\infty$ as examined in
-\cite{lubow93}.   
+%by considering the case $q=0$ and $\beta\to\infty$ as examined in
+%\cite{lubow93}.   
 
 We now have an equation in the same form as that for isothermal
 perturbations (Eq. \ref{iso_ode3}):
@@ -172,7 +176,8 @@ We seek polynomial solutions
 \end{align}
 which requires
 \begin{align}
-  B + \alpha = M\left(A-2\alpha\right).\label{adia_disp0}
+  B(\hat{\sigma}) + \alpha(\hat{\sigma}) =
+  M\left[A-2\alpha(\hat{\sigma})\right].\label{adia_disp0} 
 \end{align}
 % We remark that for $q=0$ and $\beta\to\infty$, Eq. \ref{adia_disp0} is
 % the same as Eq. 54 in \cite{lubow93} when the low-frequency, Keplerian
@@ -189,9 +194,9 @@ polynomial in $\hat{\sigma}$:
   0 = \sum_{l=0}^{6}c_l\hat{\sigma}^l,\label{relax_disp}
 \end{align}
 where the coefficients $c_l$ are given in Appendix \ref{relax_coeff}.
-This dispersion relation generally requires a numerical
-solution. However, for the fundamental mode ($M=0$) some analytic
-progress can be made, which we consider next. 
+The dispersion relation $\hat{\sigma}=\hat{\sigma}(\khat)$ generally
+requires a numerical solution. However, for the fundamental mode
+($M=0$) some analytic progress can be made, which we consider next.  
 
 % It is simplest to solve Eq. \ref{relax_disp} numerically. In
 % Fig. \ref{relax_disp_fig} we plot the growth rate of the fundamental
@@ -246,14 +251,15 @@ $\khat\gg1$, we find
 This is a pair of simultaneous equations for
 $\hat{\omega}$ and $\beta$. % A simple solution can be obtained by the
 % following considerations.
- Our discussion of stable solutions 
+Since our discussion of stable solutions  
 without vertical shear yield a dispersion
 relation $\hat{\omega}\propto \khat^{-1}$ for $\khat\gg 1$
-(\S\ref{iso_stable}, Eq. \ref{iso_stable_disp}). We  therefore 
-seek solutions to Eq. \ref{relax_cond1}---\ref{relax_cond2} with 
-%we wish to seek a criterion independent of k 
-%\begin{align}
-%  \khat \to \infty, \quad \hat{\omega}\to 0 ,\quad \hat{\omega} \khat\text{ finite}.
+(\S\ref{iso_stable}, Eq. \ref{iso_stable_disp}), we are motivated to
+seek solutions to 
+Eq. \ref{relax_cond1}---\ref{relax_cond2} with  
+% we wish to seek a criterion independent of k 
+% \begin{align}
+%   \khat \to \infty, \quad \hat{\omega}\to 0 ,\quad \hat{\omega} \khat\text{ finite}.
 %\end{align}
 \begin{align}
   \khat \gg1, \quad |\hat{\omega}|\ll 1 ,\quad
@@ -275,14 +281,25 @@ For a thin disk $\epsilon\ll 1$, we infer
   \beta \lesssim \frac{|\epsilon q|}{\gamma-1} \equiv
   \beta_\mathrm{crit} 
 \end{align}
-is required for the fundamental VSI to operate. From our discussion
-for isothermal perturbations (\S\ref{iso_discuss}), we expect
+is required for the fundamental VSI to operate. We will test this
+dependence numerically in \S\ref{bcrit_num_test}. 
+From our discussion for isothermal perturbations
+(\S\ref{iso_discuss}), we expect   
 $\beta<\beta_\mathrm{crit}$ to be a sufficient condition for the
 VSI. That is, when $\beta<\beta_\mathrm{crit}$, perturbations are
-effectively isothermal. For a thin disk 
-$\beta_\mathrm{crit}\ll 1$, which suggests that finite thermal
-relaxation rapidly stabilizes the VSI.  
- 
+effectively isothermal. 
+
+Rapid thermal relaxation is required to overcome a stabilizing
+vertical entropy gradient \citep{goldreich67,urpin98,urpin03}. These
+studies reached this conclusion by considering vertically-localized
+disturbances. % , although a definitive timescale was not presented. 
+By contrast, our Eq. \ref{iso_vsi_cond} quantifies this requirement
+for vertically global disturbances (i.e. the fundamental mode). We see
+that in a thin disk, a very short thermal timescale
+ is required ($\beta_\mathrm{crit}\ll 1$) because
+$\beta_\mathrm{crit}\propto \epsilon$. 
+This suggests that
+finite thermal relaxation rapidly stabilizes the VSI.  
 
 % In Fig. \ref{relax_bcrit} we plot the critical thermal relaxation
 % timescale obtained from solving Eq. \ref{relax_disp_fund} numerically 
@@ -290,7 +307,6 @@ relaxation rapidly stabilizes the VSI.
 % we have $\beta_\mathrm{crit}=0.125$ from Eq. \ref{iso_vsi_cond}. Our
 % upper estimate agrees well with the numerical solution for $\khat\gtrsim
 % 10$. 
-
 
 % \begin{figure}
 %   \includegraphics[width=\linewidth]{figures/bcrit_theory}

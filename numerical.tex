@@ -4,7 +4,7 @@ corresponding to Eq. \ref{lin_mass}---\ref{lin_energy}.
 We relax the thin-disk, low-frequency and nearly-Keplerian
 approximations used in the analytical discussion above, and  
 use the full expressions of $\rho$, $\Omega$ and
-$\kappa$ given in \S\ref{eqm}. We also restore $\hat{g}_c=1$ to
+$\kappa$ given in \S\ref{eqm}. We also set $\hat{g}_c=1$ to
 account for the background radial disk structure.  
 
 %, so that we may consistently consider vertical domains up to
@@ -18,9 +18,15 @@ surface,
 \begin{align}
   \Delta P \equiv \delta P + \bm{\xi}\cdot\nabla P= 0 \quad \text{at } z=\pm\zmax,
 \end{align}
-where $\bm{\xi}$ is the Lagrangian displacement. This boundary
-condition is convenient for numerical implementation since it conforms
-to a standard eigenvalue problem. The above discretization procedure
+where $\bm{\xi}$ is the Lagrangian displacement, the meridional
+components of which are given by $\xi_{x,z} = \ii\delta
+v_{x,z}/\sigma$. Calculations with a rigid boundary ($\delta v_z=0$)
+yield similar results. 
+% This boundary
+% condition is convenient for numerical implementation since it conforms
+% to a standard eigenvalue problem. 
+
+The above discretization procedure
 converts the linear system of differential equations to a set of 
 algebraic equations, for which we use matrix routines in the LAPACK
 package to solve. 
@@ -31,18 +37,34 @@ package to solve.
 %not possible to survey all modes/kx/disk parameters
 %focus on effect of thermal relaxation
 
-\subsection{VSI in a locally isothermal, neutrally stratified disk}\label{vertiso_pertiso} 
+\subsection{VSI with rapid thermal relaxation}\label{vertiso_pertiso} 
 % disk model is a nearly-vertically
 % isothermal disk with $\Gamma=1.011$, $p=-1.5$, $q=-1$,
 % $\epsilon=0.1$. 
-We first calculate the VSI in a nearly vertically isothermal, neutrally
-stratified disk ($N_z^2\equiv0$) by setting
-$\gamma=\Gamma=1.011$ and $\beta=10^{-3}$. Other disk parameters are 
-$(p,q,\epsilon)=(-1.5,-1,0.1)$ and the vertical domain is $\zmax =
-5\epsilon r$. This setup is similar to that adopted in
-\cite{mcnally14}, who calculated the VSI in vertically isothermal
+We first calculate the VSI in a neutrally
+stratified disk ($N_z^2\equiv0$) with rapid thermal relaxation by
+setting $\gamma=\Gamma=1.011$ and $\beta=10^{-3}$. Other disk
+parameters are $(p,q,\epsilon)=(-1.5,-1,0.1)$ and the vertical domain
+is $\zmax = 5H$. The disk is nearly vertically isothermal with
+$c_s(\zmax)\simeq 0.94 c_s(0)$. Fig. \ref{omega_z} shows the
+equilibrium rotation profile away from the disk mid-plane. 
+
+
+This setup is similar to that adopted
+in \cite{mcnally14}, who calculated the VSI in vertically isothermal
 disks subject to isothermal perturbations ($\Gamma=\gamma=1$).  This
 allows us to test our numerical code.  
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  0cm]{figures/omega2} 
+  \caption{Equilibrium rotation profile $\Omega(z)$,
+    normalized by its mid-plane value, for a disk with $\Gamma=1.011$
+    and $(p,q,\epsilon)=(-1.5,-1,0.1)$. 
+    \label{omega_z} 
+  }
+\end{figure}
+
 
 %behaviour as func of kx 
 
@@ -54,9 +76,15 @@ the low-frequency approximation used to obtain Eq. \ref{sig2_iso}
 is no longer valid, as $|\omega|$ is not small compared to $\Omega_k$
 for $\khat\lesssim 10$.  
 
-% This means
-% that our analytic results should only be applied to perturbations with
-% $\khat\gg 1$, i.e. small radial-lengthscales. 
+{\bf ASK. Growth rates are expected to diminish for both $\khat\to 0$
+  and $\khat\to \infty$. This is because for $\khat\ll 1$ the radial
+  wavelenth is large, but such disturbances are 
+  stabilized by by epicyclic motions ($|\omega|\sim
+  \kappa$). Disturbances with $\khat\gg 1$ are radially localized, but  
+  there is no energy change when fluid elements are perturbed at fixed
+  cylindrical radius whilst conserving its angular momentum (since we
+  consider axisymmetric perturbations).  
+}
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -79,7 +107,7 @@ similar for all $\khat\gtrsim10$ and is proportional to $z$, as
 expected for the fundamental mode according to explicit solutions
 developed in \S\ref{iso_poly}. For completeness we show the
 corresponding eigenfunctions in vertical velocity in
-Fig. \ref{lowfreq_eigenfuncvz}, which show that the fundamental mode
+Fig. \ref{lowfreq_eigenfuncvz}. The fundamental mode
 consists of zero nodes in $\delta v_z$. 
 
 For $\khat\lesssim 10$, e.g. $\khat=1$ in 
@@ -98,7 +126,7 @@ further.
     wavenumber $\khat=1$ (top) and $\khat=20\pi$ (bottom). The real 
     (imaginary) parts of $W$ are plotted as solid (dotted) lines. The
     eigenfunction has been normalized such that $\imag(W)=0$ at the
-    vertical boundaries and $\mathrm{max}|W|=1$.
+    vertical boundaries and $\mathrm{max}|W|=1$. 
     \label{lowfreq_eigenfunc}
   }
 \end{figure}
@@ -113,16 +141,11 @@ further.
   }
 \end{figure}
 
-
-
-
-
 In Fig. \ref{lowfreq_eigen} we plot the eigenvalues 
 $\sigma = \omega + \ii\nu$ found for $\khat=20\pi$. This plot is
-similar to Fig. 3 in \cite{mcnally14}. The fundamental
-VSI mode, with one node in $W$, has the smallest $|\sigma|$. The
-eigenvalue calculated from Eq. \ref{sig2_iso} with $L=1$ and the 
-numerically-obtained value are  
+similar to Fig. 3 in \cite{mcnally14}. The fundamental has the
+smallest $|\sigma|$, for which the eigenvalue calculated from
+Eq. \ref{sig2_iso} with $L=1$ and the numerically-obtained value are   
 \begin{align*}
   (\omega,\nu) = (-0.3053,0.2606)\epsilon\Omega_k &\quad \text{(from
     Eq. \ref{sig2_iso})},\\
@@ -186,10 +209,6 @@ where the perturbed kinetic energy in their numerical simulations was
 observed to decay most rapidly for a thermal timescale of $\sim 0.1$
 orbits.     
 
-
-
-
-
 %implications for nonlinear sims?
 
  \begin{figure}
@@ -198,8 +217,8 @@ orbits.
      a function of the thermal relaxation timescale $\beta$. The disk
      parameters are $\Gamma=1.011$, $\gamma=1.4$, and 
      $(p,q,\epsilon)=(-1.5,-1,0.05)$. The vertical line
-     is the critical thermal timescale $\beta_\mathrm{crit}$ for the
-     fundamental mode according to Eq. \ref{iso_vsi_cond}. 
+     is the critical thermal timescale $\beta_\mathrm{crit}$  obtained
+     from Eq. \ref{iso_vsi_cond}. 
      \label{bcrit_compare1}}   
  \end{figure} 
 
@@ -234,16 +253,17 @@ orbits.
 %numerical simulation of \cite{nelson13}. 
 
 We visualize the effect of thermal relaxation in 
-Fig. \ref{relax_eigenW_num} by comparing the eigenfunction $W$ for
+Fig. \ref{relax_eigenW_num} by comparing the vertical velocity
+perturbation $\delta v_z$ for
 $\beta=0.01$ and $\beta=0.1$. The latter value is close to the
 critical value beyond which the fundamental VSI is stabilized
 (\S\ref{iso_vsi_beta_crit}). Increasing $\beta$ 
-restricts  the region in which $W\sim z$ closer to the midplane, with
+restricts  the region in which $\delta v_z\sim $ constant closer to the midplane, with
 oscillatory behavior emerging at the boundaries, where buoyancy first
-becomes important. Finite thermal relaxation increases $|W|$ near the
-vertical boundaries relative to that about the midplane, but
-perturbations near the disk surface is unlikely important in practice
-because the disk atmosphere contains little mass. 
+becomes important. Finite thermal relaxation increases $|\delta v_z|$ near the
+vertical boundaries relative to that about the midplane. However, 
+perturbations near the disk surface may not be energetically important
+in practice because the disk atmosphere contains little mass.  
 
 % We also find this trend for fixed $\beta$ but
 % increasing 
@@ -267,7 +287,7 @@ because the disk atmosphere contains little mass.
     \label{relax_eigenW_num}}  
 \end{figure}
 
-\subsection{Critical thermal relaxation timescale}
+\subsection{Critical thermal relaxation timescale}\label{bcrit_num_test}
 % may need to explain why choose k=10
 % bcrit independent of k for k>>1 
 % for some parameter regimes (e.g. large q, large epsilon) 
@@ -321,7 +341,7 @@ so that the fundamental VSI operates.
 \subsection{Vertically non-isothermal disks} 
 We briefly consider vertically non-isothermal disks with 
 $\Gamma=1.4$ and $(p,q,\epsilon)=(0,-1,0.05)$ as simulated in
-\cite{nelson13}. In this case we set $\zmax\simeq2.2\epsilon r$, which
+\cite{nelson13}. In this case we set $\zmax\simeq2.2H$, which
 is close to the zero-density surface.      
 
 Fig. \ref{gcorr_compare_vnoniso} plots the fundamental VSI growth
@@ -333,7 +353,7 @@ Solberg-Hoiland criterion, Eq. \ref{solberg2}.)
 
 For $\gamma>\Gamma$, i.e. stably stratified disks,
 Fig. \ref{gcorr_compare_vnoniso} shows that introducing finite thermal
-relaxation rapidly stabilizes the fundamental VSI mode. This is
+relaxation rapidly stabilizes the fundamental mode. This is
 similar to that observed for nearly vertically isothermal disks
 (Fig. \ref{bcrit_compare1}). For $\gamma=1.7,\,2.0,\,2.5$, growth
 rates reach zero at  $\beta\simeq0.17,\,0.083,\,0.045$, respectively.
@@ -463,7 +483,7 @@ $\gamma-\Gamma$.
 % % The numerically-determined eigenfrequencies are qualitatively
 % % consistent with the discussion in \S\ref{adia_compare_gam1}.
 % There is good agreement between Fig. \ref{adia_growth_num} and
-% Fig. \ref{adia_growth} for $\khat=k_xH_\mathrm{iso}\gtrsim1$. There is a
+% Fig. \ref{adia_growth} for $\khat=k_xH\gtrsim1$. There is a
 % mismatch for smaller wavenumbers, especially in the growth
 % rates. Actual growth rates decrease slower as $\khat\to0$
 % than that in Fig. \ref{adia_growth}. Disagreement at small

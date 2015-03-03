@@ -5,30 +5,29 @@ We begin with a discussion of vertically isothermal disks
 where $\Gamma=1$, then $c_s$ is a constant in the radially-local
 approximation. We  first examine isothermal perturbations ($\beta =
 0$) before considering the effect of finite thermal relaxation. 
-In order to facilitate a fully analytic discussion, we introduce a
+In order to facilitate a fully analytic discussion, we first introduce a
 number of approximations below that allows a simple governing equation
 to be derived and compared with previous works.  
 
 \subsection{Relation to the vertically global
   shearing box} 
-We connect the above linearized equations to the vertically global
+We connect the linearized equations 
+Eq. \ref{lin_mass}---\ref{lin_energy} to the vertically global  
 shearing box (VGSB) formalism developed by \cite{mcnally14}. The VGSB
 is an extension of the standard shearing box \citep{goldreich65} to
 allow the shear flow in the shearing box to be height-dependent.  
 The difference between the radially-local approximation and the VGSB is
-that the radial disk structure is ignored in the latter.  That is, the
-equilibrium VGSB is homogeneous in the radial direction, as in the
-standard shearing box. 
-
+that the radial disk structure is ignored in the latter. That is, the 
+equilibrium density and pressure field in the VGSB is homogeneous in
+the radial ($x$) direction, as in the standard shearing box.   
 
 Thus, the linear problem in the VGSB can be derived from
 Eq. \ref{lin_mass}---\ref{lin_energy} by setting 
-$\hat{g}_c=0$.  
-The resulting linear problem is very similar
+$\hat{g}_c=0$. The resulting linear problem is very similar 
 to that for local axisymmetric waves in accretion disks already
 discussed by \cite{lubow93}, but modified by the presence of vertical
 shear and thermal relaxation. This is convenient as it allows us to
-directly apply their solution methods.    
+directly apply some of their solution methods.    
 
 % but modified by the vertical shear term
 % $r\p_z\Omega\delta \delta v_z$. 
@@ -53,7 +52,7 @@ equations for $W,Q$ as
 where
 \begin{align}
   D \equiv \kappa^2 - \sigma^2,
-\end{align}
+\end{align} 
 and we have replaced the notation $\p_z$ by $d/dz$ since we are
 considering solutions at a fixed radius. 
 
@@ -63,9 +62,12 @@ because within the VGSB framework, $d\Omega/dz$ can be freely
 specified. In effect, by adopting the VGSB framework, we are studying
 dynamics in the standard shearing box subject to an additional
 azimuthal force $\delta v_zr d \Omega/dz$ with $d\Omega/dz$ as an
-input parameter. This is different to the global problem because in
-that case, the vertical shear is a result of the background radial
-disk structure, which is ignored in the VGSB.    
+input parameter. For consistency with the global disk, we choose
+$d\Omega/dz$ in the VGSB to be that due to the thermal structure in
+the global disk (Eq. \ref{vertical_shear}). However, 
+% This is different to the global problem because in
+% that case, the vertical shear is a result of the 
+the background radial disk structure is ignored elsewhere in the VGSB.      
 
 We further discuss caveats of the VGSB in Appendix \ref{global_corr}.
 However, we find that for perturbations with small radial lengthscales
@@ -73,21 +75,18 @@ However, we find that for perturbations with small radial lengthscales
 characterizes the VSI, the VGSB framework is adequate for the purpose
 of a simple analytical discussion. 
 
-
-
-
 \subsection{Governing equation in the VGSB}\label{approx_gov}
 We now derive a governing equation with further approximations:
 \begin{enumerate}
 \item We consider eigenvalues such that
   $|\sigma^2|\ll \kappa^2$. Then we can replace $D=\kappa^2 -\sigma^2\to
   \kappa^2$. % The problem simplifies because the eigenvalue now only
-  % appears in the last term in Eq. \ref{iso_ode}.
-  We call this the
-  low-frequency approximation. 
+  % appears in the last term in Eq. \ref{iso_ode}. %stoll kley see low
+  % freq 
+  We call this the low-frequency approximation. 
 \item We are mainly interested in the effect of vertical shear, i.e. $q\neq
   0$. This is already captured explicitly in the linearized equations through
-  the term $d\Omega/dz$. We therefore simplify
+  the term $d\Omega/dz$. We therefore simplify 
   further by ignoring the vertical dependence of $\Omega$ and $\kappa$
   elsewhere. For clarity, we replace $\kappa^2$ with $\Omega_k^2$. 
   
@@ -143,8 +142,12 @@ In deriving Eq. \ref{vertiso_gov}, the vertical dependence of
 $D=\kappa^2(z)-\sigma^2$ was ignored because the replacement
 $D\to\Omega_k^2$ was made before eliminating variables in favor of
 $\delta v_z$. In Appendix \ref{adia_improve} we show that making this
-replacement after eliminating variables, which requires the vertical
-derivative of $D$, adds unnecessary complexity for thin disks.  
+replacement after eliminating variables, which involves $dD/dz$,
+introduces terms $O(\epsilon^2)$. Since we are interested in 
+thin disks ($\epsilon\ll 1 $), e.g. protoplaneary disks where 
+$\epsilon\lesssim 0.1$ \citep{chiang10}, these terms introduce
+unnecessary complexity for the present discussion. However, this
+approximation will be relaxed in our numerical study.  
 
 % We will consider sound-speed profiles with $q<0$ in the global 
 % disk. Then $\Omega^2(z)$ decreases away from the midplane,
@@ -154,10 +157,9 @@ derivative of $D$, adds unnecessary complexity for thin disks.
 % \ll 1$) with vertical domain sizes not too large, so that the rotation
 % is nearly-Keplerian.  
 
-Note that we can generalize Eq. \ref{vertiso_gov_nondim} to other
-(non-Keplerian) rotation profiles by redefining $\khat$
-as $k_xc_s/\kappa$, $\hat{\sigma}$ as $\sigma/\kappa$, and 
-$\epsilon$ as $c_s/r\kappa$.    
+Note that we can generalize Eq. \ref{vertiso_gov_nondim} non-Keplerian
+rotation profiles by redefining $\khat$ as $k_xc_s/\kappa$,
+$\hat{\sigma}$ as $\sigma/\kappa$, and  $\epsilon$ as $c_s/r\kappa$.     
 
 % Consider rotation profiles with radial dependence
 % $\propto r^{-m}$. Then the same dimensionless governing equation 
@@ -167,19 +169,19 @@ $\epsilon$ as $c_s/r\kappa$.
 
 
 \subsection{Isothermal perturbations}\label{iso_discuss}
-Isothermal perturbations correspond to $\beta\equiv0$, 
+Isothermal perturbations correspond to $\beta\equiv0$ 
 %relaxation timescale $\be
 %or for any adiabatc index $\gamma$ when
 %$\beta=0$. 
-so $\chi=1$ and Eq. \ref{ode_Q} implies 
+($\chi=1$) and Eq. \ref{ode_Q} becomes  
 \begin{align}
-  Q = W, 
+  Q = W 
 \end{align}
- and so 
- \begin{align}
-   \ii\hat{\sigma}c_s\delta v_z = W^\prime
-   % \quad   \text{(isothermal perturbations)},
- \end{align}
+(i.e. $\delta P = c_s^2\delta \rho$), and so  
+\begin{align}
+  \ii\hat{\sigma}c_s\delta v_z = W^\prime
+  % \quad   \text{(isothermal perturbations)},
+\end{align}
 from Eq. \ref{lin_vz}. For isothermal perturbations it is in fact 
 simpler to work with $W$ by integrating Eq. \ref{vertiso_gov_nondim}. For later discussion
 it is convenient to write the result as 
@@ -192,27 +194,24 @@ where $f(\zhat)$ is defined such that
 \begin{align}\label{fz_shear}
   \frac{d\Omega^2}{d\hat{z}} = \epsilon^2q f(\hat{z})\Omega_k^2.
 \end{align}
+For a vertically isothermal disk we have 
+\begin{align}
+  f(\zhat) = \frac{\zhat}{\left(1+\epsilon^2\hat{z}^2\right)^{3/2}}, 
+\end{align}
+%For the vertically isothermal disk we have $|f(\hat{z})| =
+%|\hat{z}|\left(1+\epsilon^2\hat{z}^2\right)^{-3/2}$, 
+which maximizes at $|\zhat|=1/\sqrt{2}\epsilon$. The existence of a
+maximum vertical shear limits the growth rate of unstable modes, as  
+shown below.   
 
-% The linear problem simplifies considerably for the case
-% $\Gamma=\gamma=1$.  Then 
-% \begin{align}
-%   Q=W. 
-% \end{align}
-% Inserting this into Eq. \ref{ode_w} gives a single equation for the linear stability
-% problem for isothermal perturbations in a vertically isothermal disk, 
-% \begin{align}\label{iso_ode}
-%   \frac{d^2W}{dz^2} + \left(\frac{d\ln{\rho}}{dz} - \frac{\ii k_x
-%       r}{D}\frac{d\Omega^2}{dz}\right) \frac{dW}{dz} +
-%   \sigma^2\left(\frac{1}{c_s^2} + \frac{k_x^2}{D}\right)W=0, 
-% \end{align} 
-% subject to appropriate boundary conditions. Eq. \ref{iso_ode} also
-% applies to $\gamma>1$ for $t_c\to0$. 
+Note that Eq. \ref{iso_ode1} can in fact be derived by substituting
+$Q=W$ in Eq. \ref{ode_w} without approximating $D$ or $\kappa^2$ as
+vertically constant.    
 
-Note that for isothermal perturbations the issue of ignoring the
-vertical dependence of $D$ described in \S\ref{approx_gov} and Appendix
-\ref{adia_improve} is irrelevant, since
-Eq. \ref{iso_ode1} may be derived directly by substituting $Q=W$ in
-Eq. \ref{ode_w}, i.e. no derivatives of $D$ needs to be taken. 
+% the issue of ignoring the
+% vertical dependence of $D$ described in \S\ref{approx_gov} and Appendix
+% \ref{adia_improve} is irrelevant, since
+% Eq. \ref{iso_ode1} may be derived directly , i.e. no derivatives of $D$ needs to be taken.
 
 %We remark that Eq. \ref{iso_ode1} is also applicable for  $\gamma=\Gamma\neq 1$ in the
 %limit $t_c\to\infty$ (i.e. neutrally stratified adiabatic disks),
@@ -308,17 +307,19 @@ Eq. \ref{sigma_finite_domain} gives
 Recalling that $f$ represents vertical shear (Eq. \ref{fz_shear}), it
 follows that the maximum possible growth rate of unstable modes,
 satisfying the above boundary conditions, is limited by the maximum
-value of the vertical shear in the domain considered. 
+vertical shear in the domain considered.  
 
-For the vertically isothermal disk we have $|f(\hat{z})| =
-|\hat{z}|\left(1+\epsilon^2\hat{z}^2\right)^{-3/2}$, which maximizes
-at $|\zhat|=1/\sqrt{2}\epsilon$. For vertical domains smaller 
-than this height, the growth rate is limited by $|f|$ at the vertical
-boundaries considered. For $|\epsilon\hat{z}|\ll1$ we have $f\simeq
-\hat{z}$, in which case we can expect growth rates to increase at most linearly
-with respect to the vertical domain size.   %no faster than linear 
+In practice, one might consider a vertical domain of a few scale 
+heights in a thin disk with $|q|=O(1)$. In this case, $|\epsilon\zhat|\ll1$ and  
+$f\simeq \zhat$, so that $\mathrm{max}|f| = O(1)$, implying a
+maximum growth rate $O(\epsilon \Omega_k)$, consistent with numerical
+results below.  
 
-
+% For vertical domains smaller 
+% than this height, the growth rate is limited by $|f|$ at the vertical
+% boundaries considered. For $|\epsilon\hat{z}|\ll1$ we have $f\simeq
+% \hat{z}$, in which case we can expect growth rates to increase at most linearly
+% with respect to the vertical domain size.   %no faster than linear 
 
 \subsubsection{Thin-disk limit}
 We can make further progress for thin disks ($\epsilon\ll1$), 
@@ -366,7 +367,8 @@ where we have defined a new eigenvalue
   n \equiv \hat{\sigma}^2(1+\hat{k}^2). 
 \end{align} 
 Eq. \ref{hermite_ode} is Hermite's differential equation. If we impose
-that the kinetic energy density remain bounded at infinity, then  
+that the kinetic energy density remain bounded at infinity, then the
+solutions are Hermite polynomials  
 \begin{align}
   W \propto \He_n(\hat{z}),
 \end{align}
@@ -379,12 +381,15 @@ eigenfrequency $\sigma$ such that
 Since we have assumed $|\sigma^2|\ll \kappa^2\sim \Omega_k^2$, our
 analysis is only valid for large wavenumbers such that $\hat{k}^2\gg   
 n-1$. Physically, this corresponds to radial length-scales much
-smaller than the local disk scale height. 
+smaller than the local disk scale height. Note that
+Eq. \ref{iso_stable_disp} is implied by Eq. 54 in
+\cite{lubow93} after setting $\gamma=1$ and making the low-frequency,
+Keplerian disk approximation in that equation. 
 
 We remark that for fixed $n$ and $\khat\gg 1$ the dispersion relation 
 Eq. \ref{iso_stable_disp} imply $\hat{\omega}\propto 1/\khat$. This inverse relation 
-has also been qualitatively observed in numerical simulations performed by 
-\cite{stoll14}. 
+has also been qualitatively observed in numerical simulations
+\citep{stoll14}.  
 
 
 \subsubsection{Polynomial solutions with vertical shear}\label{iso_poly}
@@ -406,15 +411,16 @@ must satisfy
 \end{align}
 The eigenfrequency $\hat{\sigma}$ is therefore complex for
 $L\geq1$. We are interested in 
-unstable modes for which $\imag{\hat{\sigma}}>0$ is the growth rate and is
-given by 
+unstable modes for which $\hat{\nu}=\imag{\hat{\sigma}}>0$ is the
+growth rate and is given by 
 \begin{align}\label{simple_growth}
   \hat{\nu} =\sqrt{
    \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2\epsilon^2\hat{k}^2} - 
     1\right)}. 
 \end{align}
 For fixed $q$ and $\epsilon$, the growth rate vanishes for both
-$\hat{k}^2\to0$ and $\hat{k}^2\to\infty$. The maximum growth rate
+$\hat{k}^2\to0$ and $\hat{k}^2\to\infty$. 
+The maximum growth rate
 occurs at the optimum wavenumber $\hat{k}_\mathrm{opt}$
 \begin{align}
   |\hat{k}_\mathrm{opt}| = \sqrt{\frac{2+|\epsilon q|}{|\epsilon q|}},
