@@ -89,10 +89,10 @@ where $\sigma_s$ is the Stefan-Boltzmann constant.
 From Eq. \ref{diff_cool_approx} we identify the scale-dependent thermal relaxation
 time for diffusion as 
 \begin{align}\label{tc_diff_cool} 
-  t_\mathrm{diff} = \frac{1}{\eta k_x^2}\equiv \frac{\Omega_k^{-1}}{\hat{\eta}\khat^2}, 
+  t_\mathrm{diff} = \frac{1}{\eta k_x^2}.%\equiv \frac{\Omega_k^{-1}}{\hat{\eta}\khat^2}, 
 \end{align}
-where $\hat{\eta} = \eta/H^2\Omega_k$ is the 
-dimensionless diffusion coefficient. 
+% where $\hat{\eta} = \eta/H^2\Omega_k$ is the 
+% dimensionless diffusion coefficient. 
 
 
 \subsection{Newtonian cooling}\label{newton_cool}
@@ -167,7 +167,7 @@ relaxation time $\beta$ becomes
   \beta(z;\khat) \equiv t_c\Omega_k =
   % \frac{1}{\hat{\eta}}\left[\frac{l_\mathrm{rad}^2}{3H^2}
   %   + \frac{\hat{\rho}^2(z)}{2\pi\khat^2}\right]  \simeq
-  \frac{1}{\hat{\eta}}\left[\frac{1}{3\kappa_d^2\Sigma^2} 
+  \frac{\Sigma^2\Omega_k}{\eta\rho^2}\left[\frac{1}{3\kappa_d^2\Sigma^2} 
     + \frac{\hat{\rho}^2(z)}{2\pi \khat^2}\right].
 \end{align}
 Note that the thermal relaxation time depends on both the perturbation lengthscale $\khat$ 
@@ -338,27 +338,27 @@ concentrated near the vertical boundaries
 they are affected by boundary conditions. % , and high $\khat$ modes are
 % subject to viscous decay in a real disk.  
 
-We therefore take Fig. \ref{mmsn_overall} as a representation of the
+We therefore consider Fig. \ref{mmsn_overall} as a representation of the
 VSI in the MMSN. We see that growth timescales are $\sim
 30$---40 orbits, and the VSI operates from a few AU to tens of
 AU. Importantly, it is necessary to consider smaller scales as $r$
-decreases as the disk generally becomes optically
-thick. 
+decreases as the disk generally becomes optically thick. 
 
 Fig. \ref{mmsn_overall} is roughly consistent with the 
 mid-plane thermal relaxation timescales shown in
 Fig. \ref{mmsn_bcrit_bcool}. For example, for $\khat=10$ we find 
 $\beta \gtrsim \beta_\mathrm{crit}$ for $r\lesssim 10$AU at $z=0$; and
-Fig. \ref{mmsn_overall} show stabilization inside $\sim 8$AU. % The mode
-% operates interior to the expected minimum radius, 
+Fig. \ref{mmsn_overall} show stabilization inside $\sim 8$AU. 
 
+%The mode % operates interior to the expected minimum radius, 
 % probably because the disk bcomes optically thin away from the
 % midplane. 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/eigen_compare_grow.ps}
   \caption{Characteristic growth times of the fundamental VSI mode in
-    the MMSN.  
+    the MMSN. These are calculated using the scale and height
+    dependent thermal relaxation given by Eq. \ref{beta_mmsn_simp}. 
     \label{mmsn_overall}}    
 \end{figure}
 
@@ -383,7 +383,7 @@ does not depend on height and $\beta <
 \beta_\mathrm{crit}$. Accordingly we expect, and find, the VSI to
 operate at $r=50$AU. In the inner disk ($r=5$AU) the disk is optically
 thick near the midplane and becomes optically thin away from it, such
-that $\beta < \beta_\mathrm{crit}$ only for $|z|\gtrsim1.25H$. In
+that $\beta < \beta_\mathrm{crit}$ for $|z|\gtrsim1.25H$. In
 fact, in this case  we also find the VSI to operate, but with 
 significantly reduced growth rates (when scaled by the local
 rotation).  
@@ -399,10 +399,23 @@ midplane suggests, but does not prove, that the VSI can operate
 provided $\beta < \beta_\mathrm{crit}$ for a sufficiently large
 fraction of the vertical domain. However, the normalized growth times
 are much longer than the case with $\beta < \beta_\mathrm{crit}$ for
-all $z$: we find $t_\mathrm{grow}\sim 40P_\mathrm{orb}$ at $r=50$AU,
-but $t_\mathrm{grow}\sim 400P_\mathrm{orb}$ at $r=5$AU. 
+all $z$: we find $t_\mathrm{grow}\sim 40$ orbits at $r=50$AU,
+but $t_\mathrm{grow}\sim 400$ orbits at $r=5$AU. Thus, introducing an
+optically thick midplane reduces the efficiency of the VSI despite
+$\beta < \beta_\mathrm{crit}$ away from the midplane. 
+
+% The grow
+% mode because it involves vertical motion across $z=0$, which is 
 
 % the case with $\beta < \beta_\mathrm{crit}$ for all $z$.
+
+
+% Introducing an optically thick mid-plane may not completely surpress
+% the VSI because the vertical entropy gradient, which usually provides
+% stabilization, vanishes at $z=0$. (Note that $N_z^2\propto z^2$ while
+% vertical shear $d\Omega^2/dz \propto z$)
+
+
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -410,7 +423,8 @@ but $t_\mathrm{grow}\sim 400P_\mathrm{orb}$ at $r=5$AU.
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
   0cm]{figures/eigenvectorvz_mmsn_5AU}
   \caption{Vertical velocity perturbations of the VSI in the MMSN at 
-    $r=50$AU (top) and $r=5$AU (bottom). The real (imaginary) part of 
+    $r=50$AU (top) and $r=5$AU (bottom). These are calculated using the height
+    dependent thermal relaxation given by Eq. \ref{beta_mmsn_simp}. The real (imaginary) part of 
     $\delta v_z$ is shown as
     the solid (dotted) curves. The eigenfunction has been normalized
     such that $\imag(\delta v_z)=0$ at the vertical boundaries, and
