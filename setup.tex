@@ -152,14 +152,7 @@ the square of the epicyclic frequency $\kappa$
   \kappa^2(r,z) \equiv \frac{1}{r^3}\frac{\p }{\p
     r}\left(r^4\Omega^2\right). %2\Omega(2\Omega + S). 
 \end{align}
-Note that the disk is in general baroclinic with $\Omega =
-\Omega(r,z)$. This is explicit from Eq. \ref{eqm_rot}, but is also
-implied by Eq. \ref{vert_equilibrium}---\ref{hori_equilibrium} and 
-Eq. \ref{eqm_press},  
-\begin{align}
-  r\frac{\p\Omega^2}{\p z} = - \rho^{\Gamma-1}\frac{\p\ln\rho}{\p
-    z}\frac{dK}{dr} = - \frac{g_z}{\Gamma}\frac{d\ln K}{dr}.\label{vertical_shear}
-\end{align}
+
 
 \subsubsection{Vertically isothermal disks}
 For $\Gamma=1$ the equilibrium density $\rho(r,z)$ and rotation
@@ -174,6 +167,25 @@ which may be obtained from Eq. \ref{eqm_dens} and Eq. \ref{eqm_rot} by
 taking the limit $\Gamma\to 1$. We will, in fact, primarily focus on
 vertically isothermal disks which is the relevant case for irradiated
 protoplanetary disks \citep{chiang97}. 
+
+
+\subsection{Vertical shear}\label{vshear_def}
+Note that the disk is in general baroclinic with $\Omega =
+\Omega(r,z)$. This is explicit from Eq. \ref{eqm_rot} and Eq. \ref{vertiso_eqm}, but is also 
+implied by Eq. \ref{vert_equilibrium}---\ref{hori_equilibrium} and 
+Eq. \ref{eqm_press},  
+\begin{align}
+  r\frac{\p\Omega^2}{\p z} = - \rho^{\Gamma-1}\frac{\p\ln\rho}{\p
+    z}\frac{dK}{dr} = - \frac{g_z}{\Gamma}\frac{d\ln K}{dr}.\label{vertical_shear}
+\end{align}
+Evaluating this expression explicitly,
+\begin{align}
+  r\frac{\p\Omega^2}{\p z} = \frac{sz\Omega_k^2}{\Gamma
+    r\left(1+z^2/r^2\right)^{3/2}}. \label{vertical_shear_ex} 
+\end{align}
+Note that there is a maximum vertical shear rate at $z=r/\sqrt{2}$,
+which is expected to limit the growth rate of unstable modes.    
+
 
 \subsection{Stability condition against axisymmetric adiabatic
   perturbations}\label{solberg}

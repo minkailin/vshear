@@ -1,0 +1,207 @@
+
+% \section{Alternative inference of instability in the presence of weak
+%   vertical shear}\label{pert_theory}
+% We can also investigate the destabilizing effect of vertical shear
+% without explicitly solving the full governing equation,
+% Eq. \ref{iso_ode3}. We first
+% consider a system with $q\equiv0$, for which the eigenfunctions are
+% Hermite polynomials and the real eigenfrequencies are known. We then
+% perturb this system by introducing a weak vertical shear ($|q|\ll1$)
+% and linearize the governing equation. This procedure is
+% \begin{align}   
+%   q \to 0 + \delta q,\quad
+%   W \to \He_n + \delta W,\quad
+%   \hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}. 
+% \end{align}
+% %where for this exercise we restore $\sigma$ as the eigenfrequency. 
+
+% Linearizing the integral relation Eq. \ref{integral_relation1} in the
+% thin-disk limit, and taking the
+% imaginary part, we have
+% \begin{align}
+%   2\hat{\sigma}\imag(\delta\hat{\sigma})
+%   \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
+%   \He_n^2(\hat{z}) d\hat{z}
+%   = \delta q \epsilon \hat{k} 
+%   \int_{-\infty}^{\infty}
+%   w(\zhat)\hat{z}\He_n(\hat{z})\He_n^\prime(\zhat) d\hat{z}
+% \end{align}
+% Recognizing $\hat{z} = \He_1(\hat{z})$ and using $\He_n^\prime = n
+% \He_{n-1}$ we have
+%  \begin{align}
+%    2\hat{\sigma}\imag(\delta\hat{\sigma})
+%    \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
+%    \He_n^2(\hat{z}) d\hat{z}
+%    =\delta q \epsilon \hat{k} 
+%    \int_{-\infty}^{\infty}
+%    w(\zhat)\He_1(\hat{z})\He_n(\hat{z})n\He_{n-1}(\hat{z})d\hat{z}. 
+%  \end{align}
+
+% Finally, we evaluate the integrals using the results
+% \begin{align}
+%   \int_{-\infty}^{\infty}
+%   w(\xi) \He_k(\xi)\He_l(\xi) d\xi = \sqrt{2\pi}k!\delta_{kl} \quad
+% % \end{align}
+% \text{and} \quad
+% % \begin{align}
+%   \int_{-\infty}^{\infty}
+%   w(\xi) \He_m(\xi)\He_k(\xi)\He_l(\xi) d\xi =
+%   \frac{\sqrt{2\pi}m!k!l!}{(j-m)!(j-k)!(j-l)!}, 
+% \end{align}
+% where $j = (m+k+l)/2$. We then obtain
+%  \begin{align}
+%    2\hat{\sigma}\imag(\delta\hat{\sigma})
+%   \left(1+\hat{k}^2\right) = \delta q \epsilon \hat{k} n.
+%  \end{align}
+% Inserting the original eigenfrequency $\hat{\sigma} = \pm
+% \sqrt{n}(1+\hat{k}^2)^{-1/2}$ gives
+% \begin{align}
+%   \imag(\delta\hat{\sigma})= \pm \frac{1}{2}\delta q \epsilon
+%   \sqrt{n} \frac{\hat{k}}{\sqrt{1+\hat{k}^2}}. 
+% \end{align}
+% This result agrees with Eq. \ref{simple_growth} in the limit
+% $|q|\to0$. 
+% %for $n=1$, since the
+% %function $\He_1$ solves the governing equation exactly. 
+% For $\hat{k}\gg 1$ we have
+% \begin{align}
+%   \imag(\delta\hat{\sigma})\simeq \pm \frac{1}{2}\delta q \epsilon
+%   \sqrt{n} \sgn{\hat{k}}. 
+% \end{align}
+
+
+
+
+% Differentiating Eq. \ref{adia_iso1} properly gives
+% \begin{align}
+%   \left(D + \gamma k_x^2 c_s^2\right)\frac{d\Delta}{dz}=& D
+%   \frac{d^2\delta v_z}{dz^2} + k_x^2c_s^2\left[\frac{\gamma}{\left(D + \gamma k_x^2 c_s^2\right)}\frac{dD}{dz} + \ii
+%     \frac{d\ln\rho}{dz}\left(\ii +
+%       \frac{q}{k_xr}\right)\right]\frac{d\delta v_z}{dz}\notag\\
+%   &+ \ii k_x^2 c_s^2 \left(\ii +
+%       \frac{q}{k_xr}\right)\left[\frac{d^2\ln\rho}{dz^2} -
+%       \frac{1}{\left(D + \gamma
+%           k_x^2c_s^2\right)}\frac{dD}{dz}\frac{d\ln\rho}{dz}\right]\delta
+%     v_z. \label{adia_diso1}
+% \end{align}
+% The terms that were ignored in deriving Eq. \ref{adia_iso3} are those
+% proportional to $dD/dz$ in Eq. \ref{adia_diso1}. Now, in the global
+% disk with $\Gamma=1$ we have
+% \begin{align}\label{dkappa2}
+%   \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
+%     r}\frac{\p\Omega^2}{\p z} = -
+%   \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(2 + q +
+%     \frac{z^2/r^2-2}{z^2/r^2+1}\right). 
+% \end{align}
+% For the local problem we may then write
+% \begin{align}
+%   \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z;q),
+% \end{align}
+% where the function $F$ corresponds to the bracket in
+% Eq. \ref{dkappa2}. This function varies from $F=q$ at $z=0$ to $F\to
+% 3+q$ as $|z|\to\infty$, i.e. its magnitude is of order unity. 
+% % We estimate the
+% % importance of these terms by noting that 
+% % \begin{align}
+% %   \frac{dD}{dz}\equiv \frac{d\kappa^2}{dz} \simeq \frac{d\Omega^2}{dz}
+% %   = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2},
+% % \end{align}
+% % for thin disks. 
+% Eq. \ref{adia_diso1} becomes
+% \begin{align}
+% \left(D + \gamma k_x^2 c_s^2\right)\frac{d\Delta}{dz}=& D
+%   \frac{d^2\delta v_z}{dz^2} - k_x^2c_s^2\frac{d\ln\rho}{dz}\left[ 1 - 
+%       \frac{\ii q}{k_xr}  +  \frac{\gamma q c_s^2F}{r^2\left(D +
+%         \gamma k_x^2 c_s^2\right)}\right]\frac{d\delta
+%     v_z}{dz}\notag\\ 
+%   &- k_x^2 c_s^2 \left(1 - 
+%       \frac{\ii q}{k_xr}\right)\left[\frac{d^2\ln\rho}{dz^2} + 
+%       \frac{qc_s^2F}{r^2\left(D + \gamma
+%           k_x^2c_s^2\right)}\left(\frac{d\ln\rho}{dz}\right)^2\right]\delta
+%     v_z. \label{adia_diso2}
+% \end{align}
+% Since $D\sim \Omega_k^2$ in the low-frequency limit, we 
+% see from Eq. \ref{adia_diso2} that the neglected terms are
+% $O(\epsilon^2)$. We can make this explicit by combining
+% Eq. \ref{adia_diso1}---\ref{adia_diso2} and Eq. \ref{adia_iso2}, then
+% set $D\to\Omega_k^2$. In terms of non-dimensional variables, the result
+% is  
+% \begin{align}
+%    &\delta v_z ^{\prime\prime} + \left(1 + \ii\epsilon q\hat{k} -
+%     \frac{\gamma q \epsilon^2\hat{k}^2F}{1+\gamma
+%       \hat{k}^2}\right)\ln\rho^{\prime}\delta v_z^\prime +
+%   \left[\left(\frac{1}{\gamma} + \ii \epsilon q
+%       \hat{k}\right)\ln\rho^{\prime\prime} - \hat{k}^2\left(1 -
+%       \frac{\ii\epsilon
+%         q}{\hat{k}}\right)\left(\frac{\gamma-1}{\gamma} +
+%       \frac{q\epsilon^2F}{1+\gamma\hat{k}^2}\right)\ln\rho^{\prime
+%       2}\right]\delta v_z \notag\\&=
+%   -\hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right)\delta v_z\label{adia_diso3}.
+% \end{align}   
+% Eq. \ref{adia_diso3} differs from Eq. \ref{adia_iso3} by terms
+% proportional to $\epsilon^2$. For a thin disk, $\epsilon\ll1$, so
+% neglecting these terms has no qualitative effect on the discussion in
+% \S\ref{analytic_adia}. 
+
+% \section{Axisymmetric instability in vertically 
+%   isothermal disks in global cylindrical geometry}\label{global_vertiso}
+% Consider a locally isothermal disk in 3D such that $P=c_s^2\rho$ at
+% all times, so in the perturbed state $\delta P =
+% c_s^2\delta\rho$, with $c_s$ begin a prescribed function of position. 
+% The axisymmetric linearized fluid equations in cylindrical
+% geometry is then 
+% \begin{align}
+%  \ii\sigma \delta v_r + 2\Omega\delta v_\phi &= c_s^2\frac{\p}{\p r}\left(\frac{\delta\rho}{\rho}\right),\\
+%  \ii\sigma \delta v_\phi &= \frac{1}{r}\delta\bm{v}\cdot\nabla j,\\
+%  \ii\sigma \delta v_z &= c_s^2\frac{\p}{\p
+%    z}\left(\frac{\delta\rho}{\rho}\right),\\
+%  \ii\sigma\delta\rho &= \nabla\cdot\left(\rho\delta\bm{v}\right),
+% \end{align}
+% and we recall $j=r^2\Omega$. We can eliminate $\delta v_\phi$ from these equations to obtain
+% \begin{align}
+%   -\sigma^2\rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) +
+%   \kappa^2\rho|\delta v_r|^2 + \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
+%   \delta v_r^*\delta v_z =
+%   c_s^2\rho\delta\bm{v}^*\cdot\nabla\left(\frac{\ii\sigma\delta\rho}{\rho}\right)
+%   =c_s^2\rho\delta\bm{v}^*\cdot\nabla\left[\frac{1}{\rho}\nabla\cdot\left(\rho\delta\bm{v}\right)\right].\label{global_integral} 
+% \end{align}
+% At this point if we make the anelastic approximation by assuming
+% $\nabla\cdot\left(\rho\delta\bm{v}\right)$ is negligible in this
+% equation \citep[as argued by][]{nelson13}, 
+% then the only contribution to instability comes from the third term on
+% the left hand side, i.e. the explicit vertical shear term
+% $\p_zj$. This is the same conclusion reached in
+% \S\ref{integral_relation}. 
+
+% The term proportional to $\kappa^2$ is stabilizing. Because radial shear
+% is much larger than vertical shear, this implies that significant
+% instability can only be achieved with large vertical
+% motions (i.e. $|\delta v_z|\gg|\delta v_r|$). 
+
+% If we integrate Eq. \ref{global_integral} over the fluid volume 
+% and assume boundary terms vanish when integrating by parts, we obtain 
+% \begin{align}
+%   -\sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV +
+%   \int \kappa^2\rho|\delta v_r|^2 dV + \int \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
+%   \delta v_r^*\delta v_z dV = -\int
+%   \frac{c_s^2}{\rho}\left|\nabla\cdot\left(\rho\delta\bm{v}\right)\right|^2
+%   dV - \int \nabla\cdot\left(\rho\delta\bm{v}\right) \delta
+%   \bm{v}^*\cdot\nabla c_s^2.
+% \end{align}
+% Note that the treatment so far is in fact valid for any prescribed
+% $c_s(r,z)$. However, to proceed further we specialize to the case
+% $c_s=c_s(r)$ for simplicity, i.e. vertically isothermal
+% disks. Recalling $r\p_z\Omega^2 = -\p_z\ln{\rho}\p_r
+% c_s^2$  for a vertically isothermal disk (Eq. \ref{vertical_shear}), we obtain 
+% \begin{align}
+%   \sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV =
+%   \int \kappa^2\rho|\delta v_r|^2 dV + \int
+%   \frac{c_s^2(r)}{\rho}\left|\nabla\cdot\left(\rho\delta\bm{v}\right)\right|^2
+%   dV + \int \left[ \rho \left(\nabla\cdot\delta\bm{v}\right)\delta
+%     v_r^* + |\delta v_r|^2\frac{\p \rho}{\p r}\right]\frac{dc_s^2(r)}{dr}  dV.
+% \end{align}
+% We see that instability is only possible if
+% $dc_s^2/dr\neq0$. Furthermore, since density and temperature typically
+% decrease outwards in astrophysical disks, instability is associated
+% with the term proportional to $\nabla\cdot\delta\bm{v}$. It is also
+% clear that $\sigma^2$ will be complex in general.

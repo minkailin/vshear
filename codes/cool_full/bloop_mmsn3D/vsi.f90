@@ -1,7 +1,7 @@
 module global
   character*6 :: vbc
   logical :: gterms, eigen_trial, eigenv_out, eigen_refine
-  integer :: nz, nzeff, bignz, nkx, nb, ntrials, output_freq
+  integer :: nz, nzeff, bignz, nkx, nb, ntrials, output_freq, kaphat
   real*8, parameter :: pi = 2d0*acos(0d0), mu=2.33d0
   real*8 :: smallq, smallp, eps, smallh, kx, zmax, gmma, bgmma, bcool, smalls, dist 
   real*8 :: kxmin, kxmax, dlogkx, bmin, bmax, db, ghat
@@ -30,7 +30,7 @@ program vsi
   complex*16,allocatable :: work(:), matrix(:,:), w(:), vl(:,:), &
        vr(:,:), rhs(:,:), wtrial(:), wtrial_tot(:)
   real*8, external :: dlogrho_dz, domega2_dz, omega2_z, logrho_z, kappa2_z, d2logrho_dz2, csq_z, gcorr_z 
-  namelist /params/ smallq, smallp, dist, gmma, bgmma, zmax, vbc, gterms
+  namelist /params/ smallq, smallp, dist, gmma, bgmma, zmax, vbc, gterms, kaphat
   namelist /loop/ kxmin, kxmax, nkx, bmin, bmax, nb, eigen_trial, eigenv_out, eigen_refine
   namelist /grid/ nz
   
@@ -252,10 +252,12 @@ program vsi
         kx = kaxis(k)*smallh !convert input into code units 
         
      
-        bcool_arr(:)=(4.4d5/(mu*(gmma-1d0)))*dist**(-57./14.)
-        bcool_arr(:)=bcool_arr(:)*(8.3d-9*dist**(33./7.)+2d0*pi*exp(logrho(:))**2d0/kaxis(k)**2d0)
+        bcool_arr(:)=(4.4d5*kaphat/(mu*(gmma-1d0)))*dist**(-57./14.)
+        bcool_arr(:)=bcool_arr(:)*(8.3d-9*dist**(33./7.)/kaphat**2d0 + exp(logrho(:))**2d0/kaxis(k)**2d0/2d0/pi)
 
-
+!        bcool_arr(:)=bcool_arr(:)*(8.3d-9*dist**(33./7.)+ 1d0/kaxis(k)**2d0) 
+ 
+ 
         !set up sub-matrices for linear operators
         do i=1, nzeff
            L1(i,:)  = T(i,:)/bcool_arr(i)
@@ -357,13 +359,14 @@ program vsi
      freq = dble(w)
      growth=dimag(w)
            
-     do i=1, bignz
-        bigW = matmul(T,vr(1:nzeff,i))
-        if((abs(w(i)).gt.1d0/eps).or.(growth(i).lt.0d0).or.(abs(w(i)).lt.eps**2d0).or.(dble(bigW(1))*dble(bigW(nzeff)).gt.0d0)) then 
-           w(i) = (1d6,-1d6)
-        endif
-     enddo
-     
+    
+    do i=1, bignz
+              bigW = matmul(T,vr(1:nzeff,i))
+              if((dble(bigW(1))*dble(bigW(nzeff)).gt.0d0)) then
+                 w(i) = (1d6,-1d6)
+              endif
+           enddo
+ 
      
      if(eigen_trial.eqv..false.)then !find mode from scratch 
         if(k.eq.1) then !find first mode
@@ -380,11 +383,20 @@ program vsi
 !!$              endif
 !!$           enddo
            
+           
+           do i=1, bignz
+              bigW = matmul(T,vr(1:nzeff,i))
+              if((abs(w(i)).gt.1d0/eps).or.(abs(w(i)).lt.eps**2d0).or.(dble(bigW(1))*dble(bigW(nzeff)).gt.0d0).or.(growth(i).lt.0d0)) then  
+                 w(i) = (1d6,-1d6)
+              endif
+           enddo
+           
+
            freq = dble(w)
            growth=dimag(w)
            
            !now pick the mode with smallest |freq| (fundamental mode)
-           loc = minloc(abs(w)) 
+           loc = minloc(abs(freq)) 
            i = loc(1)
         else
            freq = dble(w)

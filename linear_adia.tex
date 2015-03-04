@@ -1,7 +1,8 @@
-\subsection{Perturbations with thermal relaxation in the thin-disk limit}\label{analytic_relax}
-We now introduce thermal relaxation ($\beta>0$), but pursue explicit
-solutions in the thin-disk approximation for simplicity. The governing
-equation, Eq. \ref{vertiso_gov_nondim}, is then 
+\subsection{Thin-disk approximation}\label{analytic_relax}
+Our final approximation apply to thin disks for 
+which $\epsilon\ll 1$. Then we may write $\rho/\rho_0\simeq
+\exp{(-\zhat^2/2)}$. The governing equation,
+Eq. \ref{vertiso_gov_nondim}, is then   
 \begin{align}
   0 = \delta v_z^{\prime\prime} - z A\delta v_z^\prime +
   (B - C\zhat^2)\delta v_z = 0,\label{nearly_iso_explicit}
@@ -23,24 +24,27 @@ form as Eq. 41 in \cite{lubow93}, which describe adiabatic axisymmetric waves in
 a vertically isothermal disk without vertical shear. The two equations
 become identical after  setting $q=0$ (no vertical shear) and
 $\chi=1/\gamma$ (adiabatic flow) in our Eq. \ref{nearly_iso_explicit},
-and making the low-frequency, Keplerian disk approximation in
+and making the low-frequency, nearly-Keplerian approximation in
 \citeauthor{lubow93} after a change of variables.    
 
-\subsubsection{The effect of introducing a small but finite
+The thin disk approximation allows us to develop explicit solutions,
+but some general results may be established without it (see,
+e.g. Appendix \ref{global_corr} and \S\ref{iso_pert}).     
+
+
+\subsection{The effect of introducing a small but finite
   thermal relaxation time}\label{relax_pert}
 It is instructive to first ask  the more analytically tractable
 question: how 
 do the eigenfrequencies and eigenfunctions change when we change
 $t_c=\beta\Omega_k^{-1}$ from zero to a small but finite value? For
-sufficiently small $\beta$, for which the perturbations may be
-considered nearly-isothermal, we expect the new solutions to only
-differ slightly from the explicit isothermal solutions developed in
-\S\ref{iso_poly}.  
+sufficiently small $\beta$, for which the perturbations may be 
+considered nearly-isothermal, we expect the solution to only
+differ slightly from a case with $\beta\equiv 0$. 
 
 To determine the (assumed) small effect of introducing a short thermal
 relaxation, we linearize Eq. \ref{nearly_iso_explicit} about a known 
-solution for $\beta\equiv0$  ($\chi\equiv 1$). 
-Let 
+solution for $\beta\equiv0$, which we choose below. Let  
 \begin{align}\label{nearly_iso_pert}
   \beta \to 0 + \delta\beta,\, \delta v_z\to \delta v_z+\delta
   v_{z1},\,\hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}, 
@@ -49,10 +53,8 @@ which implies
 \begin{align}
   \chi \to 1 + \delta\chi = 1 + \ii \hat{\sigma}\left(\gamma-1\right)\delta\beta.
 \end{align}
-Here $\delta v_z$ corresponds to an explicit solution developed in
-\S\ref{iso_poly} with  $\hat{\sigma}^2$ given by Eq. \ref{sig2_iso}. Inserting
-Eq. \ref{nearly_iso_pert} into Eq. \ref{nearly_iso_explicit}  and keeping
-only first order terms, we obtain 
+Inserting Eq. \ref{nearly_iso_pert} into Eq. \ref{nearly_iso_explicit}
+and keeping only first order terms, we obtain  
 \begin{align}
  0 =& \delta v_{z1}^{\prime\prime} - z\left(1 + \ii\epsilon q
    k\right)\delta v_{z1}^\prime\notag\\
@@ -64,27 +66,33 @@ only first order terms, we obtain
      q \khat\right)\right]\delta v_{z1}.\label{nearly_iso4}
 \end{align}
 
-We could proceed by considering the entire set of polynomial solutions
-for $W$, and hence for $\delta v_z$, as derived in \S\ref{iso_poly}, but it
-is simplest to look at the fundamental mode. Thus we consider the `basic state' 
- \begin{align*}
-   \delta v_z = 1,\quad \hat{\sigma}^2\left(1+\hat{k}^2\right) = 1 +
-   \ii\epsilon q \hat{k},
- \end{align*}
- then we may seek 
- \begin{align}
-   \delta v_{z1} = a \zhat^2 + b,
- \end{align}
+In Eq. \ref{nearly_iso_pert} and \ref{nearly_iso4}, $\delta v_z$ is to
+a solution to Eq. \ref{nearly_iso_explicit} with 
+$\beta=0$. For definiteness, let us consider the simple solution 
+\begin{align}
+  \beta\equiv 0, \quad \delta v_z = 1,\quad \hat{\sigma}^2 = \frac{1 +
+  \ii\epsilon q \hat{k}}{1+\hat{k}^2}, \label{pert_basic} 
+\end{align}
+which solves Eq. \ref{nearly_iso_explicit} because $\delta
+v_z=$constant, $\chi=1$ so that $C=0$, and the eigenfrequency makes
+$B=0$. Then we may seek 
+\begin{align}
+  \delta v_{z1} = a \zhat^2 + b,
+\end{align}
 where $a$, $b$ are constants. 
+
+% We could proceed by considering the entire set of polynomial solutions
+% for $W$, and hence for $\delta v_z$, as derived in \S\ref{iso_poly}, but it
+% is simplest to look at the fundamental mode. 
 
 Inserting the above expressions for $\delta v_z$, $\delta v_{z1}$ and
 $\hat{\sigma}^2$ into Eq. \ref{nearly_iso4}, then balancing
 coefficients of $\zhat^2$ and constants, we require
 \begin{align}
-0 &= 2a + 2\hat{\sigma}\left(1+\khat^2\right)\delta\hat{\sigma} +
-\left(\hat{\sigma}^2 -1\right)\delta\chi,\notag\\
-0&= 2a\left(1+\ii\epsilon q \khat\right) - \left(\khat^2 - \ii\epsilon
-q \khat\right)\delta\chi.
+  0 &= 2a + 2\hat{\sigma}\left(1+\khat^2\right)\delta\hat{\sigma} +
+  \left(\hat{\sigma}^2 -1\right)\delta\chi,\notag\\
+  0&= 2a\left(1+\ii\epsilon q \khat\right) - \left(\khat^2 - \ii\epsilon
+    q \khat\right)\delta\chi.
 \end{align} 
 
 Using the expressions for $\delta\chi$ and $\hat{\sigma}$ we can solve
@@ -118,13 +126,13 @@ very small scales.
 % \begin{figure}
 %   \includegraphics[width=\linewidth]{figures/domegadbeta}
 %   \caption{Rate of change of the fundamental VSI eigenfrequency
-%     $\sigma$ with respect to the introduction of a small but finite
-%     cooling time. The plotted quantity is $\p\hat{\sigma}/\p\beta$ at $\beta=0$, evaluated using
-%     Eq. \ref{nearly_iso_dsig} with 
-%     disk parameters $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. The real
-%     (imaginary) part of $\p\hat{\sigma}/\p\beta$ is shown as the solid
-%     (dotted) lines. 
-%     \label{domegadbeta}}  
+%   $\sigma$ with respect to the introduction of a small but finite
+%   cooling time. The plotted quantity is $\p\hat{\sigma}/\p\beta$ at $\beta=0$, evaluated using
+%   Eq. \ref{nearly_iso_dsig} with 
+%   disk parameters $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$. The real
+%   (imaginary) part of $\p\hat{\sigma}/\p\beta$ is shown as the solid
+%   (dotted) lines. 
+%   \label{domegadbeta}}  
 % \end{figure}   
 
 Introducing a finite thermal relaxation time introduces buoyancy
@@ -134,10 +142,10 @@ sense because it is most significant for large $\zhat$, i.e. away from
 the midplane where the effect of buoyancy first appears as $\beta$ is
 increased from zero. 
 
-\subsubsection{Dispersion relation with thermal
-  relaxation}\label{disp_relax}
-To obtain a dispersion relation similar to that for 
-isothermal perturbations (Eq. \ref{sig2_iso}), we first write 
+\subsection{Explicit solutions and dispersion relation}\label{disp_relax}
+%To obtain a dispersion relation similar to that for 
+%isothermal perturbations (Eq. \ref{sig2_iso}), 
+We now solve Eq. \ref{nearly_iso_explicit} explicitly. We first write  
 \begin{align}
   \delta v_z(\zhat) =
   g(\zhat)\exp\left(\frac{\alpha\zhat^2}{2}\right), \label{adia_ansatz}
@@ -152,8 +160,8 @@ Eq. \ref{adia_ansatz} into Eq. \ref{nearly_iso_explicit} gives
 We choose $\alpha$ to make the coefficient of $\zhat^2g$
 vanish, and impose the vertical kinetic energy density
 $\rho|\delta v_z|^2\propto |g|^2 \exp{\left(\real\alpha -
-    1/2\right)\zhat^2}$ to remain finite. Then assuming $g(\zhat)$
-is a polynomial, we require  
+    1/2\right)\zhat^2}$ to remain finite as $|\zhat|\to\infty$. 
+Then assuming $g(\zhat)$ is a polynomial, we require  
 \begin{align}
   \real\alpha < \frac{1}{2}, 
 \end{align}
@@ -164,8 +172,7 @@ which amounts to choosing
 %by considering the case $q=0$ and $\beta\to\infty$ as examined in
 %\cite{lubow93}.   
 
-We now have an equation in the same form as that for isothermal
-perturbations (Eq. \ref{iso_ode3}):
+Eq. \ref{nearly_iso_explicit} becomes 
 \begin{align}
   0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime +
   \left(B + \alpha\right)g.
@@ -225,7 +232,7 @@ requires a numerical solution. However, for the fundamental mode
 % ate_theory, eps=0.05, smallq=-1d0, gmma=1.4, bmax=1.0, ncases=11,
 %mmode=0.0, root=1, legend=[0.102,0.14,5.4,0.355], yrange=[0,6]
 
-\subsubsection{Upper limit on the thermal relaxation timescale for the
+\subsection{Upper limit on the thermal relaxation timescale for the
   fundamental VSI mode}\label{iso_vsi_beta_crit}
 
 Here we estimate the maximum thermal relaxation timescale
@@ -249,13 +256,11 @@ $\khat\gg1$, we find
   - 2\beta (\hat{\omega}\khat)^2 - \epsilon q \gamma^2\beta^2 (\hat{\omega}\khat)^3.\label{relax_cond2}
 \end{align}
 This is a pair of simultaneous equations for
-$\hat{\omega}$ and $\beta$. % A simple solution can be obtained by the
-% following considerations.
-Since our discussion of stable solutions  
-without vertical shear yield a dispersion
-relation $\hat{\omega}\propto \khat^{-1}$ for $\khat\gg 1$
-(\S\ref{iso_stable}, Eq. \ref{iso_stable_disp}), we are motivated to
-seek solutions to 
+$\hat{\omega}$ and $\beta$.  
+% Since our discussion of stable solutions without vertical shear yield
+% a dispersion relation $\hat{\omega}\propto \khat^{-1}$ for $\khat\gg
+% 1$ (\S\ref{iso_stable}, Eq. \ref{iso_stable_disp}).
+We seek solutions to 
 Eq. \ref{relax_cond1}---\ref{relax_cond2} with  
 % we wish to seek a criterion independent of k 
 % \begin{align}
@@ -283,10 +288,9 @@ For a thin disk $\epsilon\ll 1$, we infer
 \end{align}
 is required for the fundamental VSI to operate. We will test this
 dependence numerically in \S\ref{bcrit_num_test}. 
-From our discussion for isothermal perturbations
-(\S\ref{iso_discuss}), we expect   
-$\beta<\beta_\mathrm{crit}$ to be a sufficient condition for the
-VSI. That is, when $\beta<\beta_\mathrm{crit}$, perturbations are
+From our discussion in \S\ref{relax_pert} we expect   
+$\beta<\beta_\mathrm{crit}$ is required for the fundamental mode to be
+unstable. That is, when $\beta<\beta_\mathrm{crit}$, perturbations are 
 effectively isothermal. 
 
 Rapid thermal relaxation is required to overcome a stabilizing
@@ -302,9 +306,7 @@ $\beta_\mathrm{crit}\propto \epsilon$.
 This suggests that
 finite thermal relaxation rapidly stabilizes the VSI.  
 
-
-
-
+\subsection{Isothermal perturbations}\label{iso_pert}
 
 
 

@@ -1,14 +1,13 @@
 \section{Applicability of the vertically global shearing box}\label{global_corr}
 In \S\ref{analytical} we used the vertically global shearing box
-\citep[VGSB,][]{mcnally14} to make analytic progress. % Here, we discuss limitations of this approach.   
+\citep[VGSB,][]{mcnally14} to make analytic progress.   
 The main difference between the linear problem in the VGSB 
 and the radially-local approximation
 (Eq. \ref{lin_mass}---\ref{lin_energy}) adopted in our numerical study
 is the absence of  terms associated with the radial disk structure in
 the former framework. These terms appear in the energy, mass and radial momentum
 equations and are reproduced here for convenience,
-% Using the notation and disk models in the main text, the
-% energy, density and $r$ momentum equations become 
+
 \begin{align}
   \ii \sigma W  &=c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
       z}\right|_0 \delta v_z + \frac{\gamma}{\Gamma} \frac{d\delta
@@ -33,22 +32,12 @@ therefore have a relative magnitude of $O(\epsilon/\khat)$. This is
 small for thin disks ($\epsilon\ll1$) and/or small radial wavelengths
 ($\khat\gg 1$). 
 
-%  To obtain the
-% linear problem in the VGSB, we take the radially-local 
-% approximation further and formally set $\hat{g}_c=0$, $r\to x$ and
-% $k_r\to k_x$. It is clear that this approximation improves with
-% increasing $|k_x|$.   
 
 \subsection{Spurious growth of adiabatic perturbations in the VGSB}\label{analytic_adia} 
 An important caveat of the VGSB is that it cannot be used in the
 adiabatic limit. We explain this by setting  $\beta\to\infty$ in
 Eq. \ref{vertiso_gov_nondim}, which can then be written as 
-% For adiabatic perturbations ($\gamma>1$, $\beta\to\infty$) we may
-% simply use the Soilberg-Hoiland critera to assess stability
-% (\S\ref{solberg}). Nevertheless, we briefly consider this case in the
-% local framework to demonstrate its limitations. For $\beta\to\infty$
-% the parameter $\chi = 1/\gamma$ and Eq. \ref{vertiso_gov_nondim} can
-% be written as   
+
 \begin{align}
   0 =\dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
     \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime
@@ -93,31 +82,8 @@ structure responsible for it. Nevertheless, we demonstrate below that
 this inconsistency is unimportant for the vertical shear instability,
 which occurs for $\beta\ll1$. 
 
-% To 
-% avoid this, we must restrict our attention to short thermal relaxation
-% timescales ($\beta\lesssim1$) and/or neutrally-stratified disks
-% ($\gamma=\Gamma$) when $q\neq0$. 
-
 \subsection{Effect of global radial gradients}
-% We may also reverse the above procedure by reinstating the `global
-% correction' terms proportional to $\hat{g}_c$ in the linear VGSB
-% equations. Of course, doing so implies the basic state is not uniform
-% in $x$, which would be inconsistent with the full VGSB equations in
-% equilibrium. Nevertheless, we illustrate in Fig. \ref{gcorr_compare} the effect of
-% these global radial gradients on the growth rate of the fundamental
-% VSI.  
 
-% The global correction terms do not change the qualitative dependence
-% of the fundamental VSI growth rates on the thermal relaxation
-% timescale. The difference is negligble for $\beta\lesssim 1$ (i.e.
-% fast thermal relaxation). The critical relaxation timescale for the
-% fundamental VSI is unaffected by these global radial radients. 
-
-% However, in the adiabatic limit $\beta\to\infty$ the linear VGSB
-% equations give a positive growth rate as discussed in
-% \S\ref{analytic_adia}, which is inconsistent with the second
-% Solberg-Hoiland criterion (Eq. \ref{solberg2}). The correct behaviour
-% ($\nu\to0$ as $\beta\to\infty$) is obtained with global correction.  
 
 In  Fig. \ref{gcorr_compare}, we demonstrate the effect of the global radial gradient terms
 proportional to $\hat{g}_c$ in 
@@ -149,10 +115,6 @@ $\beta\ll1$, then the VGSB framework is an adequate approximation.
     (Full)' curve is obtained by numerically solving
     Eq. \ref{lin_mass}---\ref{lin_energy}  with $\hat{g}_c=1$, which
     accounts for the radial disk structure.  
-% computed from the linear VGSB equations used in
-%     the main text (dotted) and that including additional global
-%     radial gradient terms in
-%     Eq. \ref{gcorr_terms1}---\ref{gcorr_terms3} (solid). 
     The disk parameters are $\Gamma=1.011$,
     $\gamma=1.4$ and $(p,q,\epsilon)=(-1.5,-1,0.05)$. The perturbation
     wavenumber is $\khat=30$. 
@@ -163,15 +125,10 @@ $\beta\ll1$, then the VGSB framework is an adequate approximation.
 
 
 
-%nevertheless we have calculated
-%plot growth rate v.s. bcool 
-
-
 
 \section{Full governing equation for vertically isothermal disks in
   the VGSB}\label{adia_improve}
-% \section{Improving the nearly-Keplerian approximation for adiabatic
-%   disks}\label{adia_improve}
+
 In \S\ref{approx_gov} we made the replacement $D\to\Omega_k^2$ before
 eliminating variables to obtain a single equation for $\delta v_z$,
 Eq. \ref{vertiso_gov}.  This procedure ignores the vertical dependence of
@@ -234,214 +191,6 @@ neglecting these terms has no qualitative effect on the discussion in
 arise for isothermal perturbations discussed in \S\ref{iso_discuss}
 since in that case we work with a governing equation for $W$ instead. 
 
-% \section{Alternative inference of instability in the presence of weak
-%   vertical shear}\label{pert_theory}
-% We can also investigate the destabilizing effect of vertical shear
-% without explicitly solving the full governing equation,
-% Eq. \ref{iso_ode3}. We first
-% consider a system with $q\equiv0$, for which the eigenfunctions are
-% Hermite polynomials and the real eigenfrequencies are known. We then
-% perturb this system by introducing a weak vertical shear ($|q|\ll1$)
-% and linearize the governing equation. This procedure is
-% \begin{align}   
-%   q \to 0 + \delta q,\quad
-%   W \to \He_n + \delta W,\quad
-%   \hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}. 
-% \end{align}
-% %where for this exercise we restore $\sigma$ as the eigenfrequency. 
-
-% Linearizing the integral relation Eq. \ref{integral_relation1} in the
-% thin-disk limit, and taking the
-% imaginary part, we have
-% \begin{align}
-%   2\hat{\sigma}\imag(\delta\hat{\sigma})
-%   \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
-%   \He_n^2(\hat{z}) d\hat{z}
-%   = \delta q \epsilon \hat{k} 
-%   \int_{-\infty}^{\infty}
-%   w(\zhat)\hat{z}\He_n(\hat{z})\He_n^\prime(\zhat) d\hat{z}
-% \end{align}
-% Recognizing $\hat{z} = \He_1(\hat{z})$ and using $\He_n^\prime = n
-% \He_{n-1}$ we have
-%  \begin{align}
-%    2\hat{\sigma}\imag(\delta\hat{\sigma})
-%    \left(1+\hat{k}^2\right) \int_{-\infty}^{\infty} w(\zhat)
-%    \He_n^2(\hat{z}) d\hat{z}
-%    =\delta q \epsilon \hat{k} 
-%    \int_{-\infty}^{\infty}
-%    w(\zhat)\He_1(\hat{z})\He_n(\hat{z})n\He_{n-1}(\hat{z})d\hat{z}. 
-%  \end{align}
-
-% Finally, we evaluate the integrals using the results
-% \begin{align}
-%   \int_{-\infty}^{\infty}
-%   w(\xi) \He_k(\xi)\He_l(\xi) d\xi = \sqrt{2\pi}k!\delta_{kl} \quad
-% % \end{align}
-% \text{and} \quad
-% % \begin{align}
-%   \int_{-\infty}^{\infty}
-%   w(\xi) \He_m(\xi)\He_k(\xi)\He_l(\xi) d\xi =
-%   \frac{\sqrt{2\pi}m!k!l!}{(j-m)!(j-k)!(j-l)!}, 
-% \end{align}
-% where $j = (m+k+l)/2$. We then obtain
-%  \begin{align}
-%    2\hat{\sigma}\imag(\delta\hat{\sigma})
-%   \left(1+\hat{k}^2\right) = \delta q \epsilon \hat{k} n.
-%  \end{align}
-% Inserting the original eigenfrequency $\hat{\sigma} = \pm
-% \sqrt{n}(1+\hat{k}^2)^{-1/2}$ gives
-% \begin{align}
-%   \imag(\delta\hat{\sigma})= \pm \frac{1}{2}\delta q \epsilon
-%   \sqrt{n} \frac{\hat{k}}{\sqrt{1+\hat{k}^2}}. 
-% \end{align}
-% This result agrees with Eq. \ref{simple_growth} in the limit
-% $|q|\to0$. 
-% %for $n=1$, since the
-% %function $\He_1$ solves the governing equation exactly. 
-% For $\hat{k}\gg 1$ we have
-% \begin{align}
-%   \imag(\delta\hat{\sigma})\simeq \pm \frac{1}{2}\delta q \epsilon
-%   \sqrt{n} \sgn{\hat{k}}. 
-% \end{align}
-
-
-
-
-% Differentiating Eq. \ref{adia_iso1} properly gives
-% \begin{align}
-%   \left(D + \gamma k_x^2 c_s^2\right)\frac{d\Delta}{dz}=& D
-%   \frac{d^2\delta v_z}{dz^2} + k_x^2c_s^2\left[\frac{\gamma}{\left(D + \gamma k_x^2 c_s^2\right)}\frac{dD}{dz} + \ii
-%     \frac{d\ln\rho}{dz}\left(\ii +
-%       \frac{q}{k_xr}\right)\right]\frac{d\delta v_z}{dz}\notag\\
-%   &+ \ii k_x^2 c_s^2 \left(\ii +
-%       \frac{q}{k_xr}\right)\left[\frac{d^2\ln\rho}{dz^2} -
-%       \frac{1}{\left(D + \gamma
-%           k_x^2c_s^2\right)}\frac{dD}{dz}\frac{d\ln\rho}{dz}\right]\delta
-%     v_z. \label{adia_diso1}
-% \end{align}
-% The terms that were ignored in deriving Eq. \ref{adia_iso3} are those
-% proportional to $dD/dz$ in Eq. \ref{adia_diso1}. Now, in the global
-% disk with $\Gamma=1$ we have
-% \begin{align}\label{dkappa2}
-%   \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
-%     r}\frac{\p\Omega^2}{\p z} = -
-%   \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(2 + q +
-%     \frac{z^2/r^2-2}{z^2/r^2+1}\right). 
-% \end{align}
-% For the local problem we may then write
-% \begin{align}
-%   \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z;q),
-% \end{align}
-% where the function $F$ corresponds to the bracket in
-% Eq. \ref{dkappa2}. This function varies from $F=q$ at $z=0$ to $F\to
-% 3+q$ as $|z|\to\infty$, i.e. its magnitude is of order unity. 
-% % We estimate the
-% % importance of these terms by noting that 
-% % \begin{align}
-% %   \frac{dD}{dz}\equiv \frac{d\kappa^2}{dz} \simeq \frac{d\Omega^2}{dz}
-% %   = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2},
-% % \end{align}
-% % for thin disks. 
-% Eq. \ref{adia_diso1} becomes
-% \begin{align}
-% \left(D + \gamma k_x^2 c_s^2\right)\frac{d\Delta}{dz}=& D
-%   \frac{d^2\delta v_z}{dz^2} - k_x^2c_s^2\frac{d\ln\rho}{dz}\left[ 1 - 
-%       \frac{\ii q}{k_xr}  +  \frac{\gamma q c_s^2F}{r^2\left(D +
-%         \gamma k_x^2 c_s^2\right)}\right]\frac{d\delta
-%     v_z}{dz}\notag\\ 
-%   &- k_x^2 c_s^2 \left(1 - 
-%       \frac{\ii q}{k_xr}\right)\left[\frac{d^2\ln\rho}{dz^2} + 
-%       \frac{qc_s^2F}{r^2\left(D + \gamma
-%           k_x^2c_s^2\right)}\left(\frac{d\ln\rho}{dz}\right)^2\right]\delta
-%     v_z. \label{adia_diso2}
-% \end{align}
-% Since $D\sim \Omega_k^2$ in the low-frequency limit, we 
-% see from Eq. \ref{adia_diso2} that the neglected terms are
-% $O(\epsilon^2)$. We can make this explicit by combining
-% Eq. \ref{adia_diso1}---\ref{adia_diso2} and Eq. \ref{adia_iso2}, then
-% set $D\to\Omega_k^2$. In terms of non-dimensional variables, the result
-% is  
-% \begin{align}
-%    &\delta v_z ^{\prime\prime} + \left(1 + \ii\epsilon q\hat{k} -
-%     \frac{\gamma q \epsilon^2\hat{k}^2F}{1+\gamma
-%       \hat{k}^2}\right)\ln\rho^{\prime}\delta v_z^\prime +
-%   \left[\left(\frac{1}{\gamma} + \ii \epsilon q
-%       \hat{k}\right)\ln\rho^{\prime\prime} - \hat{k}^2\left(1 -
-%       \frac{\ii\epsilon
-%         q}{\hat{k}}\right)\left(\frac{\gamma-1}{\gamma} +
-%       \frac{q\epsilon^2F}{1+\gamma\hat{k}^2}\right)\ln\rho^{\prime
-%       2}\right]\delta v_z \notag\\&=
-%   -\hat{\sigma}^2\left(\frac{1}{\gamma} + \hat{k}^2\right)\delta v_z\label{adia_diso3}.
-% \end{align}   
-% Eq. \ref{adia_diso3} differs from Eq. \ref{adia_iso3} by terms
-% proportional to $\epsilon^2$. For a thin disk, $\epsilon\ll1$, so
-% neglecting these terms has no qualitative effect on the discussion in
-% \S\ref{analytic_adia}. 
-
-% \section{Axisymmetric instability in vertically 
-%   isothermal disks in global cylindrical geometry}\label{global_vertiso}
-% Consider a locally isothermal disk in 3D such that $P=c_s^2\rho$ at
-% all times, so in the perturbed state $\delta P =
-% c_s^2\delta\rho$, with $c_s$ begin a prescribed function of position. 
-% The axisymmetric linearized fluid equations in cylindrical
-% geometry is then 
-% \begin{align}
-%  \ii\sigma \delta v_r + 2\Omega\delta v_\phi &= c_s^2\frac{\p}{\p r}\left(\frac{\delta\rho}{\rho}\right),\\
-%  \ii\sigma \delta v_\phi &= \frac{1}{r}\delta\bm{v}\cdot\nabla j,\\
-%  \ii\sigma \delta v_z &= c_s^2\frac{\p}{\p
-%    z}\left(\frac{\delta\rho}{\rho}\right),\\
-%  \ii\sigma\delta\rho &= \nabla\cdot\left(\rho\delta\bm{v}\right),
-% \end{align}
-% and we recall $j=r^2\Omega$. We can eliminate $\delta v_\phi$ from these equations to obtain
-% \begin{align}
-%   -\sigma^2\rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) +
-%   \kappa^2\rho|\delta v_r|^2 + \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
-%   \delta v_r^*\delta v_z =
-%   c_s^2\rho\delta\bm{v}^*\cdot\nabla\left(\frac{\ii\sigma\delta\rho}{\rho}\right)
-%   =c_s^2\rho\delta\bm{v}^*\cdot\nabla\left[\frac{1}{\rho}\nabla\cdot\left(\rho\delta\bm{v}\right)\right].\label{global_integral} 
-% \end{align}
-% At this point if we make the anelastic approximation by assuming
-% $\nabla\cdot\left(\rho\delta\bm{v}\right)$ is negligible in this
-% equation \citep[as argued by][]{nelson13}, 
-% then the only contribution to instability comes from the third term on
-% the left hand side, i.e. the explicit vertical shear term
-% $\p_zj$. This is the same conclusion reached in
-% \S\ref{integral_relation}. 
-
-% The term proportional to $\kappa^2$ is stabilizing. Because radial shear
-% is much larger than vertical shear, this implies that significant
-% instability can only be achieved with large vertical
-% motions (i.e. $|\delta v_z|\gg|\delta v_r|$). 
-
-% If we integrate Eq. \ref{global_integral} over the fluid volume 
-% and assume boundary terms vanish when integrating by parts, we obtain 
-% \begin{align}
-%   -\sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV +
-%   \int \kappa^2\rho|\delta v_r|^2 dV + \int \frac{2\Omega}{r}\frac{\p j}{\p z} \rho
-%   \delta v_r^*\delta v_z dV = -\int
-%   \frac{c_s^2}{\rho}\left|\nabla\cdot\left(\rho\delta\bm{v}\right)\right|^2
-%   dV - \int \nabla\cdot\left(\rho\delta\bm{v}\right) \delta
-%   \bm{v}^*\cdot\nabla c_s^2.
-% \end{align}
-% Note that the treatment so far is in fact valid for any prescribed
-% $c_s(r,z)$. However, to proceed further we specialize to the case
-% $c_s=c_s(r)$ for simplicity, i.e. vertically isothermal
-% disks. Recalling $r\p_z\Omega^2 = -\p_z\ln{\rho}\p_r
-% c_s^2$  for a vertically isothermal disk (Eq. \ref{vertical_shear}), we obtain 
-% \begin{align}
-%   \sigma^2\int \rho\left(|\delta v_r|^2 + |\delta v_z|^2\right) dV =
-%   \int \kappa^2\rho|\delta v_r|^2 dV + \int
-%   \frac{c_s^2(r)}{\rho}\left|\nabla\cdot\left(\rho\delta\bm{v}\right)\right|^2
-%   dV + \int \left[ \rho \left(\nabla\cdot\delta\bm{v}\right)\delta
-%     v_r^* + |\delta v_r|^2\frac{\p \rho}{\p r}\right]\frac{dc_s^2(r)}{dr}  dV.
-% \end{align}
-% We see that instability is only possible if
-% $dc_s^2/dr\neq0$. Furthermore, since density and temperature typically
-% decrease outwards in astrophysical disks, instability is associated
-% with the term proportional to $\nabla\cdot\delta\bm{v}$. It is also
-% clear that $\sigma^2$ will be complex in general.
-
-
 \section{Coefficients for the dispersion relation for perturbations
 with thermal relaxation}\label{relax_coeff}
 The coefficients of the dispersion relation Eq. \ref{relax_disp} is
@@ -465,6 +214,288 @@ given by:
 &c_5 = 2\ii\beta\left(1+\khat^2\right)\left(1+\gamma\khat^2\right),\\
 &c_6 = \beta^2\left(1+\gamma\khat^2\right)^2.
 \end{align}
+
+\section{Linear problem in isothermal limit}\label{iso_discuss}  
+Here we examine in more detail the special case of isothermal
+perturbations ($\beta\equiv 0$) in the VGSB framework.   
+%Isothermal perturbations correspond to $\beta\equiv0$ ($\chi=1$) and 
+In this case Eq. \ref{ode_Q} becomes   
+\begin{align} 
+  Q = W 
+\end{align}
+(i.e. $\delta P = c_s^2\delta \rho$), and so $  \ii\hat{\sigma}c_s\delta v_z = W^\prime $
+from Eq. \ref{lin_vz}. For isothermal perturbations it is in fact
+simpler to work with an equation for $W$ by substituting $Q=W$ into
+Eq. \ref{ode_w}. We obtain 
+\begin{align}
+  0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii \epsilon q \hat{k}
+    f(\zhat)\right]W^\prime + \hat{\sigma}^2\left(1+\hat{k}^2\right)W,\label{iso_ode1}
+\end{align}
+where for discussion purposes we have defined $f(\zhat)$ such that
+\begin{align}\label{fz_shear}
+  \frac{d\Omega^2}{d\hat{z}} = \epsilon^2q f(\hat{z})\Omega_k^2.
+\end{align}
+By comparing Eq. \ref{fz_shear} with Eq. \ref{vertical_shear_ex}, we
+see that $f(\zhat)= 
+\zhat\left(1+\epsilon^2\zhat^2\right)^{-3/2}$. More generally, though,
+$f$ may be considered as a representation of the vertical
+shear profile. Physically, we expect there is a maximum value of 
+$|d\Omega/dz|$. The existence of a maximum, as remarked in
+\S\ref{vshear_def}, limits the growth rate of the VSI. We explicitly
+demonstrate this below.    
+
+\subsection{Necessity of vertical shear for
+  instability}\label{integral_relation} 
+We can establish a necessary condition for instability by multiplying
+Eq. \ref{iso_ode1} by $\rho W^*$ and integrate vertically from
+$\zhat=\zhat_1$ to $z=\zhat_2$. We neglect boundary 
+terms when integrating by parts, by assuming $W$ or
+$W^\prime$ vanishes at the boundaries, or that the boundaries are 
+sufficiently far away so that the boundary terms are negligible because of the
+decaying background density with increasing height. Then,
+\begin{align}
+  \hat{\sigma}^2\left(1+\hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|W|^2d\zhat
+  =\int_{\zhat_1}^{\zhat_2}\rho|W^\prime|^2d\zhat 
+  +\ii \epsilon q \hat{k}\int_{\zhat_1}^{\zhat_2}\rho f(\zhat) W^*W^\prime d\zhat.\label{integral_relation1}
+\end{align}
+It follows that for instability ($\imag\hat{\sigma}>0$), it is necessary to
+have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. vertical
+shear. A similar conclusion can be reached in the equivalent linear  
+problem in global cylindrical disk geometry. 
+
+\subsection{Maximum growth rate}   
+Here we show that the growth rate is limited by the maximum vertical
+shear in the domain. % Writing $\hat{\sigma} = \hat{\omega} +
+% \ii\hat{\nu}$ with real $\hat{\omega}$ and $\hat{\nu}$, 
+The real and imaginary parts of 
+Eq. \ref{integral_relation1} are
+\begin{align}
+  \left(\hat{\omega}^2-\hat{\nu}^2\right)\left(1+\hat{k}^2\right)
+  \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z} -
+  \int_{\zhat_1}^{\zhat_2}\rho|W^\prime|^2d\hat{z}
+  \notag
+  =\real\left[\ii
+    \epsilon\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
+    f(\hat{z}) W^*W^\prime d\zhat\right], \\
+   2\hat{\omega}\hat{\nu}\left(1+\hat{k}^2\right)
+  \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z}
+  =\imag\left[\ii
+    \epsilon\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
+    f(\hat{z}) W^*W^\prime d\hat{z}\right],
+\end{align}
+where we recall $\hat{\omega} = \real \hat{\sigma}$ and
+$\hat{\nu}=\imag\hat{\sigma}$. 
+Adding the square of these equations give
+\begin{align}
+  \left[|\hat{\sigma}|^2\left(1+\hat{k}^2\right)
+    \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z} -
+    \int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}\right]^2
+  +4\hat{\nu}^2\left(1+\hat{k}^2\right) 
+  \int_{\zhat_1}^{\zhat_2}\rho
+  |W|^2d\hat{z}\int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}
+  =\left|\ii
+    \epsilon\hat{k}q\int_{\zhat_1}^{\zhat_2}\rho
+    f(\hat{z}) W^*W^\prime d\hat{z}\right|^2.
+\end{align}
+It is clear that
+\begin{align}\label{sigma_finite_domain} 
+  4\hat{\nu}^2\left(1+\hat{k}^2\right) 
+  \int_{\zhat_1}^{\zhat_2}\rho
+  |W|^2d\hat{z}\int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime
+  \right|^2d\hat{z} 
+  \leq\left|
+    \epsilon\hat{k}q\int_{\zhat_1}^{\zhat_2}\rho
+    f(\hat{z}) W^*W^\prime d\hat{z}\right|^2.
+\end{align}
+On the left hand side of this inequality, we apply the Cauchy-Schwarz
+inequality to obtain
+\begin{align}
+  \left( \int_{\zhat_1}^{\zhat_2}\rho
+    |W|\left|W^\prime \right|d\hat{z}\right)^2\leq
+  \int_{\zhat_1}^{\zhat_2}\rho 
+  |W|^2d\hat{z}\int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}.
+\end{align}
+On the right hand side of Eq. \ref{sigma_finite_domain} we have
+\begin{align}
+  \left|\int_{\zhat_1}^{\zhat_2}\rho
+    f(\hat{z}) W^*W^\prime d\hat{z}\right|\leq \int_{\zhat_1}^{\zhat_2}\rho
+  \left|f(\hat{z})W^*W^\prime \right|d\hat{z}
+  \leq
+  \mathrm{max}\left(|f|\right)\int_{\zhat_1}^{\zhat_2}\rho
+  |W|\left|W^\prime \right|d\hat{z},
+\end{align}
+where $\mathrm{max}(|f|)$ is the maximum value of $|f|$ in
+$\zhat\in[\zhat_1,\zhat_2]$. Inserting these inequalities into
+Eq. \ref{sigma_finite_domain} gives
+\begin{align}\label{max_growth}
+  |\hat{\nu}|\leq
+  \frac{\epsilon |\hat{k} q|}{2\sqrt{1+\hat{k}^2}}\mathrm{max}(|f|). 
+\end{align}
+Recalling that $f$ represents vertical shear (Eq. \ref{fz_shear}), it
+follows that the maximum possible growth rate of unstable modes,
+satisfying the above boundary conditions, is limited by the maximum
+vertical shear in the domain considered.  
+
+In practice, one might consider a vertical domain of a few scale 
+heights in a thin disk with $|q|=O(1)$. In this case, $|\epsilon\zhat|\ll1$ and  
+$f\simeq \zhat$, so that $\mathrm{max}|f| = O(1)$, implying a
+maximum growth rate $O(\epsilon \Omega_k)$, consistent with numerical
+results. 
+
+% For vertical domains smaller 
+% than this height, the growth rate is limited by $|f|$ at the vertical
+% boundaries considered. For $|\epsilon\hat{z}|\ll1$ we have $f\simeq
+% \hat{z}$, in which case we can expect growth rates to increase at most linearly
+% with respect to the vertical domain size.   %no faster than linear 
+
+\subsection{Thin-disk limit}
+For thin disks ($\epsilon\ll1$), in which 
+$\ln\rho\simeq -\zhat^2/2$ and $f(\zhat)\simeq \zhat$, 
+% by expanding the background density and vertical shear profile in powers
+% of $z/r$. To lowest order we obtain 
+% \begin{align}
+%   &\frac{\rho}{\rho_0} \simeq 
+%   \exp{\left(-\frac{\hat{z}^2}{2}\right)} \equiv w(\hat{z}),\label{thin_dens}\\
+%   &\frac{d\Omega^2}{d\hat{z}} \simeq \epsilon^2q\Omega_k^2\hat{z}, \label{thin_vshear}
+% \end{align} 
+%With this approximation and those in \S\ref{integral_relation}, 
+Eq. \ref{iso_ode1} becomes  
+\begin{align}\label{iso_ode3}
+  W^{\prime\prime} - \left(1 + \ii q\epsilon
+    \hat{k}\right)\hat{z}W^\prime  +
+  \hat{\sigma}^2\left(1+\hat{k}^2\right)W = 
+  0.
+\end{align}
+We remark that for large $|\hat{k}|$, Eq. \ref{iso_ode3} is the same as
+that derived by \cite{nelson13}, although we have taken a different
+route.  
+
+To complete the problem we must specify boundary conditions. The 
+maximum vertical domain size should be limited by the thin
+disk and low-frequency approximations (i.e. $z\lesssim r$).     
+It is, however, common to take $\mathrm{max}|z|\to\infty$ and impose
+that the kinetic  energy remain bounded at infinity. This 
+is appropriate for the density field because both the true density profile 
+and its thin-disk approximation decay rapidly away from the midplane.   
+
+However, the thin-disk representation of vertical shear diverges with 
+$\hat{z}$, unlike the true vertical shear profile which eventually
+decays. Thus, taking $\zhat_{1,2}\to \pm\infty$ will permit
+unphysically large growth rates (as demonstrated below). Nevertheless,
+the infinite disk is useful to consider since it permits an analytical
+discussion.   
+
+\subsubsection{Stability in the absence of vertical shear}\label{iso_stable}
+When $q=0$, Eq. \ref{iso_ode3} is
+\begin{align}\label{hermite_ode}
+  \left[w(\hat{z})W^\prime \right]^\prime + nW
+  w(\hat{z}) =0, 
+\end{align}
+where $w(\zhat)=\exp{(-\zhat^2/2)}$ and we have defined a new eigenvalue 
+\begin{align}
+  n \equiv \hat{\sigma}^2(1+\hat{k}^2). 
+\end{align} 
+Eq. \ref{hermite_ode} is Hermite's differential equation. If we impose
+that the kinetic energy density remain bounded at infinity, then the
+solutions are Hermite polynomials  
+\begin{align}
+  W \propto \He_n(\hat{z}),
+\end{align}
+and $n$ is a non-negative integer. This translates to a real
+eigenfrequency $\sigma$ such that
+\begin{align}
+  \left|\hat{\sigma}\right| = \sqrt{n}
+  \left(1+\hat{k}^2\right)^{-1/2}. \label{iso_stable_disp}
+\end{align}
+Since we have assumed $|\sigma^2|\ll \kappa^2\sim \Omega_k^2$, our
+analysis is only valid for large wavenumbers such that $\hat{k}^2\gg   
+n-1$. Physically, this corresponds to radial length-scales much
+smaller than the local disk scale height. Note that
+Eq. \ref{iso_stable_disp} is implied by Eq. 54 in
+\cite{lubow93} after setting $\gamma=1$ and making the low-frequency,
+Keplerian disk approximation in that equation. 
+
+We remark that for fixed $n$ and $\khat\gg 1$ the dispersion relation 
+Eq. \ref{iso_stable_disp} imply $\hat{\omega}\propto 1/\khat$. This inverse relation 
+has also been qualitatively observed in numerical simulations
+\citep{stoll14}.  
+
+
+\subsubsection{Polynomial solutions with vertical
+  shear}\label{iso_poly}
+More generally, we can seek power-series solution to
+Eq. \ref{iso_ode3}, 
+\begin{align}
+  W(\zhat) = \sum_{l=0}^\infty a_l\zhat^l. 
+\end{align}
+Then the coefficients must satisfy the recurrence relation
+\begin{align}
+  (l+2)(l+1)a_{l+2} +
+  \left[n - l\left(1+\ii \epsilon q  \hat{k}\right)\right] a_l = 0, 
+\end{align}
+where $n$ is not necessarily an integer. Indeed, if we demand
+a polynomial of degree $L$ as the solution, then the eigenfrequency
+must satisfy
+\begin{align}\label{sig2_iso}
+  \hat{\sigma}^2 = L\left(\frac{1+\ii q \epsilon
+      \hat{k}}{1+\hat{k}^2}\right).
+\end{align}
+The eigenfrequency $\hat{\sigma}$ is therefore complex for
+$L\geq1$. The dispersion relation Eq. \ref{sig2_iso} can also be
+derived by setting $\beta=0$ in the more general dispersion relation 
+Eq. \ref{relax_disp} with coefficients given in Appendix
+\ref{relax_coeff}. We are interested in 
+unstable modes for which $\hat{\nu}>0$ and is given by
+\begin{align}\label{simple_growth}
+  \hat{\nu} =\sqrt{
+    \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2\epsilon^2\hat{k}^2} - 
+      1\right)}. 
+\end{align}
+For fixed $q$ and $\epsilon$, the growth rate vanishes for both
+$\hat{k}^2\to0$ and $\hat{k}^2\to\infty$. 
+The maximum growth rate
+occurs at the optimum wavenumber $\hat{k}_\mathrm{opt}$
+\begin{align}
+  |\hat{k}_\mathrm{opt}| = \sqrt{\frac{2+|\epsilon q|}{|\epsilon q|}},
+\end{align}
+and
+\begin{align}
+  \mathrm{max}\left(\hat{\nu}\right) =\frac{\sqrt{L}|\epsilon
+    q|}{2\sqrt{1+|\epsilon q|}}. \label{iso_max_growth}
+\end{align}
+Since $L\geq1$, there is no limit to the maximum growth rate. This is
+an artifact of the thin-disk approximation because the vertical 
+shear $d\Omega^2/dz\propto z$ increases indefinitely with 
+height. However, Eq. \ref{iso_max_growth} compares well with
+numerical solutions for small $L$ (see \S\ref{vertiso_pertiso}). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Fiducial model for a protoplanetary disk}\label{mmsn}
 For results application in \S\ref{application} we use the disk model
