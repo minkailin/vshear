@@ -25,7 +25,9 @@ We included a source term in the energy equation which relaxes the disk
 temperature to its initial value on a timescale
 $t_c=\beta\Omega_k^{-1}$. This approach to model thermal relaxation was also
 employed in the global numerical simulations of \cite{nelson13}, and
-allows the thermodynamic response of the disk to be controlled.    
+allows the thermodynamic response of the disk to be controlled.
+However, it is possible to model $\beta$ self-consistently by
+relating it to thermal timescales expected in realistic disks. 
 
 In accordance with the above studies, which show that the VSI occurs for 
 perturbations with small radial lengthscales, we applied the 
@@ -37,9 +39,8 @@ the `vertically-global shearing box' (VGSB) formalism developed by
 \cite{nelson13} in a locally isothermal disk can be captured by the
 VGSB. We find the VGSB framework is appropriate for $\beta\lesssim1$. 
 This is convenient because rapid thermal relaxation ($\beta\ll1$) is
-generally required for the VSI.  However,
-the VGSB framework is not appropriate in the adiabatic limit ($\beta \gg
-1$). 
+generally required for the VSI.  However, the VGSB framework is not
+appropriate in the adiabatic limit ($\beta \gg 1$). 
    
 %OK framework for the regime of interest 
 % The presence of a
@@ -49,39 +50,43 @@ the VGSB framework is not appropriate in the adiabatic limit ($\beta \gg
 
 We mostly focused on vertically isothermal disks ($\Gamma=1$), since
 this is the relevant case for protoplanetary disks that are irradiated
-\citep{chiang97}. It also permits a largely analytical discussion.  Our analysis is an
-extension of the linear models considered in \cite{lubow93} by 
-adding vertical shear and (rapid) thermal relaxation, but in the limit of low-frequency
-perturbations in nearly-Keplerian disks. These approximations were
-made for simplicity, but also motivated by recent numerical
-simulations \citep{nelson13}.   
+\citep{chiang97}. It also permits a largely analytical discussion.
+Our analysis is an extension of the linear models considered in
+\cite{lubow93} by  adding vertical shear and (rapid) thermal
+relaxation, but in the limit of low-frequency perturbations in
+nearly-Keplerian disks. These approximations were made for simplicity,
+but also motivated by recent numerical simulations
+\citep{nelson13}. We obtained explicit solutions for the VSI with
+thermal relaxation in the thin disk limit. 
 
-For isothermal perturbations ($\beta=0$) we explicitly
-demonstrated instability  associated with vertical shear, and that the 
-VSI growth rate is limited by the maximum vertical shear within the 
-vertical domain of interest. The fundamental VSI mode is characterized
-by one node in the density perturbation at the midplane 
-(i.e. anti-symmetric about $z=0$), which corresponds to a vertical
-velocity perturbation  $\delta v_z\sim\mathrm{constant}$ near the
-mid-plane with zero nodes. These have been referred to as
-`corrugation modes' by \cite{nelson13}, and were found to dominate
-their numerical simulations, as well as that of
+% For isothermal perturbations ($\beta=0$) we explicitly
+% demonstrated instability  associated with vertical shear, and that the 
+% VSI growth rate is limited by the maximum vertical shear within the 
+% vertical domain of interest. 
+% For perturbations with finite thermal relaxation, the general
+% dispersion relation (Eq. \ref{relax_disp}) is quite
+% complicated. However, for the fundamental VSI some simplification is
+% possible. In particular, 
+
+The fundamental VSI mode is characterized by a vertical velocity
+perturbation with zero nodes and $\delta v_z\sim\mathrm{constant}$
+near the mid-plane, and by one node in the density perturbation at the
+midplane  (i.e. anti-symmetric about $z=0$).  These have been referred
+to as `corrugation modes' by \cite{nelson13}, and were found to
+dominate their numerical simulations, as well as that of
 \cite{stoll14}. Furthermore, when computing unstable modes for a
-disk with a physical model for thermal relaxation, we also find
-the fundamental mode to be dominant and robust. Such modes are thus
-likely most relevant to  realistic disks. 
+protoplanetary disk model with thermal relaxation based on realistic
+disk properties, we find the fundamental mode to be dominant and
+robust against boundary conditions. The fundamental mode is thus
+likely the most relevant VSI mode in protoplanetary disks.  
 
-For non-isothermal  perturbations with finite thermal relaxation ($\gamma>1$,
-$\beta>0$) , the general dispersion relation (Eq. \ref{relax_disp}) is
-quite complicated. However, for the 
-fundamental VSI some simplification is  possible. In particular, we
-quantified the critical thermal relaxation timescale
+We quantified the critical thermal relaxation timescale 
 $\beta_\mathrm{crit}=\epsilon|q|/(\gamma-1)$, below which small-scale
 perturbations may be regarded as isothermal and the fundamental VSI
-operates.  We expect $\beta<\beta_\mathrm{crit}$ to be a sufficient
-condition for the VSI to operate. We have therefore provided a
-quantitative measure for the`fast' thermal relaxation requirement for the
-VSI. 
+operates. %  We expect $\beta<\beta_\mathrm{crit}$ to be a sufficient
+% condition for the VSI to operate.
+We have therefore provided a quantitative measure for the `fast'
+thermal relaxation requirement for the VSI in astrophysical disks. 
 
 We also solved the linear stability problem numerically using a
 pseudo-spectral approach. For numerical calculations we relax all the
@@ -116,7 +121,7 @@ protoplanetary disks, specifically the Minimum Mass Solar Nebulae
 (MMSN). We consider the disk model described in \cite{chiang10}, and
 modeled the thermal relaxation timescale $\beta$ based on
 dust opacity, which results in a $\beta$ that depends on both the
-lengthscale of interest as well as the height from the midplane.  
+perturbation lengthscale as well as the height from the midplane.  
 We find the MMSN is unstable to the fundamental VSI at $10$s of AU,
 with characteristic growth times of $\sim 30$ orbits. Although $\beta$
 is not spatially constant as assumed in our analysis, we find that

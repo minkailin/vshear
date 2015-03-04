@@ -369,18 +369,18 @@ Eq. \ref{iso_ode1} becomes
 We remark that for large $|\hat{k}|$, Eq. \ref{iso_ode3} is the same as
 that derived by \cite{nelson13}, although we have taken a different
 route.  
-
-To complete the problem we must specify boundary conditions. The 
-maximum vertical domain size should be limited by the thin
-disk and low-frequency approximations (i.e. $z\lesssim r$).     
-It is, however, common to take $\mathrm{max}|z|\to\infty$ and impose
-that the kinetic  energy remain bounded at infinity. This 
-is appropriate for the density field because both the true density profile 
+% To complete the problem we must specify boundary conditions. The 
+% maximum vertical domain size should be limited by the thin
+% disk and low-frequency approximations (i.e. $z\lesssim r$).     
+%It is, however, common to take $\mathrm{max}|z|\to\infty$ and 
+We impose the kinetic energy remain bounded at infinity. Even though
+we have adopted the thin-disk approximation, an infinite
+disk is appropriate in the sense that both the true density profile 
 and its thin-disk approximation decay rapidly away from the midplane.   
 
 However, the thin-disk representation of vertical shear diverges with 
 $\hat{z}$, unlike the true vertical shear profile which eventually
-decays. Thus, taking $\zhat_{1,2}\to \pm\infty$ will permit
+decays. Thus, taking $\zhat_{1,2}\to \pm\infty$ will permit 
 unphysically large growth rates (as demonstrated below). Nevertheless,
 the infinite disk is useful to consider since it permits an analytical
 discussion.   
@@ -413,7 +413,7 @@ n-1$. Physically, this corresponds to radial length-scales much
 smaller than the local disk scale height. Note that
 Eq. \ref{iso_stable_disp} is implied by Eq. 54 in
 \cite{lubow93} after setting $\gamma=1$ and making the low-frequency,
-Keplerian disk approximation in that equation. 
+nearly-Keplerian approximation in that equation. 
 
 We remark that for fixed $n$ and $\khat\gg 1$ the dispersion relation 
 Eq. \ref{iso_stable_disp} imply $\hat{\omega}\propto 1/\khat$. This inverse relation 
@@ -423,7 +423,7 @@ has also been qualitatively observed in numerical simulations
 
 \subsubsection{Polynomial solutions with vertical
   shear}\label{iso_poly}
-More generally, we can seek power-series solution to
+In the presence of vertical shear ($q\neq0$) we can still seek power-series solution to
 Eq. \ref{iso_ode3}, 
 \begin{align}
   W(\zhat) = \sum_{l=0}^\infty a_l\zhat^l. 
@@ -464,8 +464,8 @@ and
     q|}{2\sqrt{1+|\epsilon q|}}. \label{iso_max_growth}
 \end{align}
 Since $L\geq1$, there is no limit to the maximum growth rate. This is
-an artifact of the thin-disk approximation because the vertical 
-shear $d\Omega^2/dz\propto z$ increases indefinitely with 
+an artifact of the thin-disk approximation because the magnitude of vertical 
+shear $|d\Omega^2/dz|\propto |z|$ increases indefinitely with 
 height. However, Eq. \ref{iso_max_growth} compares well with
 numerical solutions for small $L$ (see \S\ref{vertiso_pertiso}). 
 
