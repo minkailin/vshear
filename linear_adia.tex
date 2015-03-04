@@ -36,15 +36,17 @@ Isothermal perturbations correspond to $\beta = 0$ or $\chi = 1$. This
 case has been investigated numerically by \cite{nelson13} and 
 \cite{mcnally14}, the latter of which employed the VGSB framework.  
 
-In Appendix \S\ref{iso_discuss}, we give an analytical description of the
+In Appendix \ref{iso_discuss}, we give an analytical description of the
 linear problem with $\beta=0$. There, we establish more general
 results that do not require the thin disk approximation, namely 
-a necessary condition for instability and an upper bound to the
-instability growth rate. We also develop analytic solutions
-with and without vertical shear in the thin disk limit, including
-explicit expressions for wave frequencies and growth rates, the
-methods and results for which motivates the solution procedure
-employed in the following sections.    
+a necessary condition for instability (there must be vertical shear)
+and an upper bound to the instability growth rate (it is limited by
+the maximum vertical shear rate in the disk). We also develop analytic
+solutions with and without vertical shear in the thin disk limit,
+including explicit expressions for wave frequencies and growth rates. 
+The methods used in Appendix \ref{iso_discuss} and results obtained
+therein motivates the solution procedure employed in the following
+sections.      
 
 \subsection{The effect of introducing a small but finite
   thermal relaxation time}\label{relax_pert}
@@ -52,10 +54,11 @@ We are interested in the case $\beta\neq 0$, but it is instructive to
 first ask  the more analytically tractable question: how 
 do the eigenfrequencies and eigenfunctions change when we change
 $t_c=\beta\Omega_k^{-1}$ from zero to a small but finite value? For 
-sufficiently small $\beta$, for which the perturbations may be 
-considered nearly-isothermal, we expect the solution to only
-differ slightly from a case with $\beta\equiv 0$. 
-
+sufficiently small $\beta$ % , for which the perturbations may be 
+% considered nearly-isothermal,
+we expect the solution to only differ slightly from a case with
+$\beta\equiv 0$. We thus perturb a solution for $\beta=0$ to see the
+effect of thermal relaxation.  
 
 For definiteness, let us consider the simple solution 
 \begin{align}
@@ -71,9 +74,10 @@ and are the ones we find to develop in protoplanetary disks
 with a realistic estimate for thermal timescales
 (\S\ref{application}). 
 
-To determine the (assumed) small effect of introducing a short thermal
-relaxation, we linearize Eq. \ref{nearly_iso_explicit} about the above
-solution for $\beta\equiv0$. We write 
+%To determine the (assumed) small effect of introducing a short thermal
+%relaxation, 
+We linearize Eq. \ref{nearly_iso_explicit} about the above
+solution for $\beta\equiv0$ and write 
 \begin{align}\label{nearly_iso_pert}
   \beta \to 0 + \delta\beta,\, \delta v_z\to \delta v_z+\delta
   v_{z1},\,\hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}, 
@@ -159,10 +163,10 @@ very small scales.
 %   \label{domegadbeta}}  
 % \end{figure}   
 
-Introducing a finite thermal relaxation time introduces buoyancy
+A finite thermal relaxation time introduces buoyancy
 forces, which is stabilizing for sub-adiabatically stratified disks
 ($\gamma > 1$). The $\zhat^2$ dependence in $\delta v_{z1}$ then makes
-sense because it is most significant for large $\zhat$, i.e. away from
+sense because it becomes significant for large $|\zhat|$, i.e. away from
 the midplane where the effect of buoyancy first appears as $\beta$ is
 increased from zero. 
 
@@ -260,7 +264,7 @@ requires a numerical solution. However, for the fundamental mode
   fundamental VSI mode}\label{iso_vsi_beta_crit}
 
 Here we estimate the maximum thermal relaxation timescale
-$\beta$ that allows the fundamental VSI for $\khat\gg1$.   
+$\beta$ that allows the fundamental VSI mode for $\khat\gg1$.   
 % Notice in Fig. \ref{relax_bcrit} the upper limit on $\beta$ for the
 % fundamental isothermal VSI tends to a constant for large
 % $\khat$. Using this clue, we can calculate this critical $\beta$ by
@@ -283,7 +287,7 @@ This is a pair of simultaneous equations for
 $\hat{\omega}$ and $\beta$. In Appendix \ref {iso_stable} we discuss
 stable solutions without vertical shear which yield
 $\hat{\omega}\propto \khat^{-1}$ for $\khat\gg 1$
-(Eq. \ref{iso_stable_disp}),  we are thus motivated to seek solutions
+(Eq. \ref{iso_stable_disp}).  We are thus motivated to seek solutions
 to Eq. \ref{relax_cond1}---\ref{relax_cond2} with  
 % we wish to seek a criterion independent of k 
 % \begin{align}
@@ -306,8 +310,8 @@ that
 at marginal stability for perturbations with large $\khat$. 
 
 From our discussion in \S\ref{relax_pert}, which indicate introducing
-a finite thermal relaxation is stabilizing, we expect 
-Eq. \ref{beta_crit0} is an upper limit for instability. For a thin
+a finite thermal relaxation is stabilizing, we expect
+Eq. \ref{beta_crit0} is an upper limit. For a thin  
 disk $\epsilon\ll 1$, we thus infer 
 \begin{align}\label{iso_vsi_cond}
   \beta \lesssim \frac{|\epsilon q|}{\gamma-1} \equiv
@@ -315,8 +319,8 @@ disk $\epsilon\ll 1$, we thus infer
 \end{align}
 is required for the fundamental VSI to operate. That is, when
 $\beta<\beta_\mathrm{crit}$, perturbations are  effectively isothermal. 
-We will test Eq. \ref{iso_vsi_cond} numerically in
-\S\ref{bcrit_num_test}.  
+We will confirm Eq. \ref{iso_vsi_cond} numerically in
+\S\ref{bcrit_num_test}. 
 
 Rapid thermal relaxation is required to overcome a stabilizing
 vertical entropy gradient \citep{goldreich67,urpin98,urpin03}, but

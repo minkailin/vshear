@@ -45,7 +45,7 @@ is the photon mean-free-path and $\kappa_d$ is the (dust) opacity.
 For perturbations with lengthscales $l\gg
 l_\mathrm{rad}$, we assume  
 temperature fluctuations are smoothed out by radiative diffusion. We
-mode this in linear theory by writing the linearized RHS of
+model this in linear theory by writing the linearized RHS of
 Eq. \ref{real_energy} as 
 % we choose the heating term such that
 % \begin{align}
@@ -243,7 +243,7 @@ raised. In fact, lowering the opacity by an order of magnitude renders
 $\beta > \beta_\mathrm{crit}$ even away from the midplane. This is
 expected to stabilize the disk. Raising the opacity, as shown in 
 the lower panels of Fig. \ref{mmsn_bcrit_bcool}, decreases the thermal
-timescales, but shifts the curves outward, so the fundamental mode is
+timescales, but shifts the curves outward, so the instability is
 restricted to larger radii.  
 
 %but
@@ -285,7 +285,8 @@ restricted to larger radii.
 
 We remark that it is possible to satisfy $\beta < \beta_\mathrm{crit}$
 by choosing a sufficiently large $\khat$. We
-illustrate this by plotting at each radius the value of $\khat$ such
+illustrate this in Fig. \ref{mmsn_bcrit_bcool_mink} by plotting at
+each radius the value of $\khat$ such 
 that $\beta = \beta_\mathrm{crit}$. We thus expect that the VSI,
 should it develop in the inner disk, would only occur on very small
 scales. However, our linear calculations suggest growth rates
@@ -296,9 +297,12 @@ in a real disk. The viscous time for a perturbation lengthscale
 $l\sim 1/k_x$ is $t_\mathrm{visc} = 1/\alpha_s\khat^2\Omega $, where
 $\alpha_s$ is the standard alpha viscosity parameter
 \citep{shakura73}. Setting $t_\mathrm{visc}$ to be longer than the
-typical VSI growth timescale $1/\epsilon\Omega$ places an upper limit
-$\khat \lesssim 30$ in a disk with $\alpha_s\sim 10^{-4}$ and
-$\epsilon \sim 0.1$.    
+minimum VSI growth timescale $1/\epsilon\Omega$ places an upper limit
+$\khat^2\lesssim \epsilon/\alpha_s$. Inserting $\epsilon \sim 0.05$,
+we find only modes with $\khat\lesssim 20$ are relevant for
+$\alpha_s\sim 10^{-4}$ or $\khat\lesssim 70$ for $\alpha_s\sim
+10^{-5}$. \citep[These low viscosity levels are required for the
+VSI, see][]{nelson13}.
 
 
 % However, our linear
@@ -319,7 +323,7 @@ $\epsilon \sim 0.1$.
 
 
 \subsection{VSI in the MMSN}
-Here we solve the linear problem in the MMSN with the scale and
+Here we solve the linear stability problem in the MMSN with the scale and
 height dependent thermal relaxation function defined by
 Eq. \ref{beta_mmsn_simp}.  We use a vertical
 domain $z_\mathrm{max}=5H$. In Fig. \ref{mmsn_overall} we plot growth
@@ -335,8 +339,8 @@ $z_\mathrm{max}=10H$, we also found modes with shorter growth times
 than those shown in Fig. \ref{mmsn_overall}, but these disturbances are 
 concentrated near the vertical boundaries
 \citep{nelson13,mcnally14}. Such modes may not be robust because    
-they are affected by boundary conditions. % , and high $\khat$ modes are
-% subject to viscous decay in a real disk.  
+they are affected by boundary conditions and viscosity in a real
+disk. % , and high $\khat$ modes are % subject to viscous decay in a real disk.  
 
 We therefore consider Fig. \ref{mmsn_overall} as a representation of the
 VSI in the MMSN. We see the VSI operates from $\sim 5$AU to $\sim
@@ -348,7 +352,8 @@ Fig. \ref{mmsn_overall} is roughly consistent with the
 mid-plane thermal relaxation timescales shown in
 Fig. \ref{mmsn_bcrit_bcool}. For example, for $\khat=10$ we find 
 $\beta \gtrsim \beta_\mathrm{crit}$ for $r\lesssim 10$AU at $z=0$; and
-Fig. \ref{mmsn_overall} show stabilization inside $\sim 8$AU. 
+Fig. \ref{mmsn_overall} show stabilization inside $\sim 8$AU where
+$t_\mathrm{grow}\to\infty$. 
 
 %The mode % operates interior to the expected minimum radius, 
 % probably because the disk bcomes optically thin away from the
@@ -363,7 +368,7 @@ Fig. \ref{mmsn_overall} show stabilization inside $\sim 8$AU.
 \end{figure}
 
 \subsection{Comparing the VSI in the inner and outer parts of the MMSN} 
-Here we compare the VSI in the MMSN at $r=50$AU and $r=5$AU. We first show in
+We compare the VSI in the MMSN at $r=50$AU and $r=5$AU. We first show in
 Fig. \ref{beta_compare}  the thermal timescale $\beta$ for a
 perturbation wavenumber $\khat=30$. For comparison we also plot
 $\beta_\mathrm{crit}$ at these radii.   
@@ -384,8 +389,8 @@ does not depend on height and $\beta <
 operate at $r=50$AU. In the inner disk ($r=5$AU) the disk is optically
 thick near the midplane and becomes optically thin away from it, such
 that $\beta < \beta_\mathrm{crit}$ for $|z|\gtrsim1.25H$. In
-fact, in this case  we also find the VSI to operate, but with 
-significantly reduced growth rates (when scaled by the local
+fact, in this case  we also find the VSI to operate, but with much
+reduced growth rates (when scaled by the local 
 rotation).  
 %: Fig. \ref{mmsn_overall}) show that
 %the growth time at 
@@ -398,10 +403,12 @@ we obtain the VSI despite $\beta > \beta_\mathrm{crit}$ near the
 midplane suggests, but does not prove, that the VSI can operate
 provided $\beta < \beta_\mathrm{crit}$ for a sufficiently large
 fraction of the vertical domain. However, the normalized growth times
-are much longer than the case with $\beta < \beta_\mathrm{crit}  \forall z$: we find $t_\mathrm{grow}\sim 40$ orbits at $r=50$AU,
-but $t_\mathrm{grow}\sim 400$ orbits at $r=5$AU. Thus, introducing an
-optically thick midplane reduces the efficiency of the VSI despite
-$\beta < \beta_\mathrm{crit}$ away from the midplane. 
+are much longer at $r=5$AU than at $r=50$AU for which  $\beta <
+\beta_\mathrm{crit}  \forall z$: we find $t_\mathrm{grow}\sim 40$
+orbits at $r=50$AU, but $t_\mathrm{grow}\sim 400$ orbits at
+$r=5$AU. Thus, introducing an optically thick midplane significantly
+reduces the efficiency of the VSI despite $\beta <
+\beta_\mathrm{crit}$ away from the midplane.   
 
 % The grow
 % mode because it involves vertical motion across $z=0$, which is 

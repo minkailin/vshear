@@ -49,11 +49,12 @@ is $\zmax = 5H$. The disk is nearly vertically isothermal with
 $c_s(\zmax)\simeq 0.94 c_s(0)$. Fig. \ref{omega_z} shows that the 
 equilibrium rotation decreases slightly away  from the disk mid-plane.  
 
-
 This setup is similar to that adopted
 in \cite{mcnally14}, who calculated the VSI in vertically isothermal
 disks subject to isothermal perturbations ($\Gamma=\gamma=1$).  This
-allows us to test our numerical code.  
+allows us to test our numerical code. We also compare results with our 
+analytical discussion of isothermal perturbations in Appendix
+\ref{iso_discuss}.   
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
@@ -76,7 +77,7 @@ the low-frequency approximation used to obtain Eq. \ref{sig2_iso}
 is no longer valid, as $|\omega|$ is not small compared to $\Omega_k$
 for $\khat\lesssim 10$.  
 
-{\bf Growth rates are expected to diminish for both $\khat\to 0$
+ Growth rates are expected to diminish for both $\khat\to 0$
   and $\khat\to \infty$. This is because for $\khat\ll 1$ the radial
   wavelenth is large, but such disturbances are 
   stabilized by by epicyclic motions ($|\omega|\sim
@@ -84,7 +85,7 @@ for $\khat\lesssim 10$.
   there is no energy change when fluid elements are perturbed at fixed
   cylindrical radius whilst conserving its angular momentum (since we
   consider axisymmetric perturbations).  
-}
+
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -105,7 +106,7 @@ $W$ for $\khat=1$ and $\khat=20\pi$. The latter value, corresponding
 to $k_x= 200\pi/r$, was used by \cite{mcnally14}. We find $W$ is
 similar for all $\khat\gtrsim10$ and is proportional to $z$, as
 expected for the fundamental mode according to explicit solutions
-developed in \S\ref{iso_poly}. For completeness we show the
+developed in Appendix \ref{iso_poly}. For completeness we show the
 corresponding eigenfunctions in vertical velocity in
 Fig. \ref{lowfreq_eigenfuncvz}. The fundamental mode
 consists of zero nodes in $\delta v_z$. 
@@ -114,9 +115,8 @@ For $\khat\lesssim 10$, e.g. $\khat=1$ in
 Fig. \ref{lowfreq_eigenfunc}, the perturbation magnitude near the
 boundaries begin to dominate. For even smaller $\khat\lesssim 1$ (not
 shown) we find the perturbation is almost entirely concentrated at the
-boundaries. Our radially-local approximation is not valid for 
-these small wavenumber perturbations and we do not consider such modes
-further.   
+boundaries. However, our radially-local approximation is not valid for 
+such small wavenumber perturbations. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -143,7 +143,7 @@ further.
 
 In Fig. \ref{lowfreq_eigen} we plot the eigenvalues 
 $\sigma = \omega + \ii\nu$ found for $\khat=20\pi$. This plot is
-similar to Fig. 3 in \cite{mcnally14}. The fundamental has the
+similar to Fig. 3 in \cite{mcnally14}. The fundamental mode has the
 smallest $|\sigma|$, for which the eigenvalue calculated from
 Eq. \ref{sig2_iso} with $L=1$ and the numerically-obtained value are   
 \begin{align*}
@@ -188,9 +188,10 @@ timescale for  the fundamental mode. For smaller $\khat$,
 $\beta<\beta_\mathrm{crit}$ is a sufficient condition for
 instability. For larger $\khat$, we find $\nu$ does not reach zero but
 rapidly decreases as $\beta$ approaches and increases beyond
-$\beta_\mathrm{crit}$. In the latter case we find the perturbation is
-concentrated at the vertical boundaries, which may play a role not
-accounted by our analytical discussion. 
+$\beta_\mathrm{crit}$. In the latter case we find the perturbation
+acquires large amplitudes near the vertical boundaries. Boundary
+conditions may thus may play a role for these modes that is not
+accounted by our analytical discussion.  
 
 Fig. \ref{bcrit_compare1} shows that 
 $\beta_\mathrm{crit}$ is a good indication for the maximum
@@ -255,9 +256,12 @@ orbits.
 We visualize the effect of thermal relaxation in 
 Fig. \ref{relax_eigenW_num} by comparing the vertical velocity
 perturbation $\delta v_z$ for
-$\beta=0.01$ and $\beta=0.1$. The latter value is close to the
-critical value beyond which the fundamental VSI is stabilized
-(\S\ref{iso_vsi_beta_crit}). Increasing $\beta$ 
+$\beta=0.01$ and $\beta=0.1$. The latter value is close to
+$\beta_\mathrm{crit}=0.125$. 
+% the
+% critical value beyond which the fundamental VSI is stabilized
+% (\S\ref{iso_vsi_beta_crit}). 
+Increasing $\beta$ 
 restricts  the region in which $\delta v_z\sim $ constant closer to the midplane, with
 oscillatory behavior emerging at the boundaries, where buoyancy first
 becomes important. Finite thermal relaxation increases $|\delta v_z|$ near the

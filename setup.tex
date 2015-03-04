@@ -98,8 +98,8 @@ define
 to parametrize the magnitude of the sound-speed, where
 $v_k=r\Omega_k$ is the Keplerian azimuthal velocity and
 $H$ is a characteristic scale-height.  Thus, $\epsilon$
-is also a characteristic disk aspect-ratio.  In practice, we consider
-thin disks with $\epsilon \ll 1$. 
+is also a characteristic disk aspect-ratio. We are 
+interested in thin disks with $\epsilon \ll 1$.%, as relevant for protoplanetary disks \citep{chiang97}.  
 
 For discussion purposes it is useful to define the vertical buoyancy
 frequency $N_z$ via
@@ -165,7 +165,7 @@ $\Omega(r,z)$ are given by
 \end{align}
 which may be obtained from Eq. \ref{eqm_dens} and Eq. \ref{eqm_rot} by
 taking the limit $\Gamma\to 1$. We will, in fact, primarily focus on
-vertically isothermal disks which is the relevant case for irradiated
+vertically isothermal disks which is the relevant case for passively irradiated
 protoplanetary disks \citep{chiang97}. 
 
 
@@ -184,7 +184,7 @@ Evaluating this expression explicitly,
     r\left(1+z^2/r^2\right)^{3/2}}. \label{vertical_shear_ex} 
 \end{align}
 Note that there is a maximum vertical shear rate at $z=r/\sqrt{2}$,
-which is expected to limit the growth rate of unstable modes.    
+which is expected to limit the growth rate of instabilities associated with vertical shear. 
 
 
 \subsection{Stability condition against axisymmetric adiabatic
@@ -224,7 +224,7 @@ side (RHS) is $O(\epsilon^2)$. Hence, instability in the adiabatic limit
 requires $\gamma < \Gamma + O(\epsilon^2)$. Since we consider
 $\epsilon\ll1$, this implies the equilibrium disk must have a small
 entropy gradient in order to be unstable to axisymmetric adiabatic
-perturbations. This is generally not true for irradiated, stably
+perturbations. This is generally not true for passively irradiated, stably
 stratified disks \citep{chiang97}, in which the VSI requires rapid
 thermal relaxation, as shown below. 
 
@@ -297,7 +297,7 @@ linearized system of equations are
 where we have made the notation change $k_r\to k_x$. 
 It is understood that the quantities $\rho,\,c_s^2,\,\Omega,\kappa,\, 
 \p_z\Omega,\, \p_r\ln{\rho} $ and $ \p_r P$ are evaluated at $r=r_0$
-using their expressions in the global disk given in \S\ref{setup}. 
+using their expressions in the global disk given in \S\ref{setup}. Thus, they are functions of $z$ only. 
 Eq. \ref{lin_mass}---\ref{lin_energy} will form the basis of our numerical
 study, but for analytical discussion
 we will make further simplifications. 
