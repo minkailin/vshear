@@ -15,7 +15,7 @@ equations and are reproduced here for convenience,
   \frac{\gamma}{\Gamma} + \hat{g}_c\left.\frac{1}{\rho}\frac{\p P}{\p
       r}\right|_0\right]\delta v_x  +
 \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right),\label{gcorr_terms1}\\
-\ii \sigma Q &= c_s^2(r_0,z)\left(\ii k_r + \hat{g}_c
+\ii \sigma Q &= c_s^2(r_0,z)\left(\ii k_x + \hat{g}_c
   \left.\frac{\p\ln{\rho}}{\p r}\right|_0\right)\delta v_x + c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
       z}\right|_0 \delta v_z + \frac{d\delta
     v_z}{dz}\right),\label{gcorr_terms2} \\
@@ -23,19 +23,21 @@ equations and are reproduced here for convenience,
 \hat{g}_c\frac{1}{c_s^2(r_0,z)}\left.\frac{1}{\rho}\frac{\p P}{\p
   r}\right|_0Q - 2\Omega(r_0,z)\delta v_y,\label{gcorr_terms3}
 \end{align}
-where subscript $0$ denotes evaluation at $r=r_0$.
+where subscript $0$ denotes evaluation at $r=r_0$. We recall terms
+proportional to $\hat{g}_c$ are associated with the background density
+and pressure radial structures, and nominally $\hat{g}_c=1$.   
 
-In the VGSB, the terms proportional to $\hat{g}_c$ are ignored. For a
-power-law disk, these radial gradients are $O(r^{-1})$, and they
-appear in comparison with terms of $O(k_x)$. The neglected terms 
-therefore have a relative magnitude of $O(\epsilon/\khat)$. This is
-small for thin disks ($\epsilon\ll1$) and/or small radial wavelengths
-($\khat\gg 1$). 
-
+However, in the VGSB these terms are neglected by 
+setting $\hat{g}_c=0$. For a power-law disk, these radial gradients
+are $O(r^{-1})$, and they appear in comparison with terms of
+$O(k_x)$. The neglected terms  therefore have a relative magnitude of
+$O(\epsilon/\khat)$. This is small for thin disks ($\epsilon\ll1$)
+and/or small radial wavelengths ($\khat\gg 1$).  
 
 \subsection{Spurious growth of adiabatic perturbations in the VGSB}\label{analytic_adia} 
 An important caveat of the VGSB is that it cannot be used in the
-adiabatic limit. We explain this by setting  $\beta\to\infty$ in
+adiabatic limit. We explain this by considering vertically isothermal
+disks and setting  $\beta\to\infty$ in 
 Eq. \ref{vertiso_gov_nondim}, which can then be written as 
 
 \begin{align}
@@ -73,19 +75,19 @@ However, in the presence of vertical shear $q\neq0$,
 Eq. \ref{adia_integral} suggests $\hat{\sigma}$ is complex for real
 $\khat$, which implies the possibility of instability, regardless of
 how much $\gamma$ deviates from unity. This is contradicts the second 
-Solberg-Hoiland criterion (Eq. \ref{solberg2}), which states that
-instability in the adiabatic limit requires the disk to be close to
-neutrally stratified. %also need real freq^2 in adia limit 
+Solberg-Hoiland criterion (Eq. \ref{solberg2}), which states that 
+instability in a thin, adiabatic disk requires it to be close to 
+neutrally stratified, i.e. $|\gamma-1|\ll1$ for vertically isothermal disks
+evolved adiabatically. 
+%also need real freq^2 in adia limit 
 This is because the VGSB retains the vertical shear
-($\p_z\Omega$) from the global disk, but ignores the global radial disk
-structure responsible for it. Nevertheless, we demonstrate below that
-this inconsistency is unimportant for the vertical shear instability,
-which occurs for $\beta\ll1$. 
+($\p_z\Omega$) from the global disk, but ignores the global radial
+disk structure responsible for it. Nevertheless, we demonstrate below
+that this inconsistency is unimportant for the VSI because it occurs
+for $\beta\ll1$.   
 
 \subsection{Effect of global radial gradients}
-
-
-In  Fig. \ref{gcorr_compare}, we demonstrate the effect of the global radial gradient terms
+In  Fig. \ref{gcorr_compare}, we plot the effect of the global radial gradient terms
 proportional to $\hat{g}_c$ in 
 Eq. \ref{gcorr_terms1}---\ref{gcorr_terms3} by calculating the
 fundamental VSI growth rates using three approaches. We compute growth rates from the dispersion
@@ -97,7 +99,7 @@ linear problem with $\hat{g}_c=1$.
 All three methods give similar behavior, and growth rates are in close
 agreement for $\beta\lesssim 1$. Differences arise for 
 $\beta\gtrsim1$, and as $\beta\to\infty$ the VGSB framework gives a
-(spurious) positive growth rate as expected from the discussion
+(spurious) growth rate as expected from the discussion
 above. Inclusion of the global radial gradient terms results in the
 correct behavior  ($\nu\to0$ as $\beta\to\infty$). Despite this
 caveat, Fig. \ref{gcorr_compare} shows that provided we consider
@@ -110,9 +112,9 @@ $\beta\ll1$, then the VGSB framework is an adequate approximation.
     the thermal relaxation time $\beta$. The `Analytical (VGSB)' curve
     is calculated from the dispersion relation Eq. \ref{relax_disp};
     the `Numerical (VGSB)' curve is obtained by numerically solving
-    Eq. \ref{lin_mass}---\ref{lin_energy} with $\hat{g}_c=0$
+    the linear problem, Eq. \ref{lin_mass}---\ref{lin_energy}, with $\hat{g}_c=0$
     (which defines the linear VGSB equations); and the `Numerical
-    (Full)' curve is obtained by numerically solving
+    (Full)' curve is obtained by numerically solving 
     Eq. \ref{lin_mass}---\ref{lin_energy}  with $\hat{g}_c=1$, which
     accounts for the radial disk structure.  
     The disk parameters are $\Gamma=1.011$,
@@ -130,9 +132,10 @@ $\beta\ll1$, then the VGSB framework is an adequate approximation.
   the VGSB}\label{adia_improve}
 
 In \S\ref{approx_gov} we made the replacement $D\to\Omega_k^2$ before
-eliminating variables to obtain a single equation for $\delta v_z$,
-Eq. \ref{vertiso_gov}.  This procedure ignores the vertical dependence of
-$D=\kappa^2(z) - \sigma^2$. We show here that this has no significant
+eliminating variables to obtain a single equation for $\delta v_z$ in
+vertically isothermal disks, Eq. \ref{vertiso_gov}.  
+This procedure ignores the vertical dependence of
+$D=\kappa^2(z) - \sigma^2$. We show here that this has no serious 
 consequence for thin disks. 
 
 In the global disk with $\Gamma=1$ we have
@@ -148,12 +151,13 @@ For the local problem we may then write
 \end{align}
 where the function $F$ corresponds to the bracket in
 Eq. \ref{dkappa2}. This function varies from $F=q$ at $z=0$ to $F\to
-3+q$ as $|z|\to\infty$, i.e. its magnitude is of order unity. 
+3+q$ as $|z|\to\infty$. Since we consider $q=O(1)$, $|F|$ is of
+order unity.  
 
- Eliminating $W$ and $Q$ from Eq. \ref{ode_w}---\ref{ode_Q} and
- Eq. \ref{lin_vz} for vertically isothermal disks, retaining the
- vertical dependence of $D$ and including thermal relaxation, we
- obtain 
+Now, eliminating $W$ and $Q$ from Eq. \ref{ode_w}---\ref{ode_Q} and
+Eq. \ref{lin_vz} for vertically isothermal disks, retaining the
+vertical dependence of $D$ and including thermal relaxation, we
+obtain 
 \begin{align}
   0 =& \frac{d^2\delta v_z}{dz^2} + \left[1 + \frac{\ii k_x c_s^2
       q}{Dr} - \frac{k_x^2c_s^2}{\left(k_x^2c_s^2 + \chi
@@ -187,9 +191,9 @@ variables,
 Eq. \ref{adia_diso3} differs from Eq. \ref{vertiso_gov_nondim} by terms
 proportional to $\epsilon^2$. For a thin disk, $\epsilon\ll1$, so
 neglecting these terms has no qualitative effect on the discussion in 
-\S\ref{analytic_relax}.  This issue does not
-arise for isothermal perturbations discussed in \S\ref{iso_discuss}
-since in that case we work with a governing equation for $W$ instead. 
+\S\ref{analytic_relax}.  % This issue does not
+% arise for isothermal perturbations discussed in \S\ref{iso_discuss}
+% since in that case we work with a governing equation for $W$ instead. 
 
 \section{Coefficients for the dispersion relation for perturbations
 with thermal relaxation}\label{relax_coeff}
@@ -348,8 +352,8 @@ results.
 % \hat{z}$, in which case we can expect growth rates to increase at most linearly
 % with respect to the vertical domain size.   %no faster than linear 
 
-\subsection{Thin-disk limit}
-For thin disks ($\epsilon\ll1$), in which 
+\subsection{Explicit solutions in the thin-disk limit}
+For thin disks ($\epsilon\ll1$), we write 
 $\ln\rho\simeq -\zhat^2/2$ and $f(\zhat)\simeq \zhat$, 
 % by expanding the background density and vertical shear profile in powers
 % of $z/r$. To lowest order we obtain 
@@ -359,7 +363,7 @@ $\ln\rho\simeq -\zhat^2/2$ and $f(\zhat)\simeq \zhat$,
 %   &\frac{d\Omega^2}{d\hat{z}} \simeq \epsilon^2q\Omega_k^2\hat{z}, \label{thin_vshear}
 % \end{align} 
 %With this approximation and those in \S\ref{integral_relation}, 
-Eq. \ref{iso_ode1} becomes  
+so Eq. \ref{iso_ode1} becomes  
 \begin{align}\label{iso_ode3}
   W^{\prime\prime} - \left(1 + \ii q\epsilon
     \hat{k}\right)\hat{z}W^\prime  +
@@ -526,14 +530,13 @@ and the mid-plane density distribution
 \end{align}
 which implies $p=-39/14$. 
 %0.033576258
-In addition, we
-use the opacity model {\bf(reference?)}
+In addition, we use the opacity model
  \begin{align}
    \kappa_d &= 2 \hat{\kappa}_d \left(\frac{T}{100\mathrm{K}}\right)^2
-   \mathrm{cm}^2\,\mathrm{g}
+   \mathrm{cm}^2\,\mathrm{g}^{-1}
     =
    2.88\hat{\kappa}_d\hat{T}^2\left(\frac{r}{\mathrm{AU}}\right)^{-6/7}\mathrm{cm}^2\,\mathrm{g}^{-1},   
  \end{align}
-where the second equality follows from the model temperature profile
-above, and $\hat{\kappa}_d$ has similar meaning as $\hat{\Sigma}$ and
-$\hat{T}$. 
+\citep{bell94} where the second equality follows from the model
+temperature profile above, and $\hat{\kappa}_d$ has similar meaning as
+$\hat{\Sigma}$ and $\hat{T}$.  
