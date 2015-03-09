@@ -146,22 +146,75 @@ numerical simulations.
 
 \subsection{Caveats and outlooks} 
 We highlight below some extensions to the present  
-linear models in future works:  
+linear models in future works.  
 
-\emph{Improved thermal evolution.} We assumed non-adiabatic effects
+\subsubsection{Parameter study and convective overstability}
+We have focused on parameter regimes relevant to the VSI,
+namely $\khat\gtrsim 1$ and $\beta\ll 1$. This excludes the
+`convective overstability' recently discussed by \cite{klahr14} and
+\cite{lyra14} in vertically unstratified disk models. 
+
+The convective overstability corresponds to growing epicyclic motions.
+It is most effective for disturbances with $|k_x|\ll |k_z|$, where
+$k_z$ is a vertical wavenumber, and $\beta\sim 1$. These conditions
+are mutually exclusive with the VSI. 
+The maximum growth 
+rate for convective overstability is given by 
+\begin{align}
+  \nu_\mathrm{conv,max} = -\frac{N^2_r}{4\Omega}\label{max_conv_gen}
+\end{align}
+\citep{lyra14}, where $N_r^2 = -(c_p\rho)^{-1}\p_rP\p_rS$ is the
+square of the radial buoyancy frequency
+(cf. Eq. \ref{nzsq_def}). Thus, growth requires $N_r^2<0$.  
+
+Evaluating Eq. \ref{max_conv_gen} at the midplane of our disk models,
+we find  
+\begin{align}
+  \nu_\mathrm{conv,max} =
+  -\frac{\epsilon^2\Omega_k}{4\gamma\Gamma}\left(p+q\right)
+  \left[\left(\gamma-1\right)p-q\right]. \label{max_conv}
+\end{align}
+% We see that convective overstability is generally slower 
+% than the VSI because $\nu_\mathrm{conv,max} = O(\epsilon^2\Omega_k)$,
+% whereas the maximum VSI growth rate is $O(\epsilon\Omega_k)$. 
+For the MMSN considered in this work (\S\ref{application} and Appendix
+\ref{mmsn}), convective overstability does not apply because
+$N_r^2>0$.   
+
+However, for more general disk structures convective overstability is
+possible. In fact, the models adopted for our numerical study in
+\S\ref{numerical} do satisfy $N_r^2<0$. %show early result
+We will explore convective overstability more fully in a follow-up
+study.  Although our linear code can be used for convective
+overstability in principle, the fact convective overstability is
+relevant for perturbations with $k_x\to0$ suggest radially global disk
+models may be more appropriate.  
+
+% Nevertheless, it will be important to expand the parameter space covered in
+% this study to include convective overstability,
+
+%self-consistence may require radially global disk models
+
+\subsubsection{Improved thermal evolution.} 
+We assumed non-adiabatic effects
 can be represented by a thermal relaxation timescale $t_c$. For 
 application to protoplanetary disks we connected $t_c$ to the disk
 properties, but one can improve the realism further by generalizing the
 opacity model adopted here to be density-dependent,  i.e. $\kappa_d =
-\kappa_d(\rho, T)$ as described in \cite{bell94}. %two temperature
+\kappa_d(\rho, T)$. 
+%two temperature
 % structure  
+
 However, going beyond the framework of thermal
 relaxation requires a proper treatment for radiative diffusion, which
 involves the Lapacian operator and additional boundary conditions
 must be supplemented. We will consider these improvements in a
 follow-up study. 
  
-\emph{Additional physics.} Depending on where the VSI operates in a
+\subsubsection{Additional physics.} 
+
+
+Depending on where the VSI operates in a
 disk, additional effects may become important. For example, in the
 outer parts of a protoplanetary disk, where we estimate the VSI 
 operates, disk self-gravity (SG) may play a role. Specifically, the vertical
@@ -181,16 +234,18 @@ flow in the equilibrium state, as well as viscous heating
 in the energy equation. 
 
 
-\emph{Radial dependence.} Based on previous works, including
-non-linear simulations, which show that the VSI is relevant for
-perturbations with small radial lengthscales, we have adopted the
-radially-local approximation throughout this paper.  Although this
-simplifies the linear problem to ordinary differential equations, this
-approach introduces the wavenumber $k_x$ as a free parameter. The
-effect of radial boundary conditions cannot be explored. Future 
-generalizations of the linear problem should retain the radial
-dependence properly and solve the two-dimensional $(r,z)$ partial 
-differential equation eigenvalue problem. 
+% \emph{Radial dependence.} Based on previous works, including
+% non-linear simulations, which show that the VSI is relevant for
+% perturbations with small radial lengthscales, we have adopted the
+% radially-local approximation throughout this paper.  Although this
+% simplifies the linear problem to ordinary differential equations, this
+% approach introduces the wavenumber $k_x$ as a free parameter. The
+% effect of radial boundary conditions cannot be explored. Future 
+% generalizations of the linear problem should retain the radial
+% dependence properly and solve the two-dimensional $(r,z)$ partial 
+% differential equation eigenvalue problem. 
+
+
 
 % Extrapolating our results from the shearing box to a global disk  
 % has an inconsistency. Namely, the equilibrium temperature in the
