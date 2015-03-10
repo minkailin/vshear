@@ -221,7 +221,8 @@ given by:
 
 \section{Linear problem in the isothermal limit}\label{iso_discuss}  
 Here we examine in more detail the special case of isothermal
-perturbations ($\beta\equiv 0$) in the VGSB framework.   
+perturbations ($\beta\equiv 0$) for vertically isothermal disks 
+($\Gamma=1$) in the VGSB framework.   
 %Isothermal perturbations correspond to $\beta\equiv0$ ($\chi=1$) and 
 In this case Eq. \ref{ode_Q} becomes   
 \begin{align} 
@@ -230,10 +231,13 @@ In this case Eq. \ref{ode_Q} becomes
 (i.e. $\delta P = c_s^2\delta \rho$), and so $  \ii\hat{\sigma}c_s\delta v_z = W^\prime $
 from Eq. \ref{lin_vz}. For isothermal perturbations it is in fact
 simpler to work with an equation for $W$ by substituting $Q=W$ into
-Eq. \ref{ode_w}. We obtain 
+Eq. \ref{ode_w}. In this case, we shall not yet make the low-frequency
+approximation, but first make the nearly-Keplerian approximation. We
+obtain, in terms of dimensionless variables, 
 \begin{align}
-  0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii \epsilon q \hat{k}
-    f(\zhat)\right]W^\prime + \hat{\sigma}^2\left(1+\hat{k}^2\right)W,\label{iso_ode1}
+  0 = W^{\prime\prime} + \left[\ln\rho^\prime - \frac{\ii \epsilon q \hat{k} f(\zhat)
+      }{1-\hat{\sigma}^2} \right]W^\prime +
+  \hat{\sigma}^2\left(1+\frac{\hat{k}^2}{1-\hat{\sigma}^2}\right)W,\label{iso_ode0} 
 \end{align}
 where for discussion purposes we have defined $f(\zhat)$ such that
 \begin{align}\label{fz_shear}
@@ -248,7 +252,15 @@ $|d\Omega/dz|$. The existence of a maximum, as remarked in
 \S\ref{vshear_def}, limits the growth rate of the VSI. We explicitly
 demonstrate this below.    
 
-\subsection{Necessity of vertical shear for
+\subsection{Stability conditions in the low-frequency limit}
+In the low-frequency limit we assume $|\hat{\sigma}|\ll 1$ and
+approximate Eq. \ref{iso_ode0} as 
+\begin{align}
+  0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii \epsilon q \hat{k}
+    f(\zhat)\right]W^\prime +
+  \hat{\sigma}^2\left(1+\hat{k}^2\right)W. \label{iso_ode1}
+\end{align}
+\subsubsection{Necessity of vertical shear for
   instability}\label{integral_relation} 
 We can establish a necessary condition for instability by multiplying
 Eq. \ref{iso_ode1} by $\rho W^*$ and integrate vertically from
@@ -267,7 +279,7 @@ have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. vertical
 shear. A similar conclusion can be reached in the equivalent linear  
 problem in global cylindrical disk geometry. 
 
-\subsection{Maximum growth rate}   
+\subsubsection{Maximum growth rate}   
 Here we show that the growth rate is limited by the maximum vertical
 shear in the domain. % Writing $\hat{\sigma} = \hat{\omega} +
 % \ii\hat{\nu}$ with real $\hat{\omega}$ and $\hat{\nu}$, 
@@ -352,133 +364,162 @@ results.
 % \hat{z}$, in which case we can expect growth rates to increase at most linearly
 % with respect to the vertical domain size.   %no faster than linear 
 
-\subsection{Explicit solutions in the thin-disk limit}
-For thin disks ($\epsilon\ll1$), we write 
-$\ln\rho\simeq -\zhat^2/2$ and $f(\zhat)\simeq \zhat$, 
-% by expanding the background density and vertical shear profile in powers
-% of $z/r$. To lowest order we obtain 
-% \begin{align}
-%   &\frac{\rho}{\rho_0} \simeq 
-%   \exp{\left(-\frac{\hat{z}^2}{2}\right)} \equiv w(\hat{z}),\label{thin_dens}\\
-%   &\frac{d\Omega^2}{d\hat{z}} \simeq \epsilon^2q\Omega_k^2\hat{z}, \label{thin_vshear}
-% \end{align} 
-%With this approximation and those in \S\ref{integral_relation}, 
-so Eq. \ref{iso_ode1} becomes  
+\subsection{Explicit solutions in the thin-disk limit}\label{iso_explicit}
+Here we assume a thin disk ($\epsilon\ll1$) so that $\ln\rho\simeq
+-\zhat^2/2$ and $f(\zhat)\simeq \zhat$. However, we do not assume
+low-frequency from the onset. Then Eq. \ref{iso_ode0} becomes 
 \begin{align}\label{iso_ode3}
-  W^{\prime\prime} - \left(1 + \ii q\epsilon
-    \hat{k}\right)\hat{z}W^\prime  +
-  \hat{\sigma}^2\left(1+\hat{k}^2\right)W = 
-  0.
+  W^{\prime\prime} - \left(1 + \frac{\ii q\epsilon \hat{k}}{1-\hat{\sigma}^2}\right)\hat{z}W^\prime  +
+  \hat{\sigma}^2\left(1+\frac{\hat{k}^2}{1-\hat{\sigma}^2}\right)W = 0.
 \end{align}
-We remark that for large $|\hat{k}|$, Eq. \ref{iso_ode3} is the same as
-that derived by \cite{nelson13}, although we have taken a different
-route.  
+We remark that for $\hat{k}^2\gg 1$ and taking low-frequency limit,
+Eq. \ref{iso_ode3} becomes equivalent to Eq. 39 in \cite{nelson13},
+although we have taken a different route.  
+
 % To complete the problem we must specify boundary conditions. The 
 % maximum vertical domain size should be limited by the thin
 % disk and low-frequency approximations (i.e. $z\lesssim r$).     
 %It is, however, common to take $\mathrm{max}|z|\to\infty$ and 
-We impose the kinetic energy remain bounded at infinity. Even though
-we have adopted the thin-disk approximation, an infinite
-disk is appropriate in the sense that both the true density profile 
-and its thin-disk approximation decay rapidly away from the midplane.   
 
-However, the thin-disk representation of vertical shear diverges with 
-$\hat{z}$, unlike the true vertical shear profile which eventually
-decays. Thus, taking $\zhat_{1,2}\to \pm\infty$ will permit 
-unphysically large growth rates (as demonstrated below). Nevertheless,
-the infinite disk is useful to consider since it permits an analytical
-discussion.   
-
-\subsubsection{Stability in the absence of vertical shear}\label{iso_stable}
-The case of $q=0$ correspond to axisymmetric waves in a vertically isothermal disks, and has been discussed in detail 
-by several authors \citep[e.g.][]{}
-
-
-
-
-
-Eq. \ref{iso_ode3} is
-\begin{align}\label{hermite_ode}
-  \left[w(\hat{z})W^\prime \right]^\prime + nW
-  w(\hat{z}) =0, 
-\end{align}
-where $w(\zhat)=\exp{(-\zhat^2/2)}$ and we have defined a new eigenvalue 
-\begin{align}
-  n \equiv \hat{\sigma}^2(1+\hat{k}^2). 
-\end{align} 
-Eq. \ref{hermite_ode} is Hermite's differential equation. If we impose
-that the kinetic energy density remain bounded at infinity, then the
-solutions are Hermite polynomials  
-\begin{align}
-  W \propto \He_n(\hat{z}),
-\end{align}
-and $n$ is a non-negative integer. This translates to a real
-eigenfrequency $\sigma$ such that
-\begin{align}
-  \left|\hat{\sigma}\right| = \sqrt{n}
-  \left(1+\hat{k}^2\right)^{-1/2}. \label{iso_stable_disp}
-\end{align}
-Since we have assumed $|\sigma^2|\ll \kappa^2\sim \Omega_k^2$, our
-analysis is only valid for large wavenumbers such that $\hat{k}^2\gg   
-n-1$. Physically, this corresponds to radial length-scales much
-smaller than the local disk scale height. Note that
-Eq. \ref{iso_stable_disp} is implied by Eq. 54 in
-\cite{lubow93} after setting $\gamma=1$ and making the low-frequency,
-nearly-Keplerian approximation in that equation. 
-
-We remark that for fixed $n$ and $\khat\gg 1$ the dispersion relation 
-Eq. \ref{iso_stable_disp} imply $\hat{\omega}\propto 1/\khat$. This inverse relation 
-has also been qualitatively observed in numerical simulations
-\citep{stoll14}.  
-
-
-\subsubsection{Polynomial solutions with vertical
-  shear}\label{iso_poly}
-In the presence of vertical shear ($q\neq0$) we can still seek power-series solution to
-Eq. \ref{iso_ode3}, 
+We seek power series solutions to Eq. \ref{iso_ode3}, 
 \begin{align}
   W(\zhat) = \sum_{l=0}^\infty a_l\zhat^l. 
 \end{align}
 Then the coefficients must satisfy the recurrence relation
 \begin{align}
   (l+2)(l+1)a_{l+2} +
-  \left[n - l\left(1+\ii \epsilon q  \hat{k}\right)\right] a_l = 0, 
+  \left[\hat{\sigma}^2\left(1+\frac{\khat^2}{1-\hat{\sigma}^2}\right)
+    - l\left(1+\frac{\ii \epsilon q
+        \hat{k}}{1-\hat{\sigma}^2}\right)\right] a_l = 0. 
 \end{align}
-where $n$ is not necessarily an integer. Indeed, if we demand
-a polynomial of degree $L$ as the solution, then the eigenfrequency
-must satisfy
-\begin{align}\label{sig2_iso}
-  \hat{\sigma}^2 = L\left(\frac{1+\ii q \epsilon
-      \hat{k}}{1+\hat{k}^2}\right).
-\end{align}
-The eigenfrequency $\hat{\sigma}$ is therefore complex for
-$L\geq1$. The dispersion relation Eq. \ref{sig2_iso} can also be
-derived by setting $\beta=0$ in the more general dispersion relation 
-Eq. \ref{relax_disp} with coefficients given in Appendix
-\ref{relax_coeff}. We are interested in 
-unstable modes for which $\hat{\nu}>0$ and is given by
-\begin{align}\label{simple_growth}
-  \hat{\nu} =\sqrt{
-    \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2\epsilon^2\hat{k}^2} - 
-      1\right)}. 
-\end{align}
-For fixed $q$ and $\epsilon$, the growth rate vanishes for both
-$\hat{k}^2\to0$ and $\hat{k}^2\to\infty$. 
-The maximum growth rate
-occurs at the optimum wavenumber $\hat{k}_\mathrm{opt}$
+We demand the series to terminate  at $l=L$, i.e. a polynomial
+solution, so that the vertical kinetic energy remain bounded as
+$|\zhat|\to\infty$.  Then the eigenfrequency $\hat{\sigma}$ is given via 
 \begin{align}
-  |\hat{k}_\mathrm{opt}| = \sqrt{\frac{2+|\epsilon q|}{|\epsilon q|}},
+\hat{\sigma}^4 - \left(L+1+\khat^2\right)\hat{\sigma}^2 + L\left(1 +
+  \ii\epsilon q \khat\right) = 0. \label{simple_growth}
 \end{align}
-and
+
+\subsubsection{Stability without vertical shear}
+In the absence of vertical shear $q=0$, Eq. \ref{simple_growth} can be
+written as \begin{align}
+  \hat{\sigma}^2\khat^2 =
+  \left(L-\hat{\sigma}^2\right)\left(1-\hat{\sigma}^2\right). 
+\end{align}
+This is just the dispersion relation for axisymmetric waves in a
+vertically isothermal disk already discussed in previous works 
+\citep[e.g.][]{okazaki87,takeuchi98,tanaka02,zhang06,ogilvie13,barker14}. In
+this case the solutions are Hermite polynomials, $W\propto
+\He_L(\zhat)$.  The eigenfrequency $\hat{\sigma}$ is real so the disk
+is stable, consistent with \S\ref{integral_relation}. 
+
+\subsubsection{Instability with vertical shear}
+A simple solution to Eq. \ref{simple_growth} may be obtained by
+considering small radial lengthscales $\khat\gg 1$. Then for the
+low-frequency branch of Eq. \ref{simple_growth} 
 \begin{align}
-  \mathrm{max}\left(\hat{\nu}\right) =\frac{\sqrt{L}|\epsilon
-    q|}{2\sqrt{1+|\epsilon q|}}. \label{iso_max_growth}
+  \hat{\sigma}^2 \simeq L\left(\frac{1+\ii q \epsilon
+       \hat{k}}{L+1+\hat{k}^2}\right).\label{simple_growth2}
 \end{align}
-Since $L\geq1$, there is no limit to the maximum growth rate. This is
-an artifact of the thin-disk approximation because the magnitude of vertical 
-shear $|d\Omega^2/dz|\propto |z|$ increases indefinitely with 
-height. However, Eq. \ref{iso_max_growth} compares well with
-numerical solutions for small $L$ (see \S\ref{vertiso_pertiso}). 
+The eigenfrequency $\hat{\sigma}$ is therefore complex for 
+$L\geq1$, which signifies instability since we can choose
+the sign of the square root to make $\hat{\nu} = \imag\hat{\sigma}>0$.   
+
+% \begin{align}\label{sig2_iso}
+%   \hat{\sigma}^2 = L\left(\frac{1+\ii q \epsilon
+%       \hat{k}}{1+\hat{k}^2}\right).
+% \end{align}
+% The eigenfrequency $\hat{\sigma}$ is therefore complex for
+% $L\geq1$. The dispersion relation Eq. \ref{sig2_iso} can also be
+% derived by setting $\beta=0$ in the more general dispersion relation 
+% Eq. \ref{relax_disp} with coefficients given in Appendix
+% \ref{relax_coeff}. We are interested in 
+% unstable modes for which $\hat{\nu}>0$ and is given by
+% \begin{align}
+%   \hat{\nu} =\sqrt{
+%     \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2\epsilon^2\hat{k}^2} - 
+%       1\right)}. 
+% \end{align}
+
+
+% We impose the kinetic energy remain bounded at infinity. Even though
+% we have adopted the thin-disk approximation, an infinite
+% disk is appropriate in the sense that both the true density profile 
+% and its thin-disk approximation decay rapidly away from the midplane.   
+
+% However, the thin-disk representation of vertical shear diverges with 
+% $\hat{z}$, unlike the true vertical shear profile which eventually
+% decays. Thus, taking $\zhat_{1,2}\to \pm\infty$ will permit 
+% unphysically large growth rates (as demonstrated below). Nevertheless,
+% the infinite disk is useful to consider since it permits an analytical
+% discussion.   
+
+
+
+
+
+% \subsubsection{Stability in the absence of vertical
+%   shear}\label{iso_stable}
+% \
+% Eq. \ref{iso_ode3} is
+% \begin{align}\label{hermite_ode}
+%   \left[w(\hat{z})W^\prime \right]^\prime + nW
+%   w(\hat{z}) =0, 
+% \end{align}
+% where $w(\zhat)=\exp{(-\zhat^2/2)}$ and we have defined a new eigenvalue 
+% \begin{align}
+%   n \equiv \hat{\sigma}^2(1+\hat{k}^2). 
+% \end{align} 
+% Eq. \ref{hermite_ode} is Hermite's differential equation. If we impose
+% that the kinetic energy density remain bounded at infinity, then the
+% solutions are Hermite polynomials  
+% \begin{align}
+%   W \propto \He_n(\hat{z}),
+% \end{align}
+% and $n$ is a non-negative integer. This translates to a real
+% eigenfrequency $\sigma$ such that
+% \begin{align}
+%   \left|\hat{\sigma}\right| = \sqrt{n}
+%   \left(1+\hat{k}^2\right)^{-1/2}. \label{iso_stable_disp}
+% \end{align}
+% Since we have assumed $|\sigma^2|\ll \kappa^2\sim \Omega_k^2$, our
+% analysis is only valid for large wavenumbers such that $\hat{k}^2\gg   
+% n-1$. Physically, this corresponds to radial length-scales much
+% smaller than the local disk scale height. Note that
+% Eq. \ref{iso_stable_disp} is implied by Eq. 54 in
+% \cite{lubow93} after setting $\gamma=1$ and making the low-frequency,
+% nearly-Keplerian approximation in that equation. 
+
+% We remark that for fixed $n$ and $\khat\gg 1$ the dispersion relation 
+% Eq. \ref{iso_stable_disp} imply $\hat{\omega}\propto 1/\khat$. This inverse relation 
+% has also been qualitatively observed in numerical simulations
+% \citep{stoll14}.  
+
+
+% \subsubsection{Polynomial solutions with vertical
+%   shear}\label{iso_poly}
+
+
+
+
+
+% For fixed $q$ and $\epsilon$, the growth rate vanishes for both
+% $\hat{k}^2\to0$ and $\hat{k}^2\to\infty$. 
+% The maximum growth rate
+% occurs at the optimum wavenumber $\hat{k}_\mathrm{opt}$
+% \begin{align}
+%   |\hat{k}_\mathrm{opt}| = \sqrt{\frac{2+|\epsilon q|}{|\epsilon q|}},
+% \end{align}
+% and
+% \begin{align}
+%   \mathrm{max}\left(\hat{\nu}\right) =\frac{\sqrt{L}|\epsilon
+%     q|}{2\sqrt{1+|\epsilon q|}}. \label{iso_max_growth}
+% \end{align}
+% Since $L\geq1$, there is no limit to the maximum growth rate. This is
+% an artifact of the thin-disk approximation because the magnitude of vertical 
+% shear $|d\Omega^2/dz|\propto |z|$ increases indefinitely with 
+% height. However, Eq. \ref{iso_max_growth} compares well with
+% numerical solutions for small $L$ (see \S\ref{vertiso_pertiso}). 
 
 
 

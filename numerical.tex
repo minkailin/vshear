@@ -70,12 +70,14 @@ analytical discussion of isothermal perturbations in Appendix
 %behaviour as func of kx 
 
 Fig. \ref{iso_eigen_kx} compares the numerically-obtained eigenvalues
-for the fundamental mode and that calculated from 
-Eq. \ref{sig2_iso} (with $L=1$). There is good agreement for 
-$\khat\gtrsim10$. The match worsens for smaller $\khat$ because the 
-the low-frequency approximation used to obtain Eq. \ref{sig2_iso} 
-is no longer valid, as $|\omega|$ is not small compared to $\Omega_k$
-for $\khat\lesssim 10$.  
+for the fundamental mode and that calculated from
+Eq. \ref{simple_growth} (with $L=1$). There is good agreement for  
+$\khat\gtrsim10$. The match worsens for decreasing $\khat$ due to the
+neglect of global radial structure in the analysis. 
+
+% the low-frequency approximation used to obtain Eq. \ref{sig2_iso} 
+% is no longer valid, as $|\omega|$ is not small compared to $\Omega_k$
+% for $\khat\lesssim 10$.  
 
  With rapid thermal relaxation, growth rates are expected to diminish for both $\khat\to 0$
  and $\khat\to \infty$. This is because for $\khat\ll 1$ the radial
@@ -106,7 +108,7 @@ $W$ for $\khat=1$ and $\khat=20\pi$. The latter value, corresponding
 to $k_x= 200\pi/r$, was used by \cite{mcnally14}. We find $W$ is
 similar for all $\khat\gtrsim10$ and is proportional to $z$, as
 expected for the fundamental mode according to explicit solutions
-developed in Appendix \ref{iso_poly}. For completeness we show the
+developed in Appendix \ref{iso_explicit}. For completeness we show the
 corresponding eigenfunctions in vertical velocity in
 Fig. \ref{lowfreq_eigenfuncvz}. The fundamental mode
 consists of zero nodes in $\delta v_z$. 
@@ -145,14 +147,14 @@ In Fig. \ref{lowfreq_eigen} we plot the eigenvalues
 $\sigma = \omega + \ii\nu$ found for $\khat=20\pi$. This plot is
 similar to Fig. 3 in \cite{mcnally14}. The fundamental mode has the
 smallest $|\sigma|$, for which the eigenvalue calculated from
-Eq. \ref{sig2_iso} with $L=1$ and the numerically-obtained value are   
+Eq. \ref{simple_growth2} with $L=1$ and the numerically-obtained value are   
 \begin{align*}
-  (\omega,\nu) = (-0.3053,0.2606)\epsilon\Omega_k &\quad \text{(from
-    Eq. \ref{sig2_iso})},\\
+  (\omega,\nu) = (-0.3053,0.2605)\epsilon\Omega_k &\quad \text{(from
+    Eq. \ref{simple_growth2})},\\
   (\omega,\nu) = (-0.3010,0.2575) \epsilon \Omega_k &\quad \text{(numerical)}.
 \end{align*}
 This agreement is surprisingly good given the number of approximations
-used to obtain Eq. \ref{sig2_iso}, which also imposes a different
+used to obtain Eq. \ref{simple_growth2}, which also imposes a different
 boundary condition to that in the numerical calculation. These values
 are also close to that found by \cite{mcnally14}. The eigenfrequency
 is not sensitive to the vertical boundary condition because the
