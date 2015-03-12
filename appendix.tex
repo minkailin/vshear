@@ -400,7 +400,7 @@ $|\zhat|\to\infty$.  Then the eigenfrequency $\hat{\sigma}$ is given via
   \ii\epsilon q \khat\right) = 0. \label{simple_growth}
 \end{align}
 
-\subsubsection{Stability without vertical shear}
+\subsubsection{Stability without vertical shear}\label{stable_novshear}
 In the absence of vertical shear $q=0$, Eq. \ref{simple_growth} can be
 written as \begin{align}
   \hat{\sigma}^2\khat^2 =
@@ -410,10 +410,15 @@ This is just the dispersion relation for axisymmetric waves in a
 vertically isothermal disk already discussed in previous works 
 \citep[e.g.][]{okazaki87,takeuchi98,tanaka02,zhang06,ogilvie13,barker14}. In
 this case the solutions are Hermite polynomials, $W\propto
-\He_L(\zhat)$.  The eigenfrequency $\hat{\sigma}$ is real so the disk
+\He_L(\zhat)$.  The eigenfrequency $\hat{\sigma} = \hat{\omega}$ is real so the disk
 is stable, consistent with \S\ref{integral_relation}. The
 low-frequency solution to Eq. \ref{iso_disp_full} correspond to
-inertial waves \citep{balbus03}. 
+inertial waves \citep{balbus03}. In the low frequency limit
+$|\hat{\omega}|\ll 1$ and assuming $L\geq 1 $, the 
+dispersion relation is $\hat{\omega}^2\khat^2 = L$, or
+$\hat{\omega}\propto \khat^{-1}$ for fixed $L$. (Low frequency thus 
+require $\khat\gg \sqrt{L}$.) This inverse relation has been qualitatively
+observed in numerical simulations of \cite{stoll14}. 
 
 \subsubsection{Instability with vertical shear}
 A simple solution to Eq. \ref{simple_growth} may be obtained by
