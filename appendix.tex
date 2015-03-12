@@ -279,7 +279,7 @@ have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. vertical
 shear. A similar conclusion can be reached in the equivalent linear  
 problem in global cylindrical disk geometry. 
 
-\subsubsection{Maximum growth rate}   
+\subsubsection{Maximum growth rate}\label{max_growth1}
 Here we show that the growth rate is limited by the maximum vertical
 shear in the domain. % Writing $\hat{\sigma} = \hat{\omega} +
 % \ii\hat{\nu}$ with real $\hat{\omega}$ and $\hat{\nu}$, 
@@ -366,16 +366,16 @@ results.
 
 \subsection{Explicit solutions in the thin-disk limit}\label{iso_explicit}
 Here we assume a thin disk ($\epsilon\ll1$) so that $\ln\rho\simeq
--\zhat^2/2$ and $f(\zhat)\simeq \zhat$. However, we do not assume
+-\zhat^2/2$ and $f(\zhat)\simeq \zhat$. However, we do not assume 
 low-frequency from the onset. Then Eq. \ref{iso_ode0} becomes 
 \begin{align}\label{iso_ode3}
   W^{\prime\prime} - \left(1 + \frac{\ii q\epsilon \hat{k}}{1-\hat{\sigma}^2}\right)\hat{z}W^\prime  +
   \hat{\sigma}^2\left(1+\frac{\hat{k}^2}{1-\hat{\sigma}^2}\right)W = 0.
 \end{align}
-We remark that for $\hat{k}^2\gg 1$ and taking low-frequency limit,
-Eq. \ref{iso_ode3} becomes equivalent to Eq. 39 in \cite{nelson13},
-although we have taken a different route.  
-
+We remark that taking the low-frequency limit and considering
+$\hat{k}^2\gg 1$, Eq. \ref{iso_ode3} becomes equivalent to Eq. 39 in
+\cite{nelson13}, although we have taken a different route.   
+ 
 % To complete the problem we must specify boundary conditions. The 
 % maximum vertical domain size should be limited by the thin
 % disk and low-frequency approximations (i.e. $z\lesssim r$).     
@@ -404,14 +404,16 @@ $|\zhat|\to\infty$.  Then the eigenfrequency $\hat{\sigma}$ is given via
 In the absence of vertical shear $q=0$, Eq. \ref{simple_growth} can be
 written as \begin{align}
   \hat{\sigma}^2\khat^2 =
-  \left(L-\hat{\sigma}^2\right)\left(1-\hat{\sigma}^2\right). 
+  \left(L-\hat{\sigma}^2\right)\left(1-\hat{\sigma}^2\right). \label{iso_disp_full}
 \end{align}
 This is just the dispersion relation for axisymmetric waves in a
 vertically isothermal disk already discussed in previous works 
 \citep[e.g.][]{okazaki87,takeuchi98,tanaka02,zhang06,ogilvie13,barker14}. In
 this case the solutions are Hermite polynomials, $W\propto
 \He_L(\zhat)$.  The eigenfrequency $\hat{\sigma}$ is real so the disk
-is stable, consistent with \S\ref{integral_relation}. 
+is stable, consistent with \S\ref{integral_relation}. The
+low-frequency solution to Eq. \ref{iso_disp_full} correspond to
+inertial waves \citep{balbus03}. 
 
 \subsubsection{Instability with vertical shear}
 A simple solution to Eq. \ref{simple_growth} may be obtained by
