@@ -207,17 +207,18 @@ fundamental mode) or  $M=O(1)$ and low frequency $|\hat{\omega}|\ll
 also assume $|q|$ and $\beta$ are $O(1)$ or less. For a thin disk
 ($\epsilon \ll 1$), we have approximately
 \begin{align}
- 0 = &M(M+1) + \left[1 +
+ 0 = &M(M+1)\left(1-\epsilon^2q^2\khat^2\right) + \left[1 +
     \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2\notag\\
    &-  \left(\hat{\omega}\khat\right)^4,\label{relax_cond_simp1}\\
-   0= &M(M+1) + \frac{\beta}{\epsilon q} (1-\gamma)(1+2M)^2
+   0= &2M(M+1) + \frac{\beta}{\epsilon q} (1-\gamma)(1+2M)^2
    \left(\hat{\omega}\khat\right) + \left(\hat{\omega}\khat\right)^2. \label{relax_cond_simp2}
 \end{align}
 (We explain this in Appendix \ref{disp_neut_limit}.)
 
 Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2} is a pair of
 simultaneous equations for $\hat{\omega}$ and the critical thermal
-timescale $\beta$ for marginal stability. If $\beta\ll 1$,
+timescale $\beta$ for marginal stability. If $\beta\ll 1$ and the disk
+is sufficiently thin so that $|\epsilon q \khat |\ll 1$
 then a simple solution to Eq. \ref{relax_cond_simp1} is 
 \begin{align}
   \left(\hat{\omega}\khat\right)^2 \simeq M+1, 
@@ -227,7 +228,7 @@ isothermal disks without vertical shear (see Appendix
 \ref{stable_novshear}). Then  
 \begin{align}\label{bcrit_gen}
   \beta = \frac{\epsilon|q|}{(\gamma - 1)}
-  \frac{(1+M)^{3/2}}{(1+2M)^2} \leq \beta_\mathrm{crit} 
+  \frac{\sqrt{1+M}}{(1+2M)} \leq \beta_\mathrm{crit} 
 \end{align}
 where 
 \begin{align}\label{iso_vsi_cond}
@@ -243,9 +244,9 @@ $\beta_\mathrm{crit}$ as the thermal timescale below which
 perturbations are effectively isothermal to allow the VSI.  We will confirm
 Eq. \ref{iso_vsi_cond} numerically in \S\ref{bcrit_num_test}.  
 
-(We remark that the critical thermal timescale $\beta_\mathrm{crit}$
-for the fundamental mode may be obtained more readily with fewer
-assumptions by setting $M=0$ in
+(We remark that the critical thermal timescale for the fundamental
+mode, $\beta_\mathrm{crit}$, may be obtained more readily without 
+assuming $|\epsilon q \khat|\ll 1$ by setting $M=0$ in
 Eq. \ref{relax_cond1}---\ref{relax_cond2} from the onset.) 
 
 Rapid thermal relaxation is required to overcome a stabilizing

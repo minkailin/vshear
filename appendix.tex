@@ -224,13 +224,13 @@ For neutral modes with real $\hat{\sigma}=\hat{\omega}$ and large
 wavenumber $\khat\gg 1$, the real and imaginary parts of
 Eq. \ref{relax_disp} are approximately 
 \begin{align}
-  &0 =M(M+1) + 4\beta\epsilon q M(M+1)\left(\hat{\omega}\khat\right) 
+  0 =&M(M+1)(1-\epsilon^2 q^2 \khat^2) + 4\beta\epsilon q M(M+1)\left(\hat{\omega}\khat\right) 
  +\left[1 +
     \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2
- + 2\epsilon q \gamma\beta \left(\hat{\omega}\khat\right)^3 -  \left(\hat{\omega}\khat\right)^4 
-  + \beta^2\gamma^2\hat{\omega}^2
+ + 2\epsilon q \gamma\beta \left(\hat{\omega}\khat\right)^3 -  \left(\hat{\omega}\khat\right)^4\notag \\
+  &+ \beta^2\gamma^2\hat{\omega}^2
   \left(\hat{\omega}\khat\right)^4,\label{relax_cond1} \\
-   &0= \epsilon q M (M+1)\khat +
+   0=& 2\epsilon q M (M+1)\khat +
    \beta(1-\gamma)(1+2M)^2\khat\left(\hat{\omega}\khat\right) 
    + \epsilon q \khat \left(\hat{\omega}\khat\right)^2 -
    2\beta\hat{\omega}\left(\hat{\omega}\khat\right)^2
@@ -246,6 +246,52 @@ $|\hat{\omega}|\ll 1$.  Then for a thin disk $\epsilon \ll 1$,
 we neglect the second, fourth and last term in Eq. \ref{relax_cond1};
 and neglect the last three terms in Eq. \ref{relax_cond2}. This gives
 Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}.
+
+
+
+
+
+%Taking the real and imaginary parts of Eq. \ref{relax_disp_fund} and considering 
+% $\khat\gg1$, we find
+% \begin{align}
+%   0 =& \left[1 + \gamma\beta^2\left(1-\gamma\right)\right] + 2\epsilon q
+%   \gamma\beta (\hat{\omega}\khat) -  (\hat{\omega}\khat)^2 \notag\\
+%   &+ \beta^2\gamma^2\hat{\omega}^2 (\hat{\omega}\khat)^2,\label{relax_cond1}\\
+%   0=& \beta(1-\gamma)\khat^2 + \epsilon q \khat^2 (\hat{\omega}\khat)
+%   - 2\beta (\hat{\omega}\khat)^2 - \epsilon q \gamma^2\beta^2 (\hat{\omega}\khat)^3 \notag\\
+%     &+ 2\beta\gamma(\hat{\omega}\khat)^4.  
+% \label{relax_cond2}
+% \end{align}
+% This is a pair of simultaneous equations for
+% $\hat{\omega}$ and $\beta$. Now, low-frequency axisymmetric waves in
+% the absence of vertical shear are stable and  satisfy
+% $\hat{\omega}\propto \khat^{-1}$ (Appendix \ref
+% {stable_novshear}, Eq. \ref{iso_disp_full}).  We are thus motivated to
+% seek solutions to Eq. \ref{relax_cond1}---\ref{relax_cond2} with  
+% % we wish to seek a criterion independent of k 
+% % \begin{align}
+% %   \khat \to \infty, \quad \hat{\omega}\to 0 ,\quad \hat{\omega} \khat\text{ finite}.
+% %\end{align}
+% \begin{align}
+%   \khat \gg1, \quad |\hat{\omega}|\ll 1 ,\quad
+%   |\hat{\omega}\khat|=O(1). 
+% \end{align}
+% Then
+% \begin{align}
+%   \hat{\omega}\khat = \frac{(\gamma-1)\beta}{\epsilon q}
+% \end{align}
+% from Eq. \ref{relax_cond2}, which implies, from Eq. \ref{relax_cond1}
+% that
+% \begin{align}\label{beta_crit0}
+%   \beta = \frac{1}{(\gamma-1)}\left[\frac{1}{\left(\epsilon
+%         q\right)^2} - \frac{\gamma}{(\gamma-1)}\right]^{-1/2} 
+% \end{align}
+
+
+
+
+
+
 
 \section{Linear problem in the isothermal limit}\label{iso_discuss}  
 Here we examine in more detail the special case of isothermal
