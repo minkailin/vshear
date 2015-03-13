@@ -1,36 +1,37 @@
 \section{Applicability of the vertically global shearing box}\label{global_corr}
-In \S\ref{analytical} we used the vertically global shearing box
+In \S\ref{analytical} we effectively employed the vertically global shearing box
 \citep[VGSB,][]{mcnally14} to make analytic progress.   
 The main difference between the linear problem in the VGSB 
 and the radially-local approximation
 (Eq. \ref{lin_mass}---\ref{lin_energy}) adopted in our numerical study
-is the absence of  terms associated with the radial disk structure in
+is the absence of terms explicitly associated with the radial disk structure in
 the former framework. These terms appear in the energy, mass and radial momentum
-equations and are reproduced here for convenience,
+equations and are labeled by $\hat{g}_c$ in
+Eq. \ref{lin_mass}---\ref{lin_energy}. Nominally $\hat{g}_c=1$. 
 
-\begin{align}
-  \ii \sigma W  &=c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
-      z}\right|_0 \delta v_z + \frac{\gamma}{\Gamma} \frac{d\delta
-    v_z}{dz}\right) + \left[\ii k_xc_s^2(r_0,z)
-  \frac{\gamma}{\Gamma} + \hat{g}_c\left.\frac{1}{\rho}\frac{\p P}{\p
-      r}\right|_0\right]\delta v_x  +
-\frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right),\label{gcorr_terms1}\\
-\ii \sigma Q &= c_s^2(r_0,z)\left(\ii k_x + \hat{g}_c
-  \left.\frac{\p\ln{\rho}}{\p r}\right|_0\right)\delta v_x + c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
-      z}\right|_0 \delta v_z + \frac{d\delta
-    v_z}{dz}\right),\label{gcorr_terms2} \\
-\ii \sigma \delta v_x & = \ii k_x W  -
-\hat{g}_c\frac{1}{c_s^2(r_0,z)}\left.\frac{1}{\rho}\frac{\p P}{\p
-  r}\right|_0Q - 2\Omega(r_0,z)\delta v_y,\label{gcorr_terms3}
-\end{align}
-where subscript $0$ denotes evaluation at $r=r_0$. We recall terms
-proportional to $\hat{g}_c$ are associated with the background density
-and pressure radial structures, and nominally $\hat{g}_c=1$.   
+% \begin{align}
+%   \ii \sigma W  &=c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
+%       z}\right|_0 \delta v_z + \frac{\gamma}{\Gamma} \frac{d\delta
+%     v_z}{dz}\right) + \left[\ii k_xc_s^2(r_0,z)
+%   \frac{\gamma}{\Gamma} + \hat{g}_c\left.\frac{1}{\rho}\frac{\p P}{\p
+%       r}\right|_0\right]\delta v_x  +
+% \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right),\label{gcorr_terms1}\\
+% \ii \sigma Q &= c_s^2(r_0,z)\left(\ii k_x + \hat{g}_c
+%   \left.\frac{\p\ln{\rho}}{\p r}\right|_0\right)\delta v_x + c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
+%       z}\right|_0 \delta v_z + \frac{d\delta
+%     v_z}{dz}\right),\label{gcorr_terms2} \\
+% \ii \sigma \delta v_x & = \ii k_x W  -
+% \hat{g}_c\frac{1}{c_s^2(r_0,z)}\left.\frac{1}{\rho}\frac{\p P}{\p
+%   r}\right|_0Q - 2\Omega(r_0,z)\delta v_y,\label{gcorr_terms3}
+% \end{align}
+% where subscript $0$ denotes evaluation at $r=r_0$. We recall terms
+% proportional to $\hat{g}_c$ are associated with the background density
+% and pressure radial structures, and nominally $\hat{g}_c=1$.   
 
 However, in the VGSB these terms are neglected by 
 setting $\hat{g}_c=0$. For a power-law disk, these radial gradients
 are $O(r^{-1})$, and they appear in comparison with terms of
-$O(k_x)$. The neglected terms  therefore have a relative magnitude of
+$O(k_x)$. The neglected terms therefore have a relative magnitude of
 $O(\epsilon/\khat)$. This is small for thin disks ($\epsilon\ll1$)
 and/or small radial wavelengths ($\khat\gg 1$).  
 
@@ -38,8 +39,8 @@ and/or small radial wavelengths ($\khat\gg 1$).
 An important caveat of the VGSB is that it cannot be used in the
 adiabatic limit. We explain this by considering vertically isothermal
 disks and setting  $\beta\to\infty$ in 
-Eq. \ref{vertiso_gov_nondim}, which can then be written as 
-
+Eq. \ref{vertiso_gov_nondim} (which itself is obtained by setting
+$\hat{g}_c=0$ in Eq. \ref{lin_mass}---\ref{lin_energy}) to give 
 \begin{align}
   0 =\dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
     \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime
@@ -66,19 +67,17 @@ parts, to obtain
   \int_{\zhat_1}^{\zhat_2}\ln\rho^\prime(\rho\delta v_z^*)^\prime
   \delta v_z d\zhat.\label{adia_integral}
 \end{align}
-When $q\equiv0$, all the terms on the right-hand-side (RHS) are real. Then
-$\hat{\sigma}^2$ is real, and  $\hat{\sigma}^2>0$ if $\gamma>1$. As
-expected, a sub-adiabatically stratified disk is stable in the absence
-of vertical shear. 
+% When $q\equiv0$, all the terms on the right-hand-side (RHS) are real. Then
+% $\hat{\sigma}^2$ is real, and  $\hat{\sigma}^2>0$ if $\gamma>1$. As
+% expected, a sub-adiabatically stratified disk is stable in the absence
+% of vertical shear. 
 
-However, in the presence of vertical shear $q\neq0$,
-Eq. \ref{adia_integral} suggests $\hat{\sigma}$ is complex for real
-$\khat$, which implies the possibility of instability, regardless of
-how much $\gamma$ deviates from unity. This is contradicts the second 
-Solberg-Hoiland criterion (Eq. \ref{solberg2}), which states that 
-instability in a thin, adiabatic disk requires it to be close to 
-neutrally stratified, i.e. $|\gamma-1|\ll1$ for vertically isothermal disks
-evolved adiabatically. 
+In the presence of vertical shear $q\neq0$, Eq. \ref{adia_integral}
+suggests $\hat{\sigma}$ is complex for real $\khat$, which implies the
+possibility of instability, regardless of the value of
+$|\gamma-1|$. This is contradicts the second Solberg-Hoiland criterion 
+(Eq. \ref{solberg2}), which imply instability requires 
+$|\gamma-1|\ll1$ for thin, vertically isothermal disks evolved adiabatically. 
 %also need real freq^2 in adia limit 
 This is because the VGSB retains the vertical shear
 ($\p_z\Omega$) from the global disk, but ignores the global radial
@@ -88,13 +87,12 @@ for $\beta\ll1$.
 
 \subsection{Effect of global radial gradients}
 In  Fig. \ref{gcorr_compare}, we plot the effect of the global radial gradient terms
-proportional to $\hat{g}_c$ in 
-Eq. \ref{gcorr_terms1}---\ref{gcorr_terms3} by calculating the
+proportional to $\hat{g}_c$ in Eq. \ref{lin_mass}---\ref{lin_energy}
+by calculating the
 fundamental VSI growth rates using three approaches. We compute growth rates from the dispersion
-relation Eq. \ref{relax_disp}, which utilizes the VGSB;  from the
-full linear problem (Eq. \ref{lin_mass}---\ref{lin_energy}) with
-$\hat{g}_c=0$ (i.e. the linear VGSB equations); and from the full
-linear problem with $\hat{g}_c=1$.  
+relation Eq. \ref{relax_disp}, which assumes $\hat{g}_c=0$;  from
+Eq. \ref{lin_mass}---\ref{lin_energy} with $\hat{g}_c=0$; and from
+Eq. \ref{lin_mass}---\ref{lin_energy}  with $\hat{g}_c=1$.   
 
 All three methods give similar behavior, and growth rates are in close
 agreement for $\beta\lesssim 1$. Differences arise for 
@@ -103,7 +101,8 @@ $\beta\gtrsim1$, and as $\beta\to\infty$ the VGSB framework gives a
 above. Inclusion of the global radial gradient terms results in the
 correct behavior  ($\nu\to0$ as $\beta\to\infty$). Despite this
 caveat, Fig. \ref{gcorr_compare} shows that provided we consider
-$\beta\ll1$, then the VGSB framework is an adequate approximation. 
+$\beta\ll1$, then the VGSB framework is an adequate approximation to
+study the VSI.
  
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
@@ -219,9 +218,8 @@ given by:
 &c_6 = \beta^2\left(1+\gamma\khat^2\right)^2.
 \end{align}
 
-\subsection{Limiting form with real frequencies and $\khat\gg 1$}\label{disp_neut_limit}
-For neutral modes with real $\hat{\sigma}=\hat{\omega}$ and large
-wavenumber $\khat\gg 1$, the real and imaginary parts of
+\subsection{Limiting form with real frequencies and $\khat^2\gg 1$}\label{disp_neut_limit}
+Assuming neutral modes with real $\hat{\sigma}=\hat{\omega}$ and $\khat^2\gg 1$, the real and imaginary parts of
 Eq. \ref{relax_disp} are approximately 
 \begin{align}
   0 =&M(M+1)(1-\epsilon^2 q^2 \khat^2) + 4\beta\epsilon q M(M+1)\left(\hat{\omega}\khat\right) 
@@ -240,14 +238,30 @@ Eq. \ref{relax_disp} are approximately
    2\beta\gamma\hat{\omega}\left(\hat{\omega}\khat\right)^4 \label{relax_cond2}. 
 \end{align}
 These equations are used to derive a critical thermal timescale in
-\S\ref{iso_vsi_beta_crit}. For a given $M$, we assume
-$|\hat{\omega}\khat|$ remain constant but $\khat\gg 1$ and
-$|\hat{\omega}|\ll 1$.  Then for a thin disk $\epsilon \ll 1$,
+\S\ref{iso_vsi_beta_crit}. For fixed $M$ of $O(1)$,  we assume
+$|\hat{\omega}\khat|$ remain constant but consider $\khat\gg 1$ so
+that $|\hat{\omega}|\ll 1$.  Then for a thin disk $\epsilon \ll 1$
 we neglect the second, fourth and last term in Eq. \ref{relax_cond1};
-and neglect the last three terms in Eq. \ref{relax_cond2}. This gives
-Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}.
+and neglect the last three terms in Eq. \ref{relax_cond2}. This
+procedure gives Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2},
+but is not valid if $\beta$ or $|q|$ is large. 
 
+For the fundamental mode $M=0$ and Eq. \ref{relax_cond1} ---
+\ref{relax_cond2} simply significantly. It is then straight
+forward to eliminate $\hat{\omega}\khat$ between 
+Eq. \ref{relax_cond_simp1} and \ref{relax_cond_simp2} to obtain
+$\beta_\mathrm{crit}$ (Eq. \ref{iso_vsi_cond}) without the restrictive
+assumption of $|\epsilon q \khat|\ll1$, as used in the main text to obtain the
+equivalent expression for $M>0$ (Eq. \ref{bcrit_gen}).
 
+%  In this case the fourth term
+% in Eq. \ref{relax_cond1} may be retained but other aforementioned terms
+% are still neglected. One then obtains an expression for $\beta$ by
+% eliminating $\hat{\omega}\khat$ between Eq. \ref{relax_cond1} ---
+% \ref{relax_cond2}. The expression for the critical thermal timescale
+% for the fundamental mode, $\beta_\mathrm{crit}$
+% (Eq. \ref{iso_vsi_con}, is then obtained by taking the thin disk
+% limit. 
 
 
 
@@ -484,27 +498,25 @@ This is just the dispersion relation for axisymmetric waves in a
 vertically isothermal disk already discussed in previous works 
 \citep[e.g.][]{okazaki87,takeuchi98,tanaka02,zhang06,ogilvie13,barker14}. In
 this case the solutions are Hermite polynomials, $W\propto
-\He_L(\zhat)$.  The eigenfrequency $\hat{\sigma} = \hat{\omega}$ is real so the disk
-is stable, consistent with \S\ref{integral_relation}. The
-low-frequency solution to Eq. \ref{iso_disp_full} correspond to
-inertial waves \citep{balbus03}. In the low frequency limit
-$|\hat{\omega}|\ll 1$ and assuming $L\geq 1 $, the 
-dispersion relation is $\hat{\omega}^2\khat^2 = L$, or
-$\hat{\omega}\propto \khat^{-1}$ for fixed $L$. (Low frequency thus 
-require $\khat\gg \sqrt{L}$.) This inverse relation has been qualitatively
+\He_L(\zhat)$.  The eigenfrequency $\hat{\sigma} = \hat{\omega}$ is real and the disk
+is stable. The low-frequency branch of Eq. \ref{iso_disp_full} are 
+inertial waves \citep{balbus03}. For 
+$|\hat{\omega}|\ll 1$ and $L\geq 1$ the dispersion relation is
+$\hat{\omega}^2\khat^2 = L$, or $\hat{\omega}\propto \khat^{-1}$ for
+fixed $L$.  This inverse relation has been qualitatively
 observed in numerical simulations of \cite{stoll14}. 
 
 \subsubsection{Instability with vertical shear}
-A simple solution to Eq. \ref{simple_growth} may be obtained by
-considering small radial lengthscales $\khat\gg 1$. Then for the
-low-frequency branch of Eq. \ref{simple_growth} 
+A simple solution for $\hat{\sigma}$ may be obtained by balancing
+the  last two terms of Eq. \ref{simple_growth} to obtain the
+low-frequency branch,  
 \begin{align}
   \hat{\sigma}^2 \simeq L\left(\frac{1+\ii q \epsilon
        \hat{k}}{L+1+\hat{k}^2}\right).\label{simple_growth2}
 \end{align}
-The eigenfrequency $\hat{\sigma}$ is therefore complex for 
-$L\geq1$, which signifies instability since we can choose
-the sign of the square root to make $\hat{\nu} = \imag\hat{\sigma}>0$.   
+This signifies instability for $L\geq1$ 
+since we can choose the sign of the square root to make $\hat{\nu} =
+\imag\hat{\sigma}>0$.   
 
 % \begin{align}\label{sig2_iso}
 %   \hat{\sigma}^2 = L\left(\frac{1+\ii q \epsilon

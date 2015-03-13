@@ -65,15 +65,14 @@ For definiteness, let us consider the simple solution
 \end{align}
 which solves Eq. \ref{nearly_iso_explicit} since $\delta
 v_z=$constant and $\chi=1$ so that $B=C=0$. 
-This is the fundamental or `corrugation' mode and represents
-the entire disk column moving vertically. These modes have been
-observed to dominate numerical simulations \citep{nelson13,stoll14},
-and are the ones we find to develop in protoplanetary disks
+This is the fundamental or `corrugation' mode where the vertical
+velocity is constant throughout the disk column. These modes have been
+observed to dominate numerical simulations \citep{nelson13,stoll14},  
+and are the ones we find to dominate in numerical calculations with 
+increasing $\beta$, as well as in protoplanetary disks 
 with a realistic estimate for thermal timescales
-(\S\ref{application}). 
+(\S\ref{application}).  %Their importance is highlighted 
 
-%To determine the (assumed) small effect of introducing a short thermal
-%relaxation, 
 We linearize Eq. \ref{nearly_iso_explicit} about the above
 solution for $\beta\equiv0$ and write 
 \begin{align}\label{nearly_iso_pert}
@@ -97,19 +96,21 @@ balancing constants and coefficients of $\zhat^2$,
 
 \begin{align}
   0 &= 2a + 2\hat{\sigma}\left(1+\khat^2\right)\delta\hat{\sigma} +
-  \left(\hat{\sigma}^2 -1\right)\delta\chi,\notag\\
+  \left(\hat{\sigma}^2 -1\right)\delta\chi, \\
   0&= 2a\left(1+\ii\epsilon q \khat\right) - \left(\khat^2 - \ii\epsilon
     q \khat\right)\delta\chi.
 \end{align} 
 
 Using the expressions for $\delta\chi$ and $\hat{\sigma}$ we can solve
-for $\delta\hat{\sigma}$. This gives 
-\begin{align}\label{nearly_iso_dsig}
-  \delta \hat{\sigma} =
-  -\frac{\ii\left(\gamma-1\right)\hat{k}^2\left(\ii\epsilon
-      q - \hat{k}\right)^2}{2\left(1+\ii\epsilon q \hat{k}\right)\left(1+\hat{k}^2\right)^2}\delta\beta.
-\end{align}
-The imaginary part of Eq. \ref{nearly_iso_dsig} is
+for $\delta\hat{\sigma}$. We find imaginary part of $\delta\hat{\sigma}$
+is 
+% This gives 
+% \begin{align}\label{nearly_iso_dsig}
+%   \delta \hat{\sigma} =
+%   -\frac{\ii\left(\gamma-1\right)\hat{k}^2\left(\ii\epsilon
+%       q - \hat{k}\right)^2}{2\left(1+\ii\epsilon q \hat{k}\right)\left(1+\hat{k}^2\right)^2}\delta\beta.
+% \end{align}
+% The imaginary part of Eq. \ref{nearly_iso_dsig} is
 \begin{align}
   \delta\hat{\nu} =
   -\frac{\left(\gamma-1\right)\hat{k}^2 \left(\hat{k}^2 -
@@ -121,7 +122,6 @@ implies $\delta\hat{\nu} < 0$, i.e. stabilization. Interestingly, for both
 $\hat{k}\to0$ and $\hat{k}\to\infty$ we find $\delta\hat{\nu}\to0$, so
 stabilization by small finite cooling is ineffective at very large or
 very small scales. 
-
 
 A finite thermal relaxation time introduces buoyancy
 forces, which is stabilizing for sub-adiabatically stratified disks
@@ -174,52 +174,48 @@ which requires
   B(\hat{\sigma}) + \alpha(\hat{\sigma}) =
   M\left[A-2\alpha(\hat{\sigma})\right].\label{adia_disp0} 
 \end{align}
-For ease of analysis, we square Eq. \ref{adia_disp0} to obtain a 
-a polynomial in $\hat{\sigma}$,  
+For ease of analysis, we re-arrange Eq. \ref{adia_disp0} and square it
+to obtain a polynomial in $\hat{\sigma}$,  
 \begin{align}
   0 = \sum_{l=0}^{6}c_l\hat{\sigma}^l,\label{relax_disp}
 \end{align}
 where the coefficients $c_l$ are given in Appendix \ref{relax_coeff}.
-The dispersion relation $\hat{\sigma}=\hat{\sigma}(\khat)$ generally
-requires a numerical solution. However, simple solutions may be
-obtained in limiting cases which we consider below. 
+The dispersion relation $\hat{\sigma}=\hat{\sigma}(\khat)$ is
+complicated and generally requires a numerical solution. However,
+simple solutions may be obtained in limiting cases which we consider
+below.  
 
 % However, for the fundamental mode
 % ($M=0$) some analytic progress can be made, which we consider next.  
 
 \subsection{Upper limit on the thermal relaxation timescale for the
   VSI}\label{iso_vsi_beta_crit}
-Here we estimate the maximum thermal relaxation timescale
-$\beta$ that allows the VSI. We consider wavenumbers such that
-$\khat^2\gg M+1$ which, as we will find, correspond to low frequency
-modes. 
-
-%At marginal stability, the eigenfrequency $\hat{\sigma}=\hat{\omega}$ is real.  
-%This is a pair of simultaneous
-%equations for $\hat{\omega}$ and $\beta$. To proceed, we
-%consider further limits. 
-
+Here we estimate the maximum thermal relaxation timescale 
+$\beta$ that allows the VSI for modes with $\khat^2\gg M+1$.  
+% which, as we will find, correspond to low frequency
+% modes. 
 Our starting point is Eq. \ref{relax_cond1}---\ref{relax_cond2} which
-approximates the dispersion relation Eq. \ref{relax_disp} at marginal
-stability with $\khat\gg 1$. We consider modes with $M=0$ (the
+approximates the dispersion relation Eq. \ref{relax_disp} assuming marginal
+stability and $\khat^2\gg 1$. We consider modes with $M=0$ (the
 fundamental mode) or  $M=O(1)$ and low frequency $|\hat{\omega}|\ll
-1$ such that $|\hat{\omega}\khat|$ is $O(1)$ because $\khat\gg 1$. We
-also assume $|q|$ and $\beta$ are $O(1)$ or less. For a thin disk
-($\epsilon \ll 1$), we have approximately
+1$ such that $|\hat{\omega}\khat|$ is $O(1)$. We
+also assume $|q|$ and $\beta$ are $O(1)$ or smaller. For a thin disk
+($\epsilon \ll 1$) we have 
 \begin{align}
- 0 = &M(M+1)\left(1-\epsilon^2q^2\khat^2\right) + \left[1 +
-    \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2\notag\\
-   &-  \left(\hat{\omega}\khat\right)^4,\label{relax_cond_simp1}\\
+ 0 = &M(M+1)\left(1-\epsilon^2q^2\khat^2\right) \notag\\ 
+ &+ \left[1 +
+    \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2
+   -  \left(\hat{\omega}\khat\right)^4,\label{relax_cond_simp1}\\
    0= &2M(M+1) + \frac{\beta}{\epsilon q} (1-\gamma)(1+2M)^2
    \left(\hat{\omega}\khat\right) + \left(\hat{\omega}\khat\right)^2. \label{relax_cond_simp2}
 \end{align}
 (We explain this in Appendix \ref{disp_neut_limit}.)
 
 Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2} is a pair of
-simultaneous equations for $\hat{\omega}$ and the critical thermal
-timescale $\beta$ for marginal stability. If $\beta\ll 1$ and the disk
-is sufficiently thin so that $|\epsilon q \khat |\ll 1$
-then a simple solution to Eq. \ref{relax_cond_simp1} is 
+simultaneous equations for $\hat{\omega}$ and $\beta$ for marginal
+stability. If $\beta\ll 1$ and the disk is sufficiently thin so that
+$|\epsilon q \khat |\ll 1$ 
+then an approximate solution to Eq. \ref{relax_cond_simp1} is 
 \begin{align}
   \left(\hat{\omega}\khat\right)^2 \simeq M+1, 
 \end{align}
@@ -232,35 +228,29 @@ isothermal disks without vertical shear (see Appendix
 \end{align}
 where 
 \begin{align}\label{iso_vsi_cond}
-  \beta_\mathrm{crit}  \equiv \frac{\epsilon|q|}{\gamma-1}
+  \beta_\mathrm{crit}  \equiv \frac{\epsilon|q|}{\gamma-1} 
 \end{align}
 is the critical thermal timescale for the fundamental mode
-($M=0$). However, according to Eq. \ref{bcrit_gen}  the critical
-thermal timescale decreases with increasing  $M$. We thus expect
-higher order modes to be stabilized more rapidly by finite thermal
-relaxation. When $\beta>\beta_\mathrm{crit}$, all modes
-(satisfying the above assumptions) are stabilized. We can interpret
-$\beta_\mathrm{crit}$ as the thermal timescale below which
-perturbations are effectively isothermal to allow the VSI.  We will confirm
-Eq. \ref{iso_vsi_cond} numerically in \S\ref{bcrit_num_test}.  
+($M=0$). We comment that the expression for $\beta_\mathrm{crit}$ may
+in fact be obtained without assuming $|\epsilon q \khat|\ll 1$.  We
+will confirm Eq. \ref{iso_vsi_cond} numerically in \S\ref{bcrit_num_test}.
 
-(We remark that the critical thermal timescale for the fundamental
-mode, $\beta_\mathrm{crit}$, may be obtained more readily without 
-assuming $|\epsilon q \khat|\ll 1$ by setting $M=0$ in
-Eq. \ref{relax_cond1}---\ref{relax_cond2} from the onset.) 
+Eq. \ref{bcrit_gen} suggests that as the thermal timescale is
+increased from zero, higher order modes with $M>0$
+are stabilized before the fundamental mode. We indeed observe this
+trend in numerical calculations, despite adopting somewhat restrictive
+assumptions in order to arrive at the simple expression 
+Eq. \ref{bcrit_gen} for $M>0$. 
 
 Rapid thermal relaxation is required to overcome a stabilizing
-vertical entropy gradient \citep{goldreich67,urpin98,urpin03}. This 
-conclusion was reached in these studies by considering
-vertically-localized disturbances. % , although a definitive timescale
-                                % was not presented.  
-By contrast, our Eq. \ref{iso_vsi_cond} quantifies this requirement
-for vertically global disturbances. We see that in a thin disk, a very
-short thermal timescale is required ($\beta_\mathrm{crit}\ll 1$)
-because $\beta_\mathrm{crit}\propto \epsilon$. 
-This suggests that finite thermal relaxation rapidly stabilizes the
-VSI.   
-
+vertical entropy gradient \citep{goldreich67,urpin98,urpin03}, but these
+studies consider vertically localized disturbances. Our 
+Eq. \ref{iso_vsi_cond} quantifies this requirement for vertically
+global disturbances (which have small $M$).  We can interpret
+$\beta_\mathrm{crit}$ as the thermal timescale below which
+perturbations are effectively isothermal and the VSI operates.  We see
+that in a thin disk, a very short thermal timescale is required
+($\beta_\mathrm{crit}\ll 1$) because $\beta_\mathrm{crit}\propto \epsilon$. 
 
 
 
