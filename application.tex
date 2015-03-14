@@ -151,10 +151,9 @@ with the criterion Eq. \ref{iso_vsi_cond} evaluated for the MMSN,
 \end{align}
 
 In Fig. \ref{mmsn_bcrit_bcool} we plot Eq. \ref{beta_mmsn}  with $\mu
-=2.33$ $\gamma=1.4$, $\hat{T}=\hat{\Sigma}=1$ for three
-opacity scales: $\hat{\kappa}_d=0.1, \,1 $ (MMSN) and $10$ at two
-heights: $z=0$ and $z=3H$. We also plot Eq. \ref{bcrit_mmsn} in each
-panel.  
+=2.33$ $\gamma=1.4$, $\hat{T}=\hat{\Sigma}=1$ for opacity scales
+$\hat{\kappa}_d=0.1, \,1 $ (MMSN) and $10$, at $z=0$ and $z=3H$. We
+also plot Eq. \ref{bcrit_mmsn} in each panel.   
 
 Consider first the MMSN shown in the middle panels of 
 Fig. \ref{mmsn_bcrit_bcool}. The critical thermal timescale,
@@ -263,19 +262,32 @@ timescales $t_\mathrm{grow} \equiv 1/\nu$ associated with the
 fundamental mode in units of the local orbital time
 $P_\mathrm{orb}\equiv 2\pi/\Omega_k$.    
 
-In fact, for $\khat \lesssim 30$ we either only find the
-fundamental mode, or that it is the most unstable, and the associated
-growth rates are insensitive to $z_\mathrm{max}$. This is consistent with our
-analytical discussion (\S\ref{iso_vsi_beta_crit}) and previous
-numerical results (\S\ref{therm_relax_eff}), which indicate  
-higher order modes are more easily stabilized by finite thermal
-relaxation.   
+In fact, we either only find the fundamental mode, or that it is the
+most unstable, except for the appearence of some surface modes when considering large
+$\khat\gtrsim 50$. However, surface modes are dependent on
+boundary conditions and disturbances with large $\khat$ are more likely
+subject to viscous decay, as discussed above. The dominance of the
+fundamental mode is also observed in hydrodynamic
+simulations of \cite{stoll14} which treat radiative cooling properly. 
 
-However, for large $\khat$ and/or $z_\mathrm{max}$, we also found
-surface modes with shorter growth times than those shown in
-Fig. \ref{mmsn_overall}. Such modes may not be robust because    
-they are affected by boundary conditions (\S\ref{surf_comment}) and/or
-viscosity in a real disk. 
+% The dominance of the
+% fundamental mode is consistent with our analytical discussion
+% (\S\ref{iso_vsi_beta_crit}) and previous numerical results (\S\ref{therm_relax_eff}), which indicate  
+% higher order modes are more easily stabilized by finite thermal
+% relaxation.   
+
+% In fact, for $\khat \lesssim 30$ we either only find the
+% fundamental mode, or that it is the most unstable, and the associated
+% growth rates are insensitive to $z_\mathrm{max}$. This is consistent with our
+% analytical discussion (\S\ref{iso_vsi_beta_crit}) and previous
+% numerical results (\S\ref{therm_relax_eff}), which indicate  
+% higher order modes are more easily stabilized by finite thermal
+% relaxation.   
+% However, for large $\khat$ and/or $z_\mathrm{max}$, we also found
+% surface modes with shorter growth times than those shown in
+% Fig. \ref{mmsn_overall}. Such modes may not be robust because    
+% they are affected by boundary conditions (\S\ref{surf_comment}) and/or
+% viscosity in a real disk. 
 
 We therefore consider Fig. \ref{mmsn_overall} as a representation of the
 VSI in the MMSN. We see the VSI operates from $\sim 5$AU to $\sim
@@ -298,7 +310,7 @@ $\sim 8$AU where $t_\mathrm{grow}\to\infty$.
     \label{mmsn_overall}}    
 \end{figure}
 
-\subsection{Comparing the VSI in the inner and outer parts of the MMSN} 
+\subsection{Numerical examples} 
 We compare the VSI in the MMSN at $r=50$AU and $r=5$AU. We first show in
 Fig. \ref{beta_compare}  the thermal timescale $\beta$ for a
 perturbation wavenumber $\khat=30$. For comparison we also plot
@@ -314,10 +326,10 @@ $\beta_\mathrm{crit}$ at these radii.
     \label{beta_compare}}
 \end{figure}
 
-In the outer disk ($r=50$AU) the disk is optically thin, $\beta$ 
-does not depend on height and $\beta <
-\beta_\mathrm{crit}$. Accordingly we expect, and find, the VSI to
-operate at $r=50$AU. In the inner disk ($r=5$AU) the disk is optically
+The outer disk ($r=50$AU) is optically thin,
+$\beta<\beta_\mathrm{crit}$  and  does not depend on height. 
+Accordingly we expect, and find, the VSI 
+operates at $r=50$AU. The inner disk ($r=5$AU) is optically
 thick near the midplane and becomes optically thin away from it, such
 that $\beta < \beta_\mathrm{crit}$ for $|z|\gtrsim1.25H$. In
 fact, in this case  we also find the VSI to operate, but with much
@@ -329,7 +341,7 @@ Fig. \ref{mmsn_eigenvz}. Although at $r=5$AU $\beta$ depends on $z$,
 the disturbance still occupies the fluid column due to the vertically
 global nature of the fundamental mode. The fact that
 we obtain the VSI despite $\beta > \beta_\mathrm{crit}$ near the
-midplane suggests that the VSI can operate 
+midplane suggests that the instability can operate 
 provided $\beta < \beta_\mathrm{crit}$ for a sufficiently large
 fraction of the vertical domain. However, the normalized growth times
 are much longer at $r=5$AU than at $r=50$AU: %  for which  $\beta <
@@ -337,9 +349,7 @@ are much longer at $r=5$AU than at $r=50$AU: %  for which  $\beta <
 $t_\mathrm{grow}\sim 40$ orbits at $r=50$AU, but $t_\mathrm{grow}\sim
 400$ orbits at $r=5$AU. Thus, introducing an optically thick midplane
 significantly reduces the efficiency of the VSI despite $\beta <
-\beta_\mathrm{crit}$ away from the midplane.    
-
-
+\beta_\mathrm{crit}$ away from the midplane.   
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm

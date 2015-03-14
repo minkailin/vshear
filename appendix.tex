@@ -1,13 +1,12 @@
 \section{Applicability of the vertically global shearing box}\label{global_corr}
 In \S\ref{analytical} we effectively employed the vertically global shearing box
 \citep[VGSB,][]{mcnally14} to make analytic progress.   
-The main difference between the linear problem in the VGSB 
-and the radially-local approximation
-(Eq. \ref{lin_mass}---\ref{lin_energy}) adopted in our numerical study
+The difference between the linear problem in the VGSB 
+and the radially-local approximation adopted in our numerical study
 is the absence of terms explicitly associated with the radial disk structure in
-the former framework. These terms appear in the energy, mass and radial momentum
+the VGSB. These terms appear in the energy, mass and radial momentum
 equations and are labeled by $\hat{g}_c$ in
-Eq. \ref{lin_mass}---\ref{lin_energy}. Nominally $\hat{g}_c=1$. 
+Eq. \ref{lin_mass}---\ref{lin_energy}. Nominally $\hat{g}_c=1$.  
 
 % \begin{align}
 %   \ii \sigma W  &=c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
@@ -71,13 +70,13 @@ parts, to obtain
 % $\hat{\sigma}^2$ is real, and  $\hat{\sigma}^2>0$ if $\gamma>1$. As
 % expected, a sub-adiabatically stratified disk is stable in the absence
 % of vertical shear. 
-
 In the presence of vertical shear $q\neq0$, Eq. \ref{adia_integral}
-suggests $\hat{\sigma}$ is complex for real $\khat$, which implies the
+suggests $\hat{\sigma}^2$ is complex for real $\khat$, which implies the
 possibility of instability, regardless of the value of
 $|\gamma-1|$. This is contradicts the second Solberg-Hoiland criterion 
-(Eq. \ref{solberg2}), which imply instability requires 
-$|\gamma-1|\ll1$ for thin, vertically isothermal disks evolved adiabatically. 
+(Eq. \ref{solberg2}), which imply instability for adiabatic
+perturbations in a thin, vertically isothermal disk would require 
+$|\gamma-1|\ll1$. 
 %also need real freq^2 in adia limit 
 This is because the VGSB retains the vertical shear
 ($\p_z\Omega$) from the global disk, but ignores the global radial
@@ -101,9 +100,9 @@ $\beta\gtrsim1$, and as $\beta\to\infty$ the VGSB framework gives a
 above. Inclusion of the global radial gradient terms results in the
 correct behavior  ($\nu\to0$ as $\beta\to\infty$). Despite this
 caveat, Fig. \ref{gcorr_compare} shows that provided we consider
-$\beta\ll1$, then the VGSB framework is an adequate approximation to
-study the VSI.
- 
+$\beta\ll1$, then the VGSB framework is adequate for studying the
+VSI. 
+  
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
   0cm]{figures/gcorr_compare} 
@@ -116,15 +115,11 @@ study the VSI.
     (Full)' curve is obtained by numerically solving 
     Eq. \ref{lin_mass}---\ref{lin_energy}  with $\hat{g}_c=1$, which
     accounts for the radial disk structure.  
-    The disk parameters are $\Gamma=1.011$,
-    $\gamma=1.4$ and $(p,q,\epsilon)=(-1.5,-1,0.05)$. The perturbation
+    The disk parameters are $(\gamma, \Gamma)=(1.4, 1.011)$ and
+    $(p,q,\epsilon)=(-1.5,-1,0.05)$. The perturbation
     wavenumber is $\khat=30$. 
     \label{gcorr_compare}}  
 \end{figure}
-
-
-
-
 
 
 \section{Full governing equation for vertically isothermal disks in
@@ -150,8 +145,8 @@ For the local problem we may then write
 \end{align}
 where the function $F$ corresponds to the bracket in
 Eq. \ref{dkappa2}. This function varies from $F=q$ at $z=0$ to $F\to
-3+q$ as $|z|\to\infty$. Since we consider $q=O(1)$, $|F|$ is of
-order unity.  
+3+q$ as $|z|\to\infty$. Since we consider $|q|=O(1)$, this impies
+$|F|=O(1)$ as well.  
 
 Now, eliminating $W$ and $Q$ from Eq. \ref{ode_w}---\ref{ode_Q} and
 Eq. \ref{lin_vz} for vertically isothermal disks, retaining the
@@ -190,9 +185,7 @@ variables,
 Eq. \ref{adia_diso3} differs from Eq. \ref{vertiso_gov_nondim} by terms
 proportional to $\epsilon^2$. For a thin disk, $\epsilon\ll1$, so
 neglecting these terms has no qualitative effect on the discussion in 
-\S\ref{analytic_relax}.  % This issue does not
-% arise for isothermal perturbations discussed in \S\ref{iso_discuss}
-% since in that case we work with a governing equation for $W$ instead. 
+\S\ref{analytic_relax}. 
 
 \section{Coefficients for the dispersion relation for perturbations
 with thermal relaxation}\label{relax_coeff}
@@ -238,7 +231,7 @@ Eq. \ref{relax_disp} are approximately
    2\beta\gamma\hat{\omega}\left(\hat{\omega}\khat\right)^4 \label{relax_cond2}. 
 \end{align}
 These equations are used to derive a critical thermal timescale in
-\S\ref{iso_vsi_beta_crit}. For fixed $M$ of $O(1)$,  we assume
+\S\ref{iso_vsi_beta_crit}. For fixed $M=O(1)$,  we assume
 $|\hat{\omega}\khat|$ remain constant but consider $\khat\gg 1$ so
 that $|\hat{\omega}|\ll 1$.  Then for a thin disk $\epsilon \ll 1$
 we neglect the second, fourth and last term in Eq. \ref{relax_cond1};
@@ -362,7 +355,7 @@ problem in global cylindrical disk geometry.
 
 \subsubsection{Maximum growth rate}\label{max_growth1}
 Here we show that the growth rate is limited by the maximum vertical
-shear in the domain. % Writing $\hat{\sigma} = \hat{\omega} +
+shear rate in the domain. % Writing $\hat{\sigma} = \hat{\omega} +
 % \ii\hat{\nu}$ with real $\hat{\omega}$ and $\hat{\nu}$, 
 The real and imaginary parts of 
 Eq. \ref{integral_relation1} are
@@ -431,7 +424,7 @@ Eq. \ref{sigma_finite_domain} gives
 Recalling that $f$ represents vertical shear (Eq. \ref{fz_shear}), it
 follows that the maximum possible growth rate of unstable modes,
 satisfying the above boundary conditions, is limited by the maximum
-vertical shear in the domain considered.  
+vertical shear rate in the domain considered.  
 
 In practice, one might consider a vertical domain of a few scale 
 heights in a thin disk with $|q|=O(1)$. In this case, $|\epsilon\zhat|\ll1$ and  
@@ -466,15 +459,15 @@ We seek power series solutions to Eq. \ref{iso_ode3},
 \begin{align}
   W(\zhat) = \sum_{l=0}^\infty a_l\zhat^l. 
 \end{align}
-Then the coefficients must satisfy the recurrence relation
+Then the coefficients $a_l$ are given by the recurrence relation
 \begin{align}
   (l+2)(l+1)a_{l+2} +
   \left[\hat{\sigma}^2\left(1+\frac{\khat^2}{1-\hat{\sigma}^2}\right)
     - l\left(1+\frac{\ii \epsilon q
         \hat{k}}{1-\hat{\sigma}^2}\right)\right] a_l = 0. 
 \end{align}
-We demand the series to terminate  at $l=L$, i.e. a polynomial
-solution, so that the vertical kinetic energy remain bounded as
+We demand the series to terminate  at $l=L$, i.e. a polynomial of
+order $L$, so that the vertical kinetic energy remain bounded as 
 $|\zhat|\to\infty$.  Then the eigenfrequency $\hat{\sigma}$ is given via 
 \begin{align}
 \hat{\sigma}^4 - \left(L+1+\khat^2\right)\hat{\sigma}^2 + L\left(1 +
@@ -485,9 +478,9 @@ $|\zhat|\to\infty$.  Then the eigenfrequency $\hat{\sigma}$ is given via
 In the absence of vertical shear $q=0$, Eq. \ref{simple_growth} can be
 written as \begin{align}
   \hat{\sigma}^2\khat^2 =
-  \left(L-\hat{\sigma}^2\right)\left(1-\hat{\sigma}^2\right). \label{iso_disp_full}
+  \left(L-\hat{\sigma}^2\right)\left(1-\hat{\sigma}^2\right), \label{iso_disp_full}
 \end{align}
-This is just the dispersion relation for axisymmetric isothermal waves in a
+which is just the dispersion relation for axisymmetric isothermal waves in a
 vertically isothermal disk
 \citep[e.g.][]{okazaki87,takeuchi98,tanaka02,zhang06,ogilvie13,barker14}. In 
 this case the solutions are Hermite polynomials, $W\propto
@@ -500,16 +493,18 @@ fixed $L$.  This inverse relation has been qualitatively
 observed in numerical simulations of \cite{stoll14}. 
 
 \subsubsection{Instability with vertical shear}
-A simple solution for $\hat{\sigma}$ may be obtained by balancing
-the  last two terms of Eq. \ref{simple_growth} to obtain the
-low-frequency branch,  
+For large $\khat^2$, the low-frequency branch may be obtained by balancing
+the last two terms of Eq. \ref{simple_growth} . Then 
 \begin{align}
   \hat{\sigma}^2 \simeq L\left(\frac{1+\ii q \epsilon
        \hat{k}}{L+1+\hat{k}^2}\right).\label{simple_growth2}
 \end{align}
-This signifies instability for $L\geq1$ 
+This signifies instability for $L\geq1$ --- the VSI ---   
 since we can choose the sign of the square root to make $\hat{\nu} =
-\imag\hat{\sigma}>0$.   
+\imag\hat{\sigma}>0$.  These are the low frequency unstable modes observed
+in our numerical calculations in \S\ref{vertiso_pertiso}.
+
+%growth rate of high frequency branch is much smaller 
 
 % \begin{align}\label{sig2_iso}
 %   \hat{\sigma}^2 = L\left(\frac{1+\ii q \epsilon
@@ -606,33 +601,6 @@ since we can choose the sign of the square root to make $\hat{\nu} =
 % shear $|d\Omega^2/dz|\propto |z|$ increases indefinitely with 
 % height. However, Eq. \ref{iso_max_growth} compares well with
 % numerical solutions for small $L$ (see \S\ref{vertiso_pertiso}). 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \section{Fiducial model for a protoplanetary disk}\label{mmsn}
