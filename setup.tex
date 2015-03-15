@@ -45,8 +45,9 @@ parameter, so that we can vary the thermodynamic response of the
 disk from isothermal ($\beta\ll 1$) to adiabatic ($\beta \gg 1$) in a
 controlled manner. However, for application to protoplanetary disks in 
 \S\ref{application} we will model $\beta$ based on physical thermal
-timescales, in which case $\beta$ is determined by the equilibrium
-disk properties and the perturbation lengthscales of interest.  
+timescales, in which case $\beta$ is non-constant and is determined by
+the equilibrium disk properties and the perturbation lengthscales of
+interest.   
 
 \subsection{Baroclinic disk equilibria}\label{eqm}
 The equilibrium disk is steady and axisymmetric with density,
@@ -74,10 +75,9 @@ $\rho$ are related by
   & \equiv K(r)\rho^{\Gamma}(r,z). \label{eqm_press}
 \end{align}
 where the polytropic index $\Gamma$ is a  constant parameter  and the
-function $c_{s0}(r)$ is prescribed below. Choosing $\Gamma=1$ gives 
+function $c_{s0}(r)$ is prescribed below. Choosing $\Gamma=1$ gives  a 
 locally vertically isothermal disk and $c_{s0}(r)$ is the mid-plane
-sound-speed. %For $\Gamma=\gamma$ the disk is adiabatically stratified
-% in the vertical 
+sound-speed. 
 It shall be convenient to define the function $c_s(r,z)$ 
 \begin{align}
   c_s^2\equiv % \frac{dP}{d\rho} =
@@ -99,7 +99,8 @@ to parametrize the magnitude of the sound-speed, where
 $v_k=r\Omega_k$ is the Keplerian azimuthal velocity and
 $H$ is a characteristic scale-height.  Thus, $\epsilon$
 is also a characteristic disk aspect-ratio. We are 
-interested in thin disks with $\epsilon \ll 1$.%, as relevant for protoplanetary disks \citep{chiang97}.  
+interested in thin disks with $\epsilon \ll 1$.%,%  as relevant for
+% protoplanetary disks \citep{chiang97}.   
 
 For discussion purposes it is useful to define the vertical buoyancy
 frequency $N_z$ via
@@ -178,7 +179,7 @@ Eq. \ref{eqm_press},
   r\frac{\p\Omega^2}{\p z} = - \rho^{\Gamma-1}\frac{\p\ln\rho}{\p
     z}\frac{dK}{dr} = - \frac{g_z}{\Gamma}\frac{d\ln K}{dr}.\label{vertical_shear}
 \end{align}
-Evaluating this expression explicitly,
+For the above disk models,
 \begin{align}
   r\frac{\p\Omega^2}{\p z} = \frac{sz\Omega_k^2}{\Gamma
     r\left(1+z^2/r^2\right)^{3/2}}. \label{vertical_shear_ex} 
@@ -197,9 +198,10 @@ if both Solberg-Hoiland criteria  are satisfied:
     \frac{\p j^2}{\p z}\frac{\p S}{\p r} \right)&>0. \label{second_SH} 
 \end{align}
 \citep{tassoul78}, where $j=r^2\Omega$ is the specific angular
-momentum. For rotationally-supported, thin disks, pressure gradients are small 
-compared to rotation, so the first criterion is generally
-satisfied. Thus, to assess stability, we consider the second
+momentum. For rotationally-supported, thin disks %  pressure gradients are small 
+% compared to rotation, so 
+the first criterion is generally satisfied. 
+Thus, to assess stability, we consider the second
 criterion. For our disk models,
 \begin{align}
   &\frac{\p S}{\p r} = c_p\left[\frac{s}{\gamma r} +
@@ -242,7 +244,7 @@ the real frequency and growth rate, respectively.
 The linearized fluid equations in cylindrical co-ordinates are  
 \begin{align}
   \ii\sigma\delta\rho &= \frac{\rho}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p}{\p
-    z}\left(\rho\delta v_z\right)  + \hat{g}_c\frac{\p\rho}{\p r}\delta v_r,\\
+    z}\left(\rho\delta v_z\right)  + \hat{g}_c\frac{\p\rho}{\p r}\delta v_r,\label{full_mass1}\\
   \ii\sigma\delta v_r &= \frac{1}{\rho}\frac{\p\delta P}{\p r} - 2\Omega
   \delta v_\phi - \hat{g}_c\frac{\delta\rho}{\rho^2}\frac{\p P}{\p r},\\ 
   \ii\sigma\delta v_\phi  &= \frac{\kappa^2}{2\Omega}\delta v_r +
@@ -262,16 +264,17 @@ associated with the background radial disk structure.
 We consider perturbations with small radial lengthscales 
 so that we can ignore the radial variations in the background
 structure and radial gradients. We thus evaluate all coefficients in
-the above equations at the fiducial radius $r=r_0$. However, the full
-vertical dependence of the coefficients are retained. Then we can
-assume perturbations have spatial dependence in the form
+Eq. \ref{full_mass1}---\ref{full_energy1} at the fiducial radius
+$r=r_0$. However, the full vertical dependence of the coefficients are
+retained. Then we can assume perturbations have spatial dependence in
+the form 
 \begin{align}
   \delta \rho(r,z) \to \delta\rho(z)\exp{\ii k_r r}.
 \end{align}
 We take $k_r>0$ without loss of generality, and further assume $k_rr\gg1$ so that curvature terms can also be 
 ignored.       
 
-In order to emphasize the radially-local approximation, we
+In order to emphasize the radially local approximation, we
 introduce the local Cartesian co-ordinates $(x,y,z)$ corresponding to
 the the local $(r,\phi,z)$ directions, respectively. Then writing
 $\delta P /\rho \equiv W$ and $c_s^2\delta\rho/\rho\equiv Q$, the
@@ -301,9 +304,3 @@ using their expressions in the global disk given in \S\ref{setup}. Thus, they ar
 Eq. \ref{lin_mass}---\ref{lin_energy} will form the basis of our numerical
 study, but for analytical discussion
 we will make further simplifications. 
-
-
-% The radially-local approximation above is similar in spirit to the
-% shearing box framework \citep{goldreich65} or the generalization
-% thereof \citep{mcnally14}. The main difference being the terms
-% proportional to $\hat{g}_c$ are neglected in the shearing box. 

@@ -42,7 +42,7 @@ decreases slightly away from the mid-plane.
 
 \subsection{VSI with rapid thermal relaxation}\label{vertiso_pertiso} 
 We first calculate the VSI in a disk with rapid thermal relaxation by
-setting $\beta=10^{-3}$. (Smaller values yield the similar results.) This
+setting $\beta=10^{-3}$. (Smaller values yield similar results.) This
 is similar to strictly isothermal perturbations in a vertically
 isothermal disk considered in \cite{nelson13} and \cite{mcnally14}. 
 
@@ -190,9 +190,8 @@ stabilized by finite thermal relaxation than the fundamental mode. %  Thus, surf
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx30_analytic.ps}
-  \caption{Same as Fig. \ref{compare_modes_iso_kx10} but for $\khat=30$
-    \label{compare_modes_iso_kx30}. Examples of surface modes are
-    marked by `s'. 
+  \caption{Same as Fig. \ref{compare_modes_iso_kx10} but for $\khat=30$. Examples of surface modes are
+    marked by `s'. \label{compare_modes_iso_kx30}
   }
 \end{figure}
 
@@ -231,10 +230,10 @@ fundamental mode. This is consistent with the discussion in
   \includegraphics[width=\linewidth]{figures/compare_modes_cool_kx10_z7_analytic.ps}
   \caption{Unstable modes with $\khat=10$ and thermal
     relaxation timescales $\beta=0.01$ (black dots), $\beta=0.03$ (red
-    crosses), $\beta=0.05$ (green triangles) and $\beta=0.1$ (blue
+    crosses), $\beta=0.05$ (blue triangles) and $\beta=0.1$ (green 
     crosses); for different vertical domain sizes $\zmax=3H$ (top),
-    $\zmax=5H$ (middle, our fiducial setup) and $\zmax=7H$
-    (bottom). Lines are computed analytically from
+    $\zmax=5H$ (middle, the fiducial setup) and $\zmax=7H$
+    (bottom). Lines are computed from
     Eq. \ref{relax_disp} for  $M=0$ (solid, fundamental mode) and
     $M=1,\,2,\,3$ (dotted, dashed, dash-dot, respectively). Along each
     line, $\beta$ increases continously from $0.01$ to $0.1$ from top
@@ -284,15 +283,16 @@ perturbations seen in Fig. \ref{lowfreq_eigenfunc_2d_cool}
 
 In Fig. \ref{compare_modes_cool_kx30} we plot eigenvalues for unstable
 modes with $\khat=30$. For clarity we only plot analytical results for
-the fundamental mode, which is again robust against boundary
-conditions compared to higher order modes. We find surface modes
+the fundamental mode, which is again insensitive boundary
+conditions compared to higher order modes and thus likely more
+robust in realistic disks. We find surface modes
 appear for $\zmax\geq5H$. However, they are effectively stabilized with
 increasing $\beta$. For $\zmax=3H$, the fundamental mode becomes
 dominant for $\beta\geq 0.03$, as observed for $\khat=10$. For
 $\zmax=5H$ and $\zmax=7H$, we find the emergence modes slightly more
 unstable than the fundamental mode even when $\beta=0.1$ (the leftmost
 eigenvalues in the lower two panels). However, these modes are clearly associated
-with the vertical domain size as they are absent for $\zmax=3H$. 
+with the boundary condition as they are absent for $\zmax=3H$. 
 % Thus, for $\zmax=5H$ and  
 % $\zmax=7H$  the fundamental mode is likely dominant for 
 % $\beta\geq0.05$  
@@ -313,8 +313,8 @@ Fig. \ref{compare_modes_cool_kx10} and \ref{compare_modes_cool_kx30}
 show that the fundamental mode is not sensitive to boundary
 conditions. The fundamental mode also becomes dominant as $\beta$
 approaches $\beta_\mathrm{crit}$. %beta<beta_crit is necessary and sufficient  
-Thus, tracking the fundamental mode is a more robust way of 
-assessing stability as $\beta$ is increased from zero, rather than
+Thus, tracking the fundamental mode is a more robust assessment of
+stability as $\beta$ is increased from zero, rather than 
 searching for the most unstable mode, which may correspond to modes
 that depend on boundary conditions.  
 

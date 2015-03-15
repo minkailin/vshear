@@ -55,14 +55,12 @@
 \newcommand{\dby}{\dd B_y}
 \newcommand{\dbz}{\dd B_z}
 \newcommand{\w}{ \widetilde{W}}
-%\newcommand{\sbar}{\bar{\sigma}}
 \newcommand{\dphi}{\dd \Phi}
 \newcommand{\actaa}{Acta Astron.}
 \defcitealias{lin12}{L12} 
 
 \begin{document}
 
-%\title{Linear analysis of the vertical shear instability in astrophysical disks}
 \title{Vertical shear instability in astrophysical disks: vertically global linear calculations with thermal relaxation and applications to the Solar Nebula} 
 \author{Min-Kai Lin, Andrew Youdin}
 \affil{ $^1$Department of Astronomy and Steward Observatory, University of
@@ -74,39 +72,38 @@
   transport is important for cold accretion disk such as 
   protoplanetary disks. The vertical shear instability (VSI) has 
   recently been suggested to provide such a pathway, since it operates in
-  disks with rotation profiles that depends on the height from the 
+  disks with rotation profiles that depend on the height from the 
   disk midplane, which is generally expected in  
   astrophysical disks. However, the VSI requires a short thermal
-  timescale in stably stratified disks. %which is usually assumed 
+  timescale in stably stratified disks.  
   A quantitative examination of this thermodynamic 
   requirement is thus necessary to assess the viability of
   the VSI in realistic disks. To this end,  
-  we study the linear, axisymmetric VSI in radially local but
+  we study the linear, axisymmetric VSI in radially local, 
   vertically global models of accretion disks in which the disk  
-  temperature $T$ is restored to its initial value over a characteristic timescale 
-  $t_c=\beta\Omega_k^{-1}$, where $\beta$ is a dimensionless parameter
+  temperature $T$ is relaxed its initial value over a characteristic timescale 
+  $t_c=\beta\Omega_k^{-1}$, where $\beta$ is a dimensionless parameter 
   and $\Omega_k$ is the Keplerian rotation frequency. We explore how
-  the VSI depends on the thermodynamic response  of the disk by
-  varying thermal timescale $\beta$. We find increasing $\beta$ even slightly away from 
-  zero can dramatically reduce VSI growth rates. % , since this generally 
-  % introduces a vertical entropy gradient that stabilizes vertical
-  % motions as needed for the VSI.
+  the VSI depends on the thermodynamic response of the disk by
+  varying $\beta$. We find increasing $\beta$ even slightly away from 
+  zero dramatically reduce VSI growth rates. 
   For vertically isothermal disks, we quantify the
-  requirement for `fast' thermal relaxation as $\beta < \epsilon|q|/(\gamma-1)$, where
+  `short' thermal timescale requirement for the VSI as $\beta < \epsilon|q|/(\gamma-1)$, where
   $\epsilon$ is the disk aspect-ratio, $q = \p\ln T/\p\ln r$  ($r$
   being the cylindrical radius from the central object), and 
-  $\gamma$ is the adiabatic index. Our  linear calculations are consistent with previous hydrodynamic 
-  simulations. We apply our linear calculations  
+  $\gamma$ is the adiabatic index. 
+  We apply our linear calculations  
   to a disk model of the Minimum Mass Solar Nebula (MMSN) with an  
   estimate for the thermal timescale $\beta$ in the MMSN based on dust
   opacity. We find the MMSN is unstable to the VSI from $\sim 5$AU to $\sim 50$AU with  
-  a characteristic growth time of $\sim 30$ local orbital
-  periods. We find the dominant VSI mode in the MMSN is the `corrugation' mode
-  which casues the disk column to oscillate vertically. 
+  a characteristic growth time of $\sim 30$ local orbital 
+  periods, and the dominant VSI mode in the MMSN is the `fundamental
+  corrugation mode' which casues the disk column to oscillate
+  vertically. We suggest the VSI is dynamically imporant in the outer
+  parts of protoplanetary disks. 
 \end{abstract}
 
 \section{Introduction}
-% stuff about hydrodynamic angular momentum transport 
 Understanding the mechanisms of angular momentum transport is the
 central problem in the theory of accretion disks 
 \citep{lyndenbell74}. The   
@@ -119,45 +116,45 @@ However, MHD turbulence may not be applicable to all
 accretion disks. For example, there may be regions in protoplanetary  
 disks (PPDs) which do not support the MRI 
 \citep{gammie96,landry13}. In fact, recent  numerical simulations
-suggest portions of PPDs remain laminar \citep[e.g.][and references
-therein]{lesur14,bai15,gressel15}. In this respect, alternative routes 
+suggest significant portions of PPDs remain laminar \citep[e.g.][and references
+therein]{lesur14,bai15,gressel15}. Thus, alternative routes 
 to angular momentum transport in PPDs remain of interest
 \citep{armitage10}. 
  
-%recent work on vsi 
 One possibility is purely hydrodynamic turbulence through the vertical
 shear instability (VSI). The VSI is an axisymmetric linear instability
 in three-dimensional (3D) disks in which the rotation frequency
-$\Omega$ depends on the height $z$ from the disk midplane. This dependence
-occurs when the equilibrium pressure depends on both the temperature
-and density, making the disk baroclinic. It is thus generally
-expected that $\p_z\Omega\neq 0$ in astrophysical disks. 
+$\Omega$ depends on the height $z$ from the disk midplane. This
+dependence occurs when the equilibrium pressure depends on both the
+temperature and density, making the disk baroclinic. It is therefore
+generally expected that $\p_z\Omega\neq 0$ in astrophysical disks.  
 
 The VSI can be regarded as the disk analog of the
 Goldreich-Schubert-Fricke instability 
 \citep[GSF,][]{goldreich67,fricke68} in differentially rotating stars.   
 The height-dependence of $\Omega$, or vertical shear, enables
-perturbations with large vertical lengthscales (relative to radial
-lengthscales) to become unstable.    
-\cite{umurhan13} gives a simple interpretation for the VSI: an
-exchange of fluid parcels while conserving their angular momenta
-individually, may result in a new configuration of lower energy, if
-the exchange occurs over a sufficiently large vertical displacement.   
-
+perturbations with large vertical lengthscales (relative to radial 
+lengthscales) to become unstable. \cite{umurhan13} gives a simple
+interpretation for the VSI: an exchange of fluid parcels while
+conserving their angular momenta individually, may result in a new
+configuration of lower energy, if the exchange occurs over a
+sufficiently large vertical displacement. In practice, the VSI
+corresponds to unstable inertial waves.  
+%inertial waves 
 %history 
 
 The VSI has been studied analytically in local approximation
-\citep{urpin98,urpin03}. Numerical simulations of the  
+\citep{urpin98,urpin03}.  Numerical simulations of the  
 VSI have been performed by \cite{arlt04}, and more recently by 
-\cite{nelson13} and \cite{stoll14}. In these simulations the authors
-indeed observe the growth of vertically-global but radially-localized
+\cite{nelson13} and \cite{stoll14}. In these new simulations the authors
+indeed observe the growth of vertically global but radially localized
 perturbations when the equilibrium rotation varied with height.   
 
 An important finding from these works is that the VSI requires a short
 thermal timescale: perturbations need to be close to
 isothermal, unless the disk is neutrally stratified in the vertical
-direction. This is because vertical motions are stabilized by
-buoyancy if the disk is sub-adiabatically stratified, as required for
+direction. This is because vertical motions, required for the VSI, are stabilized by
+buoyancy if the disk is sub-adiabatically stratified for
 convective stability. When the thermal timescale $t_c$ is parametrized
 in units of the orbital period $P_\mathrm{orb}$, \cite{nelson13} find that
 $t_c\lesssim 0.01P_\mathrm{orb}$ was needed to observe instability. That is, the
@@ -167,36 +164,24 @@ simulations by \cite{stoll14}, who find the VSI is only sustained with
 the inclusion of heating from stellar irradiation, which resulted in
 an effective thermal timescale $t_c\ll P_\mathrm{orb}$. 
 
-%why linear approach? computationally fast (need very high resolution) 
-%can be used as a first estimate 
-
-From these studies it is clear that the VSI is generally sensitive to
+From these studies it is clear that the VSI is sensitive to
 the thermodynamic response of the disk if it is stably
-stratified. Since the latter is usually
-assumed for typical disk models,  
-% disk thermodynamics except
-% in the special case of neutrally stratified disks. 
-it is 
-important to understand and quantify said thermodynamic dependence,
+stratified. Since the latter is usually assumed for typical disk models,  
+it is important to understand and quantify said thermodynamic dependence,
 for example on disk parameters, in order to evaluate the relevance of
-the VSI in realistic disks. % Numerical simulations of the VSI are
-% challenging, however, because global disk simulations should be
-% carried out while resolving radial scales much smaller than the local
-% disk scale height.    
-%On the other hand, 
-Should a given disk become turbulent through the VSI, it must pass through the
-linear instability first. Thus, understanding the thermodynamic dependence
-of the linear VSI is essential. % Furthermore, linear
-% stability calculations are essential to complement future numerical simulations.  
+the VSI in realistic disks. Should a given disk become turbulent
+through the VSI, it must first pass through the
+linear instability. Thus, understanding the thermodynamic dependence
+of the linear VSI is essential. 
 
-%what we're doing
-In this work we study the linear VSI in radially-local,
-vertically-global models of astrophysical disks. We include an energy
+In this work we study the linear VSI in radially local,
+vertically global models of astrophysical disks. We include an energy
 equation with a source term that allows the thermodynamic response of
 perturbations to be varied smoothly between isothermal and adiabatic. Our
 formulation generalizes previous linear calculations of the 
 VSI carried out by \cite{nelson13} and \cite{mcnally14} which assume
-isothermal perturbations. Our models are also an extension of earlier 
+isothermal perturbations and therefore did not include an energy
+equation. Our models are also an extension of earlier 
 analysis by \cite{urpin98} and \cite{urpin03}, which accounts for thermal
 evolution, but considered vertically localized disturbances. Our 
 vertically global approach is necessary to study disturbances with
@@ -207,33 +192,27 @@ on vertically global perturbations which, in fact, we find to be the
 dominant mode in protoplanetary disks with a realistic estimate for
 the thermodynamic timescales. 
 
-%paper organization 
-
-%say "grossly simplified 
-
 This paper is organized as follows. In \S\ref{setup} we list the
 governing equations and global equilibrium disk models under
 consideration. We formulate the linear stability problem in
-\S\ref{linear} and simplify it by making the radially-local
+\S\ref{linear} and simplify it by making the radially local
 approximation. We study the linear problem using two approaches. In
 \S\ref{analytical} we present an analytical discussion of vertically
 isothermal disks. Our treatment is grossly simplified owing to a
 number of approximations made, but closely parallels previous work and 
 allows us to highlight the essential effects of vertical shear. In
-particular, we quantify a characteristic thermal timescale below which
-the VSI is expected to operate. In \S\ref{numerical} we numerically
-solve the linearized fluid equations in the radially-local
-approximation, but relax all other assumptions made in our analytical approach.   
+particular, we quantify a characteristic upper limit to the thermal
+timescale for the VSI to operate. In \S\ref{numerical} we numerically
+solve the linear problem in the radially local approximation, but
+relax all other approximations made in our analytical approach.    
 We find basic agreement with our analysis, including
 the aforementioned characteristic thermal timescale. In
 \S\ref{application} we apply our linear models to the Minimum Mass
-Solar Nebulae (MMSN) by modeling thermal relaxation
+Solar Nebula (MMSN) by modeling thermal relaxation
 timescales based on realistic disk properties, and find that the VSI may
-operate in the outer parts of the MMSN. We summarize and discuss our
-results in \S\ref{summary}, including caveats and possible directions
+operate in the outer parts of the MMSN. We summarize in
+\S\ref{summary} with a discussion of caveats and possible directions
 for future work.  
-
-
 
 \input{setup}
 \input{linear_iso}
@@ -242,7 +221,6 @@ for future work.
 \input{application} 
 \input{summary}
 
-%\acknowledgements
 \appendix
 \input{appendix}
 

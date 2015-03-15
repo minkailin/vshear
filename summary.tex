@@ -112,7 +112,7 @@ numerical simulations.
 We highlight below some extensions to the present  
 linear models in future works.  
 
-\subsubsection{Parameter study and convective overstability}
+\subsubsection{Convective overstability}
 We have focused on parameter regimes relevant to the VSI,
 namely $\khat\gtrsim 1$ and $\beta\ll 1$. This excludes the
 `convective overstability' recently discussed by \cite{klahr14} and
@@ -136,32 +136,27 @@ we find
   -\frac{\epsilon^2\Omega_k}{4\gamma\Gamma}\left(p+q\right)
   \left[\left(\gamma-1\right)p-q\right]. \label{max_conv}
 \end{align}
-% We see that convective overstability is generally slower 
-% than the VSI because $\nu_\mathrm{conv,max} = O(\epsilon^2\Omega_k)$,
-% whereas the maximum VSI growth rate is $O(\epsilon\Omega_k)$. 
-In fact, for the MMSN considered in this work (\S\ref{application} and Appendix
-\ref{mmsn}), convective overstability does not apply because
+In fact, for the MMSN considered in this work, convective
+overstability does not apply because 
 $N_r^2>0$.   
 
-However, for more general disk structures convective overstability is
+For more general disk structures convective overstability is
 possible. The models adopted for our numerical study in
 \S\ref{numerical} do satisfy $N_r^2<0$, but convective overstability
 requires considering perturbations with long radial lengthscales,
 $\khat\ll 1$, for which radially global disk models would be more 
 appropriate.  
-% We will explore convective overstability more fully in a
-% follow-up study.  
 
 \subsubsection{Improved thermal evolution} 
 We assumed non-adiabatic effects
 can be represented by a thermal relaxation or cooling timescale $t_c$. For 
 application to protoplanetary disks we connected $t_c$ to the disk
-properties. One one can improve the realism further by generalizing the 
+properties. One can improve the realism further by generalizing the 
 opacity model adopted here to be density (and hence height) dependent. 
 %here to be density-dependent,  i.e. $\kappa_d =
 %% \kappa_d(\rho, T)$. 
 However, going beyond thermal relaxation requires a
-proper treatment for radiative diffusion. The linear problem then
+proper treatment of radiative diffusion. The linear problem then
 involves a Laplacian operator, which require additional boundary
 conditions. We will consider these improvements in a
 follow-up study. %additional heat source 
