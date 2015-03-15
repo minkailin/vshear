@@ -42,21 +42,20 @@ decreases slightly away from the mid-plane.
 
 \subsection{VSI with rapid thermal relaxation}\label{vertiso_pertiso} 
 We first calculate the VSI in a disk with rapid thermal relaxation by
-setting $\beta=10^{-3}$. (Smaller values yield the same results.) This
+setting $\beta=10^{-3}$. (Smaller values yield the similar results.) This
 is similar to strictly isothermal perturbations in a vertically
 isothermal disk considered in \cite{nelson13} and \cite{mcnally14}. 
 
 Fig. \ref{iso_eigen_kx} compares the numerically obtained eigenvalues 
 for the fundamental mode and that calculated from 
-Eq. \ref{simple_growth} (with $L=1$). We find good agreement in the
+Eq. \ref{simple_growth}. We find good agreement in the
 wave frequency $\omega$ at all $\khat$ and in growth rates $\nu$ for
 $\khat\gtrsim 10$. Growth rates are over-estimated by our analysis but 
 are $O(\epsilon\Omega_k)$, which is consistent with the discussion in
 Appendix \ref{max_growth1}. The match in $\nu$ worsens for
 decreasing $\khat$ due to the neglect of global radial structure in
 the analysis. Nevertheless, given the number of approximations made
-in our analysis, the agreement is satisfactory, especially at large
-$\khat$.    
+in our analysis, the agreement is satisfactory. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -139,14 +138,17 @@ The fundamental mode, marked by `f', corresponds to the eigenvalue
 with the smallest $|\sigma|$. We see that the fundamental mode is
 robust against vertical boundary conditions as it appears at the same
 position in all cases. Higher order modes with larger growth rates
-(i.e. the branch where $\nu$ increases with $|\omega|$) require larger
-vertical domains, since they have increasing number of nodes along 
-$z$. The `tail' end with decreasing $\nu$ to the right
-of the plot differ significantly between the cases, and are thus
-likely associated with boundary conditions. 
+(along the analytic lines) require larger vertical domains, since they
+have increasing number of nodes along $z$. 
+
+The `tail' end with decreasing $\nu$ to the right of
+Fig. \ref{compare_modes_iso_kx10} is not predicted from
+analysis. These modes differ significantly between cases and are thus
+likely associated with boundary conditions. % We do not consider them 
+% further.  
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx10.ps}
+  \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx10_analytic.ps}
   \caption{Unstable modes with $\khat=10$ in the fiducial disk model
     with $\beta=10^{-3}$. %  a disk with 
     % $(\gamma,\Gamma)=(1.4,1.011)$, $(p,q,\epsilon)=(-1.5,-1,0.1)$ and
@@ -154,7 +156,10 @@ likely associated with boundary conditions.
     The fiducial boundary condition is a free surface ($\Delta P=0$)
     with vertical domain size $\zmax=5H$  (black dots).  Other
     cases correspond to different boundary condtions applied at
-    different heights. The fundamental mode is marked by `f'.   
+    different heights. The fundamental mode is marked by `f'. Lines
+    are computed from the analytic dispersion relation 
+    with thermal relaxation Eq. \ref{relax_disp} (dotted), and that for
+    isothermal perturbations, Eq. \ref{simple_growth} (dashed). 
     \label{compare_modes_iso_kx10} 
   }
 \end{figure}
@@ -172,19 +177,19 @@ sufficiently large $\zmax$ and/or $\khat$. % For example, the two
 To illustrate this, we plot the mode diagram for $\khat=30$ in  
 Fig. \ref{compare_modes_iso_kx30} with different boundary 
 conditions. Surface modes are readily identified for 
-$\zmax\geq 5H$ and are marked by `s'. They typically
-have the largest growth rates but require sufficiently large vertical
-domain size and their eigenvalues vary with $\zmax$.  
+$\zmax\geq 5H$ and are marked by `s'. They have the largest growth
+rates but require sufficiently large vertical domain size and their
+eigenvalues vary with $\zmax$.   
 
 Due to their dependence on boundary conditions, we 
-do not consider surface modes further in detail. These modes have
+do not consider surface modes further in detail. Surface modes have
 already been discussed in the aforementioned studies. In fact, we will
 see in the next section that surface modes are more effectively
 stabilized by finite thermal relaxation than the fundamental mode. %  Thus, surface 
 % modes may not be the most relevant in realistic disks.   
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx30_tags.ps}
+  \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx30_analytic.ps}
   \caption{Same as Fig. \ref{compare_modes_iso_kx10} but for $\khat=30$
     \label{compare_modes_iso_kx30}. Examples of surface modes are
     marked by `s'. 
@@ -199,31 +204,42 @@ timescale $\beta_\mathrm{crit} = 0.125$.
 
 Fig. \ref{compare_modes_cool_kx10} show unstable modes with $\khat=10$ 
 and $\beta\in[0.01,0.1]$. In addition to our fiducial setup with 
-$\zmax=5H$, we also plot results for $\zmax=3H$ and $\zmax=7H$. In all 
-three cases the number of unstable modes decrease with increasing
-$\beta$. The fundamental mode is not the most unstable for 
-$\beta=0.01$ as there is a number of higher order modes, but 
-their existence depends on $\zmax$. 
+$\zmax=5H$, we also plot results for $\zmax=3H$, $\zmax=7H$ and 
+analytic results computed from Eq. \ref{relax_disp}.  
+
+We find the number of unstable modes decrease with increasing
+$\beta$. Consider the fiducial setup with $\zmax=5H$ 
+(middle panel). The fundamental mode ($M=0$) is not the most unstable for   
+$\beta=0.01$ as there are modes with $M>0$ that have larger growth 
+rates. However, by comparing with results for $\zmax=3H$, we see these
+higher order modes are strongly influenced by boundary conditions, and
+there is a significant mismatch between numerical and analytical
+results for $\zmax=3H$ for $M>1$.   
 
 However, the fundamental mode is dominant for $\beta \geq 
-0.03$. Higher order modes, with larger growth rates, are more
-effectively stabilized with increasing $\beta$. For $\beta=0.1$, which
-is close to $\beta_\mathrm{crit}$, we only find the fundamental
-mode. This is consistent with the discussion in 
-\S\ref{iso_vsi_beta_crit}.   
+0.03$. Higher order modes, with larger growth rates at small $\beta$,
+are more effectively stabilized with increasing $\beta$. For
+$\beta=0.1$, which is close to $\beta_\mathrm{crit}$, we only find the
+fundamental mode. This is consistent with the discussion in 
+\S\ref{iso_vsi_beta_crit}.    
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
-  0cm]{figures/compare_modes_cool_kx10_z3.ps} 
+  0cm]{figures/compare_modes_cool_kx10_z3_analytic.ps} 
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
-  0cm]{figures/compare_modes_cool_kx10_z5.ps}
-  \includegraphics[width=\linewidth]{figures/compare_modes_cool_kx10_z7.ps}
+  0cm]{figures/compare_modes_cool_kx10_z5_analytic.ps}
+  \includegraphics[width=\linewidth]{figures/compare_modes_cool_kx10_z7_analytic.ps}
   \caption{Unstable modes with $\khat=10$ and thermal
     relaxation timescales $\beta=0.01$ (black dots), $\beta=0.03$ (red
     crosses), $\beta=0.05$ (green triangles) and $\beta=0.1$ (blue
     crosses); for different vertical domain sizes $\zmax=3H$ (top),
     $\zmax=5H$ (middle, our fiducial setup) and $\zmax=7H$
-    (bottom). The fundamental mode is marked with `f'.  
+    (bottom). Lines are computed analytically from
+    Eq. \ref{relax_disp} for  $M=0$ (solid, fundamental mode) and
+    $M=1,\,2,\,3$ (dotted, dashed, dash-dot, respectively). Along each
+    line, $\beta$ increases continously from $0.01$ to $0.1$ from top
+    to bottom, and squares mark corresponding $\beta$ values with
+    numerical results. 
     \label{compare_modes_cool_kx10} 
   }
 \end{figure}
@@ -263,9 +279,14 @@ perturbations seen in Fig. \ref{lowfreq_eigenfunc_2d_cool}
   }
 \end{figure}
 
+%fundamental mode bcomes the dominant mode as we approach beta
+%critical, therefore can use beta crit as criteria 
+
 In Fig. \ref{compare_modes_cool_kx30} we plot eigenvalues for unstable
-modes with $\khat=30$. In this case surface modes appear for
-$\zmax\geq5H$. However, they are effectively stabilized with
+modes with $\khat=30$. For clarity we only plot analytical results for
+the fundamental mode, which is again robust against boundary
+conditions compared to higher order modes. We find surface modes
+appear for $\zmax\geq5H$. However, they are effectively stabilized with
 increasing $\beta$. For $\zmax=3H$, the fundamental mode becomes
 dominant for $\beta\geq 0.03$, as observed for $\khat=10$. For
 $\zmax=5H$ and $\zmax=7H$, we find the emergence modes slightly more
@@ -278,10 +299,10 @@ with the vertical domain size as they are absent for $\zmax=3H$.
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
-  0cm]{figures/compare_modes_cool_kx30_z3.ps} 
+  0cm]{figures/compare_modes_cool_kx30_z3_analytic.ps} 
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
-  0cm]{figures/compare_modes_cool_kx30_z5.ps}
-  \includegraphics[width=\linewidth]{figures/compare_modes_cool_kx30_z7.ps}
+  0cm]{figures/compare_modes_cool_kx30_z5_analytic.ps}
+  \includegraphics[width=\linewidth]{figures/compare_modes_cool_kx30_z7_analytic.ps}
   \caption{Same as Fig. \ref{compare_modes_cool_kx10} but for
     $\khat=30$. Examples of surface modes are marked with `s'. 
     \label{compare_modes_cool_kx30} 
@@ -291,7 +312,7 @@ with the vertical domain size as they are absent for $\zmax=3H$.
 Fig. \ref{compare_modes_cool_kx10} and \ref{compare_modes_cool_kx30} 
 show that the fundamental mode is not sensitive to boundary
 conditions. The fundamental mode also becomes dominant as $\beta$
-approaches $\beta_\mathrm{crit}$.  
+approaches $\beta_\mathrm{crit}$. %beta<beta_crit is necessary and sufficient  
 Thus, tracking the fundamental mode is a more robust way of 
 assessing stability as $\beta$ is increased from zero, rather than
 searching for the most unstable mode, which may correspond to modes
@@ -311,17 +332,19 @@ For $5\lesssim\khat\lesssim30$, we find $\beta_\mathrm{crit}$ provides
 an accurate prediction of the upper limit to the thermal relaxation 
 timescale for the fundamental mode. For smaller $\khat$, the VSI can
 operate slightly beyond $\beta_\mathrm{crit}$ (recall that
-$\beta_\mathrm{crit}$ was derived by assuming $\khat^2\gg 1$). For
+$\beta_\mathrm{crit}$ was derived for $\khat^2\gg 1$). For
 $\khat\geq 50$, we find perturbations have large amplitudes near the
  vertical boundaries, and 
 complications to our numerical search of
 eigenvalues arise from the emergence of modes associated with boundary
-conditions. Nevertheless, growth rates rapidly decrease as $\beta$
+conditions. %We generally find boundary effects become more significant
+%with increasing $\khat$.  
+Nevertheless, growth rates rapidly decrease as $\beta$
 approaches and increase beyond $\beta_\mathrm{crit}$.  
 
 Fig. \ref{bcrit_compare1} is consistent with numerical simulations
 performed by \cite{nelson13} for which a thermal relaxation timescale
-$\beta\gtrsim 0.6$ stablizes the VSI. This can be anticipated from our
+$\beta\gtrsim 0.6$ stablized the VSI. This can be anticipated from our
 estimate of the critical thermal timescale $\beta_\mathrm{crit}\simeq
 0.1$ for our fiducial disk parameters (which is the same as that in
 \citeauthor{nelson13}). It is interesting to note that there is a
@@ -345,7 +368,7 @@ thermal timescale of $\sim 0.1$ orbits.
  
  We further test the dependence of the critical thermal relaxation timescale 
  $\beta_\mathrm{crit}$ on disk parameters
- (Eq. \ref{iso_vsi_cond}).  We use the previous case study as a
+ (Eq. \ref{iso_vsi_cond}).  We use the fiducial setup as a
  reference point and vary $q\in[-0.2,-1.2]$, 
  $\gamma\in[1.2,2.0]$, and $\epsilon\in[0.02,0.1]$
  separately.
