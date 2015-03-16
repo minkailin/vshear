@@ -1,393 +1,315 @@
-\message{ !name(linear_iso.tex)}
-\message{ !name(linear_iso.tex) !offset(-2) }
-\section{Analytical discussion of vertically isothermal disks} 
-We begin with a discussion of vertically isothermal disks
-where $\Gamma=1$, then $c_s$ is a constant in the shearing box. We
-examine separately the limiting case of isothermal perturbations
-($\gamma\equiv1$ and any value of $t_c$), nearly-isothermal
-perturbations ($\gamma\geq 1$ and $t_c\to0$), and 
-adiabatic perturbations ($\gamma\neq 1$ and $t_c\to\infty$).   
-\subsection{Isothermal perturbations}\label{iso_discuss}
-The linear problem simplifies considerably for the case
-$\Gamma=\gamma=1$.  Then 
+\message{ !name(linear_adia.tex)}
+\message{ !name(linear_adia.tex) !offset(-2) }
+\subsection{Thin-disk approximation}\label{analytic_relax}
+Our final approximation apply to thin disks for 
+which $\epsilon\ll 1$. Then we may write $\rho/\rho_0\simeq
+\exp{(-\zhat^2/2)}$. The governing equation,
+Eq. \ref{vertiso_gov_nondim}, is then   
 \begin{align}
-  Q=W. 
+  \delta v_z^{\prime\prime} - z A\delta v_z^\prime +
+  (B - C\zhat^2)\delta v_z = 0,\label{nearly_iso_explicit}
 \end{align}
-Inserting this into Eq. \ref{ode_w} gives a single equation for the linear stability
-problem for isothermal perturbations in a vertically isothermal disk, 
-\begin{align}\label{iso_ode}
-  \frac{d^2W}{dz^2} + \left(\frac{d\ln{\rho}}{dz} - \frac{\ii k_x
-      r}{D}\frac{d\Omega^2}{dz}\right) \frac{dW}{dz} +
-  \sigma^2\left(\frac{1}{c_s^2} + \frac{k_x^2}{D}\right)W=0, 
-\end{align} 
-subject to appropriate boundary conditions. Eq. \ref{iso_ode} also
-applies to $\gamma>1$ for $t_c\to0$. 
-
-We remark that Eq.\ref{iso_ode} is also applicable for    
-$\gamma=\Gamma\neq 1$ in the limit $t_c\to\infty$ (i.e. neutrally
-stratified adiabatic disks), since in that case  
-$Q\simeq W$ as well. However, the following discussion is only
-valid for $\gamma=\Gamma=1$ because $c_s$ is taken to be a constant.   
-
-\subsubsection{Approximations}
-To facilitate an analytical discussion, we simplify the governing
-equation Eq. \ref{iso_ode} with the following approximations:
-
-\begin{enumerate}
-\item We consider eigenvalues such that
-  $|\sigma^2|\ll \kappa^2$. Then we can replace $D=\kappa^2 -\sigma^2\to
-  \kappa^2$. The problem simplifies because the eigenvalue now only
-  appears in the last term in Eq. \ref{iso_ode}. We call this the
-  low-frequency approximation. 
-\item We are mainly interested in the effect of vertical shear, i.e. $q\neq
-  0$. This is already captured explicitly in Eq. \ref{iso_ode} through
-  the factor $d\Omega^2/dz$. We therefore simplify further by ignoring
-  the vertical dependence of $\kappa^2$ elsewhere. For clarity, we
-  will replace $\kappa^2$ with $\Omega_k^2$. 
-  % , although the discussion
-  % is unchanged if we replaced 
-  % $\kappa^2$ with $\kappa^2(0)$, for example.    
-\end{enumerate}
-Making both of these approximations is equivalent to the replacement
-$D\to\Omega_k^2$.  We will consider sound-speed profiles with $q<0$ in the global 
-disk. Then $\Omega^2(z)$ decreases away from the midplane,
-and may reach small values for sufficiently large $|z|$, which
-invalidates the low-frequency approximation. In principle, then, the
-above approximations implicitly limits us to consider thin disks ($\epsilon
-\ll 1$) with vertical domain sizes not too large, so that the rotation
-is nearly-Keplerian.   
-
-
-\subsubsection{Neccessity of vertical shear for
-  instability}\label{integral_relation} 
-With the above approximations and introducing the dimensionless variables
+with
 \begin{align}
-  \hat{z} = z/\Hiso,\quad \hat{k}=k_x\Hiso, \quad \hat{\sigma} = \sigma/\Omega_k,
+  &A \equiv 1 + \ii \epsilon q \hat{k},\\
+  &B \equiv \hat{\sigma}^2\left(\chi + \hat{k}^2\right) -
+  \left(\chi + \ii \epsilon q \hat{k}\right),\\
+  &C \equiv \left(1-\chi\right)\left(\hat{k}^2 - \ii
+    \epsilon q\hat{k}\right), 
 \end{align}
-the governing equation can be re-written as
-\begin{align}
-  0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii \epsilon q \hat{k}
-    f(\zhat)\right]W^\prime + \hat{\sigma}^2\left(1+\hat{k}^2\right)W,\label{iso_ode1}
-\end{align}
-where the primes denote $d/d\zhat$ and $f(\zhat)$ is defined such that
-\begin{align}\label{fz_shear}
-  \frac{d\Omega^2}{d\hat{z}} = \epsilon^2q f(\hat{z})\Omega_k^2.
-\end{align}
+and $\chi =
+\left(1-\ii\hat{\sigma}\beta\right)/\left(1-\ii\hat{\sigma}\beta\gamma\right)
+$ in terms of dimensionless variables. 
 
-We can establish a necessary condition for instability by multipling
-Eq. \ref{iso_ode1} by $\rho W^*$ and integrate vertically from
-$\zhat=\zhat_1$ to $z=\zhat_2$. We neglect boundary 
-terms when integrating by parts, by assuming $W$ or
-$W^\prime$ vanishes at the boundaries, or that the boundaries are 
-sufficiently far away so that the boundary terms are negligible because of the
-decaying background density with increasing height. Then,
-\begin{align}
-  &\hat{\sigma}^2\left(1+\hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|W|^2d\zhat \notag\\
-  &=\int_{\zhat_1}^{\zhat_2}\rho|W^\prime|^2d\zhat 
-  +\ii \epsilon q \hat{k}\int_{\zhat_1}^{\zhat_2}\rho f(\zhat) W^*W^\prime d\zhat.\label{integral_relation1}
-\end{align}
-It follows that for instability ($\imag\hat{\sigma}>0$), it is neccessary to
-have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. vertical shear.  
+We remark that Eq. \ref{nearly_iso_explicit} is in the same 
+form as Eq. 41 in \cite{lubow93}, which describe adiabatic axisymmetric waves in
+a vertically isothermal disk without vertical shear. The two equations
+become identical after  setting $q=0$ (no vertical shear) and
+$\chi=1/\gamma$ (adiabatic flow) in our Eq. \ref{nearly_iso_explicit},
+and making the low-frequency, nearly-Keplerian approximation in
+\citeauthor{lubow93} after a change of variables.    
 
 
-\subsubsection{Maximum growth rate}   
-Here we show that the growth rate is limited by the maximum vertical
-shear in the domain. Writing $\hat{\sigma} = \hat{\omega} +
-\ii\hat{\nu}$ with real $\hat{\omega}$ and $\hat{\nu}$, the real and
-imaginary parts of 
-Eq. \ref{integral_relation1} are
-\begin{align}
-  &\left(\hat{\omega}^2-\hat{\nu}^2\right)\left(1+\hat{k}^2\right)
-  \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z} -
-  \int_{\zhat_1}^{\zhat_2}\rho|W^\prime|^2d\hat{z}
-  \notag\\
-  &=\real\left[\ii
-    \epsilon\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
-    f(\hat{z}) W^*W^\prime d\zhat\right], \notag\\
-  & 2\hat{\omega}\hat{\nu}\left(1+\hat{k}^2\right)
-  \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z}\notag\\
-  &=\imag\left[\ii
-    \epsilon\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
-    f(\hat{z}) W^*W^\prime d\hat{z}\right].
-\end{align}
-Adding the square of these equations give
-\begin{align}
-  &\left[|\hat{\sigma}|^2\left(1+\hat{k}^2\right)
-    \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z} -
-    \int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}\right]^2\notag\\
-  &+4\hat{\nu}^2\left(1+\hat{k}^2\right) 
-  \int_{\zhat_1}^{\zhat_2}\rho
-  |W|^2d\hat{z}\int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}\notag\\
-  &=\left|\ii
-    \epsilon\hat{k}q\int_{\zhat_1}^{\zhat_2}\rho
-    f(\hat{z}) W^*W^\prime d\hat{z}\right|^2.
-\end{align}
-It is clear that
-\begin{align}\label{sigma_finite_domain} 
-  &4\hat{\nu}^2\left(1+\hat{k}^2\right) 
-  \int_{\zhat_1}^{\zhat_2}\rho
-  |W|^2d\hat{z}\int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}\notag\\
-  &\leq\left|
-    \epsilon\hat{k}q\int_{\zhat_1}^{\zhat_2}\rho
-    f(\hat{z}) W^*W^\prime d\hat{z}\right|^2.
-\end{align}
-On the left hand side of this inequality, we apply the Cauchy-Schwarz
-inequality to obtain
-\begin{align}
-  &\left( \int_{\zhat_1}^{\zhat_2}\rho
-    |W|\left|W^\prime \right|d\hat{z}\right)^2\leq
-  \int_{\zhat_1}^{\zhat_2}\rho 
-  |W|^2d\hat{z}\int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}.
-\end{align}
-On the right hand side of Eq. \ref{sigma_finite_domain} we have
-\begin{align}
-  \left|\int_{\zhat_1}^{\zhat_2}\rho
-    f(\hat{z}) W^*W^\prime d\hat{z}\right|\leq \int_{\zhat_1}^{\zhat_2}\rho
-  \left|f(\hat{z})W^*W^\prime \right|d\hat{z} \notag\\
-  \leq
-  \mathrm{max}\left(|f|\right)\int_{\zhat_1}^{\zhat_2}\rho
-  |W|\left|W^\prime \right|d\hat{z},
-\end{align}
-where $\mathrm{max}(|f|)$ is the maximum value of $|f|$ in
-$\zhat\in[\zhat_1,\zhat_2]$. Inserting these inequalities into
-Eq. \ref{sigma_finite_domain} gives
-\begin{align}\label{max_growth}
-  |\hat{\nu}|\leq
-  \frac{\epsilon |\hat{k} q|}{2\sqrt{1+\hat{k}^2}}\mathrm{max}(|f|). 
-\end{align}
-Recalling that $f$ represents vertical shear (Eq. \ref{fz_shear}), it
-follows that the maximum possible growth rate of unstable modes,
-satisfying the above boundary conditions, is limited by the maximum
-value of the vertical shear in the domain considered. 
+\subsection{Isothermal perturbations}\label{iso_pert}
+Isothermal perturbations correspond to $\beta = 0$ or $\gamma=1$ so 
+that $\chi = 1$. This case has been investigated numerically
+by \cite{nelson13} and \cite{mcnally14}. 
 
-For the vertically isothermal disk we have $|f(\hat{z})| =
-|\hat{z}|\left(1+\epsilon^2\hat{z}^2\right)^{-3/2}$, which maximises
-at $|\zhat|=1/\sqrt{2}\epsilon$. For vertical domains smaller 
-than this height, the growth rate is limited by $|f|$ at the vertical
-boundaries considered. For $|\epsilon\hat{z}|\ll1$ we have $f\simeq
-\hat{z}$, in which case we can expect growth rates to increase linearly
-with the vertical domain size.   %no faster than linear 
+In Appendix \ref{iso_discuss}, we give an analytical discussion of the
+linear problem for isothermal perturbations. There, we establish more general
+results that do not require the thin disk approximation, namely 
+a necessary condition for instability (there must be vertical shear)
+and an upper bound to the instability growth rate (it is limited by
+the maximum vertical shear rate in the disk). We also develop 
+solutions in the thin disk limit. The 
+methods used in Appendix \ref{iso_discuss} and results obtained
+therein motivates the solution procedure employed in the following
+sections.       
 
-
-
-\subsubsection{Thin-disk limit}
-We can make further progress for thin disks ($\epsilon\ll1$), 
-by expanding the background density and vertical shear profile in powers
-of $z/r$. To lowest order we obtain 
-\begin{align}
-  &\frac{\rho}{\rho_0} \simeq 
-  \exp{\left(-\frac{\hat{z}^2}{2}\right)} \equiv w(\hat{z}),\label{thin_dens}\\
-  &\frac{d\Omega^2}{d\hat{z}} \simeq \epsilon^2q\Omega_k^2\hat{z}, \label{thin_vshear}
-\end{align} 
-%With this approximation and those in \S\ref{integral_relation}, 
-and the governing equation becomes 
-\begin{align}\label{iso_ode3}
-  W^{\prime\prime} - \left(1 + \ii q\epsilon
-    \hat{k}\right)\hat{z}W^\prime  +
-  \hat{\sigma}^2\left(1+\hat{k}^2\right)W = 
-  0.
-\end{align}
-We remark that for large $|\hat{k}|$, Eq. \ref{iso_ode3} is the same as
-that derived by \cite{nelson13}, although we have taken a different
-route.  
-
-To complete the problem we must specify boundary conditions. The 
-maximum vertical domain size should be limited by the thin
-disk and low-frequency approximations (i.e. $z\lesssim r$).     
-It is, however, common to take $\mathrm{max}|z|\to\infty$ and impose
-that the kinetic  energy remain bounded at infinity. This 
-is appropriate for the density field because both the true density profile 
-and its thin-disk approximation decay rapidly away from the midplane.   
-
-However, the thin-disk representation of vertical shear diverges with 
-$\hat{z}$, unlike the true vertical shear profile which eventually
-decays.  Thus, taking $\zhat_{1,2}\to \pm\infty$ will permit unphysically large growth
-rates (as demonstrated below). Nevertheless, the infinite disk is
-useful to consider since it permits an analytical discussion. 
-
-\subsubsection{Stability in the absence of vertical shear}
-When $q=0$, Eq. \ref{iso_ode3} is
-\begin{align}\label{hermite_ode}
-  \left[w(\hat{z})W^\prime \right]^\prime + nW
-  w(\hat{z}) =0, 
-\end{align}
-where we have defined a new eigenvalue
-\begin{align}
-  n \equiv \hat{\sigma}^2(1+\hat{k}^2). 
-\end{align} 
-Eq. \ref{iso_ode3} is Hermite's differential equation. If we impose
-that the kinetic energy density remain bounded at infinity, then  
-\begin{align}
-  W \propto \He_n(\hat{z}),
-\end{align}
-and $n$ is a non-negative integer. This translates to a real
-eigenfrequency $\sigma$ such that
-\begin{align}
-  \left|\hat{\sigma}\right| = \sqrt{n}
-  \left(1+\hat{k}^2\right)^{-1/2}. 
-\end{align}
-Since we have assumed $|\sigma^2|\ll \kappa^2\sim \Omega_k^2$, our
-analysis is only valid for large wavenumbers such that $\hat{k}^2\gg   
-n-1$. Physically, this corresponds to radial length-scales much
-smaller than the local disk scale height. 
-
-\subsubsection{Polynomial solutions with vertical shear}\label{iso_poly}
-We can seek power-series solution to Eq. \ref{iso_ode3},
-\begin{align}
-  W(\zhat) = \sum_{l=0}^\infty a_l\zhat^l. 
-\end{align}
-Then the coefficients must satisfy the recurrence relation
-\begin{align}
-  (l+2)(l+1)a_{l+2} +
-  \left[n - l\left(1+\ii \epsilon q  \hat{k}\right)\right] a_l = 0, 
-\end{align}
-where $n$ is not neccessarily an integer. Indeed, if we demand
-a polynomial of degree $L$ as the solution, then the eigenfrequency
-must satisfy
-\begin{align}\label{sig2_iso}
-\hat{\sigma}^2 = L\left(\frac{1+\ii q \epsilon
-    \hat{k}}{1+\hat{k}^2}\right).
-\end{align}
-The eigenfrequency $\hat{\sigma}$ is therefore complex for
-$L\geq1$. We are interested in 
-unstable modes for which $\imag{\hat{\sigma}}>0$ is the growth rate and is
-given by 
-\begin{align}\label{simple_growth}
-  \hat{\nu} =\sqrt{
-   \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2\epsilon^2\hat{k}^2} - 
-    1\right)}. 
-\end{align}
-For fixed $q$ and $\epsilon$, the growth rate vanishes for both
-$\hat{k}^2\to0$ and $\hat{k}^2\to\infty$. The maximum growth rate
-occurs at the optimum wavenumber $\hat{k}_\mathrm{opt}$
-\begin{align}
-  |\hat{k}_\mathrm{opt}| = \sqrt{\frac{2+|\epsilon q|}{|\epsilon q|}},
-\end{align}
-and
-\begin{align}
-  \mathrm{max}\left(\hat{\nu}\right) =\frac{\sqrt{L}|\epsilon
-    q|}{2\sqrt{1+|\epsilon q|}}. \label{iso_max_growth}
-\end{align}
-Since $L\geq1$, there is no limit to the maximum growth rate. This is
-an artifact of the thin-disk approximation because the vertical 
-shear $d\Omega^2/dz\propto z$ increases indefinitely with
-height. However, we find Eq. \ref{iso_max_growth} compares well with
-numerical solutions of the governing equation for small $L$.      
-
-% This expression can be simplified in the limit $|q|\ll 1$, 
-%  \begin{align}\label{simple_growth}
-%    \frac{\imag(\sigma)}{\Omega_k} = \pm \sqrt{M} 
-%    \frac{q\epsilon\hat{k}}{2\sqrt{1+\hat{k}^2}} \quad\quad (|q|\ll 1), 
-%  \end{align}
-%  with $M$ being an integer. 
-
-In Appendix \ref{pert_theory} we give an alternative method to
-infer instability in the presence of vertical shear without explicitly
-solving the governing equation. 
-
-\subsection{Nearly-isothermal perturbations}
-We can use the explicit solution developed above to examine the effect
-of cooling $t_c$ on perturbations with $\gamma>1$. We shall consider
-the limit $t_c\to0$, for which perturbations can be considered
-nearly-isothermal.  
-
-We begin by writing the pair of ODEs for $W$ and $Q$
-(Eq. \ref{ode_w}---\ref{ode_Q}) in the thin-disk, low-frequency, 
-nearly-Keplerian approximations as used previously, as well as
-adopting dimensionless co-ordinates and variables, 
-\begin{align}
-  &\hat{\sigma}^2\left(Q +  \hat{k}^2W\right) \notag\\ 
-  &= \hat{z} \left(1 +
-    \ii\epsilon q \hat{k} \right)\left[W^\prime - \zhat \left(W -
-      Q\right)\right] - \left[W^\prime - \zhat \left(W -
-      Q\right)\right]^\prime\label{nearly_iso1},\\
-&\beta \hat{\sigma}^2\left(W - \gamma Q\right) + \ii\hat{\sigma}
-    \left(W-Q\right)\notag\\
-   & = -\beta\zhat\left(\gamma-1\right) \left[W^\prime - \zhat \left(W -
-      Q\right)\right]\label{nearly_iso2},
-\end{align}
-where we recall $\beta = t_c\Omega_k$ is the dimensionless cooling
-time. It is evident that for $\beta\equiv 0$, we recover
-Eq. \ref{iso_ode3}. 
-
-Since we have developed solutions for $\beta\equiv 0$, we may ask how
+\subsection{The effect of introducing a small but finite
+  thermal relaxation time}\label{relax_pert}
+We are interested in the case $\beta\neq 0$, but it is instructive to
+first ask  the more analytically tractable question: how 
 do the eigenfrequencies and eigenfunctions change when we change
-$\beta$ from zero to a small but finite value? For sufficiently small
-$\beta$, we expect the new solutions to only differ slighly from that
-above. Then we may linearize Eq. \ref{nearly_iso1}---\ref{nearly_iso2} to
-determine the effect of adding small finite cooling. 
+$t_c=\beta\Omega_k^{-1}$ from zero to a small but finite value? For 
+sufficiently small $\beta$ we expect the solution to only differ
+slightly from a case with $\beta\equiv 0$. We thus perturb a solution
+for $\beta=0$ to see the effect of thermal relaxation.  
 
-Let 
+For definiteness, let us consider the simple solution 
+\begin{align}
+  \beta\equiv 0, \quad \delta v_z = 1,\quad \hat{\sigma}^2 = \frac{1 +
+  \ii\epsilon q \hat{k}}{1+\hat{k}^2}, \label{pert_basic} 
+\end{align}
+which solves Eq. \ref{nearly_iso_explicit} since $\delta
+v_z=$constant and $\chi=1$ so that $B=C=0$. 
+This is the fundamental or `corrugation' mode where the vertical
+velocity is constant throughout the disk column. These modes have been
+observed to dominate numerical simulations \citep{nelson13,stoll14},  
+and are the ones we find to dominate in numerical calculations with 
+increasing $\beta$ (\S\ref{therm_relax_eff}), as well as in protoplanetary disks 
+with a realistic estimate for thermal timescales
+(\S\ref{application}).  
+
+We linearize Eq. \ref{nearly_iso_explicit} about the above
+solution for $\beta\equiv0$ and write 
 \begin{align}\label{nearly_iso_pert}
-  \beta \to 0 + \delta\beta,\, W\to W+\delta W,\, Q \to Q+\delta
-  Q,\,\hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}, 
-\end{align} 
-where $W=Q$ is the polynomial solution described in \S\ref{iso_poly}
-and $\hat{\sigma}^2$ is given by Eq. \ref{sig2_iso}. Inserting
-Eq. \ref{nearly_iso_pert} into
-Eq. \ref{nearly_iso1}---\ref{nearly_iso2} and keeping only first order
-terms, we obtain
-\begin{align}
-  &2\hat{\sigma}\delta\hat{\sigma}\left(1+\hat{k}^2\right)W +
-  \hat{\sigma}^2 \left(\delta Q + \hat{k}^2\delta W\right)\notag\\
-  &= \zhat \left(1+\ii\epsilon q \hat{k}\right)\left[\delta W^\prime -
-    \zhat \left(\delta W - 
-      \delta Q\right)\right] - \delta W^{\prime\prime}\notag\\
-  &\phantom{=} + \left[\zhat \left(\delta W -
-     \delta Q\right)\right]^\prime,\label{nearly_iso3}\\
-&\ii\hat{\sigma} \left(\delta W - \delta Q\right) =
-\delta\beta\left(\gamma-1\right)\left(\hat{\sigma}^2W - \hat{z}W^\prime\right).\label{nearly_iso4}
+  \beta \to 0 + \delta\beta,\, \delta v_z\to \delta v_z+\delta
+  v_{z1},\,\hat{\sigma} \to \hat{\sigma} + \delta\hat{\sigma}, 
 \end{align}
+which implies 
+\begin{align}
+  \chi \to 1 + \delta\chi = 1 + \ii \hat{\sigma}\left(\gamma-1\right)\delta\beta,
+\end{align}
+with $\delta v_z$ and $\hat{\sigma}$ given by Eq. \ref{pert_basic}. We
+may then seek  
+\begin{align}
+  \delta v_{z1} = a \zhat^2 + b,
+\end{align}
+where $a$, $b$ are constants. 
 
-We could proceed further by considering the set of polynomial
-solutions for $W$ described in \S\ref{iso_poly} altogether, but it is
-simplest to look at the fundamental mode. Thus
-we consider the `basic state'
-\begin{align*}
-  W = \hat{z},\quad \hat{\sigma}^2\left(1+\hat{k}^2\right) = 1 +
-  \ii\epsilon q \hat{k},
-\end{align*}
-then we can assume
+We insert Eq. \ref{nearly_iso_pert} into
+Eq. \ref{nearly_iso_explicit}, keeping only first order terms, and
+solve for $\delta\hat{\sigma}$ using the above xpressions for $\delta\chi$
+and $\hat{\sigma}$. We find imaginary part of $\delta\hat{\sigma}$
+is 
+% yield the requirements, after
+% balancing constants and coefficients of $\zhat^2$, 
+% \begin{align}
+%   0 &= 2a + 2\hat{\sigma}\left(1+\khat^2\right)\delta\hat{\sigma} +
+%   \left(\hat{\sigma}^2 -1\right)\delta\chi, \\
+%   0&= 2a\left(1+\ii\epsilon q \khat\right) - \left(\khat^2 - \ii\epsilon
+%     q \khat\right)\delta\chi.
+% \end{align}
+% This gives 
+% \begin{align}\label{nearly_iso_dsig}
+%   \delta \hat{\sigma} =
+%   -\frac{\ii\left(\gamma-1\right)\hat{k}^2\left(\ii\epsilon
+%       q - \hat{k}\right)^2}{2\left(1+\ii\epsilon q \hat{k}\right)\left(1+\hat{k}^2\right)^2}\delta\beta.
+% \end{align}
+% The imaginary part of Eq. \ref{nearly_iso_dsig} is
 \begin{align}
-  \delta W = b \zhat^3,
-\end{align}
-where $b$ is a constant to be determined. Eliminating $\delta Q$ from
-Eq. \ref{nearly_iso3}---\ref{nearly_iso4}, inserting the above
-expressions for $W$ and $\delta W$ and balancing coefficients of
-$\zhat$ and $\zhat^3$, we find
-\begin{align}
- & 2\left(1+\ii\epsilon q \hat{k}\right) \delta\hat{\sigma} \notag\\& = -6b\hat{\sigma} -
-2\ii \delta \beta\left(\gamma-1\right)\left(\hat{\sigma}^2-1\right) - \ii
-  \hat{\sigma}^2\delta\beta\left(\gamma-1\right),\\
-& 0=  2b\hat{\sigma}+\ii\delta\beta
-\left(\gamma-1\right)\left(\hat{\sigma}^2 - 1\right),
-\end{align}
-which gives
-\begin{align}\label{nearly_iso_dsig}
-  \delta \hat{\sigma} =
-  -\frac{\ii\left(\gamma-1\right)\hat{k}^2\left(\ii\epsilon
-    q - \hat{k}\right)^2}{2\left(1+\ii\epsilon q \hat{k}\right)\left(1+\hat{k}^2\right)^2}\delta\beta.
-\end{align}
-The imaginary part of Eq. \ref{nearly_iso_dsig} is
-\begin{align}
-   \delta\hat{\nu} =
+  \delta\hat{\nu} =
   -\frac{\left(\gamma-1\right)\hat{k}^2 \left(\hat{k}^2 -
       2\epsilon^2q^2\hat{k}^2 - \epsilon^2q^2\right)}{2\left(1+\epsilon^2 q^2
-        \hat{k}^2\right)\left(1+\hat{k}^2\right)^2}\delta\beta.  
+      \hat{k}^2\right)\left(1+\hat{k}^2\right)^2}\delta\beta.  
 \end{align}
 Since $\epsilon \ll 1$, introducing finite cooling $\delta\beta>0$
-implies $\delta\nu < 0$, i.e. stabilization. Interestingly, for both
-$\hat{k}\to0$ and $\hat{k}\to\infty$ we find $\delta\hat{\nu}\to0$, so
-stabilization by finite cooling is ineffective at very large or very small scales. 
+implies $\delta\hat{\nu} < 0$, i.e. stabilization, since $\gamma>1$. 
+% Interestingly, for both
+% $\hat{k}\to0$ and $\hat{k}\to\infty$ we find $\delta\hat{\nu}\to0$, so
+% stabilization by small finite cooling is ineffective at very large or
+% very small scales. 
+
+A finite thermal relaxation time allow buoyancy
+forces to stabilize vertical motions in sub-adiabatically stratified
+disks. The $\zhat^2$ dependence in $\delta v_{z1}$ makes  
+sense because it becomes significant at large $|\zhat|$, i.e. away from
+the midplane where the effect of buoyancy first appears as $\beta$ is
+increased from zero (since $N_z^2\propto z^2$ for a thin disk, see
+Eq. \ref{nzsq_def}).   
+
+\subsection{Explicit solutions and dispersion relation}\label{disp_relax}
+We now solve Eq. \ref{nearly_iso_explicit} explicitly. We first write  
+\begin{align}
+  \delta v_z(\zhat) =
+  g(\zhat)\exp\left(\frac{\alpha\zhat^2}{2}\right), \label{adia_ansatz}
+\end{align}
+where $\alpha$ is a constant to be chosen for convenience. Inserting
+Eq. \ref{adia_ansatz} into Eq. \ref{nearly_iso_explicit} gives
+\begin{align}
+  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime + \left(B +
+    \alpha\right)g
+  +\left(\alpha^2 - \alpha A - C\right)\zhat^2 g.
+\end{align}
+We choose $\alpha$ to make the coefficient of $\zhat^2g$
+vanish, and impose the vertical kinetic energy density
+$\rho|\delta v_z|^2\propto |g|^2 \exp{\left(\real\alpha -
+    1/2\right)\zhat^2}$ to remain finite as $|\zhat|\to\infty$. 
+Then assuming $g(\zhat)$ is a polynomial, we require  
+\begin{align}
+  \real\alpha < \frac{1}{2}, 
+\end{align}
+which amounts to choosing 
+\begin{align}
+  \alpha = \frac{1}{2}\left(A - \sqrt{A^2 + 4C}\right).  
+\end{align} 
 
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{figures/domegadbeta}
-  \caption{Rate of change of the eigenfrequency $\sigma$ with respect to the
-    introduction of a small but finite cooling time. The plotted 
-    quantity is $\p\hat{\sigma}/\p\beta$ at $\beta=0$, evaluated using
-    Eq. \ref{nearly_iso_dsig} with 
-    disk parameters $\epsilon=0.05$, $q=-1$ and $\gamma=1.4$.  
-    \label{domegadbeta}}  
-\end{figure}   
-\message{ !name(linear_iso.tex) !offset(-393) }
+Eq. \ref{nearly_iso_explicit} becomes 
+\begin{align}
+  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime +
+  \left(B + \alpha\right)g.
+\end{align}
+We seek polynomial solutions 
+\begin{align}
+  g(\zhat) = \sum_{m=0}^M b_m \zhat^m,
+\end{align}
+which requires
+\begin{align}
+  B(\hat{\sigma}) + \alpha(\hat{\sigma}) =
+  M\left[A-2\alpha(\hat{\sigma})\right].\label{adia_disp0} 
+\end{align}
+For ease of analysis, we re-arrange Eq. \ref{adia_disp0} and square it
+to obtain a polynomial in $\hat{\sigma}$,  
+\begin{align}
+  0 = \sum_{l=0}^{6}c_l\hat{\sigma}^l,\label{relax_disp}
+\end{align}
+where the coefficients $c_l$ are given in Appendix \ref{relax_coeff}.
+The dispersion relation $\hat{\sigma}=\hat{\sigma}(\khat)$ is
+complicated and generally requires a numerical solution. However,
+simple solutions may be obtained in limiting cases which we consider
+below.  
+
+\subsection{Upper limit on the thermal relaxation timescale for the
+  VSI}\label{iso_vsi_beta_crit}
+Here we estimate the maximum thermal relaxation timescale 
+$\beta$ that allows the VSI.  
+Our starting point is Eq. \ref{relax_cond1}---\ref{relax_cond2} which
+approximates the dispersion relation Eq. \ref{relax_disp} assuming marginal
+stability and $\khat^2\gg 1$. We consider $M=0$ (the 
+fundamental mode) or  $M=O(1)$ and low frequency $|\hat{\omega}|\ll
+1$ such that $|\hat{\omega}\khat|$ is $O(1)$. We 
+also assume $|q|$ and $\beta$ are $O(1)$ or smaller. For a thin disk
+($\epsilon \ll 1$) we have 
+\begin{align}
+ 0 = &M(M+1)\left(1-\epsilon^2q^2\khat^2\right) \notag\\ 
+ &+ \left[1 +
+    \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2
+   -  \left(\hat{\omega}\khat\right)^4,\label{relax_cond_simp1}\\
+   0= &2M(M+1) + \frac{\beta}{\epsilon q} (1-\gamma)(1+2M)^2
+   \left(\hat{\omega}\khat\right) + \left(\hat{\omega}\khat\right)^2. \label{relax_cond_simp2}
+\end{align}
+(We explain this in Appendix \ref{disp_neut_limit}.)
+
+Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2} is a pair of
+simultaneous equations for $\hat{\omega}$ and $\beta$ for marginal
+stability. If $\beta\ll 1$ and the disk is sufficiently thin so that  
+$|\epsilon q \khat |^2\lesssim 1$, 
+then an approximate solution to Eq. \ref{relax_cond_simp1} is 
+\begin{align}
+  \left(\hat{\omega}\khat\right)^2 \simeq (M+1)\left(1 -
+    \frac{M|\epsilon q \khat|^2}{2M+1}\right).  \label{marg_freq_approx}
+\end{align}
+Note that for $q=0$, Eq. \ref{marg_freq_approx} reduces to 
+the dispersion relation for low-frequency waves in vertically
+isothermal disks without vertical shear (see Appendix
+\ref{stable_novshear}). Inserting Eq. \ref{marg_freq_approx} into
+Eq. \ref{relax_cond_simp2}, we obtain 
+\begin{align}\label{bcrit_gen}
+  \beta &= \frac{\epsilon|q|}{(\gamma - 1)}
+  \frac{\sqrt{1+M}}{(1+2M)}\left[1 + \frac{M(2M-1)|\epsilon q
+      \khat|^2}{2(2M+1)^2}\right].
+%  &\lesssim \beta_\mathrm{crit}\notag
+\end{align}
+Since $|\epsilon q \khat|^2\lesssim 1$ by assumption, we have  
+\begin{align}\label{iso_vsi_cond}
+  \beta\leq \beta_\mathrm{crit}  \equiv
+  \frac{\epsilon|q|}{\gamma-1}, 
+\end{align}
+where $\beta_\mathrm{crit}$
+is the critical thermal timescale for the fundamental mode
+($M=0$). We comment that the expression for $\beta_\mathrm{crit}$ may
+in fact be obtained without assuming $|\epsilon q\khat|\lesssim 1$.
+We will confirm $\beta_\mathrm{crit}$ numerically in 
+\S\ref{bcrit_num_test}. 
+
+Eq. \ref{iso_vsi_cond} suggests that as the thermal timescale $\beta$
+is increased from zero, higher order modes with $M>0$
+will be stabilized before the fundamental mode. We indeed observe this
+trend in numerical calculations (\S\ref{therm_relax_eff}), despite
+adopting somewhat restrictive assumptions for $M>0$ in order to arrive
+at the simple expression Eq. \ref{bcrit_gen}. 
+
+Rapid thermal relaxation is required to overcome a stabilizing
+vertical entropy gradient \citep{goldreich67,urpin98,urpin03}, but these
+studies consider vertically localized disturbances. Our 
+Eq. \ref{iso_vsi_cond} quantifies this requirement for vertically
+global disturbances (which have small $M$).  We can interpret
+$\beta_\mathrm{crit}$ as the thermal timescale below which
+perturbations are effectively isothermal and the VSI operates.  We see
+that in a thin disk, a very short thermal timescale is required
+($\beta_\mathrm{crit}\ll 1$) because $\beta_\mathrm{crit}\propto \epsilon$. 
+
+
+
+
+
+% Here we estimate the maximum thermal relaxation timescale
+% $\beta$ that allows the fundamental VSI mode for $\khat\gg1$.   
+
+% At marginal stability, the eigenfrequency $\hat{\sigma}=\hat{\omega}$
+% is real. The dispersion relation for the fundamental mode is then
+% \begin{align}\label{relax_disp_fund}
+%   0 = \sum_{l=1}^{6}c_l\hat{\omega}^l \quad \text{for $M=\hat{\nu}=0$}.  
+% \end{align} 
+% Taking the real and imaginary parts of Eq. \ref{relax_disp_fund} and considering 
+% $\khat\gg1$, we find
+% \begin{align}
+%   0 =& \left[1 + \gamma\beta^2\left(1-\gamma\right)\right] + 2\epsilon q
+%   \gamma\beta (\hat{\omega}\khat) -  (\hat{\omega}\khat)^2 \notag\\
+%   &+ \beta^2\gamma^2\hat{\omega}^2 (\hat{\omega}\khat)^2,\label{relax_cond1}\\
+%   0=& \beta(1-\gamma)\khat^2 + \epsilon q \khat^2 (\hat{\omega}\khat)
+%   - 2\beta (\hat{\omega}\khat)^2 - \epsilon q \gamma^2\beta^2 (\hat{\omega}\khat)^3 \notag\\
+%     &+ 2\beta\gamma(\hat{\omega}\khat)^4.  
+% \label{relax_cond2}
+% \end{align}
+% This is a pair of simultaneous equations for
+% $\hat{\omega}$ and $\beta$. Now, low-frequency axisymmetric waves in
+% the absence of vertical shear are stable and  satisfy
+% $\hat{\omega}\propto \khat^{-1}$ (Appendix \ref
+% {stable_novshear}, Eq. \ref{iso_disp_full}).  We are thus motivated to
+% seek solutions to Eq. \ref{relax_cond1}---\ref{relax_cond2} with  
+% % we wish to seek a criterion independent of k 
+% % \begin{align}
+% %   \khat \to \infty, \quad \hat{\omega}\to 0 ,\quad \hat{\omega} \khat\text{ finite}.
+% %\end{align}
+% \begin{align}
+%   \khat \gg1, \quad |\hat{\omega}|\ll 1 ,\quad
+%   |\hat{\omega}\khat|=O(1). 
+% \end{align}
+% Then
+% \begin{align}
+%   \hat{\omega}\khat = \frac{(\gamma-1)\beta}{\epsilon q}
+% \end{align}
+% from Eq. \ref{relax_cond2}, which implies, from Eq. \ref{relax_cond1}
+% that
+% \begin{align}\label{beta_crit0}
+%   \beta = \frac{1}{(\gamma-1)}\left[\frac{1}{\left(\epsilon
+%         q\right)^2} - \frac{\gamma}{(\gamma-1)}\right]^{-1/2} 
+% \end{align}
+% at marginal stability for perturbations with large $\khat$. 
+
+% From our discussion in \S\ref{relax_pert}, which indicate introducing
+% a finite thermal relaxation is stabilizing, we expect
+% Eq. \ref{beta_crit0} is an upper limit. For a thin  
+% disk $\epsilon\ll 1$, we thus infer 
+% \begin{align}\label{iso_vsi_cond}
+%   \beta \lesssim \frac{|\epsilon q|}{\gamma-1} \equiv
+%   \beta_\mathrm{crit} 
+% \end{align}
+% is required for the fundamental VSI to operate. That is, when
+% $\beta<\beta_\mathrm{crit}$, perturbations are  effectively isothermal. 
+% We will confirm Eq. \ref{iso_vsi_cond} numerically in
+% \S\ref{bcrit_num_test}. 
+\message{ !name(linear_adia.tex) !offset(-315) }

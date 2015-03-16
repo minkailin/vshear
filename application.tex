@@ -32,18 +32,7 @@ For perturbations with lengthscales $l\gg
 l_\mathrm{rad}$, we assume temperature fluctuations are smoothed out
 by radiative diffusion and model this in linear theory by writing the
 linearized RHS of Eq. \ref{real_energy} as 
-% we choose the heating term such that
-% \begin{align}
-%   Q_+ - \nabla\cdot\bm{F} \equiv \nabla\cdot\left[k_\mathrm{rad}\nabla
-%     \left(T-T_{t=0}\right)\right], 
-% \end{align} 
-% where $k_\mathrm{rad}$ is the conduction coefficient to be defined
-% implicitly. Eq. \ref{real_energy} becomes
-% \begin{align}
-%   \frac{DP}{Dt} = -\gamma P \nabla\cdot\bm{v} + \frac{P}{\rho T
-%   c_v}\nabla\cdot\left[k_\mathrm{rad}\nabla\left(T-T_{t=0}\right)\right].     
-% \end{align}
-% When linearized, the last term on the RHS becomes
+
 \begin{align}\label{diff_cool_proper}
   \frac{P}{\rho T c_v} \nabla\cdot\left(k_\mathrm{rad}\nabla\delta
     T\right),  
@@ -64,7 +53,6 @@ Eq. \ref{diff_cool_proper} and write
     c_v}k_x^2P\left(\frac{\delta T}{T}\right)\notag\\
   &\equiv -\eta k_x^2 \left(\delta P - \frac{P}{\rho}\delta\rho\right), 
 \end{align}
-% we are interested in radially-thin perturbations  
 where $\eta=k_\mathrm{rad}/\rho c_v$ is the diffusion coefficient and
 is given in terms of physical disk parameters as 
 \begin{align}\label{eta_def}
@@ -76,16 +64,13 @@ time for diffusion as
 \begin{align}\label{tc_diff_cool} 
   t_\mathrm{diff} = \frac{1}{\eta k_x^2}.%\equiv \frac{\Omega_k^{-1}}{\hat{\eta}\khat^2}, 
 \end{align}
-% where $\hat{\eta} = \eta/H^2\Omega_k$ is the 
-% dimensionless diffusion coefficient. 
-
 
 \subsection{Newtonian cooling}\label{newton_cool}
 For perturbations with small lengthscales, $l\ll l_\mathrm{rad}$, 
 the disk is optically thin. In this case, we assume 
 Newtonian cooling can be applied, which is the thermal
 relaxation model as adopted in our linear models. That is, temperature
-flucations $\delta T$ decay on a timescale $t_\mathrm{cool}$,
+fluctuations $\delta T$ decay on a timescale $t_\mathrm{cool}$,
 independent of $k_x$. For simplicity, we take  
 \begin{align}
   t_\mathrm{cool} = \frac{l_\mathrm{rad}^2}{3\eta}. 
@@ -182,17 +167,6 @@ the lower panels of Fig. \ref{mmsn_bcrit_bcool}, decreases the thermal
 timescales, but shifts the curves outward, so the instability is
 restricted to larger radii.  
 
-%but
-%given that the VSI depends on vertical shear, an effect that becomes
-%important away from the disk midplane, the inner disk may still be
-%able to develop the VSI, but it is likely restricted to the disk
-%surface.   
-%We remark that it is possible to satisfy $\beta<\beta_\mathrm{crit}$
-%at small radii by choosing a sufficiently large $\khat$. However, our
-%linear calculations suggest growth rates eventually decay as 
-%$\khat\to\infty$. Thus, very small-scale VSI in the inner disk is
-%probably unimportant.   
-
 \begin{figure*}
   \includegraphics[scale=.47,clip=true,trim=0cm 1.8cm 0cm
   0cm]{figures/bcrit_mmsn_kap0d1_z0}\includegraphics[scale=.47,clip=true,trim=2.5cm 1.8cm 0cm
@@ -213,9 +187,6 @@ restricted to larger radii.
     $\hat{\kappa}_d=1$ (middle) and $\hat{\kappa}_d=10$ (bottom).  
     The solid line is the 
     critical thermal relaxation timescale $\beta_\mathrm{crit}$.  
-    % and 
-    % $\beta<\beta_\mathrm{crit}$ is necessary for the fundamental isothermal VSI to operate  
-    % for $\khat\gg1$. 
     \label{mmsn_bcrit_bcool}}   
 \end{figure*}  
 
@@ -224,11 +195,7 @@ for sufficiently large $\khat$. We
 illustrate this in Fig. \ref{mmsn_bcrit_bcool_mink} by plotting at 
 each radius the value of $\khat$ such  
 that $\beta = \beta_\mathrm{crit}$. We thus expect that the VSI would only
-occur on very small radial scales in the inner disk. % However, these
-% may not be important as 
-% our
-% linear calculations suggest growth rates eventually decay for large
-% $\khat$.  
+occur on very small radial scales in the inner disk. 
 
 However, disturbances with large $\khat$ may be subject to viscous
 decay in a real disk. The viscous timescale for a perturbation lengthscale 
@@ -276,14 +243,15 @@ $\beta<\beta_\mathrm{crit}$  and  does not depend on height.
 Accordingly we expect, and find, the VSI operates at $r=50$AU. The
 inner disk ($r=5$AU) is optically thick near the midplane but becomes
 optically thin away from it, such that $\beta < \beta_\mathrm{crit}$
-for $|z|\gtrsim1.25H$. In fact, we also find the VSI at $r=5$AU, but
-with much reduced growth rates (when scaled by the local rotation).    
+for $|z|\gtrsim1.25H$. In fact, we also find the VSI in this case, but
+with much reduced growth rates (when scaled by the local rotation), as
+described below.     
 
 In Fig. \ref{mmsn_overall} we plot characteristic growth timescales
 $t_\mathrm{grow} \equiv 1/\nu$ of the fundamental mode with a range of
 wavenumbers, in units of the local orbital time $P_\mathrm{orb}\equiv
 2\pi/\Omega_k$.  In fact, we either only find the fundamental mode, or
-that it is the most unstable, except for the appearence of some
+that it is the most unstable, except for the appearance of some
 surface modes towards the inner disk when considering large
 wavenumbers $\khat\gtrsim 50$. However,
 surface modes are affected by boundary conditions and disturbances
@@ -306,7 +274,7 @@ become much longer. For example, for $\khat=30$ we find
 $t_\mathrm{grow}\sim 40$ orbits at $r=50$AU, but $t_\mathrm{grow}\sim
 400$ orbits at $r=5$AU. Thus, introducing an optically thick midplane
 significantly reduces the efficiency of the VSI despite $\beta <
-\beta_\mathrm{crit}$ away from the midplane. %because of fundamental mode
+\beta_\mathrm{crit}$ away from the midplane. 
 
 We thus find Fig. \ref{mmsn_overall} to be roughly consistent with
 comparing the midplane thermal relaxation timescales to the critical

@@ -36,7 +36,7 @@ and/or small radial wavelengths ($\khat\gg 1$).
 
 \subsection{Spurious growth of adiabatic perturbations in the VGSB}\label{analytic_adia} 
 An important caveat of the VGSB is that it cannot be used in the
-adiabatic limit. We explain this by considering vertically isothermal
+adiabatic limit, even if the above conditions are satisfied. We explain this by considering vertically isothermal
 disks and setting  $\beta\to\infty$ in 
 Eq. \ref{vertiso_gov_nondim} (which itself is obtained by setting
 $\hat{g}_c=0$ in Eq. \ref{lin_mass}---\ref{lin_energy}) to give 
@@ -82,7 +82,7 @@ This is because the VGSB retains the vertical shear
 ($\p_z\Omega$) from the global disk, but ignores the global radial
 disk structure responsible for it. Nevertheless, we demonstrate below
 that this inconsistency is unimportant for the VSI because it occurs
-for $\beta\ll1$.   
+for $\beta\ll1$.   %and small scale
 
 \subsection{Effect of global radial gradients}
 In  Fig. \ref{gcorr_compare}, we plot the effect of the global radial gradient terms
@@ -136,22 +136,24 @@ In the global disk with $\Gamma=1$ we have
 \begin{align}\label{dkappa2}
   \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
     r}\frac{\p\Omega^2}{\p z} = -
-  \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(2 + q +
-    \frac{z^2/r^2-2}{z^2/r^2+1}\right). 
+   \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(
+  \frac{3z^2}{r^2+z^2}-1\right) \equiv - \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2}F(r,z).
 \end{align}
-For the local problem we may then write
-\begin{align}
-  \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z;q),
-\end{align}
-where the function $F$ corresponds to the bracket in
-Eq. \ref{dkappa2}. This function varies from $F=q$ at $z=0$ to $F\to
-3+q$ as $|z|\to\infty$. Since we consider $|q|=O(1)$, this impies
-$|F|=O(1)$ as well.  
+% For the local problem we may then write
+% \begin{align}
+%   \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z),
+% \end{align}
+The function $F$ varies monotonically from $F=-1$ at $z=0$ to $F\to2$
+as $|z|\to\infty $, so $|F|=O(1)$. 
+% For the local problem we set
+% $dD/dz = \p\kappa^2/\p z$. 
+% This function varies from $F=q$ at $z=0$ to $F\to
+% 3+q$ as $|z|\to\infty$. Since we consider $|q|=O(1)$, this impies
+% $|F|=O(1)$ as well.  
 
-Now, eliminating $W$ and $Q$ from Eq. \ref{ode_w}---\ref{ode_Q} and
-Eq. \ref{lin_vz} for vertically isothermal disks, retaining the
-vertical dependence of $D$ and including thermal relaxation, we
-obtain 
+For the radially local problem, we eliminate $W$ and $Q$ from Eq. \ref{ode_w}---\ref{ode_Q} and
+Eq. \ref{lin_vz}  (with $\Gamma=1$), but now retain the vertical dependence
+of $D$ using Eq. \ref{dkappa2}, to obtain  
 \begin{align}
   0 =& \frac{d^2\delta v_z}{dz^2} + \left[1 + \frac{\ii k_x c_s^2
       q}{Dr} - \frac{k_x^2c_s^2}{\left(k_x^2c_s^2 + \chi
@@ -167,9 +169,9 @@ obtain
    \right\}\delta v_z,
 \end{align}
 where we recall $\chi = \left(1-\ii\sigma t_c\right)/\left(1-\ii\sigma
-t_c \gamma\right)$. Making the low-frequency approximation with the
-replacement $D\to \Omega_k^2$ gives, in terms of dimensionless
-variables,
+t_c \gamma\right)$. Making the low frequency, nearly Keplerian
+approximations with the replacement $D\to \Omega_k^2$ gives, in terms
+of dimensionless variables,
 \begin{align}
    &\delta v_z ^{\prime\prime} + \left[1 + \ii\epsilon q\hat{k} -
     \frac{ \hat{k}^2}{
@@ -183,9 +185,9 @@ variables,
   -\hat{\sigma}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
 \end{align}   
 Eq. \ref{adia_diso3} differs from Eq. \ref{vertiso_gov_nondim} by terms
-proportional to $\epsilon^2$. For a thin disk, $\epsilon\ll1$, so
-neglecting these terms has no qualitative effect on the discussion in 
-\S\ref{analytic_relax}. 
+proportional to $\epsilon^2$. For a thin disk ($\epsilon\ll1$) with
+$|q|=O(1)$, as considered in this work, neglecting these terms has no
+qualitative effect on the discussion in \S\ref{analytic_relax}. 
 
 \section{Coefficients for the dispersion relation for perturbations
 with thermal relaxation}\label{relax_coeff}
@@ -236,11 +238,11 @@ $|\hat{\omega}\khat|$ remain constant but consider $\khat\gg 1$ so
 that $|\hat{\omega}|\ll 1$.  Then for a thin disk $\epsilon \ll 1$
 we neglect the second, fourth and last term in Eq. \ref{relax_cond1};
 and neglect the last three terms in Eq. \ref{relax_cond2}. This
-procedure gives Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2},
+approximation gives Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2},
 but is not valid if $\beta$ or $|q|$ is large. 
 
 For the fundamental mode $M=0$ and Eq. \ref{relax_cond1} ---
-\ref{relax_cond2} simply significantly. It is then straight
+\ref{relax_cond2} simplify significantly. It is then straight
 forward to eliminate $\hat{\omega}\khat$ between 
 Eq. \ref{relax_cond_simp1} and \ref{relax_cond_simp2} to obtain
 $\beta_\mathrm{crit}$ (Eq. \ref{iso_vsi_cond}) without
@@ -305,8 +307,8 @@ In this case Eq. \ref{ode_Q} becomes
 (i.e. $\delta P = c_s^2\delta \rho$), and so $  \ii\hat{\sigma}c_s\delta v_z = W^\prime $
 from Eq. \ref{lin_vz}. For isothermal perturbations it is in fact
 simpler to work with an equation for $W$ by substituting $Q=W$ into
-Eq. \ref{ode_w}. In this case, we shall not yet make the low-frequency
-approximation, but first make the nearly-Keplerian approximation. We
+Eq. \ref{ode_w}. In this case, we shall not yet make the low frequency
+approximation, but first make the nearly Keplerian approximation. We
 obtain, in terms of dimensionless variables, 
 \begin{align}
   0 = W^{\prime\prime} + \left[\ln\rho^\prime - \frac{\ii \epsilon q \hat{k} f(\zhat)
@@ -320,11 +322,11 @@ where for discussion purposes we have defined $f(\zhat)$ such that
 By comparing Eq. \ref{fz_shear} with Eq. \ref{vertical_shear_ex}, we
 see that $f(\zhat)= 
 \zhat\left(1+\epsilon^2\zhat^2\right)^{-3/2}$. More generally, though,
-$f$ may be considered as a representation of the vertical
+$f$ may be regarded as a representation of the vertical
 shear profile. Physically, we expect there is a maximum value of 
-$|d\Omega/dz|$. The existence of a maximum, as remarked in
-\S\ref{vshear_def}, limits the growth rate of the VSI. We explicitly
-demonstrate this below.    
+$|d\Omega/dz|$, the existence of which should limit the growth rate of
+the VSI,  as remarked in \S\ref{vshear_def}. We explicitly demonstrate
+this below.     
 
 \subsection{Stability conditions in the low-frequency limit}
 In the low-frequency limit we assume $|\hat{\sigma}|\ll 1$ and
@@ -349,9 +351,9 @@ decaying background density with increasing height. Then,
   +\ii \epsilon q \hat{k}\int_{\zhat_1}^{\zhat_2}\rho f(\zhat) W^*W^\prime d\zhat.\label{integral_relation1}
 \end{align}
 It follows that for instability ($\imag\hat{\sigma}>0$), it is necessary to
-have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. vertical
-shear. A similar conclusion can be reached in the equivalent linear  
-problem in global cylindrical disk geometry. 
+have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. there must
+be vertical shear. A similar conclusion can be reached in the
+equivalent linear problem in global cylindrical disk geometry.  
 
 \subsubsection{Maximum growth rate}\label{max_growth1}
 Here we show that the growth rate is limited by the maximum vertical
@@ -441,7 +443,7 @@ results.
 \subsection{Explicit solutions in the thin-disk limit}\label{iso_explicit}
 Here we assume a thin disk ($\epsilon\ll1$) so that $\ln\rho\simeq
 -\zhat^2/2$ and $f(\zhat)\simeq \zhat$. However, we do not assume 
-low-frequency from the onset. Then Eq. \ref{iso_ode0} becomes 
+low frequency from the onset. Then Eq. \ref{iso_ode0} becomes 
 \begin{align}\label{iso_ode3}
   W^{\prime\prime} - \left(1 + \frac{\ii q\epsilon \hat{k}}{1-\hat{\sigma}^2}\right)\hat{z}W^\prime  +
   \hat{\sigma}^2\left(1+\frac{\hat{k}^2}{1-\hat{\sigma}^2}\right)W = 0.

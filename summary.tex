@@ -1,6 +1,6 @@
 \section{Summary and discussion}\label{summary}
 In this paper we have studied the  axisymmetric vertical shear
-instability (VSI) in astrophysical disks that arises from the
+instability (VSI) in astrophysical disks that arise from the
 height dependence of the equilibrium angular velocity profile
 $\Omega=\Omega(r,z)$ in a baroclinic disk. We examined how
 the linear instability depends on disk thermodynamics and applied our
@@ -11,8 +11,9 @@ We generalized previous vertically global linear
 calculations of the VSI \citep{nelson13,mcnally14}, which assumed isothermal
 perturbations, to include an energy equation. Our effort may also be
 regarded as an extension of \cite{urpin03}, which did include an
-energy equation, by relaxing the Boussinesq and vertically local
-approximations adopted in that analysis.      
+energy equation, but adopted the Boussinesq and vertically local
+approximations. We considered vertically global and fully
+compressible perturbations. 
 
 We included a source term in the energy equation which relaxes the disk
 temperature to its initial value on a timescale
@@ -27,21 +28,13 @@ perturbations with small radial lengthscales, we applied the
 radially local approximation in the linearized fluid equations. For
 analytic discussion only, we further simplified the linear problem by
 ignoring the background radial disk structure. This is equivalent to adopting
-the `vertically-global shearing box' (VGSB) formalism developed by
-\cite{mcnally14}. % who showed the linear VSI studied by
-% \cite{nelson13} in a locally isothermal disk can be captured by the
-% VGSB. 
-We find the VGSB framework is appropriate for non-isothermal
-perturbations provided $\beta\lesssim1$.  This is convenient because
+the `vertically global shearing box' (VGSB) formalism developed by
+\cite{mcnally14}. 
+We find the VGSB framework is appropriate for analyzing the VSI because 
 rapid thermal relaxation ($\beta\ll1$) is 
-generally required for the VSI.  However, the VGSB framework is not
+generally required for the instability.   However, the VGSB framework is not
 appropriate in the adiabatic limit ($\beta \gg 1$). 
    
-%OK framework for the regime of interest 
-% The presence of a
-% vertical shear, but 
-% is not consistent with the
-% global 
 
 We mostly focused on vertically isothermal disks ($\Gamma=1$) as 
 this is the relevant case for protoplanetary disks that are passively irradiated by its central star 
@@ -79,8 +72,7 @@ disk parameters.  We find the fundamental mode is robust against
 boundary conditions, and higher order modes are more rapidly
 stabilized with increasing $\beta$. 
 
-We briefly studied vertically non-isothermal disks using our linear 
-code. We confirm the finding by \cite{nelson13} that in the absence
+We briefly studied vertically non-isothermal disks. We confirm the finding by \cite{nelson13} that in the absence
 of vertical entropy gradients, the VSI does not require rapid thermal
 relaxation.  When a stable stratification is introduced, the
 rapid reduction in VSI growth rates by a finite thermal relaxation
@@ -93,7 +85,7 @@ non-isothermal disks.
 %application to MMSN 
 
 We applied our linear models to assess the applicability of the VSI in
-protoplanetary disks. We considered the Minimum Mass Solar Nebulae
+protoplanetary disks. We considered the Minimum Mass Solar Nebula 
 (MMSN) described in \cite{chiang10} and   
 modeled the thermal relaxation timescale $\beta$ based on realistic
 disk properties and dust opacity. This results in a $\beta$ function that
@@ -103,7 +95,7 @@ from $\sim 5$AU to $\sim50$AU with characteristic growth times of
 $\sim 30$ orbits. Although $\beta$ is not vertically constant in the
 MMSN as assumed in our analysis, we find that evaluating the condition
 $\beta <\beta_\mathrm{crit}$ at the disk midplane gives a rough measure of the
-radii at which the VSI operates in the MMSN. This simple criteron is
+radii at which the VSI operates in the MMSN. This simple criterion is
 thus a useful first step to estimate the relevance of the VSI in
 realistic astrophysical disks without resorting to non-linear
 numerical simulations.  
@@ -141,15 +133,15 @@ overstability does not apply because
 $N_r^2>0$.   
 
 For more general disk structures convective overstability is
-possible. The models adopted for our numerical study in
+possible in principle. The models adopted for our numerical study in
 \S\ref{numerical} do satisfy $N_r^2<0$, but convective overstability
-requires considering perturbations with long radial lengthscales,
+require perturbations with long radial lengthscales,
 $\khat\ll 1$, for which radially global disk models would be more 
-appropriate.  
+self-consistent. 
 
 \subsubsection{Improved thermal evolution} 
 We assumed non-adiabatic effects
-can be represented by a thermal relaxation or cooling timescale $t_c$. For 
+can be represented by a thermal relaxation timescale $t_c$. For 
 application to protoplanetary disks we connected $t_c$ to the disk
 properties. One can improve the realism further by generalizing the 
 opacity model adopted here to be density (and hence height) dependent. 
@@ -157,8 +149,8 @@ opacity model adopted here to be density (and hence height) dependent.
 %% \kappa_d(\rho, T)$. 
 However, going beyond thermal relaxation requires a
 proper treatment of radiative diffusion. The linear problem then
-involves a Laplacian operator, which require additional boundary
-conditions. We will consider these improvements in a
+involves a Laplacian operator and additional boundary
+conditions must be supplemented. We will consider these improvements in a
 follow-up study. %additional heat source 
  
 \subsubsection{Additional physics} 
