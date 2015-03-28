@@ -85,7 +85,8 @@
   $t_c=\beta\Omega_k^{-1}$, where $\beta$ is a dimensionless parameter 
   and $\Omega_k$ is the Keplerian rotation frequency. We explore how
   the VSI depends on the thermodynamic response of the disk by
-  varying $\beta$. We find increasing $\beta$ even slightly away from 
+  varying $\beta$. We find that in a stably stratified disk,
+  increasing $\beta$ even slightly away from    
   zero dramatically reduce VSI growth rates. 
   For vertically isothermal disks, we quantify the
   `short' thermal timescale requirement for the VSI as $\beta < \epsilon|q|/(\gamma-1)$, where
@@ -132,65 +133,69 @@ generally expected that $\p_z\Omega\neq 0$ in astrophysical disks.
 The VSI can be regarded as the disk analog of the
 Goldreich-Schubert-Fricke instability 
 \citep[GSF,][]{goldreich67,fricke68} in differentially rotating stars.   
-The height-dependence of $\Omega$, or vertical shear, enables
-perturbations with large vertical length-scales (relative to radial 
-length-scales) to become unstable. \cite{umurhan13} gives a simple
-interpretation for the VSI: an exchange of fluid parcels while
-conserving their angular momenta individually, may result in a new
-configuration of lower energy, if the exchange occurs over a
-sufficiently large vertical displacement. In practice, the VSI
-corresponds to unstable inertial waves.  
-%inertial waves 
-%history 
+The height-dependence of $\Omega$, or vertical shear, can render
+inertial waves unstable. \cite{barker15} gives a simple 
+interpretation of the VSI: in an axisymmetric inviscid disk, the 
+exchange of fluid parcels vertically, while conserving their specific angular
+momentum, can result in a new configuration of lower energy if the
+distribution of specific angular momentum varies with $z$. The VSI is
+characterized by perturbations with large vertical length-scales
+(relative to radial length-scales). 
 
-The VSI has been studied analytically in local approximation
-\citep{urpin98,urpin03}.  Numerical simulations of the  
-VSI have been performed by \cite{arlt04}, and more recently by 
-\cite{nelson13} and \cite{stoll14}. In these new simulations the authors
-indeed observe the growth of vertically global but radially localized
-perturbations when the equilibrium rotation varied with height.   
+Early analysis of the VSI in radially and vertically local 
+models of accretion disks \citep{urpin98,urpin03} showed that the VSI
+requires a short thermal timescale so that perturbations evolve 
+isothermally, unless the disk is neutrally stratified in the vertical
+direction. This is because vertical motions associated with the VSI
+are stabilized by buoyancy forces if the disk is sub-adiabatically
+stratified (convectively stable). A sufficiently short thermal
+timescale renders buoyancy ineffective.    
 
-An important finding from these works is that the VSI requires a short
-thermal timescale: perturbations need to be close to
-isothermal, unless the disk is neutrally stratified in the vertical
-direction. This is because vertical motions, required for the VSI, are stabilized by
-buoyancy if the disk is sub-adiabatically stratified for
-convective stability. When the thermal timescale $t_c$ is parametrized
-in units of the orbital period $P_\mathrm{orb}$, \cite{nelson13} find that
-$t_c\lesssim 0.01P_\mathrm{orb}$ was needed to observe instability. That is, the
-disk temperature essentially needs to remain unchanged during its
-evolution. This was further supported with radiation hydrodynamic
-simulations by \cite{stoll14}, who find the VSI is only sustained with
-the inclusion of heating from stellar irradiation, which resulted in
-an effective thermal timescale $t_c\ll P_\mathrm{orb}$. 
+The need for a short thermal timescale in stably stratified disks has
+been demonstrated in numerical simulations of the VSI
+\citep{nelson13,stoll14}. When the  thermal timescale $t_c$ is
+parametrized in units of the orbital period  $P_\mathrm{orb}$,
+\cite{nelson13} find that $t_c\lesssim  0.01P_\mathrm{orb}$ was needed
+to observe the VSI. That is, the  disk temperature needs to remain
+effectively unchanged. Radiation hydrodynamic simulations performed by
+\cite{stoll14} also showed that the VSI is only sustained with the
+inclusion of heating from stellar irradiation, which results in an
+effective thermal timescale $t_c\ll P_\mathrm{orb}$ that maintains a
+fixed temperature profile.     
 
-From these studies it is clear that the VSI is sensitive to
-the thermodynamic response of the disk if it is stably
-stratified. Since the latter is usually assumed for typical disk models,  
-it is important to understand and quantify said thermodynamic dependence,
-for example on disk parameters, in order to evaluate the relevance of
-the VSI in realistic disks. Should a given disk become turbulent
-through the VSI, it must first pass through the
-linear instability. Thus, understanding the thermodynamic dependence
-of the linear VSI is essential. 
+Given that the VSI is generally sensitive to disk thermodynamics,  
+it is important to understand and quantify this dependence, for
+example on disk parameters, in order to evaluate the 
+relevance of the VSI to realistic disks, in which one may expect
+non-zero vertical entropy gradients and thermal timescales. Should a
+given disk become turbulent through the VSI, it must first pass
+through the linear instability. Thus, understanding the thermodynamic
+dependence of the  linear VSI is essential.   
 
-In this work we study the linear VSI in radially local,
-vertically global models of astrophysical disks. We include an energy
-equation with a source term that allows the thermodynamic response of
-perturbations to be varied smoothly between isothermal and adiabatic. Our
-formulation generalizes previous linear calculations of the 
-VSI carried out by \cite{nelson13} and \cite{mcnally14} which assume
-isothermal perturbations and therefore did not include an energy
-equation. Our models are also an extension of earlier 
-analysis by \cite{urpin98} and \cite{urpin03}, which accounts for thermal
-evolution, but considered vertically localized disturbances. Our 
-vertically global approach is necessary to study disturbances with
-vertical wavelengths comparable to or larger than the disk scale
-height. Such disturbances were  found by \cite{nelson13} and
-\cite{stoll14} to dominate their numerical simulations.  We thus focus
-on vertically global perturbations which, in fact, we find to be the
-dominant mode in protoplanetary disks with a realistic estimate for
-the thermodynamic timescales. 
+In this work we study the linear VSI in radially local, vertically
+global models of astrophysical disks. This approach has
+been adopted in recent studies of the linear VSI
+\citep{nelson13,mcnally14,barker15}. However, these studies consider 
+isothermal perturbations, for which the thermal timescale is formally
+zero, and/or neutrally stratified disks in which the stabilizing
+effect of bouyancy is absent. We account for both effects to study the
+VSI in more general disk models. To do so, we examine 
+sub-adiabatically stratified disks and include an energy equation 
+with a source term that allows the thermodynamic response of 
+perturbations to be varied smoothly between isothermal and 
+adiabatic.   
+
+% Our models are also an extension of earlier 
+% analysis by \cite{urpin98} and \cite{urpin03}, which accounts for thermal
+% evolution, but considered vertically localized disturbances.
+% Our 
+% vertically global approach is necessary to study disturbances with
+% vertical wavelengths comparable to or larger than the disk scale
+% height. Such disturbances were found by \cite{nelson13} and
+% \cite{stoll14} to dominate their numerical simulations. We thus focus
+% on vertically global perturbations which, in fact, we find to be the
+% dominant mode in protoplanetary disks with a realistic estimate for
+% the thermodynamic timescales. 
 
 This paper is organized as follows. In \S\ref{setup} we list the
 governing equations and global equilibrium disk models under
