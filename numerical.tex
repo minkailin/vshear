@@ -42,11 +42,27 @@ decreases slightly away from the mid-plane.
   }
 \end{figure}
 
+
+
+
 \subsection{VSI with rapid thermal relaxation}\label{vertiso_pertiso} 
 We first calculate the VSI in a disk with rapid thermal relaxation by
-setting $\beta=10^{-3}$. (Smaller values yield similar results.) This
-is similar to strictly isothermal perturbations in a vertically
-isothermal disk considered in \cite{nelson13} and \cite{mcnally14}. 
+setting $\beta=10^{-3}$. (Smaller values yield similar results.) 
+This setup mimics strictly isothermal perturbations in a vertically
+isothermal disk, as considered by \cite{nelson13}, \cite{mcnally14} and
+\cite{barker15}. %Note, however, that \citeauthor{nelson13} and
+% \citeauthor{barker15} employed the  approximations described in \S\ref{analytical} throughout their analysis, which are relaxed in our
+% numerical study.  
+For completeness we review this case before considering the effect of
+thermal relaxation.  
+
+%  In particular, we focus
+% on results most relevant to our eventual application to protoplanetary disks. 
+
+% The reader is referred
+% to the above works for a detailed look at different VSI modes. Here,
+% we present selected results most relevant to our eventual application
+% to protoplanetary disks. 
 
 Fig. \ref{iso_eigen_kx} compares the numerically obtained eigenvalues 
 for the fundamental mode and that calculated from 
@@ -54,7 +70,7 @@ Eq. \ref{simple_growth}. We find good agreement in the
 wave frequency $\omega$ at all $\khat$ and in growth rates $\nu$ for
 $\khat\gtrsim 10$. Growth rates are over-estimated by our analysis but 
 are $O(\epsilon\Omega_k)$, which is consistent with the discussion in
-Appendix \ref{max_growth1}. The match in $\nu$ worsens for
+Appendix \ref{max_growth1}. The match in $\nu$ worsens for 
 decreasing $\khat$ due to the neglect of global radial structure in
 the analysis. Nevertheless, given the number of approximations made
 in our analysis, the agreement is satisfactory. 
@@ -76,17 +92,17 @@ in our analysis, the agreement is satisfactory.
   }
 \end{figure}
 
-With rapid thermal relaxation, growth rates are expected to diminish
-for both $\khat\to 0$ and $\khat\to \infty$. This is because for
-$\khat\ll 1$ the radial wavelength is large, but such disturbances are 
-stabilized by by epicyclic motions ($|\omega|\sim
-\kappa$). Disturbances with $\khat\gg 1$ are radially localized, but  
-there is no energy change when fluid elements are perturbed at fixed
-cylindrical radius whilst conserving its angular momentum (applicable
-to axisymmetric perturbations).  
- 
+% With rapid thermal relaxation, growth rates are expected to diminish
+% for both $\khat\to 0$ and $\khat\to \infty$. This is because for
+% $\khat\ll 1$ the radial wavelength is large, but such disturbances are 
+% stabilized by by epicyclic motions ($|\omega|\sim
+% \kappa$). Disturbances with $\khat\gg 1$ are radially localized, but  
+% there is no energy change when fluid elements are perturbed at fixed
+% cylindrical radius whilst conserving its angular momentum (applicable
+% to axisymmetric perturbations).
+
 Fig. \ref{lowfreq_eigenfunc} plots the eigenfunctions $W$ and $\delta 
-v_z$ for the fundamental mode with $\khat=10$ (i.e. the mode with
+v_z$ for the fundamental mode with $\khat=10$ (which has the 
 maximum growth rate in Fig. \ref{iso_eigen_kx}). We find $W\propto z$
 throughout most of the disk, corresponding to a constant vertical
 velocity perturbation, as expected for the fundamental mode (see
@@ -129,7 +145,7 @@ stratification.
 
 
 \subsubsection{Case study: $\khat=10$}
-In Fig. \ref{compare_modes_iso_kx10} we plot eigenvalues of unstable 
+In Fig. \ref{compare_modes_iso_kx10} we plot eigenvalues of all unstable 
 modes with $\khat=10$. Black dots correspond to our fiducial setup. 
 We also plot other calculations with different
 vertical boundary conditions: rigid boundary and $\zmax=5H$ (red
@@ -144,12 +160,16 @@ the analytic lines have larger growth rates, but require larger
 vertical domains, since they have increasing number of nodes  $z$.  
 
 The `tail' end of modes with decreasing $\nu$ to the right of
-Fig. \ref{compare_modes_iso_kx10} is not predicted by our 
-analysis. They have lower growth rates than modes consistent with our
-analysis (i.e. those along the lines). These modes differ significantly between
-cases and are thus likely associated with boundary conditions. % We do
-                                % not consider them  
-                                % further.  
+Fig. \ref{compare_modes_iso_kx10} are in fact also unstable inertial modes, like those
+along the analytic lines, but are strongly affected by the presence of 
+the imposed vertical boundaries \citep{barker15}. 
+
+% They have lower growth rates than modes consistent with our
+% analysis (i.e. those along the lines). These modes differ significantly between
+% cases and are thus likely associated with boundary conditions. 
+% We do
+% not consider them  
+% further.  
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx10_analytic.ps}
@@ -168,26 +188,35 @@ cases and are thus likely associated with boundary conditions. % We do
   }
 \end{figure}
 
-\subsubsection{Comment on `surface modes'}\label{surf_comment}
+\subsubsection{Comment on `surface modes'}\label{surf_comment} 
 Our fiducial setup with $\khat=10$ in 
-Fig. \ref{compare_modes_iso_kx10} (black dots) differs to that from
-\cite{nelson13} and \cite{mcnally14} in the lack of `surface modes'. 
-These modes lie almost parallel to the vertical axis in mode 
-diagrams such as Fig. \ref{compare_modes_iso_kx10}. We find them for 
-sufficiently large $\zmax$ and/or $\khat$. 
+Fig. \ref{compare_modes_iso_kx10} (black dots)  lack `surface modes'
+found by \cite{nelson13}, \cite{mcnally14}  and 
+by \cite{barker15}.  We illustrate this with the mode
+diagram for $\khat=30$ in Fig. \ref{compare_modes_iso_kx30}. Surface
+modes lie almost parallel to the vertical axis
+in such diagrams. They are readily identified for  $\zmax\geq 5H$ and
+are marked by `s'.  We typically find an increasing
+number of them with increasing $\zmax$ and/or $\khat$,
+consistent with \cite{barker15}. 
+ 
+As explained by \cite{barker15}, the occurence of surface modes in the
+vertically isothermal disk is due to imposing a finite vertical domain
+size. The fastest growing mode is typically a surface mode, if they
+exist, but their association with vertical boundaries means that
+$\mathrm{max}(\nu)$ depends on the choice of $\zmax$. Thus, the
+vertically isothermal disk is not useful for studying surface modes. 
+%Thus, seeking the most unstable mode in a vertically isothermal disk
+%may not yield robust results because this 
 
-To illustrate this, we plot the mode diagram for $\khat=30$ in  
-Fig. \ref{compare_modes_iso_kx30} with different boundary 
-conditions. Surface modes are readily identified for 
-$\zmax\geq 5H$ and are marked by `s'. They have the largest growth
-rates but require sufficiently large vertical domain size and their
-eigenvalues vary with $\zmax$.   
+We will see in the next section that surface modes, as well
+as other higher order modes, are more effectively stabilized by finite
+thermal relaxation than the fundamental mode. Since we are primarily
+interested in characterizing a maximum thermal timescale that allows
+the VSI, we can focus on the fundamental mode. For a detailed analysis of 
+surface modes, see \cite{barker15}. 
 
-Due to their dependence on boundary conditions, we do not consider
-surface modes further in detail, which have
-already been discussed in the aforementioned studies. In fact, we will
-see in the next section that surface modes are more effectively
-stabilized by finite thermal relaxation than the fundamental mode. 
+%refer the reader to BL15 for surface modes 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx30_analytic.ps}
@@ -195,7 +224,6 @@ stabilized by finite thermal relaxation than the fundamental mode.
     marked by `s'. \label{compare_modes_iso_kx30}
   }
 \end{figure}
-
 
 \subsection{Effect of thermal relaxation}\label{therm_relax_eff}
 We now consider the effect of finite thermal relaxation by increasing 
