@@ -436,13 +436,79 @@ thermal timescale of $\sim 0.1$ orbits.
 \end{figure}
 
 \subsection{Vertically non-isothermal disks} 
+%We briefly consider vertically non-isothermal disks in which there is
+%a disk surface at finite height. 
+\cite{barker15} have argued that vertically isothermal disks are not
+ideal for studing the VSI because $\zmax$ is a free
+parameter in numerical calcluations. On the other hand, vertically
+non-isothermal 
+disks have a disk surface at finite height so there is a natural
+choice for $\zmax$. This means that higher order modes
+and surface modes are better defined in a vertically non-isothermal
+disk. However, note that this issue is unimportant for low order modes 
+such as the fundamental mode, which are not sensitive to boundary
+conditions.   
 
+Here we briefly consider a vertically non-isothermal disk model with  
+$(p,q,\epsilon)=(0,-1,0.05)$ and $\Gamma=1.0837$. This value of 
+$\Gamma$ is chosen so that the standard vertical domain size $\zmax =
+5H$ effectively corresponds to the disk surface ($\zmax\simeq
+H_s$). The disk temperature decreases rapidly with height such that 
+$c_s(\zmax)\simeq 10^{-4}c_s(0)$.    
 
+In Fig. \ref{compare_modes_vnoniso_kx10} we plot the mode diagram for
+$\khat=10$ for several values of $\beta$. This plot is
+qualitatively similar to Fig. \ref{compare_modes_cool_kx10}. As before
+we find as $\beta$ is increased, higher order modes are rapidly
+stabilized, eventually only the fundamental mode can operate before
+the VSI is entirely stabilized.  
 
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  0cm]{figures/compare_modes_Gam1.084_kx10.ps}
+  \caption{Unstable modes in a vertically non-isothermal disk with
+    $\khat=10$ and a range of thermal relaxation timescales.  
+    \label{compare_modes_vnoniso_kx10}}
+\end{figure}
 
+We do not find surface modes for $\khat=10$. In the vertically
+non-isothermal disk, surface modes develop for sufficiently large 
+$\khat$ \citep{barker15}. We demonstrate them in
+Fig. \ref{compare_modes_vnoniso_kx100} which show eigenvalues for
+$\khat=100$. While growth rates generally decrease with increasing 
+$\beta$, we find eigenvalues can overlap, making it difficult to 
+distinguish between different modes. However, since there 
+is a well-defined surface, we may seek the 
+most unstable mode without the boundary-dependent issue that would
+arise in a vertically isothermal disk. 
 
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  0cm]{figures/compare_modes_Gam1.084_kx100.ps}
+  \caption{Same as Fig. \ref{compare_modes_vnoniso_kx10} but with
+    $\khat=100$. In this case surface modes appear and are readily identified for
+    $\beta=10^{-3}$ and nearly
+    parallel to the vertical axis
+    \label{compare_modes_vnoniso_kx100}}
+\end{figure}
 
-% We briefly consider vertically non-isothermal disks with 
+Fig. \ref{compare_eigenvz_vnoniso_kx100}
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.73cm 0cm
+  0cm]{figures/eigenvectorvz_vnoniso_kx100_beta0d001.ps}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.73cm 0cm
+  0cm]{figures/eigenvectorvz_vnoniso_kx100_beta0d01.ps}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  0cm]{figures/eigenvectorvz_vnoniso_kx100_beta0d1.ps}
+  \caption{Vertical velocity eigenfunction of the most unstable mode
+    with $\khat=100$ found in the vertically non-isothermal disk with
+    $\beta = 10^{-3}$ (top), $\beta=10^{-2}$ (middle) and $\beta=0.1$
+    (bottom). 
+    \label{compare_eigenvz_vnoniso_kx100}}
+\end{figure}
+  
+  % We briefly consider vertically non-isothermal disks with 
 % $\Gamma=1.4$ and $(p,q,\epsilon)=(0,-1,0.05)$ as simulated in
 % \cite{nelson13}. In this case we set $\zmax=0.99H_s$.  
 
