@@ -28,7 +28,7 @@ package to solve.
 Unless otherwise stated, our fiducial disk parameters are 
 $(\gamma, \Gamma) = (1.4, 1.011)$, $(p,q,\epsilon)=(-1.5,-1,0.05)$, and 
 vertical domain size $\zmax=5H$. This setup is effectively vertically
-isothermal since $c_s(\zmax) \simeq 0.9c_s(0)$. In Fig. \ref{omega_z}
+isothermal since $c_s^2(\zmax) \simeq 0.9c_s^2(0)$. In Fig. \ref{omega_z}
 we plot the corresponding equilibrium rotation profile, which shows
 that $\Omega$ decreases slightly away from the midplane.   
 
@@ -52,7 +52,7 @@ isothermal disk, as considered by \cite{nelson13}, \cite{mcnally14} and
 % numerical study.  
 For completeness, and as a way of introducing terminology, 
 we review this case before considering the effect of 
-thermal relaxation. A more detailed analysis is given by \cite{barker15}.   
+thermal relaxation. %A more detailed analysis is given by \cite{barker15}.   
 
 % Fig. \ref{iso_eigen_kx} compares the numerically obtained eigenvalues 
 % for the fundamental mode and that calculated from 
@@ -374,11 +374,13 @@ very small scale disturbances will likely be subject to viscous decay
 resolve such small scales.  
 
 \begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0.9cm]{figures/gcorr_compare_iso_maxrate_z3}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0.9cm]{figures/gcorr_compare_iso_maxrate_z5}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0.9cm]{figures/gcorr_compare_iso_maxrate_z7} 
-  \caption{Maximum VSI growth rates in the fiducial disk
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm 0.9cm]{figures/gcorr_compare_iso_maxrate_z7} 
+  \caption{Maximum VSI growth rates in the fiducial disk 
      model as a function of the thermal relaxation timescale
-     $\beta$. The vertical line is the
+     $\beta$, for $\zmax=3H$ (top), $\zmax=5H$ (middle, standard
+     setup) and $\zmax=7H$ (bottom). The vertical line is the
      critical thermal timescale $\beta_\mathrm{crit}$ obtained  
      from Eq. \ref{iso_vsi_cond}. 
      \label{bcrit_compare1}}   
@@ -451,7 +453,7 @@ $(p,q,\epsilon)=(0,-1,0.05)$ and $\Gamma=1.0837$. This value of
 $\Gamma$ is chosen so that the standard vertical domain size $\zmax =
 5H$ effectively corresponds to the disk surface ($\zmax\simeq
 H_s$). The disk temperature decreases rapidly with height such that 
-$c_s(\zmax)\simeq 10^{-4}c_s(0)$.    
+$c_s^2(\zmax)\simeq 10^{-4}c_s^2(0)$.    
 
 In Fig. \ref{compare_modes_vnoniso_kx10} we plot the mode diagram for
 $\khat=10$ for several values of $\beta$. This plot is 
