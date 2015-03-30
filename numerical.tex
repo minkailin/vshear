@@ -4,18 +4,18 @@ corresponding to Eq. \ref{lin_mass}---\ref{lin_energy}.
 We relax the  low-frequency, nearly-Keplerian and thin-disk 
 approximations used in the analytical discussion above. We 
 use the full expressions of $\rho$, $\Omega$ and 
-$\kappa$ and $c_s$ given in \S\ref{eqm}. We also set $\hat{g}_c=1$ to  
+$\kappa$ and $c_s$ given in \S\ref{eqm}. We also set $\hat{g}_c=1$ to   
 account for the background radial disk structure.  
 
-We solve the linear problem by expanding the
+We solve the linear problem by expanding the 
 perturbations in Chebyshev polynomials $T_l$ up to $l=512$
 and discretizing the equations on a grid with
 $z\in[-\zmax,\zmax]$. Our standard boundary conditions at the vertical
-boundaries is a free surface, 
+boundaries is a free surface,  
 \begin{align}
   \Delta P \equiv \delta P + \bm{\xi}\cdot\nabla P= 0 \quad \text{at } z=\pm\zmax,
 \end{align}
-%note that there are g_c terms in the boundary condition
+% note that there are g_c terms in the boundary condition
 where $\bm{\xi}$ is the Lagrangian displacement with meridional 
 components $\xi_{x,z} = \ii\delta v_{x,z}/\sigma$. In some cases we
 impose a rigid boundary at which $\delta v_z=0$. 
@@ -25,12 +25,12 @@ converts the linear system of differential equations to a set of
 algebraic equations, for which we use matrix routines in the LAPACK
 package to solve. 
 
-Unless otherwise stated, our fiducial disk model is a nearly 
-vertically isothermal disk with $\Gamma=1.011$, stable
-stratification $\gamma=1.4$, $(p,q,\epsilon)=(-1.5,-1,0.05)$, and 
-vertical domain size $\zmax=5H$. In Fig. \ref{omega_z} we plot the
-corresponding equilibrium rotation profile, which shows that $\Omega$
-decreases slightly away from the mid-plane.  
+Unless otherwise stated, our fiducial disk parameters are 
+$(\gamma, \Gamma) = (1.4, 1.011)$, $(p,q,\epsilon)=(-1.5,-1,0.05)$, and 
+vertical domain size $\zmax=5H$. This setup is effectively vertically
+isothermal since $c_s(\zmax) \simeq 0.9c_s(0)$. In Fig. \ref{omega_z}
+we plot the corresponding equilibrium rotation profile, which shows
+that $\Omega$ decreases slightly away from the midplane.   
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
@@ -52,7 +52,7 @@ isothermal disk, as considered by \cite{nelson13}, \cite{mcnally14} and
 % numerical study.  
 For completeness, and as a way of introducing terminology, 
 we review this case before considering the effect of 
-thermal relaxation.  
+thermal relaxation. A more detailed analysis is given by \cite{barker15}.   
 
 % Fig. \ref{iso_eigen_kx} compares the numerically obtained eigenvalues 
 % for the fundamental mode and that calculated from 
@@ -93,23 +93,22 @@ thermal relaxation.
 
 \subsubsection{Case study: $\khat=10$}
 In Fig. \ref{compare_modes_iso_kx10} we plot eigenvalues of unstable 
-modes with $\khat=10$. Black dots correspond to our fiducial setup. 
-We also plot results obtained with different
+modes with $\khat=10$. Black dots correspond to our fiducial setup.  
+We also plot results obtained with different 
 vertical boundary conditions: rigid boundary and $\zmax=5H$ (red
 crosses),  free surface and $\zmax = 3H$ (blue triangles), free surface
 and $\zmax=7H$ (green crosses). 
 
 The modes shown in Fig. \ref{compare_modes_iso_kx10} are inertial
 waves made unstable by vertical shear and have been termed `body
-modes' \citep{barker15}.  The `fundamental corrugation mode', marked by `f',
+modes' by \cite{barker15}.  The `fundamental corrugation mode', marked by `f',
 corresponds to the eigenvalue with the smallest $|\sigma|$. Hereafter
-we will simply refer to this as the fundamental mode. The
-fundamental mode is robust against vertical boundary conditions 
-as it appears at the same position in
-Fig. \ref{compare_modes_iso_kx10} for all cases. Higher  
+we will simply refer to this as the fundamental mode, and it is robust
+against vertical boundary conditions as it appears at the same
+position in Fig. \ref{compare_modes_iso_kx10} for all cases. Higher  
 order modes, corresponding to increasing $|\omega|$, increasingly
 deviates from the analytic line due to the imposed boundaries, 
-unless the vertical domain  size is increased \citep{barker15}. 
+unless $\zmax$ is increased \citep{barker15}. 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx10_analytic.ps}
@@ -130,7 +129,7 @@ unless the vertical domain  size is increased \citep{barker15}.
 
 For later comparison, we plot in Fig. \ref{lowfreq_eigenfunc} the 
 eigenfunctions $W$ and $\delta   v_z$ for the fundamental mode. We also show a 
-meridional visualization in Fig. \ref{lowfreq_eigenfunc_2d}. The $x$ axis is
+meridional visualization in Fig. \ref{lowfreq_eigenfunc_2d}. The $x$ axis is 
 stretched for clarity; radial velocities are in fact typically much 
 smaller than vertical velocities. Most of the meridional kinetic energy is
 contained within $\sim 2H$ of the midplane due to the density 
@@ -143,9 +142,9 @@ stratification.
   1cm]{figures/eigenvectorvz_iso}
   \caption{Pseudo-enthalpy perturbation $W$ (top) and vertical velocity
     perturbation $\delta v_z$ of the fundamental VSI with 
-    $\khat=10$ in the fiducial disk with $\beta=10^{-3}$. The real 
-    (imaginary) parts of $W$ and $\delta v_z$ are plotted as solid
-    (dotted) lines. 
+    $\khat=10$ in the fiducial disk with rapid thermal relaxation $\beta=10^{-3}$. The real  
+    (imaginary) parts of $W$ and $\delta v_z$ are plotted as solid 
+    (dotted) lines.  
     \label{lowfreq_eigenfunc}
   }
 \end{figure}
@@ -167,30 +166,34 @@ stratification.
 
 \subsubsection{Comment on `surface modes'}\label{surf_comment} 
 Fig. \ref{compare_modes_iso_kx10} lack `surface modes' found by 
-\cite{nelson13}, \cite{mcnally14}  and by \cite{barker15}.  These are
-a class of unstable modes associated with vertical shear near the disk
-boundaries. 
+\cite{nelson13}, \cite{mcnally14}  and \cite{barker15}. 
+This a class of unstable modes associated with vertical shear near the
+disk boundaries \citep{barker15}. They are also absent in our  
+analysis because there we assumed a disk with infinite 
+vertical extent, as the vertically isothermal disk has no
+surface. However, surface modes can occur in the present calculations 
+because there is an imposed vertical boundary.   
 
-We illustrate surface modes with the mode
-diagram for $\khat=30$ in Fig. \ref{compare_modes_iso_kx30}. Surface
+We illustrate surface modes with the mode diagram for $\khat=30$ in
+Fig. \ref{compare_modes_iso_kx30}. Surface 
 modes lie almost parallel to the vertical axis
 in such diagrams. They are readily identified for  $\zmax\geq 5H$ and
 are marked by `s'.  Fig. \ref{lowfreq_eigenfunc_surf} shows an example
-of a surface mode in the fiducial disk. We typically find an increasing
+of a surface mode. We typically find an increasing
 number of surface modes with increasing $\zmax$ and/or $\khat$,
 consistent with \cite{barker15}. 
  
-As explained by \cite{barker15}, the occurence of surface modes 
-occurence in the vertically isothermal disk is due to imposing a
-finite vertical domain size. The fastest growing mode is a surface
-mode, if they exist, but their association with vertical boundaries
-means that $\mathrm{max}(\nu)$ depends on the choice of $\zmax$.   
-We refer the reader to \citeauthor{barker15} for a
-detailed analysis of surface modes. 
+As explained by \cite{barker15}, while surface modes have a physical
+origin, their occurence in the vertically isothermal disk is due to
+imposing a finite vertical domain size. The fastest growing mode is a
+surface mode, if they exist, but their association with vertical
+boundaries means that $\mathrm{max}(\nu)$ depends on the choice of
+$\zmax$. This has important implications when interpreting results
+obtained from the vertically isothermal disk model. We return to this
+issue later.    
 
-
-% Thus, the
-% vertically isothermal disk is not useful for studying surface modes. 
+%Thus, the
+%vertically isothermal disk is not useful for studying surface modes. 
 %Thus, seeking the most unstable mode in a vertically isothermal disk
 %may not yield robust results because this 
 
@@ -210,33 +213,33 @@ detailed analysis of surface modes.
   }
 \end{figure}
 
-
 \subsection{Effect of thermal relaxation}\label{therm_relax_eff}
 We now consider the effect of finite thermal relaxation by increasing 
-$\beta$. Note that for the fiducial disk model the critical thermal 
-timescale $\beta_\mathrm{crit} = 0.125$.  
-
+$\beta$. % Note that for the fiducial disk model the critical thermal 
+% timescale $\beta_\mathrm{crit} = 0.125$.
 Fig. \ref{compare_modes_cool_kx10} show unstable modes with $\khat=10$ 
 and $\beta\in[0.01,0.1]$. In addition to our fiducial setup with 
 $\zmax=5H$, we also plot results for $\zmax=3H$, $\zmax=7H$ and 
 analytic results computed from Eq. \ref{relax_disp}.  %analytic
-                                %results for low order modes
+% results for low order modes 
 
 We find the number of unstable modes decrease with increasing
 $\beta$. Consider the fiducial setup with $\zmax=5H$ 
 (middle panel). The fundamental mode ($M=0$) is not the most unstable for   
 $\beta=0.01$ as there are modes with $M>0$ that have larger growth 
-rates. However, by comparing with results for $\zmax=3H$, we see that these
-higher order modes are strongly influenced by boundary conditions, and
-there is a significant mismatch between numerical and analytical
-results for $\zmax=3H$ for $M>1$.   
+rates. As remarked above, these higher order modes are affected by
+$\zmax$, e.g. there is a significant mismatch between numerical and 
+analytical results for $M\geq1$ when $\zmax=3H$ (upper panel). 
+
+%However, by comparing with results for $\zmax=3H$, we see that 
 
 However, the fundamental mode becomes dominant for $\beta \geq 
-0.03$. Higher order modes, with larger growth rates at small $\beta$,
-are more effectively stabilized with increasing $\beta$. For
-$\beta=0.1$, which is close to $\beta_\mathrm{crit}$, we only find the
-fundamental mode. This is consistent with the discussion in 
-\S\ref{iso_vsi_beta_crit}.    
+0.03$. Higher order modes, which would be dominant at small $\beta$, 
+are more effectively stabilized with increasing $\beta$. For 
+$\beta=0.1$, which is close to the critical thermal timescale
+$\beta_\mathrm{crit} (=0.125$ for the fiducial disk
+parameters), we only find the fundamental mode. This is consistent with
+the discussion in \S\ref{iso_vsi_beta_crit}.    
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -337,9 +340,9 @@ conditions as they are absent for $\zmax=3H$.
   timescale}\label{bcrit_num_test}
 In Fig. \ref{bcrit_compare1} we plot the maximum VSI growth rates
 found in the fiducial disk model as a function of the thermal
-relaxation timescale $\beta$ for several values of $\khat$. 
-We also plot the critical timescale $\beta_\mathrm{crit}=0.125$ for
-the fiducial disk parameters.   
+relaxation timescale $\beta$ for several values of $\khat$ and
+$\zmax$. We also plot the critical timescale
+$\beta_\mathrm{crit}=0.125$ for the fiducial disk parameters.   
 
 Note that the curves are not neccessarily smooth because the most unstable
 mode may not always correspond to the same type of disturbance. For example,
@@ -348,36 +351,32 @@ dominant as $\beta\to 0$, but the fundamental corrugation
 mode becomes dominant as $\beta$ is increased. For $\khat=1$ the VSI
 can operate slightly beyond $\beta_\mathrm{crit}$  (recall that
 $\beta_\mathrm{crit}$ was derived assuming $\khat^2\gg 1$). For
-$\khat=5,\,10$ we find $\beta_\mathrm{crit}$ accurately predicts the
-thermal timescal beyond which the VSI is suppressed.  
+$\khat=5,\,10$ (and $30$ for $\zmax=3H$), we find
+$\beta_\mathrm{crit}$ accurately predicts the thermal timescal beyond
+which the VSI is suppressed.   
 
 Complications from vertical boundaries arise when considering large
-$\khat$. For $\khat=30$ we find for $\beta\gtrsim 0.1$ the dominant
-disturbance correspond to the leftmost eigenvalues
+$\khat$. For $\khat=30$ and $\zmax=5H,\,7H$ we find for $\beta\gtrsim
+0.1$ the dominant disturbance correspond to the leftmost eigenvalues
 seen in the lower two panels of Fig. \ref{compare_modes_cool_kx30},
-which depend on $\zmax$. For $\khat=50,\,100$ we find surface modes
-dominate.   
+which do not exist for $\zmax=3H$. For $\khat=50,\,100$ we find
+surface modes dominate.   
 
 Our result is consistent with numerical simulations performed by
 \cite{nelson13} for which a thermal relaxation timescale $\beta\gtrsim
 0.6$ stabilized the VSI; as Fig. \ref{bcrit_compare1} show that growth
-rates for $\beta\gtrsim 0.6$ are small. One might consider 
-$\khat > 100$ to increase the maximum growth rate (note that the most unstable
-mode for large $\khat$ are typically surface modes), but in a realistic disk
+rates for $\beta\gtrsim 0.6$ are small. To destablize the disk with
+$\beta\gtrsim O(1)$, one might consider 
+$\khat > 100$ to increase the maximum growth rate by enabling surface
+modes, but in a realistic disk
 very small scale disturbances will likely be subject to viscous decay
-(\S\ref{application}). Numerical simulations are also unlikely to
+(see \S\ref{application}). Numerical simulations are also unlikely to
 resolve such small scales.  
 
-As pointed out by \cite{barker15} surface modes
-only appear in vertically isothermal disks when vertical boundaries
-are imposed, so they are strongly dependent on $\zmax$.  Thus, seeking
-the most unstable mode in a vertically isothermal disk may not yield
-robust results because such modes, which are often surface modes, may
-depend on boundary conditions. 
-
 \begin{figure}
-   \includegraphics[width=\linewidth]{figures/gcorr_compare_iso_maxrate} 
-   \caption{Maximum VSI growth rates in the fiducial disk
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0.9cm]{figures/gcorr_compare_iso_maxrate_z5}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm 0.9cm]{figures/gcorr_compare_iso_maxrate_z7} 
+  \caption{Maximum VSI growth rates in the fiducial disk
      model as a function of the thermal relaxation timescale
      $\beta$. The vertical line is the
      critical thermal timescale $\beta_\mathrm{crit}$ obtained  
@@ -385,28 +384,26 @@ depend on boundary conditions.
      \label{bcrit_compare1}}   
  \end{figure} 
 
-Despite this caveat, and that surface modes are not accounted in our
-analysis,  we see from Fig. \ref{bcrit_compare1} that 
-$\beta_\mathrm{crit}$ nevertheless provides a reasonable estimate for
-an upper limit to the thermal timescale for the VSI. We further 
-test the dependence of $\beta_\mathrm{crit}$ on disk parameters
+As pointed out by \cite{barker15}, in vertically isothermal disks with
+an imposed boundary, surface modes are dependent on $\zmax$, but they
+are often the most unstable. Despite this caveat, and that surface
+modes are not accounted in our analysis, we see from
+Fig. \ref{bcrit_compare1} that $\beta_\mathrm{crit}$ nevertheless
+provides a reasonable estimate for an upper limit to the thermal
+timescale for the VSI. 
+%It becomes an accurate criter when considering fixed
+%$\khat$  
+
+We further  test the dependence of $\beta_\mathrm{crit}$ on disk parameters
 (Eq. \ref{iso_vsi_cond}).  We use the fiducial setup as a  reference
 point and vary $q\in[-0.2,-1.2]$,  $\gamma\in[1.2,2.0]$, and
-$\epsilon\in[0.02,0.1]$ separately. 
-
-% We consider the fundamental
-% corrugation mode for which $\beta_\mathrm{crit}$ is the actual critical
-% thermal timescale. 
-% We use $\khat=10$ to avoid complications to our
-% eigenvalue search from surface modes.  
-
-The numerically obtained $\beta_\mathrm{crit}$ are shown in
-Fig. \ref{bcrit_compare} in comparison with Eq. \ref{iso_vsi_cond},
-which generally agree. This result, together with 
-Fig. \ref{bcrit_compare1}, shows that 
-$\beta \lesssim \beta_\mathrm{crit}$ is a practical condition under  
-which the VSI will operate effectively in stably stratified,
-vertically isothermal disks.  
+$\epsilon\in[0.02,0.1]$ separately. The numerically obtained
+$\beta_\mathrm{crit}$ are shown in Fig. \ref{bcrit_compare} in
+comparison with Eq. \ref{iso_vsi_cond}, which generally agree. This
+result, together with Fig. \ref{bcrit_compare1}, shows that  
+$\beta \lesssim \beta_\mathrm{crit}$ can be used as a practical
+criteria for the VSI to operate effectively in stably stratified,
+vertically isothermal disks.   
 
 % The agreement improves with decreasing  $|q|$,
 % $\epsilon$ and increasing $\gamma$, i.e. weaker instability. There is
@@ -436,13 +433,18 @@ vertically isothermal disks.
 \cite{barker15} have argued that vertically isothermal disks are not
 ideal for studing the VSI because $\zmax$ is a free
 parameter in numerical calcluations. On the other hand, vertically
-non-isothermal 
-disks have a disk surface at finite height so there is a natural
-choice for $\zmax$. This means that higher order modes
-and surface modes are better defined in a vertically non-isothermal
-disk. However, note that this issue is unimportant for low order modes 
-such as the fundamental mode, which are not sensitive to boundary
-conditions.   
+non-isothermal disks have a disk surface at finite height so there is
+a natural choice for $\zmax$. This means that higher order body modes and
+surface modes are better defined in a vertically non-isothermal disk.   
+
+% However, note that this issue is unimportant for low order modes 
+% such as the fundamental mode, which are not sensitive to boundary
+% conditions. This is useful because when the fundamental mode is
+% stabilized as $\beta$ is increased, higher order modes will have
+% already been stabilized, the the growth rate of surface modes also
+% significantly reduced. Then as far as a characteristic upper limit to
+% the thermal timescale is conconcered, we may just consider the
+% fundamental mode. 
 
 Here we briefly consider a vertically non-isothermal disk model with  
 $(p,q,\epsilon)=(0,-1,0.05)$ and $\Gamma=1.0837$. This value of 
@@ -452,9 +454,9 @@ H_s$). The disk temperature decreases rapidly with height such that
 $c_s(\zmax)\simeq 10^{-4}c_s(0)$.    
 
 In Fig. \ref{compare_modes_vnoniso_kx10} we plot the mode diagram for
-$\khat=10$ for several values of $\beta$. This plot is
+$\khat=10$ for several values of $\beta$. This plot is 
 qualitatively similar to Fig. \ref{compare_modes_cool_kx10}. As before
-we find as $\beta$ is increased, higher order modes are rapidly
+we find as $\beta$ is increased, higher order body modes are rapidly
 stabilized, eventually only the fundamental mode can operate before
 the VSI is entirely stabilized.  
 
@@ -474,22 +476,27 @@ $\khat=100$. While growth rates generally decrease with increasing
 $\beta$, we find eigenvalues can overlap, making it difficult to 
 distinguish between different modes. However, since there 
 is a well-defined surface, we may seek the 
-most unstable mode without the boundary-dependent issue that would
-arise in a vertically isothermal disk. 
+most unstable mode without the boundary-dependent issue that arose 
+with a vertically isothermal disk.  
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
   0cm]{figures/compare_modes_Gam1.084_kx100.ps}
   \caption{Same as Fig. \ref{compare_modes_vnoniso_kx10} but with
-    $\khat=100$. In this case surface modes appear and are readily identified for
-    $\beta=10^{-3}$ and nearly
-    parallel to the vertical axis
+    $\khat=100$. In this case surface modes appear nearly parallel to
+    the vertical axis
+    (cf. Fig. \ref{compare_modes_vnoniso_kx10}). However, this
+    distinction becomes difficult for increasing $\beta$ as modes
+    overlap. 
+    % but
+    % overlap with body modes (those that are roughly horizontal when 
+    % $\beta=10^{-3}$) as $\beta$ is further increased. 
     \label{compare_modes_vnoniso_kx100}}
 \end{figure}
 
 Fig. \ref{compare_eigenvz_vnoniso_kx100} show the most unstable modes
 with $\khat=100$ and $\beta=10^{-3},\, 10^{-2}$ and
-$0.1$. At such large $\khat$, we find with $\beta=10^{-3}$ the most
+$0.1$. We find with $\beta=10^{-3}$ the most 
 unstable mode is an asymmetric surface mode \citep[also seen in Fig. 7
 of][]{barker15}. However, increasing the thermal timescale to
 $\beta=10^{-2}$ an anti-symmetric surface mode becomes
@@ -513,13 +520,16 @@ the stabilizing effect of buoyancy is largest at the disk surface.
     \label{compare_eigenvz_vnoniso_kx100}}
 \end{figure}
   
-Fig. \ref{bcrit_compare2} plots the maximum VSI growth rates in the
-vertically non-isothermal disk model.  Based on
+Finally, in Fig. \ref{bcrit_compare2} we plot the maximum VSI growth
+rates in the vertically non-isothermal disk model.  Based on 
 Eq. \ref{iso_vsi_cond}, we conjecture a critical
 thermal timescale given by $\epsilon|s|/(\gamma - \Gamma)$. This
 evaluates to 0.158, which is close to the cut-off thermal timescale
 for $\khat\in[5,30]$. Fig. \ref{bcrit_compare2} is qualitatively quite
-similar to the fiducial disk in  Fig. \ref{bcrit_compare1}. 
+similar to the fiducial disk model in 
+Fig. \ref{bcrit_compare1}. Importantly, the maximum thermal
+timescale for $\khat=O(10)$ in fact provides a 
+characteristic upper limit for other values of $\khat$.  
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/gcorr_compare_vnoniso_maxrate} 
@@ -527,7 +537,7 @@ similar to the fiducial disk in  Fig. \ref{bcrit_compare1}.
     model as a function of the thermal relaxation timescale
     $\beta$. The vertical line is a conjectured 
     critical thermal timescale given by
-    $\epsilon|s|/(\gamma-\Gamma)$.  
+    $\epsilon|s|/(\gamma-\Gamma)=0.158$.  
     \label{bcrit_compare2}}   
 \end{figure} 
 

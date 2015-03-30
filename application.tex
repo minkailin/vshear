@@ -17,10 +17,9 @@ One should now model in detail each of the terms on the RHS of
 Eq. \ref{real_energy}, linearize them, then solve 
 the resulting linear eigenvalue problem. This is beyond 
 the scope of the present work. Here, we take the simpler approach of
-modeling the linearized RHS of Eq. \ref{real_energy} such that it can 
-be represented by a thermal relaxation time $t_c$. 
-To do so, we first consider separately perturbations
-with radial lengthscales $l\gg l_\mathrm{rad}$ and  
+representing the linearized RHS of Eq. \ref{real_energy} by a thermal
+relaxation time $t_c$. To do so, we first consider separately
+perturbations with radial lengthscales $l\gg l_\mathrm{rad}$ and  
 $l\ll l_\mathrm{rad}$, where      
 \begin{align}\label{lrad}
   l_\mathrm{rad} \equiv \frac{1}{\kappa_d\rho} 
@@ -53,7 +52,8 @@ Eq. \ref{diff_cool_proper} and write
     c_v}k_x^2P\left(\frac{\delta T}{T}\right)\notag\\
   &\equiv -\eta k_x^2 \left(\delta P - \frac{P}{\rho}\delta\rho\right), 
 \end{align}
-where $\eta=k_\mathrm{rad}/\rho c_v$ is the diffusion coefficient and
+\citep[see also][]{barker15} where $\eta=k_\mathrm{rad}/\rho c_v$ is
+the diffusion coefficient and 
 is given in terms of physical disk parameters as 
 \begin{align}\label{eta_def}
   \eta = \frac{16\sigma_s T^3}{3\kappa_d\rho^2 c_v}, 
@@ -78,8 +78,8 @@ independent of $k_x$. For simplicity, we take
 We note that $t_\mathrm{cool}$ does not explicitly depend on $\rho$. 
 
 \subsection{A model for combined thermal relaxation}\label{toy_relax}
-To unify $t_\mathrm{cool}$ and $t_\mathrm{diff}$, we define the
-effective thermal relaxation timescale in linear theory as
+%To unify $t_\mathrm{cool}$ and $t_\mathrm{diff}$, 
+We define the effective thermal relaxation timescale in linear theory as
 \begin{align}\label{tc_def}
   t_c &\equiv t_\mathrm{cool} + t _\mathrm{diff}. %=
   % \frac{l_\mathrm{rad}^2}{3\eta} + \frac{1}{\eta k_x^2},  
@@ -154,7 +154,7 @@ optically thin atmosphere.
 %Given a fixed $\khat$, one can have $\beta > \beta_\mathrm{crit}$ at
 %the optically thick midplane, but with increasing height the disk 
 %becomes optically thin and $\beta<\beta_\mathrm{crit}$. 
-Our analytical criteria is not valid for variable $\beta$, and we must
+Our analytical criteria is not valid for non-uniform $\beta$, and we must
 turn to numerical solutions of the linear problem to determine whether
 or not the VSI operates. We do this in the next section.   
  
@@ -190,12 +190,15 @@ restricted to larger radii.
     \label{mmsn_bcrit_bcool}}   
 \end{figure*}  
 
-We remark that it is possible to satisfy $\beta < \beta_\mathrm{crit}$
-for sufficiently large $\khat$. We
-illustrate this in Fig. \ref{mmsn_bcrit_bcool_mink} by plotting at 
-each radius the value of $\khat$ such  
-that $\beta = \beta_\mathrm{crit}$. We thus expect that the VSI would only
-occur on very small radial scales in the inner disk. 
+We remark that it is possible to satisfy $\beta < \beta_\mathrm{crit}$ 
+for sufficiently large $\khat$. We illustrate this in 
+Fig. \ref{mmsn_bcrit_bcool_mink} by plotting at each radius the value
+of $\khat$ such that $\beta = \beta_\mathrm{crit}$, which show that in
+the inner disk, say $r\sim 1$AU, the VSI would only occur on very
+small radial lengthscales. 
+%surface modes can develop for large $\khat$, 
+%which have small vertical lengthscales scales. 
+%also small vertical scales if they are surface modes 
 
 However, disturbances with large $\khat$ may be subject to viscous
 decay in a real disk. The viscous timescale for a perturbation lengthscale 
@@ -214,11 +217,10 @@ VSI, see][]{nelson13}.
   \includegraphics[width=\linewidth]{figures/bcrit_mink} 
   \caption{The minimum perturbation wavenumber $\khat$ in
     the MMSN such that the associated dimensionless thermal
-    relaxation time  $\beta$ at $z=0$ (solid) and $z=3H$ (dashed) is
+    relaxation time $\beta$ at $z=0$ (solid) and $z=3H$ (dashed) is
     less than the critical timescale $\beta_\mathrm{crit}$.   
     \label{mmsn_bcrit_bcool_mink}}   
 \end{figure}  
-
 
 \subsection{VSI in the MMSN}
 Here we solve the linear stability problem in the MMSN with the scale and
@@ -232,7 +234,7 @@ corresponding critical thermal timescales evaluated for the MMSN
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
   0cm]{figures/beta_compare}
   \caption{Thermal relaxation timescales in the MMSN at $r=50$AU
-     and $r=5$AU for $\khat=30$ (solid lines). The
+    and $r=5$AU for $\khat=30$ (solid lines). The
     corresponding horizontal dashed lines are the critical thermal
     relaxation timescales derived in linear theory. 
     \label{beta_compare}}
@@ -250,21 +252,26 @@ described below.
 In Fig. \ref{mmsn_overall} we plot characteristic growth timescales
 $t_\mathrm{grow} \equiv 1/\nu$ of the fundamental mode with a range of
 wavenumbers, in units of the local orbital time $P_\mathrm{orb}\equiv
-2\pi/\Omega_k$.  In fact, we either only find the fundamental mode, or
-that it is the most unstable, except for the appearance of some
-surface modes towards the inner disk when considering large
-wavenumbers $\khat\gtrsim 50$. However,
-surface modes are affected by boundary conditions and disturbances
-with large $\khat$ are more likely subject to viscous decay, as
-discussed above. The dominance of the fundamental mode is also
-observed in hydrodynamic simulations of \cite{stoll14} which treat
-radiative cooling properly.   
+2\pi/\Omega_k$. In fact, we either only find the fundamental mode, or 
+that it is the most unstable, except for the appearance of some 
+surface modes towards the inner disk when considering large 
+wavenumbers $\khat\gtrsim 50$. However, surface modes are dependent on
+boundary conditions in a vertically isothermal disk \citep{barker15},  
+and disturbances with large $\khat$ are more likely subject to viscous
+decay, as discussed above. % It is also unclear if surface modes are
+% dynamically important given they are concentrated in the disk
+% atmosphere where the density is small. 
+% The dominance of the fundamental mode is also
+% observed in hydrodynamic simulations of \cite{stoll14} which treat
+% radiative cooling properly.   unclear if surface modes are
+% dynamically important because the there is little mass in the disk at
 
-We can therefore consider Fig. \ref{mmsn_overall} as a representation of the
+We therefore consider Fig. \ref{mmsn_overall} as a representation of the
 VSI in the MMSN. We see the VSI operates from $\sim 5$AU to $\sim
-50$AU with growth timescales $\sim 30$---40 orbits. It is necessary to
-consider smaller scales with decreasing $r$ as the disk generally becomes
-optically thick, and growth times rise rapidly towards the inner disk. 
+50$AU with growth timescales $\sim 30$---40 orbits and
+$t_\mathrm{grow}$ rises rapidly towards the inner disk. It is
+necessary to consider smaller scales with decreasing $r$ as the disk
+generally becomes optically thick.  
 
 The fact that we obtain the VSI in the inner disk despite $\beta >
 \beta_\mathrm{crit}$ near the midplane suggests that the instability
@@ -275,6 +282,8 @@ $t_\mathrm{grow}\sim 40$ orbits at $r=50$AU, but $t_\mathrm{grow}\sim
 400$ orbits at $r=5$AU. Thus, introducing an optically thick midplane
 significantly reduces the efficiency of the VSI despite $\beta <
 \beta_\mathrm{crit}$ away from the midplane. 
+
+%surface modes may develop for large kx, they are not affected 
 
 We thus find Fig. \ref{mmsn_overall} to be roughly consistent with
 comparing the midplane thermal relaxation timescales to the critical
