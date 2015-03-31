@@ -91,22 +91,21 @@
   zero dramatically reduce VSI growth rates. 
   For vertically isothermal disks, we quantify the
   `short' thermal timescale requirement for the VSI as $\beta < \epsilon|q|/(\gamma-1)$, where
-  $\epsilon$ is the disk aspect-ratio, $q = \p\ln T/\p\ln r$  is the radial temperature gradient ($r$
-  being the cylindrical radius from the central star), and 
+  $\epsilon$ is the disk aspect-ratio, $q = \p\ln T/\p\ln r$  is the radial temperature gradient, and 
   $\gamma$ is the adiabatic index. 
   We apply our results  
   to a disk model of the Minimum Mass Solar Nebula (MMSN) with an  
   estimate for the thermal timescale $\beta$ in the MMSN based on dust
   opacity. In the inner parts of the MMSN, e.g. at $\lesssim 5$AU, 
-  the VSI will neccessarily have extremely short lengthscales $\ll 
-  O(10^{-2}H)$, where $H$ is the disk scale height. In the outer disk, 
-  we find the MMSN is unstable to the VSI from $\sim 5$AU to $\sim
-  50$AU with a characteristic lengthscale $O(10^{-2}H)$ to
-  $O(10^{-1}H)$ and a growth time of $\sim 30$ local orbital periods.  
+  we find the VSI would only operate on extremely short lengthscales $\ll 
+  O(10^{-2}H)$, where $H$ is the disk scale height. On longer
+  lengthscales $O(10^{-2}H)$ to $O(10^{-1}H)$, we find the MMSN is
+  unstable to the VSI from $\sim 5$AU to $\sim 50$AU with a
+  characteristic growth time of $\sim 30$ local orbital periods.  
   % ,and the dominant VSI mode in the MMSN is the `fundamental
   % corrugation mode' which causes the disk column to oscillate
   % vertically.
-  We thus suggest the VSI is dynamically important, at least in the 
+  We thus suggest the VSI is at least dynamically important in the 
   outer parts of protoplanetary disks at tens of AU. 
 \end{abstract}
 
@@ -122,14 +121,17 @@ angular momentum outwards and thus enables mass accretion.
 However, MHD turbulence may not be applicable to all  
 accretion disks. For example, there may be regions in protoplanetary  
 disks (PPDs) which do not support the MRI 
-\citep{gammie96,landry13}. In fact, recent  numerical simulations
+\citep{gammie96,landry13}. In fact, recent MHD simulations
 suggest significant portions of PPDs remain laminar \citep[e.g.][and references
-therein]{lesur14,bai15,gressel15}. Thus, alternative routes 
-to angular momentum transport in PPDs remain of interest
-\citep{armitage10}. 
- 
-One possibility is purely hydrodynamic turbulence through the vertical
-shear instability (VSI). The VSI is an axisymmetric linear instability
+therein]{lesur14,bai15,gressel15}. Thus, alternative mechanisms 
+to angular momentum transport in PPDs, such as purely hydrodynamic
+turbulence,  remain of interest \citep{armitage10}. In addition to
+mass accretion, hydrodynamic turbulence in PPDs will also
+impact dust evolution and planetesimal formation \citep{chiang10}. 
+
+One possible route to hydrodynamic turbulence is the vertical shear
+instability (VSI). The VSI is an 
+axisymmetric linear instability 
 in three-dimensional (3D) disks in which the rotation frequency
 $\Omega$ depends on the height $z$ from the disk midplane. This
 dependence occurs when the equilibrium pressure depends on both the
@@ -139,26 +141,28 @@ generally expected that $\p_z\Omega\neq 0$ in astrophysical disks.
 The VSI can be regarded as the disk analog of the
 Goldreich-Schubert-Fricke instability 
 \citep[GSF,][]{goldreich67,fricke68} in differentially rotating stars.   
-The height-dependence of $\Omega$, or vertical shear, can render
+A height-dependence in $\Omega$, or vertical shear, can render
 inertial waves unstable. \cite{barker15} gives a simple 
 interpretation of the VSI: in an axisymmetric inviscid disk, the 
 exchange of fluid parcels vertically, while conserving their specific angular
 momentum, can result in a new configuration of lower energy if the
 distribution of specific angular momentum varies with $z$. The VSI is
-characterized by perturbations with large vertical length-scales
-(relative to radial length-scales). 
+characterized by perturbations with large vertical length-scales 
+relative to radial length-scales.  
 
 Early analysis of the VSI in radially and vertically local 
 models of accretion disks \citep{urpin98,urpin03} showed that the VSI
 requires a short thermal timescale so that perturbations evolve 
 isothermally, unless the disk is neutrally stratified in the vertical
-direction. This is because vertical motions associated with the VSI
+direction. This is because
+vertical motions associated with the VSI 
 are stabilized by buoyancy forces if the disk is sub-adiabatically
 stratified (convectively stable). A sufficiently short thermal
 timescale renders buoyancy ineffective.    
+%efficient exchang of heat with surroundings 
 
-The need for a short thermal timescale in stably stratified disks has
-been demonstrated in numerical simulations of the VSI
+The need for a short thermal timescale for the VSI to operate in
+stably stratified disks has been demonstrated in recent numerical simulations 
 \citep{nelson13,stoll14}. When the  thermal timescale $t_c$ is
 parametrized in units of the orbital period  $P_\mathrm{orb}$,
 \cite{nelson13} find that $t_c\lesssim  0.01P_\mathrm{orb}$ was needed
@@ -169,14 +173,32 @@ inclusion of heating from stellar irradiation, which results in an
 effective thermal timescale $t_c\ll P_\mathrm{orb}$ that maintains a
 fixed temperature profile.     
 
-Given that the VSI is generally sensitive to disk thermodynamics,  
-it is important to understand and quantify this dependence, for
-example on disk parameters, in order to evaluate the 
-relevance of the VSI to realistic disks, in which one may expect
-non-zero vertical entropy gradients and thermal timescales. Should a
-given disk become turbulent through the VSI, it must first pass
-through the linear instability. Thus, understanding the thermodynamic
-dependence of the  linear VSI is essential.   
+These studies show that the VSI is generally sensitive to disk
+thermodynamics. It is thus important to quantify this dependence, for
+example on disk parameters, in order to evaluate the relevance of the
+VSI to realistic disks, which one may expect to be stably
+stratified and have non-zero thermal timescales. For example, we show in  
+Fig. \ref{bcrit_mmsn2d} an estimate of the thermal timescales in a
+typical protoplanetary disk model (see below). In order to determine
+where in the disk the VSI may operate, and hence lead to hydrodynamic
+turbulence, understanding the thermodynamic dependence of the linear VSI is essential. 
+% since the transition
+% Should a disk
+% become turbulent through the VSI, it must first pass through the linear
+% instability.
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  0cm]{figures/bcrit_mmsn2d} 
+  \caption{Estimate of the thermal timescale  in a fiducial
+    protoplanetary disk model, the Minimum Mass Solar Nebula, for
+    perturbations with radial lengthscales $\sim 10^{-2}H$, where $H$
+    is the disk scale-height. The red line corresponds to a 
+    characteristic thermal timescale, derived in this work, 
+    below which the VSI is expected to operate effectively. 
+    \label{bcrit_mmsn2d} 
+  }
+\end{figure}
 
 In this work we study the linear VSI in radially local, vertically
 global models of astrophysical disks. This approach has
@@ -190,6 +212,10 @@ sub-adiabatically stratified disks and include an energy equation
 with a source term that allows the thermodynamic response of 
 perturbations to be varied smoothly between isothermal and 
 adiabatic.   
+
+
+
+
 
 % Our models are also an extension of earlier 
 % analysis by \cite{urpin98} and \cite{urpin03}, which accounts for thermal
@@ -213,15 +239,15 @@ isothermal disks. Our treatment is grossly simplified owing to a
 number of approximations made, but closely parallels previous work and 
 allows us to highlight the essential effects of vertical shear. In
 particular, we quantify a characteristic upper limit to the thermal
-timescale for the VSI to operate. In \S\ref{numerical} we numerically
+timescale for the VSI. In \S\ref{numerical} we numerically
 solve the linear problem in the radially local approximation, but
 relax all other approximations made in our analytical approach.    
 We find basic agreement with our analysis, including
 the aforementioned characteristic thermal timescale. In
-\S\ref{application} we apply our linear models to the Minimum Mass
-Solar Nebula (MMSN) by modeling thermal relaxation
-timescales based on realistic disk properties, and find that the VSI may
-operate in the outer parts of the MMSN. We summarize in
+\S\ref{application} we apply our results to the Minimum Mass
+Solar Nebula (MMSN) by modeling thermal 
+timescales based on realistic disk properties, and find that the VSI
+can operate effectively in the outer parts of the MMSN. We summarize in
 \S\ref{summary} with a discussion of caveats and possible directions
 for future work.  
 
