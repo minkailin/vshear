@@ -99,7 +99,7 @@ and $\zmax=7H$ (green crosses).
 
 The modes shown in Fig. \ref{compare_modes_iso_kx10} are `body modes'
 and are inertial waves destabilized by vertical shear
-\citep{barker15}. (The possible exception being the fastest growing
+\citep{barker15}. (The exception being the fastest growing
 mode for $\zmax=7H$ which is a surface mode --- see the discussion
 below.)  The `fundamental corrugation mode', marked by `f',
 corresponds to the eigenvalue with the smallest $|\sigma|$. It is robust
@@ -293,20 +293,30 @@ perturbations seen in Fig. \ref{lowfreq_eigenfunc_2d_cool}
   }
 \end{figure}
 
-In Fig. \ref{compare_modes_cool_kx30} we plot eigenvalues for unstable
+%presence of buoyancy forces at the boundary may make BC more
+%influential 
+
+In Fig. \ref{compare_modes_cool_kx30} we plot eigenvalues for unstable 
 modes with $\khat=30$. For clarity, we only plot analytic results 
-for the fundamental mode ($M=0$) and $M=1,\,2$, and omit the
-squares. The fundamental mode is again insensitive boundary
-conditions compared to higher order modes, and are in close agreement
-with analytic results. As before we observe more effective
-stabilization for higher order modes, including the absence of surface
-modes (which only occur for $\zmax\geq 5H$) as $\beta$ is increased.  
-For $\zmax=3H$, the fundamental mode becomes dominant for $\beta\geq
-0.03$. For $\zmax=5H$ and $\zmax=7H$, we
+for the fundamental mode ($M=0$) and $M=1,\,2$, and omit the 
+squares. The fundamental mode is again insensitive to $\zmax$ and are
+in close agreement with analytic results. However, 
+there is increasing mismatch between analytical and numerical results
+for higher order modes as $\beta$ is increased. This suggests that, in
+the presence of buoyancy, boundary effects become important for these
+modes, which have larger $\khat$ than that considered previously. For
+example, for $\zmax=5H$ and $\zmax=7H$, we 
 find modes slightly more unstable than the fundamental
 mode even when $\beta=0.1$ (the leftmost eigenvalues in the lower two
-panels), but these are clearly associated with boundary
+panels), but these are clearly affected by boundary
 conditions as they are absent for $\zmax=3H$. 
+
+Nevertheless, as before we observe more effective stabilization for
+higher order modes, including the absence of surface modes, for
+example as $\beta$ is increased from $0.01$ to $0.03$ (for $\zmax\geq
+5H$). If we discard modes associated with boundary conditions, then
+the fundamental mode would again become the dominant mode as $\beta$ is
+increased. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -355,10 +365,16 @@ which the VSI is suppressed.
 
 Complications from vertical boundaries arise when considering large
 $\khat$. For $\khat=30$ and $\zmax=5H,\,7H$ we find for $\beta\gtrsim
-0.1$ the dominant disturbance correspond to the leftmost eigenvalues
+0.1$ the dominant disturbance correspond to the leftmost eigenvalues 
 seen in the lower two panels of Fig. \ref{compare_modes_cool_kx30},
-which do not exist for $\zmax=3H$. For $\khat=50,\,100$ we find
-surface modes dominate.   
+which do not exist for $\zmax=3H$. For $\khat=50,\,100$ and
+$\beta\to0$, we find surface modes dominate so the maximum growth rate
+depends on $\zmax$. However, the maximum growth rate is sensitive to
+$\zmax$ for moderately large $\beta$ ($\gtrsim 0.1$), i.e. close to
+the stabilization of the fundamental mode. 
+%not surprising since we enable strongly stabilizing buoyancy forces
+%at large zmax 
+
 
 Our result is consistent with numerical simulations performed by
 \cite{nelson13} for which a thermal relaxation timescale $\beta\gtrsim
