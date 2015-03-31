@@ -1,8 +1,8 @@
 \section{Numerical solutions}\label{numerical}
 In this section we numerically solve the linear stability problem
 corresponding to Eq. \ref{lin_mass}---\ref{lin_energy}. 
-We relax the  low-frequency, nearly-Keplerian and thin-disk 
-approximations used in the analytical discussion above. We 
+We relax the  low-frequency, Keplerian and thin-disk 
+approximations used in the analytical discussion above and 
 use the full expressions of $\rho$, $\Omega$ and 
 $\kappa$ and $c_s$ given in \S\ref{eqm}. We also set $\hat{g}_c=1$ to   
 account for the background radial disk structure.  
@@ -46,10 +46,8 @@ that $\Omega$ decreases slightly away from the midplane.
 We first calculate the VSI in a disk with rapid thermal relaxation by
 setting $\beta=10^{-3}$. (Smaller values yield similar results.) 
 This setup mimics strictly isothermal perturbations in a vertically
-isothermal disk, as considered by \cite{nelson13}, \cite{mcnally14} and
-\cite{barker15}. %Note, however, that \citeauthor{nelson13} and
-% \citeauthor{barker15} employed the  approximations described in \S\ref{analytical} throughout their analysis, which are relaxed in our
-% numerical study.  
+isothermal disk, already considered by \cite{nelson13}, \cite{mcnally14} and
+\cite{barker15}. 
 For completeness, and as a way of introducing terminology, 
 we review this case before considering the effect of 
 thermal relaxation. %A more detailed analysis is given by \cite{barker15}.   
@@ -99,11 +97,12 @@ vertical boundary conditions: rigid boundary and $\zmax=5H$ (red
 crosses),  free surface and $\zmax = 3H$ (blue triangles), free surface
 and $\zmax=7H$ (green crosses). 
 
-The modes shown in Fig. \ref{compare_modes_iso_kx10} are inertial
-waves made unstable by vertical shear and have been termed `body
-modes' by \cite{barker15}.  The `fundamental corrugation mode', marked by `f',
-corresponds to the eigenvalue with the smallest $|\sigma|$. Hereafter
-we will simply refer to this as the fundamental mode, and it is robust
+The modes shown in Fig. \ref{compare_modes_iso_kx10} are `body modes'
+and are inertial waves destabilized by vertical shear
+\citep{barker15}. (The possible exception being the fastest growing
+mode for $\zmax=7H$ which is a surface mode --- see the discussion
+below.)  The `fundamental corrugation mode', marked by `f',
+corresponds to the eigenvalue with the smallest $|\sigma|$. It is robust
 against vertical boundary conditions as it appears at the same
 position in Fig. \ref{compare_modes_iso_kx10} for all cases. Higher  
 order modes, corresponding to increasing $|\omega|$, increasingly
@@ -165,12 +164,12 @@ stratification.
 \end{figure}
 
 \subsubsection{Comment on `surface modes'}\label{surf_comment} 
-Fig. \ref{compare_modes_iso_kx10} lack `surface modes' found by 
+Fig. \ref{compare_modes_iso_kx10} lack the distinct `surface modes' found by 
 \cite{nelson13}, \cite{mcnally14}  and \cite{barker15}. 
 This a class of unstable modes associated with vertical shear near the
-disk boundaries \citep{barker15}. They are also absent in our  
+disk boundaries \citep{barker15}. They are absent in our  
 analysis because there we assumed a disk with infinite 
-vertical extent, as the vertically isothermal disk has no
+vertical extent, since the vertically isothermal disk has no
 surface. However, surface modes can occur in the present calculations 
 because there is an imposed vertical boundary.   
 
@@ -185,12 +184,11 @@ consistent with \cite{barker15}.
  
 As explained by \cite{barker15}, while surface modes have a physical
 origin, their occurence in the vertically isothermal disk is due to
-imposing a finite vertical domain size. The fastest growing mode is a
-surface mode, if they exist, but their association with vertical
-boundaries means that $\mathrm{max}(\nu)$ depends on the choice of
-$\zmax$. This has important implications when interpreting results
-obtained from the vertically isothermal disk model. We return to this
-issue later.    
+imposing a finite vertical domain size. This has important
+implications when interpreting results obtained from the vertically
+isothermal disk model. For example, seeking the most unstable mode may
+result in a surface mode, but its growth rate would depend on
+$\zmax$. We return to this issue later.     
 
 %Thus, the
 %vertically isothermal disk is not useful for studying surface modes. 

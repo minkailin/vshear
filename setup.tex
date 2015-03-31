@@ -46,7 +46,7 @@ disk from isothermal ($\beta\ll 1$) to adiabatic ($\beta \gg 1$) in a
 controlled manner. However, for application to protoplanetary disks in 
 \S\ref{application} we will model $\beta$ based on physical thermal
 timescales, in which case $\beta$ is non-constant and is determined by
-the equilibrium disk properties and the perturbation length-scales of
+the equilibrium disk properties and the perturbation lengthscales of
 interest (e.g. Fig. \ref{bcrit_mmsn2d}). 
 
 \subsection{Baroclinic disk equilibria}\label{eqm}
@@ -102,18 +102,7 @@ is also a characteristic disk aspect-ratio. We are
 interested in thin disks with $\epsilon \ll 1$.%,%  as relevant for
 % protoplanetary disks \citep{chiang97}.   
 
-For discussion purposes it is useful to define the vertical buoyancy
-frequency $N_z$ via
-\begin{align}
-  N_z^2 \equiv - c_p^{-1}g_z \frac{\p S}{\p z} = c_s^2 \left(\frac{\gamma -
-      \Gamma}{\gamma}\right)\left(\frac{\p\ln\rho}{\p z}\right)^2,   \label{nzsq_def}
-\end{align}
-where $c_p$ is the heat capacity at constant pressure, $g_z\equiv
-\rho^{-1}\p_zP $ and $S\equiv c_p\ln{P^{1/\gamma}/\rho}$ is the
-specific entropy. The second equality applies to the disk equilibria
-described above. We are interested in sub-adiabatically stratified 
-disks with $\Gamma < \gamma$ so that $N_z^2\geq0$. % , and the disk is
-% convectively stable in the vertical direction. 
+
 
 %\subsection{Vertical structure}
 
@@ -159,7 +148,7 @@ For $\Gamma=1$ the equilibrium density $\rho(r,z)$ and rotation
 $\Omega(r,z)$ are given by 
 \begin{align}
   \frac{\rho(r,z)}{\rho_0(r)} &=
-  \exp{\left[\frac{1}{\epsilon^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]}\\    
+  \exp{\left[\frac{1}{\epsilon^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},\\    
   \frac{\Omega^2(r,z)}{\Omega_k^2(r)}& =1+ (p+q)\epsilon^2(r) + q\left(1 -
     \frac{1}{\sqrt{1+z^2/r^2}}\right),\label{vertiso_eqm}
 \end{align}
@@ -183,11 +172,35 @@ For the above disk models,
   r\frac{\p\Omega^2}{\p z} = \frac{sz\Omega_k^2}{\Gamma
     r\left(1+z^2/r^2\right)^{3/2}}. \label{vertical_shear_ex} 
 \end{align}
-Note that there is a maximum vertical shear rate at $z=r/\sqrt{2}$,
+Note that there is a maximum vertical shear rate at $|z|=r/\sqrt{2}$,
 which is expected to limit the growth rate of instabilities associated with vertical shear. 
 
+\subsection{Entropy gradients and vertical buoyancy}
+The specific entropy is defined as $S\equiv
+c_p\ln{P^{1/\gamma}/\rho}$, where $c_p$ is the heat capacity at
+constant pressure. For our disk models,
+\begin{align}
+  &\frac{\p S}{\p r} = c_p\left[\frac{s}{\gamma r} +
+    \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p
+       r}\right],\\
+  &\frac{\p S}{\p z} = c_p
+  \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p z},\label{dSdz}
+\end{align} 
+which are used below. 
 
-\subsection{Stability condition against axisymmetric adiabatic
+For discussion purposes it is useful to define the vertical buoyancy
+frequency $N_z$ via 
+\begin{align}
+  N_z^2 \equiv - c_p^{-1}g_z \frac{\p S}{\p z} = c_s^2 \left(\frac{\gamma -
+      \Gamma}{\gamma}\right)\left(\frac{\p\ln\rho}{\p z}\right)^2,   \label{nzsq_def}
+\end{align}
+where $g_z\equiv \rho^{-1}\p_zP $. The second equality applies to the
+disk equilibria described above (using Eq. \ref{dSdz}). We are
+interested in sub-adiabatically stratified disks with $\Gamma <
+\gamma$ so that $N_z^2\geq0$. % , and the disk is 
+% convectively stable in the vertical direction. 
+
+\subsection{Stability against axisymmetric adiabatic
   perturbations}\label{solberg}
 A rotating flow is stable against axisymmetric adiabatic perturbations
 if both Solberg-Hoiland criteria  are satisfied:
@@ -201,14 +214,7 @@ momentum. For rotationally-supported, thin disks %  pressure gradients are small
 % compared to rotation, so 
 the first criterion is generally satisfied. 
 Thus, to assess stability, we consider the second
-criterion. For our disk models,
-\begin{align}
-  &\frac{\p S}{\p r} = c_p\left[\frac{s}{\gamma r} +
-    \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p
-       r}\right],\\
-  &\frac{\p S}{\p z} = c_p
-  \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p z}. 
-\end{align} 
+criterion. 
 Without loss of generality, we evaluate Eq. \ref{second_SH} in $z>0$
 where $\p_zP<0$. Here we approximate $\p_r j^2\simeq r^3\Omega_k^2$ but
 use Eq. \ref{vertical_shear} for $\p_zj^2$. Then 

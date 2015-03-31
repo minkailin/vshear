@@ -24,7 +24,7 @@ form as Eq. 41 in \cite{lubow93}, which describe adiabatic axisymmetric waves in
 a vertically isothermal disk without vertical shear. The two equations
 become identical after  setting $q=0$ (no vertical shear) and
 $\chi=1/\gamma$ (adiabatic flow) in our Eq. \ref{nearly_iso_explicit},
-and making the low-frequency, nearly-Keplerian approximation in
+and making the low-frequency, Keplerian approximation in
 \citeauthor{lubow93} after a change of variables.    
 
 
@@ -42,14 +42,16 @@ limit. The methods used in Appendix \ref{iso_discuss} and results obtained
 therein motivates the solution procedure employed in the following
 sections, and are provided for ease of reference. We refer the reader
 to \cite{barker15} for a more detailed treatment of isothermal 
-perturbations.   
+perturbations. %which also account for more general boundary
+               %conditions than that considered below 
 
 \subsection{The effect of introducing a small but finite
   thermal relaxation time}\label{relax_pert}
-We are interested in the case $\beta\neq 0$, but it is instructive to
+We are interested in finite thermal relaxation
+timescales $\beta > 0$, but it is instructive to
 first ask  the more analytically tractable question: how 
 do the eigenfrequencies and eigenfunctions change when we change
-$t_c=\beta\Omega_k^{-1}$ from zero to a small but finite value? For 
+$\beta$ from zero to a small but finite value? For 
 sufficiently small $\beta$ we expect the solution to only differ
 slightly from a case with $\beta\equiv 0$. We thus perturb a solution
 for $\beta=0$ to see the effect of thermal relaxation.  
@@ -61,13 +63,20 @@ For definiteness, let us consider the simple solution
 \end{align}
 which solves Eq. \ref{nearly_iso_explicit} since $\delta
 v_z=$constant and $\chi=1$ so that $B=C=0$. 
-This is the `fundamental corrugation mode' where the vertical
-velocity is constant throughout the disk column. These modes have been
-observed to dominate numerical simulations \citep{nelson13,stoll14},  
-and are the ones we find to typically dominate in numerical calculations with 
-increasing $\beta$ (\S\ref{therm_relax_eff}), as well as in protoplanetary disks 
+This is the lowest order VSI mode, the `fundamental corrugation mode',
+where the vertical velocity is constant throughout the disk
+column. Hereafter we shall simply refer to them as the fundamental
+mode. 
+
+The fundamental mode has been observed to dominate numerical simulations
+\citep{nelson13,stoll14}, and are the ones we find to typically 
+dominate in numerical calculations with increasing $\beta$
+(\S\ref{therm_relax_eff}) for moderately large    
+values of $\khat$, as well as in protoplanetary disks 
 with a realistic estimate for thermal timescales
-(\S\ref{application}).  
+(\S\ref{application}). We will see later that consideration of low
+order modes in fact provides a useful way to charactertize the effect
+of increasing the thermal timescale on the VSI. 
 
 We linearize Eq. \ref{nearly_iso_explicit} about the above
 solution for $\beta\equiv0$ and write 
@@ -176,7 +185,7 @@ to obtain a polynomial in $\hat{\sigma}$,
 where the coefficients $c_l$ are given in Appendix \ref{relax_coeff}.
 The dispersion relation $\hat{\sigma}=\hat{\sigma}(\khat)$ is
 complicated and generally requires a numerical solution. However,
-simple solutions may be obtained in limiting cases which we consider
+simple results may be obtained in limiting cases which we consider
 below.  
 
 \subsection{Upper limit on the thermal relaxation timescale for the
@@ -202,7 +211,8 @@ also assume $|q|$ and $\beta$ are $O(1)$ or smaller. For a thin disk
 
 Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2} is a pair of
 simultaneous equations for $\hat{\omega}$ and $\beta$ for marginal
-stability. If $\beta\ll 1$ and the disk is sufficiently thin so that  
+stability. (It is important to note that marginal stability is an
+assumption.) If $\beta\ll 1$ and the disk is sufficiently thin so that  
 $|\epsilon q \khat |^2\lesssim 1$, 
 then an approximate solution to Eq. \ref{relax_cond_simp1} is 
 \begin{align}
@@ -210,7 +220,7 @@ then an approximate solution to Eq. \ref{relax_cond_simp1} is
     \frac{M|\epsilon q \khat|^2}{2M+1}\right).  \label{marg_freq_approx}
 \end{align}
 Note that for $q=0$, Eq. \ref{marg_freq_approx} reduces to 
-the dispersion relation for low-frequency waves in vertically
+the dispersion relation for low-frequency inertial waves in vertically
 isothermal disks without vertical shear (see Appendix
 \ref{stable_novshear}). Inserting Eq. \ref{marg_freq_approx} into
 Eq. \ref{relax_cond_simp2}, we obtain 
@@ -225,12 +235,14 @@ Since $|\epsilon q \khat|^2\lesssim 1$ by assumption, we have
   \beta\leq \beta_\mathrm{crit}  \equiv
   \frac{\epsilon|q|}{\gamma-1}, 
 \end{align}
-where $\beta_\mathrm{crit}$
-is the critical thermal timescale for the fundamental mode
-($M=0$). We comment that the expression for $\beta_\mathrm{crit}$ may
-in fact be obtained without assuming $|\epsilon q\khat|\lesssim 1$.
-We will confirm $\beta_\mathrm{crit}$ numerically in 
-\S\ref{bcrit_num_test}. 
+where $\beta_\mathrm{crit}$ is the critical thermal timescale for
+the fundamental mode ($M=0$). 
+We comment the expression for $\beta_\mathrm{crit}$ may in fact be
+obtained without assuming it is much less than unity from the onset or
+$|\epsilon q\khat|\lesssim 1$. % This is because for $M=0$, 
+% Eq. \ref{relax_cond_simp1} --- \ref{relax_cond_simp2} simplify 
+We will  
+confirm $\beta_\mathrm{crit}$ numerically in \S\ref{bcrit_num_test}. 
 
 Eq. \ref{iso_vsi_cond} suggests that as the thermal timescale $\beta$
 is increased from zero, higher order modes with $M>0$
@@ -240,14 +252,14 @@ adopting somewhat restrictive assumptions for $M>0$ in order to arrive
 at the simple expression Eq. \ref{bcrit_gen}. 
 
 Rapid thermal relaxation is required to overcome a stabilizing
-vertical entropy gradient \citep{goldreich67,urpin98,urpin03}, but these
-studies consider vertically localized disturbances. Our 
+vertical entropy gradient \citep{goldreich67,urpin98,urpin03}. 
 Eq. \ref{iso_vsi_cond} quantifies this requirement for vertically
-global disturbances (which have small $M$).  We can interpret
-$\beta_\mathrm{crit}$ as the thermal timescale below which
-perturbations are effectively isothermal and the VSI operates.  We see
+global disturbances (which have small $M$).  We can interpret 
+$\beta_\mathrm{crit}$ as the thermal timescale below which 
+perturbations are effectively isothermal and the VSI operates. We see
 that in a thin disk, a very short thermal timescale is required
-($\beta_\mathrm{crit}\ll 1$) because $\beta_\mathrm{crit}\propto \epsilon$. 
+($\beta_\mathrm{crit}\ll 1$) because $\beta_\mathrm{crit}\propto
+\epsilon$.    
 
 
 
