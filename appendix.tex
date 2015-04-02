@@ -169,7 +169,7 @@ of $D$ using Eq. \ref{dkappa2}, to obtain
    \right\}\delta v_z,
 \end{align}
 where we recall $\chi = \left(1-\ii\sigma t_c\right)/\left(1-\ii\sigma
-t_c \gamma\right)$. Making the low frequency, nearly Keplerian
+t_c \gamma\right)$. Making the low frequency, Keplerian
 approximations with the replacement $D\to \Omega_k^2$ gives, in terms
 of dimensionless variables,
 \begin{align}
@@ -296,7 +296,7 @@ equivalent expression for $M>0$ (Eq. \ref{bcrit_gen}).
 
 
 \section{Linear problem in the isothermal limit}\label{iso_discuss}  
-Here we summarize some results for isothermal
+Here we summarize selected results for isothermal
 perturbations ($\beta\equiv 0$) in vertically isothermal disks 
 ($\Gamma=1$) in the VGSB framework. In this case Eq. \ref{ode_Q}
 becomes    
@@ -304,10 +304,10 @@ becomes
   Q = W 
 \end{align}
 (i.e. $\delta P = c_s^2\delta \rho$), and so $  \ii\hat{\sigma}c_s\delta v_z = W^\prime $
-from Eq. \ref{lin_vz}. For isothermal perturbations it is in fact
+from Eq. \ref{lin_vz}. For isothermal perturbations it is 
 simpler to work with an equation for $W$ by substituting $Q=W$ into
 Eq. \ref{ode_w}. In this case, we shall not yet make the low frequency
-approximation, but first make the nearly Keplerian approximation. We
+approximation, but first make the  Keplerian approximation. We
 obtain, in terms of dimensionless variables, 
 \begin{align}
   0 = W^{\prime\prime} + \left[\ln\rho^\prime - \frac{\ii \epsilon q \hat{k} f(\zhat)
@@ -420,7 +420,7 @@ $\zhat\in[\zhat_1,\zhat_2]$. Inserting these inequalities into
 Eq. \ref{sigma_finite_domain} gives
 \begin{align}\label{max_growth}
   |\hat{\nu}|\leq
-  \frac{\epsilon |\hat{k} q|}{2\sqrt{1+\hat{k}^2}}\mathrm{max}(|f|). 
+  \frac{\epsilon |\hat{k} q|}{2\sqrt{1+\hat{k}^2}}\mathrm{max}(|f|) < \frac{\epsilon |q|}{2}\mathrm{max}(|f|) . 
 \end{align}
 Recalling that $f$ represents vertical shear (Eq. \ref{fz_shear}), it
 follows that the maximum possible growth rate of unstable modes,
@@ -447,7 +447,7 @@ low frequency from the onset. Then Eq. \ref{iso_ode0} becomes
   W^{\prime\prime} - \left(1 + \frac{\ii q\epsilon \hat{k}}{1-\hat{\sigma}^2}\right)\hat{z}W^\prime  +
   \hat{\sigma}^2\left(1+\frac{\hat{k}^2}{1-\hat{\sigma}^2}\right)W = 0.
 \end{align}
-We remark that taking the low-frequency limit and considering
+We remark that taking the low frequency limit and considering
 $\hat{k}^2\gg 1$, Eq. \ref{iso_ode3} becomes equivalent to Eq. 39 in
 \cite{nelson13} or Eq. 28 in \cite{barker15}, although we have taken a
 different route.    
@@ -502,7 +502,7 @@ fixed $L$.  This inverse relation has been qualitatively
 observed in numerical simulations of \cite{stoll14}. 
 
 \subsubsection{Instability with vertical shear}
-The VSI corresponds to unstable inertial waves \citep{barker15}. This
+The VSI corresponds to unstable inertial waves. This
 is readily obtained for large $\khat^2$ by balancing
 the last two terms of Eq. \ref{simple_growth} to give the low
 frequency branch. Then 
@@ -516,7 +516,7 @@ $L\geq1$ since we can choose the sign
 of the square root to make $\hat{\nu} = \imag\hat{\sigma}>0$.  These
 are the low frequency unstable modes seen in
 Fig. \ref{compare_modes_iso_kx10} and
-Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto\omega$.  
+Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto|\omega|$.  
 
 
 

@@ -1,7 +1,7 @@
 \section{Application to protoplanetary disks}\label{application} 
 As an application of our linear models, we estimate where in a
 protoplanetary disk do the thermodynamic conditions allow the VSI to
-operate. For a realistic disk one can consider the energy equation
+operate. For a realistic disk one might consider an energy equation
 with radiative cooling, 
 \begin{align}\label{real_energy}
   % \rho T \frac{DS}{Dt} = - \left(\nabla\cdot\bm{F} - Q_+\right), 
@@ -88,18 +88,18 @@ Eq. \ref{tc_def} is a simple prescription so
 that for small scales (large $k_x$), $t_c\to t_\mathrm{cool}$, while
 for large scales (small $k_x$), $t_c\to t_\mathrm{diff}$. Writing the
 volume density $\rho = \Sigma\hat{\rho}/\sqrt{2\pi}H$, where
-$\hat{\rho} = \rho/\rho_0$ and $\Sigma$ is the surface density at the
+$\hat{\rho} = \rho/\rho_0$ and $\Sigma(r)$ is the surface density at the
 radius of interest, the dimensionless thermal
 relaxation time $\beta$ becomes 
 \begin{align}\label{real_beta}
-  \beta(z;\khat) \equiv t_c\Omega_k =
+  \beta(r,z;\khat) \equiv t_c\Omega_k =
   % \frac{1}{\hat{\eta}}\left[\frac{l_\mathrm{rad}^2}{3H^2}
   %   + \frac{\hat{\rho}^2(z)}{2\pi\khat^2}\right]  \simeq
   \frac{\Sigma^2\Omega_k}{\eta\rho^2}\left[\frac{1}{3\kappa_d^2\Sigma^2} 
     + \frac{\hat{\rho}^2(z)}{2\pi \khat^2}\right].
 \end{align}
-Note that $\beta$ depends on both the perturbation lengthscale $\khat$ 
-and distance from the midplane. 
+Note that $\beta$ depends the perturbation lengthscale $\khat$,
+distance from the midplane, as well as the distance from the star.  
 
 \subsection{Evaluation for a fiducial disk model}
 We evaluate Eq. \ref{real_beta} for the protoplanetary disk model
@@ -107,7 +107,7 @@ described in \cite{chiang10} and summarized in Appendix \ref{mmsn}
 (where an opacity model is also chosen). Defining $r_\mathrm{AU}\equiv 
 r/\mathrm{AU}$, we find Eq. \ref{real_beta} becomes
 \begin{align}\label{beta_mmsn}
-  \beta(z; \khat) =
+  \beta(r, z; \khat) =
   &\frac{4.4\times10^5}{\mu(\gamma-1)}\left(\frac{\hat{\kappa}_d\hat{\Sigma}^2}{\hat{T}}\right)r_\mathrm{AU}^{-57/14}\notag\\ 
 &\times\left[\frac{8.3\times10^{-9}}{\hat{\kappa}_d^2\hat{T}^4\hat{\Sigma}^2}r_\mathrm{AU}^{33/7}+\frac{\hat{\rho}^2(z)}{2\pi\khat^2}\right].         
 \end{align} 
@@ -150,13 +150,14 @@ operate at tens of AU in the MMSN.
 In the inner few AU of the MMSN, however, $\beta$ 
 may be smaller or greater than $\beta_\mathrm{crit}$ depending on
 $z$ as the disk transitions from an optically thick midplane to an
-optically thin atmosphere. 
+optically thin atmosphere (see also Fig. \ref{bcrit_mmsn2d}). 
 %Given a fixed $\khat$, one can have $\beta > \beta_\mathrm{crit}$ at
 %the optically thick midplane, but with increasing height the disk 
 %becomes optically thin and $\beta<\beta_\mathrm{crit}$. 
-Our analytical criteria is not valid for non-uniform $\beta$, and we must
-turn to numerical solutions of the linear problem to determine whether
-or not the VSI operates. We do this in the next section.   
+Our analytical criteria $\beta < \beta_\mathrm{crit}$ is not valid for
+vertically non-uniform $\beta$, and we must turn to numerical
+solutions of the linear problem to determine whether or not the VSI
+operates. We do this in the next section.    
  
 Lowering the opacity, as shown in the top panels of
 Fig. \ref{mmsn_bcrit_bcool}, shifts the curves inwards but also raises
@@ -193,9 +194,16 @@ restricted to larger radii.
 We remark that it is possible to satisfy $\beta < \beta_\mathrm{crit}$ 
 for sufficiently large $\khat$. We illustrate this in 
 Fig. \ref{mmsn_bcrit_bcool_mink} by plotting at each radius the value
-of $\khat$ such that $\beta = \beta_\mathrm{crit}$, which show that in
-the inner disk, say $r\sim 1$AU, the VSI would only occur on very
-small radial lengthscales. 
+of $\khat$ such that $\beta = \beta_\mathrm{crit}$. If we consider the
+midplane of the inner disk, say $r\sim 1$AU, the VSI would only occur
+on very small radial lengthscales $\ll O(10^{-2}H)$. In the disk
+atmosphere where $\beta$ is small, surface modes may develop, 
+%However, at such
+%small scales, surface modes are likely to dominate (and are
+%restricted to the disk atmosphere), 
+but they are not well-defined in vertically isothermal disk models
+with an imposed boundary, and they also require large $\khat$.    
+
 %surface modes can develop for large $\khat$, 
 %which have small vertical lengthscales scales. 
 %also small vertical scales if they are surface modes 
@@ -254,11 +262,16 @@ $t_\mathrm{grow} \equiv 1/\nu$ of the fundamental mode with a range of
 wavenumbers, in units of the local orbital time $P_\mathrm{orb}\equiv
 2\pi/\Omega_k$. In fact, we either only find the fundamental mode, or 
 that it is the most unstable, except for the appearance of some 
-surface modes towards the inner disk when considering large 
-wavenumbers $\khat\gtrsim 50$. However, surface modes are dependent on
-boundary conditions in a vertically isothermal disk \citep{barker15},  
-and disturbances with large $\khat$ are more likely subject to viscous
-decay, as discussed above. % It is also unclear if surface modes are
+surface modes for large wavenumbers $\khat\gtrsim 50$, which are 
+boundary-dependent.  
+%However, surface modes are dependent on
+%boundary conditions in a vertically isothermal disk \citep{barker15},  
+%and 
+Disturbances with large $\khat$ are also more likely subject to viscous 
+decay, as discussed above. 
+
+
+% It is also unclear if surface modes are
 % dynamically important given they are concentrated in the disk
 % atmosphere where the density is small. 
 % The dominance of the fundamental mode is also
@@ -267,7 +280,7 @@ decay, as discussed above. % It is also unclear if surface modes are
 % dynamically important because the there is little mass in the disk at
 
 We therefore consider Fig. \ref{mmsn_overall} as a representation of the
-VSI in the MMSN. We see the VSI operates from $\sim 5$AU to $\sim
+VSI in outer parts of the MMSN. We see the VSI operates from $\sim 5$AU to $\sim
 50$AU with growth timescales $\sim 30$---40 orbits and
 $t_\mathrm{grow}$ rises rapidly towards the inner disk. It is
 necessary to consider smaller scales with decreasing $r$ as the disk
@@ -288,8 +301,9 @@ significantly reduces the efficiency of the VSI despite $\beta <
 We thus find Fig. \ref{mmsn_overall} to be roughly consistent with
 comparing the midplane thermal relaxation timescales to the critical
 thermal timescale. For example, 
-Fig. \ref{mmsn_bcrit_bcool} show that $\beta(\khat=10,z=0) \gtrsim
-\beta_\mathrm{crit}$ for $r\lesssim 10$AU in the MMSN (left middle panel); and Fig. \ref{mmsn_overall}
+Fig. \ref{mmsn_bcrit_bcool} show that $\beta(z=0,\khat=10) \gtrsim
+\beta_\mathrm{crit}$ for $r\lesssim 10$AU in the MMSN (left middle
+panel); and Fig. \ref{mmsn_overall} 
 show that modes with $\khat=10$ are stabilized inside $\sim 8$AU (where
 $t_\mathrm{grow}\to\infty$). Our numerical results suggest the VSI
 is efficient at radii of few tens of AU in the MMSN, consistent with
@@ -298,7 +312,7 @@ estimates made by \cite{nelson13}.
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/eigen_compare_grow.ps}
   \caption{Characteristic growth times of the VSI in 
-    the MMSN. These are calculated using the scale and height
-    dependent thermal relaxation given by Eq. \ref{beta_mmsn_simp}. 
+    the MMSN. These are calculated using the thermal relaxation
+    function given by Eq. \ref{beta_mmsn_simp}. 
     \label{mmsn_overall}}    
 \end{figure}
