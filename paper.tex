@@ -236,10 +236,11 @@ consideration. We formulate the linear stability problem in
 approximation. We study the linear problem using two approaches. In
 \S\ref{analytical} we present an analytical discussion of vertically
 isothermal disks. Our treatment is grossly simplified owing to a
-number of approximations made, but closely parallels previous work and 
-allows us to highlight the essential effects of vertical shear, and to
+number of approximations made, but closely parallels previous work, 
+allowing us to highlight the essential effects of vertical shear, and to
 derive a characteristic upper limit to the thermal timescale for the
-VSI. In \S\ref{numerical} we numerically
+VSI. This timescale is \emph{much shorter} than the dynamical
+timescale. In \S\ref{numerical} we numerically
 solve the linear problem in the radially local approximation, but
 relax all other approximations made in our analytical approach.    
 We find basic agreement with our analysis, including
@@ -255,20 +256,19 @@ for future work.
 
 
 
-\section{Thermodynamic requirement for the vertical shear instability}\label{vsi_require}    
-In this paper we will find that in a stably stratified disk, the VSI
-requires a \emph{very} short thermal timescale $t_c$, much less than the
-disk dynamical timescale,
+\section{Thermodynamic requirement for the vertical shear instability}\label{vsi_require}     In this paper we will find that in a stably stratified thin disk, the VSI  
+requires a thermal timescale $t_c$ much less than the
+disk dynamical timescale, 
 \begin{align}
-  t _c \ll \Omega^{-1},  
+  t _c \ll \Omega^{-1}. 
 \end{align}
-consistent with numerical experiments \citep{nelson13}. For this
-preliminary discussion we shall consider a vertically isothermal disk
-with aspect-ratio $\epsilon$, 
+To see why this should be expected, we need to compare vertical shear
+with vertical buoyancy. For this preliminary discussion we consider a
+vertically isothermal disk with aspect-ratio $\epsilon$,  
 dimensionless radial temperature gradient $q$ and adiabatic index
-$\gamma$.   
+$\gamma$. For a protoplanetary disk, $\epsilon \sim 0.05$, $|q|\sim 1$ and $\gamma\simeq 1.4$. 
 
-In a thin disk, the specific angular momentum varies with height as 
+For a thin disk, the specific angular momentum varies with height as 
 \begin{align}\label{vshear_thin}
   r \frac{\p \Omega^2 }{\p z} \simeq \epsilon q \Omega^2\left(\frac{z}{H}\right),
 \end{align}
@@ -276,8 +276,8 @@ where $H$ is the disk scale height. As noted in
 \S\ref{intro} this vertical variation is a source of free energy and
 thus vertical shear ($\p_z\Omega \neq0$) is destabilizing. 
 
-If $\gamma>1$ then the disk is stably stratified with a real vertical
-buoyancy frequency $N_z$.  For a thin disk,     
+For $\gamma>1$ the disk is stably stratified with a real vertical
+buoyancy frequency $N_z$.  In a thin disk,     
 \begin{align}\label{nz_thin}
   N_z^2 \simeq \left(\frac{\gamma-1}{\gamma}\right) \left(\frac{z}{H}\right)^2
   \Omega^2.  
@@ -288,31 +288,34 @@ axisymmetric adiabatic disturbances, then because the
 Solberg-Hoiland criteria \citep{tassoul78} are usually satisified in a
 thin disk, the disk would be stable. 
 
-However, the stabilizing effect of buoyancy can be mitigated for
-non-adiabatic disturbances. Consider a fluid element displaced upwards, away from
+However, the stabilizing effect of buoyancy can be mitigated for 
+effectively isothermal disturbances. Consider a fluid element displaced upwards, away from
 the disk midplane. In a stably stratified adiabatic disk, it would
 sink because of buoyancy. However, if thermal timescales are short, in
-that temperature flucations decay rapidly (i.e. nearly isothermal
-perturbations), then the fluid element would attain its surrounding
+that temperature flucations decay rapidly, then the fluid element would attain its surrounding 
 density and  
 %(assuming an ideal gas and it reaches pressure 
 %equilibrium with its surroundings). 
 thus buoyancy is rendered ineffective. Qualitatively, a short thermal
 timescale $t_c$ reduces the effective (stabilizing) buoyancy force.    
 
-How short must $t_c$ be for vertical shear to prevail? For a rough
+How short must $t_c$ be for vertical shear to prevail? A rough 
 comparison of vertical shear to buoyancy for non-adiabatic
-perturbations, we apply Eq. 47 of \cite{urpin03}, which is based on
+perturbations can be obtained by applying Eq. 47 of \cite{urpin03}, which is based on 
 \cite{townsend58},   
 \begin{align}\label{bcrit_est}
   N_z^2 t_c \lesssim \left|r\frac{\p\Omega}{\p z}\right|. 
 \end{align}
 The left-hand side represents an effective buoyancy, which is
 stabilizing; while the right-hand side represents vertical shear,
-which is destabilizing. In a thin disk, the destabilizing effect of
-vertical shear is rather weak because $|r\p_z\Omega|\propto \epsilon
-\ll 1$. By comparison the buoyancy frequency $N_z/\Omega\sim 1$ at
-$z\sim H$.  
+which is destabilizing. In a thin disk $\epsilon \ll 1$, so the destabilizing effect of 
+vertical shear is rather weak because $|r\p_z\Omega|\sim\epsilon\Omega
+\ll \Omega$. By comparison, the buoyancy frequency $N_z\sim
+\Omega$. It follows that $t_c\lesssim O(\epsilon\Omega^{-1})$ is
+required for instability.  \emph{In a thin  
+  disk the thermal timescale must be shorter than the dynamical
+  timescale by $O(\epsilon)\ll 1$ for the VSI to operate.}   
+
 
 To illustrate this point, we show in Fig. \ref{eqm_structure} the
 equilibrium structure of a typical protoplanetary disk. Here $\rho_0$
@@ -320,8 +323,7 @@ is the midplane density and vertical shear rate and buoyancy
 frequencies are normalized by the local Keplerian frequency. It is
 clear that vertical shear is 
 generally weak compared to buoyancy. Then even a small (positive)
-vertical entropy gradient can significantly stabilize the VSI. It
-follows that $t_c$ must be quite short to permit instability.  
+vertical entropy gradient can significantly stabilize the VSI. 
 
 \begin{figure*}
   \includegraphics[width=\linewidth]{figures/rhoshearNz}
@@ -352,14 +354,9 @@ Our central result is the requirement
   (\gamma - 1)t_c < \epsilon |q| \Omega^{-1}
 \end{align}   
 for the VSI in a vertically isothermal, thin disk. This equation
-reflects Eq. \ref{bcrit_est} but is simpler since there is no
-$z$ dependence. \emph{In a thin 
-  disk the thermal timescale must be shorter than the dynamical
-  timescale by $O(\epsilon)\ll 1$ for the VSI to operate.}   
-
+reflects Eq. \ref{bcrit_est} but there is no $z$ dependence. 
 % While assumptions and simplifications will be made 
 % to derive this, 
-
 Eq. \ref{prelim_bcrit} can be 
 readily applied to evaluate where in a disk the VSI is likely to
 operate. For example, we show in Fig. \ref{bcrit_mmsn2d} an estimate
@@ -367,7 +364,9 @@ of the thermal timescales the protoplanetary disk model shown in
 Fig. \ref{eqm_structure}. Here $k_x$ is a radial
 wavenumber of the disturbance being considered, thus larger $k_x$
 correspond to smaller perturbations. The region outside the red line
-satisfies Eq. \ref{prelim_bcrit}. The criterion Eq. \ref{prelim_bcrit} in fact
+satisfies Eq. \ref{prelim_bcrit}. 
+
+The criterion Eq. \ref{prelim_bcrit} in fact
 assumes $t_c$ is vertically uniform. While this is not generally true
 in the inner disk, we find Eq. \ref{prelim_bcrit} still provides a
 useful guide. We see that the VSI will operate in the outer 
@@ -387,12 +386,6 @@ smaller radii.
     \label{bcrit_mmsn2d} 
   }
 \end{figure}
-
-
-
-
-
-
 
 We now proceed through the formal linear stability problem to arrive
 at Eq. \ref{prelim_bcrit} and verify it numerically. The interested 
