@@ -270,16 +270,16 @@ $\gamma$.
 
 In a thin disk, the specific angular momentum varies with height as 
 \begin{align}\label{vshear_thin}
-  r \frac{\p \Omega^2 }{\p z} \simeq \epsilon q \hat{z} \Omega^2,
+  r \frac{\p \Omega^2 }{\p z} \simeq \epsilon q \Omega^2\left(\frac{z}{H}\right),
 \end{align}
-where $\hat{z}$ is a normalized vertical co-ordinate. As noted in
+where $H$ is the disk scale height. As noted in
 \S\ref{intro} this vertical variation is a source of free energy and
 thus vertical shear ($\p_z\Omega \neq0$) is destabilizing. 
 
 If $\gamma>1$ then the disk is stably stratified with a real vertical
 buoyancy frequency $N_z$.  For a thin disk,     
 \begin{align}\label{nz_thin}
-  N_z^2 \simeq \left(\frac{\gamma-1}{\gamma}\right) \hat{z}^2
+  N_z^2 \simeq \left(\frac{\gamma-1}{\gamma}\right) \left(\frac{z}{H}\right)^2
   \Omega^2.  
 \end{align}
 This provides a stabilizing effect as buoyancy opposes vertical
@@ -292,8 +292,9 @@ However, the stabilizing effect of buoyancy can be mitigated for
 non-adiabatic disturbances. Consider a fluid element displaced upwards, away from
 the disk midplane. In a stably stratified adiabatic disk, it would
 sink because of buoyancy. However, if thermal timescales are short, in
-that temperature flucations decay rapidly (i.e. isothermal perturbations), then 
-the fluid element would attain its surrounding density and 
+that temperature flucations decay rapidly (i.e. nearly isothermal
+perturbations), then the fluid element would attain its surrounding
+density and  
 %(assuming an ideal gas and it reaches pressure 
 %equilibrium with its surroundings). 
 thus buoyancy is rendered ineffective. Qualitatively, a short thermal
@@ -309,21 +310,39 @@ perturbations, we apply Eq. 47 of \cite{urpin03}, which is based on
 The left-hand side represents an effective buoyancy, which is
 stabilizing; while the right-hand side represents vertical shear,
 which is destabilizing. In a thin disk, the destabilizing effect of
-vertical shear is rather weak because $|\p_z\Omega|\propto \epsilon
-\ll 1$. Then even a small amount of buoyancy can significantly
-stabilize the VSI. It follows that $t_c$ must be quite short to permit
-instability. 
+vertical shear is rather weak because $|r\p_z\Omega|\propto \epsilon
+\ll 1$. By comparison the buoyancy frequency $N_z/\Omega\sim 1$ at
+$z\sim H$.  
+
+To illustrate this point, we show in Fig. \ref{eqm_structure} the
+equilibrium structure of a typical protoplanetary disk. Here $\rho_0$
+is the midplane density and vertical shear rate and buoyancy
+frequencies are normalized by the local Keplerian frequency. It is
+clear that vertical shear is 
+generally weak compared to buoyancy. Then even a small (positive)
+vertical entropy gradient can significantly stabilize the VSI. It
+follows that $t_c$ must be quite short to permit instability.  
+
+\begin{figure*}
+  \includegraphics[width=\linewidth]{figures/rhoshearNz}
+  \caption{Typical protoplanetary disk structure (the Minimum Mass
+    Solar Nebla): density (left), vertical shear rate (middle) and
+    buoyancy frequency (right).  
+    \label{eqm_structure} 
+  }
+\end{figure*}
 
 Note that in astrophysical disks both $N_z^2$ and $\p_z\Omega$ varies
-with height. Eq. \ref{bcrit_est} then suggest that with 
-increasing height, buoyancy would eventually stabilize the VSI (since
+with height, as evident in
+Fig. \ref{eqm_structure}. Eq. \ref{bcrit_est} then suggest that with
+increasing height, buoyancy would eventually stabilize the VSI (since 
 $N_z^2\propto z^2$ and $\p_z\Omega\propto z$). 
-%This means that 
-%disturbances localized away from the disk midplane are easily stabilized by
-%buoyancy. 
-This argument assumes vertically-localized disturbances. It is,
+% This means that 
+% disturbances localized away from the disk midplane are easily stabilized by
+% buoyancy. 
+This argument assumes vertically localized disturbances. It is,
 however, not clear how to apply Eq. \ref{bcrit_est} to vertically
-global disturbances, as considered in this work. 
+global disturbances, as considered in this work.  
 
 %it would imply you can always have VSI sufficiently close to the
 %midplane 
@@ -344,14 +363,14 @@ $z$ dependence. \emph{In a thin
 Eq. \ref{prelim_bcrit} can be 
 readily applied to evaluate where in a disk the VSI is likely to
 operate. For example, we show in Fig. \ref{bcrit_mmsn2d} an estimate
-of the thermal timescales in a typical protoplanetary disk model (see 
-below). Here, $H$ is the disk scale height and $k_x$ is a radial
+of the thermal timescales the protoplanetary disk model shown in
+Fig. \ref{eqm_structure}. Here $k_x$ is a radial
 wavenumber of the disturbance being considered, thus larger $k_x$
 correspond to smaller perturbations. The region outside the red line
 satisfies Eq. \ref{prelim_bcrit}. The criterion Eq. \ref{prelim_bcrit} in fact
 assumes $t_c$ is vertically uniform. While this is not generally true
 in the inner disk, we find Eq. \ref{prelim_bcrit} still provides a
-useful guide. We see that the VSI is likely to  operate in the outer 
+useful guide. We see that the VSI will operate in the outer 
 disk at tens of AU, but that smaller scale disturbances may operate at
 smaller radii. 
 
@@ -368,6 +387,12 @@ smaller radii.
     \label{bcrit_mmsn2d} 
   }
 \end{figure}
+
+
+
+
+
+
 
 We now proceed through the formal linear stability problem to arrive
 at Eq. \ref{prelim_bcrit} and verify it numerically. The interested 
