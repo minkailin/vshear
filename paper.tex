@@ -260,8 +260,9 @@ for future work.
 requires a thermal timescale $t_c$ much less than the
 disk dynamical timescale, 
 \begin{align}
-  t _c \ll \Omega^{-1}. 
+  t _c \ll \Omega_k^{-1}. 
 \end{align}
+where $\Omega_k$ is the Keplerian frequency. 
 To see why this should be expected, we need to compare vertical shear
 with vertical buoyancy. For this preliminary discussion we consider a
 vertically isothermal disk with aspect-ratio $\epsilon$,  
@@ -270,7 +271,7 @@ $\gamma$. For a protoplanetary disk, $\epsilon \sim 0.05$, $|q|\sim 1$ and $\gam
 
 For a thin disk, the specific angular momentum varies with height as 
 \begin{align}\label{vshear_thin}
-  r \frac{\p \Omega^2 }{\p z} \simeq \epsilon q \Omega^2\left(\frac{z}{H}\right),
+  r \frac{\p \Omega^2 }{\p z} \simeq \epsilon q \Omega_k^2\left(\frac{z}{H}\right),
 \end{align}
 where $H$ is the disk scale height. As noted in
 \S\ref{intro} this vertical variation is a source of free energy and
@@ -280,7 +281,7 @@ For $\gamma>1$ the disk is stably stratified with a real vertical
 buoyancy frequency $N_z$.  In a thin disk,     
 \begin{align}\label{nz_thin}
   N_z^2 \simeq \left(\frac{\gamma-1}{\gamma}\right) \left(\frac{z}{H}\right)^2
-  \Omega^2.  
+  \Omega_k^2.  
 \end{align}
 This provides a stabilizing effect as buoyancy opposes vertical
 motion, which is required for the VSI. In fact, if we consider
@@ -309,18 +310,19 @@ perturbations can be obtained by applying Eq. 47 of \cite{urpin03}, which is bas
 The left-hand side represents an effective buoyancy, which is
 stabilizing; while the right-hand side represents vertical shear,
 which is destabilizing. In a thin disk $\epsilon \ll 1$, so the destabilizing effect of 
-vertical shear is rather weak because $|r\p_z\Omega|\sim\epsilon\Omega
-\ll \Omega$. By comparison, the buoyancy frequency $N_z\sim
-\Omega$. It follows that $t_c\lesssim O(\epsilon\Omega^{-1})$ is
+vertical shear is rather weak because $|r\p_z\Omega|\sim\epsilon\Omega_k
+\ll \Omega_k$. By comparison, the buoyancy frequency $N_z\sim
+\Omega_k$. It follows that $t_c\lesssim O(\epsilon\Omega_k^{-1})$ is
 required for instability.  \emph{In a thin  
   disk the thermal timescale must be shorter than the dynamical
   timescale by $O(\epsilon)\ll 1$ for the VSI to operate.}   
 
 
 To illustrate this point, we show in Fig. \ref{eqm_structure} the
-equilibrium structure of a typical protoplanetary disk. Here $\rho_0$
-is the midplane density and vertical shear rate and buoyancy
-frequencies are normalized by the local Keplerian frequency. It is
+equilibrium structure of a typical protoplanetary disk. %Here $\rho_0$
+%is the midplane density and vertical shear rate and buoyancy
+%frequencies are normalized by the local Keplerian frequency. 
+It is
 clear that vertical shear is 
 generally weak compared to buoyancy. Then even a small (positive)
 vertical entropy gradient can significantly stabilize the VSI. 
@@ -329,7 +331,7 @@ vertical entropy gradient can significantly stabilize the VSI.
   \includegraphics[width=\linewidth]{figures/rhoshearNz}
   \caption{Typical protoplanetary disk structure (the Minimum Mass
     Solar Nebla): density (left), vertical shear rate (middle) and
-    buoyancy frequency (right).  
+    buoyancy frequency (right). Here $\rho_0$ is the midplane density.  
     \label{eqm_structure} 
   }
 \end{figure*}
@@ -351,7 +353,7 @@ global disturbances, as considered in this work.
 
 Our central result is the requirement 
 \begin{align}\label{prelim_bcrit}
-  (\gamma - 1)t_c < \epsilon |q| \Omega^{-1}
+  (\gamma - 1)t_c < \epsilon |q| \Omega_k^{-1}
 \end{align}   
 for the VSI in a vertically isothermal, thin disk. This equation
 reflects Eq. \ref{bcrit_est} but there is no $z$ dependence. 
