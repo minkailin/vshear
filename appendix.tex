@@ -1,53 +1,14 @@
 \section{Full governing equation for vertically isothermal disks in
-  the VGSB}\label{adia_improve}
-
-
-After setting $\hat{g}_c=0$ in Eq. \ref{lin_mass}, \ref{lin_vx} and
-\ref{lin_energy}, we can eliminate variables 
-to obtain a pair or ordinary differential
-equations for $W,Q$ as
-
-\begin{align}
-  & \ii\sigma\delta v_z = \frac{dW}{dz} + \frac{d\ln{\rho}}{d z}\left(W-Q\right), \\
-  &\frac{\sigma^2}{c_s^2}Q + \frac{\sigma^2k_x^2}{D}W =\ii\sigma \left(\frac{\ii
-      k_x r}{D}\frac{d\Omega^2}{dz} -
-    \frac{d\ln{\rho}}{dz}\right)\delta v_z - \ii\sigma \frac{d\delta v_z}{dz}
-  % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] 
-  % \notag\\
-  % &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
-  %   \frac{dQ}{dz}\right) - \frac{d^2\ln{\rho}}{dz^2}\left(W-Q\right),
-  \label{ode_w}\\
-  &\sigma^2W - \frac{\gamma}{\Gamma}\sigma^2 Q +
-  \frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right) 
-  =\ii \sigma c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} -
-    1\right)\delta v_z,  
-  % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],
-  \label{ode_Q} 
-\end{align}
-where
-\begin{align}
-  D \equiv \kappa^2 - \sigma^2,
-\end{align} 
-and we have replaced the notation $\p_z$ by $d/dz$ since we are
-considering solutions at a fixed radius. 
-
-
-
-
-
-In \S\ref{approx_gov} we made the replacement $D\to\Omega_k^2$ before
-eliminating variables to obtain a single equation for $\delta v_z$ in
-vertically isothermal disks, Eq. \ref{vertiso_gov}.  
-This procedure ignores the vertical dependence of
-$D=\kappa^2(z) - \sigma^2$. We show here that this has no serious 
-consequence for thin disks. 
-
-In the global disk with $\Gamma=1$ we have
+  the vertically global shearing box}\label{adia_improve}
+Here we explain the derivation of Eq. \ref{vertiso_gov} used in our 
+analytical discussion in \S\ref{analytical}. We shall need the
+vertical derivative of the epicyclic frequency $\kappa$. In the global
+disk with $\Gamma=1$ we have 
 \begin{align}\label{dkappa2}
   \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
     r}\frac{\p\Omega^2}{\p z} = -
-   \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(
-  \frac{3z^2}{r^2+z^2}-1\right) \equiv - \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2}F(r,z).
+  \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(
+    \frac{3z^2}{r^2+z^2}-1\right) \equiv - \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2}F(r,z).
 \end{align}
 % For the local problem we may then write
 % \begin{align}
@@ -55,16 +16,59 @@ In the global disk with $\Gamma=1$ we have
 % \end{align}
 The function $F$ increases monotonically from $F=-1$ at $z=0$ to $F\to2$
 as $|z|\to\infty $, so $|F|=O(1)$. 
-% For the local problem we set
-% $dD/dz = \p\kappa^2/\p z$. 
-% This function varies from $F=q$ at $z=0$ to $F\to
-% 3+q$ as $|z|\to\infty$. Since we consider $|q|=O(1)$, this impies
-% $|F|=O(1)$ as well.  
 
-For the radially local problem, we eliminate $W$ and $Q$ from Eq. \ref{ode_w}---\ref{ode_Q} and
-Eq. \ref{lin_vz}  (with $\Gamma=1$), but now retain the vertical dependence
-of $D$ using Eq. \ref{dkappa2}, to obtain  
+In the vertically global shearing box (VGSB) approximation, we set
+$\hat{g}_c=0$ in Eq. \ref{lin_mass} --- \ref{lin_energy}. We then eliminate
+the horizonatal velocity perturbations ($\delta v_x,\, \delta v_y$) to
+obtain  
+%we can eliminate variables 
+%to obtain a pair or ordinary differential
+%equations for $W,Q$ as 
 \begin{align}
+  & \ii\sigma\delta v_z = \frac{dW}{dz} + \frac{d\ln{\rho}}{d z}\left(W-Q\right),\label{ode_vz} \\
+  &\frac{\sigma^2}{c_s^2}Q + \frac{\sigma^2k_x^2}{D}W =\ii\sigma \left(\frac{\ii
+      k_x r}{D}\frac{d\Omega^2}{dz} -
+    \frac{d\ln{\rho}}{dz}\right)\delta v_z - \ii\sigma \frac{d\delta v_z}{dz},
+  % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] 
+  % \notag\\
+  % &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
+  %   \frac{dQ}{dz}\right) - \frac{d^2\ln{\rho}}{dz^2}\left(W-Q\right),
+  \label{ode_w}\\
+%  &\sigma^2W - \frac{\gamma}{\Gamma}\sigma^2 Q +
+%  \frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right) 
+%  =\ii \sigma c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} -
+%    1\right)\delta v_z,  
+  &\sigma^2W - \gamma\sigma^2 Q +
+  \frac{\ii\sigma}{t_c}\left(W-Q\right) 
+  =\ii \sigma c_s^2\frac{d\ln{\rho}}{dz}\left(\gamma -
+    1\right)\delta v_z,
+  % 
+  % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],
+  \label{ode_Q} 
+\end{align}
+(note that $\Gamma=1$ has been used) where
+\begin{align}
+  D \equiv \kappa^2 - \sigma^2,
+\end{align} 
+and we have replaced the notation $\p_z$ by $d/dz$ since we are
+considering solutions at a fixed radius. 
+
+% In \S\ref{approx_gov} we made the replacement $D\to\Omega_k^2$ before
+% eliminating variables to obtain a single equation for $\delta v_z$ in
+% vertically isothermal disks, Eq. \ref{vertiso_gov}.  
+% This procedure ignores the vertical dependence of
+% $D=\kappa^2(z) - \sigma^2$. We show here that this has no serious 
+% consequence for thin disks. 
+
+%For the radially local problem, we eliminate $W$ and $Q$ from Eq. \ref{ode_w}---\ref{ode_Q} and
+%Eq. \ref{lin_vz}  (with $\Gamma=1$), but now retain the vertical dependence
+%of $D$ using Eq. \ref{dkappa2}, to obtain  
+
+We now eliminate $W,\, Q$ from Eq. \ref{ode_vz} --- \ref{ode_Q} in
+favor of $\delta v_z$, making use of Eq. \ref{dkappa2} to evaluate
+$dD/dz$, to obtain  
+
+\begin{align}\label{full_ode}
   0 =& \frac{d^2\delta v_z}{dz^2} + \left[1 + \frac{\ii k_x c_s^2
       q}{Dr} - \frac{k_x^2c_s^2}{\left(k_x^2c_s^2 + \chi
         D\right)}\frac{qc_s^2F}{Dr^2}\right]\frac{d\ln\rho}{dz}\frac{d\delta
@@ -79,11 +83,11 @@ of $D$ using Eq. \ref{dkappa2}, to obtain
    \right\}\delta v_z,
 \end{align}
 where we recall $\chi = \left(1-\ii\sigma t_c\right)/\left(1-\ii\sigma
-t_c \gamma\right)$. Making the low frequency, Keplerian
-approximations with the replacement $D\to \Omega_k^2$ gives, in terms
-of dimensionless variables,
+t_c \gamma\right)$. Making the low frequency and Keplerian
+approximations is equivalent to the replacement $D\to
+\Omega_k^2$. This gives, in terms of dimensionless variables,  
 \begin{align}
-   &\delta v_z ^{\prime\prime} + \left[1 + \ii\epsilon q\hat{k} -
+  &\delta v_z ^{\prime\prime} + \left[1 + \ii\epsilon q\hat{k} -
     \frac{ \hat{k}^2}{
       \left(\hat{k}^2+\chi\right)}q \epsilon^2F\right]\ln\rho^{\prime}\delta v_z^\prime +
   \left\{\left(\chi + \ii \epsilon q
@@ -93,23 +97,80 @@ of dimensionless variables,
       q\hat{k}\right)\left[1 - \chi +
       \frac{\chi}{\left(\hat{k}^2+\chi\right)}q\epsilon^2F\right]\right\}\delta v_z \notag\\&=
   -\hat{\sigma}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
-\end{align}   
-Eq. \ref{adia_diso3} differs from Eq. \ref{vertiso_gov_nondim} by terms
-proportional to $\epsilon^2$. For a thin disk ($\epsilon\ll1$) with
-$|q|=O(1)$, as considered in this work, neglecting these terms has no
-qualitative effect on the discussion in \S\ref{analytic_relax}. 
+\end{align} 
+Since we are interested in thin disks with $\epsilon \ll 1$ and $|q| =
+O(1)$, we neglect the terms proportional to $\epsilon^2$, which gives 
+Eq. \ref{vertiso_gov_nondim} (the dimensional version being
+Eq. \ref{vertiso_gov}). This is equivalent to neglecting the   
+vertical dependence of $D$ by setting $D\to\Omega_k^2$ in
+Eq. \ref{ode_w} before eliminating variables in favor of $\delta
+v_z$, which is the simpler way to obtain Eq. \ref{vertiso_gov}. 
+
+%Thus, a simpler route to the governing
+%equation (Eq. )  
+
+%Eq. \ref{adia_diso3} differs from Eq. \ref{vertiso_gov_nondim} by terms
+%proportional to $\epsilon^2$. For a thin disk ($\epsilon\ll1$) with
+%$|q|=O(1)$, as considered in this work, neglecting these terms has no
+%qualitative effect on the discussion in \S\ref{analytic_relax}. 
+% In deriving Eq. \ref{vertiso_gov}, the vertical dependence of
+% $D=\kappa^2(z)-\sigma^2$ was ignored because the replacement
+% $D\to\Omega_k^2$ was made before eliminating variables in favor of
+% $\delta v_z$. In Appendix \ref{adia_improve} we show that making this
+% replacement after eliminating variables, which involves $dD/dz$,
+% introduces terms of $O(\epsilon^2)$. Since we are interested in 
+% thin disks ($\epsilon\ll 1 $), e.g. protoplanetary disks where 
+% $\epsilon\lesssim 0.1$ \citep{chiang10}, these terms introduce
+% unnecessary complexity for the present discussion. 
+      
 
 
-\section{Applicability of the vertically global shearing box}\label{global_corr}
-In \S\ref{analytical} we effectively employed the vertically global shearing box
-\citep[VGSB,][]{mcnally14} to make analytic progress.   
-The difference between the linear problem in the VGSB 
-and the radially-local approximation adopted in our numerical study
-is the absence of terms explicitly associated with the radial disk structure in
-the VGSB. These terms appear in the energy, mass and radial momentum
-equations and are labeled by $\hat{g}_c$ in
-Eq. \ref{lin_mass}---\ref{lin_energy}. Nominally $\hat{g}_c=1$.  
 
+\section{Applicability of the  VGSB}\label{global_corr}
+%In \S\ref{analytical} we effectively employed the vertically global
+%shearing box \citep[VGSB,][]{mcnally14} to make analytic progress. 
+The vertically global shearing box \citep[VGSB,][]{mcnally14} is an
+extension of the standard shearing box \citep[SSB,][]{goldreich65} to
+background shear flows that are height dependent. 
+%As in the SSB, in
+%the VGSB the equilibrium disk structure is assumed to be homogeneous
+%in the radial ($x$) direction.  
+Within the VGSB framework, the vertical shear $d\Omega/dz$
+can be freely specified. We choose $d\Omega/dz$ to be that due to the
+radial temperature gradient in the global disk
+(Eq. \ref{vertical_shear}). However, explicit dependencies on the
+radial disk structure are ignored elsewhere in the linearized equations
+as described below. We show in the following sections that this
+inconsistency only becomes important in the adiabatic limit, which is
+not the relevant regime for the VSI. 
+
+%is only important when
+%considering adiabatic limit, which is not the relevant regime for the
+%VSI.  
+
+The background radial disk structure explicitly appears 
+in the linearized mass, radial momentum and energy equations
+(Eq. \ref{lin_mass}, \ref{lin_vx} and \ref{lin_energy}) as the terms
+proportional to $\hat{g}_c$. Nominally $\hat{g}_c=1$.      
+In the VGSB (and SSB) these terms are neglected by setting
+$\hat{g}_c=0$. For a power-law disk, these radial gradients  
+are $O(r^{-1})$, and they appear in comparison with terms of
+$O(k_x)$. The neglected terms therefore have a relative magnitude of
+$O(\epsilon/\khat)$, which is small for thin disks ($\epsilon\ll1$)
+and/or small radial wavelengths ($\khat\gg 1$). 
+ 
+
+
+% The difference between the linear problem in the VGSB 
+% and the radially-local approximation adopted in our numerical study
+% is the absence of terms explicitly associated with the radial disk structure in
+% the VGSB. 
+
+
+%However, background radial gradient terms 
+%are ignored elsewhere in the VGSB (which is done by setting
+%$\hat{g}_c=0$).         
+   
 % \begin{align}
 %   \ii \sigma W  &=c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
 %       z}\right|_0 \delta v_z + \frac{\gamma}{\Gamma} \frac{d\delta
@@ -129,19 +190,13 @@ Eq. \ref{lin_mass}---\ref{lin_energy}. Nominally $\hat{g}_c=1$.
 % proportional to $\hat{g}_c$ are associated with the background density
 % and pressure radial structures, and nominally $\hat{g}_c=1$.   
 
-However, in the VGSB these terms are neglected by 
-setting $\hat{g}_c=0$. For a power-law disk, these radial gradients
-are $O(r^{-1})$, and they appear in comparison with terms of
-$O(k_x)$. The neglected terms therefore have a relative magnitude of
-$O(\epsilon/\khat)$. This is small for thin disks ($\epsilon\ll1$)
-and/or small radial wavelengths ($\khat\gg 1$).  
-
 \subsection{Spurious growth of adiabatic perturbations in the VGSB}\label{analytic_adia} 
 A limitation of the VGSB is that it cannot be used in the
 adiabatic limit, even if the above conditions are satisfied. We explain this by considering vertically isothermal
 disks and setting  $\beta\to\infty$ in 
-Eq. \ref{vertiso_gov_nondim} (which itself is obtained by setting
-$\hat{g}_c=0$ in Eq. \ref{lin_mass}---\ref{lin_energy}) to give 
+Eq. \ref{vertiso_gov_nondim} % (which itself is obtained by setting
+% $\hat{g}_c=0$ in Eq. \ref{lin_mass}---\ref{lin_energy})
+to give 
 \begin{align}
   0 =\dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
     \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime
@@ -224,105 +279,7 @@ VSI.
 \end{figure}
 
 
-\section{Coefficients for the dispersion relation for perturbations
-with thermal relaxation}\label{relax_coeff}
-The coefficients of the dispersion relation Eq. \ref{relax_disp} is
-given by:
-\begin{align}
-  &c_0 = M(M+1)A^2,\\
-  &c_1 = \ii\beta\left\{\left(1-\gamma\right)\left[1 +
-      \khat^2\left(1+2M\right)^2 - 4 \ii\epsilon q\khat M (M+1)\right] 
-    - 2A^2\gamma M (M+1)\right\},\\
-  &c_2 = \left(\khat^2 + 1\right)A + \beta^2\left\{(1-\gamma)\left[1
-      + \gamma \khat^2(1+2M)^2 - 4\ii\epsilon q \khat \gamma M(M+1)
-    \right]
-    -\gamma^2 A^2 M(M+1)
-  \right\},\\
-  &c_3 = \beta\left\{\epsilon q \khat + \gamma \left[\ii + \epsilon q
-      k \left(1+2\khat^2\right)\right] - 3\ii - 2\ii
-    \khat^2\right\},\\
-  &c_4 =
-  \beta^2\left(1+\gamma\khat^2\right)\left[\gamma\left(1-\ii\epsilon q
-    \khat\right)-2\right] - \left(1+\khat^2\right)^2,\\
-&c_5 = 2\ii\beta\left(1+\khat^2\right)\left(1+\gamma\khat^2\right),\\
-&c_6 = \beta^2\left(1+\gamma\khat^2\right)^2.
-\end{align}
 
-\subsection{Limiting form with real frequencies and $\khat^2\gg 1$}\label{disp_neut_limit}
-Assuming neutral modes with real $\hat{\sigma}=\hat{\omega}$ and $\khat^2\gg 1$, the real and imaginary parts of
-Eq. \ref{relax_disp} are approximately 
-\begin{align}
-  0 =&M(M+1)(1-\epsilon^2 q^2 \khat^2) + 4\beta\epsilon q M(M+1)\left(\hat{\omega}\khat\right) 
- +\left[1 +
-    \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2
- + 2\epsilon q \gamma\beta \left(\hat{\omega}\khat\right)^3 -  \left(\hat{\omega}\khat\right)^4\notag \\
-  &+ \beta^2\gamma^2\hat{\omega}^2
-  \left(\hat{\omega}\khat\right)^4,\label{relax_cond1} \\
-   0=& 2\epsilon q M (M+1)\khat +
-   \beta(1-\gamma)(1+2M)^2\khat\left(\hat{\omega}\khat\right) 
-   + \epsilon q \khat \left(\hat{\omega}\khat\right)^2 -
-   2\beta\hat{\omega}\left(\hat{\omega}\khat\right)^2
-   - \epsilon q
-   \gamma^2\beta^2\hat{\omega}\left(\hat{\omega}\khat\right)^3 
-   +
-   2\beta\gamma\hat{\omega}\left(\hat{\omega}\khat\right)^4 \label{relax_cond2}. 
-\end{align}
-These equations are used to derive a critical thermal timescale in
-\S\ref{iso_vsi_beta_crit}. For fixed $M=O(1)$,  we assume
-$|\hat{\omega}\khat|$ remain constant but consider $\khat\gg 1$ so
-that $|\hat{\omega}|\ll 1$.  Then for a thin disk $\epsilon \ll 1$
-we neglect the second, fourth and last term in Eq. \ref{relax_cond1};
-and neglect the last three terms in Eq. \ref{relax_cond2}. This
-approximation gives Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2},
-but is not valid if $\beta$ or $|q|$ is large. 
-
-For the fundamental mode $M=0$ and Eq. \ref{relax_cond1} ---
-\ref{relax_cond2} simplify significantly. It is then straight
-forward to eliminate $\hat{\omega}\khat$ between 
-Eq. \ref{relax_cond_simp1} and \ref{relax_cond_simp2} to obtain
-$\beta_\mathrm{crit}$ (Eq. \ref{iso_vsi_cond}) without
-assuming $|\epsilon q \khat|\lesssim 1$, as done in the main text to obtain the
-equivalent expression for $M>0$ (Eq. \ref{bcrit_gen}).
-
-
-
-
-
-%Taking the real and imaginary parts of Eq. \ref{relax_disp_fund} and considering 
-% $\khat\gg1$, we find
-% \begin{align}
-%   0 =& \left[1 + \gamma\beta^2\left(1-\gamma\right)\right] + 2\epsilon q
-%   \gamma\beta (\hat{\omega}\khat) -  (\hat{\omega}\khat)^2 \notag\\
-%   &+ \beta^2\gamma^2\hat{\omega}^2 (\hat{\omega}\khat)^2,\label{relax_cond1}\\
-%   0=& \beta(1-\gamma)\khat^2 + \epsilon q \khat^2 (\hat{\omega}\khat)
-%   - 2\beta (\hat{\omega}\khat)^2 - \epsilon q \gamma^2\beta^2 (\hat{\omega}\khat)^3 \notag\\
-%     &+ 2\beta\gamma(\hat{\omega}\khat)^4.  
-% \label{relax_cond2}
-% \end{align}
-% This is a pair of simultaneous equations for
-% $\hat{\omega}$ and $\beta$. Now, low-frequency axisymmetric waves in
-% the absence of vertical shear are stable and  satisfy
-% $\hat{\omega}\propto \khat^{-1}$ (Appendix \ref
-% {stable_novshear}, Eq. \ref{iso_disp_full}).  We are thus motivated to
-% seek solutions to Eq. \ref{relax_cond1}---\ref{relax_cond2} with  
-% % we wish to seek a criterion independent of k 
-% % \begin{align}
-% %   \khat \to \infty, \quad \hat{\omega}\to 0 ,\quad \hat{\omega} \khat\text{ finite}.
-% %\end{align}
-% \begin{align}
-%   \khat \gg1, \quad |\hat{\omega}|\ll 1 ,\quad
-%   |\hat{\omega}\khat|=O(1). 
-% \end{align}
-% Then
-% \begin{align}
-%   \hat{\omega}\khat = \frac{(\gamma-1)\beta}{\epsilon q}
-% \end{align}
-% from Eq. \ref{relax_cond2}, which implies, from Eq. \ref{relax_cond1}
-% that
-% \begin{align}\label{beta_crit0}
-%   \beta = \frac{1}{(\gamma-1)}\left[\frac{1}{\left(\epsilon
-%         q\right)^2} - \frac{\gamma}{(\gamma-1)}\right]^{-1/2} 
-% \end{align}
 
 
 
@@ -657,6 +614,109 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto|\omega|$.
 % shear $|d\Omega^2/dz|\propto |z|$ increases indefinitely with 
 % height. However, Eq. \ref{iso_max_growth} compares well with
 % numerical solutions for small $L$ (see \S\ref{vertiso_pertiso}). 
+
+
+
+\section{Coefficients for the dispersion relation for perturbations
+with thermal relaxation}\label{relax_coeff}
+The coefficients of the dispersion relation Eq. \ref{relax_disp} is
+given by:
+\begin{align}
+  &c_0 = M(M+1)A^2,\\
+  &c_1 = \ii\beta\left\{\left(1-\gamma\right)\left[1 +
+      \khat^2\left(1+2M\right)^2 - 4 \ii\epsilon q\khat M (M+1)\right] 
+    - 2A^2\gamma M (M+1)\right\},\\
+  &c_2 = \left(\khat^2 + 1\right)A + \beta^2\left\{(1-\gamma)\left[1
+      + \gamma \khat^2(1+2M)^2 - 4\ii\epsilon q \khat \gamma M(M+1)
+    \right]
+    -\gamma^2 A^2 M(M+1)
+  \right\},\\
+  &c_3 = \beta\left\{\epsilon q \khat + \gamma \left[\ii + \epsilon q
+      k \left(1+2\khat^2\right)\right] - 3\ii - 2\ii
+    \khat^2\right\},\\
+  &c_4 =
+  \beta^2\left(1+\gamma\khat^2\right)\left[\gamma\left(1-\ii\epsilon q
+    \khat\right)-2\right] - \left(1+\khat^2\right)^2,\\
+&c_5 = 2\ii\beta\left(1+\khat^2\right)\left(1+\gamma\khat^2\right),\\
+&c_6 = \beta^2\left(1+\gamma\khat^2\right)^2.
+\end{align}
+
+\subsection{Limiting form with real frequencies and $\khat^2\gg 1$}\label{disp_neut_limit}
+Assuming neutral modes with real $\hat{\sigma}=\hat{\omega}$ and $\khat^2\gg 1$, the real and imaginary parts of
+Eq. \ref{relax_disp} are approximately 
+\begin{align}
+  0 =&M(M+1)(1-\epsilon^2 q^2 \khat^2) + 4\beta\epsilon q M(M+1)\left(\hat{\omega}\khat\right) 
+ +\left[1 +
+    \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2
+ + 2\epsilon q \gamma\beta \left(\hat{\omega}\khat\right)^3 -  \left(\hat{\omega}\khat\right)^4\notag \\
+  &+ \beta^2\gamma^2\hat{\omega}^2
+  \left(\hat{\omega}\khat\right)^4,\label{relax_cond1} \\
+   0=& 2\epsilon q M (M+1)\khat +
+   \beta(1-\gamma)(1+2M)^2\khat\left(\hat{\omega}\khat\right) 
+   + \epsilon q \khat \left(\hat{\omega}\khat\right)^2 -
+   2\beta\hat{\omega}\left(\hat{\omega}\khat\right)^2
+   - \epsilon q
+   \gamma^2\beta^2\hat{\omega}\left(\hat{\omega}\khat\right)^3 
+   +
+   2\beta\gamma\hat{\omega}\left(\hat{\omega}\khat\right)^4 \label{relax_cond2}. 
+\end{align}
+These equations are used to derive a critical thermal timescale in
+\S\ref{iso_vsi_beta_crit}. For fixed $M=O(1)$,  we assume
+$|\hat{\omega}\khat|$ remain constant but consider $\khat\gg 1$ so
+that $|\hat{\omega}|\ll 1$.  Then for a thin disk $\epsilon \ll 1$
+we neglect the second, fourth and last term in Eq. \ref{relax_cond1};
+and neglect the last three terms in Eq. \ref{relax_cond2}. This
+approximation gives Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2},
+but is not valid if $\beta$ or $|q|$ is large. 
+
+For the fundamental mode $M=0$ and Eq. \ref{relax_cond1} ---
+\ref{relax_cond2} simplify significantly. It is then straight
+forward to eliminate $\hat{\omega}\khat$ between 
+Eq. \ref{relax_cond_simp1} and \ref{relax_cond_simp2} to obtain
+$\beta_\mathrm{crit}$ (Eq. \ref{iso_vsi_cond}) without
+assuming $|\epsilon q \khat|\lesssim 1$, as done in the main text to obtain the
+equivalent expression for $M>0$ (Eq. \ref{bcrit_gen}).
+
+
+
+
+
+%Taking the real and imaginary parts of Eq. \ref{relax_disp_fund} and considering 
+% $\khat\gg1$, we find
+% \begin{align}
+%   0 =& \left[1 + \gamma\beta^2\left(1-\gamma\right)\right] + 2\epsilon q
+%   \gamma\beta (\hat{\omega}\khat) -  (\hat{\omega}\khat)^2 \notag\\
+%   &+ \beta^2\gamma^2\hat{\omega}^2 (\hat{\omega}\khat)^2,\label{relax_cond1}\\
+%   0=& \beta(1-\gamma)\khat^2 + \epsilon q \khat^2 (\hat{\omega}\khat)
+%   - 2\beta (\hat{\omega}\khat)^2 - \epsilon q \gamma^2\beta^2 (\hat{\omega}\khat)^3 \notag\\
+%     &+ 2\beta\gamma(\hat{\omega}\khat)^4.  
+% \label{relax_cond2}
+% \end{align}
+% This is a pair of simultaneous equations for
+% $\hat{\omega}$ and $\beta$. Now, low-frequency axisymmetric waves in
+% the absence of vertical shear are stable and  satisfy
+% $\hat{\omega}\propto \khat^{-1}$ (Appendix \ref
+% {stable_novshear}, Eq. \ref{iso_disp_full}).  We are thus motivated to
+% seek solutions to Eq. \ref{relax_cond1}---\ref{relax_cond2} with  
+% % we wish to seek a criterion independent of k 
+% % \begin{align}
+% %   \khat \to \infty, \quad \hat{\omega}\to 0 ,\quad \hat{\omega} \khat\text{ finite}.
+% %\end{align}
+% \begin{align}
+%   \khat \gg1, \quad |\hat{\omega}|\ll 1 ,\quad
+%   |\hat{\omega}\khat|=O(1). 
+% \end{align}
+% Then
+% \begin{align}
+%   \hat{\omega}\khat = \frac{(\gamma-1)\beta}{\epsilon q}
+% \end{align}
+% from Eq. \ref{relax_cond2}, which implies, from Eq. \ref{relax_cond1}
+% that
+% \begin{align}\label{beta_crit0}
+%   \beta = \frac{1}{(\gamma-1)}\left[\frac{1}{\left(\epsilon
+%         q\right)^2} - \frac{\gamma}{(\gamma-1)}\right]^{-1/2} 
+% \end{align}
+
 
 
 \section{Fiducial model for a protoplanetary disk}\label{mmsn}

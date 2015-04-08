@@ -73,41 +73,29 @@ the approximations described below are relaxed in our numerical study.
 \subsection{Shearing box, low-frequency and Keplerian
   approximations}\label{approx_gov} 
 
-In Appendix \ref{adia_improve}, we derive a governing equation with the following approximations:
+In Appendix \ref{adia_improve} we derive a governing equation with the following simplifications:
 
 \begin{enumerate}
   
-\item%  We adopt the  `vertically global shearing box' (VGSB) formalism
-%   developed by \cite{mcnally14}, which is an extension to the standard
-%   shearing box \citep{goldreich65} background shear flows that are
-%   height dependent.  As in the standard shearing box, in the VGSB the equilibrium disk
-%   structure is assumed to be homogeneous in the radial ($x$) direction.  
+\item  We adopt the  `vertically global shearing box' (VGSB) formalism 
+  developed by \cite{mcnally14}, in which explicit dependencies on the
+  background radial disk structure in 
+  Eq. \ref{lin_mass}---\ref{lin_energy} are neglected by setting
+  $\hat{g}_c=0$. However, the global radial temperature 
+  gradient in the expression for the 
+  vertical shear (Eq. \ref{vertical_shear}) is retained. 
 
-% % Thus, the linear problem in the VGSB can be derived from
-% % Eq. \ref{lin_mass}---\ref{lin_energy} by setting 
-% % $\hat{g}_c=0$.
-
-
-
-% in which explicit dependences on the background radial disk structure
-%   in Eq. \ref{lin_mass}---\ref{lin_energy} are neglected by setting
-%   $\hat{g}_c=0$. 
-
-% However, the global radial temperature structure,
-%   which gives rise to vertical shear, is retained. 
-  
-%   We further discuss caveats of the VGSB in Appendix
-%   \ref{global_corr}. We find that for fast thermal relaxation
-%   ($\beta\ll1$) and perturbations with small radial
-%   lengthscales ($k_xH\gg 1$), which characterizes the VSI, the VGSB
-%   framework is adequate for the purpose of a simple analytical
-%   treatment.  
+  In Appendix \ref{global_corr}  we discuss limitations of using
+  the VGSB, where we show that this approximation is valid provided we 
+  consider consider fast thermal relaxation times
+  ($\beta\lesssim 1$) and perturbations with small radial lengthscales
+  ($k_xH\gtrsim 1$), as appropriate for the VSI.  
+ 
   
 \item We consider eigenvalues such that
-  $|\sigma^2|\ll \kappa^2$. Then we can replace $D=\kappa^2 -\sigma^2\to
-  \kappa^2$. %\citep[e.g.][]{lin10}. 
-  We call this the low frequency approximation. We are therefore
-  considering inertial waves \citep{barker15}. 
+  $|\sigma^2|\ll \kappa^2,\,\Omega^2$. We call this the low frequency
+  approximation. We are therefore considering inertial waves
+  \citep{barker15}.  
 
 \item We are mainly interested in the effect of vertical shear, i.e. $q\neq
   0$. This is already captured explicitly in the linearized equations through
@@ -123,9 +111,8 @@ In Appendix \ref{adia_improve}, we derive a governing equation with the followin
 % making use of Eq. \ref{vertical_shear}, to
 % obtain an equation for $\delta v_z$.  
 
-
-
-
+These approximations lead to Eq. \ref{full_ode} which, for a thin disk
+$\epsilon\ll 1$, simplifies further to  
 %The result for $\Gamma=1$ is
 \begin{align}
   0 =& \frac{d^2\delta v_z}{dz^2} + \left(1 + \frac{\ii k_x c_s^2
@@ -147,10 +134,6 @@ where
   \chi \equiv \frac{1-\ii\sigma t_c}{1-\ii\sigma t_c\gamma}.
 \end{align}
 
-
-
-
-
 It is convenient to introduce the dimensionless variables
 \begin{align}
   \hat{z} = z/H,\quad \hat{k}=k_xH, \quad \hat{\sigma} =\hat{\omega} +
@@ -171,14 +154,3 @@ Eq. \ref{vertiso_gov} becomes
       q\hat{k}\right)\left(1 - \chi\right)\right]\delta v_z,\label{vertiso_gov_nondim}
 \end{align}
 where $^\prime$ denotes $d/d\zhat$.
-
-In deriving Eq. \ref{vertiso_gov}, the vertical dependence of
-$D=\kappa^2(z)-\sigma^2$ was ignored because the replacement
-$D\to\Omega_k^2$ was made before eliminating variables in favor of
-$\delta v_z$. In Appendix \ref{adia_improve} we show that making this
-replacement after eliminating variables, which involves $dD/dz$,
-introduces terms of $O(\epsilon^2)$. Since we are interested in 
-thin disks ($\epsilon\ll 1 $), e.g. protoplanetary disks where 
-$\epsilon\lesssim 0.1$ \citep{chiang10}, these terms introduce
-unnecessary complexity for the present discussion. 
-      
