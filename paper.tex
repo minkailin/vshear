@@ -58,61 +58,87 @@
 \newcommand{\dphi}{\dd \Phi}
 \newcommand{\actaa}{Acta Astron.}
 \defcitealias{lin12}{L12} 
+\def \OmK {\Omega_{\rm K}}
 
 \begin{document}
 
-\title{Vertical shear instability in astrophysical disks: vertically global linear calculations with thermal relaxation and applications to the Solar Nebula} 
-\author{Min-Kai Lin, Andrew Youdin}
-\affil{ $^1$Department of Astronomy and Steward Observatory, University of
+\title{Cooling Requirements for the Vertical Shear Instability, \\
+ with Implications for Protoplanetary Disks}
+%\title{Vertical shear instability in astrophysical disks: vertically global linear calculations with thermal relaxation and applications to the Solar Nebula} 
+\author{Min-Kai Lin \& Andrew Youdin}
+\affil{Department of Astronomy and Steward Observatory, \\
+University of
   Arizona, 933 North Cherry Avenue, Tucson, AZ 85721, USA}
 \email{minkailin@email.arizona.edu, youdin@email.arizona.edu}
 
 \begin{abstract}
-  A robust hydrodynamic mechanism for turbulent angular momentum
-  transport is important for cold accretion disks such as 
-  protoplanetary disks. The vertical shear instability (VSI) has 
-  recently been suggested to provide such a pathway, since it operates in
-  disks with rotation profiles that depend on the height from the 
-  disk midplane, which is generally expected in  
-  astrophysical disks. However, vertical shear is weak in thin disks, 
-  so the VSI can easily be stabilized by buoyancy forces in the
-  presence of a stable vertical entropy  gradient. % , which is also
-  % expected in astrophysical disks. 
-  Consequently,  the VSI
-  requires a rather short thermal or cooling timescale in
-  sub-adabatically stratified disks.      
-  A quantitative examination of this thermodynamic 
-  requirement is needed to assess the viability of
-  the VSI in realistic disks. To this end,  
-  we study the linear, axisymmetric VSI in radially local, 
-  vertically global models of stably stratified accretion disks in which the disk  
-  temperature $T$ is relaxed to its initial value over a characteristic timescale 
-  $t_c=\beta\Omega_k^{-1}$, where $\beta$ is a dimensionless parameter 
-  and $\Omega_k$ is the Keplerian rotation frequency. % We explore how
-  % the VSI depends on the thermodynamic response of the disk by
-  % varying $\beta$.
-  We find that 
-  increasing $\beta$ even slightly away from    
-  zero dramatically reduce VSI growth rates. 
-  For vertically isothermal disks, we quantify the
-  `short' thermal timescale requirement for the VSI as $\beta < \epsilon|q|/(\gamma-1)$, where
-  $\epsilon$ is the disk aspect-ratio, $q = \p\ln T/\p\ln r$  is the radial temperature gradient, and 
-  $\gamma$ is the adiabatic index. Thus, in a thin disk the thermal timescale must be shorter than 
-  the dyamical timescale by $O(\epsilon)\ll 1$ for the VSI to operate.  
-  We apply our results  
-  to a disk model of the Minimum Mass Solar Nebula (MMSN) with an  
-  estimate for the thermal timescale $\beta$ in the MMSN based on dust
-  opacity. In the inner parts of the MMSN, e.g. at $\lesssim 5$AU, 
-  we find the VSI would only operate on extremely short radial lengthscales, $\ll 
-  O(10^{-2}H)$, where $H$ is the disk scale height. On longer radial 
-  lengthscales of $O(10^{-2}H)$ to $O(10^{-1}H)$, we find the MMSN is
-  unstable to the VSI from $\sim 5$AU to $\sim 50$AU with a
-  characteristic growth time of $\sim 30$ local orbital periods.  
-  % ,and the dominant VSI mode in the MMSN is the `fundamental
-  % corrugation mode' which causes the disk column to oscillate
-  % vertically.
-  We thus suggest the VSI is at least dynamically important in the 
-  outer parts of protoplanetary disks at tens of AU. 
+  It is difficult to understand how cold circumstellar disks accrete onto their central stars.  Due to 
+  lower levels of ionization, the magnetic transport mechanisms that operate in warmer disks are less effective. 
+  A hydrodynamic mechanism, the vertical shear instability (VSI), offers a means to drive angular momentum 
+  transport and accretion flows in cold protoplanetary disks.  
+  The VSI is driven by a weak vertical gradient in the disk's orbital motion.
+  In order to grow, the VSI must overcome vertical buoyancy, a strong stabilizing influence in cold disks, where 
+  heating is dominated by external irradiation.  Rapid cooling, via radiative losses, reduces the effective buoyancy
+  and allows the VSI to operate.  In this paper, we quantify the cooling timescale, $t_c$, needed for growth of the VSI
+  and consider the implications for protoplanetary disks where $t_c$ is determined by the opacity of dust 
+  grains.  We perform a linear analysis of the VSI with cooling in vertically global and radially local disk models.
+  For irradiated disks, we find that the VSI is most vigorous for rapid cooling with $t_c < \Omega_K^{-1} \epsilon |q| / (\gamma -1)$
+  in terms of the Keplerian orbital frequency, $\OmK$; the disk's aspect ratio, $\epsilon \ll 1$; the radial 
+  powerlaw temperature gradient, $q$; and the adiabatic index, $\gamma$.  For longer cooling times, the VSI 
+  is much less effective because growth slows and shifts to smaller length scales, which are more prone to 
+  viscous or turbulent decay.  We apply our results to a  Minimum Mass Solar Nebula (MMSN) disk model.  We
+  find that the VSI is most effective at intermediate radii, from $\sim 5$AU to $\sim 50$AU with a
+  characteristic growth time of $\sim 30$ local orbital periods.  Growth is suppressed by long cooling times both in the opaque 
+  inner disk and the optically thin outer disk.  A reduction in the dust opacity by a factor of 10 increases cooling times 
+  enough to quench the VSI at all disk radii.  Thus the formation of solid protoplanets, a sink for dust grains, can impede the VSI.
+
+%
+
+%  A robust hydrodynamic mechanism for turbulent angular momentum
+%  transport is important for cold accretion disks such as 
+%  protoplanetary disks. The vertical shear instability (VSI) has 
+%  recently been suggested to provide such a pathway, since it operates in
+%  disks with rotation profiles that depend on the height from the 
+%  disk midplane, which is generally expected in  
+%  astrophysical disks. However, vertical shear is weak in thin disks, 
+%  so the VSI can easily be stabilized by buoyancy forces in the
+%  presence of a stable vertical entropy  gradient. % , which is also
+%  % expected in astrophysical disks. 
+%  Consequently,  the VSI
+%  requires a rather short thermal or cooling timescale in
+%  sub-adabatically stratified disks.      
+%  A quantitative examination of this thermodynamic 
+%  requirement is needed to assess the viability of
+%  the VSI in realistic disks. To this end,  
+%  we study the linear, axisymmetric VSI in radially local, 
+%  vertically global models of stably stratified accretion disks in which the disk  
+%  temperature $T$ is relaxed to its initial value over a characteristic timescale 
+%  $t_c=\beta\Omega_k^{-1}$, where $\beta$ is a dimensionless parameter 
+%  and $\Omega_k$ is the Keplerian rotation frequency. % We explore how
+%  % the VSI depends on the thermodynamic response of the disk by
+%  % varying $\beta$.
+%  We find that 
+%  increasing $\beta$ even slightly away from    
+%  zero dramatically reduce VSI growth rates. 
+%  For vertically isothermal disks, we quantify the
+%  `short' thermal timescale requirement for the VSI as $\beta < \epsilon|q|/(\gamma-1)$, where
+%  $\epsilon$ is the disk aspect-ratio, $q = \p\ln T/\p\ln r$  is the radial temperature gradient, and 
+%  $\gamma$ is the adiabatic index. Thus, in a thin disk the thermal timescale must be shorter than 
+%  the dyamical timescale by $O(\epsilon)\ll 1$ for the VSI to operate.  
+%  We apply our results  
+%  to a disk model of the Minimum Mass Solar Nebula (MMSN) with an  
+%  estimate for the thermal timescale $\beta$ in the MMSN based on dust
+%  opacity. In the inner parts of the MMSN, e.g. at $\lesssim 5$AU, 
+%  we find the VSI would only operate on extremely short radial lengthscales, $\ll 
+%  O(10^{-2}H)$, where $H$ is the disk scale height. On longer radial 
+%  lengthscales of $O(10^{-2}H)$ to $O(10^{-1}H)$, we find the MMSN is
+%  unstable to the VSI from $\sim 5$AU to $\sim 50$AU with a
+%  characteristic growth time of $\sim 30$ local orbital periods.  
+%  % ,and the dominant VSI mode in the MMSN is the `fundamental
+%  % corrugation mode' which causes the disk column to oscillate
+%  % vertically.
+%  We thus suggest the VSI is at least dynamically important in the 
+%  outer parts of protoplanetary disks at tens of AU. 
 \end{abstract}
 
 \section{Introduction}\label{intro}
