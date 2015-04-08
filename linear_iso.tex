@@ -12,68 +12,97 @@ the approximations described below are relaxed in our numerical study.
 
 %vertically isothermal disk lacks a surface 
 
-\subsection{Relation to the vertically global
-  shearing box}\label{vgsb_approx} 
-We connect the linearized equations 
-Eq. \ref{lin_mass}---\ref{lin_energy} to the vertically global  
-shearing box (VGSB) formalism developed by \cite{mcnally14}. The VGSB
-is an extension of the standard shearing box \citep{goldreich65} to 
-background shear flows that are height dependent. 
-As in the  standard shearing box, in the VGSB the equilibrium disk
-structure is assumed to be homogeneous in the radial ($x$) direction.  
+% \subsection{Relation to the vertically global
+%   shearing box}\label{vgsb_approx} 
+% We connect the linearized equations 
+% Eq. \ref{lin_mass}---\ref{lin_energy} to the vertically global  
+% shearing box (VGSB) formalism developed by \cite{mcnally14}. The VGSB
+% is an extension of the standard shearing box \citep{goldreich65} to 
+% background shear flows that are height dependent. 
+% As in the  standard shearing box, in the VGSB the equilibrium disk
+% structure is assumed to be homogeneous in the radial ($x$) direction.  
 
-Thus, the linear problem in the VGSB can be derived from
-Eq. \ref{lin_mass}---\ref{lin_energy} by setting 
-$\hat{g}_c=0$. The resulting problem is very similar 
-to that for local axisymmetric waves in accretion disks already
-discussed by \cite{lubow93}, but modified by the presence of vertical
-shear and thermal relaxation. This is convenient as it allows us to
-directly apply some of their solution methods.    
+% Thus, the linear problem in the VGSB can be derived from
+% Eq. \ref{lin_mass}---\ref{lin_energy} by setting 
+% $\hat{g}_c=0$. The resulting problem is very similar 
+% to that for local axisymmetric waves in accretion disks already
+% discussed by \cite{lubow93}, but modified by the presence of vertical
+% shear and thermal relaxation. This is convenient as it allows us to
+% directly apply some of their solution methods.    
 
-After setting $\hat{g}_c=0$ in Eq. \ref{lin_mass}, \ref{lin_vx} and
-\ref{lin_energy}, we can eliminate variables 
-to obtain a pair or ordinary differential
-equations for $W,Q$ as
-\begin{align}
-  &\frac{\sigma^2}{c_s^2}Q + \frac{\sigma^2k_x^2}{D}W \notag\\ 
-  &=\left(\frac{\ii
-      k_x r}{D}\frac{d\Omega^2}{dz} -
-    \frac{d\ln{\rho}}{dz}\right)\left[\frac{dW}{dz} +
-    \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] \notag\\
-  &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
-    \frac{dQ}{dz}\right) - \frac{d^2\ln{\rho}}{dz^2}\left(W-Q\right),\label{ode_w}\\
-  &\sigma^2W - \frac{\gamma}{\Gamma}\sigma^2 Q +
-  \frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right)\notag\\
-  &=c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} - 1\right) 
-  \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],\label{ode_Q} 
-\end{align}
-where
-\begin{align}
-  D \equiv \kappa^2 - \sigma^2,
-\end{align} 
-and we have replaced the notation $\p_z$ by $d/dz$ since we are
-considering solutions at a fixed radius. 
+% After setting $\hat{g}_c=0$ in Eq. \ref{lin_mass}, \ref{lin_vx} and
+% \ref{lin_energy}, we can eliminate variables 
+% to obtain a pair or ordinary differential
+% equations for $W,Q$ as
+% \begin{align}
+%   &\frac{\sigma^2}{c_s^2}Q + \frac{\sigma^2k_x^2}{D}W \notag\\ 
+%   &=\left(\frac{\ii
+%       k_x r}{D}\frac{d\Omega^2}{dz} -
+%     \frac{d\ln{\rho}}{dz}\right)\left[\frac{dW}{dz} +
+%     \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] \notag\\
+%   &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
+%     \frac{dQ}{dz}\right) - \frac{d^2\ln{\rho}}{dz^2}\left(W-Q\right),\label{ode_w}\\
+%   &\sigma^2W - \frac{\gamma}{\Gamma}\sigma^2 Q +
+%   \frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right)\notag\\
+%   &=c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} - 1\right) 
+%   \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],\label{ode_Q} 
+% \end{align}
+% where
+% \begin{align}
+%   D \equiv \kappa^2 - \sigma^2,
+% \end{align} 
+% and we have replaced the notation $\p_z$ by $d/dz$ since we are
+% considering solutions at a fixed radius. 
 
-Extrapolating results obtained from the VGSB to the global disk has
-limitations. This is because within the VGSB framework, $d\Omega/dz$
-can be freely specified. 
-We choose $d\Omega/dz$ to be that due to the thermal structure in 
-the global disk (Eq. \ref{vertical_shear}). However, background radial
-gradient terms are ignored elsewhere in the VGSB (which is done by
-setting $\hat{g}_c=0$).       
+% Extrapolating results obtained from the VGSB to the global disk has
+% limitations. This is because within the VGSB framework, $d\Omega/dz$
+% can be freely specified. 
+% We choose $d\Omega/dz$ to be that due to the thermal structure in 
+% the global disk (Eq. \ref{vertical_shear}). However, background radial
+% gradient terms are ignored elsewhere in the VGSB (which is done by
+% setting $\hat{g}_c=0$).       
 
 
-We further discuss caveats of the VGSB in Appendix
-\ref{global_corr}. We find that for fast thermal relaxation
-($\beta\ll1$) and perturbations with small radial
-lengthscales ($k_xH\gg 1$), which characterizes the VSI, the VGSB
-framework is adequate for the purpose of a simple analytical
-treatment.  
+% We further discuss caveats of the VGSB in Appendix
+% \ref{global_corr}. We find that for fast thermal relaxation
+% ($\beta\ll1$) and perturbations with small radial
+% lengthscales ($k_xH\gg 1$), which characterizes the VSI, the VGSB
+% framework is adequate for the purpose of a simple analytical
+% treatment.  
 
-\subsection{Low-frequency and Keplerian
-  approximation}\label{approx_gov} 
-We now derive a governing equation with further approximations:
+\subsection{Shearing box, low-frequency and Keplerian
+  approximations}\label{approx_gov} 
+
+In Appendix \ref{adia_improve}, we derive a governing equation with the following approximations:
+
 \begin{enumerate}
+  
+\item%  We adopt the  `vertically global shearing box' (VGSB) formalism
+%   developed by \cite{mcnally14}, which is an extension to the standard
+%   shearing box \citep{goldreich65} background shear flows that are
+%   height dependent.  As in the standard shearing box, in the VGSB the equilibrium disk
+%   structure is assumed to be homogeneous in the radial ($x$) direction.  
+
+% % Thus, the linear problem in the VGSB can be derived from
+% % Eq. \ref{lin_mass}---\ref{lin_energy} by setting 
+% % $\hat{g}_c=0$.
+
+
+
+% in which explicit dependences on the background radial disk structure
+%   in Eq. \ref{lin_mass}---\ref{lin_energy} are neglected by setting
+%   $\hat{g}_c=0$. 
+
+% However, the global radial temperature structure,
+%   which gives rise to vertical shear, is retained. 
+  
+%   We further discuss caveats of the VGSB in Appendix
+%   \ref{global_corr}. We find that for fast thermal relaxation
+%   ($\beta\ll1$) and perturbations with small radial
+%   lengthscales ($k_xH\gg 1$), which characterizes the VSI, the VGSB
+%   framework is adequate for the purpose of a simple analytical
+%   treatment.  
+  
 \item We consider eigenvalues such that
   $|\sigma^2|\ll \kappa^2$. Then we can replace $D=\kappa^2 -\sigma^2\to
   \kappa^2$. %\citep[e.g.][]{lin10}. 
@@ -88,11 +117,16 @@ We now derive a governing equation with further approximations:
   $\Omega_k^2$. We call this the Keplerian approximation. 
   
 \end{enumerate}
-Making both of these approximations is equivalent to setting 
-$D\to\Omega_k^2$.  After making this replacement, we eliminate $W$ and
-$Q$ between  Eq. \ref{lin_vz} and Eq. \ref{ode_w}---\ref{ode_Q},
-making use of Eq. \ref{vertical_shear}, to
-obtain an equation for $\delta v_z$. The result for $\Gamma=1$ is
+% Making both of these approximations is equivalent to setting 
+% $D\to\Omega_k^2$.  After making this replacement, we eliminate $W$ and
+% $Q$ between  Eq. \ref{lin_vz} and Eq. \ref{ode_w}---\ref{ode_Q},
+% making use of Eq. \ref{vertical_shear}, to
+% obtain an equation for $\delta v_z$.  
+
+
+
+
+%The result for $\Gamma=1$ is
 \begin{align}
   0 =& \frac{d^2\delta v_z}{dz^2} + \left(1 + \frac{\ii k_x c_s^2
       q}{\Omega_k^2r}\right)\frac{d\ln\rho}{dz}\frac{d\delta
@@ -112,6 +146,10 @@ where
 \begin{align}
   \chi \equiv \frac{1-\ii\sigma t_c}{1-\ii\sigma t_c\gamma}.
 \end{align}
+
+
+
+
 
 It is convenient to introduce the dimensionless variables
 \begin{align}

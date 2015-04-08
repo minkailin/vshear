@@ -1,3 +1,105 @@
+\section{Full governing equation for vertically isothermal disks in
+  the VGSB}\label{adia_improve}
+
+
+After setting $\hat{g}_c=0$ in Eq. \ref{lin_mass}, \ref{lin_vx} and
+\ref{lin_energy}, we can eliminate variables 
+to obtain a pair or ordinary differential
+equations for $W,Q$ as
+
+\begin{align}
+  & \ii\sigma\delta v_z = \frac{dW}{dz} + \frac{d\ln{\rho}}{d z}\left(W-Q\right), \\
+  &\frac{\sigma^2}{c_s^2}Q + \frac{\sigma^2k_x^2}{D}W =\ii\sigma \left(\frac{\ii
+      k_x r}{D}\frac{d\Omega^2}{dz} -
+    \frac{d\ln{\rho}}{dz}\right)\delta v_z - \ii\sigma \frac{d\delta v_z}{dz}
+  % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] 
+  % \notag\\
+  % &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
+  %   \frac{dQ}{dz}\right) - \frac{d^2\ln{\rho}}{dz^2}\left(W-Q\right),
+  \label{ode_w}\\
+  &\sigma^2W - \frac{\gamma}{\Gamma}\sigma^2 Q +
+  \frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right) 
+  =\ii \sigma c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} -
+    1\right)\delta v_z,  
+  % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],
+  \label{ode_Q} 
+\end{align}
+where
+\begin{align}
+  D \equiv \kappa^2 - \sigma^2,
+\end{align} 
+and we have replaced the notation $\p_z$ by $d/dz$ since we are
+considering solutions at a fixed radius. 
+
+
+
+
+
+In \S\ref{approx_gov} we made the replacement $D\to\Omega_k^2$ before
+eliminating variables to obtain a single equation for $\delta v_z$ in
+vertically isothermal disks, Eq. \ref{vertiso_gov}.  
+This procedure ignores the vertical dependence of
+$D=\kappa^2(z) - \sigma^2$. We show here that this has no serious 
+consequence for thin disks. 
+
+In the global disk with $\Gamma=1$ we have
+\begin{align}\label{dkappa2}
+  \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
+    r}\frac{\p\Omega^2}{\p z} = -
+   \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(
+  \frac{3z^2}{r^2+z^2}-1\right) \equiv - \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2}F(r,z).
+\end{align}
+% For the local problem we may then write
+% \begin{align}
+%   \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z),
+% \end{align}
+The function $F$ increases monotonically from $F=-1$ at $z=0$ to $F\to2$
+as $|z|\to\infty $, so $|F|=O(1)$. 
+% For the local problem we set
+% $dD/dz = \p\kappa^2/\p z$. 
+% This function varies from $F=q$ at $z=0$ to $F\to
+% 3+q$ as $|z|\to\infty$. Since we consider $|q|=O(1)$, this impies
+% $|F|=O(1)$ as well.  
+
+For the radially local problem, we eliminate $W$ and $Q$ from Eq. \ref{ode_w}---\ref{ode_Q} and
+Eq. \ref{lin_vz}  (with $\Gamma=1$), but now retain the vertical dependence
+of $D$ using Eq. \ref{dkappa2}, to obtain  
+\begin{align}
+  0 =& \frac{d^2\delta v_z}{dz^2} + \left[1 + \frac{\ii k_x c_s^2
+      q}{Dr} - \frac{k_x^2c_s^2}{\left(k_x^2c_s^2 + \chi
+        D\right)}\frac{qc_s^2F}{Dr^2}\right]\frac{d\ln\rho}{dz}\frac{d\delta
+    v_z}{dz} \notag\\
+  &+ \left\{\sigma^2\left(\frac{k_x^2}{D} +
+      \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
+        q}{Dr}\right)\frac{d^2\ln\rho}{dz^2} -
+    \frac{c_s^2}{D}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
+      \frac{\ii k_x q}{r}\right)
+   \left[\left(1-\chi\right) +
+     \frac{\chi}{\left(k_x^2c_s^2 + \chi D\right)}\frac{qc_s^2 F}{r^2}\right] 
+   \right\}\delta v_z,
+\end{align}
+where we recall $\chi = \left(1-\ii\sigma t_c\right)/\left(1-\ii\sigma
+t_c \gamma\right)$. Making the low frequency, Keplerian
+approximations with the replacement $D\to \Omega_k^2$ gives, in terms
+of dimensionless variables,
+\begin{align}
+   &\delta v_z ^{\prime\prime} + \left[1 + \ii\epsilon q\hat{k} -
+    \frac{ \hat{k}^2}{
+      \left(\hat{k}^2+\chi\right)}q \epsilon^2F\right]\ln\rho^{\prime}\delta v_z^\prime +
+  \left\{\left(\chi + \ii \epsilon q
+      \hat{k}\right)\ln\rho^{\prime\prime} - \ln\rho^{\prime
+      2}\left(\khat^2 -
+      \ii\epsilon
+      q\hat{k}\right)\left[1 - \chi +
+      \frac{\chi}{\left(\hat{k}^2+\chi\right)}q\epsilon^2F\right]\right\}\delta v_z \notag\\&=
+  -\hat{\sigma}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
+\end{align}   
+Eq. \ref{adia_diso3} differs from Eq. \ref{vertiso_gov_nondim} by terms
+proportional to $\epsilon^2$. For a thin disk ($\epsilon\ll1$) with
+$|q|=O(1)$, as considered in this work, neglecting these terms has no
+qualitative effect on the discussion in \S\ref{analytic_relax}. 
+
+
 \section{Applicability of the vertically global shearing box}\label{global_corr}
 In \S\ref{analytical} we effectively employed the vertically global shearing box
 \citep[VGSB,][]{mcnally14} to make analytic progress.   
@@ -121,73 +223,6 @@ VSI.
     \label{gcorr_compare}}  
 \end{figure}
 
-
-\section{Full governing equation for vertically isothermal disks in
-  the VGSB}\label{adia_improve}
-
-In \S\ref{approx_gov} we made the replacement $D\to\Omega_k^2$ before
-eliminating variables to obtain a single equation for $\delta v_z$ in
-vertically isothermal disks, Eq. \ref{vertiso_gov}.  
-This procedure ignores the vertical dependence of
-$D=\kappa^2(z) - \sigma^2$. We show here that this has no serious 
-consequence for thin disks. 
-
-In the global disk with $\Gamma=1$ we have
-\begin{align}\label{dkappa2}
-  \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
-    r}\frac{\p\Omega^2}{\p z} = -
-   \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(
-  \frac{3z^2}{r^2+z^2}-1\right) \equiv - \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2}F(r,z).
-\end{align}
-% For the local problem we may then write
-% \begin{align}
-%   \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z),
-% \end{align}
-The function $F$ increases monotonically from $F=-1$ at $z=0$ to $F\to2$
-as $|z|\to\infty $, so $|F|=O(1)$. 
-% For the local problem we set
-% $dD/dz = \p\kappa^2/\p z$. 
-% This function varies from $F=q$ at $z=0$ to $F\to
-% 3+q$ as $|z|\to\infty$. Since we consider $|q|=O(1)$, this impies
-% $|F|=O(1)$ as well.  
-
-For the radially local problem, we eliminate $W$ and $Q$ from Eq. \ref{ode_w}---\ref{ode_Q} and
-Eq. \ref{lin_vz}  (with $\Gamma=1$), but now retain the vertical dependence
-of $D$ using Eq. \ref{dkappa2}, to obtain  
-\begin{align}
-  0 =& \frac{d^2\delta v_z}{dz^2} + \left[1 + \frac{\ii k_x c_s^2
-      q}{Dr} - \frac{k_x^2c_s^2}{\left(k_x^2c_s^2 + \chi
-        D\right)}\frac{qc_s^2F}{Dr^2}\right]\frac{d\ln\rho}{dz}\frac{d\delta
-    v_z}{dz} \notag\\
-  &+ \left\{\sigma^2\left(\frac{k_x^2}{D} +
-      \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
-        q}{Dr}\right)\frac{d^2\ln\rho}{dz^2} -
-    \frac{c_s^2}{D}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
-      \frac{\ii k_x q}{r}\right)
-   \left[\left(1-\chi\right) +
-     \frac{\chi}{\left(k_x^2c_s^2 + \chi D\right)}\frac{qc_s^2 F}{r^2}\right] 
-   \right\}\delta v_z,
-\end{align}
-where we recall $\chi = \left(1-\ii\sigma t_c\right)/\left(1-\ii\sigma
-t_c \gamma\right)$. Making the low frequency, Keplerian
-approximations with the replacement $D\to \Omega_k^2$ gives, in terms
-of dimensionless variables,
-\begin{align}
-   &\delta v_z ^{\prime\prime} + \left[1 + \ii\epsilon q\hat{k} -
-    \frac{ \hat{k}^2}{
-      \left(\hat{k}^2+\chi\right)}q \epsilon^2F\right]\ln\rho^{\prime}\delta v_z^\prime +
-  \left\{\left(\chi + \ii \epsilon q
-      \hat{k}\right)\ln\rho^{\prime\prime} - \ln\rho^{\prime
-      2}\left(\khat^2 -
-      \ii\epsilon
-      q\hat{k}\right)\left[1 - \chi +
-      \frac{\chi}{\left(\hat{k}^2+\chi\right)}q\epsilon^2F\right]\right\}\delta v_z \notag\\&=
-  -\hat{\sigma}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
-\end{align}   
-Eq. \ref{adia_diso3} differs from Eq. \ref{vertiso_gov_nondim} by terms
-proportional to $\epsilon^2$. For a thin disk ($\epsilon\ll1$) with
-$|q|=O(1)$, as considered in this work, neglecting these terms has no
-qualitative effect on the discussion in \S\ref{analytic_relax}. 
 
 \section{Coefficients for the dispersion relation for perturbations
 with thermal relaxation}\label{relax_coeff}
