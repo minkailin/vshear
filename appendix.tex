@@ -191,8 +191,8 @@ and/or small radial wavelengths ($\khat\gg 1$).
 % and pressure radial structures, and nominally $\hat{g}_c=1$.   
 
 \subsection{Spurious growth of adiabatic perturbations in the VGSB}\label{analytic_adia} 
-A limitation of the VGSB is that it cannot be used in the
-adiabatic limit, even if the above conditions are satisfied. We explain this by considering vertically isothermal
+A limitation of the VGSB is that it cannot be used for 
+adiabatic flow, even if the above conditions are satisfied. We explain this by considering vertically isothermal
 disks and setting  $\beta\to\infty$ in 
 Eq. \ref{vertiso_gov_nondim} % (which itself is obtained by setting
 % $\hat{g}_c=0$ in Eq. \ref{lin_mass}---\ref{lin_energy})
@@ -235,9 +235,10 @@ $|\gamma-1|$. This is contradicts the second Solberg-Hoiland criterion
 perturbations in a thin, vertically isothermal disk would require 
 $|\gamma-1|\ll1$. 
 %also need real freq^2 in adia limit 
-This is because the VGSB retains the vertical shear
-($\p_z\Omega$) from the global disk, but ignores the global radial
-disk structure responsible for it. Nevertheless, we demonstrate below
+This is because the VGSB retains the global radial
+disk structure responsible for vertical shear
+($\p_z\Omega$), but ignores it elsewhere in the linear problem. 
+Nevertheless, we demonstrate below
 that this inconsistency is unimportant for the VSI because it occurs
 for $\beta\ll1$.   %and small scale
 
@@ -295,10 +296,12 @@ becomes
 \begin{align} 
   Q = W 
 \end{align}
-(i.e. $\delta P = c_s^2\delta \rho$), and so $  \ii\hat{\sigma}c_s\delta v_z = W^\prime $
-from Eq. \ref{lin_vz}. For isothermal perturbations it is 
+(i.e. $\delta P = c_s^2\delta \rho$)% , and so $  \ii\hat{\sigma}c_s\delta v_z = W^\prime $
+% from Eq. \ref{lin_vz}
+. For isothermal perturbations it is 
 simpler to work with an equation for $W$ by substituting $Q=W$ into
-Eq. \ref{ode_w}. In this case, we shall not yet make the low frequency
+Eq. \ref{ode_w} and using Eq. \ref{ode_vz} to eliminate $\delta v_z$. 
+In this case, we shall not yet make the low frequency
 approximation, but first make the  Keplerian approximation. We
 obtain, in terms of dimensionless variables, 
 \begin{align}
