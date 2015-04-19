@@ -58,13 +58,18 @@
 \newcommand{\dphi}{\dd \Phi}
 \newcommand{\actaa}{Acta Astron.}
 \defcitealias{lin12}{L12} 
+\defcitealias{nelson13}{N13}
+\defcitealias{barker15}{BL15}
+\defcitealias{mcnally14}{MP14}
 \def \OmK {\Omega_{\rm K}}
 
 \begin{document}
 
 \title{Cooling Requirements for the Vertical Shear Instability 
   in Protoplanetary Disks}
-%\title{Vertical shear instability in astrophysical disks: vertically global linear calculations with thermal relaxation and applications to the Solar Nebula} 
+%\title{Vertical shear instability in astrophysical disks: vertically
+%global linear calculations with thermal relaxation and applications
+%to the Solar Nebula}  
 \author{Min-Kai Lin \& Andrew Youdin}
 \affil{Department of Astronomy and Steward Observatory, \\
 University of
@@ -73,24 +78,35 @@ University of
 
 \begin{abstract}
   It is difficult to understand how cold circumstellar disks accrete onto their central stars.  Due to 
-  lower levels of ionization, the magnetic transport mechanisms that operate in warmer disks are less effective. 
+  lower levels of ionization, the magnetic transport mechanisms that
+  operate in warmer disks are less effective.  
   A hydrodynamic mechanism, the vertical shear instability (VSI), offers a means to drive angular momentum 
   transport in cold accretion disks such as protoplanetary disks.  
   The VSI is driven by a weak vertical gradient in the disk's orbital motion.
-  In order to grow, the VSI must overcome vertical buoyancy, a strong stabilizing influence in cold disks, where 
-  heating is dominated by external irradiation.  Rapid cooling, via radiative losses, reduces the effective buoyancy
-  and allows the VSI to operate.  In this paper, we quantify the cooling timescale, $t_c$, needed for growth of the VSI
+  In order to grow, the VSI must overcome vertical buoyancy, a strong
+  stabilizing influence in cold disks, where  
+  heating is dominated by external irradiation.  Rapid cooling, via
+  radiative losses, reduces the effective buoyancy 
+  and allows the VSI to operate.  In this paper, we quantify the
+  cooling timescale, $t_c$, needed for growth of the VSI 
   and consider the implications for protoplanetary disks where $t_c$ is determined by the opacity of dust 
-  grains.  We perform a linear analysis of the VSI with cooling in vertically global and radially local disk models.
-  For irradiated disks, we find that the VSI is most vigorous for rapid cooling with $t_c < \Omega_K^{-1} \epsilon |q| / (\gamma -1)$
-  in terms of the Keplerian orbital frequency, $\OmK$; the disk's aspect ratio, $\epsilon \ll 1$; the radial 
-  powerlaw temperature gradient, $q$; and the adiabatic index, $\gamma$.  For longer cooling times, the VSI 
+  grains.  We perform a linear analysis of the VSI with cooling in
+  vertically global and radially local disk models. 
+  For irradiated disks, we find that the VSI is most vigorous for
+  rapid cooling with $t_c < \OmK^{-1} \epsilon |q| / (\gamma -1)$ 
+  in terms of the Keplerian orbital frequency, $\OmK$; the disk's
+  aspect ratio, $\epsilon \ll 1$; the radial  
+  powerlaw temperature gradient, $q$; and the adiabatic index,
+  $\gamma$.  For longer cooling times, the VSI  
   is much less effective because growth slows and shifts to smaller length scales, which are more prone to 
   viscous or turbulent decay.  We apply our results to a  Minimum Mass Solar Nebula (MMSN) disk model.  We
   find that the VSI is most effective at intermediate radii, from $\sim 5$AU to $\sim 50$AU with a
-  characteristic growth time of $\sim 30$ local orbital periods.  Growth is suppressed by long cooling times both in the opaque 
-  inner disk and the optically thin outer disk.  A reduction in the dust opacity by a factor of 10 increases cooling times 
-  enough to quench the VSI at all disk radii.  Thus the formation of solid protoplanets, a sink for dust grains, can impede the VSI.
+  characteristic growth time of $\sim 30$ local orbital periods.
+  Growth is suppressed by long cooling times both in the opaque  
+  inner disk and the optically thin outer disk.  A reduction in the
+  dust opacity by a factor of 10 increases cooling times  
+  enough to quench the VSI at all disk radii.  Thus the formation of
+  solid protoplanets, a sink for dust grains, can impede the VSI. 
 \end{abstract}
 
 \section{Introduction}\label{intro}
@@ -105,66 +121,114 @@ promising transport mechanism in low mass disks with weak self-gravity.
 However, many parts of protoplanetary  
 disks (PPDs) are cold, have low levels of ionization, and do not support the MRI 
 \citep{blaes94,salmeron03}. Recent simulations
-suggest that significant portions of PPDs fail to develop MHD turbulence \citep[e.g.][]{simon13, lesur14,bai15,gressel15}.
+suggest that significant portions of PPDs fail to develop MHD
+turbulence \citep[e.g.][]{simon13, lesur14,bai15,gressel15}. 
 
 A purely hydrodynamic mechanism could circumvent difficulties with non-ideal MHD, but must overcome
-the strong centrifugal stability imposed the positive radial angular momentum gradient in nearly Keplerian disks \citep{balbus96}.
+the strong centrifugal stability imposed by the positive radial specific angular
+momentum gradient in nearly Keplerian disks \citep{balbus96}.
 One possible route to hydrodynamic turbulence is the vertical shear
-instability (VSI, \citealp{urpin98, nelson13}, hereafter N13).  The basic mechanism of the VSI  in disks was first
+instability (VSI, \citealp{urpin98, urpin03, nelson13}, hereafter \citetalias{nelson13}).  The
+basic mechanism of the VSI  in disks was first 
 identified in the context of differentially rotating stars \citep[][]{goldreich67,fricke68}.   
-The VSI arises when vertical shear, i.e.\ a variation in orbital motion along the rotation axis, 
+The VSI arises when vertical shear, i.e. \ a variation in orbital motion along the rotation axis, 
 destabilizes inertial-gravity waves, which are oscillations 
-with rotation and buoyancy as restoring forces.  Vertical shear
+with rotation and buoyancy as restoring forces. Vertical shear
 occurs wherever the disk is baroclinic, i.e.\ when constant 
 density and constant pressure surfaces are misaligned.  Baroclinicity, and thus vertical shear, is 
-practically unavoidable in disks, except at special locations like the midplane.
+practically unavoidable in astrophysical disks, except at special locations like the
+midplane. 
 
 To overcome centrifugal stabilization, the VSI triggers motions which are vertically elongated 
 and radially narrow.  %This geometry minimizes the effects of the radial gradient of angular momentum.
 Vertical elongation taps the free energy of the vertical shear \citep{umurhan13}, but is also subject to 
-the stabilizing effects of vertical buoyancy. In principle, vertical buoyancy can be eliminated by strong internal heating, i.e.\ by the onset of convection.  
-Real PPDs should be vertically stably stratified in the outer regions, beyond $\sim 1$--5 AU, where heating is 
-irradiation dominated \citep{bitsch15}.  In the inner disk, strong vertical buoyancy is possible if accretion heating is weak
-or is concentrated in surface layers \citep{gammie96,lesniak11}.
+the stabilizing effects of vertical buoyancy if the disk is stably
+stratified. To overcome vertical buoyancy, the VSI requires a short cooling time
+(\citealp{goldreich67}; \citetalias{nelson13}). Rapid radiative 
+cooling, equivalently a short thermal relaxation timescale, brings a
+moving fluid element into thermal equilibrium with 
+its surroundings, thereby diminishing buoyancy. %not obvious actually
+                                %- requires assumption of ideal gas
+                                %e.o.s. and pressure eqm established
+                                %quickly 
+An isothermal equation of state implies instantaneous cooling (and
+heating), and is the ideal context for studying the VSI
+(\citetalias{nelson13}; \citet{mcnally14}, hereafter \citetalias{mcnally14}; \citealp{barker15},
+hereafter \citetalias{barker15}).    
 
-To overcome vertical buoyancy, the VSI requires a short cooling time (\citealp{goldreich67}; N13).  Rapid radiative cooling 
-brings a moving fluid into thermal equilibrium with its surroundings, thereby diminishing buoyancy.  An isothermal equation
-of state implies instantaneous cooling, and is the ideal context for studying the VSI (\citealp{urpin03}, N13, \citealp{barker15}). 
+Alternatively, vertical buoyancy can be eliminated by strong internal
+heating, i.e.\ by the onset of convection, so that the disk becomes 
+neutrally stratified in the vertical direction
+\citepalias{nelson13,barker15}. However, realistic PPDs should be vertically
+stably stratified in the outer regions, beyond $\sim 1$--5 AU, where
+heating is  irradiation dominated \citep{bitsch15}.  In the inner
+disk, strong vertical buoyancy is possible if accretion heating is
+weak or is concentrated in surface layers \citep{gammie96,lesniak11}.  
 
-A full understanding of the VSI in real disks requires considering finite cooling times, $t_{\rm c}$.
-Simulations with a fixed, finite  $t_{\rm c}$ find that  VSI turbulence in stably stratified disks requires rapid cooling 
-with $t_{\rm c} \lesssim 0.01/\Omega$, in terms of the orbital frequency $\Omega$ (N13).  N13 further find that the VSI can drive moderately strong transport, with Reynolds stresses of $\alpha \sim 10^{-3}$ times the mean pressure.    Simulations with realistic radiative transfer, in lieu of a constant $t_{\rm c}$ approximation,  find that the VSI in irradiated disks drive transport with $\alpha \sim 10^{-4}$
- in a  $\sim 2$ -- 10 AU PPD model \citep{stoll14}.
+A full understanding of the VSI in real disks therefore requires
+considering finite, non-zero cooling times, $t_{\rm c}$. Non-linear
+hydrodynamical simulations with a prescribed  $t_{\rm c}$ find that VSI
+turbulence in stably stratified disks requires rapid cooling  
+with $t_{\rm c} \lesssim 0.01P_{\mathrm{orb}}$, where $P_\mathrm{orb}$ 
+%=2\pi/\Omega$ 
+is the local orbital period %and $\Omega$ is the orbital
+%frequency 
+ \citepalias{nelson13}. \citetalias{nelson13} further find
+that the VSI can drive moderately strong transport, with Reynolds
+stresses of $\alpha \sim 10^{-3}$ times the mean pressure. Simulations
+with realistic radiative transfer, in lieu of a parameterized $t_{\rm
+  c}$, find that the VSI in irradiated disks drive transport with
+$\alpha \sim 10^{-4}$  in a  $\sim 2$ -- 10AU PPD model \citep{stoll14}.  
 
-This paper presents the first comprehensive study of how finite cooling times affect the linear development of the VSI.  We consider models with constant $t_{\rm c}$  and  also with more realistic cooling from a dust opacity in both the optically thick (diffusive) and thin regimes, where appropriate.  Coupled with the results from numerical simulations, our results can be used to understand how the VSI operates over a wide range of model PPDs.  This paper is organized as follows. 
-In \S\ref{vsi_require} we introduce and qualitatively explain our main result, the critical cooling time for the VSI.
+To reach hydrodynamic turbulence via the VSI, a disk should  
+first develop the linear instability. A quantitative 
+examination of the thermodynamic requirement of the linear VSI is thus essential in assessing its 
+relevance to PPDs. In this work, we study the linear VSI in vertically global disk models 
+with non-zero cooling timescales, which permit buoyancy forces. 
+Our effort generalizes both early analyses of the VSI that account for buoyancy but in vertically localized disk models \citep{urpin98,urpin03}, 
+as well as recent calculations in vertically global disks but without buoyancy forces \citepalias{nelson13,mcnally14,barker15}. 
+%to study of how finite cooling times, and thus buoyancy, 
+%affect the VSI. Our effort may also be regarded
+%as a extension of early analyses of the VSI in 
+%vertically localized disk models with cooling \citep{urpin98,urpin03} to
+%vertically global disks with cooling. 
+We consider disk   
+models with vertically constant $t_{\rm c}$, as well as more realistic
+cooling timescales based on dust opacity in both the optically thick
+(diffusive) and thin regimes, where appropriate. Coupled with the
+results from numerical simulations, our results can be used to 
+understand how the VSI operates over a wide range of model PPDs. 
 
-\emph{TODO: the following is still a bit too wordy IMO but we can redo as a final step after these sections are finalized.}
+%\emph{TODO: the following is still a bit too wordy IMO but we can redo as a final step after these sections are finalized.}
 
+This paper is organized as follows. In \S\ref{vsi_require} we 
+introduce and qualitatively explain our main result of a critical or
+characteristic cooling timescale, beyond which the VSI is either
+suppressed or inefficient. We then present the  
+formal linear problem in \S\ref{setup}---\ref{numerical}.    
 In \S\ref{setup} we list the governing equations and global
-equilibrium disk models under   
-consideration. We formulate the linear stability problem in 
-\S\ref{linear} and simplify it by making the radially local
-approximation. We study the linear problem using two approaches. In
-\S\ref{analytical} we present an analytical discussion of vertically
-isothermal disks. Our treatment is grossly simplified owing to a
-number of approximations made, but closely parallels previous work, 
-allowing us to highlight the essential effects of vertical shear, and to
-derive a characteristic upper limit to the thermal timescale for the
-VSI. This timescale is \emph{much shorter} than the dynamical
-timescale. In \S\ref{numerical} we numerically
-solve the linear problem in the radially local approximation, but
-relax all other approximations made in our analytical approach.    
-We find basic agreement with our analysis, including
-the aforementioned characteristic thermal timescale. 
-
-In
+equilibrium disk models under consideration, and formulate the linear
+stability problem in \S\ref{linear}. In 
+\S\ref{analytical} we give a simplified analytical discussion for
+vertically isothermal disks, where we derive the aforementioned
+characteristic upper limit on the cooling or thermal timescale for the VSI. 
+% Our treatment is grossly simplified owing to a
+% number of approximations made, but closely parallels previous work, 
+% allowing us to highlight the essential effects of vertical shear, and to
+% derive a characteristic upper limit to the thermal timescale for the
+% VSI. This timescale is \emph{much shorter} than the dynamical
+% timescale. 
+In \S\ref{numerical} we numerically
+solve the linear problem, and  
+find basic agreement with our analysis.
+% , including
+% the aforementioned characteristic thermal timescale. 
+In 
 \S\ref{application} we apply our results to the Minimum Mass
-Solar Nebula (MMSN) by modeling thermal 
-timescales based on realistic disk properties, and find that the VSI
-can operate effectively in the outer parts of the MMSN. We summarize in
-\S\ref{summary} with a discussion of caveats and possible directions
-for future work.  
+Solar Nebula (MMSN) by modeling cooling timescales based on realistic
+disk properties, and find that the VSI can operate effectively in the
+outer parts of the MMSN. We summarize in \S\ref{summary} with a
+discussion of caveats and possible directions for future work.  
 
 
 %The VSI is an axisymmetric linear instability 

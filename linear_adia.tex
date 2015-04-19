@@ -30,8 +30,8 @@ and making the low-frequency, Keplerian approximation in
 
 \subsection{Isothermal perturbations}\label{iso_pert}
 Isothermal perturbations correspond to $\beta = 0$ or $\gamma=1$ so 
-that $\chi = 1$. This case has been investigated by \cite{nelson13},
-\cite{mcnally14} and \cite{barker15}.  
+that $\chi = 1$. This case has been investigated by \citetalias{nelson13},
+\citetalias{mcnally14} and \citetalias{barker15}.  
 
 In Appendix \ref{iso_discuss}, we collect some useful results for
 isothermal  perturbations. This includes a necessary condition for
@@ -41,7 +41,7 @@ rate in the disk). We also develop solutions in the thin disk
 limit. The methods used in Appendix \ref{iso_discuss} and results obtained
 therein motivates the solution procedure employed in the following
 sections, and are provided for ease of reference. We refer the reader
-to \cite{barker15} for a more detailed treatment of isothermal 
+to \citetalias{barker15} for a more detailed treatment of isothermal 
 perturbations. %which also account for more general boundary
                %conditions than that considered below 
 
@@ -69,7 +69,7 @@ column. Hereafter we shall simply refer to them as the fundamental
 mode. 
 
 The fundamental mode has been observed to dominate numerical simulations
-\citep{nelson13,stoll14}, and are the ones we find to typically 
+\citep[\citetalias{nelson13}]{stoll14}, and are the ones we find to typically 
 dominate in numerical calculations with increasing $\beta$
 (\S\ref{therm_relax_eff}) for moderately large    
 values of $\khat$, as well as in protoplanetary disks 
@@ -140,33 +140,33 @@ Eq. \ref{nzsq_def}).
 We now solve Eq. \ref{nearly_iso_explicit} explicitly. We first write  
 \begin{align}
   \delta v_z(\zhat) =
-  g(\zhat)\exp\left(\frac{\alpha\zhat^2}{2}\right), \label{adia_ansatz}
+  g(\zhat)\exp\left(\frac{\lambda\zhat^2}{2}\right), \label{adia_ansatz}
 \end{align}
-where $\alpha$ is a constant to be chosen for convenience. Inserting
+where $\lambda$ is a constant to be chosen for convenience. Inserting
 Eq. \ref{adia_ansatz} into Eq. \ref{nearly_iso_explicit} gives
 \begin{align}
-  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime + \left(B +
-    \alpha\right)g
-  +\left(\alpha^2 - \alpha A - C\right)\zhat^2 g.
+  0 = g^{\prime\prime} - \hat{z}\left(A - 2\lambda\right)g^\prime + \left(B +
+    \lambda\right)g
+  +\left(\lambda^2 - \lambda A - C\right)\zhat^2 g.
 \end{align}
-We choose $\alpha$ to make the coefficient of $\zhat^2g$
+We choose $\lambda$ to make the coefficient of $\zhat^2g$
 vanish, and impose the vertical kinetic energy density
-$\rho|\delta v_z|^2\propto |g|^2 \exp{\left(\real\alpha -
+$\rho|\delta v_z|^2\propto |g|^2 \exp{\left(\real\lambda -
     1/2\right)\zhat^2}$ to remain finite as $|\zhat|\to\infty$. 
 Then assuming $g(\zhat)$ is a polynomial, we require  
 \begin{align}
-  \real\alpha < \frac{1}{2}, 
+  \real\lambda < \frac{1}{2}, 
 \end{align}
 which amounts to choosing 
 \begin{align}
-  \alpha = \frac{1}{2}\left(A - \sqrt{A^2 + 4C}\right).  
+  \lambda = \frac{1}{2}\left(A - \sqrt{A^2 + 4C}\right).  
 \end{align} 
 
 
 Eq. \ref{nearly_iso_explicit} becomes 
 \begin{align}
-  0 = g^{\prime\prime} - \hat{z}\left(A - 2\alpha\right)g^\prime +
-  \left(B + \alpha\right)g.
+  0 = g^{\prime\prime} - \hat{z}\left(A - 2\lambda\right)g^\prime +
+  \left(B + \lambda\right)g.
 \end{align}
 We seek polynomial solutions 
 \begin{align}
@@ -174,8 +174,8 @@ We seek polynomial solutions
 \end{align}
 which requires
 \begin{align}
-  B(\hat{\sigma}) + \alpha(\hat{\sigma}) =
-  M\left[A-2\alpha(\hat{\sigma})\right].\label{adia_disp0} 
+  B(\hat{\sigma}) + \lambda(\hat{\sigma}) =
+  M\left[A-2\lambda(\hat{\sigma})\right].\label{adia_disp0} 
 \end{align}
 For ease of analysis, we re-arrange Eq. \ref{adia_disp0} and square it
 to obtain a polynomial in $\hat{\sigma}$,  
