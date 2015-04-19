@@ -81,7 +81,7 @@ University of
   lower levels of ionization, the magnetic transport mechanisms that
   operate in warmer disks are less effective.  
   A hydrodynamic mechanism, the vertical shear instability (VSI), offers a means to drive angular momentum 
-  transport in cold accretion disks such as protoplanetary disks.  
+  transport in cold accretion disks such as protoplanetary disks (PPDs).  
   The VSI is driven by a weak vertical gradient in the disk's orbital motion.
   In order to grow, the VSI must overcome vertical buoyancy, a strong
   stabilizing influence in cold disks, where  
@@ -89,7 +89,7 @@ University of
   radiative losses, reduces the effective buoyancy 
   and allows the VSI to operate.  In this paper, we quantify the
   cooling timescale, $t_c$, needed for growth of the VSI 
-  and consider the implications for protoplanetary disks where $t_c$ is determined by the opacity of dust 
+  and consider the implications for PPDs where $t_c$ is determined by the opacity of dust 
   grains.  We perform a linear analysis of the VSI with cooling in
   vertically global and radially local disk models. 
   For irradiated disks, we find that the VSI is most vigorous for
@@ -99,7 +99,7 @@ University of
   powerlaw temperature gradient, $q$; and the adiabatic index,
   $\gamma$.  For longer cooling times, the VSI  
   is much less effective because growth slows and shifts to smaller length scales, which are more prone to 
-  viscous or turbulent decay.  We apply our results to a  Minimum Mass Solar Nebula (MMSN) disk model.  We
+  viscous or turbulent decay.  We apply our results to a  Minimum Mass Solar Nebula disk model.  We
   find that the VSI is most effective at intermediate radii, from $\sim 5$AU to $\sim 50$AU with a
   characteristic growth time of $\sim 30$ local orbital periods.
   Growth is suppressed by long cooling times both in the opaque  
@@ -153,7 +153,7 @@ its surroundings, thereby diminishing buoyancy. %not obvious actually
                                 %quickly 
 An isothermal equation of state implies instantaneous cooling (and
 heating), and is the ideal context for studying the VSI
-(\citetalias{nelson13}; \citet{mcnally14}, hereafter \citetalias{mcnally14}; \citealp{barker15},
+(\citealp{urpin03}; \citetalias{nelson13}; \citealp{mcnally14}, hereafter \citetalias{mcnally14}; \citealp{barker15},
 hereafter \citetalias{barker15}).    
 
 Alternatively, vertical buoyancy can be eliminated by strong internal
@@ -182,20 +182,31 @@ $\alpha \sim 10^{-4}$  in a  $\sim 2$ -- 10AU PPD model \citep{stoll14}.
 
 To reach hydrodynamic turbulence via the VSI, a disk should  
 first develop the linear instability. A quantitative 
-examination of the thermodynamic requirement of the linear VSI is thus essential in assessing its 
-relevance to PPDs. In this work, we study the linear VSI in vertically global disk models 
+examination of the thermodynamic requirement for the linear VSI is
+thus essential in assessing its 
+relevance to PPDs. In this work, we present a
+comprehensive study of the linear VSI in vertically global disk models 
 with non-zero cooling timescales, which permit buoyancy forces. 
-Our effort generalizes both early analyses of the VSI that account for buoyancy but in vertically localized disk models \citep{urpin98,urpin03}, and
-recent calculations in vertically global disks but without buoyancy forces \citepalias{nelson13,mcnally14,barker15}. 
+% In this work, we present a comprehensive study of the linear VSI in vertically global disk models 
+% with non-zero cooling timescales $t_c > 0$, which permit buoyancy forces. 
+% Our effort generalizes both early analyses of the VSI in vertically
+% localized disk models \citep{urpin98,urpin03} and recent calculations in vertically global 
+% disks \citepalias{nelson13,mcnally14,barker15}. These works either
+% consider the limit of instantaneous cooling ($t_c\to0$) or neutrally
+% stratified disks, for which buoyancy forces play no role. 
+Our effort generalizes previous studies of the linear VSI in 
+vertically local \citep{urpin98,urpin03} and vertically global 
+\citepalias{nelson13,mcnally14,barker15} disk models that consider the limit
+of instantaneous cooling, for which buoyancy plays no role.  
 %to study of how finite cooling times, and thus buoyancy, 
 %affect the VSI. Our effort may also be regarded
 %as a extension of early analyses of the VSI in 
 %vertically localized disk models with cooling \citep{urpin98,urpin03} to
 %vertically global disks with cooling. 
-We consider disk   
+We consider disk  
 models with vertically constant $t_{\rm c}$, as well as more realistic
 cooling timescales based on dust opacity in both the optically thick
-(diffusive) and thin regimes, where appropriate. Coupled with the
+(diffusive) and thin regimes, where appropriate. Coupled with the 
 results from numerical simulations, our results can be used to 
 understand how the VSI operates over a wide range of model PPDs. 
 
@@ -337,7 +348,7 @@ To see why this should be expected, we need to compare vertical shear
 with vertical buoyancy. For this preliminary discussion we consider a
 vertically isothermal disk with aspect-ratio $\epsilon$,  
 dimensionless radial temperature gradient $q$ and adiabatic index
-$\gamma$. For a protoplanetary disk, $\epsilon \sim 0.05$, $|q|\sim 1$ and $\gamma\simeq 1.4$. 
+$\gamma$. For a PPD, $\epsilon \sim 0.05$, $|q|\sim 1$ and $\gamma\simeq 1.4$. 
 
 For a thin disk, the specific angular momentum varies with height as 
 \begin{align}\label{vshear_thin}
@@ -389,7 +400,7 @@ required for instability.  \emph{In a thin
 
 
 To illustrate this point, we show in Fig. \ref{eqm_structure} the
-equilibrium structure of a typical protoplanetary disk. %Here $\rho_0$
+equilibrium structure of a typical PPD. %Here $\rho_0$
 %is the midplane density and vertical shear rate and buoyancy
 %frequencies are normalized by the local Keplerian frequency. 
 It is
@@ -409,7 +420,7 @@ global disturbances, as considered in this work.
 
 \begin{figure*}
   \includegraphics[width=\linewidth]{figures/rhoshearNz}
-  \caption{Typical protoplanetary disk structure (the Minimum Mass
+  \caption{Typical PPD structure (the Minimum Mass
     Solar Nebla): density (left), vertical shear rate (middle) and
     buoyancy frequency (right). Here $\rho_0$ is the midplane density.  
     \label{eqm_structure} 
@@ -428,7 +439,7 @@ reflects Eq. \ref{bcrit_est} but there is no $z$ dependence.
 Eq. \ref{prelim_bcrit} can be 
 readily applied to evaluate where in a disk the VSI is likely to
 operate. For example, we show in Fig. \ref{bcrit_mmsn2d} an estimate
-of the thermal timescales the protoplanetary disk model shown in
+of the thermal timescales the PPD model shown in
 Fig. \ref{eqm_structure}. Here $k_x$ is a radial
 wavenumber of the disturbance being considered, thus larger $k_x$
 correspond to smaller perturbations. The region outside the red line
@@ -447,7 +458,7 @@ smaller radii.
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.46cm 0cm
   0.73cm]{figures/bcrit_mmsn2d_kx50}
   \caption{Estimate of the thermal timescale  in a fiducial 
-    protoplanetary disk model, the Minimum Mass Solar Nebula. The red
+    PPD model, the Minimum Mass Solar Nebula. The red
     line corresponds to a characteristic thermal timescale, derived in
     this work, below which the VSI is expected to operate effectively
     (the region outside the line).    
@@ -458,7 +469,7 @@ smaller radii.
 We now proceed through the formal linear stability problem to arrive
 at Eq. \ref{prelim_bcrit} and verify it numerically. The interested 
 reader may skip forward \S\ref{application} for the application of our
-results to protoplanetary disks.     
+results to PPD.     
 
 \input{setup}
 \input{linear_iso}
