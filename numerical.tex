@@ -4,7 +4,7 @@ corresponding to Eq. \ref{lin_mass}---\ref{lin_energy}.
 We relax the  low-frequency, Keplerian and thin-disk 
 approximations used in the analytical discussion above and 
 use the full expressions of $\rho$, $\Omega$ and 
-$\kappa$ and $c_s$ given in \S\ref{eqm}. We also set $\hat{g}_c=1$ to   
+$\kappa$ and $c_s$ given in \S\ref{eqm}. We also set $\zeta=1$ to   
 account for the background radial disk structure.  
 
 We solve the linear problem by expanding the 
@@ -17,7 +17,7 @@ boundaries is a free surface,
 \end{align}
 % note that there are g_c terms in the boundary condition
 where $\bm{\xi}$ is the Lagrangian displacement with meridional 
-components $\xi_{x,z} = \ii\delta v_{x,z}/\zeta$. In some cases we
+components $\xi_{x,z} = \ii\delta v_{x,z}/\upsilon$. In some cases we
 impose a rigid boundary at which $\delta v_z=0$. 
 
 The above discretization procedure
@@ -101,7 +101,7 @@ and are inertial waves destabilized by vertical shear
 \citepalias{barker15}. (The exception being the fastest growing
 mode for $\zmax=7H$ which is a surface mode --- see the discussion
 below.)  The `fundamental corrugation mode', marked by `f',
-corresponds to the eigenvalue with the smallest $|\zeta|$. The
+corresponds to the eigenvalue with the smallest $|\upsilon|$. The
 fundamental mode is robust  
 against vertical boundary conditions as it appears at the same
 position in Fig. \ref{compare_modes_iso_kx10} for all cases. Higher  
@@ -466,7 +466,8 @@ growth rate becomes insensitive to $\zmax$ for $\beta\gtrsim
 \beta_\mathrm{crit}$. This suggests that the characteristic upper
 limit on the thermal timescale for the VSI is not sensitive to
 $\zmax$, so that vertically isothermal disks are in fact suitable for
-the purpose of this paper. 
+the purpose of characterizing the thermodynamic dependence of the
+VSI. 
 
 %Physically this is because modes that depend on vertical boundaries
 %are also subject to the strongest stabilization by buoyancy, which
@@ -565,9 +566,11 @@ characteristic upper limit for other $\khat$.
   \includegraphics[width=\linewidth]{figures/gcorr_compare_vnoniso_maxrate} 
   \caption{Maximum VSI growth rates in the vertically non-isothermal disk
     model as a function of the thermal relaxation timescale
-    $\beta$. The vertical line is a conjectured 
-    critical thermal timescale given by
-    $ h|s|/(\gamma-\Gamma)=0.158$.  
+    $\beta$. The vertical dashed line is the critical thermal
+    timescale given by Eq. \ref{iso_vsi_cond}. A conjectured critical thermal
+    timescale accounting for a non-isothermal background, given by 
+    $\beta_\mathrm{crit,noniso}= h|s|/(\gamma-\Gamma)=0.158$,  
+    is also shown as the vertical dotted line. 
     \label{bcrit_compare2}}   
 \end{figure} 
 

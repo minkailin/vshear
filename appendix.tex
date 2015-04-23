@@ -2,7 +2,8 @@
   the vertically global shearing box}\label{adia_improve}
 Here we explain the derivation of Eq. \ref{nearly_iso_explicit} used in our 
 analytical discussion in \S\ref{analytical}. We shall need the
-vertical derivative of the epicyclic frequency $\kappa$. In the global
+vertical derivative of the epicyclic frequency $\kappa$. In the
+vertically isothermal global
 disk with $\Gamma=1$ we have 
 \begin{align}\label{dkappa2}
   \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
@@ -18,17 +19,17 @@ The function $F$ increases monotonically from $F=-1$ at $z=0$ to $F\to2$
 as $|z|\to\infty $, so $|F|=O(1)$. 
 
 In the vertically global shearing box (VGSB) approximation, we set
-$\hat{g}_c=0$ in Eq. \ref{lin_mass} --- \ref{lin_energy}. We then eliminate
+$\zeta=0$ in Eq. \ref{lin_mass} --- \ref{lin_energy}. We then eliminate
 the horizonatal velocity perturbations ($\delta v_x,\, \delta v_y$) to
 obtain  
 %we can eliminate variables 
 %to obtain a pair or ordinary differential
 %equations for $W,Q$ as 
 \begin{align}
-  & \ii\zeta\delta v_z = \frac{dW}{dz} + \frac{d\ln{\rho}}{d z}\left(W-Q\right),\label{ode_vz} \\
-  &\frac{\zeta^2}{c_s^2}Q + \frac{\zeta^2k_x^2}{D}W =\ii\zeta \left(\frac{\ii
+  & \ii\upsilon\delta v_z = \frac{dW}{dz} + \frac{d\ln{\rho}}{d z}\left(W-Q\right),\label{ode_vz} \\
+  &\frac{\upsilon^2}{c_s^2}Q + \frac{\upsilon^2k_x^2}{D}W =\ii\upsilon \left(\frac{\ii
       k_x r}{D}\frac{d\Omega^2}{dz} -
-    \frac{d\ln{\rho}}{dz}\right)\delta v_z - \ii\zeta \frac{d\delta v_z}{dz},
+    \frac{d\ln{\rho}}{dz}\right)\delta v_z - \ii\upsilon \frac{d\delta v_z}{dz},
   % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] 
   % \notag\\
   % &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
@@ -38,9 +39,9 @@ obtain
 %  \frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right) 
 %  =\ii \sigma c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} -
 %    1\right)\delta v_z,  
-  &\zeta^2W - \gamma\zeta^2 Q +
-  \frac{\ii\zeta}{t_c}\left(W-Q\right) 
-  =\ii \zeta c_s^2\frac{d\ln{\rho}}{dz}\left(\gamma -
+  &\upsilon^2W - \gamma\upsilon^2 Q +
+  \frac{\ii\upsilon}{t_c}\left(W-Q\right) 
+  =\ii \upsilon c_s^2\frac{d\ln{\rho}}{dz}\left(\gamma -
     1\right)\delta v_z,
   % 
   % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],
@@ -48,7 +49,7 @@ obtain
 \end{align}
 (note that $\Gamma=1$ has been used) where
 \begin{align}
-  D \equiv \kappa^2 - \zeta^2,
+  D \equiv \kappa^2 - \upsilon^2,
 \end{align} 
 and we have replaced the notation $\p_z$ by $d/dz$ since we are
 considering solutions at a fixed radius. 
@@ -73,7 +74,7 @@ $dD/dz$, to obtain
       q}{Dr} - \frac{k_x^2c_s^2}{\left(k_x^2c_s^2 + \chi
         D\right)}\frac{qc_s^2F}{Dr^2}\right]\frac{d\ln\rho}{dz}\frac{d\delta
     v_z}{dz} \notag\\
-  &+ \left\{\zeta^2\left(\frac{k_x^2}{D} +
+  &+ \left\{\upsilon^2\left(\frac{k_x^2}{D} +
       \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
         q}{Dr}\right)\frac{d^2\ln\rho}{dz^2} -
     \frac{c_s^2}{D}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
@@ -82,7 +83,7 @@ $dD/dz$, to obtain
      \frac{\chi}{\left(k_x^2c_s^2 + \chi D\right)}\frac{qc_s^2 F}{r^2}\right] 
    \right\}\delta v_z,
 \end{align}
-where we recall $\chi = \left(1-\ii\zeta t_c\right)/\left(1-\ii\zeta
+where we recall $\chi = \left(1-\ii\upsilon t_c\right)/\left(1-\ii\upsilon
 t_c \gamma\right)$. Making the low frequency and Keplerian
 approximations is equivalent to the replacement $D\to
 \Omega_K^2$. This gives, in terms of dimensionless variables,  
@@ -96,7 +97,7 @@ approximations is equivalent to the replacement $D\to
       \ii h
       q\hat{k}\right)\left[1 - \chi +
       \frac{\chi}{\left(\hat{k}^2+\chi\right)}qh^2F\right]\right\}\delta v_z \notag\\&=
-  -\hat{\zeta}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
+  -\hat{\upsilon}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
 \end{align} 
 Since we are interested in thin disks with $h \ll 1$ and $|q| =
 O(1)$, we neglect the terms proportional to $h^2$, giving 
@@ -104,7 +105,7 @@ O(1)$, we neglect the terms proportional to $h^2$, giving
   0= \delta v_z ^{\prime\prime} + \left(1 + \ii h
      q\hat{k}\right)\ln\rho^{\prime}\delta v_z^\prime 
    +
-   \left[\hat{\zeta}^2\left(\hat{k}^2+\chi\right) +
+   \left[\hat{\upsilon}^2\left(\hat{k}^2+\chi\right) +
      \left(  \chi + \ii h q\hat{k}\right)\ln\rho^{\prime\prime}
      - \ln\rho^{\prime
        2}\left(\khat^2 -
@@ -164,9 +165,9 @@ not the relevant regime for the VSI.
 The background radial disk structure explicitly appears 
 in the linearized mass, radial momentum and energy equations
 (Eq. \ref{lin_mass}, \ref{lin_vx} and \ref{lin_energy}) as the terms
-proportional to $\hat{g}_c$. Nominally $\hat{g}_c=1$.      
+proportional to $\zeta$. Nominally $\zeta=1$.      
 In the VGSB (and SSB) these terms are neglected by setting
-$\hat{g}_c=0$. For a power-law disk, these radial gradients  
+$\zeta=0$. For a power-law disk, these radial gradients  
 are $O(r^{-1})$, and they appear in comparison with terms of
 $O(k_x)$. The neglected terms therefore have a relative magnitude of
 $O(h/\khat)$, which is small for thin disks ($h\ll1$)
@@ -182,38 +183,38 @@ and/or small radial wavelengths ($\khat\gg 1$).
 
 %However, background radial gradient terms 
 %are ignored elsewhere in the VGSB (which is done by setting
-%$\hat{g}_c=0$).         
+%$\zeta=0$).         
    
 % \begin{align}
 %   \ii \sigma W  &=c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
 %       z}\right|_0 \delta v_z + \frac{\gamma}{\Gamma} \frac{d\delta
 %     v_z}{dz}\right) + \left[\ii k_xc_s^2(r_0,z)
-%   \frac{\gamma}{\Gamma} + \hat{g}_c\left.\frac{1}{\rho}\frac{\p P}{\p
+%   \frac{\gamma}{\Gamma} + \zeta\left.\frac{1}{\rho}\frac{\p P}{\p
 %       r}\right|_0\right]\delta v_x  +
 % \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right),\label{gcorr_terms1}\\
-% \ii \sigma Q &= c_s^2(r_0,z)\left(\ii k_x + \hat{g}_c
+% \ii \sigma Q &= c_s^2(r_0,z)\left(\ii k_x + \zeta
 %   \left.\frac{\p\ln{\rho}}{\p r}\right|_0\right)\delta v_x + c _s^2(r_0, z)\left( \left.\frac{\p\ln\rho}{\p
 %       z}\right|_0 \delta v_z + \frac{d\delta
 %     v_z}{dz}\right),\label{gcorr_terms2} \\
 % \ii \sigma \delta v_x & = \ii k_x W  -
-% \hat{g}_c\frac{1}{c_s^2(r_0,z)}\left.\frac{1}{\rho}\frac{\p P}{\p
+% \zeta\frac{1}{c_s^2(r_0,z)}\left.\frac{1}{\rho}\frac{\p P}{\p
 %   r}\right|_0Q - 2\Omega(r_0,z)\delta v_y,\label{gcorr_terms3}
 % \end{align}
 % where subscript $0$ denotes evaluation at $r=r_0$. We recall terms
-% proportional to $\hat{g}_c$ are associated with the background density
-% and pressure radial structures, and nominally $\hat{g}_c=1$.   
+% proportional to $\zeta$ are associated with the background density
+% and pressure radial structures, and nominally $\zeta=1$.   
 
 \subsection{Spurious growth of adiabatic perturbations in the VGSB}\label{analytic_adia} 
 A limitation of the VGSB is that it cannot be used for 
 adiabatic flow, even if the above conditions are satisfied. We explain this by considering vertically isothermal
-disks and setting  $\beta\to\infty$ in 
+disks and setting  $\beta\to\infty$ and hence $\chi = 1/\gamma$ in 
 Eq. \ref{vertiso_gov_nondim} % (which itself is obtained by setting
-% $\hat{g}_c=0$ in Eq. \ref{lin_mass}---\ref{lin_energy})
+% $\zeta=0$ in Eq. \ref{lin_mass}---\ref{lin_energy})
 to give 
 \begin{align}
   0 =\dd v_z^{\prime\prime} + \left(1 + \ii h q
     \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime
-  +\left\{\hat{\zeta}^2\left(\frac{1}{\gamma}+\hat{k}^2\right) 
+  +\left\{\hat{\upsilon}^2\left(\frac{1}{\gamma}+\hat{k}^2\right) 
     -\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii h  
           q}{\hat{k}}\right)\ln\rho^{\prime 2}\right]\right\}\delta v_z.\label{adia_iso3}
 \end{align}
@@ -221,7 +222,7 @@ We multiply Eq. \ref{adia_iso3} by $\rho\delta v_z^*$ and
 integrate vertically, assume boundary terms vanish when integrating by
 parts, to obtain
 \begin{align}
-  \hat{\zeta}^2\left(\frac{1}{\gamma} +
+  \hat{\upsilon}^2\left(\frac{1}{\gamma} +
     \hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|\delta
   v_z|^2 d\zhat 
   =&  \left(\frac{\gamma-1}{\gamma}\right)
@@ -237,11 +238,11 @@ parts, to obtain
   \delta v_z d\zhat.\label{adia_integral}
 \end{align}
 % When $q\equiv0$, all the terms on the right-hand-side (RHS) are real. Then
-% $\hat{\zeta}^2$ is real, and  $\hat{\zeta}^2>0$ if $\gamma>1$. As
+% $\hat{\upsilon}^2$ is real, and  $\hat{\upsilon}^2>0$ if $\gamma>1$. As
 % expected, a sub-adiabatically stratified disk is stable in the absence
 % of vertical shear. 
 In the presence of vertical shear $q\neq0$, Eq. \ref{adia_integral}
-suggests $\hat{\zeta}^2$ is complex for real $\khat$, which implies the
+suggests $\hat{\upsilon}^2$ is complex for real $\khat$, which implies the
 possibility of instability, regardless of the value of
 $|\gamma-1|$. This is contradicts the second Solberg-Hoiland criterion 
 (Eq. \ref{solberg2}), which imply instability for adiabatic
@@ -252,17 +253,17 @@ This is because the VGSB retains the global radial
 disk structure responsible for vertical shear
 ($\p_z\Omega$), but ignores it elsewhere in the linear problem. 
 Nevertheless, we demonstrate below
-that this inconsistency is unimportant for the VSI because it occurs
+that this inconsistency is unimportant for the VSI, which occurs 
 for $\beta\ll1$.   %and small scale
 
 \subsection{Effect of global radial gradients}
 In  Fig. \ref{gcorr_compare}, we plot the effect of the global radial gradient terms
-proportional to $\hat{g}_c$ in Eq. \ref{lin_mass}---\ref{lin_energy}
+proportional to $\zeta$ in Eq. \ref{lin_mass}---\ref{lin_energy}
 by calculating the
 fundamental VSI growth rates using three approaches. We compute growth rates from the dispersion
-relation Eq. \ref{relax_disp}, which assumes $\hat{g}_c=0$;  from
-Eq. \ref{lin_mass}---\ref{lin_energy} with $\hat{g}_c=0$; and from
-Eq. \ref{lin_mass}---\ref{lin_energy}  with $\hat{g}_c=1$.   
+relation Eq. \ref{relax_disp}, which assumes $\zeta=0$;  from
+Eq. \ref{lin_mass}---\ref{lin_energy} with $\zeta=0$; and from
+Eq. \ref{lin_mass}---\ref{lin_energy}  with $\zeta=1$.   
 
 All three methods give similar behavior, and growth rates are in close
 agreement for $\beta\lesssim 1$. Differences arise for 
@@ -281,10 +282,10 @@ VSI.
     the thermal relaxation time $\beta$. The `Analytical (VGSB)' curve
     is calculated from the dispersion relation Eq. \ref{relax_disp};
     the `Numerical (VGSB)' curve is obtained by numerically solving
-    the linear problem, Eq. \ref{lin_mass}---\ref{lin_energy}, with $\hat{g}_c=0$
+    the linear problem, Eq. \ref{lin_mass}---\ref{lin_energy}, with $\zeta=0$
     (which defines the linear VGSB equations); and the `Numerical
     (Full)' curve is obtained by numerically solving 
-    Eq. \ref{lin_mass}---\ref{lin_energy}  with $\hat{g}_c=1$, which
+    Eq. \ref{lin_mass}---\ref{lin_energy}  with $\zeta=1$, which
     accounts for the radial disk structure.  
     The disk parameters are $(\gamma, \Gamma)=(1.4, 1.011)$ and
     $(p,q,h)=(-1.5,-1,0.05)$. The perturbation
@@ -309,7 +310,7 @@ becomes
 \begin{align} 
   Q = W 
 \end{align}
-(i.e. $\delta P = c_s^2\delta \rho$)% , and so $  \ii\hat{\zeta}c_s\delta v_z = W^\prime $
+(i.e. $\delta P = c_s^2\delta \rho$)% , and so $  \ii\hat{\upsilon}c_s\delta v_z = W^\prime $
 % from Eq. \ref{lin_vz}
 . For isothermal perturbations it is 
 simpler to work with an equation for $W$ by substituting $Q=W$ into
@@ -319,8 +320,8 @@ approximation, but first make the  Keplerian approximation. We
 obtain, in terms of dimensionless variables, 
 \begin{align}
   0 = W^{\prime\prime} + \left[\ln\rho^\prime - \frac{\ii h q \hat{k} f(\zhat)
-      }{1-\hat{\zeta}^2} \right]W^\prime +
-  \hat{\zeta}^2\left(1+\frac{\hat{k}^2}{1-\hat{\zeta}^2}\right)W,\label{iso_ode0} 
+      }{1-\hat{\upsilon}^2} \right]W^\prime +
+  \hat{\upsilon}^2\left(1+\frac{\hat{k}^2}{1-\hat{\upsilon}^2}\right)W,\label{iso_ode0} 
 \end{align}
 where for discussion purposes we have defined $f(\zhat)$ such that
 \begin{align}\label{fz_shear}
@@ -336,12 +337,12 @@ the VSI,  as remarked in \S\ref{vshear_def}. We explicitly demonstrate
 this below.     
 
 \subsection{Stability conditions in the low-frequency limit}
-In the low-frequency limit we assume $|\hat{\zeta}|\ll 1$ and
+In the low-frequency limit we assume $|\hat{\upsilon}|\ll 1$ and
 approximate Eq. \ref{iso_ode0} as 
 \begin{align}
   0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii h q \hat{k}
     f(\zhat)\right]W^\prime +
-  \hat{\zeta}^2\left(1+\hat{k}^2\right)W. \label{iso_ode1}
+  \hat{\upsilon}^2\left(1+\hat{k}^2\right)W. \label{iso_ode1}
 \end{align}
 \subsubsection{Necessity of vertical shear for
   instability}\label{integral_relation} 
@@ -353,19 +354,19 @@ $W^\prime$ vanishes at the boundaries, or that the boundaries are
 sufficiently far away so that the boundary terms are negligible because of the
 decaying background density with increasing height. Then,
 \begin{align}
-  \hat{\zeta}^2\left(1+\hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|W|^2d\zhat
+  \hat{\upsilon}^2\left(1+\hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|W|^2d\zhat
   =\int_{\zhat_1}^{\zhat_2}\rho|W^\prime|^2d\zhat 
   +\ii h q \hat{k}\int_{\zhat_1}^{\zhat_2}\rho f(\zhat) W^*W^\prime d\zhat.\label{integral_relation1}
 \end{align}
-It follows that for instability ($\imag\hat{\zeta}>0$), it is necessary to
+It follows that for instability ($\imag\hat{\upsilon}>0$), it is necessary to
 have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. there must
 be vertical shear. A similar conclusion can be reached in the
 equivalent linear problem in global cylindrical disk geometry.  
 
 \subsubsection{Maximum growth rate}\label{max_growth1}
 Here we show that the growth rate is limited by the maximum vertical
-shear rate in the domain. % Writing $\hat{\zeta} = \hat{\omega} +
-% \ii\hat{\zeta}$ with real $\hat{\omega}$ and $\hat{\zeta}$, 
+shear rate in the domain. % Writing $\hat{\upsilon} = \hat{\omega} +
+% \ii\hat{\upsilon}$ with real $\hat{\omega}$ and $\hat{\upsilon}$, 
 The real and imaginary parts of 
 Eq. \ref{integral_relation1} are
 \begin{align}
@@ -382,11 +383,11 @@ Eq. \ref{integral_relation1} are
     h\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
     f(\hat{z}) W^*W^\prime d\hat{z}\right],
 \end{align}
-where we recall $\hat{\omega} = \real \hat{\zeta}$ and
-$\hat{\sigma}=\imag\hat{\zeta}$. 
+where we recall $\hat{\omega} = \real \hat{\upsilon}$ and
+$\hat{\sigma}=\imag\hat{\upsilon}$. 
 Adding the square of these equations give
 \begin{align}
-  \left[|\hat{\zeta}|^2\left(1+\hat{k}^2\right)
+  \left[|\hat{\upsilon}|^2\left(1+\hat{k}^2\right)
     \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z} -
     \int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}\right]^2
   +4\hat{\sigma}^2\left(1+\hat{k}^2\right) 
@@ -457,8 +458,8 @@ Here we assume a thin disk ($h\ll1$) so that $\ln\rho\simeq
 -\zhat^2/2$ and $f(\zhat)\simeq \zhat$. However, we do not assume 
 low frequency from the onset. Then Eq. \ref{iso_ode0} becomes 
 \begin{align}\label{iso_ode3}
-  W^{\prime\prime} - \left(1 + \frac{\ii qh \hat{k}}{1-\hat{\zeta}^2}\right)\hat{z}W^\prime  +
-  \hat{\zeta}^2\left(1+\frac{\hat{k}^2}{1-\hat{\zeta}^2}\right)W = 0.
+  W^{\prime\prime} - \left(1 + \frac{\ii qh \hat{k}}{1-\hat{\upsilon}^2}\right)\hat{z}W^\prime  +
+  \hat{\upsilon}^2\left(1+\frac{\hat{k}^2}{1-\hat{\upsilon}^2}\right)W = 0.
 \end{align}
 We remark that taking the low frequency limit and considering
 $\hat{k}^2\gg 1$, Eq. \ref{iso_ode3} becomes equivalent to Eq. 39 in
@@ -477,15 +478,15 @@ We seek power series solutions to Eq. \ref{iso_ode3},
 Then the coefficients $a_l$ are given by the recurrence relation
 \begin{align}
   (l+2)(l+1)a_{l+2} +
-  \left[\hat{\zeta}^2\left(1+\frac{\khat^2}{1-\hat{\zeta}^2}\right)
+  \left[\hat{\upsilon}^2\left(1+\frac{\khat^2}{1-\hat{\upsilon}^2}\right)
     - l\left(1+\frac{\ii h q
-        \hat{k}}{1-\hat{\zeta}^2}\right)\right] a_l = 0. 
+        \hat{k}}{1-\hat{\upsilon}^2}\right)\right] a_l = 0. 
 \end{align}
 We demand the series to terminate  at $l=L$, i.e. a polynomial of
-order $L$, so that the vertical kinetic energy remain bounded as 
-$|\zhat|\to\infty$.  Then the eigenfrequency $\hat{\zeta}$ is given via 
+order $L$, so that the vertical kinetic energy density remain bounded as 
+$|\zhat|\to\infty$.  Then the eigenfrequency $\hat{\upsilon}$ is given via 
 \begin{align}
-\hat{\zeta}^4 - \left(L+1+\khat^2\right)\hat{\zeta}^2 + L\left(1 +
+\hat{\upsilon}^4 - \left(L+1+\khat^2\right)\hat{\upsilon}^2 + L\left(1 +
   \ii h q \khat\right) = 0. \label{simple_growth}
 \end{align}
 
@@ -499,14 +500,14 @@ calculations \citepalias{barker15}.
 \subsubsection{Stability without vertical shear}\label{stable_novshear}
 In the absence of vertical shear $q=0$, Eq. \ref{simple_growth} can be
 written as \begin{align}
-  \hat{\zeta}^2\khat^2 =
-  \left(L-\hat{\zeta}^2\right)\left(1-\hat{\zeta}^2\right), \label{iso_disp_full}
+  \hat{\upsilon}^2\khat^2 =
+  \left(L-\hat{\upsilon}^2\right)\left(1-\hat{\upsilon}^2\right), \label{iso_disp_full}
 \end{align}
 which is just the dispersion relation for axisymmetric isothermal waves in a
 vertically isothermal disk (e.g. \citealt{okazaki87}; \citealt{takeuchi98}; \citealt{tanaka02}; 
 \citealt{zhang06}; \citealt{ogilvie13}; \citealt{barker14}; \citetalias{barker15}). In 
 this case the solutions are Hermite polynomials, $W\propto
-\He_L(\zhat)$.  The eigenfrequency $\hat{\zeta} = \hat{\omega}$ is real and the disk
+\He_L(\zhat)$.  The eigenfrequency $\hat{\upsilon} = \hat{\omega}$ is real and the disk
 is stable. The low frequency branch of Eq. \ref{iso_disp_full} are 
 inertial waves \citep{balbus03}. For 
 $|\hat{\omega}|\ll 1$ and $L\geq 1$ the dispersion relation is
@@ -520,13 +521,13 @@ is readily obtained for large $\khat^2$ by balancing
 the last two terms of Eq. \ref{simple_growth} to give the low
 frequency branch. Then 
 \begin{align}
-  \hat{\zeta}^2 \simeq L\left(\frac{1+\ii q h
+  \hat{\upsilon}^2 \simeq L\left(\frac{1+\ii q h
        \hat{k}}{L+1+\hat{k}^2}\right), \label{simple_growth2}
 \end{align}
 which is equivalent to Eq. 34 of \citetalias{barker15} in the limit
 $\khat^2\gg L$. This signifies instability for
 $L\geq1$ since we can choose the sign 
-of the square root to make $\hat{\sigma} = \imag\hat{\zeta}>0$.  These
+of the square root to make $\hat{\sigma} = \imag\hat{\upsilon}>0$.  These
 are the low frequency unstable modes seen in
 Fig. \ref{compare_modes_iso_kx10} and
 Fig. \ref{compare_modes_iso_kx30}, for which $\sigma\propto|\omega|$.  
@@ -536,17 +537,17 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\sigma\propto|\omega|$.
 %growth rate of high frequency branch is much smaller 
 
 % \begin{align}\label{sig2_iso}
-%   \hat{\zeta}^2 = L\left(\frac{1+\ii q h
+%   \hat{\upsilon}^2 = L\left(\frac{1+\ii q h
 %       \hat{k}}{1+\hat{k}^2}\right).
 % \end{align}
-% The eigenfrequency $\hat{\zeta}$ is therefore complex for
+% The eigenfrequency $\hat{\upsilon}$ is therefore complex for
 % $L\geq1$. The dispersion relation Eq. \ref{sig2_iso} can also be
 % derived by setting $\beta=0$ in the more general dispersion relation 
 % Eq. \ref{relax_disp} with coefficients given in Appendix
 % \ref{relax_coeff}. We are interested in 
-% unstable modes for which $\hat{\zeta}>0$ and is given by
+% unstable modes for which $\hat{\upsilon}>0$ and is given by
 % \begin{align}
-%   \hat{\zeta} =\sqrt{
+%   \hat{\upsilon} =\sqrt{
 %     \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2h^2\hat{k}^2} - 
 %       1\right)}. 
 % \end{align}
@@ -578,7 +579,7 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\sigma\propto|\omega|$.
 % \end{align}
 % where $w(\zhat)=\exp{(-\zhat^2/2)}$ and we have defined a new eigenvalue 
 % \begin{align}
-%   n \equiv \hat{\zeta}^2(1+\hat{k}^2). 
+%   n \equiv \hat{\upsilon}^2(1+\hat{k}^2). 
 % \end{align} 
 % Eq. \ref{hermite_ode} is Hermite's differential equation. If we impose
 % that the kinetic energy density remain bounded at infinity, then the
@@ -589,7 +590,7 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\sigma\propto|\omega|$.
 % and $n$ is a non-negative integer. This translates to a real
 % eigenfrequency $\sigma$ such that
 % \begin{align}
-%   \left|\hat{\zeta}\right| = \sqrt{n}
+%   \left|\hat{\upsilon}\right| = \sqrt{n}
 %   \left(1+\hat{k}^2\right)^{-1/2}. \label{iso_stable_disp}
 % \end{align}
 % Since we have assumed $|\sigma^2|\ll \kappa^2\sim \Omega_K^2$, our
@@ -622,7 +623,7 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\sigma\propto|\omega|$.
 % \end{align}
 % and
 % \begin{align}
-%   \mathrm{max}\left(\hat{\zeta}\right) =\frac{\sqrt{L}|h
+%   \mathrm{max}\left(\hat{\upsilon}\right) =\frac{\sqrt{L}|h
 %     q|}{2\sqrt{1+|h q|}}. \label{iso_max_growth}
 % \end{align}
 % Since $L\geq1$, there is no limit to the maximum growth rate. This is
@@ -658,7 +659,7 @@ given by:
 \end{align}
 
 \subsection{Limiting form with real frequencies and $\khat^2\gg 1$}\label{disp_neut_limit}
-Assuming neutral modes with real $\hat{\zeta}=\hat{\omega}$ and $\khat^2\gg 1$, the real and imaginary parts of
+Assuming neutral modes with real $\hat{\upsilon}=\hat{\omega}$ and $\khat^2\gg 1$, the real and imaginary parts of
 Eq. \ref{relax_disp} are approximately 
 \begin{align}
   0 =&M(M+1)(1-h^2 q^2 \khat^2) + 4\beta h q M(M+1)\left(\hat{\omega}\khat\right) 
@@ -758,7 +759,7 @@ vertically isothermal disk, we deduce the disk aspect-ratio
 and the mid-plane density distribution 
 \begin{align}
 %  \rho_0 = 2.7\times10^{-9}
-%  \hat{\zeta}\left(\frac{r}{\mathrm{AU}}\right)^{-39/14}\mathrm{g}\,\mathrm{cm}^{-3},  
+%  \hat{\upsilon}\left(\frac{r}{\mathrm{AU}}\right)^{-39/14}\mathrm{g}\,\mathrm{cm}^{-3},  
 \rho_0 = 1.7\times10^{-9}
   \hat{\Sigma}\left(\frac{\hat{T}}{\mu}\right)^{-1/2}\left(\frac{r}{\mathrm{AU}}\right)^{-39/14}\mathrm{g}\,\mathrm{cm}^{-3},
 \end{align}

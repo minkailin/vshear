@@ -3,11 +3,12 @@ In this paper we have studied the axisymmetric vertical shear
 instability (VSI) in astrophysical disks that arise from the 
 height dependence of the equilibrium angular velocity profile 
 $\Omega=\Omega(r,z)$ in a baroclinic disk. Vertical shear is generally
-expected in astrophysical disks due to the radial variation in the
-disk temperature, or more generally the entropy. However, 
-astrophysical disks are also typically sub-adiabatically stratified. 
-In this case, the VSI requires a short thermal timescale $t_c$ in
-order to operate.  
+expected in astrophysical disks due to baroclinicity. This may arise 
+from a radial variation in the disk temperature, or more generally in
+the disk entropy. However, astrophysical disks are also typically
+sub-adiabatically stratified for stability against vertical
+convection. In this case, the VSI requires a short thermal or cooling
+timescale $t_c$ in order to operate.  
 
 Physically, a short thermal timescale is needed to reduce the  
 stabilizing effect of buoyancy forces in a stably stratified
@@ -33,7 +34,7 @@ radially local approximation in the linearized fluid equations.
 We mostly focused on vertically isothermal disks as 
 this is the relevant case for protoplanetary disks (PPDs) passively
 irradiated by its central star \citep{chiang97}. It also permits a
-largely analytical discussion. Our analysis is then an extension of the
+simplified analytical discussion by extending the
 linear models considered in \cite{lubow93} by adding vertical shear
 and (rapid) thermal relaxation. We obtained explicit solutions 
 describing the VSI with thermal relaxation in the thin disk limit.  
@@ -68,7 +69,7 @@ We find the MMSN is unstable to the VSI
 from $\sim 5$AU to $\sim50$AU with characteristic growth times of
 $\sim 30$ orbits. It is possible to have the VSI at smaller
 radii, but only on radial lengthscales signficantly shorter
-than the disk scaleheight, and such perturbations may
+than the disk scaleheight. However, such small-scale perturbations may 
 be subject to viscous decay in a real disk.   
 
 Although $t_c$ is not vertically constant in the 
@@ -114,7 +115,7 @@ overstability does not apply because
 $N_r^2>0$.   
 
 For more general disk structures convective overstability is
-possible in principle. The models adopted for our numerical study in
+possible, in principle. The models adopted for our numerical study in
 \S\ref{numerical} do satisfy $N_r^2<0$, but convective overstability
 require perturbations with long radial lengthscales,
 $k_xH\ll 1$, for which radially global disk models would be more 
@@ -143,16 +144,17 @@ Depending on where the VSI operates in a
 disk, additional effects may become important. For example, in the
 outer parts of a PPD, where we estimate the VSI 
 operates, disk self-gravity (SG) may play a role. Vertical
-self-gravity may favor the VSI by increasing $|\p_z\Omega|$ through
+SG may favor the VSI by increasing $|\p_z\Omega|$ through
 enhancing the density stratification 
 (Eq. \ref{vertical_shear}). %sg in pert? no because kx>>1. but maybe for kx~1 
 
-We have neglected viscosity. \citetalias{nelson13} find that an alpha
-viscosity $\lesssim O(10^{-4})$ is required for the
-VSI. \citetalias{barker15} found that inclusion of viscosity is needed for 
-convergence when studying surface modes. %but not body modes? 
+We have neglected viscosity. \citetalias{nelson13} find that a
+dimensionless viscosity of $\alpha\lesssim O(10^{-4})$ is required for the
+VSI; while \citetalias{barker15} find that inclusion of viscosity is needed for 
+convergence when studying surface modes in radially global disk
+models. %but not body modes? 
 Viscosity may also affect the
-thermal timescale requirement of the VSI, because viscous heating
+thermodynamic requirement for the VSI, because viscous heating
 needs to be self-consistently included in the energy equation. This
 should be investigated in future works.   
 
