@@ -1,6 +1,6 @@
 \section{Full governing equation for vertically isothermal disks in
   the vertically global shearing box}\label{adia_improve}
-Here we explain the derivation of Eq. \ref{vertiso_gov} used in our 
+Here we explain the derivation of Eq. \ref{nearly_iso_explicit} used in our 
 analytical discussion in \S\ref{analytical}. We shall need the
 vertical derivative of the epicyclic frequency $\kappa$. In the global
 disk with $\Gamma=1$ we have 
@@ -99,12 +99,25 @@ approximations is equivalent to the replacement $D\to
   -\hat{\zeta}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
 \end{align} 
 Since we are interested in thin disks with $h \ll 1$ and $|q| =
-O(1)$, we neglect the terms proportional to $h^2$, which gives 
-Eq. \ref{vertiso_gov_nondim} (the dimensional version being
-Eq. \ref{vertiso_gov}). This is equivalent to neglecting the   
-vertical dependence of $D$ by setting $D\to\Omega_K^2$ in
-Eq. \ref{ode_w} before eliminating variables in favor of $\delta
-v_z$, which is the simpler way to obtain Eq. \ref{vertiso_gov}. 
+O(1)$, we neglect the terms proportional to $h^2$, giving 
+\begin{align}
+  0= \delta v_z ^{\prime\prime} + \left(1 + \ii h
+     q\hat{k}\right)\ln\rho^{\prime}\delta v_z^\prime 
+   +
+   \left[\hat{\zeta}^2\left(\hat{k}^2+\chi\right) +
+     \left(  \chi + \ii h q\hat{k}\right)\ln\rho^{\prime\prime}
+     - \ln\rho^{\prime
+       2}\left(\khat^2 -
+       \ii h
+       q\hat{k}\right)\left(1 - \chi\right)\right]\delta v_z,\label{vertiso_gov_nondim}
+ \end{align}
+ which is used in the discussion below.  Eq. \ref{nearly_iso_explicit}, as
+ used in our analytical discussion, is obtained by inserting the 
+ thin-disk expression for the density field. We comment that the simpler way
+ of obtaining Eq. \ref{vertiso_gov_nondim} is to neglect the vertical 
+ dependence of $D$ by setting $D\to\Omega_K^2$ in Eq. \ref{ode_w} before eliminating
+ variables in favor of $\delta v_z$.  
+
 
 %Thus, a simpler route to the governing
 %equation (Eq. )  
@@ -356,7 +369,7 @@ shear rate in the domain. % Writing $\hat{\zeta} = \hat{\omega} +
 The real and imaginary parts of 
 Eq. \ref{integral_relation1} are
 \begin{align}
-  \left(\hat{\omega}^2-\hat{sigma}^2\right)\left(1+\hat{k}^2\right) 
+  \left(\hat{\omega}^2-\hat{\sigma}^2\right)\left(1+\hat{k}^2\right) 
   \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z} -
   \int_{\zhat_1}^{\zhat_2}\rho|W^\prime|^2d\hat{z}
   \notag

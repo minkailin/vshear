@@ -1,9 +1,19 @@
+\subsection{Reduced equation for vertically isothermal disks}
+%We begin with a discussion of vertically isothermal disks
+%where $\Gamma=1$, then $c_s$ is a constant in the radially-local
+%approximation. 
+%we first introduce a
+%number of approximations below that allows a simple governing equation
+%to be derived and compared with previous works. 
+%However, all of
+%the approximations described below are relaxed in our numerical
+%study.  
 
-
-\subsection{Shearing box, low-frequency and Keplerian
-  approximations}\label{approx_gov} 
-
-In Appendix \ref{adia_improve} we derive a governing equation with the following simplifications:
+In preparation for a numerical study of the above equations, we will 
+first present a fully analytic discussion for vertically isothermal disks with
+$\Gamma=1$, so that $c_s$ is vertically constant. To this end, 
+we introduce the following simplifications:
+%In Appendix \ref{adia_improve} we derive  a with the following simplifications: 
 
 \begin{enumerate}
   
@@ -15,90 +25,73 @@ In Appendix \ref{adia_improve} we derive a governing equation with the following
   gradient in the expression for the 
   vertical shear (Eq. \ref{vertical_shear}) is retained. 
 
-  In Appendix \ref{global_corr}  we discuss limitations of using
-  the VGSB, where we show that this approximation is valid provided we 
-  consider consider fast thermal relaxation times
-  ($\beta\lesssim 1$) and perturbations with small radial lengthscales
-  ($k_xH\gtrsim 1$), as appropriate for the VSI.  
- 
-  
 \item We consider eigenvalues such that
-  $|\zeta^2|\ll \kappa^2,\,\Omega^2$. We call this the low frequency
-  approximation. We are therefore considering inertial waves
-  \citepalias{barker15}.  
+  $|\zeta^2|\ll \kappa^2,\,\Omega^2$. We call this the low frequency 
+  approximation
 
 \item We are mainly interested in the effect of vertical shear, i.e. $q\neq
-  0$. This is already captured explicitly in the linearized equations through
-  the term $d\Omega/dz$. We therefore simplify 
-  further by ignoring the vertical dependence of $\Omega$ and $\kappa$
-  elsewhere. For clarity, we replace $\kappa^2$ with
-  $\Omega_K^2$. We call this the Keplerian approximation. 
+  0$ for vertically isothermal disks. This is already captured
+  explicitly in the linearized equations through the term
+  $d\Omega/dz$. We thus ignore the vertical dependence of $\Omega$ and
+  $\kappa$ elsewhere, and replace them with
+  $\Omega_K$.  We call this the Keplerian approximation. 
   
+\item We assume thin disks for which $h\ll 1$, and write 
+  $\rho/\rho_0\simeq  \exp{(-z^2/2H^2)}$. 
+
 \end{enumerate}
-% Making both of these approximations is equivalent to setting 
-% $D\to\Omega_K^2$.  After making this replacement, we eliminate $W$ and
-% $Q$ between  Eq. \ref{lin_vz} and Eq. \ref{ode_w}---\ref{ode_Q},
-% making use of Eq. \ref{vertical_shear}, to
-% obtain an equation for $\delta v_z$.  
+% These approximations lead to Eq. \ref{full_ode} which, for a thin disk
+% $h\ll 1$, simplifies further to  
+% %The result for $\Gamma=1$ is
+% \begin{align}
+%   0 =& \frac{d^2\delta v_z}{dz^2} + \left(1 + \frac{\ii k_x c_s^2
+%       q}{\Omega_K^2r}\right)\frac{d\ln\rho}{dz}\frac{d\delta
+%     v_z}{dz} \notag\\
+%   % &+ \left[\zeta^2\left(\frac{k_x^2}{\Omega_K^2} +
+%   %     \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
+%   &+ \left[\frac{\zeta^2}{c_s^2}\left(\frac{k_x^2c_s^2}{\Omega_K^2} +
+%       \chi\right) + \left(\chi + \frac{\ii k_x c_s^2
+%         q}{\Omega_K^2r}\right)\frac{d^2\ln\rho}{dz^2}\right. \notag\\
+%   &\phantom{+=}\left.-
+%     \frac{c_s^2}{\Omega_K^2}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
+%       \frac{\ii k_x q}{r}\right)
+%     \left(1-\chi\right) 
+%   \right]\delta v_z,\label{vertiso_gov}
+% \end{align}
+% where
+% \begin{align}
+%   \chi \equiv \frac{1-\ii\zeta t_c}{1-\ii\zeta t_c\gamma}.
+% \end{align}
 
-These approximations lead to Eq. \ref{full_ode} which, for a thin disk
-$h\ll 1$, simplifies further to  
-%The result for $\Gamma=1$ is
-\begin{align}
-  0 =& \frac{d^2\delta v_z}{dz^2} + \left(1 + \frac{\ii k_x c_s^2
-      q}{\Omega_K^2r}\right)\frac{d\ln\rho}{dz}\frac{d\delta
-    v_z}{dz} \notag\\
-  % &+ \left[\zeta^2\left(\frac{k_x^2}{\Omega_K^2} +
-  %     \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
-  &+ \left[\frac{\zeta^2}{c_s^2}\left(\frac{k_x^2c_s^2}{\Omega_K^2} +
-      \chi\right) + \left(\chi + \frac{\ii k_x c_s^2
-        q}{\Omega_K^2r}\right)\frac{d^2\ln\rho}{dz^2}\right. \notag\\
-  &\phantom{+=}\left.-
-    \frac{c_s^2}{\Omega_K^2}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
-      \frac{\ii k_x q}{r}\right)
-    \left(1-\chi\right) 
-  \right]\delta v_z,\label{vertiso_gov}
-\end{align}
-where
-\begin{align}
-  \chi \equiv \frac{1-\ii\zeta t_c}{1-\ii\zeta t_c\gamma}.
-\end{align}
-
-It is convenient to introduce the dimensionless variables
+ In terms of the dimensionless variables
 \begin{align}
   \hat{z} = z/H,\quad \hat{k}=k_xH, \quad \hat{\zeta} =\hat{\omega} +
   \ii\hat{\sigma}= \zeta/\Omega_K,
 \end{align}
-where $\hat{\omega}$ and $\hat{\sigma}$ are real. 
-Eq. \ref{vertiso_gov} becomes 
-\begin{align}
-  0=& \delta v_z ^{\prime\prime} + \left(1 + \ii h
-    q\hat{k}\right)\ln\rho^{\prime}\delta v_z^\prime \notag\\
-  &+
-  \left[\hat{\zeta}^2\left(\hat{k}^2+\chi\right) +
-    \left(  \chi + \ii h q\hat{k}\right)\ln\rho^{\prime\prime}\right.
-  \notag\\
-  &\left.- \ln\rho^{\prime
-      2}\left(\khat^2 -
-      \ii h
-      q\hat{k}\right)\left(1 - \chi\right)\right]\delta v_z,\label{vertiso_gov_nondim}
-\end{align}
-where $^\prime$ denotes $d/d\zhat$.
-
-
-
-
-
-\subsection{Thin-disk approximation}\label{analytic_relax}
-Our final approximation apply to thin disks for 
-which $h\ll 1$. Then we may write $\rho/\rho_0\simeq
-\exp{(-\zhat^2/2)}$. The governing equation,
-Eq. \ref{vertiso_gov_nondim}, is then   
+where $\hat{\omega}$ and $\hat{\sigma}$ are real, the above
+approximations lead to a single second order ordinary differential
+equation, 
+% Eq. \ref{vertiso_gov} becomes 
+% \begin{align}
+%   0=& \delta v_z ^{\prime\prime} + \left(1 + \ii h
+%     q\hat{k}\right)\ln\rho^{\prime}\delta v_z^\prime \notag\\
+%   &+
+%   \left[\hat{\zeta}^2\left(\hat{k}^2+\chi\right) +
+%     \left(  \chi + \ii h q\hat{k}\right)\ln\rho^{\prime\prime}\right.
+%   \notag\\
+%   &\left.- \ln\rho^{\prime
+%       2}\left(\khat^2 -
+%       \ii h
+%       q\hat{k}\right)\left(1 - \chi\right)\right]\delta v_z,\label{vertiso_gov_nondim}
+% \end{align}
+% where $^\prime$ denotes $d/d\zhat$.
+%\subsection{Thin-disk approximation}\label{analytic_relax}
+%The governing equation, Eq. \ref{vertiso_gov_nondim}, is then   
 \begin{align}
   \delta v_z^{\prime\prime} - z A\delta v_z^\prime +
   (B - C\zhat^2)\delta v_z = 0,\label{nearly_iso_explicit}
 \end{align}
-with
+where $^\prime$ denotes $d/d\zhat$ and 
 \begin{align}
   &A \equiv 1 + \ii h q \hat{k},\\
   &B \equiv \hat{\zeta}^2\left(\chi + \hat{k}^2\right) -
@@ -106,10 +99,13 @@ with
   &C \equiv \left(1-\chi\right)\left(\hat{k}^2 - \ii
     h q\hat{k}\right), 
 \end{align}
-and $\chi =
-\left(1-\ii\hat{\zeta}\beta\right)/\left(1-\ii\hat{\zeta}\beta\gamma\right)
-$ in terms of dimensionless variables. 
-
+where
+\begin{align}
+\chi = \frac{1-\ii\hat{\zeta}\beta}{1-\ii\hat{\zeta}\beta\gamma}.
+\end{align}
+The derivation of Eq. \ref{nearly_iso_explicit}  is outlined in
+Appendix \ref{adia_improve}. 
+ 
 We remark that Eq. \ref{nearly_iso_explicit} is in the same 
 form as Eq. 41 in \cite{lubow93}, which describe adiabatic axisymmetric waves in
 a vertically isothermal disk without vertical shear. The two equations
@@ -118,22 +114,15 @@ $\chi=1/\gamma$ (adiabatic flow) in our Eq. \ref{nearly_iso_explicit},
 and making the low-frequency, Keplerian approximation in
 \citeauthor{lubow93} after a change of variables.    
 
+ In Appendix \ref{global_corr}  we discuss limitations of using
+  the VGSB, where we show that this approximation is valid provided we 
+  consider consider fast thermal relaxation times
+  ($\beta\lesssim 1$) and perturbations with small radial lengthscales
+  ($\khat\gtrsim 1$), as appropriate for the VSI.  
 
 
 
 
-
-\section{Analytical discussion of vertically isothermal
-  disks in the framework of the vertically global shearing
-  box}\label{analytical}  
-We begin with a discussion of vertically isothermal disks
-where $\Gamma=1$, then $c_s$ is a constant in the radially-local
-approximation. 
-In order to facilitate a fully analytic discussion, we first introduce a
-number of approximations below that allows a simple governing equation
-to be derived and compared with previous works. Similar approximations
-are employed by \citetalias{nelson13} and \citetalias{barker15}. However, all of
-the approximations described below are relaxed in our numerical study.   
 
 
 

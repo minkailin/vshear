@@ -3,7 +3,7 @@ We consider  an inviscid, non-self-gravitating three-dimensional (3D)
 disk orbiting a central star of mass $M_*$.  Cylindrical
 co-ordinates $(r,\phi, z)$ are centered on the star. The governing fluid equations are
 \begin{align}
-  &\frac{\p\rho}{\p t} + \nabla\cdot{\left(\rho\bm{v}\right)} = 0,\\
+  &\frac{\p\rho}{\p t} + \nabla\cdot{\left(\rho\bm{v}\right)} = 0,\label{full_mass}\\
   &\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bm{v} =
   -\frac{1}{\rho}\nabla P - \nabla\Phi_*,\\
   &\frac{\p P}{\p t} + \bm{v}\cdot\nabla P  = - \gamma P
@@ -245,22 +245,42 @@ perturbations. This is generally not true for passively irradiated, stably
 stratified disks \citep{chiang97}, in which the VSI requires rapid
 thermal relaxation, as shown below. 
 
-\section{Linear problem}\label{linear}
+\section{Linear problem}\label{linear} 
+In this section we present the two sets of equations used to study the
+axisymmetric linear stability of the above equilibria. We first give
+the linearized equations in the radially-local approximation, which
+are solved in our numerical study. From this set, we further derive a
+simplified equation for vertically isothermal disks used for analytic
+discussion in the next section. 
 
-
-
-
-
+\subsection{Radially local approximation}
 We consider axisymmetric perturbations to the above equilibria in the
 form 
 \begin{align}
-  \rho \to \rho(r, z) + \delta\rho(r,z)\exp{\left( - \ii\zeta
+  \rho \to \rho(r, z) + \delta\rho(r,z)\exp{\left(\ii k_rr - \ii\zeta
       t\right)},    
 \end{align}
 and similarly for other fluid variables, where $\zeta = \omega + \ii
 \sigma$ is a (generally) complex frequency, with $\omega$ and $\sigma$ being
-the real frequency and growth rate, respectively.
+the real frequency and growth rate, respectively, and $k_r$ is a real 
+radial wavenumber. We take $k_r>0$ without loss of generality. 
 
+The VSI is expected to operate for perturbations with small radial
+wavelengths \citepalias{nelson13,barker15}. We thus linearize 
+Eq. \ref{full_mass}---\ref{full_energy} assuming perturbations 
+in the above form with radially slowly-varying
+amplitudes and $k_r r \gg 1$, so that the radial dependence of $\delta\rho(r,z)$, etc.,
+may be neglected, as well as curvature terms. Henceforth we are
+considering solutions at some fiducial radius $r=r_0$.  
+%\citetalias{barker15} have validated this 
+% approximation for the VSI by comparison with the linear problem in
+% global cylindrical disk geometry. 
+
+In order to emphasize the radially local approximation, we introduce
+the local Cartesian co-ordinates $(x,y,z)$ corresponding to the the
+local $(r,\phi,z)$ directions, respectively.  
+%We thus linearize 
+%and replace  
 % The linearized fluid equations in cylindrical co-ordinates are  
 % \begin{align}
 %   \ii\zeta\delta\rho &= \frac{\rho}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p}{\p
@@ -279,31 +299,24 @@ the real frequency and growth rate, respectively.
 % \end{align}
 % where the coefficients $\hat{g}_c=1$ are inserted to label terms
 % associated with the background radial disk structure. 
-
 % This approach has been adopted
 % in recent linear calculations of the VSI
 % \cite{nelson13,mcnally14,barker15} because unstable modes have short
 % radial lengthscales. 
-
-We consider perturbations with small radial length-scales 
-so that we can ignore the radial variations in the background
-structure and radial gradients. \citetalias{barker15} have validated this
-approximation by comparison with the linear VSI in global cylindrical
-disk geometry. We thus evaluate all coefficients in
-Eq. \ref{full_mass1}---\ref{full_energy1} at the fiducial radius
-$r=r_0$. However, the full vertical dependence of the coefficients are
-retained. Then we can assume perturbations have spatial dependence in
-the form 
-\begin{align}
-  \delta \rho(r,z) \to \delta\rho(z)\exp{\ii k_r r}.
-\end{align}
-We take $k_r>0$ without loss of generality, and further assume $k_rr\gg1$ so that curvature terms can also be 
-ignored.       
-
-In order to emphasize the radially local approximation, we
-introduce the local Cartesian co-ordinates $(x,y,z)$ corresponding to
-the the local $(r,\phi,z)$ directions, respectively. Then writing
-$\delta P /\rho \equiv W$ and $c_s^2\delta\rho/\rho\equiv Q$, the
+%We consider perturbations with small radial length-scales 
+%so that we can ignore the radial variations in the background
+%structure and radial gradients. 
+%We thus evaluate all coefficients in
+%Eq. \ref{full_mass1}---\ref{full_energy1} at the fiducial radius
+%$r=r_0$. However, the full vertical dependence of the coefficients are
+%retained. % Then we can assume perturbations have spatial dependence in
+% the form 
+% \begin{align}
+%   \delta \rho(r,z) \to \delta\rho(z)\exp{\ii k_r r}.
+% \end{align}
+% We take $k_r>0$ without loss of generality, and further assume $k_rr\gg1$ so that curvature terms can also be 
+% ignored.       
+Then writing $\delta P /\rho \equiv W$ and $c_s^2\delta\rho/\rho\equiv Q$, the
 linearized system of equations are 
 \begin{align}
   \ii\zeta \frac{Q}{c_s^2}  &=  \ii k_x \delta v_x + \frac{d\dd
@@ -329,4 +342,4 @@ It is understood that the quantities $\rho,\,c_s^2,\,\Omega,\kappa,\,
 using their expressions in the global disk given in \S\ref{setup}. Thus, they are functions of $z$ only. 
 Eq. \ref{lin_mass}---\ref{lin_energy} will form the basis of our numerical
 study, but for analytical discussion
-we will make further simplifications. 
+we will make further simplifications, as discussed next.
