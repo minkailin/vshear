@@ -93,9 +93,9 @@ University of
   grains.  We perform a linear analysis of the VSI with cooling in
   vertically global and radially local disk models. 
   For irradiated disks, we find that the VSI is most vigorous for
-  rapid cooling with $t_c < \OmK^{-1} \epsilon |q| / (\gamma -1)$ 
+  rapid cooling with $t_c < \OmK^{-1}  h |q| / (\gamma -1)$ 
   in terms of the Keplerian orbital frequency, $\OmK$; the disk's
-  aspect ratio, $\epsilon \ll 1$; the radial  
+  aspect ratio, $ h \ll 1$; the radial  
   powerlaw temperature gradient, $q$; and the adiabatic index,
   $\gamma$.  For longer cooling times, the VSI  
   is much less effective because growth slows and shifts to smaller length scales, which are more prone to 
@@ -341,18 +341,18 @@ discussion of caveats and possible directions for future work.
 requires a thermal timescale $t_c$ much less than the
 disk dynamical timescale, 
 \begin{align}
-  t _c \ll \Omega_k^{-1}. 
+  t _c \ll \Omega_K^{-1}. 
 \end{align}
-where $\Omega_k$ is the Keplerian frequency. 
+where $\Omega_K$ is the Keplerian frequency. 
 To see why this should be expected, we need to compare vertical shear
 with vertical buoyancy. For this preliminary discussion we consider a
-vertically isothermal disk with aspect-ratio $\epsilon$,  
+vertically isothermal disk with aspect-ratio $ h$,  
 dimensionless radial temperature gradient $q$ and adiabatic index
-$\gamma$. For a PPD, $\epsilon \sim 0.05$, $|q|\sim 1$ and $\gamma\simeq 1.4$. 
+$\gamma$. For a PPD, $ h \sim 0.05$, $|q|\sim 1$ and $\gamma\simeq 1.4$. 
 
 For a thin disk, the specific angular momentum varies with height as 
 \begin{align}\label{vshear_thin}
-  r \frac{\p \Omega^2 }{\p z} \simeq \epsilon q \Omega_k^2\left(\frac{z}{H}\right),
+  r \frac{\p \Omega^2 }{\p z} \simeq  h q \Omega_K^2\left(\frac{z}{H}\right),
 \end{align}
 where $H$ is the disk scale height. As noted in
 \S\ref{intro} this vertical variation is a source of free energy and
@@ -362,7 +362,7 @@ For $\gamma>1$ the disk is stably stratified with a real vertical
 buoyancy frequency $N_z$.  In a thin disk,     
 \begin{align}\label{nz_thin}
   N_z^2 \simeq \left(\frac{\gamma-1}{\gamma}\right) \left(\frac{z}{H}\right)^2
-  \Omega_k^2.  
+  \Omega_K^2.  
 \end{align}
 This provides a stabilizing effect as buoyancy opposes vertical
 motion, which is required for the VSI. In fact, if we consider
@@ -390,13 +390,13 @@ perturbations can be obtained by applying Eq. 47 of \cite{urpin03}, which is bas
 \end{align}
 The left-hand side represents an effective buoyancy, which is
 stabilizing; while the right-hand side represents vertical shear,
-which is destabilizing. In a thin disk $\epsilon \ll 1$, so the destabilizing effect of 
-vertical shear is rather weak because $|r\p_z\Omega|\sim\epsilon\Omega_k
-\ll \Omega_k$. By comparison, the buoyancy frequency $N_z\sim
-\Omega_k$. It follows that $t_c\lesssim O(\epsilon\Omega_k^{-1})$ is
+which is destabilizing. In a thin disk $ h \ll 1$, so the destabilizing effect of 
+vertical shear is rather weak because $|r\p_z\Omega|\sim h\Omega_K
+\ll \Omega_K$. By comparison, the buoyancy frequency $N_z\sim
+\Omega_K$. It follows that $t_c\lesssim O( h\Omega_K^{-1})$ is
 required for instability.  \emph{In a thin  
   disk the thermal timescale must be shorter than the dynamical
-  timescale by $O(\epsilon)\ll 1$ for the VSI to operate.}   
+  timescale by $O( h)\ll 1$ for the VSI to operate.}   
 
 
 To illustrate this point, we show in Fig. \ref{eqm_structure} the
@@ -430,7 +430,7 @@ global disturbances, as considered in this work.
 
 Our central result is the requirement 
 \begin{align}\label{prelim_bcrit}
-  (\gamma - 1)t_c < \epsilon |q| \Omega_k^{-1}
+  (\gamma - 1)t_c <  h |q| \Omega_K^{-1}
 \end{align}   
 for the VSI in a vertically isothermal, thin disk. This equation
 reflects Eq. \ref{bcrit_est} but there is no $z$ dependence. 

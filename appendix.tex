@@ -25,10 +25,10 @@ obtain
 %to obtain a pair or ordinary differential
 %equations for $W,Q$ as 
 \begin{align}
-  & \ii\sigma\delta v_z = \frac{dW}{dz} + \frac{d\ln{\rho}}{d z}\left(W-Q\right),\label{ode_vz} \\
-  &\frac{\sigma^2}{c_s^2}Q + \frac{\sigma^2k_x^2}{D}W =\ii\sigma \left(\frac{\ii
+  & \ii\zeta\delta v_z = \frac{dW}{dz} + \frac{d\ln{\rho}}{d z}\left(W-Q\right),\label{ode_vz} \\
+  &\frac{\zeta^2}{c_s^2}Q + \frac{\zeta^2k_x^2}{D}W =\ii\zeta \left(\frac{\ii
       k_x r}{D}\frac{d\Omega^2}{dz} -
-    \frac{d\ln{\rho}}{dz}\right)\delta v_z - \ii\sigma \frac{d\delta v_z}{dz},
+    \frac{d\ln{\rho}}{dz}\right)\delta v_z - \ii\zeta \frac{d\delta v_z}{dz},
   % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] 
   % \notag\\
   % &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
@@ -38,9 +38,9 @@ obtain
 %  \frac{\ii\sigma}{t_c}\left(W-\frac{Q}{\Gamma}\right) 
 %  =\ii \sigma c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} -
 %    1\right)\delta v_z,  
-  &\sigma^2W - \gamma\sigma^2 Q +
-  \frac{\ii\sigma}{t_c}\left(W-Q\right) 
-  =\ii \sigma c_s^2\frac{d\ln{\rho}}{dz}\left(\gamma -
+  &\zeta^2W - \gamma\zeta^2 Q +
+  \frac{\ii\zeta}{t_c}\left(W-Q\right) 
+  =\ii \zeta c_s^2\frac{d\ln{\rho}}{dz}\left(\gamma -
     1\right)\delta v_z,
   % 
   % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],
@@ -48,7 +48,7 @@ obtain
 \end{align}
 (note that $\Gamma=1$ has been used) where
 \begin{align}
-  D \equiv \kappa^2 - \sigma^2,
+  D \equiv \kappa^2 - \zeta^2,
 \end{align} 
 and we have replaced the notation $\p_z$ by $d/dz$ since we are
 considering solutions at a fixed radius. 
@@ -73,7 +73,7 @@ $dD/dz$, to obtain
       q}{Dr} - \frac{k_x^2c_s^2}{\left(k_x^2c_s^2 + \chi
         D\right)}\frac{qc_s^2F}{Dr^2}\right]\frac{d\ln\rho}{dz}\frac{d\delta
     v_z}{dz} \notag\\
-  &+ \left\{\sigma^2\left(\frac{k_x^2}{D} +
+  &+ \left\{\zeta^2\left(\frac{k_x^2}{D} +
       \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
         q}{Dr}\right)\frac{d^2\ln\rho}{dz^2} -
     \frac{c_s^2}{D}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
@@ -82,7 +82,7 @@ $dD/dz$, to obtain
      \frac{\chi}{\left(k_x^2c_s^2 + \chi D\right)}\frac{qc_s^2 F}{r^2}\right] 
    \right\}\delta v_z,
 \end{align}
-where we recall $\chi = \left(1-\ii\sigma t_c\right)/\left(1-\ii\sigma
+where we recall $\chi = \left(1-\ii\zeta t_c\right)/\left(1-\ii\zeta
 t_c \gamma\right)$. Making the low frequency and Keplerian
 approximations is equivalent to the replacement $D\to
 \Omega_K^2$. This gives, in terms of dimensionless variables,  
@@ -96,7 +96,7 @@ approximations is equivalent to the replacement $D\to
       \ii h
       q\hat{k}\right)\left[1 - \chi +
       \frac{\chi}{\left(\hat{k}^2+\chi\right)}qh^2F\right]\right\}\delta v_z \notag\\&=
-  -\hat{\sigma}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
+  -\hat{\zeta}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
 \end{align} 
 Since we are interested in thin disks with $h \ll 1$ and $|q| =
 O(1)$, we neglect the terms proportional to $h^2$, which gives 
@@ -200,7 +200,7 @@ to give
 \begin{align}
   0 =\dd v_z^{\prime\prime} + \left(1 + \ii h q
     \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime
-  +\left\{\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right) 
+  +\left\{\hat{\zeta}^2\left(\frac{1}{\gamma}+\hat{k}^2\right) 
     -\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii h  
           q}{\hat{k}}\right)\ln\rho^{\prime 2}\right]\right\}\delta v_z.\label{adia_iso3}
 \end{align}
@@ -208,7 +208,7 @@ We multiply Eq. \ref{adia_iso3} by $\rho\delta v_z^*$ and
 integrate vertically, assume boundary terms vanish when integrating by
 parts, to obtain
 \begin{align}
-  \hat{\sigma}^2\left(\frac{1}{\gamma} +
+  \hat{\zeta}^2\left(\frac{1}{\gamma} +
     \hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|\delta
   v_z|^2 d\zhat 
   =&  \left(\frac{\gamma-1}{\gamma}\right)
@@ -224,11 +224,11 @@ parts, to obtain
   \delta v_z d\zhat.\label{adia_integral}
 \end{align}
 % When $q\equiv0$, all the terms on the right-hand-side (RHS) are real. Then
-% $\hat{\sigma}^2$ is real, and  $\hat{\sigma}^2>0$ if $\gamma>1$. As
+% $\hat{\zeta}^2$ is real, and  $\hat{\zeta}^2>0$ if $\gamma>1$. As
 % expected, a sub-adiabatically stratified disk is stable in the absence
 % of vertical shear. 
 In the presence of vertical shear $q\neq0$, Eq. \ref{adia_integral}
-suggests $\hat{\sigma}^2$ is complex for real $\khat$, which implies the
+suggests $\hat{\zeta}^2$ is complex for real $\khat$, which implies the
 possibility of instability, regardless of the value of
 $|\gamma-1|$. This is contradicts the second Solberg-Hoiland criterion 
 (Eq. \ref{solberg2}), which imply instability for adiabatic
@@ -256,7 +256,7 @@ agreement for $\beta\lesssim 1$. Differences arise for
 $\beta\gtrsim1$, and as $\beta\to\infty$ the VGSB framework gives a
 (spurious) growth rate as expected from the discussion
 above. Inclusion of the global radial gradient terms results in the
-correct behavior  ($\nu\to0$ as $\beta\to\infty$). Despite this
+correct behavior  ($\sigma\to0$ as $\beta\to\infty$). Despite this
 caveat, Fig. \ref{gcorr_compare} shows that provided we consider
 $\beta\ll1$, then the VGSB framework is adequate for studying the
 VSI. 
@@ -296,7 +296,7 @@ becomes
 \begin{align} 
   Q = W 
 \end{align}
-(i.e. $\delta P = c_s^2\delta \rho$)% , and so $  \ii\hat{\sigma}c_s\delta v_z = W^\prime $
+(i.e. $\delta P = c_s^2\delta \rho$)% , and so $  \ii\hat{\zeta}c_s\delta v_z = W^\prime $
 % from Eq. \ref{lin_vz}
 . For isothermal perturbations it is 
 simpler to work with an equation for $W$ by substituting $Q=W$ into
@@ -306,8 +306,8 @@ approximation, but first make the  Keplerian approximation. We
 obtain, in terms of dimensionless variables, 
 \begin{align}
   0 = W^{\prime\prime} + \left[\ln\rho^\prime - \frac{\ii h q \hat{k} f(\zhat)
-      }{1-\hat{\sigma}^2} \right]W^\prime +
-  \hat{\sigma}^2\left(1+\frac{\hat{k}^2}{1-\hat{\sigma}^2}\right)W,\label{iso_ode0} 
+      }{1-\hat{\zeta}^2} \right]W^\prime +
+  \hat{\zeta}^2\left(1+\frac{\hat{k}^2}{1-\hat{\zeta}^2}\right)W,\label{iso_ode0} 
 \end{align}
 where for discussion purposes we have defined $f(\zhat)$ such that
 \begin{align}\label{fz_shear}
@@ -323,12 +323,12 @@ the VSI,  as remarked in \S\ref{vshear_def}. We explicitly demonstrate
 this below.     
 
 \subsection{Stability conditions in the low-frequency limit}
-In the low-frequency limit we assume $|\hat{\sigma}|\ll 1$ and
+In the low-frequency limit we assume $|\hat{\zeta}|\ll 1$ and
 approximate Eq. \ref{iso_ode0} as 
 \begin{align}
   0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii h q \hat{k}
     f(\zhat)\right]W^\prime +
-  \hat{\sigma}^2\left(1+\hat{k}^2\right)W. \label{iso_ode1}
+  \hat{\zeta}^2\left(1+\hat{k}^2\right)W. \label{iso_ode1}
 \end{align}
 \subsubsection{Necessity of vertical shear for
   instability}\label{integral_relation} 
@@ -340,43 +340,43 @@ $W^\prime$ vanishes at the boundaries, or that the boundaries are
 sufficiently far away so that the boundary terms are negligible because of the
 decaying background density with increasing height. Then,
 \begin{align}
-  \hat{\sigma}^2\left(1+\hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|W|^2d\zhat
+  \hat{\zeta}^2\left(1+\hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|W|^2d\zhat
   =\int_{\zhat_1}^{\zhat_2}\rho|W^\prime|^2d\zhat 
   +\ii h q \hat{k}\int_{\zhat_1}^{\zhat_2}\rho f(\zhat) W^*W^\prime d\zhat.\label{integral_relation1}
 \end{align}
-It follows that for instability ($\imag\hat{\sigma}>0$), it is necessary to
+It follows that for instability ($\imag\hat{\zeta}>0$), it is necessary to
 have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. there must
 be vertical shear. A similar conclusion can be reached in the
 equivalent linear problem in global cylindrical disk geometry.  
 
 \subsubsection{Maximum growth rate}\label{max_growth1}
 Here we show that the growth rate is limited by the maximum vertical
-shear rate in the domain. % Writing $\hat{\sigma} = \hat{\omega} +
-% \ii\hat{\nu}$ with real $\hat{\omega}$ and $\hat{\nu}$, 
+shear rate in the domain. % Writing $\hat{\zeta} = \hat{\omega} +
+% \ii\hat{\zeta}$ with real $\hat{\omega}$ and $\hat{\zeta}$, 
 The real and imaginary parts of 
 Eq. \ref{integral_relation1} are
 \begin{align}
-  \left(\hat{\omega}^2-\hat{\nu}^2\right)\left(1+\hat{k}^2\right)
+  \left(\hat{\omega}^2-\hat{sigma}^2\right)\left(1+\hat{k}^2\right) 
   \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z} -
   \int_{\zhat_1}^{\zhat_2}\rho|W^\prime|^2d\hat{z}
   \notag
   =\real\left[\ii
     h\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
     f(\hat{z}) W^*W^\prime d\zhat\right], \\
-   2\hat{\omega}\hat{\nu}\left(1+\hat{k}^2\right)
+   2\hat{\omega}\hat{\sigma}\left(1+\hat{k}^2\right)
   \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z}
   =\imag\left[\ii
     h\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
     f(\hat{z}) W^*W^\prime d\hat{z}\right],
 \end{align}
-where we recall $\hat{\omega} = \real \hat{\sigma}$ and
-$\hat{\nu}=\imag\hat{\sigma}$. 
+where we recall $\hat{\omega} = \real \hat{\zeta}$ and
+$\hat{\sigma}=\imag\hat{\zeta}$. 
 Adding the square of these equations give
 \begin{align}
-  \left[|\hat{\sigma}|^2\left(1+\hat{k}^2\right)
+  \left[|\hat{\zeta}|^2\left(1+\hat{k}^2\right)
     \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z} -
     \int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}\right]^2
-  +4\hat{\nu}^2\left(1+\hat{k}^2\right) 
+  +4\hat{\sigma}^2\left(1+\hat{k}^2\right) 
   \int_{\zhat_1}^{\zhat_2}\rho
   |W|^2d\hat{z}\int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}
   =\left|\ii
@@ -385,7 +385,7 @@ Adding the square of these equations give
 \end{align}
 It is clear that
 \begin{align}\label{sigma_finite_domain} 
-  4\hat{\nu}^2\left(1+\hat{k}^2\right) 
+  4\hat{\sigma}^2\left(1+\hat{k}^2\right) 
   \int_{\zhat_1}^{\zhat_2}\rho
   |W|^2d\hat{z}\int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime
   \right|^2d\hat{z} 
@@ -414,7 +414,7 @@ where $\mathrm{max}(|f|)$ is the maximum value of $|f|$ in
 $\zhat\in[\zhat_1,\zhat_2]$. Inserting these inequalities into
 Eq. \ref{sigma_finite_domain} gives
 \begin{align}\label{max_growth}
-  |\hat{\nu}|\leq
+  |\hat{\sigma}|\leq
   \frac{h |\hat{k} q|}{2\sqrt{1+\hat{k}^2}}\mathrm{max}(|f|) < \frac{h |q|}{2}\mathrm{max}(|f|) . 
 \end{align}
 %Recalling that $f$ represents vertical shear (Eq. \ref{fz_shear}), 
@@ -423,7 +423,7 @@ follows that the maximum possible growth rate of unstable modes,
 satisfying the above boundary conditions, is limited by the maximum
 vertical shear rate in the domain considered,
 \begin{align}
-  \nu < \mathrm{max} \left|r\frac{d\Omega}{dz}\right|, 
+  \sigma < \mathrm{max} \left|r\frac{d\Omega}{dz}\right|, 
 \end{align}
 as expected on physical grounds. 
 
@@ -444,8 +444,8 @@ Here we assume a thin disk ($h\ll1$) so that $\ln\rho\simeq
 -\zhat^2/2$ and $f(\zhat)\simeq \zhat$. However, we do not assume 
 low frequency from the onset. Then Eq. \ref{iso_ode0} becomes 
 \begin{align}\label{iso_ode3}
-  W^{\prime\prime} - \left(1 + \frac{\ii qh \hat{k}}{1-\hat{\sigma}^2}\right)\hat{z}W^\prime  +
-  \hat{\sigma}^2\left(1+\frac{\hat{k}^2}{1-\hat{\sigma}^2}\right)W = 0.
+  W^{\prime\prime} - \left(1 + \frac{\ii qh \hat{k}}{1-\hat{\zeta}^2}\right)\hat{z}W^\prime  +
+  \hat{\zeta}^2\left(1+\frac{\hat{k}^2}{1-\hat{\zeta}^2}\right)W = 0.
 \end{align}
 We remark that taking the low frequency limit and considering
 $\hat{k}^2\gg 1$, Eq. \ref{iso_ode3} becomes equivalent to Eq. 39 in
@@ -464,15 +464,15 @@ We seek power series solutions to Eq. \ref{iso_ode3},
 Then the coefficients $a_l$ are given by the recurrence relation
 \begin{align}
   (l+2)(l+1)a_{l+2} +
-  \left[\hat{\sigma}^2\left(1+\frac{\khat^2}{1-\hat{\sigma}^2}\right)
+  \left[\hat{\zeta}^2\left(1+\frac{\khat^2}{1-\hat{\zeta}^2}\right)
     - l\left(1+\frac{\ii h q
-        \hat{k}}{1-\hat{\sigma}^2}\right)\right] a_l = 0. 
+        \hat{k}}{1-\hat{\zeta}^2}\right)\right] a_l = 0. 
 \end{align}
 We demand the series to terminate  at $l=L$, i.e. a polynomial of
 order $L$, so that the vertical kinetic energy remain bounded as 
-$|\zhat|\to\infty$.  Then the eigenfrequency $\hat{\sigma}$ is given via 
+$|\zhat|\to\infty$.  Then the eigenfrequency $\hat{\zeta}$ is given via 
 \begin{align}
-\hat{\sigma}^4 - \left(L+1+\khat^2\right)\hat{\sigma}^2 + L\left(1 +
+\hat{\zeta}^4 - \left(L+1+\khat^2\right)\hat{\zeta}^2 + L\left(1 +
   \ii h q \khat\right) = 0. \label{simple_growth}
 \end{align}
 
@@ -486,14 +486,14 @@ calculations \citepalias{barker15}.
 \subsubsection{Stability without vertical shear}\label{stable_novshear}
 In the absence of vertical shear $q=0$, Eq. \ref{simple_growth} can be
 written as \begin{align}
-  \hat{\sigma}^2\khat^2 =
-  \left(L-\hat{\sigma}^2\right)\left(1-\hat{\sigma}^2\right), \label{iso_disp_full}
+  \hat{\zeta}^2\khat^2 =
+  \left(L-\hat{\zeta}^2\right)\left(1-\hat{\zeta}^2\right), \label{iso_disp_full}
 \end{align}
 which is just the dispersion relation for axisymmetric isothermal waves in a
 vertically isothermal disk (e.g. \citealt{okazaki87}; \citealt{takeuchi98}; \citealt{tanaka02}; 
 \citealt{zhang06}; \citealt{ogilvie13}; \citealt{barker14}; \citetalias{barker15}). In 
 this case the solutions are Hermite polynomials, $W\propto
-\He_L(\zhat)$.  The eigenfrequency $\hat{\sigma} = \hat{\omega}$ is real and the disk
+\He_L(\zhat)$.  The eigenfrequency $\hat{\zeta} = \hat{\omega}$ is real and the disk
 is stable. The low frequency branch of Eq. \ref{iso_disp_full} are 
 inertial waves \citep{balbus03}. For 
 $|\hat{\omega}|\ll 1$ and $L\geq 1$ the dispersion relation is
@@ -507,33 +507,33 @@ is readily obtained for large $\khat^2$ by balancing
 the last two terms of Eq. \ref{simple_growth} to give the low
 frequency branch. Then 
 \begin{align}
-  \hat{\sigma}^2 \simeq L\left(\frac{1+\ii q h
+  \hat{\zeta}^2 \simeq L\left(\frac{1+\ii q h
        \hat{k}}{L+1+\hat{k}^2}\right), \label{simple_growth2}
 \end{align}
 which is equivalent to Eq. 34 of \citetalias{barker15} in the limit
 $\khat^2\gg L$. This signifies instability for
 $L\geq1$ since we can choose the sign 
-of the square root to make $\hat{\nu} = \imag\hat{\sigma}>0$.  These
+of the square root to make $\hat{\sigma} = \imag\hat{\zeta}>0$.  These
 are the low frequency unstable modes seen in
 Fig. \ref{compare_modes_iso_kx10} and
-Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto|\omega|$.  
+Fig. \ref{compare_modes_iso_kx30}, for which $\sigma\propto|\omega|$.  
 
 
 
 %growth rate of high frequency branch is much smaller 
 
 % \begin{align}\label{sig2_iso}
-%   \hat{\sigma}^2 = L\left(\frac{1+\ii q h
+%   \hat{\zeta}^2 = L\left(\frac{1+\ii q h
 %       \hat{k}}{1+\hat{k}^2}\right).
 % \end{align}
-% The eigenfrequency $\hat{\sigma}$ is therefore complex for
+% The eigenfrequency $\hat{\zeta}$ is therefore complex for
 % $L\geq1$. The dispersion relation Eq. \ref{sig2_iso} can also be
 % derived by setting $\beta=0$ in the more general dispersion relation 
 % Eq. \ref{relax_disp} with coefficients given in Appendix
 % \ref{relax_coeff}. We are interested in 
-% unstable modes for which $\hat{\nu}>0$ and is given by
+% unstable modes for which $\hat{\zeta}>0$ and is given by
 % \begin{align}
-%   \hat{\nu} =\sqrt{
+%   \hat{\zeta} =\sqrt{
 %     \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2h^2\hat{k}^2} - 
 %       1\right)}. 
 % \end{align}
@@ -565,7 +565,7 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto|\omega|$.
 % \end{align}
 % where $w(\zhat)=\exp{(-\zhat^2/2)}$ and we have defined a new eigenvalue 
 % \begin{align}
-%   n \equiv \hat{\sigma}^2(1+\hat{k}^2). 
+%   n \equiv \hat{\zeta}^2(1+\hat{k}^2). 
 % \end{align} 
 % Eq. \ref{hermite_ode} is Hermite's differential equation. If we impose
 % that the kinetic energy density remain bounded at infinity, then the
@@ -576,7 +576,7 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto|\omega|$.
 % and $n$ is a non-negative integer. This translates to a real
 % eigenfrequency $\sigma$ such that
 % \begin{align}
-%   \left|\hat{\sigma}\right| = \sqrt{n}
+%   \left|\hat{\zeta}\right| = \sqrt{n}
 %   \left(1+\hat{k}^2\right)^{-1/2}. \label{iso_stable_disp}
 % \end{align}
 % Since we have assumed $|\sigma^2|\ll \kappa^2\sim \Omega_K^2$, our
@@ -609,7 +609,7 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto|\omega|$.
 % \end{align}
 % and
 % \begin{align}
-%   \mathrm{max}\left(\hat{\nu}\right) =\frac{\sqrt{L}|h
+%   \mathrm{max}\left(\hat{\zeta}\right) =\frac{\sqrt{L}|h
 %     q|}{2\sqrt{1+|h q|}}. \label{iso_max_growth}
 % \end{align}
 % Since $L\geq1$, there is no limit to the maximum growth rate. This is
@@ -645,7 +645,7 @@ given by:
 \end{align}
 
 \subsection{Limiting form with real frequencies and $\khat^2\gg 1$}\label{disp_neut_limit}
-Assuming neutral modes with real $\hat{\sigma}=\hat{\omega}$ and $\khat^2\gg 1$, the real and imaginary parts of
+Assuming neutral modes with real $\hat{\zeta}=\hat{\omega}$ and $\khat^2\gg 1$, the real and imaginary parts of
 Eq. \ref{relax_disp} are approximately 
 \begin{align}
   0 =&M(M+1)(1-h^2 q^2 \khat^2) + 4\beta h q M(M+1)\left(\hat{\omega}\khat\right) 
@@ -745,7 +745,7 @@ vertically isothermal disk, we deduce the disk aspect-ratio
 and the mid-plane density distribution 
 \begin{align}
 %  \rho_0 = 2.7\times10^{-9}
-%  \hat{\Sigma}\left(\frac{r}{\mathrm{AU}}\right)^{-39/14}\mathrm{g}\,\mathrm{cm}^{-3},  
+%  \hat{\zeta}\left(\frac{r}{\mathrm{AU}}\right)^{-39/14}\mathrm{g}\,\mathrm{cm}^{-3},  
 \rho_0 = 1.7\times10^{-9}
   \hat{\Sigma}\left(\frac{\hat{T}}{\mu}\right)^{-1/2}\left(\frac{r}{\mathrm{AU}}\right)^{-39/14}\mathrm{g}\,\mathrm{cm}^{-3},
 \end{align}

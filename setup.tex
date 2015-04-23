@@ -246,44 +246,45 @@ stratified disks \citep{chiang97}, in which the VSI requires rapid
 thermal relaxation, as shown below. 
 
 \section{Linear problem}\label{linear}
+
+
+
+
+
 We consider axisymmetric perturbations to the above equilibria in the
 form 
 \begin{align}
-  \rho \to \rho(r, z) + \delta\rho(r,z)\exp{\left( - \ii\sigma
+  \rho \to \rho(r, z) + \delta\rho(r,z)\exp{\left( - \ii\zeta
       t\right)},    
 \end{align}
-and similarly for other fluid variables, where $\sigma = \omega + \ii
-\nu$ is a (generally) complex frequency, with $\omega$ and $\nu$ being
+and similarly for other fluid variables, where $\zeta = \omega + \ii
+\sigma$ is a (generally) complex frequency, with $\omega$ and $\sigma$ being
 the real frequency and growth rate, respectively.
 
-The linearized fluid equations in cylindrical co-ordinates are  
-\begin{align}
-  \ii\sigma\delta\rho &= \frac{\rho}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p}{\p
-    z}\left(\rho\delta v_z\right)  + \hat{g}_c\frac{\p\rho}{\p r}\delta v_r,\label{full_mass1}\\
-  \ii\sigma\delta v_r &= \frac{1}{\rho}\frac{\p\delta P}{\p r} - 2\Omega
-  \delta v_\phi - \hat{g}_c\frac{\delta\rho}{\rho^2}\frac{\p P}{\p r},\\ 
-  \ii\sigma\delta v_\phi  &= \frac{\kappa^2}{2\Omega}\delta v_r +
-  r\frac{\p\Omega}{\p z}\delta v_z,\\
-  \ii \sigma\delta v_z &= \frac{1}{\rho}\frac{\p\delta P}{\p z} -
-  \frac{\delta \rho}{\rho^2}\frac{\p P}{\p z},\\
-  \ii\sigma\delta P &=\frac{\p P}{\p z}\delta v_z + \gamma P
-  \left[\frac{1}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p
-      \delta v_z}{\p z}\right]\notag \\
-  &+ \frac{1}{t_c}\left(\delta P -  
-    \frac{P}{\rho}\delta\rho\right) + \hat{g}_c \frac{\p P}{\p r}\delta v_r,\label{full_energy1}
-\end{align}
-where the coefficients $\hat{g}_c=1$ are inserted to label terms
-associated with the background radial disk structure. 
+% The linearized fluid equations in cylindrical co-ordinates are  
+% \begin{align}
+%   \ii\zeta\delta\rho &= \frac{\rho}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p}{\p
+%     z}\left(\rho\delta v_z\right)  + \hat{g}_c\frac{\p\rho}{\p r}\delta v_r,\label{full_mass1}\\
+%   \ii\zeta\delta v_r &= \frac{1}{\rho}\frac{\p\delta P}{\p r} - 2\Omega
+%   \delta v_\phi - \hat{g}_c\frac{\delta\rho}{\rho^2}\frac{\p P}{\p r},\\ 
+%   \ii\zeta\delta v_\phi  &= \frac{\kappa^2}{2\Omega}\delta v_r +
+%   r\frac{\p\Omega}{\p z}\delta v_z,\\
+%   \ii \zeta\delta v_z &= \frac{1}{\rho}\frac{\p\delta P}{\p z} -
+%   \frac{\delta \rho}{\rho^2}\frac{\p P}{\p z},\\
+%   \ii\zeta\delta P &=\frac{\p P}{\p z}\delta v_z + \gamma P
+%   \left[\frac{1}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p
+%       \delta v_z}{\p z}\right]\notag \\
+%   &+ \frac{1}{t_c}\left(\delta P -  
+%     \frac{P}{\rho}\delta\rho\right) + \hat{g}_c \frac{\p P}{\p r}\delta v_r,\label{full_energy1}
+% \end{align}
+% where the coefficients $\hat{g}_c=1$ are inserted to label terms
+% associated with the background radial disk structure. 
 
 % This approach has been adopted
 % in recent linear calculations of the VSI
 % \cite{nelson13,mcnally14,barker15} because unstable modes have short
 % radial lengthscales. 
 
-
-
-
-\subsection{Radially-local approximation}  
 We consider perturbations with small radial length-scales 
 so that we can ignore the radial variations in the background
 structure and radial gradients. \citetalias{barker15} have validated this
@@ -305,21 +306,21 @@ the the local $(r,\phi,z)$ directions, respectively. Then writing
 $\delta P /\rho \equiv W$ and $c_s^2\delta\rho/\rho\equiv Q$, the
 linearized system of equations are 
 \begin{align}
-  \ii\sigma \frac{Q}{c_s^2}  &=  \ii k_x \delta v_x + \frac{d\dd
+  \ii\zeta \frac{Q}{c_s^2}  &=  \ii k_x \delta v_x + \frac{d\dd
     v_z}{dz} + \frac{\p\ln{\rho}}{\p z}\delta v_z + \hat{g}_c
   \frac{\p\ln{\rho}}{\p r} \delta v_x,\label{lin_mass}\\
-  \ii\sigma \delta v_x  &= \ii k_x W - 2\Omega\delta v_y -
+  \ii\zeta \delta v_x  &= \ii k_x W - 2\Omega\delta v_y -
   \hat{g}_c\frac{1}{\rho}\frac{\p P}{\p r}\frac{Q}{c_s^2}\label{lin_vx}\\
-   \ii \sigma\delta v_y &= r\frac{\p \Omega}{\p z}\delta v_z +
+   \ii \zeta\delta v_y &= r\frac{\p \Omega}{\p z}\delta v_z +
   \frac{\kappa^2}{2\Omega}\delta v_x, \label{lin_vy}\\
-   \ii\sigma\delta v_z &= \frac{dW}{dz} +
+   \ii\zeta\delta v_z &= \frac{dW}{dz} +
   \frac{\p\ln{\rho}}{\p z}\left(W-Q\right), \label{lin_vz}\\
-  \ii \sigma W &= c_s^2\frac{\p\ln{\rho}}{\p z}\delta v_z +
+  \ii \zeta W &= c_s^2\frac{\p\ln{\rho}}{\p z}\delta v_z +
   c_s^2\frac{\gamma}{\Gamma} \left(\ii k_x\delta v_x + \frac{d\delta
       v_z}{dz}\right) \notag\\
   &+ \frac{1}{t_c}\left(W - \frac{Q}{\Gamma}\right) +
   \hat{g}_c\frac{1}{\rho}\frac{\p P}{\p r}\delta v_x,\label{lin_energy}
-  % -&\ii\sigma W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\sigma\frac{\gamma}{\Gamma} Q +
+  % -&\ii\zeta W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\zeta\frac{\gamma}{\Gamma} Q +
   % c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma}-1\right)\delta v_z.\label{lin_energy}
 \end{align}
 where we have made the notation change $k_r\to k_x$. 
