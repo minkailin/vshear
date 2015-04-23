@@ -287,9 +287,9 @@ local $(r,\phi,z)$ directions, respectively.
 % The linearized fluid equations in cylindrical co-ordinates are  
 % \begin{align}
 %   \ii\upsilon\delta\rho &= \frac{\rho}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p}{\p
-%     z}\left(\rho\delta v_z\right)  + \hat{g}_c\frac{\p\rho}{\p r}\delta v_r,\label{full_mass1}\\
+%     z}\left(\rho\delta v_z\right)  + \zeta\frac{\p\rho}{\p r}\delta v_r,\label{full_mass1}\\
 %   \ii\upsilon\delta v_r &= \frac{1}{\rho}\frac{\p\delta P}{\p r} - 2\Omega
-%   \delta v_\phi - \hat{g}_c\frac{\delta\rho}{\rho^2}\frac{\p P}{\p r},\\ 
+%   \delta v_\phi - \zeta\frac{\delta\rho}{\rho^2}\frac{\p P}{\p r},\\ 
 %   \ii\upsilon\delta v_\phi  &= \frac{\kappa^2}{2\Omega}\delta v_r +
 %   r\frac{\p\Omega}{\p z}\delta v_z,\\
 %   \ii \upsilon\delta v_z &= \frac{1}{\rho}\frac{\p\delta P}{\p z} -
@@ -298,9 +298,9 @@ local $(r,\phi,z)$ directions, respectively.
 %   \left[\frac{1}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p
 %       \delta v_z}{\p z}\right]\notag \\
 %   &+ \frac{1}{t_c}\left(\delta P -  
-%     \frac{P}{\rho}\delta\rho\right) + \hat{g}_c \frac{\p P}{\p r}\delta v_r,\label{full_energy1}
+%     \frac{P}{\rho}\delta\rho\right) + \zeta \frac{\p P}{\p r}\delta v_r,\label{full_energy1}
 % \end{align}
-% where the coefficients $\hat{g}_c=1$ are inserted to label terms
+% where the coefficients $\zeta=1$ are inserted to label terms
 % associated with the background radial disk structure. 
 % This approach has been adopted
 % in recent linear calculations of the VSI
@@ -324,10 +324,10 @@ Q$ and making the notation change $k_r\to k_x$,  the
 linearized system of equations are 
 \begin{align}
   \ii\upsilon \frac{Q}{c_s^2}  &=  \ii k_x \delta v_x + \frac{d\dd
-    v_z}{dz} + \frac{\p\ln{\rho}}{\p z}\delta v_z + \hat{g}_c
+    v_z}{dz} + \frac{\p\ln{\rho}}{\p z}\delta v_z + \zeta
   \frac{\p\ln{\rho}}{\p r} \delta v_x,\label{lin_mass}\\
   \ii\upsilon \delta v_x  &= \ii k_x W - 2\Omega\delta v_y -
-  \hat{g}_c\frac{1}{\rho}\frac{\p P}{\p r}\frac{Q}{c_s^2}\label{lin_vx}\\
+  \zeta\frac{1}{\rho}\frac{\p P}{\p r}\frac{Q}{c_s^2}\label{lin_vx}\\
    \ii \upsilon\delta v_y &= r\frac{\p \Omega}{\p z}\delta v_z +
   \frac{\kappa^2}{2\Omega}\delta v_x, \label{lin_vy}\\
    \ii\upsilon\delta v_z &= \frac{dW}{dz} +
@@ -336,11 +336,11 @@ linearized system of equations are
   c_s^2\frac{\gamma}{\Gamma} \left(\ii k_x\delta v_x + \frac{d\delta
       v_z}{dz}\right) \notag\\
   &+ \frac{1}{t_c}\left(W - \frac{Q}{\Gamma}\right) +
-  \hat{g}_c\frac{1}{\rho}\frac{\p P}{\p r}\delta v_x,\label{lin_energy}
+  \zeta\frac{1}{\rho}\frac{\p P}{\p r}\delta v_x,\label{lin_energy}
   % -&\ii\upsilon W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\upsilon\frac{\gamma}{\Gamma} Q +
   % c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma}-1\right)\delta v_z.\label{lin_energy}
 \end{align}
-where the coefficients $\hat{g}_c=1$ are inserted to label terms
+where the coefficients $\zeta=1$ are inserted to label terms
 associated with the background radial disk structure. 
 It is understood that the quantities $\rho,\,c_s^2,\,\Omega,\kappa,\, 
 \p_z\Omega,\, \p_r\ln{\rho} $ and $ \p_r P$ are evaluated at $r=r_0$
