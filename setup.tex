@@ -35,9 +35,9 @@ relaxation with a timescale $t_c$, i.e.,
 where $T_0=T_0(r,z)$ is the equilibrium temperature.  We 
 define the dimensionless cooling time 
 \begin{align}\label{beta_def}
-  \beta \equiv \Omega_k t_c
+  \beta \equiv \OmK t_c
 \end{align}
-relative to the Keplerian frequency, $\Omega_k=\sqrt{GM_*/r^3}$.   
+relative to the Keplerian frequency, $\OmK=\sqrt{GM_*/r^3}$.   
 
 For most of this paper we will take $\beta$ as a constant input
 parameter, so that we can vary the thermodynamic response of the
@@ -106,7 +106,7 @@ define
   \frac{H}{r} 
 \end{align}
 to parametrize the magnitude of the sound-speed, where
-$v_k=r\Omega_k$ is the Keplerian azimuthal velocity and
+$v_k=r\OmK$ is the Keplerian azimuthal velocity and
 $H$ is a characteristic scale-height.  Thus, $\epsilon$
 is also a characteristic disk aspect-ratio. We are 
 interested in thin disks with $\epsilon \ll 1$.%,%  as relevant for
@@ -137,7 +137,7 @@ such that $\rho(r,H_s)=0$.
 
 Similarly, the equilibrium rotation is 
 \begin{align}\label{eqm_rot}
-  \frac{\Omega^2(r,z)}{\Omega_k^2(r)}=1 +
+  \frac{\Omega^2(r,z)}{\OmK^2(r)}=1 +
   \left(p+\frac{s}{\Gamma}\right)\epsilon^2(r) 
   +\frac{s}{\Gamma} \left(1-\frac{1}{\sqrt{1+z^2/r^2}}\right), 
 \end{align}
@@ -159,7 +159,7 @@ $\Omega(r,z)$ are given by
 \begin{align}
   \frac{\rho(r,z)}{\rho_0(r)} &=
   \exp{\left[\frac{1}{\epsilon^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},\\    
-  \frac{\Omega^2(r,z)}{\Omega_k^2(r)}& =1+ (p+q)\epsilon^2(r) + q\left(1 -
+  \frac{\Omega^2(r,z)}{\OmK^2(r)}& =1+ (p+q)\epsilon^2(r) + q\left(1 -
     \frac{1}{\sqrt{1+z^2/r^2}}\right),\label{vertiso_eqm}
 \end{align}
 which may be obtained from Eq. \ref{eqm_dens} and Eq. \ref{eqm_rot} by
@@ -179,7 +179,7 @@ Eq. \ref{eqm_press},
 \end{align}
 For the above disk models,
 \begin{align}
-  r\frac{\p\Omega^2}{\p z} = \frac{sz\Omega_k^2}{\Gamma
+  r\frac{\p\Omega^2}{\p z} = \frac{sz\OmK^2}{\Gamma
     r\left(1+z^2/r^2\right)^{3/2}}. \label{vertical_shear_ex} 
 \end{align}
 Note that there is a maximum vertical shear rate at $|z|=r/\sqrt{2}$,
@@ -226,7 +226,7 @@ the first criterion is generally satisfied.
 Thus, to assess stability, we consider the second
 criterion. 
 Without loss of generality, we evaluate Eq. \ref{second_SH} in $z>0$
-where $\p_zP<0$. Here we approximate $\p_r j^2\simeq r^3\Omega_k^2$ but
+where $\p_zP<0$. Here we approximate $\p_r j^2\simeq r^3\OmK^2$ but
 use Eq. \ref{vertical_shear} for $\p_zj^2$. Then 
 \begin{align}\label{solberg2}
   % \gamma - \Gamma > \frac{s\epsilon^2}{\Gamma}

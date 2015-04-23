@@ -37,7 +37,7 @@ we introduce the following simplifications:
   explicitly in the linearized equations through the term
   $d\Omega/dz$. We thus ignore the vertical dependence of $\Omega$ and
   $\kappa$ elsewhere, and replace them with
-  $\Omega_K$.  We call this the Keplerian approximation. 
+  $\OmK$.  We call this the Keplerian approximation. 
   
 \item We assume thin disks for which $h\ll 1$, and write 
   $\rho/\rho_0\simeq  \exp{(-z^2/2H^2)}$. 
@@ -48,15 +48,15 @@ we introduce the following simplifications:
 % %The result for $\Gamma=1$ is
 % \begin{align}
 %   0 =& \frac{d^2\delta v_z}{dz^2} + \left(1 + \frac{\ii k_x c_s^2
-%       q}{\Omega_K^2r}\right)\frac{d\ln\rho}{dz}\frac{d\delta
+%       q}{\OmK^2r}\right)\frac{d\ln\rho}{dz}\frac{d\delta
 %     v_z}{dz} \notag\\
-%   % &+ \left[\upsilon^2\left(\frac{k_x^2}{\Omega_K^2} +
+%   % &+ \left[\upsilon^2\left(\frac{k_x^2}{\OmK^2} +
 %   %     \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
-%   &+ \left[\frac{\upsilon^2}{c_s^2}\left(\frac{k_x^2c_s^2}{\Omega_K^2} +
+%   &+ \left[\frac{\upsilon^2}{c_s^2}\left(\frac{k_x^2c_s^2}{\OmK^2} +
 %       \chi\right) + \left(\chi + \frac{\ii k_x c_s^2
-%         q}{\Omega_K^2r}\right)\frac{d^2\ln\rho}{dz^2}\right. \notag\\
+%         q}{\OmK^2r}\right)\frac{d^2\ln\rho}{dz^2}\right. \notag\\
 %   &\phantom{+=}\left.-
-%     \frac{c_s^2}{\Omega_K^2}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
+%     \frac{c_s^2}{\OmK^2}\left(\frac{d\ln\rho}{dz}\right)^2\left(k_x^2 -
 %       \frac{\ii k_x q}{r}\right)
 %     \left(1-\chi\right) 
 %   \right]\delta v_z,\label{vertiso_gov}
@@ -69,7 +69,7 @@ we introduce the following simplifications:
  In terms of the dimensionless variables
 \begin{align}
   \hat{z} = z/H,\quad \hat{k}=k_xH, \quad \hat{\upsilon} =\hat{\omega} +
-  \ii\hat{\sigma}= \upsilon/\Omega_K,
+  \ii\hat{\sigma}= \upsilon/\OmK,
 \end{align}
 where $\hat{\omega}$ and $\hat{\sigma}$ are real, the above
 approximations lead to a single second order ordinary differential
