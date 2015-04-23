@@ -246,47 +246,100 @@ stratified disks \citep{chiang97}, in which the VSI requires rapid
 thermal relaxation, as shown below. 
 
 \section{Linear problem}\label{linear} 
-In this section we present the two sets of equations used to study the
-axisymmetric linear stability of the above equilibria. We first give
-the linearized equations in the radially-local approximation, which
-are solved in our numerical study. From this set, we further derive a
-simplified equation for vertically isothermal disks used for analytic
-discussion in the next section. 
+This section presents the two sets of equations we use to study the
+linear development of the VSI.  Both sets are radially local and vertically global 
+with a finite cooling time.
+The first set, presented in \S\ref{sec:radlocal}, is more general and used 
+for precise numerical calculations.  The second set, in \S\ref{sec:simplified}, makes
+additional approximations  about disk structure and wave frequency.  This simplified
+set is used to obtain analytic results.
 
-\subsection{Radially local approximation}
-We consider axisymmetric perturbations to the above equilibria in the
-form 
-\begin{align}
-  \rho \to \rho(r, z) + \delta\rho(r,z)\exp{\left(\ii k_rr - \ii\zeta
+
+\subsection{Radially local approximation}\label{sec:radlocal}
+We consider axisymmetric perturbations to the above disk equilibria.    
+The growth of the VSI is strongest for short radial wavelengths, as compared
+ to the disk radius \citepalias{nelson13,barker15}.  We thus perform a
+ standard two step process to obtain linearized equations in the radially local 
+ approximation (e.g., \citealp{goldreich67}, who also consider vertically local perturbations).  
+ 
+ We first expand all fluid variables 
+ into the equilibrium value plus a perturbation denoted by $\delta$, e.g.\ 
+ $\delta \rho$ for the perturbed density, and drop all non-linear perturbations.  Second, we perform
+ a Taylor expansion about a fiducial radius $r_0$ with the local radial coordinate
+ $x = r - r_0$, keeping only the leading order terms in $x/r_0$.  We also relabel 
+ (trivially for axisymmetric perturbations) the azimuthal direction as $y$.  
+ 
+ Perturbations take the form of a radial plane wave with arbitrary vertical dependence, 
+ i.e.\
+ \begin{align}
+  \delta\rho \rightarrow \delta\rho(z)\exp{\left(\ii k_x x - \ii\zeta
       t\right)},    
 \end{align}
-and similarly for other fluid variables, where $\zeta = \omega + \ii
-\sigma$ is a (generally) complex frequency, with $\omega$ and $\sigma$ being
-the real frequency and growth rate, respectively, and $k_r$ is a real 
-radial wavenumber. We take $k_r>0$ without loss of generality. 
+where $\zeta = \omega + \ii \sigma$ is a (generally) complex frequency, 
+with $\omega$ and $\sigma$ being
+the real frequency and growth rate, respectively, and $k_x$ is a real 
+radial wavenumber.  Henceforth all unperturbed fluid variables, including 
+gradients suc as $\p \Omega/ \p z$, refer to  equilibrium values at $(r_0, z)$.
 
-The VSI is expected to operate for perturbations with small radial
-wavelengths \citepalias{nelson13,barker15}. We thus linearize 
-Eq. \ref{full_mass}---\ref{full_energy} assuming perturbations 
-in the above form with radially slowly-varying
-amplitudes and $k_r r \gg 1$, so that the radial dependence of $\delta\rho(r,z)$, etc.,
-may be neglected, as well as curvature terms. Henceforth we are
-considering solutions at some fiducial radius $r=r_0$.  
+We further define the perturbation variables  $W \equiv \delta P /\rho$ 
+and $Q \equiv c_s^2\delta\rho/\rho$.  With this procedure the linearized
+system of equations are
+\begin{align}
+  \ii\zeta \frac{Q}{c_s^2}  &=  \ii k_x \delta v_x + \frac{d\dd
+    v_z}{dz} + \frac{\p\ln{\rho}}{\p z}\delta v_z + \ksi
+  \frac{\p\ln{\rho}}{\p r} \delta v_x,\label{lin_mass}\\
+  \ii\zeta \delta v_x  &= \ii k_x W - 2\Omega\delta v_y -
+  \ksi\frac{1}{\rho}\frac{\p P}{\p r}\frac{Q}{c_s^2}\label{lin_vx}\\
+   \ii \zeta\delta v_y &= r\frac{\p \Omega}{\p z}\delta v_z +
+  \frac{\kappa^2}{2\Omega}\delta v_x, \label{lin_vy}\\
+   \ii\zeta\delta v_z &= \frac{dW}{dz} +
+  \frac{\p\ln{\rho}}{\p z}\left(W-Q\right), \label{lin_vz}\\
+  \ii \zeta W &= c_s^2\frac{\p\ln{\rho}}{\p z}\delta v_z +
+  c_s^2\frac{\gamma}{\Gamma} \left(\ii k_x\delta v_x + \frac{d\delta
+      v_z}{dz}\right) \notag\\
+  &+ \frac{1}{t_c}\left(W - \frac{Q}{\Gamma}\right) +
+  \ksi\frac{1}{\rho}\frac{\p P}{\p r}\delta v_x.\label{lin_energy}
+  % -&\ii\zeta W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\zeta\frac{\gamma}{\Gamma} Q +
+  % c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma}-1\right)\delta v_z.\label{lin_energy}
+\end{align}
+The above equations are a set of ODEs (ordinary differential equations) in $z$.  Solutions to these 
+are presented in \S\ref{numerical} and \S\ref{application}.   The coefficient $ \ksi = 1$ is 
+introduced simply to label terms with radial gradients of the equilibrium state, 
+which again are evaluated at $(r_o, z)$.   We will consider the effects of ignoring these radial gradients below. 
+
+%We consider axisymmetric perturbations to the above equilibria in the
+%form 
+%\begin{align}
+%  \rho \to \rho(r, z) + \delta\rho(r,z)\exp{\left(\ii k_rr - \ii\zeta
+%      t\right)},    
+%\end{align}
+%and similarly for other fluid variables, where $\zeta = \omega + \ii
+%\sigma$ is a (generally) complex frequency, with $\omega$ and $\sigma$ being
+%the real frequency and growth rate, respectively, and $k_r$ is a real 
+%radial wavenumber. We take $k_r>0$ without loss of generality. 
+
+%The VSI is expected to operate for perturbations with small radial
+%wavelengths \citepalias{nelson13,barker15}. We thus linearize 
+%Eq. \ref{full_mass}---\ref{full_energy} assuming perturbations 
+%in the above form with radially slowly-varying
+%amplitudes and $k_r r \gg 1$, so that the radial dependence of $\delta\rho(r,z)$, etc.,
+%may be neglected, as well as curvature terms. Henceforth we are
+%considering solutions at some fiducial radius $r=r_0$.  
 %\citetalias{barker15} have validated this 
 % approximation for the VSI by comparison with the linear problem in
 % global cylindrical disk geometry. 
 
-In order to emphasize the radially local approximation, we introduce
-the local Cartesian co-ordinates $(x,y,z)$ corresponding to the the
-local $(r,\phi,z)$ directions, respectively.  
+%In order to emphasize the radially local approximation, we introduce
+%the local Cartesian co-ordinates $(x,y,z)$ corresponding to the the
+%local $(r,\phi,z)$ directions, respectively.  
 %We thus linearize 
 %and replace  
 % The linearized fluid equations in cylindrical co-ordinates are  
 % \begin{align}
 %   \ii\zeta\delta\rho &= \frac{\rho}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p}{\p
-%     z}\left(\rho\delta v_z\right)  + \hat{g}_c\frac{\p\rho}{\p r}\delta v_r,\label{full_mass1}\\
+%     z}\left(\rho\delta v_z\right)  + \ksi\frac{\p\rho}{\p r}\delta v_r,\label{full_mass1}\\
 %   \ii\zeta\delta v_r &= \frac{1}{\rho}\frac{\p\delta P}{\p r} - 2\Omega
-%   \delta v_\phi - \hat{g}_c\frac{\delta\rho}{\rho^2}\frac{\p P}{\p r},\\ 
+%   \delta v_\phi - \ksi\frac{\delta\rho}{\rho^2}\frac{\p P}{\p r},\\ 
 %   \ii\zeta\delta v_\phi  &= \frac{\kappa^2}{2\Omega}\delta v_r +
 %   r\frac{\p\Omega}{\p z}\delta v_z,\\
 %   \ii \zeta\delta v_z &= \frac{1}{\rho}\frac{\p\delta P}{\p z} -
@@ -295,9 +348,9 @@ local $(r,\phi,z)$ directions, respectively.
 %   \left[\frac{1}{r}\frac{\p}{\p r}\left(r\delta v_r\right) + \frac{\p
 %       \delta v_z}{\p z}\right]\notag \\
 %   &+ \frac{1}{t_c}\left(\delta P -  
-%     \frac{P}{\rho}\delta\rho\right) + \hat{g}_c \frac{\p P}{\p r}\delta v_r,\label{full_energy1}
+%     \frac{P}{\rho}\delta\rho\right) + \ksi \frac{\p P}{\p r}\delta v_r,\label{full_energy1}
 % \end{align}
-% where the coefficients $\hat{g}_c=1$ are inserted to label terms
+% where the coefficients $\zeta=1$ are inserted to label terms
 % associated with the background radial disk structure. 
 % This approach has been adopted
 % in recent linear calculations of the VSI
@@ -316,30 +369,12 @@ local $(r,\phi,z)$ directions, respectively.
 % \end{align}
 % We take $k_r>0$ without loss of generality, and further assume $k_rr\gg1$ so that curvature terms can also be 
 % ignored.       
-Then writing $\delta P /\rho \equiv W$ and $c_s^2\delta\rho/\rho\equiv Q$, the
-linearized system of equations are 
-\begin{align}
-  \ii\zeta \frac{Q}{c_s^2}  &=  \ii k_x \delta v_x + \frac{d\dd
-    v_z}{dz} + \frac{\p\ln{\rho}}{\p z}\delta v_z + \hat{g}_c
-  \frac{\p\ln{\rho}}{\p r} \delta v_x,\label{lin_mass}\\
-  \ii\zeta \delta v_x  &= \ii k_x W - 2\Omega\delta v_y -
-  \hat{g}_c\frac{1}{\rho}\frac{\p P}{\p r}\frac{Q}{c_s^2}\label{lin_vx}\\
-   \ii \zeta\delta v_y &= r\frac{\p \Omega}{\p z}\delta v_z +
-  \frac{\kappa^2}{2\Omega}\delta v_x, \label{lin_vy}\\
-   \ii\zeta\delta v_z &= \frac{dW}{dz} +
-  \frac{\p\ln{\rho}}{\p z}\left(W-Q\right), \label{lin_vz}\\
-  \ii \zeta W &= c_s^2\frac{\p\ln{\rho}}{\p z}\delta v_z +
-  c_s^2\frac{\gamma}{\Gamma} \left(\ii k_x\delta v_x + \frac{d\delta
-      v_z}{dz}\right) \notag\\
-  &+ \frac{1}{t_c}\left(W - \frac{Q}{\Gamma}\right) +
-  \hat{g}_c\frac{1}{\rho}\frac{\p P}{\p r}\delta v_x,\label{lin_energy}
-  % -&\ii\zeta W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\zeta\frac{\gamma}{\Gamma} Q +
-  % c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma}-1\right)\delta v_z.\label{lin_energy}
-\end{align}
-where we have made the notation change $k_r\to k_x$. 
-It is understood that the quantities $\rho,\,c_s^2,\,\Omega,\kappa,\, 
-\p_z\Omega,\, \p_r\ln{\rho} $ and $ \p_r P$ are evaluated at $r=r_0$
-using their expressions in the global disk given in \S\ref{setup}. Thus, they are functions of $z$ only. 
-Eq. \ref{lin_mass}---\ref{lin_energy} will form the basis of our numerical
-study, but for analytical discussion
-we will make further simplifications, as discussed next.
+%Then writing $\delta P /\rho \equiv W$ and $c_s^2\delta\rho/\rho\equiv Q$, the
+%linearized system of equations are 
+%where we have made the notation change $k_r\to k_x$. 
+%It is understood that the quantities $\rho,\,c_s^2,\,\Omega,\kappa,\, 
+%\p_z\Omega,\, \p_r\ln{\rho} $ and $ \p_r P$ are evaluated at $r=r_0$
+%using their expressions in the global disk given in \S\ref{setup}. Thus, they are functions of $z$ only. 
+%Eq. \ref{lin_mass}---\ref{lin_energy} will form the basis of our numerical
+%study, but for analytical discussion
+%we will make further simplifications, as discussed next.
