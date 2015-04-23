@@ -10,8 +10,8 @@
 %study.  
 
 In preparation for a numerical study of the above equations, we will 
-first present a fully analytic discussion for vertically isothermal disks with
-$\Gamma=1$, so that $c_s$ is vertically constant. To this end, 
+first present a fully analytic discussion for vertically isothermal
+disks, for which $\Gamma=1$ and $c_s$ is vertically constant. To this end, 
 we introduce the following simplifications:
 %In Appendix \ref{adia_improve} we derive  a with the following simplifications: 
 
@@ -26,7 +26,7 @@ we introduce the following simplifications:
   vertical shear (Eq. \ref{vertical_shear}) is retained. 
 
 \item We consider eigenvalues such that
-  $|\zeta^2|\ll \kappa^2,\,\Omega^2$. We call this the low frequency 
+  $|\upsilon^2|\ll \kappa^2,\,\Omega^2$. We call this the low frequency 
   approximation
 
 \item We are mainly interested in the effect of vertical shear, i.e. $q\neq
@@ -47,9 +47,9 @@ we introduce the following simplifications:
 %   0 =& \frac{d^2\delta v_z}{dz^2} + \left(1 + \frac{\ii k_x c_s^2
 %       q}{\Omega_K^2r}\right)\frac{d\ln\rho}{dz}\frac{d\delta
 %     v_z}{dz} \notag\\
-%   % &+ \left[\zeta^2\left(\frac{k_x^2}{\Omega_K^2} +
+%   % &+ \left[\upsilon^2\left(\frac{k_x^2}{\Omega_K^2} +
 %   %     \frac{\chi}{c_s^2}\right) + \left(\chi + \frac{\ii k_x c_s^2
-%   &+ \left[\frac{\zeta^2}{c_s^2}\left(\frac{k_x^2c_s^2}{\Omega_K^2} +
+%   &+ \left[\frac{\upsilon^2}{c_s^2}\left(\frac{k_x^2c_s^2}{\Omega_K^2} +
 %       \chi\right) + \left(\chi + \frac{\ii k_x c_s^2
 %         q}{\Omega_K^2r}\right)\frac{d^2\ln\rho}{dz^2}\right. \notag\\
 %   &\phantom{+=}\left.-
@@ -60,13 +60,13 @@ we introduce the following simplifications:
 % \end{align}
 % where
 % \begin{align}
-%   \chi \equiv \frac{1-\ii\zeta t_c}{1-\ii\zeta t_c\gamma}.
+%   \chi \equiv \frac{1-\ii\upsilon t_c}{1-\ii\upsilon t_c\gamma}.
 % \end{align}
 
  In terms of the dimensionless variables
 \begin{align}
-  \hat{z} = z/H,\quad \hat{k}=k_xH, \quad \hat{\zeta} =\hat{\omega} +
-  \ii\hat{\sigma}= \zeta/\Omega_K,
+  \hat{z} = z/H,\quad \hat{k}=k_xH, \quad \hat{\upsilon} =\hat{\omega} +
+  \ii\hat{\sigma}= \upsilon/\Omega_K,
 \end{align}
 where $\hat{\omega}$ and $\hat{\sigma}$ are real, the above
 approximations lead to a single second order ordinary differential
@@ -76,7 +76,7 @@ equation,
 %   0=& \delta v_z ^{\prime\prime} + \left(1 + \ii h
 %     q\hat{k}\right)\ln\rho^{\prime}\delta v_z^\prime \notag\\
 %   &+
-%   \left[\hat{\zeta}^2\left(\hat{k}^2+\chi\right) +
+%   \left[\hat{\upsilon}^2\left(\hat{k}^2+\chi\right) +
 %     \left(  \chi + \ii h q\hat{k}\right)\ln\rho^{\prime\prime}\right.
 %   \notag\\
 %   &\left.- \ln\rho^{\prime
@@ -94,14 +94,14 @@ equation,
 where $^\prime$ denotes $d/d\zhat$ and 
 \begin{align}
   &A \equiv 1 + \ii h q \hat{k},\\
-  &B \equiv \hat{\zeta}^2\left(\chi + \hat{k}^2\right) -
+  &B \equiv \hat{\upsilon}^2\left(\chi + \hat{k}^2\right) -
   \left(\chi + \ii h q \hat{k}\right),\\
   &C \equiv \left(1-\chi\right)\left(\hat{k}^2 - \ii
     h q\hat{k}\right), 
 \end{align}
 where
 \begin{align}
-\chi = \frac{1-\ii\hat{\zeta}\beta}{1-\ii\hat{\zeta}\beta\gamma}.
+\chi = \frac{1-\ii\hat{\upsilon}\beta}{1-\ii\hat{\upsilon}\beta\gamma}.
 \end{align}
 The derivation of Eq. \ref{nearly_iso_explicit}  is outlined in
 Appendix \ref{adia_improve}. 
@@ -158,21 +158,21 @@ and making the low-frequency, Keplerian approximation in
 % to obtain a pair or ordinary differential
 % equations for $W,Q$ as
 % \begin{align}
-%   &\frac{\zeta^2}{c_s^2}Q + \frac{\zeta^2k_x^2}{D}W \notag\\ 
+%   &\frac{\upsilon^2}{c_s^2}Q + \frac{\upsilon^2k_x^2}{D}W \notag\\ 
 %   &=\left(\frac{\ii
 %       k_x r}{D}\frac{d\Omega^2}{dz} -
 %     \frac{d\ln{\rho}}{dz}\right)\left[\frac{dW}{dz} +
 %     \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] \notag\\
 %   &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
 %     \frac{dQ}{dz}\right) - \frac{d^2\ln{\rho}}{dz^2}\left(W-Q\right),\label{ode_w}\\
-%   &\zeta^2W - \frac{\gamma}{\Gamma}\zeta^2 Q +
-%   \frac{\ii\zeta}{t_c}\left(W-\frac{Q}{\Gamma}\right)\notag\\
+%   &\upsilon^2W - \frac{\gamma}{\Gamma}\upsilon^2 Q +
+%   \frac{\ii\upsilon}{t_c}\left(W-\frac{Q}{\Gamma}\right)\notag\\
 %   &=c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma} - 1\right) 
 %   \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],\label{ode_Q} 
 % \end{align}
 % where
 % \begin{align}
-%   D \equiv \kappa^2 - \zeta^2,
+%   D \equiv \kappa^2 - \upsilon^2,
 % \end{align} 
 % and we have replaced the notation $\p_z$ by $d/dz$ since we are
 % considering solutions at a fixed radius. 
