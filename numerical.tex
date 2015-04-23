@@ -26,7 +26,7 @@ algebraic equations, for which we use matrix routines in the LAPACK
 package to solve. 
 
 Unless otherwise stated, our fiducial disk parameters are 
-$(\gamma, \Gamma) = (1.4, 1.011)$, $(p,q,\epsilon)=(-1.5,-1,0.05)$, and 
+$(\gamma, \Gamma) = (1.4, 1.011)$, $(p,q, h)=(-1.5,-1,0.05)$, and 
 vertical domain size $\zmax=5H$. This setup is effectively vertically
 isothermal since $c_s^2(\zmax) \simeq 0.9c_s^2(0)$. In Fig. \ref{omega_z}
 we plot the corresponding equilibrium rotation profile, which shows
@@ -37,7 +37,7 @@ that $\Omega$ decreases slightly away from the midplane.
   0cm]{figures/omega2} 
   \caption{Equilibrium rotation profile $\Omega(z)$,
     normalized by its mid-plane value, for  the fiducial disk model with $\Gamma=1.011$
-    and $(p,q,\epsilon)=(-1.5,-1,0.05)$. 
+    and $(p,q, h)=(-1.5,-1,0.05)$. 
     \label{omega_z} 
   }
 \end{figure}
@@ -56,7 +56,7 @@ thermal relaxation. %A more detailed analysis is given by \cite{barker15}.
 % Eq. \ref{simple_growth}. We find good agreement in the
 % wave frequency $\omega$ at all $\khat$ and in growth rates $\nu$ for
 % $\khat\gtrsim 10$. Growth rates are over-estimated by our analysis but 
-% are $O(\epsilon\Omega_k)$, which is consistent with the discussion in
+% are $O( h\Omega_k)$, which is consistent with the discussion in
 % Appendix \ref{max_growth1}. The match in $\nu$ worsens for 
 % decreasing $\khat$ due to the neglect of global radial structure in
 % the analysis. Nevertheless, given the number of approximations made
@@ -71,7 +71,7 @@ thermal relaxation. %A more detailed analysis is given by \cite{barker15}.
 %     fundamental VSI mode in the fiducial disk model with $\beta =
 %     10^{-3}$. 
 %     % a disk with $(\gamma,
-%     % \Gamma)=(1.4,1.011)$, $(p,q,\epsilon)=(-1.5,-1,0.1)$ and
+%     % \Gamma)=(1.4,1.011)$, $(p,q, h)=(-1.5,-1,0.1)$ and
 %     % $\beta=10^{-3}$. 
 %     The solid (dotted) line is obtained numerically
 %     (analytically).  
@@ -113,7 +113,7 @@ unless $\zmax$ is increased.
   \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx10_analytic.ps}
   \caption{Unstable modes with $\khat=10$ in the fiducial disk model
     with $\beta=10^{-3}$. %  a disk with 
-    % $(\gamma,\Gamma)=(1.4,1.011)$, $(p,q,\epsilon)=(-1.5,-1,0.1)$ and
+    % $(\gamma,\Gamma)=(1.4,1.011)$, $(p,q, h)=(-1.5,-1,0.1)$ and
     % $\beta=10^{-3}$. 
     The fiducial boundary condition is a free surface ($\Delta P=0$)
     with vertical domain size $\zmax=5H$  (black dots).  Other
@@ -421,7 +421,7 @@ timescale for the VSI.
 We further  test the dependence of $\beta_\mathrm{crit}$ on disk parameters
 (Eq. \ref{iso_vsi_cond}).  We use the fiducial setup as a  reference
 point and vary $q\in[-0.2,-1.2]$,  $\gamma\in[1.2,2.0]$, and
-$\epsilon\in[0.02,0.1]$ separately. The numerically obtained
+$ h\in[0.02,0.1]$ separately. The numerically obtained
 $\beta_\mathrm{crit}$ are shown in Fig. \ref{bcrit_compare} in
 comparison with Eq. \ref{iso_vsi_cond}, which generally agree. This
 result, together with Fig. \ref{bcrit_compare1}, shows that  
@@ -430,7 +430,7 @@ criteria for the VSI to operate effectively in stably stratified,
 vertically isothermal disks.   
 
 % The agreement improves with decreasing  $|q|$,
-% $\epsilon$ and increasing $\gamma$, i.e. weaker instability. There is
+% $ h$ and increasing $\gamma$, i.e. weaker instability. There is
 % a noticeable difference as $\gamma\to1$ because the derivation of
 % $\beta_\mathrm{crit}$ assumed $\gamma>1$. 
 
@@ -444,9 +444,9 @@ vertically isothermal disks.
   \caption{Dependence of the upper limit to the thermal relaxation timescale
     $\beta_\mathrm{crit}$ for the fundamental VSI mode on disk
     parameters. The fiducial setup is $(\gamma, \Gamma= (1.4, 1.011)$
-    and $(p,q,\epsilon)=(-1.5,-1,0.05)$. Top: varying 
+    and $(p,q, h)=(-1.5,-1,0.05)$. Top: varying 
     $q\in[-1.2,-0.2]$; middle: varying $\gamma\in[1.2,2.0]$; bottom:
-    varying $\epsilon\in[0.02,0.1]$. The perturbation wavenumber is
+    varying $ h\in[0.02,0.1]$. The perturbation wavenumber is
     $\khat=10$.  
     \label{bcrit_compare}}  
 \end{figure}
@@ -474,7 +474,7 @@ the purpose of this paper.
 %as we increase the thermal timescale. 
 
 Nevertheless, here we briefly consider a vertically non-isothermal
-disk model with $(p,q,\epsilon)=(0,-1,0.05)$ and $\Gamma=1.0837$. This
+disk model with $(p,q, h)=(0,-1,0.05)$ and $\Gamma=1.0837$. This
 value of $\Gamma$ is chosen so that the standard vertical domain size $\zmax =
 5H$ effectively corresponds to the disk surface ($\zmax\simeq
 H_s$). The disk temperature decreases rapidly with height such that 
@@ -553,7 +553,7 @@ Finally, in Fig. \ref{bcrit_compare2} we plot the maximum VSI growth
 rates in the vertically non-isothermal disk model. Based on 
 Eq. \ref{iso_vsi_cond}, we conjecture the critical 
 thermal timescale in the vertically non-isothermal disk is 
-given by $\epsilon|s|/(\gamma - \Gamma)$. This 
+given by $ h|s|/(\gamma - \Gamma)$. This 
 evaluates to 0.158, which is close to the cut-off thermal timescale
 for $\khat\in[5,30]$. Fig. \ref{bcrit_compare2} is qualitatively 
 similar to the fiducial disk model in
@@ -567,13 +567,13 @@ characteristic upper limit for other $\khat$.
     model as a function of the thermal relaxation timescale
     $\beta$. The vertical line is a conjectured 
     critical thermal timescale given by
-    $\epsilon|s|/(\gamma-\Gamma)=0.158$.  
+    $ h|s|/(\gamma-\Gamma)=0.158$.  
     \label{bcrit_compare2}}   
 \end{figure} 
 
 
   % We briefly consider vertically non-isothermal disks with 
-% $\Gamma=1.4$ and $(p,q,\epsilon)=(0,-1,0.05)$ as simulated in
+% $\Gamma=1.4$ and $(p,q, h)=(0,-1,0.05)$ as simulated in
 % \cite{nelson13}. In this case we set $\zmax=0.99H_s$.  
 
 % Fig. \ref{gcorr_compare_vnoniso} plots the fundamental VSI growth
@@ -591,7 +591,7 @@ characteristic upper limit for other $\khat$.
 % nearly vertically isothermal disks (Fig. \ref{bcrit_compare1}). For
 % $\gamma=1.7,\,2.0,\,2.5$, growth rates reach zero at
 % $\beta\simeq0.17,\,0.083,\,0.045$, respectively. Interestingly, these
-% values are equal to $\epsilon|q|/(\gamma-\Gamma)$. This suggests that
+% values are equal to $ h|q|/(\gamma-\Gamma)$. This suggests that
 % the critical thermal relaxation timescale for vertically
 % non-isothermal disks can also be estimated by Eq. \ref{iso_vsi_cond}
 % but with $\gamma-1$ replaced by $\gamma-\Gamma$. 
@@ -605,7 +605,7 @@ characteristic upper limit for other $\khat$.
 %     $\gamma\in[1.4,2.5]$. The disk is neutrally
 %     stratified for $\gamma=1.4$ and stably stratified for
 %     $\gamma>1.4$. Other disk parameters are
-%     $(p,q,\epsilon)=(0,-1,0.05)$ and the perturbation wavenumber is
+%     $(p,q, h)=(0,-1,0.05)$ and the perturbation wavenumber is
 %     $\khat=30$.   
 %     \label{gcorr_compare_vnoniso}}
 % \end{figure}

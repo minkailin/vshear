@@ -53,7 +53,7 @@ obtain
 and we have replaced the notation $\p_z$ by $d/dz$ since we are
 considering solutions at a fixed radius. 
 
-% In \S\ref{approx_gov} we made the replacement $D\to\Omega_k^2$ before
+% In \S\ref{approx_gov} we made the replacement $D\to\Omega_K^2$ before
 % eliminating variables to obtain a single equation for $\delta v_z$ in
 % vertically isothermal disks, Eq. \ref{vertiso_gov}.  
 % This procedure ignores the vertical dependence of
@@ -85,24 +85,24 @@ $dD/dz$, to obtain
 where we recall $\chi = \left(1-\ii\sigma t_c\right)/\left(1-\ii\sigma
 t_c \gamma\right)$. Making the low frequency and Keplerian
 approximations is equivalent to the replacement $D\to
-\Omega_k^2$. This gives, in terms of dimensionless variables,  
+\Omega_K^2$. This gives, in terms of dimensionless variables,  
 \begin{align}
-  &\delta v_z ^{\prime\prime} + \left[1 + \ii\epsilon q\hat{k} -
+  &\delta v_z ^{\prime\prime} + \left[1 + \ii h q\hat{k} -
     \frac{ \hat{k}^2}{
-      \left(\hat{k}^2+\chi\right)}q \epsilon^2F\right]\ln\rho^{\prime}\delta v_z^\prime +
-  \left\{\left(\chi + \ii \epsilon q
+      \left(\hat{k}^2+\chi\right)}q h^2F\right]\ln\rho^{\prime}\delta v_z^\prime +
+  \left\{\left(\chi + \ii h q
       \hat{k}\right)\ln\rho^{\prime\prime} - \ln\rho^{\prime
       2}\left(\khat^2 -
-      \ii\epsilon
+      \ii h
       q\hat{k}\right)\left[1 - \chi +
-      \frac{\chi}{\left(\hat{k}^2+\chi\right)}q\epsilon^2F\right]\right\}\delta v_z \notag\\&=
+      \frac{\chi}{\left(\hat{k}^2+\chi\right)}qh^2F\right]\right\}\delta v_z \notag\\&=
   -\hat{\sigma}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
 \end{align} 
-Since we are interested in thin disks with $\epsilon \ll 1$ and $|q| =
-O(1)$, we neglect the terms proportional to $\epsilon^2$, which gives 
+Since we are interested in thin disks with $h \ll 1$ and $|q| =
+O(1)$, we neglect the terms proportional to $h^2$, which gives 
 Eq. \ref{vertiso_gov_nondim} (the dimensional version being
 Eq. \ref{vertiso_gov}). This is equivalent to neglecting the   
-vertical dependence of $D$ by setting $D\to\Omega_k^2$ in
+vertical dependence of $D$ by setting $D\to\Omega_K^2$ in
 Eq. \ref{ode_w} before eliminating variables in favor of $\delta
 v_z$, which is the simpler way to obtain Eq. \ref{vertiso_gov}. 
 
@@ -110,17 +110,17 @@ v_z$, which is the simpler way to obtain Eq. \ref{vertiso_gov}.
 %equation (Eq. )  
 
 %Eq. \ref{adia_diso3} differs from Eq. \ref{vertiso_gov_nondim} by terms
-%proportional to $\epsilon^2$. For a thin disk ($\epsilon\ll1$) with
+%proportional to $h^2$. For a thin disk ($h\ll1$) with
 %$|q|=O(1)$, as considered in this work, neglecting these terms has no
 %qualitative effect on the discussion in \S\ref{analytic_relax}. 
 % In deriving Eq. \ref{vertiso_gov}, the vertical dependence of
 % $D=\kappa^2(z)-\sigma^2$ was ignored because the replacement
-% $D\to\Omega_k^2$ was made before eliminating variables in favor of
+% $D\to\Omega_K^2$ was made before eliminating variables in favor of
 % $\delta v_z$. In Appendix \ref{adia_improve} we show that making this
 % replacement after eliminating variables, which involves $dD/dz$,
-% introduces terms of $O(\epsilon^2)$. Since we are interested in 
-% thin disks ($\epsilon\ll 1 $), e.g. protoplanetary disks where 
-% $\epsilon\lesssim 0.1$ \citep{chiang10}, these terms introduce
+% introduces terms of $O(h^2)$. Since we are interested in 
+% thin disks ($h\ll 1 $), e.g. protoplanetary disks where 
+% $h\lesssim 0.1$ \citep{chiang10}, these terms introduce
 % unnecessary complexity for the present discussion. 
       
 
@@ -156,7 +156,7 @@ In the VGSB (and SSB) these terms are neglected by setting
 $\hat{g}_c=0$. For a power-law disk, these radial gradients  
 are $O(r^{-1})$, and they appear in comparison with terms of
 $O(k_x)$. The neglected terms therefore have a relative magnitude of
-$O(\epsilon/\khat)$, which is small for thin disks ($\epsilon\ll1$)
+$O(h/\khat)$, which is small for thin disks ($h\ll1$)
 and/or small radial wavelengths ($\khat\gg 1$). 
  
 
@@ -198,10 +198,10 @@ Eq. \ref{vertiso_gov_nondim} % (which itself is obtained by setting
 % $\hat{g}_c=0$ in Eq. \ref{lin_mass}---\ref{lin_energy})
 to give 
 \begin{align}
-  0 =\dd v_z^{\prime\prime} + \left(1 + \ii \epsilon q
+  0 =\dd v_z^{\prime\prime} + \left(1 + \ii h q
     \hat{k}\right)\left(\ln\rho^{\prime}\delta v_z\right)^\prime
   +\left\{\hat{\sigma}^2\left(\frac{1}{\gamma}+\hat{k}^2\right) 
-    -\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii\epsilon  
+    -\left(\frac{\gamma-1}{\gamma}\right)\left[\ln\rho^{\prime\prime}+\hat{k}^2\left(1-\frac{\ii h  
           q}{\hat{k}}\right)\ln\rho^{\prime 2}\right]\right\}\delta v_z.\label{adia_iso3}
 \end{align}
 We multiply Eq. \ref{adia_iso3} by $\rho\delta v_z^*$ and
@@ -216,10 +216,10 @@ parts, to obtain
   +\frac{1}{\gamma}\int_{\zhat_1}^{\zhat_2}\frac{1}{\rho}|(\rho\delta
   v_z)^\prime|^2 d\zhat\notag\\
 &+
-  \left(\frac{\gamma-1}{\gamma}\right)\hat{k}^2\left(1-\frac{\ii\epsilon
+  \left(\frac{\gamma-1}{\gamma}\right)\hat{k}^2\left(1-\frac{\ii h
       q}{\hat{k}}\right) \int_{\zhat_1}^{\zhat_2}\rho\ln\rho^{\prime
     2}|\delta v_z|^2 d\zhat
-+ \ii\epsilon q \hat{k}
++ \ii h q \hat{k}
   \int_{\zhat_1}^{\zhat_2}\ln\rho^\prime(\rho\delta v_z^*)^\prime
   \delta v_z d\zhat.\label{adia_integral}
 \end{align}
@@ -274,7 +274,7 @@ VSI.
     Eq. \ref{lin_mass}---\ref{lin_energy}  with $\hat{g}_c=1$, which
     accounts for the radial disk structure.  
     The disk parameters are $(\gamma, \Gamma)=(1.4, 1.011)$ and
-    $(p,q,\epsilon)=(-1.5,-1,0.05)$. The perturbation
+    $(p,q,h)=(-1.5,-1,0.05)$. The perturbation
     wavenumber is $\khat=30$. 
     \label{gcorr_compare}}  
 \end{figure}
@@ -305,17 +305,17 @@ In this case, we shall not yet make the low frequency
 approximation, but first make the  Keplerian approximation. We
 obtain, in terms of dimensionless variables, 
 \begin{align}
-  0 = W^{\prime\prime} + \left[\ln\rho^\prime - \frac{\ii \epsilon q \hat{k} f(\zhat)
+  0 = W^{\prime\prime} + \left[\ln\rho^\prime - \frac{\ii h q \hat{k} f(\zhat)
       }{1-\hat{\sigma}^2} \right]W^\prime +
   \hat{\sigma}^2\left(1+\frac{\hat{k}^2}{1-\hat{\sigma}^2}\right)W,\label{iso_ode0} 
 \end{align}
 where for discussion purposes we have defined $f(\zhat)$ such that
 \begin{align}\label{fz_shear}
-  \frac{d\Omega^2}{d\hat{z}} = \epsilon^2q f(\hat{z})\Omega_k^2.
+  \frac{d\Omega^2}{d\hat{z}} = h^2q f(\hat{z})\Omega_K^2.
 \end{align}
 By comparing Eq. \ref{fz_shear} with Eq. \ref{vertical_shear_ex}, we
 see that $f(\zhat)= 
-\zhat\left(1+\epsilon^2\zhat^2\right)^{-3/2}$. More generally, though,
+\zhat\left(1+h^2\zhat^2\right)^{-3/2}$. More generally, though,
 $f$ may be regarded as a representation of the vertical
 shear profile. Physically, we expect there is a maximum value of 
 $|d\Omega/dz|$, the existence of which should limit the growth rate of
@@ -326,7 +326,7 @@ this below.
 In the low-frequency limit we assume $|\hat{\sigma}|\ll 1$ and
 approximate Eq. \ref{iso_ode0} as 
 \begin{align}
-  0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii \epsilon q \hat{k}
+  0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii h q \hat{k}
     f(\zhat)\right]W^\prime +
   \hat{\sigma}^2\left(1+\hat{k}^2\right)W. \label{iso_ode1}
 \end{align}
@@ -342,7 +342,7 @@ decaying background density with increasing height. Then,
 \begin{align}
   \hat{\sigma}^2\left(1+\hat{k}^2\right)\int_{\zhat_1}^{\zhat_2}\rho|W|^2d\zhat
   =\int_{\zhat_1}^{\zhat_2}\rho|W^\prime|^2d\zhat 
-  +\ii \epsilon q \hat{k}\int_{\zhat_1}^{\zhat_2}\rho f(\zhat) W^*W^\prime d\zhat.\label{integral_relation1}
+  +\ii h q \hat{k}\int_{\zhat_1}^{\zhat_2}\rho f(\zhat) W^*W^\prime d\zhat.\label{integral_relation1}
 \end{align}
 It follows that for instability ($\imag\hat{\sigma}>0$), it is necessary to
 have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. there must
@@ -361,12 +361,12 @@ Eq. \ref{integral_relation1} are
   \int_{\zhat_1}^{\zhat_2}\rho|W^\prime|^2d\hat{z}
   \notag
   =\real\left[\ii
-    \epsilon\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
+    h\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
     f(\hat{z}) W^*W^\prime d\zhat\right], \\
    2\hat{\omega}\hat{\nu}\left(1+\hat{k}^2\right)
   \int_{\zhat_1}^{\zhat_2}\rho|W|^2d\hat{z}
   =\imag\left[\ii
-    \epsilon\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
+    h\hat{k}q \int_{\zhat_1}^{\zhat_2}\rho
     f(\hat{z}) W^*W^\prime d\hat{z}\right],
 \end{align}
 where we recall $\hat{\omega} = \real \hat{\sigma}$ and
@@ -380,7 +380,7 @@ Adding the square of these equations give
   \int_{\zhat_1}^{\zhat_2}\rho
   |W|^2d\hat{z}\int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime \right|^2d\hat{z}
   =\left|\ii
-    \epsilon\hat{k}q\int_{\zhat_1}^{\zhat_2}\rho
+    h\hat{k}q\int_{\zhat_1}^{\zhat_2}\rho
     f(\hat{z}) W^*W^\prime d\hat{z}\right|^2.
 \end{align}
 It is clear that
@@ -390,7 +390,7 @@ It is clear that
   |W|^2d\hat{z}\int_{\zhat_1}^{\zhat_2}\rho\left|W^\prime
   \right|^2d\hat{z} 
   \leq\left|
-    \epsilon\hat{k}q\int_{\zhat_1}^{\zhat_2}\rho
+    h\hat{k}q\int_{\zhat_1}^{\zhat_2}\rho
     f(\hat{z}) W^*W^\prime d\hat{z}\right|^2.
 \end{align}
 On the left hand side of this inequality, we apply the Cauchy-Schwarz
@@ -415,7 +415,7 @@ $\zhat\in[\zhat_1,\zhat_2]$. Inserting these inequalities into
 Eq. \ref{sigma_finite_domain} gives
 \begin{align}\label{max_growth}
   |\hat{\nu}|\leq
-  \frac{\epsilon |\hat{k} q|}{2\sqrt{1+\hat{k}^2}}\mathrm{max}(|f|) < \frac{\epsilon |q|}{2}\mathrm{max}(|f|) . 
+  \frac{h |\hat{k} q|}{2\sqrt{1+\hat{k}^2}}\mathrm{max}(|f|) < \frac{h |q|}{2}\mathrm{max}(|f|) . 
 \end{align}
 %Recalling that $f$ represents vertical shear (Eq. \ref{fz_shear}), 
 It
@@ -428,23 +428,23 @@ vertical shear rate in the domain considered,
 as expected on physical grounds. 
 
 In practice, one might consider a vertical domain of a few scale 
-heights in a thin disk with $|q|=O(1)$. In this case, $|\epsilon\zhat|\ll1$ and  
+heights in a thin disk with $|q|=O(1)$. In this case, $|h\zhat|\ll1$ and  
 $f\simeq \zhat$, so that $\mathrm{max}|f| = O(1)$, implying a
-maximum growth rate $O(\epsilon \Omega_k)$, consistent with numerical
+maximum growth rate $O(h \Omega_K)$, consistent with numerical
 results. 
 
 % For vertical domains smaller 
 % than this height, the growth rate is limited by $|f|$ at the vertical
-% boundaries considered. For $|\epsilon\hat{z}|\ll1$ we have $f\simeq
+% boundaries considered. For $|h\hat{z}|\ll1$ we have $f\simeq
 % \hat{z}$, in which case we can expect growth rates to increase at most linearly
 % with respect to the vertical domain size.   %no faster than linear 
 
 \subsection{Explicit solutions in the thin-disk limit}\label{iso_explicit}
-Here we assume a thin disk ($\epsilon\ll1$) so that $\ln\rho\simeq
+Here we assume a thin disk ($h\ll1$) so that $\ln\rho\simeq
 -\zhat^2/2$ and $f(\zhat)\simeq \zhat$. However, we do not assume 
 low frequency from the onset. Then Eq. \ref{iso_ode0} becomes 
 \begin{align}\label{iso_ode3}
-  W^{\prime\prime} - \left(1 + \frac{\ii q\epsilon \hat{k}}{1-\hat{\sigma}^2}\right)\hat{z}W^\prime  +
+  W^{\prime\prime} - \left(1 + \frac{\ii qh \hat{k}}{1-\hat{\sigma}^2}\right)\hat{z}W^\prime  +
   \hat{\sigma}^2\left(1+\frac{\hat{k}^2}{1-\hat{\sigma}^2}\right)W = 0.
 \end{align}
 We remark that taking the low frequency limit and considering
@@ -465,7 +465,7 @@ Then the coefficients $a_l$ are given by the recurrence relation
 \begin{align}
   (l+2)(l+1)a_{l+2} +
   \left[\hat{\sigma}^2\left(1+\frac{\khat^2}{1-\hat{\sigma}^2}\right)
-    - l\left(1+\frac{\ii \epsilon q
+    - l\left(1+\frac{\ii h q
         \hat{k}}{1-\hat{\sigma}^2}\right)\right] a_l = 0. 
 \end{align}
 We demand the series to terminate  at $l=L$, i.e. a polynomial of
@@ -473,7 +473,7 @@ order $L$, so that the vertical kinetic energy remain bounded as
 $|\zhat|\to\infty$.  Then the eigenfrequency $\hat{\sigma}$ is given via 
 \begin{align}
 \hat{\sigma}^4 - \left(L+1+\khat^2\right)\hat{\sigma}^2 + L\left(1 +
-  \ii\epsilon q \khat\right) = 0. \label{simple_growth}
+  \ii h q \khat\right) = 0. \label{simple_growth}
 \end{align}
 
 Note that we have applied a regularity condition at infinity, since
@@ -507,7 +507,7 @@ is readily obtained for large $\khat^2$ by balancing
 the last two terms of Eq. \ref{simple_growth} to give the low
 frequency branch. Then 
 \begin{align}
-  \hat{\sigma}^2 \simeq L\left(\frac{1+\ii q \epsilon
+  \hat{\sigma}^2 \simeq L\left(\frac{1+\ii q h
        \hat{k}}{L+1+\hat{k}^2}\right), \label{simple_growth2}
 \end{align}
 which is equivalent to Eq. 34 of \citetalias{barker15} in the limit
@@ -523,7 +523,7 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto|\omega|$.
 %growth rate of high frequency branch is much smaller 
 
 % \begin{align}\label{sig2_iso}
-%   \hat{\sigma}^2 = L\left(\frac{1+\ii q \epsilon
+%   \hat{\sigma}^2 = L\left(\frac{1+\ii q h
 %       \hat{k}}{1+\hat{k}^2}\right).
 % \end{align}
 % The eigenfrequency $\hat{\sigma}$ is therefore complex for
@@ -534,7 +534,7 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto|\omega|$.
 % unstable modes for which $\hat{\nu}>0$ and is given by
 % \begin{align}
 %   \hat{\nu} =\sqrt{
-%     \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2\epsilon^2\hat{k}^2} - 
+%     \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2h^2\hat{k}^2} - 
 %       1\right)}. 
 % \end{align}
 
@@ -579,7 +579,7 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto|\omega|$.
 %   \left|\hat{\sigma}\right| = \sqrt{n}
 %   \left(1+\hat{k}^2\right)^{-1/2}. \label{iso_stable_disp}
 % \end{align}
-% Since we have assumed $|\sigma^2|\ll \kappa^2\sim \Omega_k^2$, our
+% Since we have assumed $|\sigma^2|\ll \kappa^2\sim \Omega_K^2$, our
 % analysis is only valid for large wavenumbers such that $\hat{k}^2\gg   
 % n-1$. Physically, this corresponds to radial length-scales much
 % smaller than the local disk scale height. Note that
@@ -600,17 +600,17 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\nu\propto|\omega|$.
 
 
 
-% For fixed $q$ and $\epsilon$, the growth rate vanishes for both
+% For fixed $q$ and $h$, the growth rate vanishes for both
 % $\hat{k}^2\to0$ and $\hat{k}^2\to\infty$. 
 % The maximum growth rate
 % occurs at the optimum wavenumber $\hat{k}_\mathrm{opt}$
 % \begin{align}
-%   |\hat{k}_\mathrm{opt}| = \sqrt{\frac{2+|\epsilon q|}{|\epsilon q|}},
+%   |\hat{k}_\mathrm{opt}| = \sqrt{\frac{2+|h q|}{|h q|}},
 % \end{align}
 % and
 % \begin{align}
-%   \mathrm{max}\left(\hat{\nu}\right) =\frac{\sqrt{L}|\epsilon
-%     q|}{2\sqrt{1+|\epsilon q|}}. \label{iso_max_growth}
+%   \mathrm{max}\left(\hat{\nu}\right) =\frac{\sqrt{L}|h
+%     q|}{2\sqrt{1+|h q|}}. \label{iso_max_growth}
 % \end{align}
 % Since $L\geq1$, there is no limit to the maximum growth rate. This is
 % an artifact of the thin-disk approximation because the magnitude of vertical 
@@ -627,18 +627,18 @@ given by:
 \begin{align}
   &c_0 = M(M+1)A^2,\\
   &c_1 = \ii\beta\left\{\left(1-\gamma\right)\left[1 +
-      \khat^2\left(1+2M\right)^2 - 4 \ii\epsilon q\khat M (M+1)\right] 
+      \khat^2\left(1+2M\right)^2 - 4 \ii h q\khat M (M+1)\right] 
     - 2A^2\gamma M (M+1)\right\},\\
   &c_2 = \left(\khat^2 + 1\right)A + \beta^2\left\{(1-\gamma)\left[1
-      + \gamma \khat^2(1+2M)^2 - 4\ii\epsilon q \khat \gamma M(M+1)
+      + \gamma \khat^2(1+2M)^2 - 4\ii h q \khat \gamma M(M+1)
     \right]
     -\gamma^2 A^2 M(M+1)
   \right\},\\
-  &c_3 = \beta\left\{\epsilon q \khat + \gamma \left[\ii + \epsilon q
+  &c_3 = \beta\left\{h q \khat + \gamma \left[\ii + h q
       k \left(1+2\khat^2\right)\right] - 3\ii - 2\ii
     \khat^2\right\},\\
   &c_4 =
-  \beta^2\left(1+\gamma\khat^2\right)\left[\gamma\left(1-\ii\epsilon q
+  \beta^2\left(1+\gamma\khat^2\right)\left[\gamma\left(1-\ii h q
     \khat\right)-2\right] - \left(1+\khat^2\right)^2,\\
 &c_5 = 2\ii\beta\left(1+\khat^2\right)\left(1+\gamma\khat^2\right),\\
 &c_6 = \beta^2\left(1+\gamma\khat^2\right)^2.
@@ -648,17 +648,17 @@ given by:
 Assuming neutral modes with real $\hat{\sigma}=\hat{\omega}$ and $\khat^2\gg 1$, the real and imaginary parts of
 Eq. \ref{relax_disp} are approximately 
 \begin{align}
-  0 =&M(M+1)(1-\epsilon^2 q^2 \khat^2) + 4\beta\epsilon q M(M+1)\left(\hat{\omega}\khat\right) 
+  0 =&M(M+1)(1-h^2 q^2 \khat^2) + 4\beta h q M(M+1)\left(\hat{\omega}\khat\right) 
  +\left[1 +
     \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2
- + 2\epsilon q \gamma\beta \left(\hat{\omega}\khat\right)^3 -  \left(\hat{\omega}\khat\right)^4\notag \\
+ + 2h q \gamma\beta \left(\hat{\omega}\khat\right)^3 -  \left(\hat{\omega}\khat\right)^4\notag \\
   &+ \beta^2\gamma^2\hat{\omega}^2
   \left(\hat{\omega}\khat\right)^4,\label{relax_cond1} \\
-   0=& 2\epsilon q M (M+1)\khat +
+   0=& 2h q M (M+1)\khat +
    \beta(1-\gamma)(1+2M)^2\khat\left(\hat{\omega}\khat\right) 
-   + \epsilon q \khat \left(\hat{\omega}\khat\right)^2 -
+   + h q \khat \left(\hat{\omega}\khat\right)^2 -
    2\beta\hat{\omega}\left(\hat{\omega}\khat\right)^2
-   - \epsilon q
+   - h q
    \gamma^2\beta^2\hat{\omega}\left(\hat{\omega}\khat\right)^3 
    +
    2\beta\gamma\hat{\omega}\left(\hat{\omega}\khat\right)^4 \label{relax_cond2}. 
@@ -666,7 +666,7 @@ Eq. \ref{relax_disp} are approximately
 These equations are used to derive a critical thermal timescale in
 \S\ref{iso_vsi_beta_crit}. For fixed $M=O(1)$,  we assume
 $|\hat{\omega}\khat|$ remain constant but consider $\khat\gg 1$ so
-that $|\hat{\omega}|\ll 1$.  Then for a thin disk $\epsilon \ll 1$
+that $|\hat{\omega}|\ll 1$.  Then for a thin disk $h \ll 1$
 we neglect the second, fourth and last term in Eq. \ref{relax_cond1};
 and neglect the last three terms in Eq. \ref{relax_cond2}. This
 approximation gives Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2},
@@ -677,7 +677,7 @@ For the fundamental mode $M=0$ and Eq. \ref{relax_cond1} ---
 forward to eliminate $\hat{\omega}\khat$ between 
 Eq. \ref{relax_cond_simp1} and \ref{relax_cond_simp2} to obtain
 $\beta_\mathrm{crit}$ (Eq. \ref{iso_vsi_cond}) without
-assuming $|\epsilon q \khat|\lesssim 1$, as done in the main text to obtain the
+assuming $|h q \khat|\lesssim 1$, as done in the main text to obtain the
 equivalent expression for $M>0$ (Eq. \ref{bcrit_gen}).
 
 
@@ -687,11 +687,11 @@ equivalent expression for $M>0$ (Eq. \ref{bcrit_gen}).
 %Taking the real and imaginary parts of Eq. \ref{relax_disp_fund} and considering 
 % $\khat\gg1$, we find
 % \begin{align}
-%   0 =& \left[1 + \gamma\beta^2\left(1-\gamma\right)\right] + 2\epsilon q
+%   0 =& \left[1 + \gamma\beta^2\left(1-\gamma\right)\right] + 2h q
 %   \gamma\beta (\hat{\omega}\khat) -  (\hat{\omega}\khat)^2 \notag\\
 %   &+ \beta^2\gamma^2\hat{\omega}^2 (\hat{\omega}\khat)^2,\label{relax_cond1}\\
-%   0=& \beta(1-\gamma)\khat^2 + \epsilon q \khat^2 (\hat{\omega}\khat)
-%   - 2\beta (\hat{\omega}\khat)^2 - \epsilon q \gamma^2\beta^2 (\hat{\omega}\khat)^3 \notag\\
+%   0=& \beta(1-\gamma)\khat^2 + h q \khat^2 (\hat{\omega}\khat)
+%   - 2\beta (\hat{\omega}\khat)^2 - h q \gamma^2\beta^2 (\hat{\omega}\khat)^3 \notag\\
 %     &+ 2\beta\gamma(\hat{\omega}\khat)^4.  
 % \label{relax_cond2}
 % \end{align}
@@ -711,12 +711,12 @@ equivalent expression for $M>0$ (Eq. \ref{bcrit_gen}).
 % \end{align}
 % Then
 % \begin{align}
-%   \hat{\omega}\khat = \frac{(\gamma-1)\beta}{\epsilon q}
+%   \hat{\omega}\khat = \frac{(\gamma-1)\beta}{h q}
 % \end{align}
 % from Eq. \ref{relax_cond2}, which implies, from Eq. \ref{relax_cond1}
 % that
 % \begin{align}\label{beta_crit0}
-%   \beta = \frac{1}{(\gamma-1)}\left[\frac{1}{\left(\epsilon
+%   \beta = \frac{1}{(\gamma-1)}\left[\frac{1}{\left(h
 %         q\right)^2} - \frac{\gamma}{(\gamma-1)}\right]^{-1/2} 
 % \end{align}
 
@@ -739,7 +739,7 @@ $\hat{T}$ are dimensionless coefficients used to scale the model
 relative to the MMSN. Their nominal values are unity. By assuming a
 vertically isothermal disk, we deduce the disk aspect-ratio 
 \begin{align}\label{mmsn_epsilon}
-  \epsilon =
+  h =
   3.36\times10^{-2}\left(\frac{\hat{T}}{\mu}\right)^{1/2}\left(\frac{r}{\mathrm{AU}}\right)^{2/7}, 
 \end{align}
 and the mid-plane density distribution 

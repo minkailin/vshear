@@ -1,6 +1,6 @@
 \subsection{Thin-disk approximation}\label{analytic_relax}
 Our final approximation apply to thin disks for 
-which $\epsilon\ll 1$. Then we may write $\rho/\rho_0\simeq
+which $h\ll 1$. Then we may write $\rho/\rho_0\simeq
 \exp{(-\zhat^2/2)}$. The governing equation,
 Eq. \ref{vertiso_gov_nondim}, is then   
 \begin{align}
@@ -9,11 +9,11 @@ Eq. \ref{vertiso_gov_nondim}, is then
 \end{align}
 with
 \begin{align}
-  &A \equiv 1 + \ii \epsilon q \hat{k},\\
+  &A \equiv 1 + \ii h q \hat{k},\\
   &B \equiv \hat{\sigma}^2\left(\chi + \hat{k}^2\right) -
-  \left(\chi + \ii \epsilon q \hat{k}\right),\\
+  \left(\chi + \ii h q \hat{k}\right),\\
   &C \equiv \left(1-\chi\right)\left(\hat{k}^2 - \ii
-    \epsilon q\hat{k}\right), 
+    h q\hat{k}\right), 
 \end{align}
 and $\chi =
 \left(1-\ii\hat{\sigma}\beta\right)/\left(1-\ii\hat{\sigma}\beta\gamma\right)
@@ -59,7 +59,7 @@ for $\beta=0$ to see the effect of thermal relaxation.
 For definiteness, let us consider the simple solution 
 \begin{align}
   \beta\equiv 0, \quad \delta v_z = 1,\quad \hat{\sigma}^2 = \frac{1 +
-  \ii\epsilon q \hat{k}}{1+\hat{k}^2}, \label{pert_basic} 
+  \ii h q \hat{k}}{1+\hat{k}^2}, \label{pert_basic} 
 \end{align}
 which solves Eq. \ref{nearly_iso_explicit} since $\delta
 v_z=$constant and $\chi=1$ so that $B=C=0$. 
@@ -105,23 +105,23 @@ is
 % \begin{align}
 %   0 &= 2a + 2\hat{\sigma}\left(1+\khat^2\right)\delta\hat{\sigma} +
 %   \left(\hat{\sigma}^2 -1\right)\delta\chi, \\
-%   0&= 2a\left(1+\ii\epsilon q \khat\right) - \left(\khat^2 - \ii\epsilon
+%   0&= 2a\left(1+\ii h q \khat\right) - \left(\khat^2 - \ii h
 %     q \khat\right)\delta\chi.
 % \end{align}
 % This gives 
 % \begin{align}\label{nearly_iso_dsig}
 %   \delta \hat{\sigma} =
-%   -\frac{\ii\left(\gamma-1\right)\hat{k}^2\left(\ii\epsilon
-%       q - \hat{k}\right)^2}{2\left(1+\ii\epsilon q \hat{k}\right)\left(1+\hat{k}^2\right)^2}\delta\beta.
+%   -\frac{\ii\left(\gamma-1\right)\hat{k}^2\left(\ii h
+%       q - \hat{k}\right)^2}{2\left(1+\ii h q \hat{k}\right)\left(1+\hat{k}^2\right)^2}\delta\beta.
 % \end{align}
 % The imaginary part of Eq. \ref{nearly_iso_dsig} is
 \begin{align}
   \delta\hat{\nu} =
   -\frac{\left(\gamma-1\right)\hat{k}^2 \left(\hat{k}^2 -
-      2\epsilon^2q^2\hat{k}^2 - \epsilon^2q^2\right)}{2\left(1+\epsilon^2 q^2
+      2h^2q^2\hat{k}^2 - h^2q^2\right)}{2\left(1+h^2 q^2
       \hat{k}^2\right)\left(1+\hat{k}^2\right)^2}\delta\beta.  
 \end{align}
-Since $\epsilon \ll 1$, introducing finite cooling $\delta\beta>0$
+Since $h \ll 1$, introducing finite cooling $\delta\beta>0$
 implies $\delta\hat{\nu} < 0$, i.e. stabilization, since $\gamma>1$. 
 % Interestingly, for both
 % $\hat{k}\to0$ and $\hat{k}\to\infty$ we find $\delta\hat{\nu}\to0$, so
@@ -198,13 +198,13 @@ stability and $\khat^2\gg 1$. We consider $M=0$ (the
 fundamental mode) or  $M=O(1)$ and low frequency $|\hat{\omega}|\ll
 1$ such that $|\hat{\omega}\khat|$ is $O(1)$. We 
 also assume $|q|$ and $\beta$ are $O(1)$ or smaller. For a thin disk
-($\epsilon \ll 1$) we have 
+($h \ll 1$) we have 
 \begin{align}
- 0 = &M(M+1)\left(1-\epsilon^2q^2\khat^2\right) \notag\\ 
+ 0 = &M(M+1)\left(1-h^2q^2\khat^2\right) \notag\\ 
  &+ \left[1 +
     \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2
    -  \left(\hat{\omega}\khat\right)^4,\label{relax_cond_simp1}\\
-   0= &2M(M+1) + \frac{\beta}{\epsilon q} (1-\gamma)(1+2M)^2
+   0= &2M(M+1) + \frac{\beta}{h q} (1-\gamma)(1+2M)^2
    \left(\hat{\omega}\khat\right) + \left(\hat{\omega}\khat\right)^2. \label{relax_cond_simp2}
 \end{align}
 (We explain this in Appendix \ref{disp_neut_limit}.)
@@ -213,11 +213,11 @@ Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2} is a pair of
 simultaneous equations for $\hat{\omega}$ and $\beta$ for marginal
 stability. (It is important to note that marginal stability is an
 assumption.) If $\beta\ll 1$ and the disk is sufficiently thin so that  
-$|\epsilon q \khat |^2\lesssim 1$, 
+$|h q \khat |^2\lesssim 1$, 
 then an approximate solution to Eq. \ref{relax_cond_simp1} is 
 \begin{align}
   \left(\hat{\omega}\khat\right)^2 \simeq (M+1)\left(1 -
-    \frac{M|\epsilon q \khat|^2}{2M+1}\right).  \label{marg_freq_approx}
+    \frac{M|h q \khat|^2}{2M+1}\right).  \label{marg_freq_approx}
 \end{align}
 Note that for $q=0$, Eq. \ref{marg_freq_approx} reduces to 
 the dispersion relation for low-frequency inertial waves in vertically
@@ -225,21 +225,21 @@ isothermal disks without vertical shear (see Appendix
 \ref{stable_novshear}). Inserting Eq. \ref{marg_freq_approx} into
 Eq. \ref{relax_cond_simp2}, we obtain 
 \begin{align}\label{bcrit_gen}
-  \beta &= \frac{\epsilon|q|}{(\gamma - 1)}
-  \frac{\sqrt{1+M}}{(1+2M)}\left[1 + \frac{M(2M-1)|\epsilon q
+  \beta &= \frac{h|q|}{(\gamma - 1)}
+  \frac{\sqrt{1+M}}{(1+2M)}\left[1 + \frac{M(2M-1)|h q
       \khat|^2}{2(2M+1)^2}\right].
 %  &\lesssim \beta_\mathrm{crit}\notag
 \end{align}
-Since $|\epsilon q \khat|^2\lesssim 1$ by assumption, we have  
+Since $|h q \khat|^2\lesssim 1$ by assumption, we have  
 \begin{align}\label{iso_vsi_cond}
   \beta\leq \beta_\mathrm{crit}  \equiv
-  \frac{\epsilon|q|}{\gamma-1}, 
+  \frac{h|q|}{\gamma-1}, 
 \end{align}
 where $\beta_\mathrm{crit}$ is the critical thermal timescale for
 the fundamental mode ($M=0$). 
 We comment the expression for $\beta_\mathrm{crit}$ may in fact be
 obtained without assuming it is much less than unity from the onset or
-$|\epsilon q\khat|\lesssim 1$. % This is because for $M=0$, 
+$|h q\khat|\lesssim 1$. % This is because for $M=0$, 
 % Eq. \ref{relax_cond_simp1} --- \ref{relax_cond_simp2} simplify 
 We will  
 confirm $\beta_\mathrm{crit}$ numerically in \S\ref{bcrit_num_test}. 
@@ -260,7 +260,7 @@ We can interpret  $\beta_\mathrm{crit}$ as the thermal timescale below
 which buoyancy becomes ineffective and perturbations are effectively
 isothermal so the VSI can operate.  We see that in a thin disk, a very short thermal timescale
 is required ($\beta_\mathrm{crit}\ll 1$) because
-$\beta_\mathrm{crit}\propto \epsilon$. Physically, this is because
+$\beta_\mathrm{crit}\propto h$. Physically, this is because
 vertical shear is weak in a thin disk, so even a small entropy
 gradient can significantly reduce VSI growth rates.  
 
@@ -279,11 +279,11 @@ gradient can significantly reduce VSI growth rates.
 % Taking the real and imaginary parts of Eq. \ref{relax_disp_fund} and considering 
 % $\khat\gg1$, we find
 % \begin{align}
-%   0 =& \left[1 + \gamma\beta^2\left(1-\gamma\right)\right] + 2\epsilon q
+%   0 =& \left[1 + \gamma\beta^2\left(1-\gamma\right)\right] + 2h q
 %   \gamma\beta (\hat{\omega}\khat) -  (\hat{\omega}\khat)^2 \notag\\
 %   &+ \beta^2\gamma^2\hat{\omega}^2 (\hat{\omega}\khat)^2,\label{relax_cond1}\\
-%   0=& \beta(1-\gamma)\khat^2 + \epsilon q \khat^2 (\hat{\omega}\khat)
-%   - 2\beta (\hat{\omega}\khat)^2 - \epsilon q \gamma^2\beta^2 (\hat{\omega}\khat)^3 \notag\\
+%   0=& \beta(1-\gamma)\khat^2 + h q \khat^2 (\hat{\omega}\khat)
+%   - 2\beta (\hat{\omega}\khat)^2 - h q \gamma^2\beta^2 (\hat{\omega}\khat)^3 \notag\\
 %     &+ 2\beta\gamma(\hat{\omega}\khat)^4.  
 % \label{relax_cond2}
 % \end{align}
@@ -303,12 +303,12 @@ gradient can significantly reduce VSI growth rates.
 % \end{align}
 % Then
 % \begin{align}
-%   \hat{\omega}\khat = \frac{(\gamma-1)\beta}{\epsilon q}
+%   \hat{\omega}\khat = \frac{(\gamma-1)\beta}{h q}
 % \end{align}
 % from Eq. \ref{relax_cond2}, which implies, from Eq. \ref{relax_cond1}
 % that
 % \begin{align}\label{beta_crit0}
-%   \beta = \frac{1}{(\gamma-1)}\left[\frac{1}{\left(\epsilon
+%   \beta = \frac{1}{(\gamma-1)}\left[\frac{1}{\left(h
 %         q\right)^2} - \frac{\gamma}{(\gamma-1)}\right]^{-1/2} 
 % \end{align}
 % at marginal stability for perturbations with large $\khat$. 
@@ -316,9 +316,9 @@ gradient can significantly reduce VSI growth rates.
 % From our discussion in \S\ref{relax_pert}, which indicate introducing
 % a finite thermal relaxation is stabilizing, we expect
 % Eq. \ref{beta_crit0} is an upper limit. For a thin  
-% disk $\epsilon\ll 1$, we thus infer 
+% disk $h\ll 1$, we thus infer 
 % \begin{align}\label{iso_vsi_cond}
-%   \beta \lesssim \frac{|\epsilon q|}{\gamma-1} \equiv
+%   \beta \lesssim \frac{|h q|}{\gamma-1} \equiv
 %   \beta_\mathrm{crit} 
 % \end{align}
 % is required for the fundamental VSI to operate. That is, when
