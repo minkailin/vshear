@@ -1,8 +1,7 @@
 \section{Governing equations and disk models}\label{setup}
 We consider  an inviscid, non-self-gravitating three-dimensional (3D)
-disk orbiting a central star of mass $M_*$. We adopt cylindrical
-co-ordinates $(r,\phi, z)$ centered on the star to describe the global
-disk. The governing fluid equations are
+disk orbiting a central star of mass $M_*$.  Cylindrical
+co-ordinates $(r,\phi, z)$ are centered on the star. The governing fluid equations are
 \begin{align}
   &\frac{\p\rho}{\p t} + \nabla\cdot{\left(\rho\bm{v}\right)} = 0,\\
   &\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bm{v} =
@@ -17,9 +16,9 @@ rotation frequency being $\Omega=v_\phi/r$), $P$
 is the pressure, $\gamma$ is the constant adiabatic index, and $\Phi_*
 = -GM_*(r^2 + z^2)^{-1/2}$ is the gravitational potential of the
 central star and $G$ is the gravitational constant. 
-In the energy equation (Eq. \ref{full_energy}) the source term
-$\Lambda$ represent non-adiabatic effects which we
-model below. The gas temperature $T$ is defined through the ideal gas 
+In the energy equation (Eq.\ \ref{full_energy}) the sink term
+$\Lambda$ includes non-adiabatic cooling and (negative) heating. 
+The gas temperature $T$ obeys the ideal gas 
 equation of state,  
 \begin{align}
 P = \frac{\mathcal{R}}{\mu}\rho T,
@@ -28,26 +27,37 @@ where $\mathcal{R}$ is the gas constant and $\mu$ is the mean molecular
 weight.    
 
 \subsection{Thermal relaxation}
-We model non-adiabatic effects by defining $\Lambda$ as a thermal
-relaxation term,
+We model radiative effects as thermal
+relaxation with a timescale $t_c$, i.e.,
 \begin{align}\label{thermal_relax}
-  \Lambda  \equiv \frac{\rho\mathcal{R}}{\mu t_c}\left(T - T_0\right),
+  \Lambda  \equiv \frac{\rho\mathcal{R}}{\mu}\frac{T - T_0}{t_c},
 \end{align}
-where $T_0=T_0(r,z)$ is the initial temperature, and $t_c$ is a
-thermal relaxation timescale parametrized via $\beta$ such that 
+where $T_0=T_0(r,z)$ is the equilibrium temperature.  We 
+define the dimensionless cooling time 
 \begin{align}\label{beta_def}
-  t_c = \beta \Omega_k^{-1},
+  \beta \equiv \Omega_k t_c
 \end{align}
-where $\Omega_k=\sqrt{GM_*/r^3}$ is the Keplerian frequency.   
+relative to the Keplerian frequency, $\Omega_k=\sqrt{GM_*/r^3}$.   
 
 For most of this paper we will take $\beta$ as a constant input
 parameter, so that we can vary the thermodynamic response of the
 disk from isothermal ($\beta\ll 1$) to adiabatic ($\beta \gg 1$) in a
-controlled manner. However, for application to PPDs in 
-\S\ref{application} we will model $\beta$ based on physical thermal
-timescales, in which case $\beta$ is non-constant and is determined by
-the equilibrium disk properties and the perturbation lengthscales of
-interest (e.g. Fig. \ref{bcrit_mmsn2d}). 
+controlled manner. 
+
+In \S\ref{application} we analyze the VSI using a realistic model for 
+$\beta$ in PPDs with a dust opacity, using Eq.\ (\ref{beta_mmsn_simp}).  
+ Fig. \ref{bcrit_mmsn2d} shows that in this model $\beta >> 1$ in the 
+ dense inner disk and near the midplane, but that rapid cooling ($\beta \ll 1$)
+ is possible elsewhere.  Furthermore short wavelength perturbations can cool 
+ quicker ...
+ 
+ \emph{TODO: $k_x$ is in Fig. \ref{bcrit_mmsn2d} but not explained yet...}
+% based on physical thermal
+%timescales, in which case $\beta$ is non-constant and is determined by
+%the equilibrium disk properties and the perturbation lengthscales of
+%interest (e.g. Fig. \ref{bcrit_mmsn2d}). 
+
+
 
 \subsection{Baroclinic disk equilibria}\label{eqm}
 The equilibrium disk is steady and axisymmetric with density,
