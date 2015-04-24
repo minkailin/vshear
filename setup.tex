@@ -102,14 +102,14 @@ c_s/\sqrt{\Gamma}$. We take $c_{s0}(r)$ to be another power-law:
 where $c_{s00}\equiv c_{s0}(r_0)$  and $q$ is the power-law index, and
 define   
 \begin{align}
-  \epsilon(r) \equiv \frac{c_{s0}(r)}{v_k(r)} \equiv
+   h(r) \equiv \frac{c_{s0}(r)}{v_k(r)} \equiv
   \frac{H}{r} 
 \end{align}
 to parametrize the magnitude of the sound-speed, where
 $v_k=r\OmK$ is the Keplerian azimuthal velocity and
-$H$ is a characteristic scale-height.  Thus, $\epsilon$
+$H$ is a characteristic scale-height.  Thus, $ h$
 is also a characteristic disk aspect-ratio. We are 
-interested in thin disks with $\epsilon \ll 1$.%,%  as relevant for
+interested in thin disks with $ h \ll 1$.%,%  as relevant for
 % protoplanetary disks \citep{chiang97}.   
 
 
@@ -121,9 +121,9 @@ expression for the density field for
 $\Gamma\neq1$ is given  by
 \begin{align}\label{eqm_dens}
   &\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} = 1 +
-  \frac{\left(\Gamma-1\right)}{\epsilon^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right).
+  \frac{\left(\Gamma-1\right)}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right).
 \end{align}
-Note that for $\Gamma > 1 + \epsilon^2$ there is a disk surface $H_s$
+Note that for $\Gamma > 1 +  h^2$ there is a disk surface $H_s$
 such that $\rho(r,H_s)=0$. 
 % Note that for $\Gamma\neq1$ the disk has a surface $z=H(r)$ such that
 % $\rho(r,H)=0$. If we parametrize
@@ -132,13 +132,13 @@ such that $\rho(r,H_s)=0$.
 % \end{align}
 % then the imposed sound-speed and disk thickness are related by 
 % \begin{align}
-%   h^2(r) = \left[1-\frac{\epsilon^2(r)}{\Gamma-1}\right]^{-2}-1. 
+%   h^2(r) = \left[1-\frac{ h^2(r)}{\Gamma-1}\right]^{-2}-1. 
 % \end{align}
 
 Similarly, the equilibrium rotation is 
 \begin{align}\label{eqm_rot}
   \frac{\Omega^2(r,z)}{\OmK^2(r)}=1 +
-  \left(p+\frac{s}{\Gamma}\right)\epsilon^2(r) 
+  \left(p+\frac{s}{\Gamma}\right) h^2(r) 
   +\frac{s}{\Gamma} \left(1-\frac{1}{\sqrt{1+z^2/r^2}}\right), 
 \end{align}
 where $s\equiv q+p(1-\Gamma)$. We also define % the radial shear rate  
@@ -158,8 +158,8 @@ For $\Gamma=1$ the equilibrium density $\rho(r,z)$ and rotation
 $\Omega(r,z)$ are given by 
 \begin{align}
   \frac{\rho(r,z)}{\rho_0(r)} &=
-  \exp{\left[\frac{1}{\epsilon^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},\\    
-  \frac{\Omega^2(r,z)}{\OmK^2(r)}& =1+ (p+q)\epsilon^2(r) + q\left(1 -
+  \exp{\left[\frac{1}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},\\    
+  \frac{\Omega^2(r,z)}{\OmK^2(r)}& =1+ (p+q) h^2(r) + q\left(1 -
     \frac{1}{\sqrt{1+z^2/r^2}}\right),\label{vertiso_eqm}
 \end{align}
 which may be obtained from Eq. \ref{eqm_dens} and Eq. \ref{eqm_rot} by
@@ -229,17 +229,17 @@ Without loss of generality, we evaluate Eq. \ref{second_SH} in $z>0$
 where $\p_zP<0$. Here we approximate $\p_r j^2\simeq r^3\OmK^2$ but
 use Eq. \ref{vertical_shear} for $\p_zj^2$. Then 
 \begin{align}\label{solberg2}
-  % \gamma - \Gamma > \frac{s\epsilon^2}{\Gamma}
+  % \gamma - \Gamma > \frac{s h^2}{\Gamma}
   % \left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left[s
   %   -\left(\gamma-\Gamma\right)\frac{\p\ln{\rho}}{\p\ln{r}} \right]. 
-  \gamma - \Gamma > \frac{\epsilon^2}{\Gamma}
+  \gamma - \Gamma > \frac{ h^2}{\Gamma}
   \left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left[s^2
     -s\left(\gamma-\Gamma\right)\frac{\p\ln{\rho}}{\p\ln{r}} \right]
 \end{align} 
 implies stability. For typical model parameters the right hand
-side (RHS) is $O(\epsilon^2)$. Hence, instability in the adiabatic limit  
-requires $\gamma < \Gamma + O(\epsilon^2)$. Since we consider
-$\epsilon\ll1$, this implies the equilibrium disk must have a small
+side (RHS) is $O( h^2)$. Hence, instability in the adiabatic limit  
+requires $\gamma < \Gamma + O( h^2)$. Since we consider
+$ h\ll1$, this implies the equilibrium disk must have a small
 entropy gradient in order to be unstable to axisymmetric adiabatic
 perturbations. This is generally not true for passively irradiated, stably
 stratified disks \citep{chiang97}, in which the VSI requires rapid
