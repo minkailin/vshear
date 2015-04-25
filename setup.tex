@@ -1,5 +1,5 @@
 \section{Governing equations and disk models}\label{setup}
-We consider  an inviscid, non-self-gravitating three-dimensional (3D)
+We consider  an inviscid, non-self-gravitating three-dimensional 
 disk orbiting a central star of mass $M_*$.  Cylindrical
 co-ordinates $(r,\phi, z)$ are centered on the star. The governing fluid equations are
 \begin{align}
@@ -37,21 +37,25 @@ define the dimensionless cooling time
 \begin{align}\label{beta_def}
   \beta \equiv \OmK t_c
 \end{align}
-relative to the Keplerian frequency, $\OmK=\sqrt{GM_*/r^3}$.   
+relative to the Keplerian frequency, $\OmK=\sqrt{GM_*/r^3}$.  We shall
+use the terms `thermal relaxation' and `cooling' interchangeably
+throughout this paper.   
 
 For most of this paper we will take $\beta$ as a constant input
 parameter, so that we can vary the thermodynamic response of the
 disk from isothermal ($\beta\ll 1$) to adiabatic ($\beta \gg 1$) in a
-controlled manner. 
-
-In \S\ref{application} we analyze the VSI using a realistic model for 
-$\beta$ in PPDs with a dust opacity, using Eq.\ (\ref{beta_mmsn_simp}).  
- Fig. \ref{bcrit_mmsn2d} shows that in this model $\beta >> 1$ in the 
- dense inner disk and near the midplane, but that rapid cooling ($\beta \ll 1$)
- is possible elsewhere.  Furthermore short wavelength perturbations can cool 
- quicker ...
+controlled manner. However, in \S\ref{application} 
+we will consider a more realistic model for $\beta$ in
+PPDs with a dust opacity (which gives Fig.  \ref{bcrit_mmsn2d}).  
  
- \emph{TODO: $k_x$ is in Fig. \ref{bcrit_mmsn2d} but not explained yet...}
+% using Eq.\(\ref{beta_mmsn_simp}), which   
+% Fig. \ref{bcrit_mmsn2d} shows that in this model $\beta >> 1$ in the 
+% dense inner disk and near the midplane, but that rapid cooling ($\beta \ll 1$)
+%is possible elsewhere.  Furthermore short wavelength perturbations can cool 
+%quicker ...
+ 
+% \emph{TODO: $k_x$ is in Fig. \ref{bcrit_mmsn2d} but not explained yet...}
+
 % based on physical thermal
 %timescales, in which case $\beta$ is non-constant and is determined by
 %the equilibrium disk properties and the perturbation lengthscales of
@@ -99,7 +103,7 @@ c_s/\sqrt{\Gamma}$. We take $c_{s0}(r)$ to be another power-law:
 \begin{align}
   c_{s0}^2(r)=c_{s00}^2\left(\frac{r}{r_0}\right)^q, 
 \end{align}
-where $c_{s00}\equiv c_{s0}(r_0)$  and $q$ is the power-law index, and
+where $c_{s00}\equiv c_{s0}(r_0)$  and $q$ is the temperature power-law index, and
 define   
 \begin{align}
    h(r) \equiv \frac{c_{s0}(r)}{v_k(r)} \equiv
@@ -154,8 +158,8 @@ the square of the epicyclic frequency $\kappa$
 
 
 \subsubsection{Vertically isothermal disks}
-For $\Gamma=1$ the equilibrium density $\rho(r,z)$ and rotation
-$\Omega(r,z)$ are given by 
+For $\Gamma=1$ the equilibrium density and rotation profiles are
+given, respectivley, by 
 \begin{align}
   \frac{\rho(r,z)}{\rho_0(r)} &=
   \exp{\left[\frac{1}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},\\    
@@ -182,7 +186,7 @@ For the above disk models,
   r\frac{\p\Omega^2}{\p z} = \frac{sz\OmK^2}{\Gamma
     r\left(1+z^2/r^2\right)^{3/2}}. \label{vertical_shear_ex} 
 \end{align}
-Note that there is a maximum vertical shear rate at $|z|=r/\sqrt{2}$,
+Note that at fixed $r$ there is a maximum vertical shear rate at $|z|=r/\sqrt{2}$,
 which is expected to limit the growth rate of instabilities associated with vertical shear. 
 
 \subsection{Entropy gradients and vertical buoyancy}
@@ -243,7 +247,7 @@ $ h\ll1$, this implies the equilibrium disk must have a small
 entropy gradient in order to be unstable to axisymmetric adiabatic
 perturbations. This is generally not true for passively irradiated, stably
 stratified disks \citep{chiang97}, in which the VSI requires rapid
-thermal relaxation, as shown below. 
+cooling, as shown below. 
 
 \section{Linear problem}\label{linear} 
 This section presents the two sets of equations we use to study the
@@ -263,7 +267,7 @@ The growth of the VSI is strongest for short radial wavelengths, as compared
  approximation (e.g., \citealp{goldreich67}, who also consider vertically local perturbations).  
  
  We first expand all fluid variables 
- into the equilibrium value plus a perturbation denoted by $\delta$, e.g.\ 
+ into the equilibrium value plus an Eulerian perturbation denoted by $\delta$, e.g.\ 
  $\delta \rho$ for the perturbed density, and drop all non-linear perturbations.  Second, we perform
  a Taylor expansion about a fiducial radius $r_0$ with the local radial coordinate
  $x = r - r_0$, keeping only the leading order terms in $x/r_0$.  We also relabel 
@@ -278,7 +282,9 @@ The growth of the VSI is strongest for short radial wavelengths, as compared
 where $\upsilon = \omega + \ii \sigma$ is a (generally) complex frequency, 
 with $\omega$ and $\sigma$ being
 the real frequency and growth rate, respectively, and $k_x$ is a real 
-radial wavenumber.  Henceforth all unperturbed fluid variables, including 
+radial wavenumber.  We take $k_x>0$ without loss of generality, 
+assume $k_xr_0 \gg 1$ and neglect curvature terms. 
+Henceforth all unperturbed fluid variables, including 
 gradients such as $\p \Omega/ \p z$, refer to  equilibrium values at $(r_0, z)$.
 
 We further define the perturbation variables  $W \equiv \delta P /\rho$ 
@@ -290,7 +296,7 @@ system of equations are
   \frac{\p\ln{\rho}}{\p r} \delta v_x,\label{lin_mass}\\
   \ii\upsilon \delta v_x  &= \ii k_x W - 2\Omega\delta v_y -
   \zeta\frac{1}{\rho}\frac{\p P}{\p r}\frac{Q}{c_s^2}\label{lin_vx}\\
-   \ii \upsilon\delta v_y &= r\frac{\p \Omega}{\p z}\delta v_z +
+   \ii \upsilon\delta v_y &= r_0\frac{\p \Omega}{\p z}\delta v_z +
   \frac{\kappa^2}{2\Omega}\delta v_x, \label{lin_vy}\\
    \ii\upsilon\delta v_z &= \frac{dW}{dz} +
   \frac{\p\ln{\rho}}{\p z}\left(W-Q\right), \label{lin_vz}\\
@@ -302,10 +308,14 @@ system of equations are
   % -&\ii\upsilon W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\upsilon\frac{\gamma}{\Gamma} Q +
   % c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma}-1\right)\delta v_z.\label{lin_energy}
 \end{align}
-The above equations are a set of ODEs (ordinary differential equations) in $z$.  Solutions to these 
+This is a set of ordinary differential equations (ODEs) in
+$z$.  %boundary conditions for well posed problem 
+Solutions to these 
 are presented in \S\ref{numerical} and \S\ref{application}.   The coefficient $ \zeta = 1$ is 
 introduced simply to label terms containing radial gradients of the equilibrium state, 
-which again are evaluated at $(r_0, z)$.   We will consider the effects of ignoring these radial gradients below. 
+which again are evaluated at $(r_0, z)$. For clarity, hereafter we drop the subcript $0$.    
+We will consider the effects of ignoring these radial gradients below. 
+
 
 %We consider axisymmetric perturbations to the above equilibria in the
 %form 

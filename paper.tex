@@ -345,49 +345,53 @@ disk dynamical timescale,
   t _c \ll \OmK^{-1}. 
 \end{align}
 where $\OmK$ is the Keplerian frequency (N13).    
-This requirement -- that the cooling time be much shorter than an orbital period, 
-which in turn is much smaller than the relevant oscillation period of vertically elongated gravity waves  -- is quite stringent.
-It highlights the fact that vertical buoyancy is a very strong stabilizing influence.
-Very strong radiative damping is thus required to weaken buoyancy and allow the weak vertical shear to drive instability.  
+This requirement --- that the cooling time be much shorter than an orbital period, 
+which in turn is much smaller than the relevant oscillation period of vertically elongated gravity waves  --- is quite stringent.
+It highlights the fact that vertical buoyancy is strongly 
+stabilizing. Rapid radiative damping is thus required to weaken
+buoyancy and allow the weak vertical shear to drive instability.   
 
 To roughly quantify the required smallness of $t_c$, we consider a
 vertically isothermal disk with aspect-ratio $ h$, 
  radial temperature profile $T \propto r^q$ and adiabatic index
-$\gamma$. For a PPD, $ h \sim 0.05$, $q\sim -0.5$ and $\gamma\simeq 1.4$. 
+$\gamma>1$ so the disk is stably stratified.  For a PPD, $ h \sim 0.05$,
+$q\sim -0.5$ and $\gamma\simeq 1.4$.  
 
 \begin{figure*}
   \includegraphics[width=\linewidth]{figures/rhoshearNz}
-  \caption{The radial and vertical structure of a ``minimum mass" PPD model showing gas density (left, relative to the midplane density at 1 AU), vertical shear rate (middle) and
+  \caption{The radial and vertical structure of a `minimum mass' PPD model showing gas density (left, relative to the midplane density at 1 AU), vertical shear rate (middle) and
     buoyancy frequency (right).
     \label{eqm_structure} 
   }
 \end{figure*}
 
-For a thin disk, the vertical shear increases with height, $z$, from the midplane as 
+For a thin disk ($h\ll 1$), the vertical shear rate varies with height, $z$, from the midplane as 
 \begin{align}\label{vshear_thin}
   r \frac{\p \Omega }{\p z} \simeq  h q \OmK \left(\frac{z}{2 H}\right),
 \end{align}
-for several disk scale heights, $H = hr$. 
+where $H=hr$ is the characteristic disk scale height. 
+%for several disk scale heights, $H = hr$. 
 %As noted in
 %\S\ref{intro} this vertical variation is a source of free energy and
 %thus vertical shear ($\p_z\Omega \neq0$) is destabilizing. 
 %
 %For $\gamma>1$ the disk is stably stratified with a real 
-This destabilizing shear completes with the stabilizing vertical
+This destabilizing shear competes with the stabilizing vertical
 buoyancy frequency $N_z$.  In a thin disk,     
 \begin{align}\label{nz_thin}
   N_z^2 \simeq \left(\frac{\gamma-1}{\gamma}\right) \left(\frac{z}{H}\right)^2
   \OmK^2.  
 \end{align}
-Fig. \ref{eqm_structure} maps shear and buoyancy (as well as the gas density) 
-in a fiducial PPD model, whose parameters are in Appendix \ref{mmsn} . %Here $\rho_0$
+Fig. \ref{eqm_structure} maps the vertical shear rate and buoyancy
+frequency (as well as the gas density) 
+in a fiducial PPD model considered in \S\ref{application}. 
+%, whose parameters are in Appendix \ref{mmsn} . %Here $\rho_0$
 %is the midplane density and vertical shear rate and buoyancy
 %frequencies are normalized by the local Keplerian frequency. 
 Vertical shear is 
-generally weak compared to buoyancy, suggesting stability. 
-
-
-Without any cooling, the Solberg-Hoiland criteria confirms that vertical buoyancy is strong
+generally weak compared to buoyancy, suggesting stability. In fact, 
+without any cooling, the Solberg-Hoiland criteria \citep{tassoul78}  
+confirms that vertical buoyancy is strong
 enough to ensure (axisymmetric) stability, see \S\ref{solberg}.  With radiative cooling, 
 thermal fluctuations decay which, combined with pressure equilibration, reduces the effective buoyancy.
 
@@ -409,27 +413,34 @@ non-rotating shear flows are stable if $\mathrm{Ri} > 1/4$ (\citealp{chandrasekh
 also see \citealp{ys02, lee10} for applications to thin dust layers in PPDs).
 Following \cite{urpin03} and \cite{townsend58},  we reduce the buoyant energy by the 
 ratio of cooling to forcing timescales, $t_c |r \p_z\Omega| \leq 1$ (with no reduction in buoyant energy 
-expected when this inequality fails).  With this reduction, the Richardson like criterion for 
+expected when this inequality fails).  With this reduction, the Richardson-like criterion for 
 shear \emph{instability} becomes
 \begin{align}\label{bcrit_est}
-  t_c \lesssim \frac{\left|r\p\Omega/\p z\right|} {N_z^2}. 
+  t_c \lesssim \frac{\left|r\p\Omega/\p z\right|} {N_z^2}, 
 \end{align}
+which is Eq.  47 of \cite{urpin03}. %This result is far from rigorous, but it contains some useful insights.
+If we interpret Eq.\ \ref{bcrit_est} as a local criterion, then we see that 
+the maximum cooling time which permits instability decreases with height as $1/|z|$;  
+the stabilizing effect of vertical buoyancy increases more rapidly away from
+the midplane than the destabilizing effect of vertical shear.  
+This finding is relevant to the radiative damping of so called `surface 
+modes', which we consider in \S\ref{numerical}.
 
-This result is far from rigorous, but it contains some useful insights.
- If we interpret Eq.\ \ref{bcrit_est} as a local criterion, then we see that 
- the minimum cooling time decreases with height as $t_c \propto 1/z$.
- This finding is relevant to the radiative damping of so called ``surface 
- modes," which we consider in \S\ref{numerical}.
- 
- To roughly obtain a global cooling time criterion, we evaluate Eq.\ \ref{bcrit_est}
- at $z \sim H$.  To get the precise form we want, we choose $z = \gamma H / 2$ to 
- obtain the cooling requirement
- \begin{align}\label{prelim_bcrit}
- t_c <  h |q| \OmK^{-1}/ (\gamma - 1)
+For vertically global disturbances considered in this work, 
+% To roughly obtain a global cooling time criterion, we evaluate Eq.\ \ref{bcrit_est}
+% at $z \sim H$.  To get the precise form we want, we choose $z = \gamma H / 2$ to 
+we obtain the cooling requirement 
+\begin{align}\label{prelim_bcrit}
+  t_c <  h |q| \OmK^{-1}/ (\gamma - 1)
 \end{align}   
-for the VSI in a vertically isothermal, thin disk.  This estimate agrees with 
-our central result, the cooling criterion that we derive more rigorously in \S\ref{iso_vsi_beta_crit}.
+for the VSI to operate effectively in a vertically isothermal, thin
+disk. We derive this result more formally in
+\S\ref{iso_vsi_beta_crit}, but notice that Eq. \ref{prelim_bcrit}
+may be obtained from Eq. \ref{bcrit_est} by evaulating it at the
+height $|z|=\gamma H/2$. %i.e., at $z=O(H)$  
 
+%This estimate agrees with 
+%our central result, the cooling criterion that we derive more rigorously in \S\ref{iso_vsi_beta_crit}.
 
 %
 %The left-hand side represents an effective buoyancy, which is
@@ -490,25 +501,37 @@ are short enough to support VSI growth.  Fig. \ref{bcrit_mmsn2d} plots the
  thermal timescales in our fiducial PPD model with a small grain dust opacity. 
  Since cooling by radiative diffusion depends on a perturbation's lengthscale, we
  plot $t_c$ for two values of the radial wavenumber,  $k_x$,  the relevant 
- component for VSI modes that are radially narrow.   The red line
+ component for VSI modes that are radially narrow.  The red line
 marks the boundary implied by Eq. \ref{prelim_bcrit}.  We caution that 
  Eq. \ref{prelim_bcrit} applies when $t_c$ is vertically uniform.  This section is 
- aimed at basic insights, while \S\ref{application}
- analyzes the VSI with realistic spatial variations in $t_c$.
+ aimed at basic insights; while more realistic spatial variations in
+ $t_c$ is considered in \S\ref{application}. 
+ %analyzes the VSI with realistic spatial variations in.
  
-Due to the smaller values of $t_c$ in the outer disk, we generally expect the VSI to 
-operate outside $\sim 10$ AU.  This conclusion changes however, if the dust opacity is reduced, 
-slowing down cooling, as we show later (e.g.\ Fig.\ \ref{mmsn_bcrit_bcool}).
-
-In the inner disk we see that thermal times are long in the midplane, but short at higher altitutdes. 
+ Due to the smaller values of $t_c$ in the outer disk, we generally expect the VSI to 
+ operate outside $\sim 10$ AU.  This conclusion changes however, if
+ the dust opacity is reduced,  
+slowing down cooling, as we show in \S\ref{application}. % (e.g.\ Fig.\
+% \ref{mmsn_bcrit_bcool}). 
+In the inner disk, thermal times are long in the midplane, but short at higher altitutdes. 
 Again, this structure necessitates the more detailed analyses that follow.  Nevertheless, we can already 
 see that due to radiative diffusion higher wavenumbers can cool more rapidly.  Thus smaller scale disturbances 
-may trigger VSI at smaller disk radii.
+may trigger VSI at smaller disk radii. 
 
-However we cannot and do not find that VSI will 
-always be relevant for sufficiently small perturbations.  For starters, very small wavelengths are in the optically 
-thin cooling regime,  where cooling is independent of lengthscale.  Moreover, small scale perturbations 
-are prone to viscous damping, and should drive weaker transport.
+On the other hand, one cannot obtain arbitrarily short cooling times
+by invoking arbitrarily small scales (cf. \citealt{urpin03}, 
+\citetalias{barker15}), because very small wavelengths are in the
+optically thin cooling regime,  where cooling is independent of
+lengthscale. Furthermore, while we do not include viscosity in our
+idealized disk models, in reality small-scale perturbations will be 
+prone to viscous damping, and should drive weaker transport. 
+
+% However, we cannot and do not find that VSI will always be relevant for
+% sufficiently small perturbations because \begin{inparaenum}[(i)] \item very small wavelengths are in the optically 
+% thin cooling regime,  where cooling is independent of lengthscale;
+% and \item small scale perturbations 
+% are more prone to viscous damping, and should drive weaker transport.
+% \end{inparaenum} 
 
 We now proceed with our detailed analysis of the VSI to arrive
 at Eq. \ref{prelim_bcrit} and verify it numerically. The interested 
