@@ -337,121 +337,140 @@ discussion of caveats and possible directions for future work.
 
 
 
-\section{Thermodynamic requirement for the vertical shear instability}\label{vsi_require}     In this paper we will find that in a stably stratified thin disk, the VSI  
+\section{Thermodynamic requirement for the vertical shear instability}\label{vsi_require}     
+In a stably stratified thin disk, the VSI  
 requires a thermal timescale $t_c$ much shorter than the
 disk dynamical timescale, 
 \begin{align}
   t _c \ll \OmK^{-1}. 
 \end{align}
-where $\OmK$ is the Keplerian frequency, consistent with N13. 
-To see why this should be expected, we need to compare vertical shear
-with vertical buoyancy. For this preliminary discussion we consider a
-vertically isothermal disk with aspect-ratio $ h$,  
-dimensionless radial temperature gradient $q$ and adiabatic index
-$\gamma$. For a PPD, $ h \sim 0.05$, $|q|\sim 1$ and $\gamma\simeq 1.4$. 
+where $\OmK$ is the Keplerian frequency (N13).    
+This requirement -- that the cooling time be much shorter than an orbital period, 
+which in turn is much smaller than the relevant oscillation period of vertically elongated gravity waves  -- is quite stringent.
+It highlights the fact that vertical buoyancy is a very strong stabilizing influence.
+Very strong radiative damping is thus required to weaken buoyancy and allow the weak vertical shear to drive instability.  
 
-For a thin disk, the specific angular momentum varies with height as 
+To roughly quantify the required smallness of $t_c$, we consider a
+vertically isothermal disk with aspect-ratio $ h$, 
+ radial temperature profile $T \propto r^q$ and adiabatic index
+$\gamma$. For a PPD, $ h \sim 0.05$, $q\sim -0.5$ and $\gamma\simeq 1.4$. 
+
+\begin{figure*}
+  \includegraphics[width=\linewidth]{figures/rhoshearNz}
+  \caption{The radial and vertical structure of a ``minimum mass" PPD model showing gas density (left, relative to the midplane density at 1 AU), vertical shear rate (middle) and
+    buoyancy frequency (right).
+    \label{eqm_structure} 
+  }
+\end{figure*}
+
+For a thin disk, the vertical shear increases with height, $z$, from the midplane as 
 \begin{align}\label{vshear_thin}
-  r \frac{\p \Omega^2 }{\p z} \simeq  h q \OmK^2\left(\frac{z}{H}\right),
+  r \frac{\p \Omega }{\p z} \simeq  h q \OmK \left(\frac{z}{2 H}\right),
 \end{align}
-where $H$ is the disk scale height. As noted in
-\S\ref{intro} this vertical variation is a source of free energy and
-thus vertical shear ($\p_z\Omega \neq0$) is destabilizing. 
-
-For $\gamma>1$ the disk is stably stratified with a real vertical
+for several disk scale heights, $H = hr$. 
+%As noted in
+%\S\ref{intro} this vertical variation is a source of free energy and
+%thus vertical shear ($\p_z\Omega \neq0$) is destabilizing. 
+%
+%For $\gamma>1$ the disk is stably stratified with a real 
+This destabilizing shear completes with the stabilizing vertical
 buoyancy frequency $N_z$.  In a thin disk,     
 \begin{align}\label{nz_thin}
   N_z^2 \simeq \left(\frac{\gamma-1}{\gamma}\right) \left(\frac{z}{H}\right)^2
   \OmK^2.  
 \end{align}
-This provides a stabilizing effect as buoyancy opposes vertical
-motion, which is required for the VSI. In fact, if we consider
-axisymmetric adiabatic disturbances, then because the 
-Solberg-Hoiland criteria \citep{tassoul78} are usually satisfied in a
-thin disk, the disk would be stable. 
-
-However, the stabilizing effect of buoyancy can be mitigated for 
-effectively isothermal disturbances. Consider a fluid element displaced upwards, away from
-the disk midplane. In a stably stratified adiabatic disk, it would
-sink because of buoyancy. However, if thermal timescales are short, in
-that temperature flucations decay rapidly, then the fluid element would attain its surrounding 
-density and  
-%(assuming an ideal gas and it reaches pressure 
-%equilibrium with its surroundings). 
-thus buoyancy is rendered ineffective. Qualitatively, a short thermal
-timescale $t_c$ reduces the effective (stabilizing) buoyancy force.    
-
-How short must $t_c$ be for vertical shear to prevail? A rough 
-comparison of vertical shear to buoyancy for non-adiabatic
-perturbations can be obtained by applying Eq. 47 of \cite{urpin03}, which is based on 
-\cite{townsend58},   
-\begin{align}\label{bcrit_est}
-  N_z^2 t_c \lesssim \left|r\frac{\p\Omega}{\p z}\right|. 
-\end{align}
-The left-hand side represents an effective buoyancy, which is
-stabilizing; while the right-hand side represents vertical shear,
-which is destabilizing. In a thin disk $ h \ll 1$, so the destabilizing effect of 
-vertical shear is rather weak because $|r\p_z\Omega|\sim h\OmK
-\ll \OmK$. By comparison, the buoyancy frequency $N_z\sim
-\OmK$. It follows that $t_c\lesssim O( h\OmK^{-1})$ is
-required for instability.  \emph{In a thin  
-  disk the thermal timescale must be shorter than the dynamical
-  timescale by $O( h)\ll 1$ for the VSI to operate.}   
-
-
-To illustrate this point, we show in Fig. \ref{eqm_structure} the
-equilibrium structure of a typical PPD. %Here $\rho_0$
+Fig. \ref{eqm_structure} maps shear and buoyancy (as well as the gas density) 
+in a fiducial PPD model, whose parameters are in Appendix \ref{mmsn} . %Here $\rho_0$
 %is the midplane density and vertical shear rate and buoyancy
 %frequencies are normalized by the local Keplerian frequency. 
-It is
-clear that vertical shear is 
-generally weak compared to buoyancy. Then even a small (positive)
-vertical entropy gradient can significantly stabilize the VSI. 
-Note that in astrophysical disks both $N_z^2$ and $\p_z\Omega$ varies
-with height. Eq. \ref{bcrit_est} then suggest that with
-increasing height, buoyancy would eventually stabilize the VSI (since
-$N_z^2\propto z^2$ and $\p_z\Omega\propto z$).
-% This means that 
-% disturbances localized away from the disk midplane are easily stabilized by
-% buoyancy. 
-This argument assumes vertically localized disturbances. It is,
-however, not clear how to apply Eq. \ref{bcrit_est} to vertically
-global disturbances, as considered in this work.
-
-\begin{figure*}
-  \includegraphics[width=\linewidth]{figures/rhoshearNz}
-  \caption{Typical PPD structure (the Minimum Mass
-    Solar Nebla): density (left), vertical shear rate (middle) and
-    buoyancy frequency (right). Here $\rho_0$ is the midplane density.  
-    \label{eqm_structure} 
-  }
-\end{figure*}
+Vertical shear is 
+generally weak compared to buoyancy, suggesting stability. 
 
 
-Our central result is the requirement 
-\begin{align}\label{prelim_bcrit}
-  (\gamma - 1)t_c <  h |q| \OmK^{-1}
+Without any cooling, the Solberg-Hoiland criteria confirms that vertical buoyancy is strong
+enough to ensure (axisymmetric) stability, see \S\ref{solberg}.  With radiative cooling, 
+thermal fluctuations decay which, combined with pressure equilibration, reduces the effective buoyancy.
+
+%However, the stabilizing effect of buoyancy can be mitigated for 
+%effectively isothermal disturbances. Consider a fluid element displaced upwards, away from
+%the disk midplane. In a stably stratified adiabatic disk, it would
+%sink because of buoyancy. However, if thermal timescales are short, in
+%that temperature flucations decay rapidly, then the fluid element would attain its surrounding 
+%density and  
+%%(assuming an ideal gas and it reaches pressure 
+%%equilibrium with its surroundings). 
+%thus buoyancy is rendered ineffective. Qualitatively, a short thermal
+%timescale $t_c$ reduces the effective (stabilizing) buoyancy force.    
+
+How short must $t_c$ be for vertical shear to prevail?  We start by 
+considering the Richardson number $\mathrm{Ri} = N_z^2/(r\p_z\Omega)^2$, a 
+ratio of buoyant to shear energies.  Though not precisely applicable to our problem,
+non-rotating shear flows are stable if $\mathrm{Ri} > 1/4$ (\citealp{chandrasekhar61}, 
+also see \citealp{ys02, lee10} for applications to thin dust layers in PPDs).
+Following \cite{urpin03} and \cite{townsend58},  we reduce the buoyant energy by the 
+ratio of cooling to forcing timescales, $t_c |r \p_z\Omega| \leq 1$ (with no reduction in buoyant energy 
+expected when this inequality fails).  With this reduction, the Richardson like criterion for 
+shear \emph{instability} becomes
+\begin{align}\label{bcrit_est}
+  t_c \lesssim \frac{\left|r\p\Omega/\p z\right|} {N_z^2}. 
+\end{align}
+
+This result is far from rigorous, but it contains some useful insights.
+ If we interpret Eq.\ \ref{bcrit_est} as a local criterion, then we see that 
+ the minimum cooling time decreases with height as $t_c \propto 1/z$.
+ This finding is relevant to the radiative damping of so called ``surface 
+ modes," which we consider in \S\ref{numerical}.
+ 
+ To roughly obtain a global cooling time criterion, we evaluate Eq.\ \ref{bcrit_est}
+ at $z \sim H$.  To get the precise form we want, we choose $z = \gamma H / 2$ to 
+ obtain the cooling requirement
+ \begin{align}\label{prelim_bcrit}
+ t_c <  h |q| \OmK^{-1}/ (\gamma - 1)
 \end{align}   
-for the VSI in a vertically isothermal, thin disk. This equation
-reflects Eq. \ref{bcrit_est} but there is no $z$ dependence. 
-% While assumptions and simplifications will be made 
-% to derive this, 
-Eq. \ref{prelim_bcrit} can be 
-readily applied to evaluate where in a disk the VSI is likely to
-operate. For example, we show in Fig. \ref{bcrit_mmsn2d} an estimate
-of the thermal timescales the PPD model shown in
-Fig. \ref{eqm_structure}. Here $k_x$ is a radial
-wavenumber of the disturbance being considered, thus larger $k_x$
-correspond to smaller perturbations. The region outside the red line
-satisfies Eq. \ref{prelim_bcrit}. 
+for the VSI in a vertically isothermal, thin disk.  This estimate agrees with 
+our central result, the cooling criterion that we derive more rigorously in \S\ref{iso_vsi_beta_crit}.
 
-The criterion Eq. \ref{prelim_bcrit} in fact
-assumes $t_c$ is vertically uniform. While this is not generally true
-in the inner disk, we find Eq. \ref{prelim_bcrit} still provides a
-useful guide. We see that the VSI will operate in the outer 
-disk at tens of AU, but that smaller scale disturbances may operate at
-smaller radii. 
 
+%
+%The left-hand side represents an effective buoyancy, which is
+%stabilizing; while the right-hand side represents vertical shear,
+%which is destabilizing. In a thin disk $ h \ll 1$, so the destabilizing effect of 
+%vertical shear is rather weak because $|r\p_z\Omega|\sim h\OmK
+%\ll \OmK$. By comparison, the buoyancy frequency $N_z\sim
+%\OmK$. It follows that $t_c\lesssim O( h\OmK^{-1})$ is
+%required for instability.  \emph{In a thin  
+%  disk the thermal timescale must be shorter than the dynamical
+%  timescale by $O( h)\ll 1$ for the VSI to operate.}   
+%
+%
+%Then even a small (positive)
+%vertical entropy gradient can significantly stabilize the VSI. 
+%Note that in astrophysical disks both $N_z^2$ and $\p_z\Omega$ varies
+%with height. Eq. \ref{bcrit_est} then suggest that with
+%increasing height, buoyancy would eventually stabilize the VSI (since
+%$N_z^2\propto z^2$ and $\p_z\Omega\propto z$).
+%% This means that 
+%% disturbances localized away from the disk midplane are easily stabilized by
+%% buoyancy. 
+%This argument assumes vertically localized disturbances. It is,
+%however, not clear how to apply Eq. \ref{bcrit_est} to vertically
+%global disturbances, as considered in this work.
+%
+%
+%
+%
+%Our central result is the requirement 
+%\begin{align}\label{prelim_bcrit}
+%  (\gamma - 1)t_c <  h |q| \OmK^{-1}
+%\end{align}   
+%for the VSI in a vertically isothermal, thin disk. This equation
+%reflects Eq. \ref{bcrit_est} but there is no $z$ dependence. 
+%% While assumptions and simplifications will be made 
+%% to derive this, 
+%Eq. \ref{prelim_bcrit} can be 
+%readily applied to evaluate where in a disk the VSI is likely to
+%operate. 
+ 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.7cm 0cm
   0.73cm]{figures/bcrit_mmsn2d_kx10}
@@ -466,10 +485,35 @@ smaller radii.
   }
 \end{figure}
 
-We now proceed through the formal linear stability problem to arrive
+We now consider whether, and where, thermal timescales in realistic PPDs
+are short enough to support VSI growth.  Fig. \ref{bcrit_mmsn2d} plots the
+ thermal timescales in our fiducial PPD model with a small grain dust opacity. 
+ Since cooling by radiative diffusion depends on a perturbation's lengthscale, we
+ plot $t_c$ for two values of the radial wavenumber,  $k_x$,  the relevant 
+ component for VSI modes that are radially narrow.   The red line
+marks the boundary implied by Eq. \ref{prelim_bcrit}.  We caution that 
+ Eq. \ref{prelim_bcrit} applies when $t_c$ is vertically uniform.  This section is 
+ aimed at basic insights, while \S\ref{application}
+ analyzes the VSI with realistic spatial variations in $t_c$.
+ 
+Due to the smaller values of $t_c$ in the outer disk, we generally expect the VSI to 
+operate outside $\sim 10$ AU.  This conclusion changes however, if the dust opacity is reduced, 
+slowing down cooling, as we show later (e.g.\ Fig.\ \ref{mmsn_bcrit_bcool}).
+
+In the inner disk we see that thermal times are long in the midplane, but short at higher altitutdes. 
+Again, this structure necessitates the more detailed analyses that follow.  Nevertheless, we can already 
+see that due to radiative diffusion higher wavenumbers can cool more rapidly.  Thus smaller scale disturbances 
+may trigger VSI at smaller disk radii.
+
+However we cannot and do not find that VSI will 
+always be relevant for sufficiently small perturbations.  For starters, very small wavelengths are in the optically 
+thin cooling regime,  where cooling is independent of lengthscale.  Moreover, small scale perturbations 
+are prone to viscous damping, and should drive weaker transport.
+
+We now proceed with our detailed analysis of the VSI to arrive
 at Eq. \ref{prelim_bcrit} and verify it numerically. The interested 
-reader may skip forward \S\ref{application} for the application of our
-results to PPD.     
+reader may jump to \S\ref{application} for the application of our
+results to PPDs.     
 
 \input{setup}
 \input{linear_iso}
