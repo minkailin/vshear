@@ -307,7 +307,7 @@ gradients such as $\p \Omega/ \p z$, refer to  equilibrium values at $(r_0, z)$.
 We further define the perturbation variables  $W \equiv \delta P /\rho$ 
 and $Q \equiv c_s^2\delta\rho/\rho$.  With this procedure the linearized
 system of equations are
-\begin{align}
+\begin{subequations}\label{lin_all}\begin{align}
   \ii\upsilon \frac{Q}{c_s^2}  &=  \ii k_x \delta v_x + \frac{d\dd
     v_z}{dz} + \frac{\p\ln{\rho}}{\p z}\delta v_z + \zeta
   \frac{\p\ln{\rho}}{\p r} \delta v_x,\label{lin_mass}\\
@@ -324,7 +324,7 @@ system of equations are
   \zeta\frac{1}{\rho}\frac{\p P}{\p r}\delta v_x.\label{lin_energy}
   % -&\ii\upsilon W + \frac{1}{t_c}\left(W-\frac{Q}{\Gamma}\right) = -\ii\upsilon\frac{\gamma}{\Gamma} Q +
   % c_s^2\frac{d\ln{\rho}}{dz}\left(\frac{\gamma}{\Gamma}-1\right)\delta v_z.\label{lin_energy}
-\end{align}
+\end{align}\end{subequations}
 This is a set of ordinary differential equations (ODEs) in
 $z$.  %boundary conditions for well posed problem 
 Solutions to these 
