@@ -1,7 +1,6 @@
 \section{Governing equations and disk models}\label{setup}
-We consider  an inviscid, non-self-gravitating three-dimensional 
-disk orbiting a central star of mass $M_*$.  Cylindrical
-co-ordinates $(r,\phi, z)$ are centered on the star. The governing fluid equations are
+An inviscid, non-self-gravitating disk orbiting a central star of mass $M_*$
+obeys the three-dimensional fluid equations:
 \begin{align}
   &\frac{\p\rho}{\p t} + \nabla\cdot{\left(\rho\bm{v}\right)} = 0,\label{full_mass}\\
   &\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bm{v} =
@@ -15,7 +14,8 @@ where $\rho$ is the mass density, $\bm{v}$ is the velocity field (the
 rotation frequency being $\Omega=v_\phi/r$), $P$
 is the pressure, $\gamma$ is the constant adiabatic index, and $\Phi_*
 = -GM_*(r^2 + z^2)^{-1/2}$ is the gravitational potential of the
-central star and $G$ is the gravitational constant. 
+central star with $G$ as the gravitational constant. The cylindrical
+co-ordinates $(r,\phi, z)$ are centered on the star. 
 In the energy equation (Eq.\ \ref{full_energy}) the sink term
 $\Lambda$ includes non-adiabatic cooling and (negative) heating. 
 The gas temperature $T$ obeys the ideal gas 
@@ -37,7 +37,7 @@ define the dimensionless cooling time
 \begin{align}\label{beta_def}
   \beta \equiv \OmK t_c
 \end{align}
-relative to the Keplerian frequency, $\OmK=\sqrt{GM_*/r^3}$.  We shall
+relative to the Keplerian frequency, $\OmK=\sqrt{GM_*/r^3}$.  We 
 use the terms `thermal relaxation' and `cooling' interchangeably
 throughout this paper.   
 
@@ -46,7 +46,7 @@ parameter, so that we can vary the thermodynamic response of the
 disk from isothermal ($\beta\ll 1$) to adiabatic ($\beta \gg 1$) in a
 controlled manner. However, in \S\ref{application} 
 we will consider a more realistic model for $\beta$ in
-PPDs with a dust opacity (which gives Fig.  \ref{bcrit_mmsn2d}).  
+PPDs with a dust opacity (as in Fig.\  \ref{bcrit_mmsn2d}).  
  
 % using Eq.\(\ref{beta_mmsn_simp}), which   
 % Fig. \ref{bcrit_mmsn2d} shows that in this model $\beta >> 1$ in the 
@@ -67,68 +67,80 @@ PPDs with a dust opacity (which gives Fig.  \ref{bcrit_mmsn2d}).
 The equilibrium disk is steady and axisymmetric with density,
 pressure and rotation profiles $\rho(r,z)$, $P(r,z)$ and
 $\Omega(r,z)$, respectively. These functions satisfy  
-\begin{align}
+\begin{subequations}\begin{align}
   0 &= \frac{1}{\rho}\frac{\p P}{\p z} + \frac{\p \Phi_*}{\p z},\label{vert_equilibrium}\\
   r\Omega^2&= \frac{1}{\rho}\frac{\p P}{\p r} + \frac{\p \Phi_*}{\p
     r}.\label{hori_equilibrium} 
-\end{align} 
-These equations allows us to choose any midplane density 
-distribution $\rho_0(r)\equiv \rho(r,0)$. In this work we assume a
-power-law profile, 
-\begin{align}
-  \rho_0(r) = \rho_{00}\left(\frac{r}{r_0}\right)^p,
-\end{align}
-where $\rho_{00}$ is the midplane density at the fiducial radius
-$r=r_0$ and $p$ is the power-law index.  
+\end{align} \end{subequations}
+A unique solution requires additional assumptions about disk structure.  We choose
+\begin{subequations}\begin{align}
+ \rho(r,0) &\equiv \rho_0(r) = \rho_{00}\left(\frac{r}{r_0}\right)^p, \\
+ T(r,0) &\equiv T_0(r) = T_{00}\left(\frac{r}{r_0}\right)^q, \\
+ P(r,z) & = K(r)\rho^{\Gamma}(r,z). \label{eqm_press}
+\end{align} \end{subequations}
+where $r_0$ is a fiducial radius and $p$ and $q$ are the standard powerlaw indices
+for midplane density and temperature, respectively.  The polytropic index $\Gamma$ 
+parametrizes the vertical stratification with $\Gamma = 1$ ($\Gamma = \gamma$)
+describing vertically isothermal (adiabatic) disks, respectively.  The ideal gas
+law requires $K = \rho_0^{1-\Gamma}\mathcal{R} T_0/\mu$.
 
-We consider disk equilibria in which the pressure $P$ and density
-$\rho$ are related by   
+%These equations allows us to choose any midplane density 
+%distribution $\rho_0(r)\equiv \rho(r,0)$. In this work we assume a
+%power-law profile, 
+%\begin{align}
+%  \rho_0(r) = \rho_{00}\left(\frac{r}{r_0}\right)^p,
+%\end{align}
+%where $\rho_{00}$ is the midplane density at the fiducial radius
+%$r=r_0$ and $p$ is the power-law index.  
+
+%We consider disk equilibria in which the pressure $P$ and density
+%$\rho$ are related by   
+%\begin{align}
+%  P(r,z) &= 
+%  \frac{c_{s0}^2(r)}{\Gamma}\rho_0(r)^{1-\Gamma}\rho^\Gamma(r,z),\notag\\
+%  & \equiv K(r)\rho^{\Gamma}(r,z). \label{eqm_press}
+%\end{align}
+%where the polytropic index $\Gamma$ is a  constant parameter  and the
+%function $c_{s0}(r)$ is prescribed below. Choosing $\Gamma=1$ gives  a 
+%locally vertically isothermal disk and $c_{s0}(r)$ is the mid-plane
+%sound-speed. 
+%It shall be convenient to define the function $c_s(r,z)$ 
+
+We further define a modified sound speed
 \begin{align}
-  P(r,z) &= 
-  \frac{c_{s0}^2(r)}{\Gamma}\rho_0(r)^{1-\Gamma}\rho^\Gamma(r,z),\notag\\
-  & \equiv K(r)\rho^{\Gamma}(r,z). \label{eqm_press}
+	c_s \equiv \sqrt{\Gamma P /\rho } , 
+% c_s^2\equiv % \frac{dP}{d\rho} =
+%  c_{s0}^2(r)\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} =
+%  \frac{\Gamma P}{\rho},  
 \end{align}
-where the polytropic index $\Gamma$ is a  constant parameter  and the
-function $c_{s0}(r)$ is prescribed below. Choosing $\Gamma=1$ gives  a 
-locally vertically isothermal disk and $c_{s0}(r)$ is the mid-plane
-sound-speed. 
-It shall be convenient to define the function $c_s(r,z)$ 
+which in general differs from the  isothermal, $c_\mathrm{iso} =
+c_s/\sqrt{\Gamma}$, and adiabatic $c_\mathrm{ad} =
+c_s\sqrt{\gamma/\Gamma}$, sound speeds. 
+
+We also introduce the characteristic scale-height, $H = c_s(r,0)/\OmK$
+and disk aspect-ratio
+%We take $c_{s0}(r)$ to be another power-law:  
+%\begin{align}
+%  c_{s0}^2(r)=c_{s00}^2\left(\frac{r}{r_0}\right)^q, 
+%\end{align}
+%where $c_{s00}\equiv c_{s0}(r_0)$  and $q$ is the temperature power-law index, and
+%define   
 \begin{align}
-  c_s^2\equiv % \frac{dP}{d\rho} =
-  c_{s0}^2(r)\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} =
-  \frac{\Gamma P}{\rho}, 
+   h(r) \equiv %\frac{c_{s0}(r)}{v_k(r)} \equiv
+  \frac{H}{r} \propto r^{(1+q)/2}
 \end{align}
-which is related to the isothermal sound-speed $c_\mathrm{iso} =
-c_s/\sqrt{\Gamma}$. We take $c_{s0}(r)$ to be another power-law:  
-\begin{align}
-  c_{s0}^2(r)=c_{s00}^2\left(\frac{r}{r_0}\right)^q, 
-\end{align}
-where $c_{s00}\equiv c_{s0}(r_0)$  and $q$ is the temperature power-law index, and
-define   
-\begin{align}
-   h(r) \equiv \frac{c_{s0}(r)}{v_k(r)} \equiv
-  \frac{H}{r} 
-\end{align}
-to parametrize the magnitude of the sound-speed, where
-$v_k=r\OmK$ is the Keplerian azimuthal velocity and
-$H$ is a characteristic scale-height.  Thus, $ h$
-is also a characteristic disk aspect-ratio. We are 
-interested in thin disks with $ h \ll 1$.%,%  as relevant for
-% protoplanetary disks \citep{chiang97}.   
+We are interested in thin disks with $ h \ll 1$.
 
 
-
-%\subsection{Vertical structure}
-
-Solving the equilibrium disk equations, we find the explicit
-expression for the density field for 
-$\Gamma\neq1$ is given  by
+\subsubsection{Density structure}
+The equilibrium density field follows from vertical hydrostatic equilibrium (Eq.\ \ref{vert_equilibrium}).
+The solution for $\Gamma\neq1$ is
 \begin{align}\label{eqm_dens}
   &\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} = 1 +
   \frac{\left(\Gamma-1\right)}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right).
 \end{align}
 Note that for $\Gamma > 1 +  h^2$ there is a disk surface $H_s$
-such that $\rho(r,H_s)=0$. 
+where $\rho(r,H_s)=0$. 
 % Note that for $\Gamma\neq1$ the disk has a surface $z=H(r)$ such that
 % $\rho(r,H)=0$. If we parametrize
 % \begin{align}
@@ -139,37 +151,42 @@ such that $\rho(r,H_s)=0$.
 %   h^2(r) = \left[1-\frac{ h^2(r)}{\Gamma-1}\right]^{-2}-1. 
 % \end{align}
 
-Similarly, the equilibrium rotation is 
-\begin{align}\label{eqm_rot}
-  \frac{\Omega^2(r,z)}{\OmK^2(r)}=1 +
-  \left(p+\frac{s}{\Gamma}\right) h^2(r) 
-  +\frac{s}{\Gamma} \left(1-\frac{1}{\sqrt{1+z^2/r^2}}\right), 
-\end{align}
-where $s\equiv q+p(1-\Gamma)$. We also define % the radial shear rate  
-% \begin{align}
-%   S(r,z) \equiv r\frac{\p\Omega}{\p r},  
-% \end{align}
-% and
-the square of the epicyclic frequency $\kappa$ 
-\begin{align}
-  \kappa^2(r,z) \equiv \frac{1}{r^3}\frac{\p }{\p
-    r}\left(r^4\Omega^2\right). %2\Omega(2\Omega + S). 
-\end{align}
-
-
-\subsubsection{Vertically isothermal disks}
-For $\Gamma=1$ the equilibrium density and rotation profiles are
-given, respectivley, by 
+The vertically isothermal case, $\Gamma = 1$, can be found either 
+independently or as a limit of Eq. \ref{eqm_dens} to be 
 \begin{align}
   \frac{\rho(r,z)}{\rho_0(r)} &=
-  \exp{\left[\frac{1}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},\\    
-  \frac{\Omega^2(r,z)}{\OmK^2(r)}& =1+ (p+q) h^2(r) + q\left(1 -
-    \frac{1}{\sqrt{1+z^2/r^2}}\right),\label{vertiso_eqm}
+  \exp{\left[\frac{1}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},   \\
+  & \approx \exp {\left[ - {z^2 \over 2 H^2}\right]} \label{rhoisothin},
+  \end{align}
+  where Eq.\ \ref{rhoisothin} takes the $z \ll r$ thin disk limit.  
+ 
+ \subsubsection{Rotation and vertical shear profiles}
+The equilbrium rotation field follows from the density field and centrifugal balance (Eq.\ \ref{hori_equilibrium}),
+giving 
+\begin{align}\label{eqm_rot}
+  \frac{\Omega^2(r,z)}{\OmK^2(r)}=1 +
+  \left(\frac{p+q}{\Gamma}\right) h^2(r) 
+  +\frac{s}{\Gamma} \left(1-\frac{1}{\sqrt{1+z^2/r^2}}\right), 
 \end{align}
-which may be obtained from Eq. \ref{eqm_dens} and Eq. \ref{eqm_rot} by
-taking the limit $\Gamma\to 1$. We will, in fact, primarily focus on
-vertically isothermal disks which is the relevant case for passively irradiated
-PPDs \citep{chiang97}. 
+for all $\gamma$, where $s\equiv q+p(1-\Gamma)$.  
+
+
+Notice that for $\Gamma = 1$, $s/\Gamma = q$...
+
+...
+%\subsubsection{Vertically isothermal disks}
+%For $\Gamma=1$ the equilibrium density and rotation profiles are
+%given, respectivley, by 
+%\begin{align}
+%  \frac{\rho(r,z)}{\rho_0(r)} &=
+%  \exp{\left[\frac{1}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},\\    
+%  \frac{\Omega^2(r,z)}{\OmK^2(r)}& =1+ (p+q) h^2(r) + q\left(1 -
+%    \frac{1}{\sqrt{1+z^2/r^2}}\right),\label{vertiso_eqm}
+%\end{align}
+%which may be obtained from Eq. \ref{eqm_dens} and Eq. \ref{eqm_rot} by
+%taking the limit $\Gamma\to 1$. We will, in fact, primarily focus on
+%vertically isothermal disks which is the relevant case for passively irradiated
+%PPDs \citep{chiang97}. 
 
 
 \subsection{Vertical shear}\label{vshear_def}
