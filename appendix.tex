@@ -9,10 +9,10 @@ obtain
 %to obtain a pair or ordinary differential
 %equations for $W,Q$ as 
 \begin{subequations}\label{A1}\begin{align}
-  & \ii\upsilon\delta v_z = \frac{dW}{dz} + \frac{d\ln{\rho}}{d z}\left(W-Q\right),\label{ode_vz} \\
+  & \ii\upsilon\delta v_z = \frac{dW}{dz} + \frac{\p\ln{\rho}}{\p z}\left(W-Q\right),\label{ode_vz} \\
   &\frac{\upsilon^2}{c_s^2}Q + \frac{\upsilon^2k_x^2}{D}W =\ii\upsilon \left(\frac{\ii
-      k_x r}{D}\frac{d\Omega^2}{dz} -
-    \frac{d\ln{\rho}}{dz}\right)\delta v_z - \ii\upsilon \frac{d\delta v_z}{dz},
+      k_x r}{D}\frac{\p\Omega^2}{\p z} -
+    \frac{\p \ln{\rho}}{\p z}\right)\delta v_z - \ii\upsilon \frac{d\delta v_z}{dz},
   % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right] 
   % \notag\\
   % &- \frac{d^2W}{dz^2} - \frac{d\ln{\rho}}{dz}\left(\frac{dW}{dz} -
@@ -24,7 +24,7 @@ obtain
 %    1\right)\delta v_z,  
   &\upsilon^2W - \gamma\upsilon^2 Q +
   \frac{\ii\upsilon}{t_c}\left(W-Q\right) 
-  =\ii \upsilon c_s^2\frac{d\ln{\rho}}{dz}\left(\gamma -
+  =\ii \upsilon c_s^2\frac{\p\ln{\rho}}{\p z}\left(\gamma -
     1\right)\delta v_z,
   % 
   % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],
@@ -32,17 +32,20 @@ obtain
 \end{align}\end{subequations}
 where
 \begin{align}
-  D \equiv \kappa^2 - \upsilon^2,
+  D \equiv \kappa^2 - \upsilon^2.
 \end{align} 
-and we have replaced $\p/\p z$ by $d/dz$ for the fully radially local treatment. 
+%
 
-Reduction to a single ODE requires vertical derivatives.  At this point we could use the 
-low frequency and Keplerian approximations to set $D \rightarrow \kappa^2 \rightarrow \OmK^2$,
- and we would wind up with Eq. \ref{nearly_iso_explicit} more directly.
-However to demonstrate that the order of approximation is irrelevant, we will retain
-the vertical derivatives of the epicyclic frequency $\kappa$,
+Reduction to a single ODE requires 
+$\p_zD = \p_z\kappa^2$.  At this point we could apply the 
+low frequency and Keplerian approximations to set $D \rightarrow
+\kappa^2 \rightarrow \OmK^2$, then $D$ is vertically constant, 
+and we can obtain Eq. \ref{nearly_iso_explicit} more directly.
+However, to demonstrate that the order of approximation is irrelevant,
+we will retain $\p_z\kappa^2$ initially. Using 
+Eq. \ref{kap2_def}---\ref{vertical_shear},  
 \begin{align}\label{dkappa2}
-  \frac{d\kappa^2}{d z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
+  \frac{\p \kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
     r}\frac{\p\Omega^2}{\p z} = -
   \frac{d\ln\rho}{d z}\frac{qc_s^2}{r^2} \left(
     \frac{3z^2}{r^2+z^2}-1\right) \equiv - \frac{d\ln\rho}{d z}\frac{qc_s^2}{r^2}F(r,z).
@@ -53,7 +56,6 @@ the vertical derivatives of the epicyclic frequency $\kappa$,
 % \end{align}
 The function $F$ increases monotonically from $F=-1$ at $z=0$ to $F\to2$
 as $|z|\to\infty $, so $|F|=O(1)$. 
-
 
 % In \S\ref{approx_gov} we made the replacement $D\to\OmK^2$ before
 % eliminating variables to obtain a single equation for $\delta v_z$ in
@@ -66,7 +68,7 @@ as $|z|\to\infty $, so $|F|=O(1)$.
 %Eq. \ref{lin_vz}  (with $\Gamma=1$), but now retain the vertical dependence
 %of $D$ using Eq. \ref{dkappa2}, to obtain  
 
-We now eliminate $W,\, Q$ from Eqs.\ \ref{A1}, using  Eqs. \ref{chi} and \ref{dkappa2} to obtain  
+We  eliminate $W,\, Q$ from Eqs.\ \ref{A1}, using  Eqs. \ref{chi} and \ref{dkappa2} to obtain  
 \begin{align}\label{full_ode}
   0 =& \frac{d^2\delta v_z}{dz^2} + \left[1 + \frac{\ii k_x c_s^2
       q}{Dr} - \frac{k_x^2c_s^2}{\left(k_x^2c_s^2 + \chi
@@ -79,11 +81,11 @@ We now eliminate $W,\, Q$ from Eqs.\ \ref{A1}, using  Eqs. \ref{chi} and \ref{dk
       \frac{\ii k_x q}{r}\right)
    \left[\left(1-\chi\right) +
      \frac{\chi}{\left(k_x^2c_s^2 + \chi D\right)}\frac{qc_s^2 F}{r^2}\right] 
-   \right\}\delta v_z.
+   \right\}\delta v_z, 
 \end{align}
-
-Now we make the low frequency and Keplerian
-approximations, setting $D\to
+where we have replaced $\p/\p z$ by $d/dz$ for the
+fully-radially-local treatment. Now we make the low frequency and Keplerian
+approximations, setting $D\to 
 \OmK^2$, to give  
 \begin{align}
   &\delta v_z ^{\prime\prime} + \left[1 + \ii h q\hat{k} -
@@ -110,11 +112,12 @@ Retaining terms to first order in the disk aspect ratio, $h \ll 1$, gives
        2}\left(\khat^2 -
        \ii h
        q\hat{k}\right)\left(1 - \chi\right)\right]\delta v_z.\label{vertiso_gov_nondim}
- \end{align}
-Applying Eq.\ \ref{rhoisothin} for the density field gives the desired result, Eq. \ref{nearly_iso_explicit}. 
+\end{align}
+Approximating the density field by Eq.\ \ref{rhoisothin} then gives 
+Eq. \ref{nearly_iso_explicit}. 
 
 We can establish a correspondence between our  Eq. \ref{nearly_iso_explicit} and
- Eq. 41 in \cite{lubow93}, which describes adiabatic axisymmetric waves in
+Eq. 41 in \cite{lubow93}, which describes adiabatic axisymmetric waves in
 a vertically isothermal disk without vertical shear.   Accounting for the required change of variables, 
 the correspondence is exact after setting $q=0$ (no vertical shear) and
 $\chi=1/\gamma$ (adiabatic flow) in our Eq. \ref{nearly_iso_explicit},
@@ -146,46 +149,29 @@ and applying the approximations in our \S \ref{sec:simplified} to \citeauthor{lu
 
 
 
-\section{Applicability of the  VGSB}\label{global_corr}
-%In \S\ref{analytical} we effectively employed the vertically global
-%shearing box \citep[VGSB,][]{mcnally14} to make analytic progress. 
-The vertically global shearing box \citepalias[VGSB,][]{mcnally14} is an
-extension of the standard shearing box \citep[SSB,][]{goldreich65} to
-background shear flows that are height dependent. 
-%As in the SSB, in
-%the VGSB the equilibrium disk structure is assumed to be homogeneous
-%in the radial ($x$) direction.  
-Within the VGSB framework, the vertical shear $d\Omega/dz$
-can be freely specified. We choose $d\Omega/dz$ to be that due to the
-radial temperature gradient in the global disk
-(Eq. \ref{vertical_shear}). However, explicit dependencies on the
-radial disk structure are ignored elsewhere in the linearized equations
-as described below. We show in the following sections that this
-inconsistency only becomes important in the adiabatic limit, which is
-not the relevant regime for the VSI. 
+\section{Applicability of the fully-radially-local approximation}\label{global_corr}
+In the fully-radially-local approximation, background radial
+gradients are ignored except where it appears
+implicitly in the expression for the vertical shear rate $\p_z\Omega$
+(via Eq. \ref{vertical_shear}).  This is done by neglecting the terms proportional to $\zeta$
+in Eq. \ref{lin_mass}, \ref{lin_vx} and \ref{lin_energy}, i.e. setting 
+$\zeta=0$. (Nomially $\zeta=1$, which is used in our numerical study.) 
 
-%is only important when
-%considering adiabatic limit, which is not the relevant regime for the
-%VSI.  
 
-The background radial disk structure explicitly appears 
-in the linearized mass, radial momentum and energy equations
-(Eq. \ref{lin_mass}, \ref{lin_vx} and \ref{lin_energy}) as the terms
-proportional to $\zeta$. Nominally $\zeta=1$.      
-In the VGSB (and SSB) these terms are neglected by setting
-$\zeta=0$. For a power-law disk, these radial gradients  
+For a power-law disk, the neglected radial gradients   
 are $O(r^{-1})$, and they appear in comparison with terms of
 $O(k_x)$. The neglected terms therefore have a relative magnitude of
-$O(h/\khat)$, which is small for thin disks ($h\ll1$)
-and/or small radial wavelengths ($\khat\gg 1$). 
- 
+$O(h/\khat)$, which is small for thin disks ($h\ll1$) 
+and/or small radial wavelengths ($\khat\gg 1$).  We show in the
+following sections that the fully-radially-local approximation only 
+becomes invalid in the adiabatic limit, which is not the relevant
+regime for the VSI. 
 
-
-% The difference between the linear problem in the VGSB 
-% and the radially-local approximation adopted in our numerical study
-% is the absence of terms explicitly associated with the radial disk structure in
-% the VGSB. 
-
+We comment that this approximtaion is equivalent to 
+that adopted in the vertically global shearing box formalism
+\citepalias[VGSB,][]{mcnally14}, which is an 
+extension of the standard shearing box \citep{goldreich65} to
+background shear flows that are height dependent.
 
 %However, background radial gradient terms 
 %are ignored elsewhere in the VGSB (which is done by setting
@@ -210,10 +196,12 @@ and/or small radial wavelengths ($\khat\gg 1$).
 % proportional to $\zeta$ are associated with the background density
 % and pressure radial structures, and nominally $\zeta=1$.   
 
-\subsection{Spurious growth of adiabatic perturbations in the VGSB}\label{analytic_adia} 
-A limitation of the VGSB is that it cannot be used for 
-adiabatic flow, even if the above conditions are satisfied. We explain this by considering vertically isothermal
-disks and setting  $\beta\to\infty$ and hence $\chi = 1/\gamma$ in 
+\subsection{Spurious growth of adiabatic perturbations when
+  $\zeta=0$}\label{analytic_adia}  
+A limitation of the reduced model described in Appendix
+\ref{adia_improve}, \S\ref{sec:simplified} and used in \S\ref{analytical}, is that it
+cannot be employed for adiabatic flow when there is vertical shear, even
+if $h/\khat\ll1$.  We explain this by setting  $\beta\to\infty$ and hence $\chi = 1/\gamma$ in 
 Eq. \ref{vertiso_gov_nondim} % (which itself is obtained by setting
 % $\zeta=0$ in Eq. \ref{lin_mass}---\ref{lin_energy})
 to give 
@@ -255,10 +243,10 @@ $|\gamma-1|$. This is contradicts the second Solberg-Hoiland criterion
 perturbations in a thin, vertically isothermal disk would require 
 $|\gamma-1|\ll1$. 
 %also need real freq^2 in adia limit 
-This is because the VGSB retains the global radial
-disk structure responsible for vertical shear
-($\p_z\Omega$), but ignores it elsewhere in the linear problem. 
-Nevertheless, we demonstrate below
+This is because we have retained the global radial temperature 
+gradient to obtain vertical shear, 
+but have ignored it elsewhere in the linear problem (as well as the
+background radial density gradient). Nevertheless, we demonstrate below
 that this inconsistency is unimportant for the VSI, which occurs 
 for $\beta\ll1$.   %and small scale
 
@@ -273,28 +261,30 @@ Eq. \ref{lin_mass}---\ref{lin_energy}  with $\zeta=1$.
 
 All three methods give similar behavior, and growth rates are in close
 agreement for $\beta\lesssim 1$. Differences arise for 
-$\beta\gtrsim1$, and as $\beta\to\infty$ the VGSB framework gives a
+$\beta\gtrsim1$, and as $\beta\to\infty$ the fully-radially-local
+approximation, where $\zeta=0$, gives a
 (spurious) growth rate as expected from the discussion
 above. Inclusion of the global radial gradient terms results in the
-correct behavior  ($\sigma\to0$ as $\beta\to\infty$). Despite this
-caveat, Fig. \ref{gcorr_compare} shows that provided we consider
-$\beta\ll1$, then the VGSB framework is adequate for studying the
-VSI. 
+expected behavior  ($\sigma\to0$ as $\beta\to\infty$). Despite this
+caveat, Fig. \ref{gcorr_compare} shows that provided we consider 
+$\beta\ll1$, then setting $\zeta=0$ does not affect the VSI
+significantly.  
   
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
   0cm]{figures/gcorr_compare} 
   \caption{Growth rate of the fundamental VSI mode as a function of
-    the thermal relaxation time $\beta$. The `Analytical (VGSB)' curve
-    is calculated from the dispersion relation Eq. \ref{relax_disp};
-    the `Numerical (VGSB)' curve is obtained by numerically solving
-    the linear problem, Eq. \ref{lin_mass}---\ref{lin_energy}, with $\zeta=0$
-    (which defines the linear VGSB equations); and the `Numerical
-    (Full)' curve is obtained by numerically solving 
-    Eq. \ref{lin_mass}---\ref{lin_energy}  with $\zeta=1$, which
-    accounts for the radial disk structure.  
+    the thermal relaxation time $\beta$. The `Analytical ($\zeta=0$)' curve
+    is calculated from the dispersion relation Eq. \ref{relax_disp}. 
+    The `Numerical ($\zeta=0$)' curve is obtained from the numerical
+    solution to Eq. \ref{lin_mass}---\ref{lin_energy} with
+    $\zeta=0$,  which 
+    neglects explicit dependencies on the radial disk structure.  
+    The `Numerical
+    ($\zeta=1$)' curve is obtained from Eq. \ref{lin_mass}---\ref{lin_energy} with
+    $\zeta=1$, which accounts for the radial disk structure self-consistently.   
     The disk parameters are $(\gamma, \Gamma)=(1.4, 1.011)$ and
-    $(p,q,h)=(-1.5,-1,0.05)$. The perturbation
+    $(p,q,h)=(-1.5,-1,0.05)$. The perturbation 
     wavenumber is $\khat=30$. 
     \label{gcorr_compare}}  
 \end{figure}
@@ -311,7 +301,8 @@ VSI.
 \section{Linear problem in the isothermal limit}\label{iso_discuss}  
 Here we summarize selected results for isothermal
 perturbations ($\beta\equiv 0$) in vertically isothermal disks 
-($\Gamma=1$) in the VGSB framework. In this case Eq. \ref{ode_Q}
+($\Gamma=1$) in the fully-radially local approximation
+($\zeta=0$). In this case Eq. \ref{ode_Q}
 becomes    
 \begin{align} 
   Q = W 

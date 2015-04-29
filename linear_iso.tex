@@ -10,20 +10,20 @@
 %study.  
 
 Our simplified model starts with  Eqs.\ \ref{lin_all} 
-and makes the following additional approximations:
+and makes the following additional simplifications:
 
 \begin{enumerate}
  
  \item We set $\Gamma = 1$, focusing on vertically isothermal disks.
   
-\item  We set $\zeta = 0$,  dropping terms with an explicit dependence on the 
+\item  We set $\zeta = 0$,  neglecting terms with an explicit dependence on the 
 radial structure of the equilibrium disk.  Vertical shear, which implicitly depends on the radial
 temperature gradient, is retained.  This fully-radially-local approximation is also made in the
- `vertically global shearing box' (VGSB) of \citetalias{mcnally14}. 
+ `vertically global shearing box' of \citetalias{mcnally14}. 
 
-\item We make the low frequency approximation, $|\upsilon^2|\ll \kappa^2,\,\Omega^2$,
-keeping only the lowest order terms in $|\upsilon|/\kappa$.  Similar to the 
-incompressible \citepalias{goldreich67} or anelastic \citepalias{barker15} approximations,
+\item We make the low frequency approximation, assuming $|\upsilon^2|\ll \kappa^2,\,\Omega^2$. 
+%keeping only the lowest order terms in $|\upsilon|/\kappa$.  
+Similar to the incompressible \citepalias{goldreich67} or anelastic \citepalias{nelson13,barker15} approximations,
 the low frequency approximation filters p-modes in favor of g-modes, i.e.\ inertial
 gravity waves \citep{lubow93}.
 
@@ -32,8 +32,10 @@ and $\kappa \rightarrow \OmK$, but retaining the vertical dependence
 in the crucial vertical shear term,
   $\p_z\Omega$. 
   
-\item We assume thin disk with $h\ll 1$ and take the $z \ll r$ limit to 
-  obtain Eq.\ \ref{rhoisothin} for the equilibrium $\rho(z)$. 
+\item We consider thin disks with $h\ll 1$ 
+  %and take the $z \ll r$ limit to 
+  %obtain 
+  and use the Gaussian approximation, Eq.\ \ref{rhoisothin}, for the equilibrium density field.  
 
 \end{enumerate}
 % These approximations lead to Eq. \ref{full_ode} which, for a thin disk
@@ -113,8 +115,6 @@ Appendix \ref{adia_improve}.
  and show that they are valid in the parameter space of interest for the VSI.
 In particular we point out that the fully-radially-local approximation is only valid for
 short cooling times ($\beta \lesssim 1$).
-
-
 
 %vertically isothermal disk lacks a surface 
 
