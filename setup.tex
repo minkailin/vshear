@@ -140,7 +140,7 @@ The solution for $\Gamma\neq1$ is
   \frac{\left(\Gamma-1\right)}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right).
 \end{align}
 Note that for $\Gamma > 1 +  h^2$ there is a disk surface $H_s$
-where $\rho(r,H_s)=0$. 
+where $\rho(r,H_s)=0$.  For $h \ll 1$, this surface is at $H_s/H \approx \sqrt{2/(\Gamma-1)}$.
 % Note that for $\Gamma\neq1$ the disk has a surface $z=H(r)$ such that
 % $\rho(r,H)=0$. If we parametrize
 % \begin{align}
@@ -151,29 +151,45 @@ where $\rho(r,H_s)=0$.
 %   h^2(r) = \left[1-\frac{ h^2(r)}{\Gamma-1}\right]^{-2}-1. 
 % \end{align}
 
-The vertically isothermal case, $\Gamma = 1$, can be found either 
-independently or as a limit of Eq. \ref{eqm_dens} to be 
-\begin{align}
+The vertically isothermal case, $\Gamma = 1$, can be calculated either 
+as a special case or as the $\Gamma \rightarrow 1$ limit of Eq. \ref{eqm_dens} to be 
+\begin{subequations}\begin{align}
   \frac{\rho(r,z)}{\rho_0(r)} &=
   \exp{\left[\frac{1}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},   \\
   & \approx \exp {\left[ - {z^2 \over 2 H^2}\right]} \label{rhoisothin},
-  \end{align}
-  where Eq.\ \ref{rhoisothin} takes the $z \ll r$ thin disk limit.  
+  \end{align}\end{subequations}
+  where Eq.\ \ref{rhoisothin} takes the $z \ll r$ thin disk limit.  We will primarily focus on
+vertically isothermal disks, the relevant case for passively irradiated
+PPDs \citep{chiang97}. 
+
  
- \subsubsection{Rotation and vertical shear profiles}
-The equilbrium rotation field follows from the density field and centrifugal balance (Eq.\ \ref{hori_equilibrium}),
+ \subsubsection{Rotation and vertical shear profiles}\label{vshear_def}
+The equilibrium rotation field, $\Omega(r,z)$ follows from the density field and centrifugal balance (Eq.\ \ref{hori_equilibrium}),
 giving 
 \begin{align}\label{eqm_rot}
-  \frac{\Omega^2(r,z)}{\OmK^2(r)}=1 +
-  \left(\frac{p+q}{\Gamma}\right) h^2(r) 
+  \frac{\Omega^2}{\OmK^2}=1 +
+  \frac{p+q}{\Gamma} h^2(r) 
   +\frac{s}{\Gamma} \left(1-\frac{1}{\sqrt{1+z^2/r^2}}\right), 
 \end{align}
-for all $\gamma$, where $s\equiv q+p(1-\Gamma)$.  
+for all $\Gamma$, where $s\equiv q+p(1-\Gamma)$.  
 
+The vertical shear shear follows as
+\begin{align}
+  r\frac{\p\Omega^2}{\p z} = \frac{sz}{\Gamma r}  \frac{\OmK^2}{
+    \left(1+z^2/r^2\right)^{3/2}} . \label{vertical_shear_ex} 
+\end{align}
+For $\Gamma = 1$, notice that $s/\Gamma = q$ is the only disk parameter that affects vertical shear.
+Vertical shear increases linearly with height near the mid plane, and $\p_z \Omega^2$ is maximized at
+the smaller of $r/\sqrt{2}$ or $H_s$.
 
-Notice that for $\Gamma = 1$, $s/\Gamma = q$...
+A more general expression for vertical shear holds for vertical polytopes 
+(which satisfy Eq.\ \ref{eqm_press}), with no assumed radial structure:
+\begin{align}
+  r\frac{\p\Omega^2}{\p z} = - \rho^{\Gamma-1}\frac{\p\ln\rho}{\p
+    z}\frac{dK}{dr} = - \frac{g_z}{\Gamma}\frac{d\ln K}{dr}, \label{vertical_shear}
+\end{align}
+where $g_z = \p_z P/\rho$.
 
-...
 %\subsubsection{Vertically isothermal disks}
 %For $\Gamma=1$ the equilibrium density and rotation profiles are
 %given, respectivley, by 
@@ -189,59 +205,58 @@ Notice that for $\Gamma = 1$, $s/\Gamma = q$...
 %PPDs \citep{chiang97}. 
 
 
-\subsection{Vertical shear}\label{vshear_def}
-Note that the disk is in general baroclinic with $\Omega =
-\Omega(r,z)$. This is explicit from Eq. \ref{eqm_rot} and Eq. \ref{vertiso_eqm}, but is also 
-implied by Eq. \ref{vert_equilibrium}---\ref{hori_equilibrium} and 
-Eq. \ref{eqm_press},  
-\begin{align}
-  r\frac{\p\Omega^2}{\p z} = - \rho^{\Gamma-1}\frac{\p\ln\rho}{\p
-    z}\frac{dK}{dr} = - \frac{g_z}{\Gamma}\frac{d\ln K}{dr}.\label{vertical_shear}
-\end{align}
-For the above disk models,
-\begin{align}
-  r\frac{\p\Omega^2}{\p z} = \frac{sz\OmK^2}{\Gamma
-    r\left(1+z^2/r^2\right)^{3/2}}. \label{vertical_shear_ex} 
-\end{align}
-Note that at fixed $r$ there is a maximum vertical shear rate at $|z|=r/\sqrt{2}$,
-which is expected to limit the growth rate of instabilities associated with vertical shear. 
+%\subsection{Vertical shear}\label{vshear_def}
+%Note that the disk is in general baroclinic with $\Omega =
+%\Omega(r,z)$. This is explicit from Eq. \ref{eqm_rot} and Eq. \ref{vertiso_eqm}, but is also 
+%implied by Eq. \ref{vert_equilibrium}---\ref{hori_equilibrium} and 
+%Eq. \ref{eqm_press},  
+%\begin{align}
+%  r\frac{\p\Omega^2}{\p z} = - \rho^{\Gamma-1}\frac{\p\ln\rho}{\p
+%    z}\frac{dK}{dr} = - \frac{g_z}{\Gamma}\frac{d\ln K}{dr}.\label{vertical_shear}
+%\end{align}
+%For the above disk models,
+%\begin{align}
+%  r\frac{\p\Omega^2}{\p z} = \frac{sz\OmK^2}{\Gamma
+%    r\left(1+z^2/r^2\right)^{3/2}}. \label{vertical_shear_ex} 
+%\end{align}
+%Note that at fixed $r$ there is a maximum vertical shear rate at $|z|=r/\sqrt{2}$,
+%which is expected to limit the growth rate of instabilities associated with vertical shear. 
 
 \subsection{Entropy gradients and vertical buoyancy}
-The specific entropy is defined as $S\equiv
-c_p\ln{P^{1/\gamma}/\rho}$, where $c_p$ is the heat capacity at
-constant pressure. For our disk models,
+The gradients of entropy, $S\equiv
+C_p\ln{P^{1/\gamma}/\rho}$, in our disk models are
+\begin{subequations}
 \begin{align}
-  &\frac{\p S}{\p r} = c_p\left[\frac{s}{\gamma r} +
+  &\frac{\p S}{\p r} = C_p\left[\frac{s}{\gamma r} +
     \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p
        r}\right],\\
-  &\frac{\p S}{\p z} = c_p
-  \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p z},\label{dSdz}
+  &\frac{\p S}{\p z} = C_p
+  \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p z} = {C_p g_z \over c_s^2} {\Gamma - \gamma \over \gamma},\label{dSdz}
 \end{align} 
-which are used below. 
+\end{subequations}
+ where $C_p$ is the heat capacity at
+constant pressure. 
 
-For discussion purposes it is useful to define the vertical buoyancy
-frequency $N_z$ via 
+The vertical buoyancy frequency $N_z$ is 
 \begin{align}
-  N_z^2 \equiv - c_p^{-1}g_z \frac{\p S}{\p z} = c_s^2 \left(\frac{\gamma -
-      \Gamma}{\gamma}\right)\left(\frac{\p\ln\rho}{\p z}\right)^2,   \label{nzsq_def}
+  N_z^2 \equiv - C_p^{-1}g_z \frac{\p S}{\p z} = {g_z^2 \over c_s^2}{\gamma - \Gamma \over \gamma}. %c_s^2 \left(\frac{\gamma -
+   %   \Gamma}{\gamma}\right)\left(\frac{\p\ln\rho}{\p z}\right)^2,  
+    \label{nzsq_def}
 \end{align}
-where $g_z\equiv \rho^{-1}\p_zP $. The second equality applies to the
-disk equilibria described above (using Eq. \ref{dSdz}). We are
-interested in sub-adiabatically stratified disks with $\Gamma <
-\gamma$ so that $N_z^2\geq0$. % , and the disk is 
+We only consider convectively stable disks with with $\Gamma <
+\gamma$ and  $N_z^2\geq0$. % , and the disk is 
 % convectively stable in the vertical direction. 
 
-\subsection{Stability against axisymmetric adiabatic
-  perturbations}\label{solberg}
-A rotating flow is stable against axisymmetric adiabatic perturbations
+\subsection{Stability without cooling}\label{solberg}
+In the absence of cooling, axisymmetric stability is ensured
 if both Solberg-Hoiland criteria  are satisfied:
 \begin{align}
-  \kappa^2 - \frac{1}{\rho c_p}\nabla P \cdot \nabla S &> 0,\\
+  \kappa^2 - \frac{1}{\rho C_p}\nabla P \cdot \nabla S &> 0,\\
   -\frac{\p P}{\p z}\left(\frac{\p j^2}{\p r}\frac{\p S}{ \p z} -
     \frac{\p j^2}{\p z}\frac{\p S}{\p r} \right)&>0. \label{second_SH} 
 \end{align}
 \citep{tassoul78}, where $j=r^2\Omega$ is the specific angular
-momentum. For rotationally-supported, thin disks %  pressure gradients are small 
+momentum and $\kappa = r^{-3} \p_r j^2 $ is the epicyclic frequency.  For rotationally-supported, thin disks %  pressure gradients are small 
 % compared to rotation, so 
 the first criterion is generally satisfied. 
 Thus, to assess stability, we consider the second
