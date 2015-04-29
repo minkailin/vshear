@@ -1,27 +1,42 @@
-\section{Analytic results for vertically isothermal disks}\label{analytical}  
+\section{Analytic results with finite cooling times}\label{analytical}  
 
-\subsection{Isothermal perturbations}\label{iso_pert}
-Isothermal perturbations correspond to $\beta = 0$ or $\gamma=1$ so 
-that $\chi = 1$. This case has been investigated by \citetalias{nelson13},
-\citetalias{mcnally14} and \citetalias{barker15}.  
+%\subsection{Isothermal perturbations}\label{iso_pert}
+Previous analytic studies of the VSI have largely focused on isothermal
+perturbations, with infinitely rapid cooling, as discussed in the introduction.  We further explore
+this $\beta = 0$ limit in Appendix \ref{iso_discuss} both to further develop intuition for this 
+idealized case and to establish a connection with previous 
+works.  However our main interest is the effect of finite cooling times, which
+we explore analytically in this section.  
 
-In Appendix \ref{iso_discuss}, we collect some useful results for
-isothermal  perturbations. This includes a necessary condition for
-instability (there must be vertical shear) and an upper bound to the
-instability growth rate (it is limited by the maximum vertical shear
-rate in the disk). Neither of these actually require the thin-disk
-form of the density field described above.  
-We also develop solutions in the thin-disk
-limit, but without assuming low frequency from the onset. 
-The methods used in Appendix \ref{iso_discuss} and results obtained
-therein motivates the solution procedure employed in the following
-sections, and are provided for ease of reference. We refer the reader
-to \citetalias{barker15} for a more detailed treatment of isothermal 
-perturbations. %which also account for more general boundary
-               %conditions than that considered below 
+In \S\ref{relax_pert} we prove that even an infinitesimal increase in the cooling time,
+starting from $\beta = 0$, slows the growth rate of the VSI.  In \S\ref{disp_relax} we 
+derive exact solutions to the simplified VSI model developed above (Eq.\ \ref{nearly_iso_explicit}).
+In \S\ref{iso_vsi_beta_crit} we reach our main result, the maximum cooling time above which 
+VSI growth is suppressed.  We heuristically argue for this result in \S\ref{vsi_require} and numerically
+verify it in \S\ref{numerical}.
 
-\subsection{The effect of introducing a small but finite
-  thermal relaxation time}\label{relax_pert}
+
+%Isothermal perturbations correspond to $\beta = 0$ or $\gamma=1$ so 
+%that $\chi = 1$. This case has been investigated by \citetalias{nelson13},
+%\citetalias{mcnally14} and \citetalias{barker15}.  
+%
+%In Appendix \ref{iso_discuss}, we collect some useful results for
+%isothermal  perturbations. This includes a necessary condition for
+%instability (there must be vertical shear) and an upper bound to the
+%instability growth rate (it is limited by the maximum vertical shear
+%rate in the disk). Neither of these actually require the thin-disk
+%form of the density field described above.  
+%We also develop solutions in the thin-disk
+%limit, but without assuming low frequency from the onset. 
+%The methods used in Appendix \ref{iso_discuss} and results obtained
+%therein motivates the solution procedure employed in the following
+%sections, and are provided for ease of reference. We refer the reader
+%to \citetalias{barker15} for a more detailed treatment of isothermal 
+%perturbations. %which also account for more general boundary
+%               %conditions than that considered below 
+
+\subsection{Introducing a small but finite
+  cooling time}\label{relax_pert}
 We are interested in finite thermal relaxation
 timescales $\beta > 0$, but it is instructive to
 first ask  the more analytically tractable question: how 
@@ -50,7 +65,7 @@ dominate in numerical calculations with increasing $\beta$
 values of $\khat$, as well as in PPDs 
 with a realistic estimate for thermal timescales
 (\S\ref{application}). We will see later that consideration of low
-order modes in fact provides a useful way to charactertize the effect
+order modes in fact provides a useful way to characterize the effect
 of increasing the thermal timescale on the VSI. 
 
 We linearize Eq. \ref{nearly_iso_explicit} about the above
@@ -117,7 +132,7 @@ We now solve Eq. \ref{nearly_iso_explicit} explicitly. We first write
   \delta v_z(\zhat) =
   g(\zhat)\exp\left(\frac{\lambda\zhat^2}{2}\right), \label{adia_ansatz}
 \end{align}
-where $\lambda$ is a constant to be chosen for convenience. Inserting
+where the constant $\lambda$ is a constant to be chosen for convenience. Inserting
 Eq. \ref{adia_ansatz} into Eq. \ref{nearly_iso_explicit} gives
 \begin{align}
   0 = g^{\prime\prime} - \hat{z}\left(A - 2\lambda\right)g^\prime + \left(B +
@@ -163,8 +178,7 @@ complicated and generally requires a numerical solution. However,
 simple results may be obtained in limiting cases which we consider
 below.  
 
-\subsection{Upper limit on the thermal relaxation timescale for the
-  VSI}\label{iso_vsi_beta_crit}
+\subsection{An upper limit to the cooling time}\label{iso_vsi_beta_crit}
 Here we estimate the maximum thermal relaxation timescale 
 $\beta$ that allows the VSI.  
 Our starting point is Eq. \ref{relax_cond1}---\ref{relax_cond2} which
@@ -180,9 +194,9 @@ also assume $|q|$ and $\beta$ are $O(1)$ or smaller. For a thin disk
     \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2
    -  \left(\hat{\omega}\khat\right)^4,\label{relax_cond_simp1}\\
    0= &2M(M+1) + \frac{\beta}{h q} (1-\gamma)(1+2M)^2
-   \left(\hat{\omega}\khat\right) + \left(\hat{\omega}\khat\right)^2. \label{relax_cond_simp2}
+   \left(\hat{\omega}\khat\right) + \left(\hat{\omega}\khat\right)^2, \label{relax_cond_simp2}
 \end{align}
-(We explain this in Appendix \ref{disp_neut_limit}.)
+as explained in  Appendix \ref{disp_neut_limit}.
 
 Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2} is a pair of
 simultaneous equations for $\hat{\omega}$ and $\beta$ \emph{assuming} marginal 

@@ -1,31 +1,14 @@
-\section{Full governing equation for vertically isothermal disks in
-  the vertically global shearing box}\label{adia_improve}
-Here we explain the derivation of Eq. \ref{nearly_iso_explicit} used in our 
-analytical discussion in \S\ref{analytical}. We shall need the
-vertical derivative of the epicyclic frequency $\kappa$. In the
-vertically isothermal global
-disk with $\Gamma=1$ we have 
-\begin{align}\label{dkappa2}
-  \frac{\p\kappa^2}{\p z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
-    r}\frac{\p\Omega^2}{\p z} = -
-  \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2} \left(
-    \frac{3z^2}{r^2+z^2}-1\right) \equiv - \frac{\p\ln\rho}{\p z}\frac{qc_s^2}{r^2}F(r,z).
-\end{align}
-% For the local problem we may then write
-% \begin{align}
-%   \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z),
-% \end{align}
-The function $F$ increases monotonically from $F=-1$ at $z=0$ to $F\to2$
-as $|z|\to\infty $, so $|F|=O(1)$. 
-
-In the vertically global shearing box (VGSB) approximation, we set
-$\zeta=0$ in Eq. \ref{lin_mass} --- \ref{lin_energy}. We then eliminate
-the horizonatal velocity perturbations ($\delta v_x,\, \delta v_y$) to
+\section{Derivation of the approximate equations}\label{adia_improve}
+Here we detail the derivation of Eq. \ref{nearly_iso_explicit} used in the 
+analytical derivations of \S\ref{analytical}.  Starting with Eqs.\ \ref{lin_mass} --- \ref{lin_energy},
+we set $\Gamma = 1$ and $\zeta = 0$ for the vertically isothermal limit and the fully-radially-local 
+approximation, respectively.  We  eliminate
+the horizontal velocity perturbations ($\delta v_x,\, \delta v_y$) to
 obtain  
 %we can eliminate variables 
 %to obtain a pair or ordinary differential
 %equations for $W,Q$ as 
-\begin{align}
+\begin{subequations}\label{A1}\begin{align}
   & \ii\upsilon\delta v_z = \frac{dW}{dz} + \frac{d\ln{\rho}}{d z}\left(W-Q\right),\label{ode_vz} \\
   &\frac{\upsilon^2}{c_s^2}Q + \frac{\upsilon^2k_x^2}{D}W =\ii\upsilon \left(\frac{\ii
       k_x r}{D}\frac{d\Omega^2}{dz} -
@@ -46,13 +29,31 @@ obtain
   % 
   % \left[\frac{dW}{dz} + \frac{d\ln{\rho}}{dz}\left(W-Q\right)\right],
   \label{ode_Q} 
-\end{align}
-(note that $\Gamma=1$ has been used) where
+\end{align}\end{subequations}
+where
 \begin{align}
   D \equiv \kappa^2 - \upsilon^2,
 \end{align} 
-and we have replaced the notation $\p_z$ by $d/dz$ since we are
-considering solutions at a fixed radius. 
+and we have replaced $\p/\p z$ by $d/dz$ for the fully radially local treatment. 
+
+Reduction to a single ODE requires vertical derivatives.  At this point we could use the 
+low frequency and Keplerian approximations to set $D \rightarrow \kappa^2 \rightarrow \OmK^2$,
+ and we would wind up with Eq. \ref{nearly_iso_explicit} more directly.
+However to demonstrate that the order of approximation is irrelevant, we will retain
+the vertical derivatives of the epicyclic frequency $\kappa$,
+\begin{align}\label{dkappa2}
+  \frac{d\kappa^2}{d z} = 4 \frac{\p\Omega^2}{\p z} + r\frac{\p}{\p
+    r}\frac{\p\Omega^2}{\p z} = -
+  \frac{d\ln\rho}{d z}\frac{qc_s^2}{r^2} \left(
+    \frac{3z^2}{r^2+z^2}-1\right) \equiv - \frac{d\ln\rho}{d z}\frac{qc_s^2}{r^2}F(r,z).
+\end{align}
+% For the local problem we may then write
+% \begin{align}
+%   \frac{dD}{dz}  = - \frac{d\ln\rho}{dz}\frac{qc_s^2}{r^2}F(z),
+% \end{align}
+The function $F$ increases monotonically from $F=-1$ at $z=0$ to $F\to2$
+as $|z|\to\infty $, so $|F|=O(1)$. 
+
 
 % In \S\ref{approx_gov} we made the replacement $D\to\OmK^2$ before
 % eliminating variables to obtain a single equation for $\delta v_z$ in
@@ -65,10 +66,7 @@ considering solutions at a fixed radius.
 %Eq. \ref{lin_vz}  (with $\Gamma=1$), but now retain the vertical dependence
 %of $D$ using Eq. \ref{dkappa2}, to obtain  
 
-We now eliminate $W,\, Q$ from Eq. \ref{ode_vz} --- \ref{ode_Q} in
-favor of $\delta v_z$, making use of Eq. \ref{dkappa2} to evaluate
-$dD/dz$, to obtain  
-
+We now eliminate $W,\, Q$ from Eqs.\ \ref{A1}, using  Eqs. \ref{chi} and \ref{dkappa2} to obtain  
 \begin{align}\label{full_ode}
   0 =& \frac{d^2\delta v_z}{dz^2} + \left[1 + \frac{\ii k_x c_s^2
       q}{Dr} - \frac{k_x^2c_s^2}{\left(k_x^2c_s^2 + \chi
@@ -81,12 +79,12 @@ $dD/dz$, to obtain
       \frac{\ii k_x q}{r}\right)
    \left[\left(1-\chi\right) +
      \frac{\chi}{\left(k_x^2c_s^2 + \chi D\right)}\frac{qc_s^2 F}{r^2}\right] 
-   \right\}\delta v_z,
+   \right\}\delta v_z.
 \end{align}
-where we recall $\chi = \left(1-\ii\upsilon t_c\right)/\left(1-\ii\upsilon
-t_c \gamma\right)$. Making the low frequency and Keplerian
-approximations is equivalent to the replacement $D\to
-\OmK^2$. This gives, in terms of dimensionless variables,  
+
+Now we make the low frequency and Keplerian
+approximations, setting $D\to
+\OmK^2$, to give  
 \begin{align}
   &\delta v_z ^{\prime\prime} + \left[1 + \ii h q\hat{k} -
     \frac{ \hat{k}^2}{
@@ -97,10 +95,11 @@ approximations is equivalent to the replacement $D\to
       \ii h
       q\hat{k}\right)\left[1 - \chi +
       \frac{\chi}{\left(\hat{k}^2+\chi\right)}qh^2F\right]\right\}\delta v_z \notag\\&=
-  -\hat{\upsilon}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3}.
+  -\hat{\upsilon}^2\left(\hat{k}^2+\chi\right)\delta v_z\label{adia_diso3},
 \end{align} 
-Since we are interested in thin disks with $h \ll 1$ and $|q| =
-O(1)$, we neglect the terms proportional to $h^2$, giving 
+in terms of dimensionless variables of Eq.\ \ref{nondim}.
+
+Retaining terms to first order in the disk aspect ratio, $h \ll 1$, gives
 \begin{align}
   0= \delta v_z ^{\prime\prime} + \left(1 + \ii h
      q\hat{k}\right)\ln\rho^{\prime}\delta v_z^\prime 
@@ -110,14 +109,21 @@ O(1)$, we neglect the terms proportional to $h^2$, giving
      - \ln\rho^{\prime
        2}\left(\khat^2 -
        \ii h
-       q\hat{k}\right)\left(1 - \chi\right)\right]\delta v_z,\label{vertiso_gov_nondim}
+       q\hat{k}\right)\left(1 - \chi\right)\right]\delta v_z.\label{vertiso_gov_nondim}
  \end{align}
- which is used in the discussion below.  Eq. \ref{nearly_iso_explicit}, as
- used in our analytical discussion, is obtained by inserting the 
- thin-disk expression for the density field. We comment that the simpler way
- of obtaining Eq. \ref{vertiso_gov_nondim} is to neglect the vertical 
- dependence of $D$ by setting $D\to\OmK^2$ in Eq. \ref{ode_w} before eliminating
- variables in favor of $\delta v_z$.  
+Applying Eq.\ \ref{rhoisothin} for the density field gives the desired result, Eq. \ref{nearly_iso_explicit}. 
+
+We can establish a correspondence between our  Eq. \ref{nearly_iso_explicit} and
+ Eq. 41 in \cite{lubow93}, which describes adiabatic axisymmetric waves in
+a vertically isothermal disk without vertical shear.   Accounting for the required change of variables, 
+the correspondence is exact after setting $q=0$ (no vertical shear) and
+$\chi=1/\gamma$ (adiabatic flow) in our Eq. \ref{nearly_iso_explicit},
+and applying the approximations in our \S \ref{sec:simplified} to \citeauthor{lubow93}.    
+
+%We comment that the simpler way
+ %of obtaining Eq. \ref{vertiso_gov_nondim} is to neglect the vertical 
+ %dependence of $D$ by setting $D\to\OmK^2$ in Eq. \ref{ode_w} before eliminating
+ %variables in favor of $\delta v_z$.  
 
 
 %Thus, a simpler route to the governing
