@@ -630,11 +630,11 @@ Fig. \ref{compare_modes_iso_kx30}, for which $\sigma\propto|\omega|$.
 
 
 
-\section{Coefficients for the dispersion relation for perturbations
-with thermal relaxation}\label{relax_coeff}
-The coefficients of the dispersion relation Eq. \ref{relax_disp} is
-given by:
-\begin{align}
+\section{Analytic dispersion relation
+with thermal relaxation}
+\subsection{Coefficients}\label{relax_coeff}
+The coefficients of the dispersion relation Eq.\ \ref{relax_disp} are:
+\begin{subequations}\label{coeffs}\begin{align}
   &c_0 = M(M+1)A^2,\\
   &c_1 = \ii\beta\left\{\left(1-\gamma\right)\left[1 +
       \khat^2\left(1+2M\right)^2 - 4 \ii h q\khat M (M+1)\right] 
@@ -652,43 +652,52 @@ given by:
     \khat\right)-2\right] - \left(1+\khat^2\right)^2,\\
 &c_5 = 2\ii\beta\left(1+\khat^2\right)\left(1+\gamma\khat^2\right),\\
 &c_6 = \beta^2\left(1+\gamma\khat^2\right)^2.
-\end{align}
+\end{align}\end{subequations}
 
-\subsection{Limiting form with real frequencies and $\khat^2\gg 1$}\label{disp_neut_limit}
-Assuming neutral modes with real $\hat{\upsilon}=\hat{\omega}$ and $\khat^2\gg 1$, the real and imaginary parts of
-Eq. \ref{relax_disp} are approximately 
-\begin{align}
-  0 =&M(M+1)(1-h^2 q^2 \khat^2) + 4\beta h q M(M+1)\left(\hat{\omega}\khat\right) 
+\subsection{Finding marginal stability}\label{disp_neut_limit}
+To investigate marginal stability we set $\hat{\sigma} = 0$ so the frequency, $\hat{\upsilon}=\hat{\omega}_c$, is real.  
+We take the short radial wavelength limit, $\khat^2\gg 1$, of the coefficients in Eq.\ \ref{coeffs}.  The real and 
+imaginary parts of Eq. \ref{relax_disp} then give relations for $\hat{\omega}_c$ and $\beta_c$, the cooling time for 
+marginal stability, as 
+\begin{align}\
+  0 =&M(M+1)(1-h^2 q^2 \khat^2) + 4\beta_c h q M(M+1)\left(\hat{\omega}_c\khat\right) 
  +\left[1 +
-    \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2
- + 2h q \gamma\beta \left(\hat{\omega}\khat\right)^3 -  \left(\hat{\omega}\khat\right)^4\notag \\
-  &+ \beta^2\gamma^2\hat{\omega}^2
-  \left(\hat{\omega}\khat\right)^4,\label{relax_cond1} \\
+    \gamma\beta_c^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}_c\khat\right)^2 \label{relax_cond1} \\
+ &+ 2h q \gamma\beta_c \left(\hat{\omega}_c\khat\right)^3 -  \left(\hat{\omega}_c\khat\right)^4 
+  + \beta_c^2\gamma^2\hat{\omega}_c^2
+  \left(\hat{\omega}_c\khat\right)^4, \notag \\
    0=& 2h q M (M+1)\khat +
-   \beta(1-\gamma)(1+2M)^2\khat\left(\hat{\omega}\khat\right) 
-   + h q \khat \left(\hat{\omega}\khat\right)^2 -
-   2\beta\hat{\omega}\left(\hat{\omega}\khat\right)^2
+   \beta_c(1-\gamma)(1+2M)^2\khat\left(\hat{\omega}_c\khat\right) 
+   + h q \khat \left(\hat{\omega}_c\khat\right)^2 -
+   2\beta_c\hat{\omega}_c\left(\hat{\omega}_c\khat\right)^2
    - h q
-   \gamma^2\beta^2\hat{\omega}\left(\hat{\omega}\khat\right)^3 
-   +
-   2\beta\gamma\hat{\omega}\left(\hat{\omega}\khat\right)^4 \label{relax_cond2}. 
+   \gamma^2\beta_c^2\hat{\omega}_c\left(\hat{\omega}_c\khat\right)^3 \label{relax_cond2} \\
+   &+
+   2\beta_c\gamma\hat{\omega}_c\left(\hat{\omega}_c\khat\right)^4 \notag. 
 \end{align}
-These equations are used to derive a critical thermal timescale in
-\S\ref{iso_vsi_beta_crit}. For fixed $M=O(1)$,  we assume
-$|\hat{\omega}\khat|$ remain constant but consider $\khat\gg 1$ so
-that $|\hat{\omega}|\ll 1$.  Then for a thin disk $h \ll 1$
-we neglect the second, fourth and last term in Eq. \ref{relax_cond1};
-and neglect the last three terms in Eq. \ref{relax_cond2}. This
-approximation gives Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2},
-but is not valid if $\beta$ or $|q|$ is large. 
+We next (re)-apply the low frequency and thin approximations, $h, \hat{\omega}_c \ll 1$ and 
+further apply the rapid cooling limit $\beta_c \ll 1$.  We retain terms with the combinations 
+$\hat{\omega}_c \hat{k}$, $\beta_c/h$, and $h \hat{k}$ which could be order unity.  For inertial waves we know that
+$\hat{\omega}_c \sim 1/\hat{k}$ holds, while $\beta_c/h \sim O(1)$ will be justified \emph{a posteriori}
+and the magnitude of $h \hat{k}$ depends on the choice of wavenumber.  Applying this ordering we 
+arrive at Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}.
 
-For the fundamental mode $M=0$ and Eq. \ref{relax_cond1} ---
-\ref{relax_cond2} simplify significantly. It is then straight
-forward to eliminate $\hat{\omega}\khat$ between 
-Eq. \ref{relax_cond_simp1} and \ref{relax_cond_simp2} to obtain
-$\beta_\mathrm{crit}$ (Eq. \ref{iso_vsi_cond}) without
-assuming $|h q \khat|\lesssim 1$, as done in the main text to obtain the
-equivalent expression for $M>0$ (Eq. \ref{bcrit_gen}).
+ 
+%For fixed $M=O(1)$,  we assume
+%$|\hat{\omega}\khat|$ remain constant but consider $\khat\gg 1$ so
+%that $|\hat{\omega}|\ll 1$.  Then for a thin disk $h \ll 1$
+%we neglect the second, fourth and last term in Eq. \ref{relax_cond1};
+%and neglect the last three terms in Eq. \ref{relax_cond2}. This
+%approximation gives Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2},
+%but is not valid if $\beta$ or $|q|$ is large. 
+
+%For the fundamental mode $M=0$ and Eq. \ref{relax_cond1} ---
+%\ref{relax_cond2} simplify significantly. It is then straight
+%forward to eliminate $\hat{\omega}\khat$ between 
+%Eq. \ref{relax_cond_simp1} and \ref{relax_cond_simp2} to obtain
+%$\beta_\mathrm{crit}$ (Eq. \ref{iso_vsi_cond}) without
+%assuming $|h q \khat|\lesssim 1$, as done in the main text to obtain the
+%equivalent expression for $M>0$ (Eq. \ref{bcrit_gen}).
 
 
 
