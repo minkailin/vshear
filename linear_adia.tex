@@ -181,23 +181,30 @@ below.
 
 \subsection{An upper limit to the cooling time}\label{iso_vsi_beta_crit}
 Here we estimate the maximum thermal relaxation timescale 
-$\beta$ that allows the VSI.  
-Our starting point is Eq. \ref{relax_cond1}---\ref{relax_cond2} which
-approximates the dispersion relation Eq. \ref{relax_disp} assuming marginal
-stability and $\khat^2\gg 1$. We consider $M=0$ (the 
-fundamental mode) or  $M=O(1)$ and low frequency $|\hat{\omega}|\ll
-1$ such that $|\hat{\omega}\khat|$ is $O(1)$. We 
-also assume $|q|$ and $\beta$ are $O(1)$ or smaller. For a thin disk
-($h \ll 1$) we have 
-\begin{align}
- 0 = &M(M+1)\left(1-h^2q^2\khat^2\right) \notag\\ 
- &+ \left[1 +
-    \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2
-   -  \left(\hat{\omega}\khat\right)^4,\label{relax_cond_simp1}\\
-   0= &2M(M+1) + \frac{\beta}{h q} (1-\gamma)(1+2M)^2
-   \left(\hat{\omega}\khat\right) + \left(\hat{\omega}\khat\right)^2, \label{relax_cond_simp2}
-\end{align}
-as explained in  Appendix \ref{disp_neut_limit}.
+$\beta_c$ that allows growth the VSI.  In Appendix \ref{disp_neut_limit}
+we derive the following relation between $\beta_c$ and the wave frequency,
+\hat{\omega}_c$  at marginal stability to the VSI
+
+
+%Our starting point is Eq. \ref{relax_cond1}---\ref{relax_cond2} which
+%approximates the dispersion relation Eq. \ref{relax_disp} assuming marginal
+%stability and $\khat^2\gg 1$. We consider $M=0$ (the 
+%fundamental mode) or  $M=O(1)$ and low frequency $|\hat{\omega}|\ll
+%1$ such that $|\hat{\omega}\khat|$ is $O(1)$. We 
+%also assume $|q|$ and $\beta$ are $O(1)$ or smaller. 
+%
+%For a thin disk
+%($h \ll 1$) we have 
+\begin{subequations}\begin{align}
+ \left(\hat{\omega}\khat\right)^4  = &  \left[1 +
+    \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2 \label{relax_cond_simp1}\\ 
+ &+ M(M+1)\left(1-h^2q^2\khat^2\right)
+    , \notag \\
+   \left(\hat{\omega}\khat\right)^2 = & \frac{\beta}{h q} (\gamma-1)(1+2M)^2
+   \left(\hat{\omega}\khat\right) \label{relax_cond_simp2}\\
+   $- 2M(M+1) , \notag
+\end{align}\end{subequations}
+These equations hold for $\beta_c \ll 1$ and $\hat{k} \sim 1/|\
 
 Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2} is a pair of
 simultaneous equations for $\hat{\omega}$ and $\beta$ \emph{assuming} marginal 
@@ -205,11 +212,14 @@ stability. %  (It is important to note that marginal stability is an
 % assumption.)
 If $\beta\ll 1$ and the disk is sufficiently thin so that  
 $|h q \khat |^2\lesssim 1$, 
-then an approximate solution to Eq. \ref{relax_cond_simp1} is 
+
+
+An approximate solution to Eq. \ref{relax_cond_simp1} for the frequency
 \begin{align}
   \left(\hat{\omega}\khat\right)^2 \simeq (M+1)\left(1 -
     \frac{M|h q \khat|^2}{2M+1}\right).  \label{marg_freq_approx}
 \end{align}
+holds for either (a) $M= 0$ and arbitrary $|h q \hat{k}|$ or (b) $|h q \hat{k}| \ll 1$ and arbirtary $M \sim O(1)$. 
 Note that for $q=0$, Eq. \ref{marg_freq_approx} reduces to 
 the dispersion relation for low-frequency inertial waves in vertically
 isothermal disks without vertical shear (see Appendix
