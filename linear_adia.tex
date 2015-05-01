@@ -12,9 +12,7 @@ In \S\ref{relax_pert} we show that even an infinitesimal increase in the cooling
 starting from $\beta = 0$, slows the growth rate of the VSI.  In \S\ref{disp_relax} we 
 derive exact solutions to the simplified VSI model developed above (Eq.\ \ref{nearly_iso_explicit}).
 In \S\ref{iso_vsi_beta_crit} we reach our main result, the maximum cooling time above which 
-VSI growth is suppressed.  We heuristically argued for this result in
-\S\ref{vsi_require}, and will numerically
-verify it in \S\ref{numerical}.
+VSI growth is suppressed.
 
 
 %Isothermal perturbations correspond to $\beta = 0$ or $\gamma=1$ so 
@@ -183,146 +181,72 @@ below.
 Here we estimate the maximum thermal relaxation timescale 
 $\beta_c$ that allows growth the VSI.  In Appendix \ref{disp_neut_limit}
 we derive the following relation between $\beta_c$ and the wave frequency,
-\hat{\omega}_c$  at marginal stability to the VSI
-
-
-%Our starting point is Eq. \ref{relax_cond1}---\ref{relax_cond2} which
-%approximates the dispersion relation Eq. \ref{relax_disp} assuming marginal
-%stability and $\khat^2\gg 1$. We consider $M=0$ (the 
-%fundamental mode) or  $M=O(1)$ and low frequency $|\hat{\omega}|\ll
-%1$ such that $|\hat{\omega}\khat|$ is $O(1)$. We 
-%also assume $|q|$ and $\beta$ are $O(1)$ or smaller. 
-%
-%For a thin disk
-%($h \ll 1$) we have 
+$\hat{\omega}_c$  at marginal stability to the VSI:
 \begin{subequations}\begin{align}
- \left(\hat{\omega}\khat\right)^4  = &  \left[1 +
-    \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}\khat\right)^2 \label{relax_cond_simp1}\\ 
- &+ M(M+1)\left(1-h^2q^2\khat^2\right)
-    , \notag \\
-   \left(\hat{\omega}\khat\right)^2 = & \frac{\beta}{h q} (\gamma-1)(1+2M)^2
-   \left(\hat{\omega}\khat\right) \label{relax_cond_simp2}\\
-   $- 2M(M+1) , \notag
+ \left(\hat{\omega}_c\khat\right)^4  = &  
+% \left[1 + \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}_c\khat\right)^2 \label{relax_cond_simp1}\\ 
+ \left(\hat{\omega}_c\khat\right)^2  + M(M+1)\left(1-h^2q^2\khat^2\right) , \label{relax_cond_simp1} \\
+   \left(\hat{\omega}_c\khat\right)^2 = & \frac{\beta}{h q} (\gamma-1)(1+2M)^2
+   \left(\hat{\omega}_c\khat\right) \label{relax_cond_simp2}\\
+   &- 2M(M+1) . \notag
 \end{align}\end{subequations}
-These equations hold for $\beta_c \ll 1$ and $\hat{k} \sim 1/|\
+These equations hold for $\beta_c \ll 1$ and $\khat \sim 1/\hat{\omega}_c \gg1$,
+as explained in Appendix \ref{disp_neut_limit}.
 
-Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2} is a pair of
-simultaneous equations for $\hat{\omega}$ and $\beta$ \emph{assuming} marginal 
-stability. %  (It is important to note that marginal stability is an
-% assumption.)
-If $\beta\ll 1$ and the disk is sufficiently thin so that  
-$|h q \khat |^2\lesssim 1$, 
-
-
-An approximate solution to Eq. \ref{relax_cond_simp1} for the frequency
+Eq. \ref{relax_cond_simp1} gives an approximate result for the frequency
 \begin{align}
-  \left(\hat{\omega}\khat\right)^2 \simeq (M+1)\left(1 -
-    \frac{M|h q \khat|^2}{2M+1}\right).  \label{marg_freq_approx}
+ \left(\hat{\omega}_c\khat\right)^2 \simeq (M+1)\left[1  + O( M|h q \khat|^2)\right]  \label{marg_freq_approx}
+%  \left(\hat{\omega}_c\khat\right)^2 \simeq (M+1)\left(1 -
+%    \frac{M|h q \khat|^2}{2M+1}\right).  \label{marg_freq_approx}
 \end{align}
-holds for either (a) $M= 0$ and arbitrary $|h q \hat{k}|$ or (b) $|h q \hat{k}| \ll 1$ and arbirtary $M \sim O(1)$. 
-Note that for $q=0$, Eq. \ref{marg_freq_approx} reduces to 
-the dispersion relation for low-frequency inertial waves in vertically
-isothermal disks without vertical shear (see Appendix
-\ref{stable_novshear}). Inserting Eq. \ref{marg_freq_approx} into
+which holds for either (a) $M= 0$ and arbitrary $|h q \hat{k}|$ or (b) $|h q \hat{k}| \ll 1$ and arbirtary $M \sim O(1)$. 
+These distinct conditions mean that our results are most robust for the fundamental vertical mode ($M = 0$) but also
+hold for higher order vertical modes when radial wavelengths are not too short.
+Note that Eq. \ref{marg_freq_approx} 
+reduces (\emph{nearly}?)\footnote{\emph The correspondence is only exact 
+if $L = M+1$.  Is this the case (in which case at least note in the appendix) or is there a discrepancy (in which case 
+we can't say it reduces)?}
+ to the dispersion relation for low-frequency inertial waves 
+%in vertically isothermal disks without vertical shear 
+(see Appendix\ref{stable_novshear} for details).
+
+Inserting Eq. \ref{marg_freq_approx} into
 Eq. \ref{relax_cond_simp2}, we obtain 
 \begin{align}\label{bcrit_gen}
-  \beta &= \frac{h|q|}{(\gamma - 1)}
-  \frac{\sqrt{1+M}}{(1+2M)}\left[1 + \frac{M(2M-1)|h q
-      \khat|^2}{2(2M+1)^2}\right].
+  \beta_c &\simeq  \frac{h|q|}{(\gamma - 1)}
+  \frac{\sqrt{1+M}}{(1+2M)}
+%  \left[1 + \frac{M(2M-1)|h q   \khat|^2}{2(2M+1)^2}\right].
 %  &\lesssim \beta_\mathrm{crit}\notag
 \end{align}
-Since $|h q \khat|^2\lesssim 1$ by assumption, we have  
-\begin{align}\label{iso_vsi_cond}
+where the above-mentioned approximations still hold, but the correction term ($O(M |h q \khat|^2)$) is now suppressed.
+Eq. \ref{bcrit_gen} says that higher $M$ modes have lower $\beta_c$, i.e.\ require faster cooling for VSI growth.
+This trend is confirmed numerically in \S\ref{therm_relax_eff} (and the trend holds even when the restrictive assumption
+on $|h q \hat{k}|$ is dropped). 
+
+We are most interested in the longest cooling time which allows growth for any $M$.  
+This criterion is clearly set by the fundamental, $M = 0$, mode.  Our cooling criterion for 
+VSI growth is thus 
+ \begin{align}\label{iso_vsi_cond}
   \beta\leq \beta_\mathrm{crit}  \equiv
-  \frac{h|q|}{\gamma-1}, 
+  \frac{h|q|}{\gamma-1} . 
 \end{align}
-where $\beta_\mathrm{crit}$ is the critical thermal timescale for
-the fundamental mode ($M=0$). 
-We comment the expression for $\beta_\mathrm{crit}$ may in fact be
-obtained without assuming it is much less than unity from the onset or
-$|h q\khat|\lesssim 1$. % This is because for $M=0$, 
-% Eq. \ref{relax_cond_simp1} --- \ref{relax_cond_simp2} simplify 
-We will  
-confirm $\beta_\mathrm{crit}$ numerically in \S\ref{bcrit_num_test}. 
+The thin disk approximation, $h \ll 1$, justifies the $\beta_c \ll 1$ approximation.
+ We heuristically explain $\beta_\mathrm{crit}$ in
+\S\ref{vsi_require}, and numerically test its validity in \S\ref{bcrit_num_test}. 
 
-Eq. \ref{iso_vsi_cond} suggests that as the thermal timescale $\beta$
-is increased from zero, higher order modes with $M>0$
-will be stabilized before the fundamental mode. We indeed observe this
-trend in numerical calculations (\S\ref{therm_relax_eff}), despite
-adopting somewhat restrictive assumptions for $M>0$ in order to arrive
-at the simple expression Eq. \ref{bcrit_gen}. 
+%Eq. \ref{iso_vsi_cond} suggests that as the thermal timescale $\beta$
+%is increased from zero, higher order modes with $M>0$
+%will be stabilized before the fundamental mode. We indeed observe this
+%trend in numerical calculations (\S\ref{therm_relax_eff}), despite
+%adopting somewhat restrictive assumptions for $M>0$ in order to arrive
+%at the simple expression Eq. \ref{bcrit_gen}. 
 
-%Rapid thermal relaxation is required to overcome a stabilizing
-%vertical entropy gradient \citep{goldreich67,urpin98,urpin03}. 
-%Eq. \ref{iso_vsi_cond} quantifies this requirement for vertically
-%global disturbances (which have small $M$).  
-
-We can interpret  $\beta_\mathrm{crit}$ as the thermal timescale below
-which buoyancy becomes ineffective and perturbations are effectively
-isothermal so the VSI can operate.  We see that in a thin disk, a very short thermal timescale
-is required ($\beta_\mathrm{crit}\ll 1$) because
-$\beta_\mathrm{crit}\propto h$. Physically, this is because
-vertical shear is weak in a thin disk, so even a small entropy
-gradient can significantly reduce VSI growth rates.  
+%We can interpret  $\beta_\mathrm{crit}$ as the thermal timescale below
+%which buoyancy becomes ineffective and perturbations are effectively
+%isothermal so the VSI can operate.  We see that in a thin disk, a very short thermal timescale
+%is required ($\beta_\mathrm{crit}\ll 1$) because
+%$\beta_\mathrm{crit}\propto h$. Physically, this is because
+%vertical shear is weak in a thin disk, so even a small entropy
+%gradient can significantly reduce VSI growth rates.  
 
 
-
-
-
-% Here we estimate the maximum thermal relaxation timescale
-% $\beta$ that allows the fundamental VSI mode for $\khat\gg1$.   
-
-% At marginal stability, the eigenfrequency $\hat{\upsilon}=\hat{\omega}$
-% is real. The dispersion relation for the fundamental mode is then
-% \begin{align}\label{relax_disp_fund}
-%   0 = \sum_{l=1}^{6}c_l\hat{\omega}^l \quad \text{for $M=\hat{\nu}=0$}.  
-% \end{align} 
-% Taking the real and imaginary parts of Eq. \ref{relax_disp_fund} and considering 
-% $\khat\gg1$, we find
-% \begin{align}
-%   0 =& \left[1 + \gamma\beta^2\left(1-\gamma\right)\right] + 2h q
-%   \gamma\beta (\hat{\omega}\khat) -  (\hat{\omega}\khat)^2 \notag\\
-%   &+ \beta^2\gamma^2\hat{\omega}^2 (\hat{\omega}\khat)^2,\label{relax_cond1}\\
-%   0=& \beta(1-\gamma)\khat^2 + h q \khat^2 (\hat{\omega}\khat)
-%   - 2\beta (\hat{\omega}\khat)^2 - h q \gamma^2\beta^2 (\hat{\omega}\khat)^3 \notag\\
-%     &+ 2\beta\gamma(\hat{\omega}\khat)^4.  
-% \label{relax_cond2}
-% \end{align}
-% This is a pair of simultaneous equations for
-% $\hat{\omega}$ and $\beta$. Now, low-frequency axisymmetric waves in
-% the absence of vertical shear are stable and  satisfy
-% $\hat{\omega}\propto \khat^{-1}$ (Appendix \ref
-% {stable_novshear}, Eq. \ref{iso_disp_full}).  We are thus motivated to
-% seek solutions to Eq. \ref{relax_cond1}---\ref{relax_cond2} with  
-% % we wish to seek a criterion independent of k 
-% % \begin{align}
-% %   \khat \to \infty, \quad \hat{\omega}\to 0 ,\quad \hat{\omega} \khat\text{ finite}.
-% %\end{align}
-% \begin{align}
-%   \khat \gg1, \quad |\hat{\omega}|\ll 1 ,\quad
-%   |\hat{\omega}\khat|=O(1). 
-% \end{align}
-% Then
-% \begin{align}
-%   \hat{\omega}\khat = \frac{(\gamma-1)\beta}{h q}
-% \end{align}
-% from Eq. \ref{relax_cond2}, which implies, from Eq. \ref{relax_cond1}
-% that
-% \begin{align}\label{beta_crit0}
-%   \beta = \frac{1}{(\gamma-1)}\left[\frac{1}{\left(h
-%         q\right)^2} - \frac{\gamma}{(\gamma-1)}\right]^{-1/2} 
-% \end{align}
-% at marginal stability for perturbations with large $\khat$. 
-
-% From our discussion in \S\ref{relax_pert}, which indicate introducing
-% a finite thermal relaxation is stabilizing, we expect
-% Eq. \ref{beta_crit0} is an upper limit. For a thin  
-% disk $h\ll 1$, we thus infer 
-% \begin{align}\label{iso_vsi_cond}
-%   \beta \lesssim \frac{|h q|}{\gamma-1} \equiv
-%   \beta_\mathrm{crit} 
-% \end{align}
-% is required for the fundamental VSI to operate. That is, when
-% $\beta<\beta_\mathrm{crit}$, perturbations are  effectively isothermal. 
-% We will confirm Eq. \ref{iso_vsi_cond} numerically in
-% \S\ref{bcrit_num_test}. 
