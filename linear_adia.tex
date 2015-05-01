@@ -186,7 +186,7 @@ $\hat{\omega}_c$  at marginal stability to the VSI:
  \left(\hat{\omega}_c\khat\right)^4  = &  
 % \left[1 + \gamma\beta^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}_c\khat\right)^2 \label{relax_cond_simp1}\\ 
  \left(\hat{\omega}_c\khat\right)^2  + M(M+1)\left(1-h^2q^2\khat^2\right) , \label{relax_cond_simp1} \\
-   \left(\hat{\omega}_c\khat\right)^2 = & \frac{\beta}{h q} (\gamma-1)(1+2M)^2
+   \left(\hat{\omega}_c\khat\right)^2 = & \frac{\beta_c}{h q} (\gamma-1)(1+2M)^2
    \left(\hat{\omega}_c\khat\right) \label{relax_cond_simp2}\\
    &- 2M(M+1) . \notag
 \end{align}\end{subequations}
@@ -215,9 +215,15 @@ Inserting Eq. \ref{marg_freq_approx} into
 Eq. \ref{relax_cond_simp2}, we obtain 
 \begin{align}\label{bcrit_gen}
   \beta_c &\simeq  \frac{h|q|}{(\gamma - 1)}
-  \frac{\sqrt{1+M}}{(1+2M)}
-  \left[1 + \frac{M(2M-1)|h q   \khat|^2}{2(2M+1)^2}\right].
-  &\lesssim \beta_\mathrm{crit}%\notag
+%<<<<<<< HEAD
+%  \frac{\sqrt{1+M}}{(1+2M)}
+%  \left[1 + \frac{M(2M-1)|h q   \khat|^2}{2(2M+1)^2}\right].
+%  &\lesssim \beta_\mathrm{crit}%\notag
+%=======
+  \frac{\sqrt{1+M}}{(1+2M)} 
+%&  \left[1 + \frac{M(2M-1)|h q   \khat|^2}{2(2M+1)^2}\right].
+%  &\lesssim \beta_\mathrm{crit}\notag
+%>>>>>>> 8816838e4a06974fc61d74b84a2474adaeee3ebc
 \end{align}
 where the above-mentioned approximations still hold, but the correction term ($O(M |h q \khat|^2)$) is now suppressed.
 Eq. \ref{bcrit_gen} says that higher $M$ modes have lower $\beta_c$, i.e.\ require faster cooling for VSI growth.
