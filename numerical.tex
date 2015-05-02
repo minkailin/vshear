@@ -1,11 +1,9 @@
-\section{Numerical solutions}\label{numerical}
-In this section we numerically solve the linear stability problem
-corresponding to Eq. \ref{lin_mass}---\ref{lin_energy}. 
-We relax the  low-frequency, Keplerian and thin-disk 
-approximations used in the analytical discussion above and 
-use the full expressions of $\rho$, $\Omega$ and 
-$\kappa$ and $c_s$ given in \S\ref{eqm}. We also set $\zeta=1$ to   
-account for the background radial disk structure.  
+\section{Fixed cooling time results}\label{numerical}
+%comment: "numerical solutions' was too vague, especially since the next section contains numerical solutions.
+This section investigates the linear growth of the VSI with fixed, finite cooling times, $\beta$. 
+We solve the perturbation equations \ref{lin_all} with $\zeta=1$, i.e. including the background radial disk structure.  
+The disk's equilbrium  structure given in \S\ref{eqm}.  This general analysis does not make the approximations 
+described in \S\ref{sec:simplified}.
 
 We solve the linear problem by expanding the 
 perturbations in Chebyshev polynomials $T_l$ up to $l=512$
@@ -18,19 +16,21 @@ boundaries is a free surface,
 % note that there are g_c terms in the boundary condition
 where $\bm{\xi}$ is the Lagrangian displacement with meridional 
 components $\xi_{x,z} = \ii\delta v_{x,z}/\upsilon$. In some cases we
-impose a rigid boundary at which $\delta v_z=0$. 
+impose a rigid boundary with $\delta v_z(\pm\zmax)=0$. 
 
 The above discretization procedure
 converts the linear system of differential equations to a set of 
-algebraic equations, for which we use matrix routines in the LAPACK
-package to solve. 
+algebraic equations,  which we solve using LAPACK matrix routines.\footnote{provide a reference of some sort to LAPACK} 
 
-Unless otherwise stated, our fiducial disk parameters are 
+Unless otherwise stated, we adopt fiducial disk parameters are 
 $(\gamma, \Gamma) = (1.4, 1.011)$, $(p,q, h)=(-1.5,-1,0.05)$, and 
 vertical domain size $\zmax=5H$. This setup is effectively vertically
-isothermal since $c_s^2(\zmax) \simeq 0.9c_s^2(0)$. In Fig. \ref{omega_z}
+isothermal since $c_s^2(\zmax) \simeq 0.9c_s^2(0)$.\footnote{While this model
+has a zero density surface at $z = \pm H_s \simeq \pm 16.4 H$ (see Eq.\ \ref{eqm_rot}), the surface is 
+outside the numerical domain.} In Fig. \ref{omega_z}
 we plot the corresponding equilibrium rotation profile, which shows
-that $\Omega$ decreases slightly away from the midplane.   
+that $\Omega$ decreases slightly away from the midplane.   From Eq.\ \ref{iso_vsi_cond},
+we expect that $\beta < \beta_\mathrm{crit} \approx 0.13$ is needed for VSI growth in our fiducial model. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
@@ -42,14 +42,18 @@ that $\Omega$ decreases slightly away from the midplane.
   }
 \end{figure}
 
-\subsection{VSI with rapid thermal relaxation}\label{vertiso_pertiso} 
+\subsection{Rapid thermal relaxation}\label{vertiso_pertiso} 
 We first calculate the VSI in a disk with rapid thermal relaxation by
-setting $\beta=10^{-3}$. (Smaller values yield similar results.) 
-This setup mimics strictly isothermal perturbations in a vertically
-isothermal disk, already considered previously \citepalias{nelson13,mcnally14,barker15}. 
-For completeness, and as a way of introducing terminology, 
-we review this case before considering the effect of 
-thermal relaxation. %A more detailed analysis is given by \cite{barker15}.   
+setting $\beta=10^{-3}$. Since this cooling is much faster than the predicted
+$\beta_\mathrm{crit}$, we expect and that this case should give 
+similar results to the well studied case of isothermal perturbations
+ \citepalias[e.g.][]{nelson13,mcnally14,barker15}.  Indeed we found that smaller
+ $\beta$ values gave similar results. This case allows us to explore and test our
+finite cooling time model in a familiar context.
+
+%For completeness, and as a way of introducing terminology, 
+%we review this case before considering the effect of 
+%thermal relaxation.\footnote{\emph{not accurate, even $\beta = 0$ is instant thermal relaxation...}} 
 
 % Fig. \ref{iso_eigen_kx} compares the numerically obtained eigenvalues 
 % for the fundamental mode and that calculated from 
@@ -88,13 +92,45 @@ thermal relaxation. %A more detailed analysis is given by \cite{barker15}.
 % cylindrical radius whilst conserving its angular momentum (applicable
 % to axisymmetric perturbations).
 
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx10_analytic.ps}
+  \caption{Growth rate, $\sigma$, vs.\ osciallation frequency, $\omega$, for
+  VSI modes with wavenumber $k_x = \khat/H=10/H$ in the fiducial disk model
+    with rapid cooling, $\beta=10^{-3}$. %  a disk with 
+    % $(\gamma,\Gamma)=(1.4,1.011)$, $(p,q, h)=(-1.5,-1,0.1)$ and
+    % $\beta=10^{-3}$. 
+We investigate the effect of vertical box size, from $\zmax=3H$ (\emph{blue triangles}) to $7H$ (\emph{green x's})
+    with a free surface boundary ($\Delta P=0$).  For $\zmax=5H$  (black dots) we also compare free surface (\emph{black dots}) and rigid (\emph{red plusses}), finding little difference.
+      The fundamental mode is marked by `f'. Lines show the analytic predictions for
+      isothermal perturbations ($\beta = 0$, \emph{dashed}) and for $\beta = 10^{-3}$ (\emph{dotted}).
+      See text for discussion.
+   % are computed from the analytic dispersion relation 
+    %with thermal relaxation Eq. \ref{relax_disp} (dotted), and that for
+    %isothermal perturbations, Eq. \ref{simple_growth} (dashed). 
+    \label{compare_modes_iso_kx10} 
+  }
+\end{figure}
+
 \subsubsection{Case study: $\khat=10$}
-In Fig. \ref{compare_modes_iso_kx10} we plot eigenvalues of unstable 
-modes with $\khat=10$. Black dots correspond to our fiducial setup.  
-We also plot results obtained with different 
-vertical boundary conditions: rigid boundary and $\zmax=5H$ (red
-crosses),  free surface and $\zmax = 3H$ (blue triangles), free surface
-and $\zmax=7H$ (green crosses). 
+In Fig. \ref{compare_modes_iso_kx10} we plot eigenvalues -- growth rates and
+wave frequencies -- of unstable 
+modes for $\khat=10$.  We compare our numerical results to the analytic dispersion relations for 
+$\beta = 0$ and $10^{-3}$, from Eqs.\ \ref{simple_growth} and \ref{relax_disp}, respectively. Each symbol 
+corresponds to a different order mode, i.e.\ a different number of vertical node crossings.  Lower order modes
+have lower (in magnitude) frequencies, with the lowest order `fundamental' modes further to the left in Fig. \ref{compare_modes_iso_kx10}. 
+
+For our fiducial case (black dots), the lower order and lower frequency modes closely follow the analytic prediction with growth rates increasing with $|\omega|$, the magnitude of the frequency.  However, for $|\omega| \gtrsim 4 h \OmK$ the growth rate declines with $|\omega|$.  This break from the analytic prediction is not due the choice of boundary condition, as we demonstrate by considering rigid boundaries (red plusses).
+
+Rather, the decline in growth rate for high order models is due to the vertical box size, as seen by comparing the $\zmax/H = 3, 5$ and 7 cases in Fig. \ref{compare_modes_iso_kx10}.  Larger boxes give better agreement with the analytic theory, which are infinite in vertical extent.  Larger boxes include regions of larger vertical shear (see Eqs. \ref{vertical_shear_thin} and \ref{vertical_shear_ex}), which higher order modes can tap to give larger growth rates.   
+The need for vertically extended domains to capture the largest VSI growth rates is problematic 
+For the $\zmax = 7 H$ case, we begin to see another branch of modes, the so-called ``surface modes" described below.  
+
+%comment: the following reads like a figure caption, not a description of results.
+%Black dots correspond to our fiducial setup.  
+%We also plot results obtained with different 
+%vertical boundary conditions: rigid boundary and $\zmax=5H$ (red
+%crosses),  free surface and $\zmax = 3H$ (blue triangles), free surface
+%and $\zmax=7H$ (green crosses). 
 
 The modes shown in Fig. \ref{compare_modes_iso_kx10} are `body modes'
 and are inertial waves destabilized by vertical shear
@@ -109,22 +145,7 @@ order modes, corresponding to increasing $|\omega|$, increasingly
 deviates from the analytic line due to the imposed boundaries, 
 unless $\zmax$ is increased. 
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx10_analytic.ps}
-  \caption{Unstable modes with $\khat=10$ in the fiducial disk model
-    with $\beta=10^{-3}$. %  a disk with 
-    % $(\gamma,\Gamma)=(1.4,1.011)$, $(p,q, h)=(-1.5,-1,0.1)$ and
-    % $\beta=10^{-3}$. 
-    The fiducial boundary condition is a free surface ($\Delta P=0$)
-    with vertical domain size $\zmax=5H$  (black dots).  Other
-    cases correspond to different boundary conditions applied at
-    different heights. The fundamental mode is marked by `f'. Lines
-    are computed from the analytic dispersion relation 
-    with thermal relaxation Eq. \ref{relax_disp} (dotted), and that for
-    isothermal perturbations, Eq. \ref{simple_growth} (dashed). 
-    \label{compare_modes_iso_kx10} 
-  }
-\end{figure}
+
 
 For later comparison, we plot in Fig. \ref{lowfreq_eigenfunc} the 
 eigenfunctions $W$ and $\delta   v_z$ for the fundamental mode. We also show a 
@@ -156,8 +177,8 @@ stratification.
   \caption{Visualization of the fundamental VSI mode in
     Fig. \ref{lowfreq_eigenfunc}. The color scale corresponds to the
     pressure perturbation $\delta P=\rho W$ scaled by its maximum value.
-    Arrows correspond to the vector field field $\sqrt{\rho}(\delta
-    v_x,\delta v_z)$. Note that the horizontal axis has been stretched 
+    Arrows show the flow, scaled as $\sqrt{\rho}(\delta
+    v_x,\delta v_z)$. The horizontal axis has been stretched 
     for clarity.  
     \label{lowfreq_eigenfunc_2d}
   }
