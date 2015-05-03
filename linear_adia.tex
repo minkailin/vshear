@@ -194,13 +194,15 @@ These equations consider $\khat^2\gg 1$, and assumes
 $|\hat{\omega}\khat| = O(1)$, $M\lesssim O(1)$ and $\beta_c\ll 1$.   
      
 Eq. \ref{relax_cond_simp1} admits the following   
-approximate solution for the frequency if $4M(M+1)|hq\khat|^2/(2M+1)^2\lesssim
-1$, 
+approximate solution for the frequency 
+if $\mathrm{min}(1,M)\times|hq\khat|^2\lesssim 1$, 
+%if $4M(M+1)|hq\khat|^2/(2M+1)^2 < 1$,  
 \begin{align}
   % \left(\hat{\omega}_c\khat\right)^2 \simeq (M+1)\left[1  + O( M|h q \khat|^2)\right]  \label{marg_freq_approx}
   \left(\hat{\omega}_c\khat\right)^2 \simeq (M+1)\left(1 -
     \frac{M|h q \khat|^2}{2M+1}\right).  \label{marg_freq_approx}
 \end{align}  
+(Equality holds for $M=0$.)  
 % which holds for either (a) $M= 0$ and arbitrary $|h q \hat{k}|$ or (b) $|h q \hat{k}| \ll 1$ and arbirtary $M \sim O(1)$. 
 % These distinct conditions mean that our results are most robust for the fundamental vertical mode ($M = 0$) but also
 % hold for higher order vertical modes when radial wavelengths are not
@@ -218,14 +220,13 @@ Eq. \ref{relax_cond_simp2}---\ref{marg_freq_approx} that
 %  &\lesssim \beta_\mathrm{crit}%\notag
 %>>>>>>> 8816838e4a06974fc61d74b84a2474adaeee3ebc
 \end{align}
-% but the correction term ($O(M |h q \khat|^2)$) is now suppressed.    
 Eq. \ref{bcrit_gen} indicates that higher $M$ modes have lower $\beta_c$,
-i.e.\ require faster cooling for VSI growth\footnote{In fact,   
-  this conclusion does not require $|hq\khat|^2$ to be very 
-  small. The may be seen from the more complete expression for
-  $\beta_c$ obtained by substituting Eq. \ref{marg_freq_approx} into  
-  Eq. \ref{relax_cond_simp2} and retaining the term proportional to 
-  $|hq\khat|^2$.}.    
+i.e.\ require faster cooling for VSI growth\footnote{
+In fact, this conclusion does not require $\theta\equiv|hq\khat|^2$ to be extremely 
+small. By retaining terms proportional to
+  $\theta$, we find $\beta_c\to \beta_c \times 
+  \left[1 + M(2M-1)\theta/2(2M+1)^2 \right]$. Since $\theta\lesssim 1$ by assumption, 
+ $\mathrm{max}(\beta_c)$ still occurs at $M=0$.}.     
 This trend is confirmed numerically in \S\ref{therm_relax_eff}. 
 
 %(and the trend holds even when the restrictive assumption
@@ -240,8 +241,8 @@ VSI growth is thus
   \frac{h|q|}{\gamma-1} . 
 \end{align}
 The thin disk approximation, $h \ll 1$, indicates that $\beta_c \ll
-1$, as assumed to obtain Eq. \ref{marg_freq_approx}. We heuristically
-explain $\beta_\mathrm{crit}$ in \S\ref{vsi_require}, and numerically
+1$, as assumed to obtain Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}. 
+We heuristically explain $\beta_\mathrm{crit}$ in \S\ref{vsi_require}, and numerically
 test its validity in \S\ref{bcrit_num_test}.  
  
 In Appendix \ref{bcrit_alt}, we give an alternative derivation for 
