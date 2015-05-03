@@ -266,7 +266,7 @@ approximation, where $\zeta=0$, gives a
 above. Inclusion of the global radial gradient terms results in the
 expected behavior  ($\sigma\to0$ as $\beta\to\infty$). Despite this
 caveat, Fig. \ref{gcorr_compare} shows that provided we consider 
-$\beta\ll1$, then setting $\zeta=0$ does not affect the VSI
+$\beta\lesssim O(1)$, then setting $\zeta=0$ does not affect the VSI
 significantly.  
   
 \begin{figure}
@@ -661,11 +661,14 @@ The coefficients of the dispersion relation Eq.\ \ref{relax_disp} are:
 \end{align}\end{subequations}
 
 \subsection{Finding marginal stability}\label{disp_neut_limit}
-To investigate marginal stability we set $\hat{\sigma} = 0$ so the frequency, $\hat{\upsilon}=\hat{\omega}_c$, is real.  
-We take the short radial wavelength limit, $\khat^2\gg 1$, of the coefficients in Eq.\ \ref{coeffs}.  The real and 
-imaginary parts of Eq. \ref{relax_disp} then give relations for $\hat{\omega}_c$ and $\beta_c$, the cooling time for 
-marginal stability, as 
-\begin{align}\
+To investigate marginal stability we set $\hat{\sigma} = 0$ so the
+frequency, $\hat{\upsilon}=\hat{\omega}_c$, is real; and $\beta =
+\beta_c$,  the cooling time for marginal stability. 
+We take the short radial wavelength limit, $\khat^2\gg 1$, of the
+coefficients in Eq.\ \ref{coeffs}. We consider $M \lesssim O(1)$ and
+assume $\beta_c \ll \khat$.  The real and 
+imaginary parts of Eq. \ref{relax_disp} then give relations for $\hat{\omega}_c$ and $\beta_c$ as 
+\begin{align}
   0 =&M(M+1)(1-h^2 q^2 \khat^2) + 4\beta_c h q M(M+1)\left(\hat{\omega}_c\khat\right) 
  +\left[1 +
     \gamma\beta_c^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}_c\khat\right)^2 \label{relax_cond1} \\
@@ -683,17 +686,18 @@ marginal stability, as
 \end{align}
 We recall that in the low frequency and thin-disk approximations, $h,
 |\hat{\omega}_c| \ll 1$. We note that $|q|=O(1)$ and 
-$\gamma>1$ but is $O(1)$. We consider $M$ to be $O(1)$ or smaller, so 
-that $|\hat{\omega_c}\khat|=O(1)$, since for inertial waves
-$|\hat{\omega}\khat|^2\simeq 1 + M $. Finally, we assume 
-$\beta_c \ll 1$, to be justified \emph{a posteriori}. Applying these
-approximations give
+$\gamma>1$ but is $O(1)$. We assume $|\hat{\omega_c}\khat|=O(1)$,
+since for inertial waves $|\hat{\omega}\khat|\simeq \sqrt{1 + M}$. Finally, we further assume 
+$\beta_c \ll 1$, to be justified \emph{a posteriori}, to give 
 Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}.   
 
-\subsection{Marginal stability for the fundamental mode}\label{bcrit_alt}
-If we apply the above approximations for the fundamental mode $M=0$ to
-Eq. \ref{relax_cond1}---\ref{relax_cond2}, but with the less
-restrictive assumption $\beta_c \lesssim O(1)$, we expect the balance  
+\subsection{Marginal stability for the fundamental
+  mode}\label{bcrit_alt}
+For the fundamental mode ($M=0$) we can deduce $\beta_c\ll 1$, which
+motivates us to make this strong assumption from the onset. In this
+case, Eq. \ref{relax_cond1} --- \ref{relax_cond2} 
+imply the following balance for large $\khat$ and small
+$\hat{\omega_c}$ while $\hat{\omega}_c\khat$ remain fixed:  
 \begin{subequations}\begin{align}
     &0  = \left[1 + \gamma\beta_c^2\left(1-\gamma\right)\right] + 2h q
     \gamma \beta_c \left(\hat{\omega}_c\khat\right) - \left(\hat{\omega}_c\khat\right)^2,\\
@@ -701,12 +705,10 @@ restrictive assumption $\beta_c \lesssim O(1)$, we expect the balance
   \end{align}\end{subequations}
 Then
 \begin{align}
-  \beta_c = \frac{h|q|}{\gamma-1}\left[1 - \frac{\gamma h^2 
-      q^2}{\gamma-1}\right]^{-1/2},
+  \beta_c = \frac{h|q|}{\gamma-1}\left(1 - \frac{\gamma h^2 
+      q^2}{\gamma-1}\right)^{-1/2},
 \end{align}
-which reduces to Eq. \ref{iso_vsi_cond} for thin-disks ($h\ll1$). We
-thus deduce that in fact $\beta_c\ll 1$, which motivates us to make this
-strong assumption from the onset.   
+which reduces to Eq. \ref{iso_vsi_cond} at $O(h)$.
 
 %For fixed $M=O(1)$,  we assume
 %$|\hat{\omega}\khat|$ remain constant but consider $\khat\gg 1$ so
