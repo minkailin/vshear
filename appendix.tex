@@ -332,18 +332,21 @@ $|d\Omega/dz|$, the existence of which should limit the growth rate of
 the VSI,  as remarked in \S\ref{vshear_def}. We explicitly demonstrate
 this below.     
 
-\subsection{Stability conditions in the low-frequency limit}
-In the low-frequency limit we assume $|\hat{\upsilon}|\ll 1$ and
-approximate Eq. \ref{iso_ode0} as 
+\subsection{Maximum growth rate  in the low-frequency limit}
+Here we consider the low-frequency limit $|\hat{\upsilon}|\ll 1$ and 
+show that the growth rate is limited by the maximum vertical
+shear rate in the domain. 
+%In the low-frequency limit we assume $|\hat{\upsilon}|\ll 1$ and
+We approximate Eq. \ref{iso_ode0} as 
 \begin{align}
   0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii h q \hat{k}
     f(\zhat)\right]W^\prime +
   \hat{\upsilon}^2\left(1+\hat{k}^2\right)W. \label{iso_ode1}
 \end{align}
-\subsubsection{Necessity of vertical shear for
-  instability}\label{integral_relation} 
-We can establish a necessary condition for instability by multiplying
-Eq. \ref{iso_ode1} by $\rho W^*$ and integrate vertically from
+%\subsubsection{Necessity of vertical shear for
+%  instability}\label{integral_relation} 
+%We can establish a necessary condition for instability 
+We multiply Eq. \ref{iso_ode1} by $\rho W^*$ and integrate vertically from
 $\zhat=\zhat_1$ to $z=\zhat_2$. We neglect boundary 
 terms when integrating by parts, by assuming $W$ or
 $W^\prime$ vanishes at the boundaries, or that the boundaries are 
@@ -355,14 +358,12 @@ decaying background density with increasing height. Then,
   +\ii h q \hat{k}\int_{\zhat_1}^{\zhat_2}\rho f(\zhat) W^*W^\prime d\zhat.\label{integral_relation1}
 \end{align}
 It follows that for instability ($\imag\hat{\upsilon}>0$), it is necessary to
-have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. there must
-be vertical shear. A similar conclusion can be reached in the
-equivalent linear problem in global cylindrical disk geometry.  
+have $q\neq0$ or more generally $d\Omega/dz\neq 0$, i.e. there must
+be vertical shear. 
+%A similar conclusion can be reached in the
+%equivalent linear problem in global cylindrical disk geometry.  
+%\subsubsection{Maximum growth rate}\label{max_growth1}
 
-\subsubsection{Maximum growth rate}\label{max_growth1}
-Here we show that the growth rate is limited by the maximum vertical
-shear rate in the domain. % Writing $\hat{\upsilon} = \hat{\omega} +
-% \ii\hat{\upsilon}$ with real $\hat{\omega}$ and $\hat{\upsilon}$, 
 The real and imaginary parts of 
 Eq. \ref{integral_relation1} are
 \begin{align}
@@ -433,21 +434,16 @@ follows that the maximum possible growth rate of unstable modes,
 satisfying the above boundary conditions, is limited by the maximum
 vertical shear rate in the domain considered,
 \begin{align}
-  \sigma < \mathrm{max} \left|r\frac{d\Omega}{dz}\right|, 
+  |\sigma| < \mathrm{max} \left|r\frac{d\Omega}{dz}\right|, 
 \end{align}
-as expected on physical grounds. 
+as expected on physical grounds. %A similar conclusion can be reached in the
+%equivalent linear problem in global cylindrical disk geometry.  
 
 In practice, one might consider a vertical domain of a few scale 
 heights in a thin disk with $|q|=O(1)$. In this case, $|h\zhat|\ll1$ and  
 $f\simeq \zhat$, so that $\mathrm{max}|f| = O(1)$, implying a
 maximum growth rate $O(h \OmK)$, consistent with numerical
 results. 
-
-% For vertical domains smaller 
-% than this height, the growth rate is limited by $|f|$ at the vertical
-% boundaries considered. For $|h\hat{z}|\ll1$ we have $f\simeq
-% \hat{z}$, in which case we can expect growth rates to increase at most linearly
-% with respect to the vertical domain size.   %no faster than linear 
 
 \subsection{Explicit solutions in the thin-disk limit}\label{iso_explicit}
 Here we assume a thin disk ($h\ll1$) so that $\ln\rho\simeq
@@ -613,23 +609,26 @@ and from Eq. \ref{relax_cond_simp2} that
 \end{align}
 We eliminate $dX/dM$, making use of Eq. \ref{relax_cond_simp1} in the process, to obtain 
 \begin{align}
-  (2M+1)\frac{d\ln{\beta_c}}{dM} = \frac{\mathcal{N}}{\mathcal{D}}, 
+  (2M+1)\frac{d\ln{\beta_c}}{dM} %= \frac{\mathcal{N}}{\mathcal{D}}, 
+  = -\frac{(1-\theta)M(M+1)\left[ 2(2M+1)^2 + 12X^2\right]
+  + (3+\theta)X^2}{2 \left[X^2 +
+  2M(M+1)(1-\theta)\right]\left[X^2 + 2M(M+1)\right]}.  
 \end{align}
-where the denominator $\mathcal{D}$ is
-\begin{align}
-\mathcal{D} = 2 \left[X^2 +
-  2M(M+1)(1-\theta)\right]\left[X^2 + 2M(M+1)\right]>0, 
-\end{align}
-and the numerator $\mathcal{N}$ is 
-\begin{align}
-  \mathcal{N} = -(1-\theta)\left[ 2M(M+1)(2M+1)^2 + 12X^2M(M+1)\right]
-  - (3+\theta)X^2 < 0.
-\end{align}
+%where the denominator $\mathcal{D}$ is
+%\begin{align}
+%\mathcal{D} = 2 \left[X^2 +
+ % 2M(M+1)(1-\theta)\right]\left[X^2 + 2M(M+1)\right]>0, 
+%\end{align}
+%and the numerator $\mathcal{N}$ is 
+%\begin{align}
+ % \mathcal{N} = -(1-\theta)\left[ 2M(M+1)(2M+1)^2 + 12X^2M(M+1)\right]
+ % - (3+\theta)X^2 < 0.
+%\end{align}
 Hence,
 \begin{align}
   \frac{d\beta_c}{dM}<0, 
 \end{align}
-for all $M$ provided that $\theta\leq 1$. This implies 
+for all $M\geq 0$ if $\theta\leq 1$. This implies 
 $\mathrm{max}(\beta_c)$ occurs at $M=0$. 
 
 \subsection{Marginal stability for the fundamental
