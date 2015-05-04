@@ -190,64 +190,74 @@ VSI:
   \left(\hat{\omega}_c\khat\right) \label{relax_cond_simp2}\\
   &- 2M(M+1) . \notag
 \end{align}\end{subequations}
-These equations consider $\khat^2\gg 1$, and assumes 
-$|\hat{\omega}\khat| = O(1)$, $M\lesssim O(1)$ and $\beta_c\ll 1$.   
-     
-Eq. \ref{relax_cond_simp1} admits the following   
-approximate solution for the frequency if $4M(M+1)|hq\khat|^2/(2M+1)^2\lesssim
-1$, 
+These equations consider $\khat^2\gg 1$, $M\lesssim O(1)$; and assume 
+$|\hat{\omega}\khat| = O(1)$ and $\beta_c\ll 1$.   Note that
+Eq. \ref{relax_cond_simp1} reduces to the
+dispersion relation for low-frequency inertial waves in the absence of
+vertical shear (see Appendix \ref{stable_novshear} for details). 
+ 
+In Appendix \ref{max_cool}, we find that %if $|hq\khat|^2\leq 1$ then 
 \begin{align}
-  % \left(\hat{\omega}_c\khat\right)^2 \simeq (M+1)\left[1  + O( M|h q \khat|^2)\right]  \label{marg_freq_approx}
-  \left(\hat{\omega}_c\khat\right)^2 \simeq (M+1)\left(1 -
-    \frac{M|h q \khat|^2}{2M+1}\right).  \label{marg_freq_approx}
-\end{align}  
-% which holds for either (a) $M= 0$ and arbitrary $|h q \hat{k}|$ or (b) $|h q \hat{k}| \ll 1$ and arbirtary $M \sim O(1)$. 
-% These distinct conditions mean that our results are most robust for the fundamental vertical mode ($M = 0$) but also
-% hold for higher order vertical modes when radial wavelengths are not
-% too short. 
-Note that Eq. \ref{marg_freq_approx} reduces to the dispersion
-relation for low-frequency inertial waves in the absence of vertical
-shear (see Appendix \ref{stable_novshear} for details). 
-
-If we further assume $|hq\khat|^2\ll 1$, we obtain from
-Eq. \ref{relax_cond_simp2}---\ref{marg_freq_approx} that  
-\begin{align}\label{bcrit_gen} 
-  \beta_c &\simeq  \frac{h|q|}{(\gamma - 1)}\frac{\sqrt{1+M}}{(1+2M)}.   
-%  \frac{\sqrt{1+M}}{(1+2M)}
-%  \left[1 + \frac{M(2M-1)|h q   \khat|^2}{2(2M+1)^2}\right].
-%  &\lesssim \beta_\mathrm{crit}%\notag
-%>>>>>>> 8816838e4a06974fc61d74b84a2474adaeee3ebc
+  |hq\khat|^2 \leq 1 \Rightarrow \frac{d\beta_c}{dM} < 0 \quad \forall
+  M\geq 0. \label{bcrit_gen}
 \end{align}
-% but the correction term ($O(M |h q \khat|^2)$) is now suppressed.    
 Eq. \ref{bcrit_gen} indicates that higher $M$ modes have lower $\beta_c$,
-i.e.\ require faster cooling for VSI growth\footnote{In fact,   
-  this conclusion does not require $|hq\khat|^2$ to be very 
-  small. The may be seen from the more complete expression for
-  $\beta_c$ obtained by substituting Eq. \ref{marg_freq_approx} into  
-  Eq. \ref{relax_cond_simp2} and retaining the term proportional to 
-  $|hq\khat|^2$.}.    
-This trend is confirmed numerically in \S\ref{therm_relax_eff}. 
+i.e.\ require faster cooling for VSI growth. This trend is confirmed
+numerically in \S\ref{therm_relax_eff}.  
 
+% Eq. \ref{relax_cond_simp1} admits the following   
+% approximate solution for the frequency 
+% if $\mathrm{min}(1,M)\times|hq\khat|^2\lesssim 1$, 
+% \begin{align}
+%   % \left(\hat{\omega}_c\khat\right)^2 \simeq (M+1)\left[1  + O( M|h q \khat|^2)\right]  \label{marg_freq_approx}
+%   \left(\hat{\omega}_c\khat\right)^2 \simeq (M+1)\left(1 -
+%     \frac{M|h q \khat|^2}{2M+1}\right).  \label{marg_freq_approx}
+% \end{align}  
+% (Equality holds for $M=0$.)  
+% Note that Eq. \ref{marg_freq_approx} reduces to the dispersion
+% relation for low-frequency inertial waves in the absence of vertical
+% shear (see Appendix \ref{stable_novshear} for details). 
+% If we further assume $|hq\khat|^2\ll 1$, we obtain from
+% Eq. \ref{relax_cond_simp2}---\ref{marg_freq_approx} that  
+% \begin{align}\label{bcrit_gen} 
+%   \beta_c &\simeq  \frac{h|q|}{(\gamma - 1)}\frac{\sqrt{1+M}}{(1+2M)}.   
+% %  \frac{\sqrt{1+M}}{(1+2M)}
+% %  \left[1 + \frac{M(2M-1)|h q   \khat|^2}{2(2M+1)^2}\right].
+% %  &\lesssim \beta_\mathrm{crit}%\notag
+% %>>>>>>> 8816838e4a06974fc61d74b84a2474adaeee3ebc
+% \end{align}
+% Eq. \ref{bcrit_gen} indicates that higher $M$ modes have lower $\beta_c$,
+% i.e.\ require faster cooling for VSI growth. 
+%\footnote{
+%In fact, this conclusion does not require $\theta\equiv|hq\khat|^2$ to be extremely 
+%small. By retaining terms proportional to
+% $\theta$, we find $\beta_c\to \beta_c \times 
+%  \left[1 + M(2M-1)\theta/2(2M+1)^2 \right]$. Since $\theta\lesssim 1$ by assumption, 
+% $\mathrm{max}(\beta_c)$ still occurs at $M=0$.}.     
 %(and the trend holds even when the restrictive assumption
 %on $|h q \hat{k}|$ is dropped). 
 
 We are most interested in the longest cooling time which allows growth for any $M$.  
-This criterion is clearly set by the fundamental, $M = 0$, mode.  Our
-cooling criterion for  
-VSI growth is thus  
+This criterion is clearly set by the fundamental mode, $M = 0$. It is straight
+forward to solve Eq. \ref{relax_cond_simp1} --- \ref{relax_cond_simp2}
+for $\beta_c(M=0)  \equiv \beta_\mathrm{crit}$ in this special case. We thus find the cooling criterion for  
+VSI growth is  
  \begin{align}\label{iso_vsi_cond}
-  \beta_c\leq \beta_\mathrm{crit}  \equiv
-  \frac{h|q|}{\gamma-1} . 
-\end{align}
-The thin disk approximation, $h \ll 1$, indicates that $\beta_c \ll
-1$, as assumed to obtain Eq. \ref{marg_freq_approx}. We heuristically
-explain $\beta_\mathrm{crit}$ in \S\ref{vsi_require}, and numerically
-test its validity in \S\ref{bcrit_num_test}.  
+   \beta <   \beta_\mathrm{crit}  \equiv
+   \frac{h|q|}{\gamma-1} . 
+ \end{align}
+ The thin disk approximation, $h \ll 1$, indicates that $\beta_\mathrm{crit} \ll
+ 1$, as assumed to obtain Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}. 
+ We heuristically explain $\beta_\mathrm{crit}$ in \S\ref{vsi_require}, and numerically
+ test its validity in \S\ref{bcrit_num_test}.  
  
-In Appendix \ref{bcrit_alt}, we give an alternative derivation for 
-$\beta_\mathrm{crit}$ which does not assume it is much less
-than unity from the onset. This derivation also independent of $|h q
-\khat|$.      
+We comment that the expression for $\beta_\mathrm{crit}$ may in fact 
+be obtained without assuming it is much less than unity from the onset or 
+restrictions on $| h q \khat|$.  This is clarified in Appendix
+\ref{bcrit_alt}.  
+ 
+
+
 
 % For $M=0$, it is straight foward to solve Eq. \ref{relax_cond_simp1} 
 % --- \ref{relax_cond_simp2} exactly and obtain the maximum cooling time

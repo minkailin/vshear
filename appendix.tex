@@ -266,7 +266,7 @@ approximation, where $\zeta=0$, gives a
 above. Inclusion of the global radial gradient terms results in the
 expected behavior  ($\sigma\to0$ as $\beta\to\infty$). Despite this
 caveat, Fig. \ref{gcorr_compare} shows that provided we consider 
-$\beta\ll1$, then setting $\zeta=0$ does not affect the VSI
+$\beta\lesssim O(1)$, then setting $\zeta=0$ does not affect the VSI
 significantly.  
   
 \begin{figure}
@@ -332,18 +332,21 @@ $|d\Omega/dz|$, the existence of which should limit the growth rate of
 the VSI,  as remarked in \S\ref{vshear_def}. We explicitly demonstrate
 this below.     
 
-\subsection{Stability conditions in the low-frequency limit}
-In the low-frequency limit we assume $|\hat{\upsilon}|\ll 1$ and
-approximate Eq. \ref{iso_ode0} as 
+\subsection{Maximum growth rate  in the low-frequency limit}
+Here we consider the low-frequency limit $|\hat{\upsilon}|\ll 1$ and 
+show that the growth rate is limited by the maximum vertical
+shear rate in the domain. 
+%In the low-frequency limit we assume $|\hat{\upsilon}|\ll 1$ and
+We approximate Eq. \ref{iso_ode0} as 
 \begin{align}
   0 = W^{\prime\prime} + \left[\ln\rho^\prime - \ii h q \hat{k}
     f(\zhat)\right]W^\prime +
   \hat{\upsilon}^2\left(1+\hat{k}^2\right)W. \label{iso_ode1}
 \end{align}
-\subsubsection{Necessity of vertical shear for
-  instability}\label{integral_relation} 
-We can establish a necessary condition for instability by multiplying
-Eq. \ref{iso_ode1} by $\rho W^*$ and integrate vertically from
+%\subsubsection{Necessity of vertical shear for
+%  instability}\label{integral_relation} 
+%We can establish a necessary condition for instability 
+We multiply Eq. \ref{iso_ode1} by $\rho W^*$ and integrate vertically from
 $\zhat=\zhat_1$ to $z=\zhat_2$. We neglect boundary 
 terms when integrating by parts, by assuming $W$ or
 $W^\prime$ vanishes at the boundaries, or that the boundaries are 
@@ -355,14 +358,12 @@ decaying background density with increasing height. Then,
   +\ii h q \hat{k}\int_{\zhat_1}^{\zhat_2}\rho f(\zhat) W^*W^\prime d\zhat.\label{integral_relation1}
 \end{align}
 It follows that for instability ($\imag\hat{\upsilon}>0$), it is necessary to
-have $q\neq0$ or more generally $d\Omega^2/dz\neq 0$, i.e. there must
-be vertical shear. A similar conclusion can be reached in the
-equivalent linear problem in global cylindrical disk geometry.  
+have $q\neq0$ or more generally $d\Omega/dz\neq 0$, i.e. there must
+be vertical shear. 
+%A similar conclusion can be reached in the
+%equivalent linear problem in global cylindrical disk geometry.  
+%\subsubsection{Maximum growth rate}\label{max_growth1}
 
-\subsubsection{Maximum growth rate}\label{max_growth1}
-Here we show that the growth rate is limited by the maximum vertical
-shear rate in the domain. % Writing $\hat{\upsilon} = \hat{\omega} +
-% \ii\hat{\upsilon}$ with real $\hat{\omega}$ and $\hat{\upsilon}$, 
 The real and imaginary parts of 
 Eq. \ref{integral_relation1} are
 \begin{align}
@@ -433,21 +434,16 @@ follows that the maximum possible growth rate of unstable modes,
 satisfying the above boundary conditions, is limited by the maximum
 vertical shear rate in the domain considered,
 \begin{align}
-  \sigma < \mathrm{max} \left|r\frac{d\Omega}{dz}\right|, 
+  |\sigma| < \mathrm{max} \left|r\frac{d\Omega}{dz}\right|, 
 \end{align}
-as expected on physical grounds. 
+as expected on physical grounds. %A similar conclusion can be reached in the
+%equivalent linear problem in global cylindrical disk geometry.  
 
 In practice, one might consider a vertical domain of a few scale 
 heights in a thin disk with $|q|=O(1)$. In this case, $|h\zhat|\ll1$ and  
 $f\simeq \zhat$, so that $\mathrm{max}|f| = O(1)$, implying a
 maximum growth rate $O(h \OmK)$, consistent with numerical
 results. 
-
-% For vertical domains smaller 
-% than this height, the growth rate is limited by $|f|$ at the vertical
-% boundaries considered. For $|h\hat{z}|\ll1$ we have $f\simeq
-% \hat{z}$, in which case we can expect growth rates to increase at most linearly
-% with respect to the vertical domain size.   %no faster than linear 
 
 \subsection{Explicit solutions in the thin-disk limit}\label{iso_explicit}
 Here we assume a thin disk ($h\ll1$) so that $\ln\rho\simeq
@@ -534,108 +530,6 @@ are the low frequency unstable modes seen in
 Fig. \ref{compare_modes_iso_kx10} and
 Fig. \ref{compare_modes_iso_kx30}, for which $\sigma\propto|\omega|$.  
 
-
-
-%growth rate of high frequency branch is much smaller 
-
-% \begin{align}\label{sig2_iso}
-%   \hat{\upsilon}^2 = L\left(\frac{1+\ii q h
-%       \hat{k}}{1+\hat{k}^2}\right).
-% \end{align}
-% The eigenfrequency $\hat{\upsilon}$ is therefore complex for
-% $L\geq1$. The dispersion relation Eq. \ref{sig2_iso} can also be
-% derived by setting $\beta=0$ in the more general dispersion relation 
-% Eq. \ref{relax_disp} with coefficients given in Appendix
-% \ref{relax_coeff}. We are interested in 
-% unstable modes for which $\hat{\upsilon}>0$ and is given by
-% \begin{align}
-%   \hat{\upsilon} =\sqrt{
-%     \frac{L}{2\left(1+\hat{k}^2\right)}\left(\sqrt{1+q^2h^2\hat{k}^2} - 
-%       1\right)}. 
-% \end{align}
-
-
-% We impose the kinetic energy remain bounded at infinity. Even though
-% we have adopted the thin-disk approximation, an infinite
-% disk is appropriate in the sense that both the true density profile 
-% and its thin-disk approximation decay rapidly away from the midplane.   
-
-% However, the thin-disk representation of vertical shear diverges with 
-% $\hat{z}$, unlike the true vertical shear profile which eventually
-% decays. Thus, taking $\zhat_{1,2}\to \pm\infty$ will permit 
-% unphysically large growth rates (as demonstrated below). Nevertheless,
-% the infinite disk is useful to consider since it permits an analytical
-% discussion.   
-
-
-
-
-
-% \subsubsection{Stability in the absence of vertical
-%   shear}\label{iso_stable}
-% \
-% Eq. \ref{iso_ode3} is
-% \begin{align}\label{hermite_ode}
-%   \left[w(\hat{z})W^\prime \right]^\prime + nW
-%   w(\hat{z}) =0, 
-% \end{align}
-% where $w(\zhat)=\exp{(-\zhat^2/2)}$ and we have defined a new eigenvalue 
-% \begin{align}
-%   n \equiv \hat{\upsilon}^2(1+\hat{k}^2). 
-% \end{align} 
-% Eq. \ref{hermite_ode} is Hermite's differential equation. If we impose
-% that the kinetic energy density remain bounded at infinity, then the
-% solutions are Hermite polynomials  
-% \begin{align}
-%   W \propto \He_n(\hat{z}),
-% \end{align}
-% and $n$ is a non-negative integer. This translates to a real
-% eigenfrequency $\sigma$ such that
-% \begin{align}
-%   \left|\hat{\upsilon}\right| = \sqrt{n}
-%   \left(1+\hat{k}^2\right)^{-1/2}. \label{iso_stable_disp}
-% \end{align}
-% Since we have assumed $|\sigma^2|\ll \kappa^2\sim \OmK^2$, our
-% analysis is only valid for large wavenumbers such that $\hat{k}^2\gg   
-% n-1$. Physically, this corresponds to radial length-scales much
-% smaller than the local disk scale height. Note that
-% Eq. \ref{iso_stable_disp} is implied by Eq. 54 in
-% \cite{lubow93} after setting $\gamma=1$ and making the low-frequency,
-% nearly-Keplerian approximation in that equation. 
-
-% We remark that for fixed $n$ and $\khat\gg 1$ the dispersion relation 
-% Eq. \ref{iso_stable_disp} imply $\hat{\omega}\propto 1/\khat$. This inverse relation 
-% has also been qualitatively observed in numerical simulations
-% \citep{stoll14}.  
-
-
-% \subsubsection{Polynomial solutions with vertical
-%   shear}\label{iso_poly}
-
-
-
-
-
-% For fixed $q$ and $h$, the growth rate vanishes for both
-% $\hat{k}^2\to0$ and $\hat{k}^2\to\infty$. 
-% The maximum growth rate
-% occurs at the optimum wavenumber $\hat{k}_\mathrm{opt}$
-% \begin{align}
-%   |\hat{k}_\mathrm{opt}| = \sqrt{\frac{2+|h q|}{|h q|}},
-% \end{align}
-% and
-% \begin{align}
-%   \mathrm{max}\left(\hat{\upsilon}\right) =\frac{\sqrt{L}|h
-%     q|}{2\sqrt{1+|h q|}}. \label{iso_max_growth}
-% \end{align}
-% Since $L\geq1$, there is no limit to the maximum growth rate. This is
-% an artifact of the thin-disk approximation because the magnitude of vertical 
-% shear $|d\Omega^2/dz|\propto |z|$ increases indefinitely with 
-% height. However, Eq. \ref{iso_max_growth} compares well with
-% numerical solutions for small $L$ (see \S\ref{vertiso_pertiso}). 
-
-
-
 \section{Analytic dispersion relation
 with thermal relaxation}
 \subsection{Coefficients}\label{relax_coeff}
@@ -661,11 +555,14 @@ The coefficients of the dispersion relation Eq.\ \ref{relax_disp} are:
 \end{align}\end{subequations}
 
 \subsection{Finding marginal stability}\label{disp_neut_limit}
-To investigate marginal stability we set $\hat{\sigma} = 0$ so the frequency, $\hat{\upsilon}=\hat{\omega}_c$, is real.  
-We take the short radial wavelength limit, $\khat^2\gg 1$, of the coefficients in Eq.\ \ref{coeffs}.  The real and 
-imaginary parts of Eq. \ref{relax_disp} then give relations for $\hat{\omega}_c$ and $\beta_c$, the cooling time for 
-marginal stability, as 
-\begin{align}\
+To investigate marginal stability we set $\hat{\sigma} = 0$ so the
+frequency, $\hat{\upsilon}=\hat{\omega}_c$, is real; and $\beta =
+\beta_c$,  the cooling time for marginal stability. 
+We take the short radial wavelength limit, $\khat^2\gg 1$, of the
+coefficients in Eq.\ \ref{coeffs}. We consider $M \lesssim O(1)$ and
+assume $\beta_c \ll \khat$.  The real and 
+imaginary parts of Eq. \ref{relax_disp} then give relations for $\hat{\omega}_c$ and $\beta_c$ as 
+\begin{align}
   0 =&M(M+1)(1-h^2 q^2 \khat^2) + 4\beta_c h q M(M+1)\left(\hat{\omega}_c\khat\right) 
  +\left[1 +
     \gamma\beta_c^2\left(1-\gamma\right)(1+2M)^2\right]\left(\hat{\omega}_c\khat\right)^2 \label{relax_cond1} \\
@@ -683,17 +580,64 @@ marginal stability, as
 \end{align}
 We recall that in the low frequency and thin-disk approximations, $h,
 |\hat{\omega}_c| \ll 1$. We note that $|q|=O(1)$ and 
-$\gamma>1$ but is $O(1)$. We consider $M$ to be $O(1)$ or smaller, so 
-that $|\hat{\omega_c}\khat|=O(1)$, since for inertial waves
-$|\hat{\omega}\khat|^2\simeq 1 + M $. Finally, we assume 
-$\beta_c \ll 1$, to be justified \emph{a posteriori}. Applying these
-approximations give
+$\gamma>1$ but is $O(1)$. We assume $|\hat{\omega_c}\khat|=O(1)$,
+since for inertial waves $|\hat{\omega}\khat|\simeq \sqrt{1 + M}$. Finally, we further assume 
+$\beta_c \ll 1$, to be justified \emph{a posteriori}, to give 
 Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}.   
 
-\subsection{Marginal stability for the fundamental mode}\label{bcrit_alt}
-If we apply the above approximations for the fundamental mode $M=0$ to
-Eq. \ref{relax_cond1}---\ref{relax_cond2}, but with the less
-restrictive assumption $\beta_c \lesssim O(1)$, we expect the balance  
+\subsection{Maximum critical cooling time}\label{max_cool}
+ % {\bf [at the moment for reference
+ %  only, not to be included in final version]}\\
+Consider the simplified dispersion relations for marginal stability,
+Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}. Writing 
+$X= \hat{\omega}\khat$, $\theta = (hq\khat)^2\leq1$ and  treating $M$ as a
+continuous variable, we find from Eq. \ref{relax_cond_simp1} that 
+%\begin{align}
+%  &x^4  = x^2 + M(M+1)(1-\theta), \label{simp1}\\
+%  &x^2  = \frac{\gamma-1}{h q}\beta_c (1+2M)^2x - 2M(M+1)\label{simp2},
+%\end{align}
+%where and
+\begin{align}
+  2 X \frac{d X}{dM} = \frac{X^2(1-\theta)(2M+1)}{X^2 +
+  2M(M+1)(1-\theta)}, 
+\end{align}
+and from Eq. \ref{relax_cond_simp2} that
+\begin{align}
+  2X\frac{dX}{dM} = \left[X^2 +
+  2M(M+1)\right]\left(\frac{d\ln{\beta_c}}{dM} + \frac{4}{2M+1} +
+  \frac{d\ln{X}}{dM}\right) - 2(2M+1). 
+\end{align}
+We eliminate $dX/dM$, making use of Eq. \ref{relax_cond_simp1} in the process, to obtain 
+\begin{align}
+  (2M+1)\frac{d\ln{\beta_c}}{dM} %= \frac{\mathcal{N}}{\mathcal{D}}, 
+  = -\frac{(1-\theta)M(M+1)\left[ 2(2M+1)^2 + 12X^2\right]
+  + (3+\theta)X^2}{2 \left[X^2 +
+  2M(M+1)(1-\theta)\right]\left[X^2 + 2M(M+1)\right]}.  
+\end{align}
+%where the denominator $\mathcal{D}$ is
+%\begin{align}
+%\mathcal{D} = 2 \left[X^2 +
+ % 2M(M+1)(1-\theta)\right]\left[X^2 + 2M(M+1)\right]>0, 
+%\end{align}
+%and the numerator $\mathcal{N}$ is 
+%\begin{align}
+ % \mathcal{N} = -(1-\theta)\left[ 2M(M+1)(2M+1)^2 + 12X^2M(M+1)\right]
+ % - (3+\theta)X^2 < 0.
+%\end{align}
+Hence,
+\begin{align}
+  \frac{d\beta_c}{dM}<0, 
+\end{align}
+for all $M\geq 0$ if $\theta\leq 1$. This implies 
+$\mathrm{max}(\beta_c)$ occurs at $M=0$. 
+
+\subsection{Marginal stability for the fundamental
+  mode}\label{bcrit_alt}
+For the fundamental mode ($M=0$) we can deduce $\beta_c\ll 1$, which
+motivates us to make this strong assumption from the onset. In this
+case, Eq. \ref{relax_cond1} --- \ref{relax_cond2} 
+imply the following balance for large $\khat$ and small
+$\hat{\omega}_c$ while $\hat{\omega}_c\khat$ remain fixed:  
 \begin{subequations}\begin{align}
     &0  = \left[1 + \gamma\beta_c^2\left(1-\gamma\right)\right] + 2h q
     \gamma \beta_c \left(\hat{\omega}_c\khat\right) - \left(\hat{\omega}_c\khat\right)^2,\\
@@ -701,12 +645,11 @@ restrictive assumption $\beta_c \lesssim O(1)$, we expect the balance
   \end{align}\end{subequations}
 Then
 \begin{align}
-  \beta_c = \frac{h|q|}{\gamma-1}\left[1 - \frac{\gamma h^2 
-      q^2}{\gamma-1}\right]^{-1/2},
+  \beta_c = \frac{h|q|}{\gamma-1}\left(1 - \frac{\gamma h^2 
+      q^2}{\gamma-1}\right)^{-1/2},
 \end{align}
-which reduces to Eq. \ref{iso_vsi_cond} for thin-disks ($h\ll1$). We
-thus deduce that in fact $\beta_c\ll 1$, which motivates us to make this
-strong assumption from the onset.   
+which reduces to Eq. \ref{iso_vsi_cond} at $O(h)$. 
+
 
 %For fixed $M=O(1)$,  we assume
 %$|\hat{\omega}\khat|$ remain constant but consider $\khat\gg 1$ so
@@ -723,10 +666,6 @@ strong assumption from the onset.
 %$\beta_\mathrm{crit}$ (Eq. \ref{iso_vsi_cond}) without
 %assuming $|h q \khat|\lesssim 1$, as done in the main text to obtain the
 %equivalent expression for $M>0$ (Eq. \ref{bcrit_gen}).
-
-
-
-
 
 %Taking the real and imaginary parts of Eq. \ref{relax_disp_fund} and considering 
 % $\khat\gg1$, we find
