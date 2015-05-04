@@ -44,11 +44,10 @@ we expect that $\beta < \beta_\mathrm{crit} \approx 0.13$ is needed for VSI grow
 
 \subsection{Rapid thermal relaxation}\label{vertiso_pertiso} 
 We first calculate the VSI in a disk with rapid thermal relaxation by
-setting $\beta=10^{-3}$. Since this cooling is much faster than the predicted
-$\beta_\mathrm{crit}$, we expect and that this case should give 
-similar results to the well studied case of isothermal perturbations
- \citepalias[e.g.][]{nelson13,mcnally14,barker15}.  Indeed we found that smaller
- $\beta$ values gave similar results. This case allows us to explore and test our
+setting $\beta=10^{-3}$.  Since $\beta \ll \beta_\mathrm{crit}$, this case
+gives similar results to the well studied case of isothermal perturbations
+ \citepalias[e.g.][]{nelson13,mcnally14,barker15}.\footnote{To be sure, we confirmed that smaller
+ $\beta$ values gave similar results.} This case allows us to explore and test our
 finite cooling time model in a familiar context.
 
 %For completeness, and as a way of introducing terminology, 
@@ -117,13 +116,14 @@ wave frequencies -- of unstable
 modes for $\khat=10$.  We compare our numerical results to the analytic dispersion relations for 
 $\beta = 0$ and $10^{-3}$, from Eqs.\ \ref{simple_growth} and \ref{relax_disp}, respectively. Each symbol 
 corresponds to a different order mode, i.e.\ a different number of vertical node crossings.  Lower order modes
-have lower (in magnitude) frequencies, with the lowest order `fundamental' modes further to the left in Fig. \ref{compare_modes_iso_kx10}. 
+have lower (in magnitude) frequencies for a given radial wavenumber, as expected for inertial-gravity waves (see \S\ref{stable_novshear}).
 
 For our fiducial case (black dots), the lower order and lower frequency modes closely follow the analytic prediction with growth rates increasing with $|\omega|$, the magnitude of the frequency.  However, for $|\omega| \gtrsim 4 h \OmK$ the growth rate declines with $|\omega|$.  This break from the analytic prediction is not due the choice of boundary condition, as we demonstrate by considering rigid boundaries (red plusses).
 
-Rather, the decline in growth rate for high order models is due to the vertical box size, as seen by comparing the $\zmax/H = 3, 5$ and 7 cases in Fig. \ref{compare_modes_iso_kx10}.  Larger boxes give better agreement with the analytic theory, which are infinite in vertical extent.  Larger boxes include regions of larger vertical shear (see Eqs. \ref{vertical_shear_thin} and \ref{vertical_shear_ex}), which higher order modes can tap to give larger growth rates.   
-The need for vertically extended domains to capture the largest VSI growth rates is problematic 
-For the $\zmax = 7 H$ case, we begin to see another branch of modes, the so-called ``surface modes" described below.  
+Rather, the decline in growth rate for high order models is due to the vertical box size, as seen by comparing the $\zmax/H = 3, 5$ and 7 cases in Fig. \ref{compare_modes_iso_kx10}.  Larger boxes give better agreement with the analytic theory, which has infinite vertical extent.  Larger boxes include regions of larger vertical shear (see Eqs. \ref{vshear_thin} and \ref{vertical_shear_ex}), which higher order modes can tap to give larger growth rates.   For the $\zmax = 7 H$ case, we begin to see another branch of modes with the highest growth rates at $\omega \sim -6 h\OmK$. This branch contains the  ``surface modes" described below.  
+
+The need for vertically extended domains to capture the largest VSI growth rates is problematic, especially for hydrodynamic simulations.  This  complication is mitigated by at least two factors.  First, we show below that with slower cooling, the growth of higher order modes is preferentially damped, consistent with the analytic analysis in \S\ref{iso_vsi_beta_crit}.  Second, the fastest growing modes may not dominate transport when they operate in very low density  surface layers, i.e. at many $H$.   Quantifying which modes will contribute most to non-linear transport is an important issue, but beyond the scope of this work.
+
 
 %comment: the following reads like a figure caption, not a description of results.
 %Black dots correspond to our fiducial setup.  
@@ -132,27 +132,26 @@ For the $\zmax = 7 H$ case, we begin to see another branch of modes, the so-call
 %crosses),  free surface and $\zmax = 3H$ (blue triangles), free surface
 %and $\zmax=7H$ (green crosses). 
 
-The modes shown in Fig. \ref{compare_modes_iso_kx10} are `body modes'
-and are inertial waves destabilized by vertical shear
-\citepalias{barker15}. (The exception being the fastest growing
-mode for $\zmax=7H$ which is a surface mode --- see the discussion
-below.)  The `fundamental corrugation mode', marked by `f',
-corresponds to the eigenvalue with the smallest $|\upsilon|$. The
-fundamental mode is robust  
-against vertical boundary conditions as it appears at the same
-position in Fig. \ref{compare_modes_iso_kx10} for all cases. Higher  
-order modes, corresponding to increasing $|\omega|$, increasingly
-deviates from the analytic line due to the imposed boundaries, 
-unless $\zmax$ is increased. 
+%The modes shown in Fig. \ref{compare_modes_iso_kx10} are `body modes'
+%and are inertial waves destabilized by vertical shear
+%\citepalias{barker15}. (The exception being the fastest growing
+%mode for $\zmax=7H$ which is a surface mode --- see the discussion
+%below.)  The `fundamental corrugation mode', marked by `f',
+%corresponds to the eigenvalue with the smallest $|\upsilon|$. The
+%fundamental mode is robust  
+%against vertical boundary conditions as it appears at the same
+%position in Fig. \ref{compare_modes_iso_kx10} for all cases. Higher  
+%order modes, corresponding to increasing $|\omega|$, increasingly
+%deviates from the analytic line due to the imposed boundaries, 
+%unless $\zmax$ is increased. 
 
-
-
-For later comparison, we plot in Fig. \ref{lowfreq_eigenfunc} the 
-eigenfunctions $W$ and $\delta   v_z$ for the fundamental mode. We also show a 
-meridional visualization in Fig. \ref{lowfreq_eigenfunc_2d}. The $x$ axis is 
-stretched for clarity; radial velocities are in fact typically much 
-smaller than vertical velocities. Most of the meridional kinetic energy is
-contained within $\sim 2H$ of the midplane due to the density 
+Fig. \ref{lowfreq_eigenfunc} shows 
+eigenfunctions $W = \delta P/\rho$ and $\delta   v_z$ for the lowest order fundamental mode.  
+Fig. \ref{lowfreq_eigenfunc_2d} maps the pressure perturbation and meridional flow,
+scale by $\sqrt{\rho}$ to reflect the contribution to kinetic energy. Due to the stretched $x$ axis, 
+radial velocities are in fact typically much 
+smaller than vertical velocities, as expected for a vertically elongated, incompressible mode. 
+Most of the kinetic energy is contained within $\sim 2H$ of the midplane due to the density 
 stratification. 
 
 \begin{figure}
@@ -238,7 +237,7 @@ We now consider the effect of finite thermal relaxation by increasing
 $\beta$. % Note that for the fiducial disk model the critical thermal 
 % timescale $\beta_\mathrm{crit} = 0.125$.
 Fig. \ref{compare_modes_cool_kx10} show unstable modes with $\khat=10$ 
-and $\beta\in[0.01,0.1]$. In addition to our fiducial setup with 
+and $\beta$ from $0.01$ to  $0.1$. In addition to our fiducial setup with 
 $\zmax=5H$, we also plot results for $\zmax=3H$, $\zmax=7H$ and 
 analytic results computed from Eq. \ref{relax_disp}.  %analytic
 % results for low order modes 
@@ -246,7 +245,7 @@ analytic results computed from Eq. \ref{relax_disp}.  %analytic
 We find the number of unstable modes decrease with increasing
 $\beta$. Consider the fiducial setup with $\zmax=5H$ 
 (middle panel). The fundamental mode ($M=0$) is not the most unstable for   
-$\beta=0.01$ as there area number of modes with $M>0$ that have larger
+$\beta=0.01$ as higher order modes have larger
 growth rates. As noted above, these higher order modes are affected by
 $\zmax$, e.g. there is a significant mismatch between numerical and 
 analytical results for $M\geq1$ when $\zmax=3H$ (upper panel). 
@@ -336,9 +335,12 @@ conditions as they are absent for $\zmax=3H$.
 Nevertheless, as before we observe more effective stabilization for
 higher order modes, including the absence of surface modes, for
 example as $\beta$ is increased from $0.01$ to $0.03$ (for $\zmax\geq
-5H$). If we discard modes associated with boundary conditions, then
-the fundamental mode would again become the dominant mode as $\beta$ is
-increased. 
+5H$). 
+%\emph{not a clear and possible not valid argument.  All modes are associated with
+%a BC and the disappearance of a mode for smaller zmax could be the artificial effect.}
+%If we discard modes associated with boundary conditions, then
+%the fundamental mode would again become the dominant mode as $\beta$ is
+%increased. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -475,6 +477,7 @@ vertically isothermal disks.
 \subsection{Vertically non-isothermal disk model} 
 %We briefly consider vertically non-isothermal disks in which there is
 %a disk surface at finite height. 
+\emph{fix this rambling discussion..}
 \citetalias{barker15} have argued that vertically isothermal disks are not
 ideal for studing the VSI because $\zmax$ is a free 
 parameter in numerical calcluations. On the other hand, vertically 
@@ -500,7 +503,8 @@ disk model with $(p,q, h)=(0,-1,0.05)$ and $\Gamma=1.0837$. This
 value of $\Gamma$ is chosen so that the standard vertical domain size $\zmax =
 5H$ effectively corresponds to the disk surface ($\zmax\simeq
 H_s$). The disk temperature decreases rapidly with height such that 
-$c_s^2(\zmax)\simeq 10^{-4}c_s^2(0)$.    
+$c_s^2(\zmax)\simeq 10^{-4}c_s^2(0)$.    \emph{note that this would imply midplane
+temperatures in excess of $10^6$ K so it's completely un-astrophyscial.}
 
 In Fig. \ref{compare_modes_vnoniso_kx10} we plot the mode diagram for
 $\khat=10$ for several values of $\beta$. This plot is 

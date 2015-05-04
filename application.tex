@@ -1,4 +1,11 @@
 \section{Application to protoplanetary disks}\label{application} 
+\emph{I suggest the following edits
+\begin{itemize}
+\item Instead of starting over again with the full energy equation focus on giving a phyiscal values for $\Lambda$ and $t_c$ already introduced.
+\item Don't describe what we don't do, especially at the outset.  Say what's done, and then if essential list caveats.
+\end{itemize}
+
+
 As an application of our linear models, we estimate where in a
 PPD do the thermodynamic conditions allow the VSI to
 operate. For a realistic disk one might consider an energy equation
@@ -27,17 +34,22 @@ $l\ll l_\mathrm{rad}$, where
 is the photon mean-free-path and $\kappa_d$ is the (dust) opacity. 
 
 \subsection{Radiative diffusion}
+\emph{the following sentence is too long and has a dangling "this".}
+
 For perturbations with lengthscales $l\gg
 l_\mathrm{rad}$, we assume temperature fluctuations are smoothed out
 by radiative diffusion and model this in linear theory by writing the
 linearized RHS of Eq. \ref{real_energy} as 
 
+\emph{I would have this be an equation for something, like $\Gamma$ or $t_c$.}
 \begin{align}\label{diff_cool_proper}
   \frac{P}{\rho T C_v} \nabla\cdot\left(k_\mathrm{rad}\nabla\delta
     T\right),  
 \end{align}
 where $k_\mathrm{rad}$ is the conduction coefficient to be defined
 implicitly. 
+
+\emph{To get to the point more directly and intuitively, I would start below with "We include only the radial derivatives in Eq.\ blah, neglecting vertical derivatives.  This approximation is valid for the vertically elongated modes we consider."  I think we've already discussed vertical elongation enough that this can be brief.  Then maybe say that keeping the vertical derivates would be bad, if you really want to.  "With this simplification (give revised equation)}
 
 However, Eq. \ref{diff_cool_proper} fundamentally changes the linear
 problem by introducing higher order derivatives. We defer a proper
@@ -67,7 +79,9 @@ time for diffusion as
 
 \subsection{Newtonian cooling}\label{newton_cool}
 For perturbations with small lengthscales, $l\ll l_\mathrm{rad}$, 
-the disk is optically thin. In this case, we assume 
+the disk is optically thin.
+\emph{the disk isn't (necessarily) opt. thin, the pert. is}
+ In this case, we assume 
 Newtonian cooling can be applied, which is the thermal
 relaxation model as adopted in our linear models. That is, temperature
 fluctuations $\delta T$ decay on a timescale $t_\mathrm{cool}$,
