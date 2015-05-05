@@ -146,9 +146,9 @@ $l\sim 1/k_x \lesssim\l_\mathrm{rad}$, when
 \begin{align}
   \khat\gtrsim 2.5\times10^3\hat{\kappa}_d\hat{\rho}(z)r_\mathrm{AU}^{-33/14}.  
 \end{align}
-In the inner disk, e.g. $r\sim 1$AU, only
+In the inner disk, e.g. $r_\mathrm{AU}\sim 1$, only
 extremely small-scale perturabtions are in the optically-thin
-regime. However, in the outer disk, e.g. $r\sim 10$AU, the transition
+regime. However, in the outer disk, e.g. $r_\mathrm{AU}\sim 10$, the transition
 occurs at more moderate wavenumbers $\khat\sim 10$.
 %, though the
 %wavelength is still small compared to $H$. 
@@ -165,32 +165,35 @@ occurs at more moderate wavenumbers $\khat\sim 10$.
 % \end{align}
 
 \subsection{Comparing $\beta$ to $\beta_\mathrm{crit}$ in the MMSN} 
+In this section we compare the above thermal timescale, Eq. \ref{beta_mmsn_simp}, to 
+the VSI criterion Eq. \ref{iso_vsi_cond} evaluated for the MMSN,     
+\begin{align}\label{bcrit_mmsn}
+  % \beta_\mathrm{crit} = \frac{1.44\times10^{-2}}{(\gamma
+  % -1)}\left(\frac{\hat{T}}{\mu}\right)^{1/2}r_\mathrm{AU}^{2/7}. 
+  \beta_\mathrm{crit} = 0.024r_\mathrm{AU}^{2/7}. 
+\end{align}
+Fig. \ref{beta_compare} show examples of $\beta$ in the fiducial disk
+at $r_\mathrm{AU}=5$ and $r_\mathrm{AU}=50$ for a perturbation wavenumber $\khat=30$.  
+At $r_\mathrm{AU}=50$, the disturbance is in the optically-thin regime,  
+$\beta$ is vertically uniform, as assumed for our analysis, and $\beta
+< \beta_\mathrm{crit}\, \forall z$. Accordingly we expect, and find, the VSI
+operates.     
 
+On the other hand, at $r_\mathrm{AU}=5$, the perturbation is in the optically
+thick (thin) regime near (away from) the midplane. In this case,
+$\beta < \beta_\mathrm{crit}$ for $|z|\gtrsim1.25H$. Our analytic 
+criteria is not valid for vertically non-uniform $\beta$ so we must
+turn to numerical solutions of the linear problem. We do this in
+\S\ref{vsi_mmsn_grow}. % and find the VSI also operates in this case, but
+% with significantly reduced efficiency. 
 
-Fig. \ref{beta_compare} show examples of
-$\beta$ at $r=5$AU and $r=50$AU for a perturbation wavenumber
-$\khat=30$. 
- 
-
-
-
-% In the outer disk  at $r=50$AU, $\beta$ is vertically-uniform and is less
-% than $\beta_\mathrm{crit}$.  Accordingly we expect, and find, the VSI
-% operates.    
-% In the inner disk ($r=5$AU), the perturbation is in the optically
-% thick regime near the midplane, but becomes optically-thin away from
-% the midplane.  In this case, $\beta < \beta_\mathrm{crit}$
-% for $|z|\gtrsim1.25H$. In fact, we also find the VSI in this case, but
-% with much reduced growth rates (when scaled by the local rotation), as
+%, as
 % described below.  
-
-
-
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
   0cm]{figures/beta_compare}
-  \caption{Thermal relaxation timescales in the MMSN at $r=50$AU
+  \caption{Thermal relaxation timescales in the fiducial MMSN at $r=50$AU
     and $r=5$AU for $\khat=30$ (solid lines). The
     corresponding horizontal dashed lines are the critical thermal
     relaxation timescales derived in linear theory. 
@@ -198,23 +201,45 @@ $\khat=30$.
 \end{figure}
 
 
+In Fig. \ref{mmsn_bcrit_bcool}, we compare $\beta$ to
+$\beta_\mathrm{crit}$ for $r_\mathrm{AU}\in[1,100]$, as well as for different
+opacity scales. Notice that $\beta$ increases for either large or
+small radii. For sufficiently large $r$, disturbances are generally
+in the optically-thin cooling regime, characterized graphically by the
+over-lapping curves. 
+%, where $\beta$ is independent of
+%$z$ and the perturbation lengthscale $\khat$.
+In this case, we may
+directly compare $\beta$ to $\beta_\mathrm{crit}$ and infer that the
+VSI can operate at 10s of AU in the fiducial MMSN disk (with
+$\hat{\kappa}_d=1$).  However, at small radii, $\beta$ depends on both
+$z$ and $\khat$, as the disturbance enters the optically-thick limit
+at the midplane. This regime is characterized by the distinct curves for each
+$\khat$ toward decreasing $r$.  
+  
+%\emph{a better organized discussion might end on this point.  Might not be easy to rearrange to do this, but it would ideal to have the seamless flow to what you do next.}
+ 
+Next consider the effect of the opacity scale $\hat{\kappa}_d$. The previous section
+(see also Eq. \ref{beta_mmsn_simp}) indicates that increasing $\hat{\kappa}_d$
+increases (decreases) the cooling time in the optically thick (thin)
+limits. The overall effect of  increasing (decreasing) the opacity
+scale by an order of magnitude is illustrated in the lower (upper)
+panels of Fig. \ref{mmsn_bcrit_bcool}. 
+
+For increasing opacity, $\hat{\kappa}_d=1\to 10$,  a comparison
+between the middle and lower panels shows that the optically-thick
+regions shift outward; while the
+optically-thin regions have lowered cooling times. Thus, instability
+is expected to be restricted to larger radii. 
+
+For decreasing opacity, $\hat{\kappa}_d=1\to 0.1$,  the
+optically-thick regions shift inwards; while cooling times in the
+optically-thin limit are increased. In fact, the latter effect is
+significant enough to raise $\beta > \beta_\mathrm{crit}$ over all
+radii, and even away from the midplane. This is expected to stabilize
+the disk against the VSI.  
 
 
-
-
-
-
-
-
-
-In Fig. \ref{mmsn_bcrit_bcool} we compare the above thermal timescale,
-Eq. \ref{beta_mmsn_simp},  for several opacity scales, to  
-the VSI criterion Eq. \ref{iso_vsi_cond} evaluated for the MMSN,     
-\begin{align}\label{bcrit_mmsn}
-  % \beta_\mathrm{crit} = \frac{1.44\times10^{-2}}{(\gamma
-  % -1)}\left(\frac{\hat{T}}{\mu}\right)^{1/2}r_\mathrm{AU}^{2/7}. 
-  \beta_\mathrm{crit} = 0.024r_\mathrm{AU}^{2/7}. 
-\end{align}
 
 
 \begin{figure*}
@@ -240,60 +265,13 @@ the VSI criterion Eq. \ref{iso_vsi_cond} evaluated for the MMSN,
     \label{mmsn_bcrit_bcool}}   
 \end{figure*}  
 
-
-For disturbances in the optically-thin cooling regime, $\beta$ does
-not depend on the height $z$ or perturbation lengthscale $\khat$. This
-generally occurs at sufficiently large radii. In this case we may
-directly compare $\beta$ to $\beta_\mathrm{crit}$, which was derived
-assuming it is vertically-uniform.  For the case with MMSN
-opacity ($\hat{\kappa}_d=1$), we  infer that the VSI can operate at
-10s of AU.   
-
-For disturbances in the optically-thick or diffusive regime, $\beta$
-increases with decreasing $\khat$ (larger scales) and decreases with
-increasing height, on account of the density-dependence of
-$t_\mathrm{diff}$.  This generally occurs at small radii. In this case 
-$\beta$ may be smaller or greater than $\beta_\mathrm{crit}$ depending
-on $z$. Our analytical criteria $\beta < \beta_\mathrm{crit}$ is not valid for
-vertically non-uniform $\beta$, and we must turn to numerical
-solutions of the linear problem to determine whether or not the VSI
-operates. We do this in \S\ref{vsi_mmsn_grow}.  
-
-
-
-%\emph{a better organized discussion might end on this point.  Might not be easy to rearrange to do this, but it would ideal to have the seamless flow to what you do next.}
- 
-Next consider the effect of the opacity scale $\hat{\kappa}_d$. The previous section
-(see also Eq. \ref{beta_mmsn_simp}) indicates that increasing $\hat{\kappa}_d$
-increases (decreases) the cooling time in the optically thick (thin)
-limits. The overall effect of  increasing (decreasing) the opacity
-scale by an order of magnitude is illustrated in the lower (upper)
-panels of Fig. \ref{mmsn_bcrit_bcool}. 
-
-For increasing opacity, $\hat{\kappa}_d=1\to 10$,  a comparison
-between the middle and lower panels shows that the optically-thick
-regions shift outward (where the three curves are distinct); while the
-optically-thin regions have lowered cooling times (where the curves
-overlap). Thus, instability is expected to be restricted to larger
-radii. 
-
-For decreasing opacity, $\hat{\kappa}_d=1\to 0.1$,  the
-optically-thick regions shift inwards; while cooling times in the
-optically-thin limit are increased. In fact, the latter effect is
-significant enough to raise $\beta > \beta_\mathrm{crit}$ over all
-radii, and even away from the midplane. This is expected to stabilize
-the disk against the VSI.  
-
-
-
-
 %\emph{the following statement is not generally true, so it should not be stated without caveat}
 
 We remark that it is possible to satisfy $\beta < \beta_\mathrm{crit}$
-at small radii for sufficiently large $\khat$. We illustrate this in 
+for sufficiently large $\khat$ and small $r$. We illustrate this in 
 Fig. \ref{mmsn_bcrit_bcool_mink} by plotting at each radius the value
 of $\khat$ such that $\beta = \beta_\mathrm{crit}$. If we consider the
-midplane at, say $r\sim 1$AU, the VSI would only occur on very small
+midplane at, say $r_\mathrm{AU}\sim 1$, the VSI would only occur on very small
 radial lengthscales $\ll O(10^{-2}H)$. It is, however, unclear if such
 small-scale disturbances are dynamically important.  
 
@@ -316,18 +294,16 @@ Here we solve the linear stability problem in the MMSN with the scale and
 height dependent thermal relaxation timescale given by
 Eq. \ref{beta_mmsn_simp}. 
 
-% \\
-% \emph{For this figure to belong here (and not in the previous subsection, with the other comparisons of $\beta$ and $\beta_{crit}$) the discussion should be be more focused on the linear analysis.  Again it's better to start by discussing what the figure tells us, than repeating the figure caption. E.g.\ you could use Fig 21 to explain when a height varying $\beta$ is required.  I would also explain (especially if it stays in this subsection) what the growth time is for the r = 5 AU case.  Looks to be $\sim 1000$ orbits, which is remakrable given that $\beta < \beta_{\rm crit}$ outside $z \gtrsim  1.6 H$.?  That kind of detail could be illuminating, as it's nominally surprising given previous evidence that behavior near 5 -- 7 $H$ can affect growth.}
-
-
 In Fig. \ref{mmsn_overall} we plot characteristic growth timescales
 $t_\mathrm{grow} \equiv 1/\sigma$ of the fundamental mode with a range of
 wavenumbers, in units of the local orbital time $P_\mathrm{orb}\equiv
 2\pi/\OmK$. In fact, we either only find the fundamental mode, or 
 that it is the most unstable, except for the appearance of some 
-surface modes for large wavenumbers $\khat\gtrsim 50$. We do not
-consider surface modes since they are boundary-dependent and likely
-subject to viscous decay (see). 
+surface modes for large wavenumbers $\khat\gtrsim 50$. We discard
+surface modes for this discussion since they are not well-defined 
+in vertically isothermal disk models \citepalias{barker15} and may be 
+subject to viscous decay in real disks (see \S\ref{caveats_visc}).  
+
 %  which are 
 % boundary-dependent. 
 % Disturbances with large $\khat$ are also more likely subject to viscous 
@@ -339,20 +315,21 @@ subject to viscous decay (see).
 %and 
 
 We therefore consider Fig. \ref{mmsn_overall} as a representation of the
-VSI in the fiducial MMSN. We see the VSI operates from $\sim 5$AU to $\sim
-50$AU with growth timescales $\sim 30$---40 orbits and
+VSI in the fiducial MMSN. We see the VSI operates from $r_\mathrm{AU}\sim 5$ to $r_\mathrm{AU}\sim
+50$ with growth timescales $\sim 30$---40 orbits and 
 $t_\mathrm{grow}$ rises rapidly towards the inner disk. It is
 necessary to consider smaller scales with decreasing $r$ as
 perturbations generally become optically thick.   
 
-The fact that we obtain the VSI in the inner disk despite $\beta >
-\beta_\mathrm{crit}$ near the midplane suggests that the instability
+The fact that we can obtain the VSI in the despite $\beta >
+\beta_\mathrm{crit}$ near the midplane (e.g. $\khat = 30$ at
+$r_\mathrm{AU} =5$, see Fig. \ref{beta_compare}) suggests  that the instability
 can operate provided $\beta < \beta_\mathrm{crit}$ for a sufficiently large
 fraction of the vertical domain. However, the normalized growth times
 become much longer. For example, for $\khat=30$ we find
-$t_\mathrm{grow}\sim 40$ orbits at $r=50$AU, but $t_\mathrm{grow}\sim
-400$ orbits at $r=5$AU (and rapidly increases to $> 10^3P_0$ for
-smaller $r$). Thus, introducing an optically thick midplane
+$t_\mathrm{grow}\sim 40$ orbits at $r_\mathrm{AU}=50$, but $t_\mathrm{grow}\sim
+400$ orbits at $r_\mathrm{AU}=5$ (and rapidly increases to $> 10^3$ orbits for
+smaller $r$). Thus, introducing an optically-thick midplane 
 significantly reduces the efficiency of the VSI despite $\beta <
 \beta_\mathrm{crit}$ away from the midplane. 
 
@@ -362,9 +339,9 @@ We thus find Fig. \ref{mmsn_overall} to be roughly consistent with
 comparing the midplane thermal relaxation timescales to the critical
 thermal timescale. For example, 
 Fig. \ref{mmsn_bcrit_bcool} show that $\beta(z=0,\khat=10) \gtrsim
-\beta_\mathrm{crit}$ for $r\lesssim 10$AU in the MMSN (left middle
+\beta_\mathrm{crit}$ for $r_\mathrm{AU}\lesssim 10$ in the MMSN (left middle
 panel); and Fig. \ref{mmsn_overall} 
-show that modes with $\khat=10$ are stabilized inside $\sim 8$AU (where
+show that modes with $\khat=10$ are stabilized for $r_\mathrm{AU}\lesssim 8$ (where
 $t_\mathrm{grow}\to\infty$). Our numerical results suggest the VSI
 is efficient at radii of few tens of AU in the MMSN, consistent with
 estimates made by \citetalias{nelson13}. 
