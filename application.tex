@@ -1,78 +1,86 @@
 \section{Application to protoplanetary disks}\label{application} 
-\emph{I suggest the following edits}
-\emph{For this section. There are 3 main ideas, and I think they should be the subsections, more comments related to this are in the text itself:
-\begin{itemize}
-\item Developing the cooling model in opt thin and this regimes, including MMSN value
-\item Comparison to expected $\beta_{crit}$
-\item Linear growth with MMSN cooling law
-\end{itemize}}
+% \emph{I suggest the following edits}
+% \emph{For this section. There are 3 main ideas, and I think they should be the subsections, more comments related to this are in the text itself}:
+% \begin{itemize}
+% \item Developing the cooling model in opt thin and this regimes, including MMSN value
+% \item Comparison to expected $\beta_{crit}$
+% \item Linear growth with MMSN cooling law
+% \end{itemize}
 
-\emph{Suggested edits for this intro}
-\begin{itemize}
-\item Instead of starting over again with the full energy equation focus on giving a phyiscal values for $\Lambda$ and $t_c$ already introduced.
-\item Don't describe what we don't do, especially at the outset.  Say what's done, and then if essential list caveats.
-\end{itemize}}
-
+% \emph{Suggested edits for this intro}
+% \begin{itemize}
+% \item Instead of starting over again with the full energy equation focus on giving a phyiscal values for $\Lambda$ and $t_c$ already introduced.
+% \item Don't describe what we don't do, especially at the outset.  Say what's done, and then if essential list caveats.
+% \end{itemize}
 
 As an application of our linear models, we estimate where in a
 PPD do the thermodynamic conditions allow the VSI to
-operate. For a realistic disk one might consider an energy equation
-with radiative cooling, 
-\begin{align}\label{real_energy}
-  % \rho T \frac{DS}{Dt} = - \left(\nabla\cdot\bm{F} - Q_+\right), 
-  \frac{\p P}{\p t} + \bm{v}\cdot\nabla P +\gamma P \nabla\cdot\bm{v} = - \frac{P}{\rho T
-    C_v}\left(\nabla\cdot\bm{F} - Q_+\right), 
-\end{align}
-where $C_v$ is the heat capacity at constant
-volume, 
-$\bm{F}$ is the radiative flux and $Q_+$ is a heating
-term to permit an equilibrium solution. 
+operate. We first model the cooling time $t_c$ based on realistic
+disk properties, which will yield a non-uniform dimensionless cooling
+time $\beta(r,z;\khat)$. We then compare this to the critical cooling time
+$\beta_\mathrm{crit}$ derived above. Finally, we explicitly compute 
+linear growth rates numerically in order to characterize 
+growth times expected in PPDs.  
 
-One should now model in detail each of the terms on the RHS of
-Eq. \ref{real_energy}, linearize them, then solve 
-the resulting linear eigenvalue problem. This is beyond 
-the scope of the present work. Here, we take the simpler approach of
-representing the linearized RHS of Eq. \ref{real_energy} by a thermal
-relaxation time $t_c$. To do so, we first consider separately
-perturbations with radial lengthscales $l\gg l_\mathrm{rad}$ and  
-$l\ll l_\mathrm{rad}$, where      
+%linearized RHS of Eq. \ref{real_energy} by a thermal
+%relaxation time $t_c$.
+% For a realistic disk one might consider an energy equation
+% with radiative cooling, 
+% \begin{align}\label{real_energy}
+%   % \rho T \frac{DS}{Dt} = - \left(\nabla\cdot\bm{F} - Q_+\right), 
+%   \frac{\p P}{\p t} + \bm{v}\cdot\nabla P +\gamma P \nabla\cdot\bm{v} = - \frac{P}{\rho T
+%     C_v}\left(\nabla\cdot\bm{F} - Q_+\right), 
+% \end{align}
+% where $C_v$ is the heat capacity at constant
+% volume, 
+% $\bm{F}$ is the radiative flux and $Q_+$ is a heating
+% term to permit an equilibrium solution. 
+% One should now model in detail each of the terms on the RHS of
+% Eq. \ref{real_energy}, linearize them, then solve 
+% the resulting linear eigenvalue problem. This is beyond 
+% the scope of the present work.
+
+\subsection{Cooling model} 
+
+% \emph{I think 7.1-7.4 should be combined to a single section on the "Cooling Model".  As that clearly is a single idea and osme of the subsections are too trivial. Conversion to subsubsections as needed. However the application to beta-crit could be split off as 7.2.  Otherwise that material which has a crucial figure discussion is a bit buried.} 
+
+\subsubsection{Radiative diffusion and Newtonian cooling}
+
+We first consider separately perturbations with radial lengthscales
+$l\gg l_\mathrm{rad}$ and $l\ll l_\mathrm{rad}$, where       
 \begin{align}\label{lrad}
   l_\mathrm{rad} \equiv \frac{1}{\kappa_d\rho} 
-\end{align} 
-is the photon mean-free-path and $\kappa_d$ is the (dust) opacity. 
+\end{align} is the photon mean-free-path and $\kappa_d$ is the (dust)
+opacity. 
 
-\subsection{Radiative diffusion}
-\emph{I think 7.1-7.4 should be combined to a single section on the "Cooling Model".  As that clearly is a single idea and osme of the subsections are too trivial. Conversion to subsubsections as needed. However the application to beta-crit could be split off as 7.2.  Otherwise that material which has a crucial figure discussion is a bit buried.} 
+For perturbations with lengthscales $l\gg l_\mathrm{rad}$, we assume
+temperature fluctuations are smoothed out by radiative diffusion and
+model this by writing the linearized cooling function as 
 
-\emph{the following sentence is too long and has a dangling "this".}
-
-For perturbations with lengthscales $l\gg
-l_\mathrm{rad}$, we assume temperature fluctuations are smoothed out
-by radiative diffusion and model this in linear theory by writing the
-linearized RHS of Eq. \ref{real_energy} as 
-
-\emph{I would have this be an equation for something, like $\Gamma$ or $t_c$.}
 \begin{align}\label{diff_cool_proper}
-  \frac{P}{\rho T C_v} \nabla\cdot\left(k_\mathrm{rad}\nabla\delta
+  \delta \Lambda = \frac{P}{\rho T C_v} \nabla\cdot\left(k_\mathrm{rad}\nabla\delta
     T\right),  
 \end{align}
 where $k_\mathrm{rad}$ is the conduction coefficient to be defined
-implicitly. 
+implicitly, and $C_v$ is the heat capacity as constant volume. 
 
-\emph{To get to the point more directly and intuitively, I would start below with "We include only the radial derivatives in Eq.\ blah, neglecting vertical derivatives.  This approximation is valid for the vertically elongated modes we consider."  I think we've already discussed vertical elongation enough that this can be brief.  Then maybe say that keeping the vertical derivates would be bad, if you really want to.  "With this simplification (give revised equation)}
+% However, Eq. \ref{diff_cool_proper} fundamentally changes the linear
+% problem by introducing higher order derivatives. We defer a proper
+% analysis of this problem to a follow-up study. 
 
-However, Eq. \ref{diff_cool_proper} fundamentally changes the linear
-problem by introducing higher order derivatives. We defer a proper
-analysis of this problem to a follow-up study. Here, we are interested
-in order-of-magnitude estimates for perturbations with radial
-lengthscales much smaller than vertical lengthscales. We thus proceed 
-by assuming vertical derivatives can be neglected in 
-Eq. \ref{diff_cool_proper} and write  
+Since the VSI is characterized by vertically-elongated,
+radially-narrow disturbances, we simplify Eq. \ref{diff_cool_proper} 
+by retaining only radial derivatives of the perturbations, so that 
 \begin{align}\label{diff_cool_approx}
-  \frac{P}{\rho T C_v} \nabla\cdot\left(k_\mathrm{rad}\nabla\delta
-    T\right) &\to -\frac{k_\mathrm{rad}}{\rho
-    C_v}k_x^2P\left(\frac{\delta T}{T}\right)\notag\\
-  &\equiv -\eta k_x^2 \left(\delta P - \frac{P}{\rho}\delta\rho\right), 
+  % \frac{P}{\rho T C_v} \nabla\cdot\left(k_\mathrm{rad}\nabla\delta
+  %  T\right) &
+  \delta\Lambda \to %-\frac{k_\mathrm{rad}}{\rho
+  % C_v}k_x^2P\left(\frac{\delta T}{T}\right)%\notag\\
+  % \equiv 
+  %-\eta k_x^2 \left(\delta P - \frac{P}{\rho}\delta\rho\right) =
+  -\eta k_x^2 P \frac{\delta T}{T}, %=
+  %-\frac{P}{t_\mathrm{diff}}\frac{\delta T}{T},
+  %\frac{P}{t_\mathrm{diff}}\left(\frac{delta T}{T}\right), 
 \end{align}
 \citepalias[see also][]{barker15} where $\eta=k_\mathrm{rad}/\rho C_v$ is
 the diffusion coefficient and 
@@ -80,21 +88,19 @@ is given in terms of physical disk parameters as
 \begin{align}\label{eta_def}
   \eta = \frac{16\sigma_s T^3}{3\kappa_d\rho^2 C_v}, 
 \end{align}
-where $\sigma_s$ is the Stefan-Boltzmann constant. 
-From Eq. \ref{diff_cool_approx} we identify the scale-dependent thermal relaxation
+where $\sigma_s$ is the Stefan-Boltzmann constant. From our
+definition of thermal relaxation (Eq. \ref{thermal_relax}), 
+we thus identify the scale-dependent thermal relaxation
 time for diffusion as 
 \begin{align}\label{tc_diff_cool} 
   t_\mathrm{diff} = \frac{1}{\eta k_x^2}.%\equiv \frac{\OmK^{-1}}{\hat{\eta}\khat^2}, 
 \end{align}
 
-\subsection{Newtonian cooling}\label{newton_cool}
-\emph{There are no rules against subsections this short, but I think it's bad style.}
-
-For perturbations with small lengthscales, $l\ll l_\mathrm{rad}$, 
-the disk is optically thin.\\
-\emph{Above, the disk isn't (necessarily) opt. thin, the pert. is} \\
- In this case, we assume 
-Newtonian cooling can be applied, which is the thermal
+%\subsubsection{Newtonian cooling}\label{newton_cool}
+%\emph{There are no rules against subsections this short, but I think it's bad style.}
+Perturbations with small lengthscales, $l\ll
+l_\mathrm{rad}$, are in the optically thin regime. In this case, we assume 
+Newtonian cooling can be applied, which is exactly the thermal 
 relaxation model as adopted in our linear models. That is, temperature
 fluctuations $\delta T$ decay on a timescale $t_\mathrm{cool}$,
 independent of $k_x$. For simplicity, we take  
@@ -103,7 +109,7 @@ independent of $k_x$. For simplicity, we take
 \end{align}
 We note that $t_\mathrm{cool}$ does not explicitly depend on $\rho$. 
 
-\subsection{A model for combined thermal relaxation}\label{toy_relax}
+\subsubsection{A model for combined thermal relaxation}\label{toy_relax}
 %To unify $t_\mathrm{cool}$ and $t_\mathrm{diff}$, 
 We define the effective thermal relaxation timescale in linear theory as
 \begin{align}\label{tc_def}
@@ -127,25 +133,43 @@ relaxation time $\beta$ becomes
 Note that $\beta$ depends the perturbation lengthscale $\khat$,
 distance from the midplane, as well as the distance from the star.  
 
-\subsection{Evaluation for a fiducial disk model}
-We evaluate Eq. \ref{real_beta} for the PPD model
-described in \cite{chiang10} and summarized in Appendix \ref{mmsn}
-(where an opacity model is also chosen). Defining $r_\mathrm{AU}\equiv 
-r/\mathrm{AU}$, we find Eq. \ref{real_beta} becomes
-\begin{align}\label{beta_mmsn}
-  \beta(r, z; \khat) =
-  &\frac{4.4\times10^5}{\mu(\gamma-1)}\left(\frac{\hat{\kappa}_d\hat{\Sigma}^2}{\hat{T}}\right)r_\mathrm{AU}^{-57/14}\notag\\ 
-&\times\left[\frac{8.3\times10^{-9}}{\hat{\kappa}_d^2\hat{T}^4\hat{\Sigma}^2}r_\mathrm{AU}^{33/7}+\frac{\hat{\rho}^2(z)}{2\pi\khat^2}\right].         
-\end{align} 
-We refer to the case with $\gamma=1.4$, $\mu=2.33$ and the scalings
-$\hat{\Sigma}=\hat{\kappa}_d=\hat{T}=1$ as the Minimum Mass Solar
-Nebulae (MMSN) and $\beta=\beta_\mathrm{MMSN}$, \\
-\emph{I would keep $\kappa$ scaling in this eqn, since it's used in plots.  Then just say  that $\kappa_d = 1$ is fiducial case. }
+%\subsubsection{Evaluation for a fiducial disk model}
+
+We evaluate Eq. \ref{real_beta} for the Minimum Mass Solar Nebula
+(MMSN) disk model described in \cite{chiang10} and summarized in
+Appendix \ref{mmsn} (where an opacity model is also chosen). Defining
+$r_\mathrm{AU}\equiv r/\mathrm{AU}$, we find Eq. \ref{real_beta}
+becomes 
+% \begin{align}\label{beta_mmsn}
+%   \beta(r, z; \khat) =
+%   &\frac{4.4\times10^5}{\mu(\gamma-1)}\left(\frac{\hat{\kappa}_d\hat{\Sigma}^2}{\hat{T}}\right)r_\mathrm{AU}^{-57/14}\notag\\ 
+%   &\times\left[\frac{8.3\times10^{-9}}{\hat{\kappa}_d^2\hat{T}^4\hat{\Sigma}^2}r_\mathrm{AU}^{33/7}+\frac{\hat{\rho}^2(z)}{2\pi\khat^2}\right].         
+% \end{align} 
+% We shall consider the case $\gamma=1.4$, $\mu=2.33$ with scalings
+% $\hat{\Sigma}=\hat{T}=1$, and refer to this as the Minimum Mass Solar 
+% Nebulae (MMSN) where $\beta=\beta_\mathrm{MMSN}$, \\
+% \emph{I would keep $\kappa$ scaling in this eqn, since it's used in plots.  Then just say  that $\kappa_d = 1$ is fiducial case. }
 \begin{align}\label{beta_mmsn_simp}
-  \beta_\mathrm{MMSN} = 3.9\times10^{-3} r_\mathrm{AU}^{9/14}\left( 1 +
-    1.9\times10^7\hat{\rho}^2r_\mathrm{AU}^{-33/7}\khat^{-2}\right). 
+  \beta(r,z;\khat)\notag = &3.9\times10^{-3}\hat{\kappa}_d
+  r_\mathrm{AU}^{9/14}
+  \notag\\ &\times \left[\hat{\kappa}_d^{-2} +
+    1.9\times10^7\hat{\rho}^2(z)r_\mathrm{AU}^{-33/7}\khat^{-2}\right]. 
 \end{align}
-\emph{I would explain here that when $k < c\rho \kappa^m r^n$ (with correct values for $c, m, n$) cooling is optically thin, as this is useful for explaining figure.}
+The opacity scale for our fiducial case is $\hat{\kappa}_d=1$.    
+
+Perturbations are in the optically thin regime,
+$l\sim 1/k_x \lesssim\l_\mathrm{rad}$, when 
+\begin{align}
+  \khat\gtrsim 2.5\times10^3\hat{\kappa}_d\hat{\rho}(z)r_\mathrm{AU}^{-33/14}.  
+\end{align}
+In the inner disk, e.g. $r\sim 1$AU, only
+extremely small-scale perturabtions are in the optically-thin
+regime. However, in the outer disk, e.g. $r\sim 10$AU, the transition
+occurs at more moderate wavenumbers $\khat\sim 10$.
+%, though the
+%wavelength is still small compared to $H$. 
+
+%\emph{I would explain here that when $k < c\rho \kappa^m r^n$ (with correct values for $c, m, n$) cooling is optically thi%n, as this is useful for explaining figure.}
 % where
 % \begin{align}
 %   \
@@ -156,22 +180,25 @@ Nebulae (MMSN) and $\beta=\beta_\mathrm{MMSN}$, \\
 %   \khat_0 = 4.4\times10^{3}\hat{\kappa}_d\hat{T}^2\hat{\Sigma}.
 % \end{align}
 
-\emph{Sub-section break  ( 7.2) for the "$\beta_{crit}$ in the MMSN" as this is break from the derivation (and evaluation) of the cooling time (which is fairly general) to the application to the VSI.}
-
-It is instructive (\emph{advice: don't say that "it is instructive", just be instructive}) to compare the above thermal timescale 
-with the criterion Eq. \ref{iso_vsi_cond} evaluated for the MMSN,     
+\subsection{Comparing $\beta$ to $\beta_\mathrm{crit}$ in the MMSN} 
+Here we compare the above thermal timescale, Eq. \ref{beta_mmsn_simp}, to  
+the VSI criterion Eq. \ref{iso_vsi_cond} evaluated for the MMSN,     
 \begin{align}\label{bcrit_mmsn}
   % \beta_\mathrm{crit} = \frac{1.44\times10^{-2}}{(\gamma
   % -1)}\left(\frac{\hat{T}}{\mu}\right)^{1/2}r_\mathrm{AU}^{2/7}. 
   \beta_\mathrm{crit,MMSN} = 0.024r_\mathrm{AU}^{2/7}. 
 \end{align}
 
-\emph{This paragraph currently merely copies the figure caption, which is a waste and not illuminating to read.  Better to give some description of what the figure is showing. (see below for ideas)}\\
-In Fig. \ref{mmsn_bcrit_bcool} we plot Eq. \ref{beta_mmsn}  with $\mu
-=2.33$ $\gamma=1.4$, $\hat{T}=\hat{\Sigma}=1$ for opacity scales
-$\hat{\kappa}_d=0.1, \,1 $ (MMSN) and $10$, at $z=0$ and $z=3H$. \\
-\emph{Here you can describe the general features e.g. diffusive and thin cooling regions, which will help later discussions.}\\
-We also plot Eq. \ref{bcrit_mmsn} in each panel.  \emph{This sentence explains nothing and is likely to be of little help to the reader.  Instead wait to describe the science, e.g. after describing the general shape of the $\beta$ curves,  you can start the discussion below with "Fig () also compares the MMSN cooling times to $\beta_{crit}$.}
+% \emph{This paragraph currently merely copies the figure caption, which is a waste and not illuminating to read.  Better to give some description of what the figure is showing. (see below for ideas)}\\
+% In Fig. \ref{mmsn_bcrit_bcool} we plot Eq. \ref{beta_mmsn}  with $\mu
+% =2.33$ $\gamma=1.4$, $\hat{T}=\hat{\Sigma}=1$ for opacity scales
+% $\hat{\kappa}_d=0.1, \,1 $ (MMSN) and $10$, at $z=0$ and $z=3H$. \\
+% \emph{Here you can describe the general features e.g. diffusive and thin cooling regions, which will help later discussions.}\\
+% We also plot Eq. \ref{bcrit_mmsn} in each panel.  \emph{This sentence explains nothing and is likely to be of little help to the reader.  Instead wait to describe the science, e.g. after describing the general shape of the $\beta$ curves,  you can start the discussion below with "Fig () also compares the MMSN cooling times to $\beta_{crit}$.}
+
+
+
+
 
 Consider first the MMSN shown in the middle panels of 
 Fig. \ref{mmsn_bcrit_bcool}. The critical thermal timescale,
