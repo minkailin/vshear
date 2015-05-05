@@ -23,10 +23,10 @@ calculations of the VSI \citepalias{nelson13,mcnally14,barker15}, which
 assumed isothermal perturbations, to include an energy equation with 
 a source term in that relaxes the disk
 temperature to its initial value on a timescale
-$t_c$. This `thermal relaxation' model allows
-the thermodynamic response of the disk to be controlled by varying
-$t_c$, and has been employed in previous numerical simulations of the
-VSI \citepalias{nelson13}.  
+$t_c$. % This `thermal relaxation' model allows
+% the thermodynamic response of the disk to be controlled by varying
+% $t_c$, and has been employed in previous numerical simulations of the
+% VSI \citepalias{nelson13}.  
 
 In accordance with the above studies, which show that the VSI occurs for 
 perturbations with small radial lengthscales, we applied the 
@@ -81,8 +81,56 @@ realistic astrophysical disks without resorting to linear
 calculations or non-linear numerical simulations.   
 
 \subsection{Caveats and outlooks} 
-We highlight below some extensions to the present  
-linear models in future works.  
+We highlight below some outstanding issues that should be addressed in
+future works. 
+
+
+\subsubsection{Viscosity} 
+% Depending on where the VSI operates in a
+% disk, additional effects may become important. For example, in the
+% outer parts of a PPD, where we estimate the VSI 
+% operates, disk self-gravity (SG) may play a role. Vertical
+% SG may favor the VSI by increasing $|\p_z\Omega|$ through
+% enhancing the density stratification 
+% (Eq. \ref{vertical_shear}). %sg in pert? no because kx>>1. but maybe for kx~1 
+
+We have neglected viscosity. \citetalias{nelson13} find that a
+dimensionless viscosity of $\alpha\lesssim O(10^{-4})$ is required for the
+VSI; while \citetalias{barker15} find that inclusion of viscosity is needed for 
+convergence when studying surface modes in radially global disk
+models. %but not body modes? 
+Viscosity may also affect the
+thermodynamic requirement for the VSI, because viscous heating
+needs to be self-consistently included in the energy equation. This
+should be investigated in future works.   
+
+
+
+However, disturbances with large $\khat$ may be subject to viscous
+decay in a real disk. Adopting the standard precription for the
+kinematic viscosity $\nu = \alpha c_s H$ \citep{shakura73}, where
+$\alpha$ is the dimensionless viscosity parameter, 
+the viscous timescale for a perturbation lengthscale 
+$l\sim 1/k_x$ is $t_\mathrm{visc} = 1/\alpha\khat^2\Omega $. 
+Setting $t_\mathrm{visc}$ to be longer than the
+minimum VSI growth timescale $1/h\Omega$ implies 
+$\khat^2\lesssim h/\alpha$. Inserting $h \sim 0.05$,
+we find only modes with $\khat\lesssim 20$ are relevant for
+$\alpha\sim 10^{-4}$ or $\khat\lesssim 70$ for $\alpha\sim
+10^{-5}$. \citepalias[These low viscosity levels are required for the
+VSI, see][]{nelson13}.
+
+
+
+
+% It is of interest to quantify the effect of viscosity 
+% on the linear VSI. This would help identify, more accurately, the
+% appropriate regions in a protoplanetary disk that are sufficiently
+% laminar to develop the VSI.  This problem is, however, complicated by
+% the fact that proper inclusion of viscosity introduces a meridional
+% flow in the equilibrium state, as well as viscous heating
+% in the energy equation. 
+
 
 \subsubsection{Convective overstability}
 We have focused on parameter regimes relevant to the VSI,
@@ -139,31 +187,6 @@ proper treatment of radiative diffusion. % The linear problem then
 We will consider these improvements in a
 follow-up study. %additional heat source 
  
-\subsubsection{Additional physics} 
-Depending on where the VSI operates in a
-disk, additional effects may become important. For example, in the
-outer parts of a PPD, where we estimate the VSI 
-operates, disk self-gravity (SG) may play a role. Vertical
-SG may favor the VSI by increasing $|\p_z\Omega|$ through
-enhancing the density stratification 
-(Eq. \ref{vertical_shear}). %sg in pert? no because kx>>1. but maybe for kx~1 
 
-We have neglected viscosity. \citetalias{nelson13} find that a
-dimensionless viscosity of $\alpha\lesssim O(10^{-4})$ is required for the
-VSI; while \citetalias{barker15} find that inclusion of viscosity is needed for 
-convergence when studying surface modes in radially global disk
-models. %but not body modes? 
-Viscosity may also affect the
-thermodynamic requirement for the VSI, because viscous heating
-needs to be self-consistently included in the energy equation. This
-should be investigated in future works.   
-
-% It is of interest to quantify the effect of viscosity 
-% on the linear VSI. This would help identify, more accurately, the
-% appropriate regions in a protoplanetary disk that are sufficiently
-% laminar to develop the VSI.  This problem is, however, complicated by
-% the fact that proper inclusion of viscosity introduces a meridional
-% flow in the equilibrium state, as well as viscous heating
-% in the energy equation. 
 
 
