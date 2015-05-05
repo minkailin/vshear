@@ -1,9 +1,17 @@
 \section{Application to protoplanetary disks}\label{application} 
 \emph{I suggest the following edits}
+\emph{For this section. There are 3 main ideas, and I think they should be the subsections, more comments related to this are in the text itself:
+\begin{itemize}
+\item Developing the cooling model in opt thin and this regimes, including MMSN value
+\item Comparison to expected $\beta_{crit}$
+\item Linear growth with MMSN cooling law
+\end{itemize}}
+
+\emph{Suggested edits for this intro}
 \begin{itemize}
 \item Instead of starting over again with the full energy equation focus on giving a phyiscal values for $\Lambda$ and $t_c$ already introduced.
 \item Don't describe what we don't do, especially at the outset.  Say what's done, and then if essential list caveats.
-\end{itemize}
+\end{itemize}}
 
 
 As an application of our linear models, we estimate where in a
@@ -34,6 +42,8 @@ $l\ll l_\mathrm{rad}$, where
 is the photon mean-free-path and $\kappa_d$ is the (dust) opacity. 
 
 \subsection{Radiative diffusion}
+\emph{I think 7.1-7.4 should be combined to a single section on the "Cooling Model".  As that clearly is a single idea and osme of the subsections are too trivial. Conversion to subsubsections as needed. However the application to beta-crit could be split off as 7.2.  Otherwise that material which has a crucial figure discussion is a bit buried.} 
+
 \emph{the following sentence is too long and has a dangling "this".}
 
 For perturbations with lengthscales $l\gg
@@ -78,9 +88,11 @@ time for diffusion as
 \end{align}
 
 \subsection{Newtonian cooling}\label{newton_cool}
+\emph{There are no rules against subsections this short, but I think it's bad style.}
+
 For perturbations with small lengthscales, $l\ll l_\mathrm{rad}$, 
-the disk is optically thin.
-\emph{the disk isn't (necessarily) opt. thin, the pert. is}
+the disk is optically thin.\\
+\emph{Above, the disk isn't (necessarily) opt. thin, the pert. is} \\
  In this case, we assume 
 Newtonian cooling can be applied, which is the thermal
 relaxation model as adopted in our linear models. That is, temperature
@@ -127,11 +139,13 @@ r/\mathrm{AU}$, we find Eq. \ref{real_beta} becomes
 \end{align} 
 We refer to the case with $\gamma=1.4$, $\mu=2.33$ and the scalings
 $\hat{\Sigma}=\hat{\kappa}_d=\hat{T}=1$ as the Minimum Mass Solar
-Nebulae (MMSN) and $\beta=\beta_\mathrm{MMSN}$, 
+Nebulae (MMSN) and $\beta=\beta_\mathrm{MMSN}$, \\
+\emph{I would keep $\kappa$ scaling in this eqn, since it's used in plots.  Then just say  that $\kappa_d = 1$ is fiducial case. }
 \begin{align}\label{beta_mmsn_simp}
   \beta_\mathrm{MMSN} = 3.9\times10^{-3} r_\mathrm{AU}^{9/14}\left( 1 +
     1.9\times10^7\hat{\rho}^2r_\mathrm{AU}^{-33/7}\khat^{-2}\right). 
 \end{align}
+\emph{I would explain here that when $k < c\rho \kappa^m r^n$ (with correct values for $c, m, n$) cooling is optically thin, as this is useful for explaining figure.}
 % where
 % \begin{align}
 %   \
@@ -141,7 +155,10 @@ Nebulae (MMSN) and $\beta=\beta_\mathrm{MMSN}$,
 % \begin{align}
 %   \khat_0 = 4.4\times10^{3}\hat{\kappa}_d\hat{T}^2\hat{\Sigma}.
 % \end{align}
-It is instructive to compare the above thermal timescale 
+
+\emph{Sub-section break  ( 7.2) for the "$\beta_{crit}$ in the MMSN" as this is break from the derivation (and evaluation) of the cooling time (which is fairly general) to the application to the VSI.}
+
+It is instructive (\emph{advice: don't say that "it is instructive", just be instructive}) to compare the above thermal timescale 
 with the criterion Eq. \ref{iso_vsi_cond} evaluated for the MMSN,     
 \begin{align}\label{bcrit_mmsn}
   % \beta_\mathrm{crit} = \frac{1.44\times10^{-2}}{(\gamma
@@ -149,16 +166,21 @@ with the criterion Eq. \ref{iso_vsi_cond} evaluated for the MMSN,
   \beta_\mathrm{crit,MMSN} = 0.024r_\mathrm{AU}^{2/7}. 
 \end{align}
 
+\emph{This paragraph currently merely copies the figure caption, which is a waste and not illuminating to read.  Better to give some description of what the figure is showing. (see below for ideas)}\\
 In Fig. \ref{mmsn_bcrit_bcool} we plot Eq. \ref{beta_mmsn}  with $\mu
 =2.33$ $\gamma=1.4$, $\hat{T}=\hat{\Sigma}=1$ for opacity scales
-$\hat{\kappa}_d=0.1, \,1 $ (MMSN) and $10$, at $z=0$ and $z=3H$. We
-also plot Eq. \ref{bcrit_mmsn} in each panel.   
+$\hat{\kappa}_d=0.1, \,1 $ (MMSN) and $10$, at $z=0$ and $z=3H$. \\
+\emph{Here you can describe the general features e.g. diffusive and thin cooling regions, which will help later discussions.}\\
+We also plot Eq. \ref{bcrit_mmsn} in each panel.  \emph{This sentence explains nothing and is likely to be of little help to the reader.  Instead wait to describe the science, e.g. after describing the general shape of the $\beta$ curves,  you can start the discussion below with "Fig () also compares the MMSN cooling times to $\beta_{crit}$.}
 
 Consider first the MMSN shown in the middle panels of 
 Fig. \ref{mmsn_bcrit_bcool}. The critical thermal timescale,
 Eq. \ref{bcrit_mmsn}, is useful in the optically thin regime (where the
 curves overlap), since in this limit $\beta$ does not depend on
-height, as assumed in our analysis. We thus infer that the VSI can
+height, as assumed in our analysis. \\
+\emph{above sentence too long and confusing.  "useful" is a vague term.  
+"where the curves overlap" is also confusing, forcing the reader to look at the figure in the middle of a complex sentence.  Better to have already explained above how the $\beta$ curves show that opt. thin cooling is height indep. (even though should be obvious from equations).  Then the comparison to $\beta_{crit}$ can be made as something like "Since beta-crit was derived for a height-independent cooling time,  the direct comparison our MMSN cooling model is valid only for modes with optically thin cooling. "} 
+We thus infer that the VSI can
 operate at tens of AU in the MMSN.  
 
 In the inner few AU of the MMSN, however, $\beta$ 
@@ -171,11 +193,14 @@ optically thin atmosphere (see also Fig. \ref{bcrit_mmsn2d}).
 Our analytical criteria $\beta < \beta_\mathrm{crit}$ is not valid for
 vertically non-uniform $\beta$, and we must turn to numerical
 solutions of the linear problem to determine whether or not the VSI
-operates. We do this in the next section.    
+operates. We do this in the next section.    \\
+\emph{a better organized discussion might end on this point.  Might not be easy to rearrange to do this, but it would ideal to have the seamless flow to what you do next.}
  
 Lowering the opacity, as shown in the top panels of
 Fig. \ref{mmsn_bcrit_bcool}, shifts the curves inwards but also raises
-them. In fact, lowering the opacity by an order of magnitude renders  
+them.\\
+\emph{this graphical discussion is not very inuitive (the main problem) and even arbitrary (lowering vs. shifting to the left).  Better to say what's happening physically, i.e. `With higher opacity, optically thin cooling faster and diffusive cooling is slower, explaining how the curves shift.} \\
+In fact, lowering the opacity by an order of magnitude renders  
 $\beta > \beta_\mathrm{crit}$ even away from the midplane. This is 
 expected to stabilize the disk. Raising the opacity, as shown in 
 the lower panels of Fig. \ref{mmsn_bcrit_bcool}, decreases the thermal
@@ -205,6 +230,8 @@ restricted to larger radii.
     \label{mmsn_bcrit_bcool}}   
 \end{figure*}  
 
+\emph{the following statement is not generally true, so it should not be stated without caveat}
+
 We remark that it is possible to satisfy $\beta < \beta_\mathrm{crit}$ 
 for sufficiently large $\khat$. We illustrate this in 
 Fig. \ref{mmsn_bcrit_bcool_mink} by plotting at each radius the value
@@ -221,6 +248,8 @@ with an imposed boundary, and they also require large $\khat$.
 %surface modes can develop for large $\khat$, 
 %which have small vertical lengthscales scales. 
 %also small vertical scales if they are surface modes 
+
+\emph{The following viscosity discussion might be better placed elsewhere.  Since the issue also comes up for numerical solutions (not just the comparison to beta-crit here), maybe a short concluding subsection to summarize all the arguments on the "vialibity of short wavelength VSI".}
 
 However, disturbances with large $\khat$ may be subject to viscous
 decay in a real disk. Adopting the standard precription for the
@@ -249,11 +278,14 @@ VSI, see][]{nelson13}.
 \subsection{VSI in the MMSN}
 Here we solve the linear stability problem in the MMSN with the scale and
 height dependent thermal relaxation timescale given by
-Eq. \ref{beta_mmsn_simp}.  Fig. \ref{beta_compare} show examples of
+Eq. \ref{beta_mmsn_simp}. 
+ Fig. \ref{beta_compare} show examples of
 the thermal timescales at $r=5$AU and $r=50$AU for a
 perturbation wavenumber $\khat=30$. We also plot the 
 corresponding critical thermal timescales evaluated for the MMSN
-(Eq. \ref{bcrit_mmsn}).  
+(Eq. \ref{bcrit_mmsn}).  \\
+\emph{For this figure to belong here (and not in the previous subsection, with the other comparisons of $\beta$ and $\beta_{crit}$) the discussion should be be more focused on the linear analysis.  Again it's better to start by discussing what the figure tells us, than repeating the figure caption. E.g.\ you could use Fig 21 to explain when a height varying $\beta$ is required.  I would also explain (especially if it stays in this subsection) what the growth time is for the r = 5 AU case.  Looks to be $\sim 1000$ orbits, which is remakrable given that $\beta < \beta_{\rm crit}$ outside $z \gtrsim  1.6 H$.?  That kind of detail could be illuminating, as it's nominally surprising given previous evidence that behavior near 5 -- 7 $H$ can affect growth.}
+
  \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
   0cm]{figures/beta_compare}
@@ -279,7 +311,8 @@ wavenumbers, in units of the local orbital time $P_\mathrm{orb}\equiv
 2\pi/\OmK$. In fact, we either only find the fundamental mode, or 
 that it is the most unstable, except for the appearance of some 
 surface modes for large wavenumbers $\khat\gtrsim 50$, which are 
-boundary-dependent.  
+boundary-dependent.  \\
+\emph{above sentence too long and complex, could e.g.\ split off that surface modes are neglected and why.}
 %However, surface modes are dependent on
 %boundary conditions in a vertically isothermal disk \citep{barker15},  
 %and 
