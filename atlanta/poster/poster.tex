@@ -1,4 +1,7 @@
 \documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
+\usetheme{umbc4}
+\useinnertheme{umbcboxes}
+\setbeamercolor{umbcboxes}{bg=violet!15,fg=black}
 \usepackage{grffile}
 \mode<presentation>{\usetheme{I6pd2}}
 \usepackage[english]{babel}
@@ -63,13 +66,13 @@
               {\large              
                 {\bf
                   The Vertical Shear Instability (VSI) is a potential
-                  route to purely hydrodynamic turbulence in cold
+                  route to purely hydrodynamic turbulence in 
                   protoplanetary disks (PPDs). However, VSI requires rapid
                   cooling to be efficient.  We quantify the
                   thermodynamic dependence of the VSI using linear
                   theory, and apply our results to evaluate the
-                  efficiency of the VSI in PPDs. We find VSI can operate
-                  at $\sim 5$AU to $\sim 50$AU a typical PPD, with
+                  efficiency of the VSI in PPDs. We find the VSI can operate
+                  from $\sim 5$AU to $\sim 50$AU in a typical PPD, with
                   characteristic growth times $\sim 30$ orbits. The
                   VSI is thus dynamically important in the outer disk,
                   with significant implications for mass accretion,
@@ -77,21 +80,27 @@
                 }
               }
             \end{block}
-            \vfill
+            
             
             \begin{block}{{\Large Vertical shear and instability}}
               \justifying
-              Astrophysical disks generally possess vertical
-              shear, e.g. 
-              \begin{align}
-                r\frac{\p \Omega}{\p z} \simeq
-                \frac{1}{2}\left(\frac{z}{H}\right)h q
-                \Omega_\mathrm{Kep}\neq 0,
-              \end{align}
-              for a vertically isothermal disk. 
               \begin{itemize}
-              \item $h \equiv H/r \ll 1$: disk aspect-ratio
-              \item $q \equiv d \ln{T}/d\ln{r}$: radial temperature gradient
+              \item Astrophysical disks generally possess vertical
+                shear,\begin{onlinebox}{5cm}$\p_z\Omega\neq0$\end{onlinebox},
+                because of baroclinicity, $\nabla P\times 
+                \nabla\rho\neq0$.
+              \item Example: vertically isothermal, radially
+                non-isothermal disk,  
+                \begin{displaybox}{15cm}
+                  \[
+                  r\frac{\p \Omega}{\p z} \simeq
+                  \frac{1}{2}\left(\frac{z}{H}\right)h q
+                  \Omega_\mathrm{Kep}.%\neq 0,
+                  \]
+              \end{displaybox}              
+              \item $h \equiv H/r \ll 1$: disk aspect-ratio.
+              \item $q \equiv d \ln{T}/d\ln{r}$: radial temperature
+                gradient. 
               \end{itemize}
               \textcolor{blue}{\emph{Instability due to $\p_z\Omega$?}}
               \begin{itemize}
@@ -99,66 +108,78 @@
                 Consider an exchange of two fluid elements, separated by 
                 $(\Delta r,\Delta z)$ in space. Conservation
                 of specific angular momentum imply a change in the
-                kinetic energy by
+                specific kinetic energy by
                 \begin{align}
                   \Delta E  \sim \Delta r^2 \left(\Omega^2 +
                     \frac{\Delta z}{\Delta r}\cdot r\frac{\p\Omega^2}{\p
                       z}\right). \label{simple}
                 \end{align}
                 \item Vertical shear is weak, \textcolor{blue}{{\bf BUT}}  
-                \begin{align}
+                \begin{displaybox}{22cm}
+                  \begin{align*}
                   \Delta E &<  0 \quad \text{is possible if} \quad \left|\Delta
                     z\right|\gg 
                   |\Delta r|,\\
                   &\Rightarrow \quad \text{\textcolor{blue}{\bf
-                      INSTABILITY!}}\notag 
-                \end{align}
+                      INSTABILITY!}}
+                  \end{align*}
+                \end{displaybox}
+                \item Radially-narrow,
+                     vertically-elongated disturbances. 
               \end{itemize}
             \end{block}
-            \vfill
+            
+
             \begin{block}{{\Large Super-fast cooling is needed!}}
               \justifying
               Eq. \ref{simple} assumes efficient cooling. 
               \textcolor{blue}{\emph{\bf{How fast does the disk need to
                   cool?}}}
-            \begin{align}
-               t_\mathrm{cool}\Omega_\mathrm{Kep} < \frac{h |q|}{(\gamma -
-                1)} \equiv \beta_\mathrm{crit}\ll 1.   
-            \end{align}
+            \vspace{-1cm}
             \begin{itemize}
+            \item Analytical condition:
+              \begin{displaybox}{21cm}
+                \[
+                t_\mathrm{cool}\Omega_\mathrm{Kep} < \frac{h |q|}{(\gamma -
+                  1)} \equiv \beta_\mathrm{crit}\ll 1.   
+                \]
+              \end{displaybox}
             \item Fast cooling is required to overcome strongly
               stabilizing effect of vertical buoyancy (adiabatic index
               $\gamma>1$).
             \item \textcolor{blue}{\emph{\bf{Stringent thermodynamic
                     requirement!}}}            \end{itemize} 
             \end{block}
-            \vfill
+            
             
             \begin{block}{\Large Linear theory}
               \justifying
               Growth rates from numerical solution to linearized fluid
               equations:\\
-              \vspace{-1cm}
+              \vspace{-1.41cm}
               \begin{figure}
                  \includegraphics[width=\linewidth]{figures/gcorr_compare_iso_maxrate_z5.ps}%\\
                  %\includegraphics[width=\linewidth]{figures/result2d_cool.ps}
                \end{figure}
-               \vspace{-1cm}
-               ($k_x$: radial wavenumber.)
+               \vspace{-1.cm}
                \begin{itemize}
+               \item \begin{onlinebox}{8cm}$\beta =
+                   t_\mathrm{cool}\Omega_\mathrm{Kep}$\end{onlinebox};
+                 $k_x$: radial wavenumber. 
                \item Rapid stabilization as cooling time is increased,
                  even by small amounts.
-               \item \textcolor{blue}{\bf{$\beta<\beta_\mathrm{crit}$ 
-                   is an excellent criteria for instability.}}
+               \item \begin{onlinebox}{27cm} \textcolor{blue}{\bf{$\beta<\beta_\mathrm{crit}$ 
+                       is an excellent criteria for instability.}}\end{onlinebox}
                \end{itemize}
-            \end{block}
-            \vfill
-            % \begin{block}{{\Large Results in 2D}}
-            %   \justifying
-              
-
-              
-            % \end{block}
+               \vspace{-0.65cm}
+             \end{block}
+             % \vfill
+             % \begin{block}{{\Large Results in 2D}}
+             %   \justifying
+             
+             
+             
+             % \end{block}
             % \vfill
           }
         \end{minipage}
@@ -172,49 +193,65 @@
     \begin{column}{.49\textwidth}
       \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
         \begin{minipage}[T]{.95\textwidth} % tweaks the width, makes a new \textwidth
-          \parbox[t][\columnheight]{\textwidth}{
-            \begin{block}{{\Large VSI in action}}
-              \justifying
-              \begin{figure}
-                \includegraphics[width=\linewidth]{figures/result2d_cool}
-              \end{figure}
-              \end{block}
-               
+          \parbox[t][\columnheight]{\textwidth}{   
               \begin{block}{{\Large VSI in the Minimum Mass Solar Nebula}}
                 \justifying
                 Estimate actual cooling times in PPDs and compare with
                 $\beta_\mathrm{crit}$:\\
-                \vspace{-1cm}
+                \vspace{-1.5cm}
                 \begin{figure}
                   \includegraphics[width=\linewidth]{figures/bcrit_mmsn2d.ps}
                 \end{figure}
+                \vspace{-1.5cm}
                 Numerical calculation of characteristic growth
                 times:\\
-                \vspace{-1cm}
+                \vspace{-1.5cm}
                 \begin{figure}
                   \includegraphics[width=\linewidth]{figures/eigen_compare_grow.ps}
                 \end{figure}
+                \vspace{-1.5cm}
                 \begin{itemize}
-                \item Efficient VSI in the outer disk at tens of AU. 
-                \item VSI occurs on very small scales towards inner disk.
+                \item \begin{onlinebox}{35cm}\textcolor{blue}{\bf{Efficient
+                        VSI at tens of AU with growth times $\sim 30$
+                        orbits.}}  \end{onlinebox}
+                \item VSI occurs on very small scales towards the inner disk.
                 \end{itemize}
               \end{block}
-            \vfill
-            % \begin{block}{\Large{Numerical model}}
-            %   \justifying
-            
-            % \end{block}
-            % \vfill
-
-      
-            \begin{block}{\Large{Summary}}
-              \justifying
-                  {\large              
-                    {\bf
-                      stuff
-                    }
+              
+              
+              \begin{block}{{\Large VSI in action}}
+                \justifying
+                \begin{figure}
+                  \includegraphics[width=\linewidth,clip=true,trim=0cm
+                  0cm 0cm 1cm]{figures/result2d_cool}
+                \end{figure}
+                 \vspace{-2cm}
+                 \begin{itemize}
+                 \item $k_xH=10$; $\beta=0.1$; arrows: $\sqrt{\rho}(\delta
+                   v_x,\delta v_z)$;
+                   color: $\delta P$.
+                 
+                 \end{itemize}
+              \end{block}
+              
+              
+              \begin{block}{\Large{Summary}}
+                \justifying
+                {\large              
+                  {\bf
+                    Astrophysical disks with 
+                    $\p_z\Omega\neq0$ are dynamically unstable if
+                    they can cool rapidly. We have shown that the VSI
+                    can indeed 
+                    operate in typical protoplanetary disks at tens of
+                    AU. The VSI thus provides a viable route to purely
+                    hydrodynamic turbulent transport of angular
+                    momentum and hence mass
+                    accretion in PPDs. 
                   }
-                \end{block}
+                }
+              \end{block}
+              \vfill
               }
             \end{minipage}
           \end{beamercolorbox}
