@@ -1,9 +1,8 @@
 \section{Fixed cooling time results}\label{numerical}
-%comment: "numerical solutions' was too vague, especially since the next section contains numerical solutions.
-This section investigates the linear growth of the VSI with fixed, finite cooling times, $\beta$. 
-We solve the perturbation equations \ref{lin_all} with $\zeta=1$, i.e. including the background radial disk structure.  
-The disk's equilbrium  structure given in \S\ref{eqm}.  This general analysis does not make the approximations 
-described in \S\ref{sec:simplified}.
+This section investigates the linear growth of the VSI with fixed cooling times, $\beta/\OmK$, that are independent of height. 
+We solve the radially local model of Eqs.\ \ref{lin_all} with $\zeta=1$, i.e.\ retaining  radial gradients of the background disk structure.  
+The disk's equilbrium  structure given in \S\ref{eqm}.  This general analysis does not make the simplifying approximations 
+used in \S\ref{analytical}.
 
 We solve the linear problem by expanding the 
 perturbations in Chebyshev polynomials $T_l$ up to $l=512$
@@ -110,13 +109,15 @@ We investigate the effect of vertical box size, from $\zmax=3H$ (\emph{blue tria
   }
 \end{figure}
 
-\subsubsection{Case study: $\khat=10$}
-In Fig. \ref{compare_modes_iso_kx10} we plot eigenvalues -- growth rates and
+\subsubsection{Case study: $\khat=10$}\label{k10}
+Fig. \ref{compare_modes_iso_kx10} maps eigenvalues -- growth rates and
 wave frequencies -- of unstable 
-modes for $\khat=10$.  We compare our numerical results to the analytic dispersion relations for 
-$\beta = 0$ and $10^{-3}$, from Eqs.\ \ref{simple_growth} and \ref{relax_disp}, respectively. Each symbol 
+modes for $\khat=10$.  Each symbol 
 corresponds to a different order mode, i.e.\ a different number of vertical node crossings.  Lower order modes
 have lower (in magnitude) frequencies for a given radial wavenumber, as expected for inertial-gravity waves (see \S\ref{stable_novshear}).
+
+ We compare our numerical results to the analytic dispersion relations for 
+$\beta = 0$ and $10^{-3}$, from Eqs.\ \ref{simple_growth} and \ref{relax_disp}, respectively.   The analytic models also have discrete modes, which lie on the continuous curves that are plotted for clarity in Fig. \ref{compare_modes_iso_kx10}.   While the analytic models have many simplifications, they crucially lack an artificial vertical surface (as they include an infinite vertical domain).
 
 For our fiducial case (black dots), the lower order and lower frequency modes closely follow the analytic prediction with growth rates increasing with $|\omega|$, the magnitude of the frequency.  However, for $|\omega| \gtrsim 4 h \OmK$ the growth rate declines with $|\omega|$.  This break from the analytic prediction is not due the choice of boundary condition, as we demonstrate by considering rigid boundaries (red plusses).
 
@@ -148,7 +149,7 @@ The need for vertically extended domains to capture the largest VSI growth rates
 Fig. \ref{lowfreq_eigenfunc} shows 
 eigenfunctions $W = \delta P/\rho$ and $\delta   v_z$ for the lowest order fundamental mode.  
 Fig. \ref{lowfreq_eigenfunc_2d} maps the pressure perturbation and meridional flow,
-scale by $\sqrt{\rho}$ to reflect the contribution to kinetic energy. Due to the stretched $x$ axis, 
+scaled by $\sqrt{\rho}$ to reflect the contribution to kinetic energy. Due to the stretched $x$ axis, 
 radial velocities are in fact typically much 
 smaller than vertical velocities, as expected for a vertically elongated, incompressible mode. 
 Most of the kinetic energy is contained within $\sim 2H$ of the midplane due to the density 
@@ -183,32 +184,53 @@ stratification.
   }
 \end{figure}
 
-\subsubsection{Comment on `surface modes'}\label{surf_comment} 
-Fig. \ref{compare_modes_iso_kx10} lack the distinct `surface modes' found by 
-\citetalias{nelson13}, \citetalias{mcnally14}  and \citetalias{barker15}. 
-This a class of unstable modes associated with vertical shear near the
-disk boundaries. They are absent in our  
-analysis because there we assumed a disk with infinite 
-vertical extent, since the vertically isothermal disk has no
-surface. However, surface modes can occur in the present calculations 
-because there is an imposed vertical boundary.   
+\subsubsection{Surface Modes of the VSI}\label{surf_comment} 
+The surface modes mentioned above are more prominent for larger wavenumbers.  
+Fig. \ref{compare_modes_iso_kx30} maps the $\khat = 30$
+eigenvalues, with the surface modes labelled.  The surface modes strongly depend 
+on the location of the imposed vertical boundary, and disagree with the analytic models, which lack an imposed surface. 
+We thus discount the physical significance of surface modes for our model, as we explain further below.
 
-We illustrate surface modes in Fig. \ref{compare_modes_iso_kx30} 
-which show unstable modes with $\khat=30$. Surface 
-modes lie almost parallel to the vertical axis 
-in such diagrams. They are readily identified for  $\zmax\geq 5H$ and
-are marked by `s'.  Fig. \ref{lowfreq_eigenfunc_surf} shows an example
-of a surface mode. We typically find an increasing
-number of surface modes with increasing $\zmax$ and/or $\khat$. 
-%consistent with \cite{barker15}. 
- 
-As explained by \citetalias{barker15}, while surface modes have a physical
-origin, their occurence in the vertically isothermal disk is due to
-imposing a finite vertical domain size. This has important
-implications when interpreting results obtained from the vertically
-isothermal disk model. For example, seeking the most unstable mode may
-result in a surface mode, but its growth rate would depend on
-$\zmax$. We return to this issue later.     
+Surface modes are a well known feature of the VSI in finite vertical domains \citepalias{nelson13, mcnally14}.
+\citetalias{barker15} show that surface modes arise whether the surface is artificial
+(as for our imposed $\zmax$) or natural (for models with a zero density surface).  Physical surface modes
+are in principle possible; BL15 mention surfaces between a disk's interior and corona.  In models where the surface is imposed,
+like ours, surface modes are a numerical artifact.
+
+The possibility of artificial surface modes seeding growth in numerical simulations of the VSI  merits further study.
+Indeed N13 find that the initial growth of perturbations primarily occurs near the vertical boundaries.
+
+The motion in surface modes is indeed concentrated near the surface, as shown in Fig. \ref{lowfreq_eigenfunc_surf}.  
+Thus even if surface modes were physical, their contribution to transport might (by themselves) be weak,  following the arguments in
+\S\ref{k10}.  Moreover surface modes, like all modes with large wavenumbers, are more prone to viscous damping, as discussed in \S\ref{caveats_visc}.
+
+While the relatively large growth rates of surface modes is tantalizing, we dismiss them as ``fool's gold"  in models that lack a physical surface.
+
+
+%...
+%This a class of unstable modes associated with vertical shear near the
+%disk boundaries. They are absent in our  
+%analysis because there we assumed a disk with infinite 
+%vertical extent, since the vertically isothermal disk has no
+%surface. However, surface modes can occur in the present calculations 
+%because there is an imposed vertical boundary.   
+%
+%We illustrate surface modes in Fig. \ref{compare_modes_iso_kx30} 
+%which show unstable modes with $\khat=30$. Surface 
+%modes lie almost parallel to the vertical axis 
+%in such diagrams. They are readily identified for  $\zmax\geq 5H$ and
+%are marked by `s'.  Fig. \ref{lowfreq_eigenfunc_surf} shows an example
+%of a surface mode. We typically find an increasing
+%number of surface modes with increasing $\zmax$ and/or $\khat$. 
+%%consistent with \cite{barker15}. 
+% 
+%As explained by \citetalias{barker15}, while surface modes have a physical
+%origin, their occurence in the vertically isothermal disk is due to
+%imposing a finite vertical domain size. This has important
+%implications when interpreting results obtained from the vertically
+%isothermal disk model. For example, seeking the most unstable mode may
+%result in a surface mode, but its growth rate would depend on
+%$\zmax$. We return to this issue later.     
 
 %Thus, the
 %vertically isothermal disk is not useful for studying surface modes. 
