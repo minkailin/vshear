@@ -1,17 +1,24 @@
 \section{The VSI with realistic  protoplanetary disk cooling}\label{application} 
-To this point we have treated the cooling time, $\beta$, as a free parameter that, moreover, is independent of height. 
-To understand the applicability of the VSI to PPDs, we now consider $\beta$ values that are consistent with PPD models.
-Section \ref{cooling_model}  develops our PPD cooling law, which depends on disk radius, disk height and perturbation wavelength.
-We compare these PPD $\beta$ values to $\beta_{\rm crit}$ in \S\ref{bcritPPD}.  While this comparison is instructive, it is not complete since $\beta_{\rm crit}$ was derived assuming a vertically constant $\beta$.  Thus in \S\ref{vsi_mmsn_grow} we analyze the linear growth of VSI with our PPD $\beta$ values.
+To this point we have treated the cooling time, $\beta$, as a free
+parameter that, moreover, is independent of height.  
+To understand the applicability of the VSI to PPDs, we now consider
+$\beta$ values that are consistent with PPD models. 
+Section \ref{cooling_model}  develops our PPD cooling law, which
+depends on disk radius, disk height and perturbation wavelength. 
+We compare these PPD $\beta$ values to $\beta_{\rm crit}$ in
+\S\ref{bcritPPD}.  While this comparison is instructive, it is not
+complete since $\beta_{\rm crit}$ was derived assuming a vertically
+constant $\beta$.  Thus in \S\ref{vsi_mmsn_grow} we analyze the linear
+growth of VSI with our PPD $\beta$ values. 
 
-As an application of our linear models, we estimate where in a
-PPD do the thermodynamic conditions allow the VSI to
-operate. We first model the cooling time $t_c$ based on realistic
-disk properties, which yields a non-uniform dimensionless cooling
-time $\beta(r,z;\khat)$. We then compare this to the critical cooling time
-$\beta_\mathrm{crit}$ derived above. Finally, we explicitly compute 
-linear growth rates numerically, using $\beta(r,z;\khat)$, to
-characterize growth times expected in a typical PPD.   
+% As an application of our linear models, we estimate where in a
+% PPD do the thermodynamic conditions allow the VSI to
+% operate. We first model the cooling time $t_c$ based on realistic
+% disk properties, which yields a non-uniform dimensionless cooling
+% time $\beta(r,z;\khat)$. We then compare this to the critical cooling time
+% $\beta_\mathrm{crit}$ derived above. Finally, we explicitly compute 
+% linear growth rates numerically, using $\beta(r,z;\khat)$, to
+% characterize growth times expected in a typical PPD.   
 
 %linearized RHS of Eq. \ref{real_energy} by a thermal
 %relaxation time $t_c$.
@@ -52,12 +59,13 @@ where $k_\mathrm{rad}$ is the radiative conduction coefficient defined
 below, and $C_v$ is the specific heat capacity at constant volume. 
 
 Since the VSI is characterized by vertically-elongated,
-radially-narrow disturbances, we retain only the radial derivatives in Eq. \ref{diff_cool_proper}.
+radially-narrow disturbances, we retain only the radial derivatives of
+the perturbations in Eq. \ref{diff_cool_proper}. 
 Thus, in the radially local approximation, we have
 \begin{align}\label{diff_cool_approx}
   % \frac{P}{\rho T C_v} \nabla\cdot\left(k_\mathrm{rad}\nabla\delta
   %  T\right) &
-  \delta\Lambda_\mathrm{diff} \approx %-\frac{k_\mathrm{rad}}{\rho
+  \delta\Lambda_\mathrm{diff} \simeq %-\frac{k_\mathrm{rad}}{\rho
   % C_v}k_x^2P\left(\frac{\delta T}{T}\right)%\notag\\
   % \equiv 
   %-\eta k_x^2 \left(\delta P - \frac{P}{\rho}\delta\rho\right) =
@@ -70,7 +78,6 @@ where the radiative diffusion coefficient is
   \eta \equiv {k_\mathrm{rad} \over \rho C_v} = \frac{16\sigma_s T^3}{3\kappa_d\rho^2 C_v}, 
 \end{align}
 and $\sigma_s$ is the Stefan-Boltzmann constant. 
-
 The thermal relaxation  timescale (defined in Eq. \ref{thermal_relax}) 
 for radiative diffusion is thus 
 \begin{align}\label{tc_diff_cool} 
@@ -78,14 +85,15 @@ for radiative diffusion is thus
 \end{align}
 
 In the optically thin regime, $l\ll 
-l_\mathrm{rad}$, thermal relaxation operates by ``Newtonian cooling."
+l_\mathrm{rad}$, thermal relaxation operates by `Newtonian cooling'.
 The cooling time is independent of $l$ and 
 inversely proportional to the opacity, $t_\mathrm{thin} \propto 1/\kappa_d$. 
 Specifically 
 \begin{align}
   t_\mathrm{thin} = \frac{l_\mathrm{rad}^2}{3\eta},
 \end{align}
-and $t_\mathrm{thin}$ does not depend on $\rho$ (because $\kappa_d$ depends on $T$ only). 
+and $t_\mathrm{thin}$ does not depend on $\rho$ (because our adopted
+$\kappa_d$ depends on $T$ only, see below). 
 
 Our general cooling time for all perturbations,
 \begin{align}\label{tc_def}
@@ -95,7 +103,7 @@ Our general cooling time for all perturbations,
 is a simple prescription to smoothly match the optically thick and thin limits.
 
 \subsubsection{PPD cooling times}\label{toy_relax}
-In a vertically isothermal disk with surface density $\Sigma = \rho_0/\sqrt{2\pi}H$, 
+In a vertically isothermal disk with surface density $\Sigma = \rho_0\sqrt{2\pi}H$, 
 the dimensionless thermal
 relaxation time $\beta$ becomes 
 \begin{align}\label{real_beta}
@@ -105,11 +113,13 @@ relaxation time $\beta$ becomes
   \frac{\Sigma^2\OmK}{\eta\rho^2}\left[\frac{1}{3\kappa_d^2\Sigma^2} 
     + \frac{\hat{\rho}^2(z)}{2\pi \khat^2}\right].
 \end{align}
-where $\hat{\rho} = \rho/\rho_0$.  The first and second terms in square brackets represent the optically thin and thick cooling regimes, respectively.
+where $\hat{\rho} = \rho/\rho_0$.  The first and second terms in
+square brackets represent the optically thin and thick cooling
+regimes, respectively. 
 
 We adopt the Minimum Mass Solar Nebula
 (MMSN) disk model of \cite{chiang10} which specifies
-\emph{note that the normalizations are suppressed b/c I can't see where we used them.  We should only add back in if we decide to use them.}
+% \emph{note that the normalizations are suppressed b/c I can't see where we used them.  We should only add back in if we decide to use them.}
 \begin{subequations}
 \begin{align}
 \label{mmsn_sigma}
@@ -118,15 +128,20 @@ We adopt the Minimum Mass Solar Nebula
  T &= 120%\hat{T}\left(\frac{r}{\mathrm{AU}}\right)
   r_\mathrm{AU}^{-3/7} \mathrm{K}, \label{mmsn_temp}  
 \end{align}\end{subequations}
-with $r_\mathrm{AU}\equiv r/\mathrm{AU}$.  This model has $q = -3/7$, $p = -39/14$ and $h  = 0.034 r_\mathrm{AU}^{2/7}$, using $\mu = 2.33$ and the above relation between $\Sigma$ and $\rho_0 \propto r^p$.  
+with $r_\mathrm{AU}\equiv r/\mathrm{AU}$. This model has $q = -3/7$,
+$p = -39/14$ and $h  = 0.022 r_\mathrm{AU}^{2/7}$, using $\mu = 2.33$
+and the above relation between $\Sigma$ and $\rho_0 \propto r^p$.   
 
-For the dust opacity we adopt the \citet{bell94} law with $\kappa_d \propto T^2$, giving
+For the dust opacity we adopt the \citet{bell94} law with $\kappa_d
+\propto T^2$, giving 
 \begin{align}
  \kappa_d %&= 2 \hat{\kappa}_d \left(\frac{T}{100\mathrm{K}}\right)^2 \mathrm{cm}^2\,\mathrm{g}^{-1}
     =
    2.88\hat{\kappa}_d r_\mathrm{AU}^{-6/7}\mathrm{cm}^2\,\mathrm{g}^{-1},   
 \end{align}
-where the opacity normalication factor, $\hat{\kappa}_d$, scales with the ratio of small dust to gas;  $\hat{\kappa}_d = 1$ is our fiducial case.
+where the opacity normalization factor, $\hat{\kappa}_d$, scales with
+the ratio of small dust to gas;  $\hat{\kappa}_d = 1$ is our fiducial
+case. 
 
 %and summarized in
 %Appendix \ref{mmsn} (where an opacity model is also chosen). Defining
@@ -179,14 +194,24 @@ its critical value (Eq. \ref{iso_vsi_cond}), evaluated for the MMSN as
   \beta_\mathrm{crit} = 0.024r_\mathrm{AU}^{2/7}. 
 \end{align}
 
-This comparison strictly valid only for optically thin cooling which is independent of height,
-as assumed in the derivation of $\beta_\mathrm{crit}$.  This condition typically holds in the outer disk.  
-Fig. \ref{beta_compare} shows that a  $\khat=30$ perturbation at 50 AU has vertically constant $\beta$. 
- Furthermore, since $\beta < \beta_\mathrm{crit}$, the mode is unstable.
+This comparison is strictly valid only for optically thin cooling
+which is independent of height, as assumed in the derivation of
+$\beta_\mathrm{crit}$.  This condition typically holds in the outer
+disk.   Fig. \ref{beta_compare} shows that a  $\khat=30$ perturbation
+at 50AU has vertically constant $\beta$. Furthermore, since $\beta <
+\beta_\mathrm{crit}$, the disturbance would be unstable. 
  
-For optically thick cooling, $\beta$ varies with height, complicating the comparison with $\beta_\mathrm{crit}$.   
-At 5 AU, Fig. \ref{beta_compare} shows that cooling times are long in the midplane with $\beta > \beta_\mathrm{crit}$.
-However, since $\beta < \beta_\mathrm{crit}$ away from the midplane, we require the analysis of \S\ref{vsi_mmsn_grow} to determine if the VSI can grow.  (That analysis will show that growth is stongly suppressed for this case.)  We proceed with the awareness that optically thick regions in the inner disk are a complication, but that we can reasonably expect VSI growth if $\beta < \beta_\mathrm{crit}$ at all heights.
+For optically thick cooling, $\beta$ varies with height, complicating
+the comparison with $\beta_\mathrm{crit}$.    
+At 5AU, Fig. \ref{beta_compare} shows that cooling times are long in
+the midplane with $\beta > \beta_\mathrm{crit}$. 
+However, since $\beta < \beta_\mathrm{crit}$ away from the midplane,
+we require the analysis of \S\ref{vsi_mmsn_grow} to determine if the
+VSI can grow.  (That calculation will show that growth is stongly
+suppressed for this case.)  We proceed with the awareness that
+optically thick regions in the inner disk are a complication, but that
+we can reasonably expect VSI growth if $\beta < \beta_\mathrm{crit}$
+at all heights. 
 
 
 %Fig. \ref{beta_compare} show examples of $\beta$ in the fiducial disk
@@ -232,11 +257,22 @@ However, since $\beta < \beta_\mathrm{crit}$ away from the midplane, we require 
 \end{figure*}  
 
 In Fig. \ref{mmsn_bcrit_bcool}, we compare $\beta$ to
-$\beta_\mathrm{crit}$ across a range of disk radii for different heights, opacity values and wavenumbers.
-For optically thin cooling in the outer disk, curves for different wavenumbers overlap, as expected from Eq.\ \ref{beta_mmsn_simp}.
-Since the (optically thin) slope of $\beta$ is slightly steeper than for $\beta_\mathrm{crit}$, VSI growth can be suppressed at large radii (for the chosen opacity law).  This effect is seen for $\hat{\kappa}_d = 1$ in the central panels of Fig.\ \ref{mmsn_bcrit_bcool}, where VSI is damped outside $\sim 150$ AU.
+$\beta_\mathrm{crit}$ across a range of disk radii for different
+heights, opacity values and wavenumbers. 
+For optically thin cooling in the outer disk, curves for different
+wavenumbers overlap, as expected from Eq.\ \ref{beta_mmsn_simp}. 
+Since the (optically thin) slope of $\beta$ is slightly steeper than
+for $\beta_\mathrm{crit}$, VSI growth can be suppressed at large radii
+(for the chosen opacity law).  This effect is seen for $\hat{\kappa}_d
+= 1$ in the central panels of Fig.\ \ref{mmsn_bcrit_bcool}, where VSI
+is damped outside $\sim 150$ AU. 
 
-We find that the most important factor for VSI growth is the opacity.  With a smaller opacity, $\hat{\kappa}_d = 0.1$, growth is suppressed at all radii, as shown in the top panels of Fig.\ \ref{mmsn_bcrit_bcool}.  Since optically thin cooling is too slow in this case, optically thick cooling -- above the floor set by optically thin cooling -- is also too slow.  
+We find that the most important factor for VSI growth is the opacity.
+With a smaller opacity, $\hat{\kappa}_d = 0.1$, growth is suppressed
+at all radii, as shown in the top panels of Fig.\
+\ref{mmsn_bcrit_bcool}.  Since optically thin cooling is too slow in
+this case, optically thick cooling --- above the floor set by optically
+thin cooling --- is also too slow.   
 
 Larger opacities make optically thin cooling much faster than $\beta_\mathrm{crit}$, as shown in the top panels of Fig.\ \ref{mmsn_bcrit_bcool}.  However with larger opacities, optically thick cooling affects larger disk radii, slowing the cooling.  Remarkably, the adopted MMSN value of opacity hits the a sweet spot where optically thin cooling is fast enough, yet slower optically thick can be restricted to inner disk radii.
 

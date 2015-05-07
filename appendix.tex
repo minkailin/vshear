@@ -585,13 +585,17 @@ since for inertial waves $|\hat{\omega}\khat|\simeq \sqrt{1 + M}$. Finally, we f
 $\beta_c \ll 1$, to be justified \emph{a posteriori}, to give 
 Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}.   
 
-\subsection{Maximum critical cooling time}\label{max_cool}
- % {\bf [at the moment for reference
- %  only, not to be included in final version]}\\
+\subsection{Maximum critical cooling time}\label{max_cool}   
+Here we show that, under appropriate conditions, the maximum critical 
+cooling time is that for the $M=0$ or fundamental mode. This allows
+us to focus on the fundamental mode to obtain an overall cooling
+requirement for the VSI.      
+
 Consider the simplified dispersion relations for marginal stability,
-Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}. Writing 
-$X= \hat{\omega}\khat$, $\theta = (hq\khat)^2\leq1$ and  treating $M$ as a
-continuous variable, we find from Eq. \ref{relax_cond_simp1} that 
+Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2}. We write 
+$X= \hat{\omega}\khat$, $\theta = (hq\khat)^2$ and  
+treat $M$ as a continuous variable. We find from
+Eq. \ref{relax_cond_simp1} that  
 %\begin{align}
 %  &x^4  = x^2 + M(M+1)(1-\theta), \label{simp1}\\
 %  &x^2  = \frac{\gamma-1}{h q}\beta_c (1+2M)^2x - 2M(M+1)\label{simp2},
@@ -625,11 +629,28 @@ We eliminate $dX/dM$, making use of Eq. \ref{relax_cond_simp1} in the process, t
  % - (3+\theta)X^2 < 0.
 %\end{align}
 Hence,
-\begin{align}
+\begin{align}\label{dbeta_dm}
   \frac{d\beta_c}{dM}<0, 
 \end{align}
-for all $M\geq 0$ if $\theta\leq 1$. This implies 
-$\mathrm{max}(\beta_c)$ occurs at $M=0$. 
+for all $M\geq 0$ if $\theta\leq 1$, which imply 
+$\mathrm{max}(\beta_c)$ occurs at $M=0$. For fixed $\khat$ the
+condition $\theta\leq 1$ can be satisfied in sufficiently thin disks.
+This means that if $\beta>\beta_c(M=0)\equiv\beta_\mathrm{crit}$, then
+all such modes will be stabilized. 
+
+This result highlights the importance of the fundamental mode  
+--- it is the most difficult mode to stabilize with finite
+cooling. Furthermore, for $M=0$ we may obtain the expression  
+for $\beta_\mathrm{crit}$ from the dispersion relations 
+Eq. \ref{relax_cond_simp1}---\ref{relax_cond_simp2} without  
+assuming it is much less than unity from the onset or place
+restrictions on $\theta$.  
+ 
+% restrictions on $| h q \khat|$. 
+
+
+
+
 
 % \subsection{Marginal stability for the fundamental
 %   mode}\label{bcrit_alt}
