@@ -45,6 +45,26 @@ we expect that $\beta < \beta_\mathrm{crit} = 0.125$ is needed for VSI growth in
   }
 \end{figure}
 
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx10_analytic.ps}
+  \caption{Growth rate, $\sigma$, vs.\ osciallation frequency, $\omega$, for
+  VSI modes with wavenumber $k_x = \khat/H=10/H$ in the fiducial disk model
+    with rapid cooling, $\beta=10^{-3}$. %  a disk with 
+    % $(\gamma,\Gamma)=(1.4,1.011)$, $(p,q, h)=(-1.5,-1,0.1)$ and
+    % $\beta=10^{-3}$. 
+We investigate the effect of vertical box size, from $\zmax=3H$
+(\emph{blue triangles}) to $7H$ (\emph{green} x's)
+    with a free surface boundary ($\Delta P=0$).  For $\zmax=5H$  (black dots) we also compare free surface (\emph{black dots}) and rigid (\emph{red plusses}), finding little difference.
+      The fundamental mode is marked by `f'. Lines show the analytic predictions for
+      isothermal perturbations ($\beta = 0$, \emph{dashed}) and for $\beta = 10^{-3}$ (\emph{dotted}).
+      See text for discussion.
+   % are computed from the analytic dispersion relation 
+    %with thermal relaxation Eq. \ref{relax_disp} (dotted), and that for
+    %isothermal perturbations, Eq. \ref{simple_growth} (dashed). 
+    \label{compare_modes_iso_kx10} 
+  }
+\end{figure}
+
 \subsection{Rapid thermal relaxation}\label{vertiso_pertiso} 
 We first calculate the VSI in a disk with rapid thermal relaxation by
 setting $\beta=10^{-3}$.  Since $\beta \ll \beta_\mathrm{crit}$, this case
@@ -94,25 +114,7 @@ finite cooling time model in a familiar context.
 % cylindrical radius whilst conserving its angular momentum (applicable
 % to axisymmetric perturbations).
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx10_analytic.ps}
-  \caption{Growth rate, $\sigma$, vs.\ osciallation frequency, $\omega$, for
-  VSI modes with wavenumber $k_x = \khat/H=10/H$ in the fiducial disk model
-    with rapid cooling, $\beta=10^{-3}$. %  a disk with 
-    % $(\gamma,\Gamma)=(1.4,1.011)$, $(p,q, h)=(-1.5,-1,0.1)$ and
-    % $\beta=10^{-3}$. 
-We investigate the effect of vertical box size, from $\zmax=3H$
-(\emph{blue triangles}) to $7H$ (\emph{green} x's)
-    with a free surface boundary ($\Delta P=0$).  For $\zmax=5H$  (black dots) we also compare free surface (\emph{black dots}) and rigid (\emph{red plusses}), finding little difference.
-      The fundamental mode is marked by `f'. Lines show the analytic predictions for
-      isothermal perturbations ($\beta = 0$, \emph{dashed}) and for $\beta = 10^{-3}$ (\emph{dotted}).
-      See text for discussion.
-   % are computed from the analytic dispersion relation 
-    %with thermal relaxation Eq. \ref{relax_disp} (dotted), and that for
-    %isothermal perturbations, Eq. \ref{simple_growth} (dashed). 
-    \label{compare_modes_iso_kx10} 
-  }
-\end{figure}
+
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -219,21 +221,6 @@ smaller than vertical velocities, as expected for a vertically
 elongated, anelastic mode \citepalias{nelson13}. Most of the kinetic
 energy is contained within $\sim 2H$ of the midplane due to the
 density stratification.  
-
-
-
-\begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
-  0cm]{figures/eigenvectorW_iso} 
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-  1cm]{figures/eigenvectorvz_iso}
-  \caption{Pseudo-enthalpy perturbation $W=\delta P/\rho$ (top) and
-    vertical velocity perturbation $\delta v_z$ of the fundamental VSI with 
-    $\khat=10$ in the fiducial disk with rapid thermal relaxation
-    $\beta=10^{-3}$. The real (imaginary) parts of $W$ and $\delta
-    v_z$ are plotted as solid (dotted) lines.  
-    \label{lowfreq_eigenfunc}}
-\end{figure}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx30_analytic.ps}
@@ -421,20 +408,21 @@ Physically, the increased role of buoyancy, which increases with height, explain
 why larger $\beta$ values produce more complex vertical structure. 
 
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
-  0cm]{figures/compare_modes_cool_kx30_z3_analytic.ps} 
+ % \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
+  %0cm]{figures/compare_modes_cool_kx30_z3_analytic.ps} 
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
   0cm]{figures/compare_modes_cool_kx30_z5_analytic.ps}
   \includegraphics[width=\linewidth]{figures/compare_modes_cool_kx30_z7_analytic.ps}
   \caption{Same as Fig. \ref{compare_modes_cool_kx10} but for
-    $\khat=30$. Examples of surface modes are marked with `s'. 
+    $\khat=30$ and domain sizes $\zmax = 5H$ (\emph{top}) and $7H$ (\emph{bottom}). Examples of surface modes are marked with `s'. 
     \label{compare_modes_cool_kx30} 
   }
 \end{figure}
 
 Fig. \ref{compare_modes_cool_kx30} shows how cooling affects higher wavenumber
-modes, specifically $\khat=30$.   We focus on the $\zmax/H = 5, 7$ and analytic results for $\beta \geq 0.03$. 
-These cases  show good convergence, though not quite as good as for $\khat = 10$.
+modes, specifically $\khat=30$.   We only show the larger domains with $\zmax = 5H, 7H$. 
+These cases again show good convergence for $\beta \geq 0.03$, which the
+the smaller domain with  $\zmax = 3H$ lacks.
 
 With slower cooling, the wave frequency shows a more complex 
 dependence on mode order, both analytically and numerically. For $\beta = 0.1$,
@@ -447,6 +435,8 @@ fundemental mode is easy to identify and the most numerically converged, this co
 for the operability of the VSI.  
 
 Fig. \ref{compare_modes_cool_kx30} also demonstrates that artificial surface modes are damped for $\beta \geq 0.03$.
+We are thus confident that artificial surface modes should not affect our determination of the critical cooling time.
+
 
 %For clarity, we only plot analytic results 
 %for the fundamental mode ($M=0$) and $M=1,\,2$, and omit the 
@@ -467,101 +457,56 @@ Fig. \ref{compare_modes_cool_kx30} also demonstrates that artificial surface mod
 %example as $\beta$ is increased from $0.01$ to $0.03$ (for $\zmax\geq
 %5H$). 
 
-
-
-\subsection{Critical thermal relaxation
-  timescale}\label{bcrit_num_test}
-Having explored the behavior of VSI modes with cooling, we turn to the numerical vailidity of the 
-analytic cooling criterion, $\beta < \beta_\mathrm{crit} = h|q|/(\gamma -1)$.
-
-...
-
-In Fig. \ref{bcrit_compare1} we plot the maximum VSI growth rates
-found in the fiducial disk model as a function of the thermal
-relaxation timescale $\beta$ for several values of $\khat$ and
-$\zmax$. We also plot the critical timescale
-$\beta_\mathrm{crit}=0.125$ for the fiducial disk parameters.   
-
-Note that the curves are not neccessarily smooth because the most unstable
-mode may not always correspond to the same type of disturbance. For example,
-as seen above, for $\khat \leq 10$ higher order body modes are
-dominant as $\beta\to 0$, but the fundamental 
-mode becomes dominant as $\beta$ is increased. For $\khat=1$ the VSI
-can operate slightly beyond $\beta_\mathrm{crit}$  (recall that
-$\beta_\mathrm{crit}$ was derived assuming $\khat^2\gg 1$). For
-$\khat=5,\,10$ (and $30$ for $\zmax=3H$), we find
-$\beta_\mathrm{crit}$ accurately predicts the thermal timescal beyond
-which the VSI is suppressed.   
-
-Complications from vertical boundaries arise when considering large
-$\khat$. For $\khat=30$ and $\zmax=5H,\,7H$ we find for $\beta\gtrsim
-0.1$ the dominant disturbance correspond to the leftmost eigenvalues 
-seen in the lower two panels of Fig. \ref{compare_modes_cool_kx30},
-which do not exist for $\zmax=3H$. For $\khat=50,\,100$ and
-$\beta\to0$, we find surface modes dominate so the maximum growth rate
-depends on $\zmax$ in the limit of rapid thermal relaxation. 
-However, the maximum growth rate is insensitive to 
-$\zmax$ for moderately large $\beta$ ($\gtrsim 0.1$), i.e. close to
-the stabilization of the fundamental mode.  
-%not surprising since we enable strongly stabilizing buoyancy forces
-%at large zmax 
-
-Our result is consistent with numerical simulations performed by
-\citetalias{nelson13} for which a thermal relaxation timescale $\beta\gtrsim
-0.6$ stabilized the VSI; as Fig. \ref{bcrit_compare1} show that growth
-rates for $\beta\gtrsim 0.6$ are small, and are restricted to very
-small radial lengthscales $\sim 10^{-2}H$, for which current numerical
-simulations may not be able to resolve.
-%  To destablize the disk with
-% $\beta\gtrsim O(1)$, one might consider 
-% $\khat > 100$ to increase the maximum growth rate by enabling surface
-% modes, but in a realistic disk
-% very small scale disturbances will likely be subject to viscous decay
-% (see \S\ref{application}). 
-%Numerical simulations are also unlikely to
-%resolve such small scales.  
-
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
-  0.9cm]{figures/gcorr_compare_iso_maxrate_z3} 
+  %\includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
+  %0.9cm]{figures/gcorr_compare_iso_maxrate_z3} 
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
   0.9cm]{figures/gcorr_compare_iso_maxrate_z5} 
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
   0.9cm]{figures/gcorr_compare_iso_maxrate_z7}  
   \caption{Maximum VSI growth rates in the fiducial disk 
      model as a function of the thermal relaxation timescale
-     $\beta$, for $\zmax=3H$ (top), $\zmax=5H$ (middle, standard
-     setup) and $\zmax=7H$ (bottom). The vertical line is the
+     $\beta$, for %$\zmax=3H$ (top), 
+     $\zmax=5H$ (top) and $\zmax=7H$ (bottom). The vertical line is the
      critical thermal timescale $\beta_\mathrm{crit}$ obtained  
      from Eq. \ref{iso_vsi_cond}. 
      \label{bcrit_compare1}}   
  \end{figure} 
 
-As pointed out by \citetalias{barker15}, in vertically isothermal disks with
-an imposed boundary, surface modes are dependent on $\zmax$, but they
-are often the most unstable. Despite this caveat, and that surface
-modes are not accounted in our analysis, we see from
-Fig. \ref{bcrit_compare1} that $\beta_\mathrm{crit}$ nevertheless
-provides a reasonable estimate for an upper limit to the thermal
-timescale for the VSI.  
-%It becomes an accurate criter when considering fixed
-%$\khat$  
 
-We further  test the dependence of $\beta_\mathrm{crit}$ on disk parameters
-(Eq. \ref{iso_vsi_cond}).  We use the fiducial setup as a  reference
-point and vary $q\in[-0.2,-1.2]$,  $\gamma\in[1.2,2.0]$, and
-$ h\in[0.02,0.1]$ separately. The numerically obtained
-$\beta_\mathrm{crit}$ are shown in Fig. \ref{bcrit_compare} in
-comparison with Eq. \ref{iso_vsi_cond}, which generally agree. This
-result, together with Fig. \ref{bcrit_compare1}, shows that  
-$\beta \lesssim \beta_\mathrm{crit}$ is a practical
-criteria for the VSI to operate effectively in stably stratified,
-vertically isothermal disks.   
+\subsection{Critical thermal relaxation timescale}\label{bcrit_num_test}
+Having explored the behavior of VSI modes with cooling, we turn to the numerical validity of the 
+analytic cooling criterion for vertically isothermal disks, $\beta < \beta_\mathrm{crit} = h|q|/(\gamma -1)$.
 
-% The agreement improves with decreasing  $|q|$,
-% $ h$ and increasing $\gamma$, i.e. weaker instability. There is
-% a noticeable difference as $\gamma\to1$ because the derivation of
-% $\beta_\mathrm{crit}$ assumed $\gamma>1$. 
+Fig. \ref{bcrit_compare1} shows how VSI growth rates vary with cooling time 
+in our fiducial model with $\beta_\mathrm{crit} = 0.125$.  
+Curves are for a fixed horizontal wavenumber, and show the maximum growth rate for all vertical mode orders.  The 
+discontinuity in some curves occurs when the fastest growth switches to a different mode order.
+
+For $\khat = 5, 10$, the growth rate drops to zero at the expected $\beta = \beta_\mathrm{crit}$.
+For longer wavelength modes, with $\khat = 1$, growth persists to slightly longer cooling times.  
+This difference is not surprising since our analytic derivation assumed $\khat \gg1$, and 
+the change is quantitatively minor.
+
+For shorter wavelengths, with $\khat \geq 30$, growth persists for $\beta$ significantly larger
+than $\beta_\mathrm{crit}$.  This tail of growth is partly explained by the breaking of the $\khat < 1/|qh| = 20$ 
+approximation, used in  the analytic derivation.  Despite the lack of a clear stability boundary 
+at high $\khat$, the $\beta_\mathrm{crit}$ threshold remains useful, since growth rates drop to 
+$\lesssim 10\%$ of  their maximum value at  $\beta_\mathrm{crit}$ and continue to fall for larger $\beta$. 
+ Moreover, we expect that longer wavelength modes with $\khat \lesssim 20$
+are more significant for disk transport, see \S\ref{caveats_visc}.
+
+Comparing the $\zmax/H = 5, 7$ cases in Fig. \ref{bcrit_compare1}, we see that the location of the vertical
+boundary has little effect on the critical cooling time.  This agreement occurs despite the fact that peak growth rates
+differ as $\beta \to 0$.  We are thus confident that artificial boundary effects, including surface modes, do not
+affect our analysis of the critical cooling time.
+
+Our results agree with the vertically isothermal analysis of \citetalias{nelson13} 
+which used the same disk parameters as our fiducial model.  The expected $\beta_\mathrm{crit} = 0.125$ 
+is consistent with the simulations shown in their Fig.\ 12.  \citetalias{nelson13}  
+found nonlinear VSI growth for $\beta = 0.06< \beta_\mathrm{crit}$ but no growth for 
+  $\beta = 0.6 > \beta_\mathrm{crit}$.\footnote{Since the dimensionless cooling time $T_{\rm relax}$ in \citetalias{nelson13}
+  is normalized to the orbital period, we convert $\beta = \OmK P_{\rm orb} T_{\rm relax} = 2 \pi T_{\rm relax}$.}
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0cm
@@ -579,6 +524,71 @@ vertically isothermal disks.
     $\khat=10$.  
     \label{bcrit_compare}}  
 \end{figure}
+
+Fig.\ \ref{bcrit_compare} confirms that the numerically determined
+$\beta_\mathrm{crit}$ shows the expected scaling with disk parameters $h$, $q$, and $\gamma$.
+For this test we fix $\khat = 10$ (an appropriate value for all the reasons discussed above) and measure
+the smallest $\beta$ value where growth vanishes.  The agreement with the analytic scaling of 
+Eq.\ \ref{iso_vsi_cond} is quite good, confirming the applicability of our critical cooling time in
+vertically isothermal disks.
+
+
+%we plot the maximum VSI growth rates
+%found in the fiducial disk model as a function of the thermal
+%relaxation timescale $\beta$ for several values of $\khat$ and
+%$\zmax$. We also plot the critical timescale
+%$\beta_\mathrm{crit}=0.125$ for the fiducial disk parameters.   
+%
+%Note that the curves are not neccessarily smooth because the most unstable
+%mode may not always correspond to the same type of disturbance. For example,
+%as seen above, for $\khat \leq 10$ higher order body modes are
+%dominant as $\beta\to 0$, but the fundamental 
+%mode becomes dominant as $\beta$ is increased. For $\khat=1$ the VSI
+%can operate slightly beyond $\beta_\mathrm{crit}$  (recall that
+%$\beta_\mathrm{crit}$ was derived assuming $\khat^2\gg 1$). For
+%$\khat=5,\,10$ (and $30$ for $\zmax=3H$), we find
+%$\beta_\mathrm{crit}$ accurately predicts the thermal timescal beyond
+%which the VSI is suppressed.   
+%
+%Complications from vertical boundaries arise when considering large
+%$\khat$. For $\khat=30$ and $\zmax=5H,\,7H$ we find for $\beta\gtrsim
+%0.1$ the dominant disturbance correspond to the leftmost eigenvalues 
+%seen in the lower two panels of Fig. \ref{compare_modes_cool_kx30},
+%which do not exist for $\zmax=3H$. For $\khat=50,\,100$ and
+%$\beta\to0$, we find surface modes dominate so the maximum growth rate
+%depends on $\zmax$ in the limit of rapid thermal relaxation. 
+%However, the maximum growth rate is insensitive to 
+%$\zmax$ for moderately large $\beta$ ($\gtrsim 0.1$), i.e. close to
+%the stabilization of the fundamental mode.  
+
+
+%Our result is consistent with numerical simulations performed by
+%\citetalias{nelson13} for which a thermal relaxation timescale $\beta\gtrsim
+%0.6$ stabilized the VSI; as Fig. \ref{bcrit_compare1} show that growth
+%rates for $\beta\gtrsim 0.6$ are small, and are restricted to very
+%small radial lengthscales $\sim 10^{-2}H$, for which current numerical
+%simulations may not be able to resolve.
+%
+%As pointed out by \citetalias{barker15}, in vertically isothermal disks with
+%an imposed boundary, surface modes are dependent on $\zmax$, but they
+%are often the most unstable. Despite this caveat, and that surface
+%modes are not accounted in our analysis, we see from
+%Fig. \ref{bcrit_compare1} that $\beta_\mathrm{crit}$ nevertheless
+%provides a reasonable estimate for an upper limit to the thermal
+%timescale for the VSI.  
+%
+%We further  test the dependence of $\beta_\mathrm{crit}$ on disk parameters
+%(Eq. \ref{iso_vsi_cond}).  We use the fiducial setup as a  reference
+%point and vary $q\in[-0.2,-1.2]$,  $\gamma\in[1.2,2.0]$, and
+%$ h\in[0.02,0.1]$ separately. The numerically obtained
+%$\beta_\mathrm{crit}$ are shown in Fig. \ref{bcrit_compare} in
+%comparison with Eq. \ref{iso_vsi_cond}, which generally agree. This
+%result, together with Fig. \ref{bcrit_compare1}, shows that  
+%$\beta \lesssim \beta_\mathrm{crit}$ is a practical
+%criteria for the VSI to operate effectively in stably stratified,
+%vertically isothermal disks.   
+
+
 
 
 
