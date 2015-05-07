@@ -231,22 +231,22 @@ where $g_z = \p_z P/\rho$.
 
 \subsection{Entropy gradients and vertical buoyancy}
 The gradients of entropy, $S\equiv
-C_p\ln{P^{1/\gamma}/\rho}$, in our disk models are
+C_P\ln{P^{1/\gamma}/\rho}$, in our disk models are
 \begin{subequations}
 \begin{align}
-  &\frac{\p S}{\p r} = C_p\left[\frac{s}{\gamma r} +
+  &\frac{\p S}{\p r} = C_P\left[\frac{s}{\gamma r} +
     \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p
-       r}\right],\\
-  &\frac{\p S}{\p z} = C_p
-  \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p z} = {C_p g_z \over c_s^2} {\Gamma - \gamma \over \gamma},\label{dSdz}
+       r}\right], \label{dSdr}\\
+  &\frac{\p S}{\p z} = C_P
+  \left(\frac{\Gamma}{\gamma}-1\right)\frac{\p \ln{\rho}}{\p z} = {C_P g_z \over c_s^2} {\Gamma - \gamma \over \gamma},\label{dSdz}
 \end{align} 
 \end{subequations}
- where $C_p$ is the heat capacity at
+ where $C_P$ is the heat capacity at
 constant pressure. 
 
 The vertical buoyancy frequency $N_z$ is 
 \begin{align}
-  N_z^2 \equiv - C_p^{-1}g_z \frac{\p S}{\p z} = {g_z^2 \over c_s^2}{\gamma - \Gamma \over \gamma}. %c_s^2 \left(\frac{\gamma -
+  N_z^2 \equiv - C_P^{-1}g_z \frac{\p S}{\p z} = {g_z^2 \over c_s^2}{\gamma - \Gamma \over \gamma}. %c_s^2 \left(\frac{\gamma -
    %   \Gamma}{\gamma}\right)\left(\frac{\p\ln\rho}{\p z}\right)^2,  
     \label{nzsq_def}
 \end{align}
@@ -258,7 +258,7 @@ We only consider convectively stable disks with with $\Gamma <
 In the absence of cooling, axisymmetric stability is ensured
 if both Solberg-Hoiland criteria  are satisfied:
 \begin{align}
-  \kappa^2 - \frac{1}{\rho C_p}\nabla P \cdot \nabla S &> 0,\\
+  \kappa^2 - \frac{1}{\rho C_P}\nabla P \cdot \nabla S &> 0,\\
   -\frac{\p P}{\p z}\left(\frac{\p j^2}{\p r}\frac{\p S}{ \p z} -
     \frac{\p j^2}{\p z}\frac{\p S}{\p r} \right)&>0. \label{second_SH} 
 \end{align}
