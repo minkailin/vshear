@@ -1,3 +1,128 @@
+\section{Caveats and Neglected Effects} 
+%We highlight below some outstanding issues that should be addressed in
+%future works. 
+
+\subsection{Viscosity}\label{caveats_visc}
+% Depending on where the VSI operates in a
+% disk, additional effects may become important. For example, in the
+% outer parts of a PPD, where we estimate the VSI 
+% operates, disk self-gravity (SG) may play a role. Vertical
+% SG may favor the VSI by increasing $|\p_z\Omega|$ through
+% enhancing the density stratification 
+% (Eq. \ref{vertical_shear}). %sg in pert? no because kx>>1. but maybe for kx~1 
+
+Our neglect of viscosity is valid in a laminar disk, because molecular viscosity is so small.
+However turbulence could act as an effective viscosity which preferentially damps 
+small scale modes.   Since the goal of VSI is to drive turbulent transport,
+the most relevant modes for sustaining the VSI should be able to overcome
+turbulent damping.
+
+To roughly estimate the wavelengths which are prone to damping, we
+consider 
+%An important effect of viscosity is setting a minimum wavelength (or 
+%maximum wavenumber) for which the VSI is relevant. Disturbances with
+%large $\khat\equiv k_xH$ may be subject to viscous decay. Adopting 
+the standard
+precription for the kinematic viscosity $\nu = \alpha c_s H$
+\citep{shakura73}, in terms of the dimsionless $\alpha$ 
+parameter. The viscous timescale for a perturbation lengthscale  
+$l\sim 1/k_x = H/\khat$ is $t_\mathrm{visc} = 1/\alpha\khat^2\Omega $. 
+For significant growth, $t_\mathrm{visc}$ should be longer than the
+characterstic VSI growth timescale $1/(h|q|\Omega)$, i.e.\ 
+$\khat^2\lesssim |q|h/\alpha$. With $h \sim 0.05$, $q = -1$  and
+ $\alpha$ from simulations \citepalias{nelson13},
+we estimate that growth requires $\khat\lesssim 20$ for
+$\alpha\sim 10^{-4}$ or $\khat\lesssim 70$ for $\alpha\sim
+10^{-5}$. 
+
+This argument justifies our focus on moderate
+wavenumbers, $\khat=O(10)$. Future work should consider
+the viscous effects in more detail, to better understand
+how the VSI operates in nature and in simulations.
+
+%suggestion: Keep this idea to yourself, since you don't have a result yet.
+% In particular, viscous
+%heating may influence the thermodynamic dependence of the VSI. 
+
+
+\subsection{Convective overstability}
+The VSI bears some similarity to the `convective overstability'
+ (CONO, \citealp{klahr14, lyra14}).   Both instabilities rely on thermal relaxation to 
+overcome the stability of adiabatic perturbations, i.e.\ the Solberg-Hoiland
+criteria (see \S\ref{solberg}).
+
+The key differences are that the CONO neglects vertical buoyancy
+and requires an imaginary horizontal buoyancy,
+\begin{align}\label{Nr}
+N_r^2 \equiv -{1 \over \rho C_P}{\p P \over \p r} {\p S \over \p r} < 0\, .
+\end{align}
+Since vertical buoyancy is an important stabilitizing influnce for the VSI, it should
+be considered in future studies of CONO.
+
+The sign of $N_r^2$ depends on disk parameters.  To demonstrate that the required parameters 
+are somewhat extreme, we consider the midplane of vertically isothermal disks with 
+$\Sigma \propto r^n$ so that $n = p+q/2 + 3/2$. Using Eqs. \ref{dSdr} and \ref{Nr} with $\gamma = 1.4$,
+$N_r^2 < 0$ requires $n> 3(1/2 + q)$.  For standard disk temperature laws this requirement implies
+a flat or rising surface density profile, e.g.\ $n = 3/14$ for $q = -3/7$ or $n = 0$ for $q = -1/2$.
+Thus CONO is most like to operate at special locations, like the outside edges of 
+disk gaps or holes and/or shadowed regions where $q < -1/2$.
+
+Perhaps due to these physical differences, CONO operates in different regimes of parameter
+space than the VSI.  CONO grows best for longer wavelengths $\khat \gtrsim 1$ and longer 
+cooling times $\beta \sim 1$. 
+
+Future work should aim to understand these related instabilities in the same framework, thereby 
+explaining the key differences.
+
+
+
+
+%We have focused on parameter regimes relevant to the VSI,
+%namely perturbations with small radial lengthscales 
+%($k_xH\gtrsim 1$) in disks with short thermal timescales
+%($t_c\Omega\ll 1$). This excludes the `convective overstability'
+%recently discussed by \cite{klahr14} and \cite{lyra14} in vertically
+%unstratified disk models.   
+%
+%The convective overstability corresponds to slowly growing epicyclic motions.
+%It is most effective for $t_c\Omega \sim 1$ and disturbances with
+%$|k_x|\ll |k_z|$, where $k_z$ is a vertical wavenumber. These
+%conditions are mutually exclusive with the VSI.  
+%The maximum growth rate for convective overstability is given by 
+%\begin{align}
+%  \sigma_\mathrm{conv,max} = -\frac{N^2_r}{4\Omega}\label{max_conv_gen}
+%\end{align}
+%\citep{lyra14}, where $N_r^2 = -(c_p\rho)^{-1}\p_rP\p_rS$ is the
+%square of the radial buoyancy frequency
+%(cf. Eq. \ref{nzsq_def}). Thus, growth requires $N_r^2<0$.  
+%%Evaluating Eq. \ref{max_conv_gen} at the midplane of our disk models,
+%%we find  
+%%\begin{align}
+%%  \sigma_\mathrm{conv,max} =
+%%  -\frac{ h^2\OmK}{4\gamma\Gamma}\left(p+q\right)
+%%  \left[\left(\gamma-1\right)p-q\right]. \label{max_conv}
+%%\end{align}
+%In fact, for the MMSN considered in this work, convective
+%overstability does not apply because 
+%$N_r^2>0$.   
+%
+%For more general disk structures convective overstability is
+%possible, in principle. The models adopted for our numerical study in
+%\S\ref{numerical} do satisfy $N_r^2<0$, but convective overstability
+%require perturbations with long radial lengthscales,
+%$k_xH\ll 1$, for which radially global disk models would be more 
+%self-consistent. 
+
+\subsubsection{Radiative transfer} 
+Our relatively simple treatment of cooling with an idealized dust opacity
+could certainly be generalized in future works.  In hotter disks, gas phase opacities
+must be considered.   In cold disks there are many choices for a dust opacity which 
+varies with grain sizes and compositions. Dust properties could change the viability 
+of the VSI for better or worse.  The radiative transfer itself
+could be calculated with higher levels of sophistication, as is already being done in
+numerical simulations \citep{stoll14}.
+
+
 \section{Summary and discussion}\label{summary}
 In this paper we have studied the axisymmetric vertical shear 
 instability (VSI) in astrophysical disks that arise from the 
@@ -82,124 +207,6 @@ thus a practical first step in estimating the relevance of the VSI in
 realistic astrophysical disks without resorting to linear
 calculations or non-linear numerical simulations.   
 
-\subsection{Caveats and outlooks} 
-We highlight below some outstanding issues that should be addressed in
-future works. 
-
-\subsubsection{Viscosity}\label{caveats_visc}
-% Depending on where the VSI operates in a
-% disk, additional effects may become important. For example, in the
-% outer parts of a PPD, where we estimate the VSI 
-% operates, disk self-gravity (SG) may play a role. Vertical
-% SG may favor the VSI by increasing $|\p_z\Omega|$ through
-% enhancing the density stratification 
-% (Eq. \ref{vertical_shear}). %sg in pert? no because kx>>1. but maybe for kx~1 
-
-We have neglected viscosity. 
-% while \citetalias{barker15} find that inclusion of viscosity is needed for 
-% convergence when studying surface modes in radially global disk
-% models. %but not body modes? 
-% Viscosity may also affect the
-% thermodynamic requirement for the VSI, because viscous heating
-% needs to be self-consistently included in the energy equation. This
-% should be investigated in future works.   
-An important effect of viscosity is setting a minimum wavelength (or 
-maximum wavenumber) for which the VSI is relevant. Disturbances with
-large $\khat\equiv k_xH$ may be subject to viscous decay. Adopting the standard
-precription for the kinematic viscosity $\nu = \alpha c_s H$
-\citep{shakura73}, where $\alpha$ is the dimensionless viscosity
-parameter, the viscous timescale for a perturbation lengthscale  
-$l\sim 1/k_x$ is $t_\mathrm{visc} = 1/\alpha\khat^2\Omega $. 
-Setting $t_\mathrm{visc}$ to be longer than the
-minimum VSI growth timescale $1/h\Omega$ implies 
-$\khat^2\lesssim h/\alpha$. Inserting $h \sim 0.05$,
-we find only modes with $\khat\lesssim 20$ are relevant for
-$\alpha\sim 10^{-4}$ or $\khat\lesssim 70$ for $\alpha\sim
-10^{-5}$. \citepalias[These small viscosity values are required for
-the VSI to operate, see][]{nelson13}.
-
-%\citetalias{nelson13} find that a
-%dimensionless viscosity of $\alpha\lesssim O(10^{-4})$ is required for the
-%VSI. 
-
-The above argument justifies our focus on moderate
-wavenumbers, $\khat=O(10)$, which precludes extremely small-scale
-disturbances such as surface modes. Nevertheless, future calculations
-should explicitly account for viscosity. In particular, viscous
-heating may influence the thermodynamic dependence of the VSI. 
-
-% needs to be self-consistently included in the energy equation. 
-
-
-
-
-
-
-% It is of interest to quantify the effect of viscosity 
-% on the linear VSI. This would help identify, more accurately, the
-% appropriate regions in a protoplanetary disk that are sufficiently
-% laminar to develop the VSI.  This problem is, however, complicated by
-% the fact that proper inclusion of viscosity introduces a meridional
-% flow in the equilibrium state, as well as viscous heating
-% in the energy equation. 
-
-
-\subsubsection{Convective overstability}
-We have focused on parameter regimes relevant to the VSI,
-namely perturbations with small radial lengthscales 
-($k_xH\gtrsim 1$) in disks with short thermal timescales
-($t_c\Omega\ll 1$). This excludes the `convective overstability'
-recently discussed by \cite{klahr14} and \cite{lyra14} in vertically
-unstratified disk models.   
-
-The convective overstability corresponds to slowly growing epicyclic motions.
-It is most effective for $t_c\Omega \sim 1$ and disturbances with
-$|k_x|\ll |k_z|$, where $k_z$ is a vertical wavenumber. These
-conditions are mutually exclusive with the VSI.  
-The maximum growth rate for convective overstability is given by 
-\begin{align}
-  \sigma_\mathrm{conv,max} = -\frac{N^2_r}{4\Omega}\label{max_conv_gen}
-\end{align}
-\citep{lyra14}, where $N_r^2 = -(c_p\rho)^{-1}\p_rP\p_rS$ is the
-square of the radial buoyancy frequency
-(cf. Eq. \ref{nzsq_def}). Thus, growth requires $N_r^2<0$.  
-%Evaluating Eq. \ref{max_conv_gen} at the midplane of our disk models,
-%we find  
-%\begin{align}
-%  \sigma_\mathrm{conv,max} =
-%  -\frac{ h^2\OmK}{4\gamma\Gamma}\left(p+q\right)
-%  \left[\left(\gamma-1\right)p-q\right]. \label{max_conv}
-%\end{align}
-In fact, for the MMSN considered in this work, convective
-overstability does not apply because 
-$N_r^2>0$.   
-
-For more general disk structures convective overstability is
-possible, in principle. The models adopted for our numerical study in
-\S\ref{numerical} do satisfy $N_r^2<0$, but convective overstability
-require perturbations with long radial lengthscales,
-$k_xH\ll 1$, for which radially global disk models would be more 
-self-consistent. 
-
-\subsubsection{Improved thermal evolution} 
-We assumed non-adiabatic effects can be represented by a thermal
-relaxation timescale $t_c$. For  
-application to PPDs we connected $t_c$ to the disk
-properties such as surface density, temperature and opacity, making
-$t_c$ depend on position and the perturbation 
-lengthscales. One might improve the realism further by generalizing
-the opacity model adopted here to be density (and hence height)
-dependent.  
-%here to be density-dependent,  i.e. $\kappa_d =
-%% \kappa_d(\rho, T)$. 
-However, going beyond thermal relaxation requires a
-proper treatment of radiative diffusion. 
-% done roughly in this work -
-% a proper study 
-% involves a Laplacian operator and additional boundary
-% conditions must be supplemented. 
-We will consider these improvements in a
-follow-up study. %additional heat source 
  
 
 
