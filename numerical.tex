@@ -114,6 +114,35 @@ We investigate the effect of vertical box size, from $\zmax=3H$
   }
 \end{figure}
 
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
+  0cm]{figures/eigenvectorW_iso} 
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  1cm]{figures/eigenvectorvz_iso}
+  \caption{Pseudo-enthalpy perturbation $W$ (top) and vertical velocity
+    perturbation $\delta v_z$ of the fundamental VSI with 
+    $\khat=10$ in the fiducial disk with rapid thermal relaxation $\beta=10^{-3}$. The real  
+    (imaginary) parts of $W$ and $\delta v_z$ are plotted as solid 
+    (dotted) lines.  
+    \label{lowfreq_eigenfunc}
+  }
+\end{figure}
+
+\begin{figure}
+%  \includegraphics[scale=0.345,clip=true,trim=0cm 0cm 2.5cm
+%  0cm]{figures/result2d_vel}\includegraphics[scale=0.345,clip=true,trim=1.9cm 0cm 0cm
+%  0cm]{figures/result2d_mom} 
+  \includegraphics[width=\linewidth]{figures/result2d_iso}
+  \caption{Visualization of the fundamental VSI mode in
+    Fig. \ref{lowfreq_eigenfunc}. The color scale corresponds to the
+    pressure perturbation $\delta P=\rho W$ scaled by its maximum value.
+    Arrows show the flow, scaled as $\sqrt{\rho}(\delta
+    v_x,\delta v_z)$. The horizontal axis has been stretched 
+    for clarity.  
+    \label{lowfreq_eigenfunc_2d}
+  }
+\end{figure}
+
 \subsubsection{Case study: $\khat=10$}\label{k10}
 Fig. \ref{compare_modes_iso_kx10} maps the growth rates $\sigma$ and
 wave frequencies $\omega$ of unstable 
@@ -191,6 +220,8 @@ elongated, anelastic mode \citepalias{nelson13}. Most of the kinetic
 energy is contained within $\sim 2H$ of the midplane due to the
 density stratification.  
 
+
+
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
   0cm]{figures/eigenvectorW_iso} 
@@ -202,21 +233,22 @@ density stratification.
     $\beta=10^{-3}$. The real (imaginary) parts of $W$ and $\delta
     v_z$ are plotted as solid (dotted) lines.  
     \label{lowfreq_eigenfunc}
-  }
 \end{figure}
 
 \begin{figure}
-%  \includegraphics[scale=0.345,clip=true,trim=0cm 0cm 2.5cm
-%  0cm]{figures/result2d_vel}\includegraphics[scale=0.345,clip=true,trim=1.9cm 0cm 0cm
-%  0cm]{figures/result2d_mom} 
-  \includegraphics[width=\linewidth]{figures/result2d_iso}
-  \caption{Visualization of the fundamental VSI mode in
-    Fig. \ref{lowfreq_eigenfunc}. The color scale corresponds to the
-    pressure perturbation $\delta P=\rho W$ scaled by its maximum value.
-    Arrows show the flow, scaled as $\sqrt{\rho}(\delta
-    v_x,\delta v_z)$. The horizontal axis has been stretched 
-    for clarity.  
-    \label{lowfreq_eigenfunc_2d}
+  \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx30_analytic.ps}
+  \caption{Same as Fig. \ref{compare_modes_iso_kx10} but for
+    $\khat=30$. Examples of surface modes are 
+    marked by `s'. \label{compare_modes_iso_kx30}
+  }
+\end{figure}
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+  0cm]{figures/eigenvectorvz_iso_surf}
+  \caption{Example of a `surface mode' in the fiducial disk model.
+    \label{lowfreq_eigenfunc_surf}
   }
 \end{figure}
 
@@ -285,50 +317,7 @@ surface.
 %Thus, seeking the most unstable mode in a vertically isothermal disk
 %may not yield robust results because this 
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx30_analytic.ps}
-  \caption{Same as Fig. \ref{compare_modes_iso_kx10} but for
-    $\khat=30$. Examples of surface modes are 
-    marked by `s'. \label{compare_modes_iso_kx30}
-  }
-\end{figure}
 
-
-\begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-  0cm]{figures/eigenvectorvz_iso_surf}
-  \caption{Example of a `surface mode' in the fiducial disk model.
-    \label{lowfreq_eigenfunc_surf}
-  }
-\end{figure}
-
-\subsection{Effect of thermal relaxation}\label{therm_relax_eff}
-We now consider the effect of finite thermal relaxation by increasing 
-$\beta$. % Note that for the fiducial disk model the critical thermal 
-% timescale $\beta_\mathrm{crit} = 0.125$.
-Fig. \ref{compare_modes_cool_kx10} show unstable modes with $\khat=10$ 
-and $\beta$ from $0.01$ to  $0.1$. In addition to our fiducial setup with 
-$\zmax=5H$, we also plot results for $\zmax=3H$, $\zmax=7H$ and 
-analytic results computed from Eq. \ref{relax_disp}.  %analytic
-% results for low order modes 
-
-We find the number of unstable modes decrease with increasing
-$\beta$. Consider the fiducial setup with $\zmax=5H$ 
-(middle panel). The fundamental mode ($M=0$) is not the most unstable for   
-$\beta=0.01$ as higher order modes have larger
-growth rates. As noted above, these higher order modes are affected by
-$\zmax$, e.g. there is a significant mismatch between numerical and 
-analytical results for $M\geq1$ when $\zmax=3H$ (upper panel). 
-
-%However, by comparing with results for $\zmax=3H$, we see that 
-
-However, the fundamental mode becomes dominant for $\beta \geq 
-0.03$. Higher order modes, which would be dominant at small $\beta$, 
-are more effectively stabilized with increasing $\beta$. For 
-$\beta=0.1$, which is close to the critical thermal timescale
-$\beta_\mathrm{crit} (=0.125$ for the fiducial disk
-parameters), we only find the fundamental mode. This is consistent with
-the discussion in \S\ref{iso_vsi_beta_crit}.    
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -351,16 +340,35 @@ the discussion in \S\ref{iso_vsi_beta_crit}.
   }
 \end{figure}
 
-Fig. \ref{lowfreq_eigenfunc_cool}---\ref{lowfreq_eigenfunc_2d_cool}
-shows the fundamental mode with $\khat=10$ in a disk with 
-$\beta=0.1$. Comparing these plots with
-Fig. \ref{lowfreq_eigenfunc}---\ref{lowfreq_eigenfunc_2d}, which have
-$\beta=10^{-3}$, we see that increasing $\beta$ restricts the region 
-characterized by $W\sim z$ and $\delta v_z\sim$ constant closer to the
-midplane, with oscillatory behavior emerging near vertical boundaries
-where buoyancy first becomes important. This leads to the `tilted'
-pressure perturbations seen in Fig. \ref{lowfreq_eigenfunc_2d_cool} 
-(cf. Fig. \ref{lowfreq_eigenfunc_2d}). 
+\subsection{Slower thermal relaxation}\label{therm_relax_eff}
+We now consider the effect of longer cooling timescales by gradually increasing 
+$\beta$. We expect VSI growth for  $\beta < \beta_\mathrm{crit} = 0.125$.  We also expect that higher order modes will damp at even lower $\beta$ values, as argued in \S\ref{iso_vsi_beta_crit}.
+
+Fig. \ref{compare_modes_cool_kx10} largely confirms these expectations by plotting eigenvalues for $\khat=10$ 
+and $\beta$ from $0.01$ to  $0.1$. 
+The analytic results from Eq. \ref{relax_disp} are now plotted as different curves for each mode order $M$, with $\beta$ varying along each curve.  
+We see the standard increase in frequency, $|\omega|$, with mode order.
+
+As expected, the higher order modes are preferentially damped.  For $\beta \geq 0.03$ the fundamental ($M = 0$) mode is the fastest growing. For $\beta = 0.1$, only the $M = 0$ mode grows. This growth is slow since $\beta$ is near $\beta_\mathrm{crit}$.
+
+Fig. \ref{compare_modes_cool_kx10} also shows how cooling times affect the dependence on $\zmax$, the size of the vertical domain.   For all cooling times, the fundamental mode depends only weakly on $\zmax$, and there is good agreement with analytic values.  This convergence is reassuring given the importance of the fundamental mode at longer cooling times.  For higher order modes and short cooling times, however, the eigenvalues vary strongly with $\zmax$.  The disagreement with analytic theory is strongest for the smallest domain, with $\zmax = 3 H$.  For $\beta \geq 0.03$, the $\zmax/H = 5, 7$ and the analytic results are well converged (aided by the fact that only $M < 5$ modes grow).
+
+
+%We find the number of unstable modes decrease with increasing
+%$\beta$. Consider the fiducial setup with $\zmax=5H$ 
+%(middle panel). The fundamental mode ($M=0$) is not the most unstable for   
+%$\beta=0.01$ as higher order modes have larger
+%growth rates. As noted above, these higher order modes are affected by
+%$\zmax$, e.g. there is a significant mismatch between numerical and 
+%analytical results for $M\geq1$ when $\zmax=3H$ (upper panel). 
+%
+%However, the fundamental mode becomes dominant for $\beta \geq 
+%0.03$. Higher order modes, which would be dominant at small $\beta$, 
+%are more effectively stabilized with increasing $\beta$. For 
+%$\beta=0.1$, which is close to the critical thermal timescale
+%$\beta_\mathrm{crit} (=0.125$ for the fiducial disk
+%parameters), we only find the fundamental mode. This is consistent with
+%the discussion in \S\ref{iso_vsi_beta_crit}.    
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -384,33 +392,14 @@ pressure perturbations seen in Fig. \ref{lowfreq_eigenfunc_2d_cool}
   }
 \end{figure}
 
-%presence of buoyancy forces at the boundary may make BC more
-%influential 
-
-In Fig. \ref{compare_modes_cool_kx30} we plot eigenvalues for unstable 
-modes with $\khat=30$. For clarity, we only plot analytic results 
-for the fundamental mode ($M=0$) and $M=1,\,2$, and omit the 
-squares. The fundamental mode is again insensitive to $\zmax$ and are
-in close agreement with analytic results. However, 
-there is increasing mismatch between analytical and numerical results
-for higher order modes as $\beta$ is increased. This suggests that, in
-the presence of buoyancy, boundary effects become important for these
-modes, which have larger $\khat$ than that considered previously. For
-example, for $\zmax=5H$ and $\zmax=7H$, we 
-find modes slightly more unstable than the fundamental
-mode even when $\beta=0.1$ (the leftmost eigenvalues in the lower two
-panels), but these are clearly affected by boundary
-conditions as they are absent for $\zmax=3H$. 
-
-Nevertheless, as before we observe more effective stabilization for
-higher order modes, including the absence of surface modes, for
-example as $\beta$ is increased from $0.01$ to $0.03$ (for $\zmax\geq
-5H$). 
-%\emph{not a clear and possible not valid argument.  All modes are associated with
-%a BC and the disappearance of a mode for smaller zmax could be the artificial effect.}
-%If we discard modes associated with boundary conditions, then
-%the fundamental mode would again become the dominant mode as $\beta$ is
-%increased. 
+Figures \ref{lowfreq_eigenfunc_cool} and \ref{lowfreq_eigenfunc_2d_cool}
+illustrate the eigenfunction of the fundamental mode with $\khat=10$ and
+$\beta=0.1$. Compared with the small $\beta$ case in 
+Figs. \ref{lowfreq_eigenfunc} and \ref{lowfreq_eigenfunc_2d}, the eigenfuctions 
+show a more complex variation of phase with height.  This dependence yields 
+the `tilted' appearance of pressure field in  Fig. \ref{lowfreq_eigenfunc_2d_cool}.
+Physically, the increased role of buoyancy, which increases with height, explains 
+why larger $\beta$ values produce more complex vertical structure. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
@@ -424,22 +413,50 @@ example as $\beta$ is increased from $0.01$ to $0.03$ (for $\zmax\geq
   }
 \end{figure}
 
-% Fig. \ref{compare_modes_cool_kx10} and \ref{compare_modes_cool_kx30} 
-% show that the fundamental mode is not sensitive to boundary
-% conditions. The fundamental mode also becomes dominant as $\beta$
-% approaches $\beta_\mathrm{crit}$, except with the possible emergence
-% of modes associated with boundary conditions. Thus, tracking the
-% fundamental mode is a more preferable assessment of stability as $\beta$
-% is increased from zero, rather than searching for the most unstable
-% mode. This is because the latter may correspond to modes that depend on boundary
-% conditions, e.g. surface modes whose growth rate varies with
-% $\zmax$ in a vertically isothermal disk. 
+Fig. \ref{compare_modes_cool_kx30} shows how cooling affects higher wavenumber
+modes, specifically $\khat=30$.   We focus on the $\zmax/H = 5, 7$ and analytic results for $\beta \geq 0.03$. 
+These cases  show good convergence, though not quite as good as for $\khat = 10$.
+
+With slower cooling, the wave frequency shows a more complex 
+dependence on mode order, both analytically and numerically. For $\beta = 0.1$,
+ the fundamental mode (which lies on the $M = 0$ curve) no longer has the smallest $|\omega|$ value.  
+
+Moreover, the fundamental mode is no longer the fastest growing mode for $\beta \geq 0.03$, or even 
+for $\beta = 0.1$.  This complication is not actually surprising since $|hq\khat| = 1.5$ is no longer less than unity,
+as required in the analytic derivation of \S\ref{iso_vsi_beta_crit}.  Though  inconvenient,  given that the 
+fundemental mode is easy to identify and the most numerically converged, this complication is not ultimately significant
+for the operability of the VSI.  
+
+Fig. \ref{compare_modes_cool_kx30} also demonstrates that artificial surface modes are damped for $\beta \geq 0.03$.
+
+%For clarity, we only plot analytic results 
+%for the fundamental mode ($M=0$) and $M=1,\,2$, and omit the 
+%squares. The fundamental mode is again insensitive to $\zmax$ and are
+%in close agreement with analytic results. However, 
+%there is increasing mismatch between analytical and numerical results
+%for higher order modes as $\beta$ is increased. This suggests that, in
+%the presence of buoyancy, boundary effects become important for these
+%modes, which have larger $\khat$ than that considered previously. For
+%example, for $\zmax=5H$ and $\zmax=7H$, we 
+%find modes slightly more unstable than the fundamental
+%mode even when $\beta=0.1$ (the leftmost eigenvalues in the lower two
+%panels), but these are clearly affected by boundary
+%conditions as they are absent for $\zmax=3H$. 
+%
+%Nevertheless, as before we observe more effective stabilization for
+%higher order modes, including the absence of surface modes, for
+%example as $\beta$ is increased from $0.01$ to $0.03$ (for $\zmax\geq
+%5H$). 
 
 
-%boundary conditions play an increasing role for higher M
 
 \subsection{Critical thermal relaxation
   timescale}\label{bcrit_num_test}
+Having explored the behavior of VSI modes with cooling, we turn to the numerical vailidity of the 
+analytic cooling criterion, $\beta < \beta_\mathrm{crit} = h|q|/(\gamma -1)$.
+
+...
+
 In Fig. \ref{bcrit_compare1} we plot the maximum VSI growth rates
 found in the fiducial disk model as a function of the thermal
 relaxation timescale $\beta$ for several values of $\khat$ and
