@@ -72,10 +72,11 @@
 %\title{Vertical shear instability in astrophysical disks: vertically
 %global linear calculations with thermal relaxation and applications
 %to the Solar Nebula}  
-\author{Min-Kai Lin \& Andrew N Youdin}
+\author{Min-Kai Lin\altaffilmark{$\dagger$} \& Andrew N Youdin}
 \affil{Department of Astronomy and Steward Observatory, \\
 University of
   Arizona, 933 North Cherry Avenue, Tucson, AZ 85721, USA}
+\altaffiltext{$\dagger$}{Steward Theory Fellow}
 \email{minkailin@email.arizona.edu, youdin@email.arizona.edu}
 
 \begin{abstract}
@@ -395,7 +396,8 @@ We are more interested, however, the the global instability criterion for distur
 Our desired result 
 is the cooling requirement 
 \begin{align}\label{prelim_bcrit}
-  t_c <  h |q| \OmK^{-1}/ (\gamma - 1)
+  t_c <  &\underbrace{\frac{h |q| }{\gamma - 1}}_{\beta_\mathrm{crit}}\OmK^{-1}
+ % &\equiv \beta_\mathrm{crit}\OmK^{-1},\notag
 \end{align}   
 for VSI growth that we derive in \S\ref{iso_vsi_beta_crit}.  We can simply 
 (but non-rigourously) obtain Eq. \ref{prelim_bcrit}
@@ -451,9 +453,9 @@ for VSI growth that we derive in \S\ref{iso_vsi_beta_crit}.  We can simply
   0.73cm]{figures/bcrit_mmsn2d_kx50}
   \caption{Estimate of the thermal timescale  in a fiducial 
     PPD model, the Minimum Mass Solar Nebula. The red
-    line corresponds to a characteristic thermal timescale, derived in
+    lines corresponds to a maximum thermal timescale, derived in
     this work, below which the VSI is expected to operate effectively
-    (the region outside the line).    
+    (the region bounded by the red lines).     
     \label{bcrit_mmsn2d} 
   }
 \end{figure}

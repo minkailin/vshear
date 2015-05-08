@@ -30,9 +30,9 @@ weight.
 We model radiative effects as thermal
 relaxation with a timescale $t_c$, i.e.,
 \begin{align}\label{thermal_relax}
-  \Lambda  \equiv \frac{\rho\mathcal{R}}{\mu}\frac{T - T_0}{t_c},
+  \Lambda  \equiv \frac{\rho\mathcal{R}}{\mu}\frac{T - T_\mathrm{eq}}{t_c},
 \end{align}
-where $T_0=T_0(r,z)$ is the equilibrium temperature.  We 
+where $T_\mathrm{eq}=T_\mathrm{eq}(r,z)$ is the equilibrium temperature.  We 
 define the dimensionless cooling time 
 \begin{align}\label{beta_def}
   \beta \equiv \OmK t_c
@@ -152,7 +152,7 @@ where $\rho(r,H_s)=0$; and $H_s \simeq \sqrt{2/(\Gamma-1)}H$ for $h\ll 1$.
 % \end{align}
 
 The vertically isothermal case, $\Gamma = 1$, can be calculated either 
-as a special case or as the $\Gamma \rightarrow 1$ limit of Eq. \ref{eqm_dens},    
+as a special case or by taking the limit of Eq. \ref{eqm_dens},    
 \begin{subequations}\begin{align}
 \lim_{\Gamma\to1}  \frac{\rho(r,z)}{\rho_0(r)} &=
   \exp{\left[\frac{1}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},   \\
@@ -189,7 +189,7 @@ Vertical shear increases linearly with height near the midplane, and $|\p_z \Ome
 $\mathrm{min}(r/\sqrt{2},H_s)$, which is expected to limit the maximum VSI growth rate. 
 %the smaller of $r/\sqrt{2}$ or $H_s$. 
 
-A more general expression for vertical shear holds for vertical polytopes 
+A more general expression for vertical shear holds for vertical polytropes 
 (which satisfy Eq.\ \ref{eqm_press}), with no assumed radial structure:
 \begin{align}
   r\frac{\p\Omega^2}{\p z} = - \rho^{\Gamma-1}\frac{\p\ln\rho}{\p
@@ -230,7 +230,7 @@ where $g_z = \p_z P/\rho$.
 %which is expected to limit the growth rate of instabilities associated with vertical shear. 
 
 \subsection{Entropy gradients and vertical buoyancy}
-The gradients of entropy, $S\equiv
+The gradients of specific entropy, $S\equiv
 C_P\ln{P^{1/\gamma}/\rho}$, in our disk models are
 \begin{subequations}
 \begin{align}
@@ -284,7 +284,6 @@ implies stability. For typical model parameters, the right hand
 side (RHS) is $O( h^2) \ll 1$.  The left hand side is positive and order unity ($O(0.1)$ at least) if the disk is convectively stable, and not very close to convective instability.  This stable stratification is expected for irradiated disks  \citep{chiang97}.
 Thus adiabatic disturbances are stable to a disk's vertical shear, explaining why the VSI requires cooling. 
 
-
 \section{Linear problem}\label{linear} 
 This section presents the two sets of equations we use to study the
 linear development of the VSI.  Both sets are radially local and vertically global 
@@ -300,7 +299,7 @@ We consider axisymmetric perturbations to the above disk equilibria.
 The growth of the VSI is strongest for short radial wavelengths, as compared
  to the disk radius \citepalias{nelson13,barker15}.  We thus perform a
  standard two step process to obtain linearized equations in the radially local 
- approximation (e.g., \citealp{goldreich67}, who also consider vertically local perturbations).  
+ approximation (e.g., \citealp{goldreich67}, who also consider vertically localized perturbations).  
  
  We first expand all fluid variables 
  into the equilibrium value plus an Eulerian perturbation denoted by $\delta$, e.g.\ 
