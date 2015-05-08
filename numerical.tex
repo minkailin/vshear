@@ -460,9 +460,9 @@ We are thus confident that artificial surface modes should not affect our determ
 \begin{figure}
   %\includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
   %0.9cm]{figures/gcorr_compare_iso_maxrate_z3} 
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.75cm 0cm
+  \includegraphics[scale=0.4415,clip=true,trim=0cm 1.75cm 0cm
   0.9cm]{figures/gcorr_compare_iso_maxrate_z5} 
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0.0cm 0cm
+  \includegraphics[scale=0.4415,clip=true,trim=0cm 0.0cm 0cm
   0.9cm]{figures/gcorr_compare_iso_maxrate_z7}  
   \caption{Maximum VSI growth rates in the fiducial disk 
      model as a function of the thermal relaxation timescale
@@ -485,7 +485,7 @@ discontinuity in some curves occurs when the fastest growth switches to a differ
 
 For $\khat = 5, 10$, the growth rate drops to zero at the expected $\beta = \beta_\mathrm{crit}$.
 For longer wavelength modes, with $\khat = 1$, growth persists to slightly longer cooling times.  
-This difference is not surprising since our analytic derivation assumed $\khat \gg1$, and 
+This difference is not surprising since our analytic derivation assumed $\khat^2 \gg1$, and 
 the change is quantitatively minor.
 
 For shorter wavelengths, with $\khat \geq 30$, growth persists for $\beta$ significantly larger
@@ -589,141 +589,140 @@ vertically isothermal disks.
 %vertically isothermal disks.   
 
 
+
+
+
 \subsection{Vertically non-isothermal disk model} 
-%\emph{fix this rambling discussion..}
+We briefly consider a vertically non-isothermal disk model with
+$(p,q, h)=(-0.5,-1,0.05)$ and $(\gamma, \Gamma)=(1.4,1.3)$. We set the
+vertical domain size close to the physical disk surface, $\zmax =
+0.99H_s\simeq 2.6H$, which is smaller than our standard domain
+size. In this case the vertical shear rate $\p_z\Omega\propto s$, the
+radial entropy gradient. Here, $s=-0.85$. 
 
+From the expression for the
+critical cooling timescale, Eq. \ref{iso_vsi_cond}, it is reasonable
+to expect a similar criteria for vertically non-isothermal 
+disks in the form
+\begin{align}\label{bcrit_noniso}
+ \beta_\mathrm{crit}\to\beta_\mathrm{crit, noniso} =
+ \frac{h|s|}{\gamma - \Gamma},
+\end{align}
+and $\beta_\mathrm{crit,noniso}=0.425$ for the chosen parameters. This
+is $\sim 3$ times larger than our fiducial, vertically isothermal
+disk with $\beta_\mathrm{crit}=0.125$. 
 
-% \citetalias{barker15} have argued that vertically isothermal disks are not
-% ideal for studing the VSI because $\zmax$ is a free 
-% parameter in numerical calcluations. On the other hand, vertically 
-% non-isothermal disks have a disk surface at finite height so there is
-% a natural choice for $\zmax$. This means that higher order body modes and
-% surface modes are better defined in a vertically non-isothermal disk.   
-
-% However, as we have seen in Fig. \ref{bcrit_compare1}, the maximum
-% growth rate becomes insensitive to $\zmax$ for $\beta\gtrsim
-% \beta_\mathrm{crit}$. This suggests that the characteristic upper
-% limit on the thermal timescale for the VSI is not sensitive to
-% $\zmax$, so that vertically isothermal disks are in fact suitable for
-% the purpose of characterizing the thermodynamic dependence of the
-% VSI. 
-
-%Physically this is because modes that depend on vertical boundaries
-%are also subject to the strongest stabilization by buoyancy, which
-%maximize at $\zmax$. These modes are theremore always strongly damped
-%as we increase the thermal timescale. 
-
-Here we briefly consider a vertically non-isothermal
-disk model with $(p,q, h)=(0,-1,0.05)$ and $\Gamma=1.0837$. This
-value of $\Gamma$ is chosen so that the standard vertical domain size $\zmax =
-5H\simeq H_s$ effectively corresponds to the disk surface. The disk
-temperature decreases rapidly with height such that
-$c_s^2(\zmax)\simeq 10^{-4}c_s^2(0)$. A disk surface at finite height
-means that higher order body modes and surface modes are better
-defined (cf. in vertically isothermal disk models where the disk
-boundary $\zmax$ is a free parameter, see \citetalias{barker15}). 
-
-% \emph{note that this would
-% imply midplane 
-% temperatures in excess of $10^6$ K so it's completely un-astrophyscial.}
+% A disk surface at finite height
+% means that higher order body modes and surface modes are better
+% defined (cf. in vertically isothermal disk models where the disk
+% boundary $\zmax$ is a free parameter, see \citetalias{barker15}). 
 
 In Fig. \ref{compare_modes_vnoniso_kx10} we plot the mode diagram for
-$\khat=10$ for several values of $\beta$. This plot is 
+$\khat=30$ for several values of $\beta$. This plot is 
 qualitatively similar to Fig. \ref{compare_modes_cool_kx10}. As before
 we find as $\beta$ is increased, higher order body modes are rapidly
 stabilized, eventually only the fundamental mode can operate before
-the VSI is entirely suppressed.  
+the VSI is entirely suppressed. (Note the significant reduction in
+growth rates for $\beta=0.4$, which is close to
+$\beta_\mathrm{crit,noniso}$.) However, this behavior is not seen for 
+large wavenumbers (see below). 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-  0cm]{figures/compare_modes_Gam1.084_kx10.ps}
+  0cm]{figures/compare_modes_Gam1.3_kx30.ps}
   \caption{Unstable modes in a vertically non-isothermal disk with
-    $\khat=10$ and a range of thermal relaxation timescales.  
+    $\khat=30$ and a range of thermal relaxation timescales.  
     \label{compare_modes_vnoniso_kx10}}
-\end{figure}
+\end{figure} 
 
-We do not find surface modes for $\khat=10$, but do find them for
-sufficiently large $\khat$. We demonstrate this in  % In the vertically
-% non-isothermal disk, surface modes develop for sufficiently large 
-% $\khat$ \citep{barker15}. We demonstrate them in
-Fig. \ref{compare_modes_vnoniso_kx100} which show eigenvalues for
-$\khat=100$. While growth rates generally decrease with increasing 
-$\beta$, we find eigenvalues can overlap, making it difficult to 
-distinguish between different modes. However, since there 
-is a well-defined surface, we may seek the  
-most unstable mode without the boundary-dependent issue that arose 
-with a vertically isothermal disk in the limit $\beta\to0$.  
-
-\begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-  0cm]{figures/compare_modes_Gam1.084_kx100.ps}
-  \caption{Same as Fig. \ref{compare_modes_vnoniso_kx10} but with
-    $\khat=100$. In this case surface modes appear nearly parallel to
-    the vertical axis
-    (cf. Fig. \ref{compare_modes_vnoniso_kx10}). However, this
-    distinction becomes difficult for increasing $\beta$ as modes
-    overlap. 
-    % but
-    % overlap with body modes (those that are roughly horizontal when 
-    % $\beta=10^{-3}$) as $\beta$ is further increased. 
-    \label{compare_modes_vnoniso_kx100}}
-\end{figure}
-
-Fig. \ref{compare_eigenvz_vnoniso_kx100} show the most unstable modes
-with $\khat=100$ and $\beta=10^{-3},\, 10^{-2}$ and
-$0.1$. For $\beta=10^{-3}$ the most 
-unstable mode is an asymmetric surface mode \citepalias[also seen in Fig. 7
-of][]{barker15}. However, increasing the thermal timescale to
-$\beta=10^{-2}$ an anti-symmetric surface mode becomes
-dominant. Further increasing to $\beta=0.1$, the dominant mode has a
-mixed character between a surface mode and the fundamental
-mode. Notice as $\beta$ is increased the perturbation amplitude near
-the vertical boundaries become negligible. This is not surprsing since  
-the stabilizing effect of buoyancy is largest at the disk surface. 
-%formally diverges 
+In Fig. \ref{bcrit_compare2} we plot the maximum VSI growth
+rates in the vertically non-isothermal disk model, which is
+qualitatively similar to Fig. \ref{bcrit_compare1} for the vertically
+isothermal disk. For $\khat=O(10)$, there is a   
+precise cut-off thermal timescale close to that given by
+Eq. \ref{bcrit_noniso}. We found that very large wavenumbers, 
+$\khat > O(10^2)$, were needed to enable surface modes, and modes with
+such values of $\khat$ do not have a maximum cooling time. However,
+these small lengthscales may not be important in practice
+(see \S\ref{caveats_visc}). Thus, $\beta<\beta_\mathrm{crit,noniso}$ 
+provides an excellent criteria for instability.   
 
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.73cm 0cm
-  0cm]{figures/eigenvectorvz_vnoniso_kx100_beta0d001.ps}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.73cm 0cm
-  0cm]{figures/eigenvectorvz_vnoniso_kx100_beta0d01.ps}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-  0cm]{figures/eigenvectorvz_vnoniso_kx100_beta0d1.ps}
-  \caption{Vertical velocity eigenfunction of the most unstable mode
-    with $\khat=100$ found in the vertically non-isothermal disk with
-    $\beta = 10^{-3}$ (top), $\beta=10^{-2}$ (middle) and $\beta=0.1$
-    (bottom). 
-    \label{compare_eigenvz_vnoniso_kx100}}
-\end{figure}
-  
-Finally, in Fig. \ref{bcrit_compare2} we plot the maximum VSI growth
-rates in the vertically non-isothermal disk model. Based on 
-Eq. \ref{iso_vsi_cond}, we conjecture the critical 
-thermal timescale in the vertically non-isothermal disk is 
-given by $ h|s|/(\gamma - \Gamma)$. This 
-evaluates to 0.158, which is close to the cut-off thermal timescale
-for $\khat\in[5,30]$. Fig. \ref{bcrit_compare2} is qualitatively 
-similar to the fiducial disk model in
-Fig. \ref{bcrit_compare1}. Importantly, for $\khat=O(10)$ there is a
-precise cut-off thermal timescale, the value of which in fact provides a  
-characteristic upper limit for other $\khat$. 
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{figures/gcorr_compare_vnoniso_maxrate} 
+  \includegraphics[scale=0.4415]{figures/gcorr_compare_vnoniso_maxrate2} 
   \caption{Maximum VSI growth rates in the vertically non-isothermal disk
     model as a function of the thermal relaxation timescale
-    $\beta$. The vertical dashed line is the critical thermal
+    $t_c=\beta\OmK^{-1}$. The vertical dashed line is the critical thermal
     timescale given by Eq. \ref{iso_vsi_cond}. A conjectured critical thermal
     timescale accounting for a non-isothermal background, given by 
-    $\beta_\mathrm{crit,noniso}= h|s|/(\gamma-\Gamma)=0.158$,  
+     $\beta_\mathrm{crit,noniso}= 0.425$ (see Eq. \ref{bcrit_noniso}),   
     is also shown as the vertical dotted line. 
     \label{bcrit_compare2}}   
 \end{figure} 
 
+The above calculation demonstrates that the effect of introducing
+finite cooling on the VSI operates very similarly in vertically
+isothermal disks with an imposed surface, and in vertically
+non-isothermal disks with a physical surface. This is despite the fact
+that the verticaly buoyancy frequency, $N_z$, formally diverges in
+latter case as $|z|\to H_s$.  
 
-  % We briefly consider vertically non-isothermal disks with 
+% We briefly consider vertically non-isothermal disks with 
 % $\Gamma=1.4$ and $(p,q, h)=(0,-1,0.05)$ as simulated in
 % \cite{nelson13}. In this case we set $\zmax=0.99H_s$.  
+
+% We do not find surface modes for $\khat=10$, but do find them for
+% sufficiently large $\khat$. We demonstrate this in  % In the vertically
+% % non-isothermal disk, surface modes develop for sufficiently large 
+% % $\khat$ \citep{barker15}. We demonstrate them in
+% Fig. \ref{compare_modes_vnoniso_kx100} which show eigenvalues for
+% $\khat=100$. While growth rates generally decrease with increasing 
+% $\beta$, we find eigenvalues can overlap, making it difficult to 
+% distinguish between different modes. However, since there 
+% is a well-defined surface, we may seek the  
+% most unstable mode without the boundary-dependent issue that arose 
+% with a vertically isothermal disk in the limit $\beta\to0$.  
+
+% \begin{figure}
+%   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+%   0cm]{figures/compare_modes_Gam1.084_kx100.ps}
+%   \caption{Same as Fig. \ref{compare_modes_vnoniso_kx10} but with
+%     $\khat=100$. In this case surface modes appear nearly parallel to
+%     the vertical axis
+%     (cf. Fig. \ref{compare_modes_vnoniso_kx10}). However, this
+%     distinction becomes difficult for increasing $\beta$ as modes
+%     overlap. 
+%     % but
+%     % overlap with body modes (those that are roughly horizontal when 
+%     % $\beta=10^{-3}$) as $\beta$ is further increased. 
+%     \label{compare_modes_vnoniso_kx100}}
+% \end{figure}
+
+% Fig. \ref{compare_eigenvz_vnoniso_kx100} show the most unstable modes
+% with $\khat=100$ and $\beta=10^{-3},\, 10^{-2}$ and
+% $0.1$. For $\beta=10^{-3}$ the most 
+% unstable mode is an asymmetric surface mode \citepalias[also seen in Fig. 7
+% of][]{barker15}. However, increasing the thermal timescale to
+% $\beta=10^{-2}$ an anti-symmetric surface mode becomes
+% dominant. Further increasing to $\beta=0.1$, the dominant mode has a
+% mixed character between a surface mode and the fundamental
+% mode. Notice as $\beta$ is increased the perturbation amplitude near
+% the vertical boundaries become negligible. This is not surprsing since  
+% the stabilizing effect of buoyancy is largest at the disk surface. 
+% %formally diverges 
+
+% \begin{figure}
+%   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.73cm 0cm
+%   0cm]{figures/eigenvectorvz_vnoniso_kx100_beta0d001.ps}
+%   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.73cm 0cm
+%   0cm]{figures/eigenvectorvz_vnoniso_kx100_beta0d01.ps}
+%   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+%   0cm]{figures/eigenvectorvz_vnoniso_kx100_beta0d1.ps}
+%   \caption{Vertical velocity eigenfunction of the most unstable mode
+%     with $\khat=100$ found in the vertically non-isothermal disk with
+%     $\beta = 10^{-3}$ (top), $\beta=10^{-2}$ (middle) and $\beta=0.1$
+%     (bottom). 
+%     \label{compare_eigenvz_vnoniso_kx100}}
+% \end{figure}
 
 % Fig. \ref{gcorr_compare_vnoniso} plots the fundamental VSI growth
 % rates as a function of $\beta$ for $\gamma\in[1.4,2.5]$. In agreement
