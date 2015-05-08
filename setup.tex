@@ -257,21 +257,21 @@ We only consider convectively stable disks with with $\Gamma <
 \subsection{Stability without cooling}\label{solberg}
 In the absence of cooling, axisymmetric stability is ensured
 if both Solberg-Hoiland criteria  are satisfied:
-\begin{align}
+\begin{subequations}\begin{align}
   \kappa^2 - \frac{1}{\rho C_P}\nabla P \cdot \nabla S &> 0,\\
   -\frac{\p P}{\p z}\left(\frac{\p j^2}{\p r}\frac{\p S}{ \p z} -
     \frac{\p j^2}{\p z}\frac{\p S}{\p r} \right)&>0. \label{second_SH} 
-\end{align}
+\end{align}\end{subequations}
 \citep{tassoul78}. %, where $j=r^2\Omega$ is the specific angular
 %momentum. %and $\kappa = r^{-3} \p_r j^2 $ is the epicyclic frequency.  
 For rotationally-supported, thin disks %  pressure gradients are small 
 % compared to rotation, so 
-the first criterion is generally satisfied. 
-Thus, to assess stability, we consider the second
+the first criterion is easily satisfied. 
+Thus, we consider the second
 criterion. 
-Without loss of generality, we evaluate Eq. \ref{second_SH} in $z>0$
-where $\p_zP<0$. Here we approximate $\p_r j^2\simeq r^3\OmK^2$ and
-use Eq. \ref{vertical_shear} for $\p_zj^2$. Then 
+Without loss of generality (since Eq. \ref{second_SH} is even in $z$), we consider $z>0$
+so that $\p_zP<0$. With $\p_r j^2\simeq r^3\OmK^2$ and
+using Eq. \ref{vertical_shear} for $\p_zj^2$  we find that
 \begin{align}\label{solberg2}
   % \gamma - \Gamma > \frac{s h^2}{\Gamma}
   % \left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left[s
@@ -280,14 +280,10 @@ use Eq. \ref{vertical_shear} for $\p_zj^2$. Then
   \left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left[s^2
     -s\left(\gamma-\Gamma\right)\frac{\p\ln{\rho}}{\p\ln{r}} \right]
 \end{align} 
-implies stability. For typical model parameters the right hand
-side (RHS) is $O( h^2)$. Hence, instability in the adiabatic limit  
-requires $\gamma < \Gamma + O( h^2)$. Since we consider
-$ h\ll1$, this implies the equilibrium disk must have a small
-entropy gradient in order to be unstable to axisymmetric adiabatic
-perturbations. This is generally not true for passively irradiated, stably
-stratified disks \citep{chiang97}, in which the VSI requires rapid
-cooling, as shown below. 
+implies stability. For typical model parameters, the right hand
+side (RHS) is $O( h^2) \ll 1$.  The left hand side is positive and order unity ($O(0.1)$ at least) if the disk is convectively stable, and not very close to convective instability.  This stable stratification is expected for irradiated disks  \citep{chiang97}.
+Thus adiabatic disturbances are stable to a disk's vertical shear, explaining why the VSI requires cooling. 
+
 
 \section{Linear problem}\label{linear} 
 This section presents the two sets of equations we use to study the
