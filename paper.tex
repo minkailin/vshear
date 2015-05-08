@@ -136,7 +136,9 @@ basic mechanism of the VSI  in disks was first
 identified in the context of differentially rotating stars (\citealp{goldreich67}, hereafter \citetalias{goldreich67}, \citealp{fricke68}).   
 The VSI arises when vertical shear, i.e.\ a variation in orbital motion along the rotation axis, 
 destabilizes inertial-gravity waves, which are oscillations 
-with rotation and buoyancy as restoring forces. Vertical shear
+with rotation and buoyancy as restoring forces. 
+% \citep{lubow93}. 
+Vertical shear
 occurs wherever the disk is baroclinic, i.e.\ when constant 
 density and constant pressure surfaces are misaligned.  Baroclinicity, and thus vertical shear, is 
 practically unavoidable in astrophysical disks, except at special locations like the
@@ -148,14 +150,13 @@ Vertical elongation taps the free energy of the vertical shear \citep{umurhan13}
 the stabilizing effects of vertical buoyancy if the disk is stably
 stratified. To overcome vertical buoyancy, the VSI requires a short cooling time
 (\citetalias{goldreich67}; \citetalias{nelson13}). Rapid radiative 
-cooling, equivalently a short thermal relaxation timescale, brings a
+cooling, i.e.\ a short thermal relaxation timescale, brings a
 moving fluid element into thermal equilibrium with 
 its surroundings, thereby diminishing buoyancy. %not obvious actually
                                 %- requires assumption of ideal gas
                                 %e.o.s. and pressure eqm established
                                 %quickly 
-An isothermal equation of state implies instantaneous cooling (and
-heating), and is the ideal context for studying the VSI
+An isothermal equation of state implies instantaneous thermal relaxation, and is the ideal context for studying the VSI
 (\citealp{urpin03}; \citetalias{nelson13}; \citealp{mcnally14}, hereafter \citetalias{mcnally14}; \citealp{barker15},
 hereafter \citetalias{barker15}).    
 
@@ -164,85 +165,47 @@ heating, i.e.\ by the onset of convection, so that the disk becomes
 neutrally stratified in the vertical direction
 \citepalias{nelson13,barker15}. However, realistic PPDs should be vertically
 stably stratified in the outer regions, beyond $\sim 1$--5 AU, where
-heating is  irradiation dominated \citep{bitsch15}.  In the inner
+heating is  irradiation dominated \citep{bitsch15}.  Even in the inner
 disk, strong vertical buoyancy is possible if accretion heating is
 weak or is concentrated in surface layers \citep{gammie96,lesniak11}.  
 
-A full understanding of the VSI in real disks therefore requires
+Understanding the VSI in real disks therefore requires
 considering finite, non-zero cooling times, $t_{\rm c}$. Non-linear
 hydrodynamical simulations with a prescribed  $t_{\rm c}$ find that VSI
 turbulence in stably stratified disks requires rapid cooling  
-with $t_{\rm c} \lesssim 0.01P_{\mathrm{orb}}$, where $P_\mathrm{orb}$ 
-%=2\pi/\Omega$ 
-is the local orbital period %and $\Omega$ is the orbital
-%frequency 
- \citepalias{nelson13}. \citetalias{nelson13} further find
-that the VSI can drive moderately strong transport, with Reynolds
-stresses of $\alpha \sim 10^{-3}$ times the mean pressure. Simulations
-with realistic radiative transfer, in lieu of a parameterized $t_{\rm
+with $t_{\rm c}$ shorter than orbital timescales
+ \citepalias{nelson13}. When the cooling time is short enough, 
+ the VSI can drive moderately strong transport, with Reynolds
+stresses of $\alpha \sim 10^{-3}$ times the mean pressure \citepalias{nelson13}. Simulations
+with realistic radiative transfer, in lieu of a fixed $t_{\rm
   c}$, find that the VSI in irradiated disks drive transport with
 $\alpha \sim 10^{-4}$  in a  $\sim 2$ -- 10AU PPD model \citep{stoll14}.  
 
-To reach hydrodynamic turbulence via the VSI, a disk should  
-first develop the linear instability. A quantitative 
-examination of the thermodynamic requirement for the linear VSI is
-thus essential in assessing its 
-relevance to PPDs. In this work, we present a
-comprehensive study of the linear VSI in vertically global disk models 
-with non-zero cooling timescales, which permit buoyancy forces. 
-% In this work, we present a comprehensive study of the linear VSI in vertically global disk models 
-% with non-zero cooling timescales $t_c > 0$, which permit buoyancy forces. 
-% Our effort generalizes both early analyses of the VSI in vertically
-% localized disk models \citep{urpin98,urpin03} and recent calculations in vertically global 
-% disks \citepalias{nelson13,mcnally14,barker15}. These works either
-% consider the limit of instantaneous cooling ($t_c\to0$) or neutrally
-% stratified disks, for which buoyancy forces play no role. 
-Our effort generalizes previous studies of the linear VSI in 
-vertically local \citep{urpin98,urpin03} and vertically global 
-\citepalias{nelson13,mcnally14,barker15} disk models that consider the limit
-of instantaneous cooling, for which buoyancy plays no role.  
-%to study of how finite cooling times, and thus buoyancy, 
-%affect the VSI. Our effort may also be regarded
-%as a extension of early analyses of the VSI in 
-%vertically localized disk models with cooling \citep{urpin98,urpin03} to
-%vertically global disks with cooling. 
-We consider disk  
-models with vertically constant $t_{\rm c}$, as well as more realistic
-cooling timescales based on dust opacity in both the optically thick
-(diffusive) and thin regimes, where appropriate. Coupled with the 
-results from numerical simulations, our results can be used to 
-understand how the VSI operates over a wide range of model PPDs. 
+Studying the linear growth of the VSI is necessary for 
+understanding how it can ultimately drive turbulent transport.
+The pioneering linear analyses of the VSI considered vertically 
+local disturbances \citep{urpin98,urpin03}.  A vertical global analysis 
+(e.g.\ \citetalias{nelson13,mcnally14,barker15}) 
+is essential for understanding how vertically elongated disturbances 
+interact with the disk's vertical structure.  Moreover a vertically global analysis
+allows more direct comparisons with modern numerical simulations.  This work 
+generalizes previous vertically global analyses by including a finite cooling time.
 
-%\emph{TODO: the following is still a bit too wordy IMO but we can redo as a final step after these sections are finalized.}
+%NOTE: no need to reexplain importance of cooling or to say more about our work before the "organized as follows" summary
 
-This paper is organized as follows. In \S\ref{vsi_require} we 
-introduce and qualitatively explain our main result of a critical or
-characteristic cooling timescale, beyond which the VSI is either
-suppressed or inefficient. We then present the  
-formal linear problem in \S\ref{setup}---\ref{numerical}.    
-In \S\ref{setup} we list the governing equations and global
-equilibrium disk models under consideration, and formulate the linear
-stability problem in \S\ref{linear}. In 
-\S\ref{analytical} we give a simplified analytical discussion for
-vertically isothermal disks, where we derive the aforementioned
-characteristic upper limit on the cooling or thermal timescale for the VSI. 
-% Our treatment is grossly simplified owing to a
-% number of approximations made, but closely parallels previous work, 
-% allowing us to highlight the essential effects of vertical shear, and to
-% derive a characteristic upper limit to the thermal timescale for the
-% VSI. This timescale is \emph{much shorter} than the dynamical
-% timescale. 
-In \S\ref{numerical} we numerically
-solve the linear problem, and  
-find basic agreement with our analysis.
-% , including
-% the aforementioned characteristic thermal timescale. 
-In 
-\S\ref{application} we apply our results to the Minimum Mass
-Solar Nebula (MMSN) by modeling cooling timescales based on realistic
-disk properties, and find that the VSI can operate effectively in the
-outer parts of the MMSN. We summarize in \S\ref{summary} with a
-discussion of caveats and possible directions for future work.  
+This paper is organized as follows. In \S\ref{vsi_require} we explain, without derivation,  
+our main result for the critical cooling timescale, beyond which VSI growth is 
+suppressed. %We then present the  
+%formal linear problem in \S\ref{setup}---\ref{numerical}.    
+ We develop our disk model in \S\ref{setup} and derive linearized
+ perturbation equations in  \S\ref{linear}.
+ Section \ref{analytical} contains our main analytic results, leading to 
+ the derivation of the critical cooling time in \S\ref{iso_vsi_beta_crit}.
+ In \S\ref{numerical} we analyze linear VSI growth, and numerically confirm the critical cooling time.
+We apply our results to PPDs in \S\ref{application}, with cooling times derived from dust opacities.
+We discuss caveats and extensions in \S\ref{caveats}.
+ We conlude in \S\ref{summary} with a summary.  Some technical and background 
+ developments are explained in the appendices.  
 
 
 %The VSI is an axisymmetric linear instability 
@@ -342,10 +305,10 @@ discussion of caveats and possible directions for future work.
 
 \section{Why must cooling be so fast?}\label{vsi_require}     
 In a stably stratified thin disk, the VSI  
-requires a thermal timescale $t_c$ much shorter than the
+requires a thermal timescale $t_c$ significantly shorter than the
 disk dynamical timescale, 
 \begin{align}
-  t _c \ll \OmK^{-1}. 
+  t _c \ll \OmK^{-1},
 \end{align}
 where $\OmK$ is the Keplerian frequency (N13).    
 This requirement --- that the cooling time be much shorter than an orbital period, 
@@ -380,14 +343,14 @@ where $H=hr$ is the characteristic disk scale height.
 %
 %For $\gamma>1$ the disk is stably stratified with a real 
 This destabilizing shear competes with the stabilizing vertical
-buoyancy frequency $N_z$.  In a thin disk,     
+buoyancy frequency, $N_z$.  In a thin disk,     
 \begin{align}\label{nz_thin}
   N_z^2 \simeq \left(\frac{\gamma-1}{\gamma}\right) \left(\frac{z}{H}\right)^2
   \OmK^2.  
 \end{align}
 Fig. \ref{eqm_structure} maps the vertical shear rate and buoyancy
 frequency (as well as the gas density) 
-in a fiducial PPD model considered in \S\ref{application}. 
+in a fiducial PPD model, see \S\ref{toy_relax} for details. 
 %, whose parameters are in Appendix \ref{mmsn} . %Here $\rho_0$
 %is the midplane density and vertical shear rate and buoyancy
 %frequencies are normalized by the local Keplerian frequency. 
@@ -409,19 +372,19 @@ thermal fluctuations decay which, combined with pressure equilibration, reduces 
 %thus buoyancy is rendered ineffective. Qualitatively, a short thermal
 %timescale $t_c$ reduces the effective (stabilizing) buoyancy force.    
 
-How short must $t_c$ be for vertical shear to prevail?  We start by 
-considering the Richardson number $\mathrm{Ri} = N_z^2/(r\p_z\Omega)^2$, a 
+How short must $t_c$ be for vertical shear to prevail?  We start with 
+ the Richardson number $\mathrm{Ri} = N_z^2/(r\p_z\Omega)^2$, a 
 ratio of buoyant to shear energies.  Though not precisely applicable to our problem,
 non-rotating shear flows are stable if $\mathrm{Ri} > 1/4$ (\citealp{chandrasekhar61}, 
 also see \citealp{ys02, lee10} for applications to thin dust layers in PPDs).
 Following \cite{urpin03} and \cite{townsend58},  we reduce the buoyant energy by the 
 ratio of cooling to forcing timescales, $t_c |r \p_z\Omega| \leq 1$ (with no reduction in buoyant energy 
 expected when this inequality fails).  With this reduction, the Richardson-like criterion for 
-shear \emph{instability} becomes
+shear instability becomes  \citep{urpin03}
 \begin{align}\label{bcrit_est}
-  t_c \lesssim \frac{\left|r\p\Omega/\p z\right|} {N_z^2}, 
+  t_c \lesssim \frac{\left|r\p\Omega/\p z\right|} {N_z^2}.
 \end{align}
-which is Eq.  47 of \cite{urpin03}. %This result is far from rigorous, but it contains some useful insights.
+ %This result is far from rigorous, but it contains some useful insights.
 If we interpret Eq.\ \ref{bcrit_est} as a local criterion, then we see that 
 the maximum cooling time which permits instability decreases with height as $1/|z|$;  
 the stabilizing effect of vertical buoyancy increases more rapidly away from
@@ -429,19 +392,16 @@ the midplane than the destabilizing effect of vertical shear.
 This finding is relevant to the radiative damping of so called `surface 
 modes', which we consider in \S\ref{numerical}.
 
-For vertically global disturbances considered in this work, 
-% To roughly obtain a global cooling time criterion, we evaluate Eq.\ \ref{bcrit_est}
-% at $z \sim H$.  To get the precise form we want, we choose $z = \gamma H / 2$ to 
-we obtain the cooling requirement 
+We are more interested, however, the the global instability criterion for disturbances at all heights.
+Our desired result 
+is the cooling requirement 
 \begin{align}\label{prelim_bcrit}
   t_c <  &\underbrace{\frac{h |q| }{\gamma - 1}}_{\beta_\mathrm{crit}}\OmK^{-1}
  % &\equiv \beta_\mathrm{crit}\OmK^{-1},\notag
 \end{align}   
-for the VSI to operate effectively in a vertically isothermal, thin
-disk. We derive this result more formally in
-\S\ref{iso_vsi_beta_crit}, but notice that Eq. \ref{prelim_bcrit}
-may be obtained from Eq. \ref{bcrit_est} by evaulating it at the
-height $|z|=\gamma H/2$. %i.e., at $z=O(H)$  
+for VSI growth that we derive in \S\ref{iso_vsi_beta_crit}.  We can simply 
+(but non-rigourously) obtain Eq. \ref{prelim_bcrit}
+  by evaulating  Eq. \ref{bcrit_est} at $|z|=\gamma H/2$. %i.e., at $z=O(H)$  
 
 %This estimate agrees with 
 %our central result, the cooling criterion that we derive more rigorously in \S\ref{iso_vsi_beta_crit}.
@@ -502,51 +462,65 @@ height $|z|=\gamma H/2$. %i.e., at $z=O(H)$
 
 We now consider whether, and where, thermal timescales in realistic PPDs
 are short enough to support VSI growth.  Fig. \ref{bcrit_mmsn2d} plots the
-thermal timescales in our fiducial PPD model with a small grain dust opacity. 
-Since cooling by radiative diffusion depends on a perturbation's lengthscale, we
-plot $t_c$ for two values of the radial wavenumber,  $k_x$,  the relevant 
-component for VSI modes that are radially narrow. In the
-optically-thin cooling regime, $t_c$ is independent of lengthscales. 
-The red lines mark the boundaries implied by
-Eq. \ref{prelim_bcrit}.  We caution that 
-Eq. \ref{prelim_bcrit} applies when $t_c$ is vertically uniform.  This section is 
-aimed at basic insights; while more realistic spatial variations in
-$t_c$ is considered in \S\ref{application}. 
-
-Due to the smaller values of $t_c$ in the outer disk, we generally expect the VSI to 
-operate outside $\sim 10$AU, but inside $\sim 150$AU since $t_c$
-exceeds the critical value beyond this radius. This conclusion changes however, if
-the dust opacity is reduced,  
-slowing down cooling, as we show in \S\ref{application}. % (e.g.\ Fig.\
-% \ref{mmsn_bcrit_bcool}). 
-In the inner disk, thermal times are long in the midplane, but short at higher altitutdes. 
-Again, this structure necessitates the more detailed analyses that follow.  Nevertheless, we can already 
-see that due to radiative diffusion higher wavenumbers can cool more rapidly.  Thus smaller scale disturbances 
-may trigger VSI at smaller disk radii. 
-
-On the other hand, one cannot obtain arbitrarily short cooling times
-by invoking arbitrarily small scales (cf. \citealt{urpin03}, 
-\citetalias{barker15}), because very small wavelengths are in the
-optically thin cooling regime and there exists a minimum thermal
-timescale. Furthermore, 
-%while we do not include viscosity in our
-%idealized disk models, in reality 
-small-scale perturbations will be 
-prone to viscous damping, including the effective viscosity from turbulent motions.
-While our linear, inviscid calculations do not address this issue directly, we expect that 
-shorter wavelength modes will drive weaker non-linear (and non-axisymmetric) transport. 
-
-% However, we cannot and do not find that VSI will always be relevant for
-% sufficiently small perturbations because \begin{inparaenum}[(i)] \item very small wavelengths are in the optically 
-% thin cooling regime,  where cooling is independent of lengthscale;
-% and \item small scale perturbations 
-% are more prone to viscous damping, and should drive weaker transport.
-% \end{inparaenum} 
-
-We now proceed with our detailed analysis of the VSI to arrive
-at Eq. \ref{prelim_bcrit} and verify it numerically. The interested 
-reader may jump to \S\ref{application} for the application of our
-results to PPDs.     
+ thermal timescales in our fiducial PPD model, see \S\ref{toy_relax} for details.
+ The regions between the red lines satisfy the cooling requirement of Eq.\ \ref{prelim_bcrit}.
+ Even without a detailed analysis we can expect VSI growth between $\sim 10$ -- 150 AU.
+ The inner disk is complicated by the fact that the optically thick midplane has longer cooling times. 
+ Thus the cooling criterion fails in the midplane but is satisfied above.  This case requires the 
+ more detailed analysis of \S\ref{application}.
+ 
+  Fig. \ref{bcrit_mmsn2d} also compares two different radial wavenumbers, 
+  $k_x = 10/H$ and $50/H$.  In the inner disk, the higher wavenumber mode cools faster, due to radiative diffusion.
+  Thus in the inner disk, shorter wavelength VSI modes are more like to grow. In the outer disk, the cooling time is the 
+  same for different $k_x$ and $z$, because optically thin cooling is independent of both lengthscale and density.
+  Thus the outer barrier to growth, beyond $\sim 150$ AU in this model, is independent of  wavelength. 
+This example highlights the fact that optically thin cooling sets a lower limit to the cooling time; a fact that is sometimes obscured when 
+the radiative diffusion approximation is made at the outset.  
+ 
+ 
+% Since cooling by radiative diffusion depends on a perturbation's lengthscale, we
+% plot $t_c$ for two values of the radial wavenumber,  $k_x$,  the relevant 
+% component for VSI modes that are radially narrow.  The red line
+%marks the boundary implied by Eq. \ref{prelim_bcrit}.  We caution that 
+% Eq. \ref{prelim_bcrit} applies when $t_c$ is vertically uniform.  This section is 
+% aimed at basic insights; while more realistic spatial variations in
+% $t_c$ are considered in \S\ref{application}. 
+% %analyzes the VSI with realistic spatial variations in.
+% 
+% Due to the smaller values of $t_c$ in the outer disk, we generally expect the VSI to 
+% operate outside $\sim 10$ AU.  This conclusion changes however, if
+% the dust opacity is reduced,  
+%slowing down cooling, as we show in \S\ref{application}. % (e.g.\ Fig.\
+%% \ref{mmsn_bcrit_bcool}). 
+%In the inner disk, thermal times are long in the midplane, but short at higher altitutdes. 
+%Again, this structure necessitates the more detailed analyses that follow.  Nevertheless, we can already 
+%see that due to radiative diffusion higher wavenumbers can cool more rapidly.  Thus smaller scale disturbances 
+%may trigger VSI at smaller disk radii. 
+%
+%On the other hand, one cannot obtain arbitrarily short cooling times
+%by invoking arbitrarily small scales (cf. \citealt{urpin03}, 
+%\citetalias{barker15}), because very small wavelengths are in the
+%optically thin cooling regime,  where cooling is independent of
+%lengthscale. Furthermore, 
+%%while we do not include viscosity in our
+%%idealized disk models, in reality 
+%small-scale perturbations will be 
+%prone to viscous damping, including the effective viscosity from turbulent motions.
+%While our linear, inviscid calculations do not address this issue directly, we expect that 
+%shorter wavelength modes will drive weaker non-linear (and non-axisymmetric) transport. 
+%
+%% However, we cannot and do not find that VSI will always be relevant for
+%% sufficiently small perturbations because \begin{inparaenum}[(i)] \item very small wavelengths are in the optically 
+%% thin cooling regime,  where cooling is independent of lengthscale;
+%% and \item small scale perturbations 
+%% are more prone to viscous damping, and should drive weaker transport.
+%% \end{inparaenum} 
+%
+%We now proceed with our detailed analysis of the VSI to arrive
+%at Eq. \ref{prelim_bcrit} and verify it numerically. The interested 
+%reader may jump to \S\ref{application} for the application of our
+%results to PPDs.     
+>>>>>>> 3c00bb4e2b076179e280f2c07728086a110764ef
 
 \input{setup}
 \input{linear_iso}
