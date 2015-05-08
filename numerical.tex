@@ -588,29 +588,24 @@ vertically isothermal disks.
 %criteria for the VSI to operate effectively in stably stratified,
 %vertically isothermal disks.   
 
-
-
-
-
 \subsection{Vertically non-isothermal disk model} 
-We briefly consider a vertically non-isothermal disk model with
-$(p,q, h)=(-0.5,-1,0.05)$ and $(\gamma, \Gamma)=(1.4,1.3)$. We set the
-vertical domain size close to the physical disk surface, $\zmax =
-0.99H_s\simeq 2.6H$, which is smaller than our standard domain
-size. In this case the vertical shear rate $\p_z\Omega\propto s$, the
-radial entropy gradient. Here, $s=-0.85$. 
-
-From the expression for the
-critical cooling timescale, Eq. \ref{iso_vsi_cond}, it is reasonable
-to expect a similar criteria for vertically non-isothermal 
-disks in the form
+We briefly examine a vertically non-isothermal disk model with 
+a physical surface. Recall from Eq. \ref{vertical_shear_ex} that in
+general the vertical shear rate $\p_z\Omega\propto s$, the radial
+entropy gradient. From the expression for the critical cooling timescale,
+Eq. \ref{iso_vsi_cond}, it is reasonable to expect a similar criteria
+for vertically non-isothermal disks in the form 
 \begin{align}\label{bcrit_noniso}
  \beta_\mathrm{crit}\to\beta_\mathrm{crit, noniso} =
- \frac{h|s|}{\gamma - \Gamma},
+ \frac{h|s|}{\gamma - \Gamma}. 
 \end{align}
-and $\beta_\mathrm{crit,noniso}=0.425$ for the chosen parameters. This
-is $\sim 3$ times larger than our fiducial, vertically isothermal
-disk with $\beta_\mathrm{crit}=0.125$. 
+
+Here, we consider a disk model with $(p,q, h)=(-0.5,-1,0.05)$ and $(\gamma,
+\Gamma)=(1.4,1.3)$. We set the vertical domain size close to the
+physical disk surface, $\zmax = 0.99H_s\simeq 2.6H$, which is smaller
+than our standard domain size. For this setup, $s=-0.85$ and
+$\beta_\mathrm{crit,noniso}=0.425$, which is $\sim 3$ times larger than
+our fiducial, vertically isothermal disk with $\beta_\mathrm{crit}=0.125$. 
 
 % A disk surface at finite height
 % means that higher order body modes and surface modes are better
@@ -663,8 +658,7 @@ The above calculation demonstrates that the effect of introducing
 finite cooling on the VSI operates very similarly in vertically
 isothermal disks with an imposed surface, and in vertically
 non-isothermal disks with a physical surface. This is despite the fact
-that the verticaly buoyancy frequency, $N_z$, formally diverges in
-latter case as $|z|\to H_s$.  
+that the vertical buoyancy frequency, $N_z$, formally diverges as $|z|\to H_s$.  
 
 % We briefly consider vertically non-isothermal disks with 
 % $\Gamma=1.4$ and $(p,q, h)=(0,-1,0.05)$ as simulated in
