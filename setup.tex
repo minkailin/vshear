@@ -30,9 +30,9 @@ weight.
 We model radiative effects as thermal
 relaxation with a timescale $t_c$, i.e.,
 \begin{align}\label{thermal_relax}
-  \Lambda  \equiv \frac{\rho\mathcal{R}}{\mu}\frac{T - T_0}{t_c},
+  \Lambda  \equiv \frac{\rho\mathcal{R}}{\mu}\frac{T - T_\mathrm{eq}}{t_c},
 \end{align}
-where $T_0=T_0(r,z)$ is the equilibrium temperature.  We 
+where $T_\mathrm{eq}=T_\mathrm{eq}(r,z)$ is the equilibrium temperature.  We 
 define the dimensionless cooling time 
 \begin{align}\label{beta_def}
   \beta \equiv \OmK t_c
@@ -79,7 +79,8 @@ A unique solution requires additional assumptions about disk structure.  We choo
  P(r,z) & = K(r)\rho^{\Gamma}(r,z). \label{eqm_press}
 \end{align} \end{subequations}
 where $r_0$ is a fiducial radius and $p$ and $q$ are the standard powerlaw indices
-for midplane density and temperature, respectively.  The polytropic index $\Gamma$ 
+for midplane density and temperature, respectively. We consider $q<0$
+without loss of generality.  The polytropic index $\Gamma$ 
 parametrizes the vertical stratification with $\Gamma = 1$ ($\Gamma = \gamma$)
 describing vertically isothermal (adiabatic) disks, respectively.  The ideal gas
 law requires $K = \rho_0^{1-\Gamma}\mathcal{R} T_0/\mu$.
@@ -152,7 +153,7 @@ where $\rho(r,H_s)=0$; and $H_s \simeq \sqrt{2/(\Gamma-1)}H$ for $h\ll 1$.
 % \end{align}
 
 The vertically isothermal case, $\Gamma = 1$, can be calculated either 
-as a special case or as the $\Gamma \rightarrow 1$ limit of Eq. \ref{eqm_dens},    
+as a special case or by taking the limit of Eq. \ref{eqm_dens},    
 \begin{subequations}\begin{align}
 \lim_{\Gamma\to1}  \frac{\rho(r,z)}{\rho_0(r)} &=
   \exp{\left[\frac{1}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},   \\
@@ -189,7 +190,7 @@ Vertical shear increases linearly with height near the midplane, and $|\p_z \Ome
 $\mathrm{min}(r/\sqrt{2},H_s)$, which is expected to limit the maximum VSI growth rate. 
 %the smaller of $r/\sqrt{2}$ or $H_s$. 
 
-A more general expression for vertical shear holds for vertical polytopes 
+A more general expression for vertical shear holds for vertical polytropes 
 (which satisfy Eq.\ \ref{eqm_press}), with no assumed radial structure:
 \begin{align}
   r\frac{\p\Omega^2}{\p z} = - \rho^{\Gamma-1}\frac{\p\ln\rho}{\p
@@ -230,7 +231,7 @@ where $g_z = \p_z P/\rho$.
 %which is expected to limit the growth rate of instabilities associated with vertical shear. 
 
 \subsection{Entropy gradients and vertical buoyancy}
-The gradients of entropy, $S\equiv
+The gradients of specific entropy, $S\equiv
 C_P\ln{P^{1/\gamma}/\rho}$, in our disk models are
 \begin{subequations}
 \begin{align}
@@ -280,12 +281,15 @@ use Eq. \ref{vertical_shear} for $\p_zj^2$. Then
   \left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left[s^2
     -s\left(\gamma-\Gamma\right)\frac{\p\ln{\rho}}{\p\ln{r}} \right]
 \end{align} 
-implies stability. For typical model parameters the right hand
-side (RHS) is $O( h^2)$. Hence, instability in the adiabatic limit  
-requires $\gamma < \Gamma + O( h^2)$. Since we consider
-$ h\ll1$, this implies the equilibrium disk must have a small
-entropy gradient in order to be unstable to axisymmetric adiabatic
-perturbations. This is generally not true for passively irradiated, stably
+implies stability. For typical model parameters, 
+Eq. \ref{solberg2} indicates that axisymmetric instability in the adiabatic limit  
+requires $\gamma < \Gamma + O( h^2)$, corresponding to a small entropy 
+gradient.  
+%This implies the equilibrium
+%disk must have a small 
+%entropy gradient in order to be unstable to axisymmetric adiabatic
+%perturbations. 
+This is generally not true for passively irradiated, stably
 stratified disks \citep{chiang97}, in which the VSI requires rapid
 cooling, as shown below. 
 
@@ -304,7 +308,7 @@ We consider axisymmetric perturbations to the above disk equilibria.
 The growth of the VSI is strongest for short radial wavelengths, as compared
  to the disk radius \citepalias{nelson13,barker15}.  We thus perform a
  standard two step process to obtain linearized equations in the radially local 
- approximation (e.g., \citealp{goldreich67}, who also consider vertically local perturbations).  
+ approximation (e.g., \citealp{goldreich67}, who also consider vertically localized perturbations).  
  
  We first expand all fluid variables 
  into the equilibrium value plus an Eulerian perturbation denoted by $\delta$, e.g.\ 

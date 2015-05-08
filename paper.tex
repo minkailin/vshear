@@ -72,10 +72,11 @@
 %\title{Vertical shear instability in astrophysical disks: vertically
 %global linear calculations with thermal relaxation and applications
 %to the Solar Nebula}  
-\author{Min-Kai Lin \& Andrew N Youdin}
+\author{Min-Kai Lin\altaffilmark{$\dagger$} \& Andrew N Youdin}
 \affil{Department of Astronomy and Steward Observatory, \\
 University of
   Arizona, 933 North Cherry Avenue, Tucson, AZ 85721, USA}
+\altaffiltext{$\dagger$}{Steward Theory Fellow}
 \email{minkailin@email.arizona.edu, youdin@email.arizona.edu}
 
 \begin{abstract}
@@ -433,7 +434,8 @@ For vertically global disturbances considered in this work,
 % at $z \sim H$.  To get the precise form we want, we choose $z = \gamma H / 2$ to 
 we obtain the cooling requirement 
 \begin{align}\label{prelim_bcrit}
-  t_c <  h |q| \OmK^{-1}/ (\gamma - 1)
+  t_c <  &\underbrace{\frac{h |q| }{\gamma - 1}}_{\beta_\mathrm{crit}}\OmK^{-1}
+ % &\equiv \beta_\mathrm{crit}\OmK^{-1},\notag
 \end{align}   
 for the VSI to operate effectively in a vertically isothermal, thin
 disk. We derive this result more formally in
@@ -491,28 +493,30 @@ height $|z|=\gamma H/2$. %i.e., at $z=O(H)$
   0.73cm]{figures/bcrit_mmsn2d_kx50}
   \caption{Estimate of the thermal timescale  in a fiducial 
     PPD model, the Minimum Mass Solar Nebula. The red
-    line corresponds to a characteristic thermal timescale, derived in
+    lines corresponds to a maximum thermal timescale, derived in
     this work, below which the VSI is expected to operate effectively
-    (the region outside the line).    
+    (the region bounded by the red lines).     
     \label{bcrit_mmsn2d} 
   }
 \end{figure}
 
 We now consider whether, and where, thermal timescales in realistic PPDs
 are short enough to support VSI growth.  Fig. \ref{bcrit_mmsn2d} plots the
- thermal timescales in our fiducial PPD model with a small grain dust opacity. 
- Since cooling by radiative diffusion depends on a perturbation's lengthscale, we
- plot $t_c$ for two values of the radial wavenumber,  $k_x$,  the relevant 
- component for VSI modes that are radially narrow.  The red line
-marks the boundary implied by Eq. \ref{prelim_bcrit}.  We caution that 
- Eq. \ref{prelim_bcrit} applies when $t_c$ is vertically uniform.  This section is 
- aimed at basic insights; while more realistic spatial variations in
- $t_c$ is considered in \S\ref{application}. 
- %analyzes the VSI with realistic spatial variations in.
- 
- Due to the smaller values of $t_c$ in the outer disk, we generally expect the VSI to 
- operate outside $\sim 10$ AU.  This conclusion changes however, if
- the dust opacity is reduced,  
+thermal timescales in our fiducial PPD model with a small grain dust opacity. 
+Since cooling by radiative diffusion depends on a perturbation's lengthscale, we
+plot $t_c$ for two values of the radial wavenumber,  $k_x$,  the relevant 
+component for VSI modes that are radially narrow. In the
+optically-thin cooling regime, $t_c$ is independent of lengthscales. 
+The red lines mark the boundaries implied by
+Eq. \ref{prelim_bcrit}.  We caution that 
+Eq. \ref{prelim_bcrit} applies when $t_c$ is vertically uniform.  This section is 
+aimed at basic insights; while more realistic spatial variations in
+$t_c$ is considered in \S\ref{application}. 
+
+Due to the smaller values of $t_c$ in the outer disk, we generally expect the VSI to 
+operate outside $\sim 10$AU, but inside $\sim 150$AU since $t_c$
+exceeds the critical value beyond this radius. This conclusion changes however, if
+the dust opacity is reduced,  
 slowing down cooling, as we show in \S\ref{application}. % (e.g.\ Fig.\
 % \ref{mmsn_bcrit_bcool}). 
 In the inner disk, thermal times are long in the midplane, but short at higher altitutdes. 
@@ -523,8 +527,8 @@ may trigger VSI at smaller disk radii.
 On the other hand, one cannot obtain arbitrarily short cooling times
 by invoking arbitrarily small scales (cf. \citealt{urpin03}, 
 \citetalias{barker15}), because very small wavelengths are in the
-optically thin cooling regime,  where cooling is independent of
-lengthscale. Furthermore, 
+optically thin cooling regime and there exists a minimum thermal
+timescale. Furthermore, 
 %while we do not include viscosity in our
 %idealized disk models, in reality 
 small-scale perturbations will be 
