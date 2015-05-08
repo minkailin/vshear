@@ -72,11 +72,11 @@
 %\title{Vertical shear instability in astrophysical disks: vertically
 %global linear calculations with thermal relaxation and applications
 %to the Solar Nebula}  
-\author{Min-Kai Lin\altaffilmark{$\dagger$} \& Andrew N Youdin}
+\author{Min-Kai Lin\altaffilmark{1} \& Andrew N Youdin}
 \affil{Department of Astronomy and Steward Observatory, \\
 University of
   Arizona, 933 North Cherry Avenue, Tucson, AZ 85721, USA}
-\altaffiltext{$\dagger$}{Steward Theory Fellow}
+\altaffiltext{1}{Steward Theory Fellow}
 \email{minkailin@email.arizona.edu, youdin@email.arizona.edu}
 
 \begin{abstract}
@@ -86,7 +86,7 @@ University of
   A hydrodynamic mechanism, the vertical shear instability (VSI), offers a means to drive angular momentum 
   transport in cold accretion disks such as protoplanetary disks (PPDs).  
   The VSI is driven by a weak vertical gradient in the disk's orbital motion.
-  In order to grow, the VSI must overcome vertical buoyancy, a strong
+  In order to grow, the VSI must overcome vertical buoyancy, a strongly
   stabilizing influence in cold disks, where  
   heating is dominated by external irradiation.  Rapid cooling, via
   radiative losses, reduces the effective buoyancy 
@@ -98,7 +98,7 @@ University of
   rapid cooling with $t_c < \OmK^{-1}  h |q| / (\gamma -1)$ 
   in terms of the Keplerian orbital frequency, $\OmK$; the disk's
   aspect ratio, $ h \ll 1$; the radial  
-  powerlaw temperature gradient, $q$; and the adiabatic index,
+  power-law temperature gradient, $q$; and the adiabatic index,
   $\gamma$.  For longer cooling times, the VSI  
   is much less effective because growth slows and shifts to smaller length scales, which are more prone to 
   viscous or turbulent decay.  We apply our results to PPD models 
@@ -204,7 +204,7 @@ suppressed. %We then present the
  In \S\ref{numerical} we analyze linear VSI growth, and numerically confirm the critical cooling time.
 We apply our results to PPDs in \S\ref{application}, with cooling times derived from dust opacities.
 We discuss caveats and extensions in \S\ref{caveats}.
- We conlude in \S\ref{summary} with a summary.  Some technical and background 
+ We conclude in \S\ref{summary} with a summary.  Some technical and background 
  developments are explained in the appendices.  
 
 
@@ -373,26 +373,26 @@ the midplane than the destabilizing effect of vertical shear.
 This finding is relevant to the radiative damping of so called `surface 
 modes', which we consider in \S\ref{numerical}.
 
-We are more interested, however, the the global instability criterion for disturbances at all heights.
-Our desired result 
+We are more interested, however, in the global instability criterion for disturbances at all heights.
+Our key result 
 is the cooling requirement 
 \begin{align}\label{prelim_bcrit}
-  t_c <  &\underbrace{\frac{h |q| }{\gamma - 1}}_{\beta_\mathrm{crit}}\OmK^{-1}
+  t_c <  &\frac{h |q| }{\gamma - 1}\OmK^{-1}
 \end{align}   
 for VSI growth that we derive in \S\ref{iso_vsi_beta_crit}.  We can simply 
-(but non-rigourously) obtain Eq. \ref{prelim_bcrit}
-  by evaulating  Eq. \ref{bcrit_est} at $|z|=\gamma H/2$. 
+(but non-rigorously) obtain Eq. \ref{prelim_bcrit}
+by evaluating  Eq. \ref{bcrit_est} at $|z|=\gamma H/2$. 
  
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.7cm 0cm
   0.73cm]{figures/bcrit_mmsn2d_kx10}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.46cm 0cm
   0.73cm]{figures/bcrit_mmsn2d_kx50}
-  \caption{Estimate of the thermal timescale  in a fiducial 
-    PPD model, the Minimum Mass Solar Nebula. The red
-    lines corresponds to a maximum thermal timescale, derived in
-    this work, below which the VSI is expected to operate effectively
-    (the region bounded by the red lines).     
+  \caption{Estimate of the thermal timescale $t_c$  in a fiducial 
+    PPD model, the Minimum Mass Solar Nebula. Here, $\beta_\mathrm{crit}=h|q|/(\gamma-1)$  
+    is a maximum dimensionless cooling timescale below which the VSI
+    is expected to operate effectively. This corresponds to   
+    the region bounded by the red lines. 
     \label{bcrit_mmsn2d} 
   }
 \end{figure}
@@ -401,18 +401,26 @@ We now consider whether, and where, thermal timescales in realistic PPDs
 are short enough to support VSI growth.  Fig. \ref{bcrit_mmsn2d} plots the
  thermal timescales in our fiducial PPD model, see \S\ref{toy_relax} for details.
  The regions between the red lines satisfy the cooling requirement of Eq.\ \ref{prelim_bcrit}.
- Even without a detailed analysis we can expect VSI growth between $\sim 10$ -- 150 AU.
- The inner disk is complicated by the fact that the optically thick midplane has longer cooling times. 
- Thus the cooling criterion fails in the midplane but is satisfied above.  This case requires the 
+ Even without a detailed analysis we can expect VSI growth between $\sim 10$ -- 150AU.
+ The inner disk is complicated by the fact that the optically thick
+ midplane has longer cooling times.  
+ Thus the cooling criterion fails in the midplane but is satisfied
+ above.  This case requires the  
  more detailed analysis of \S\ref{application}.
  
   Fig. \ref{bcrit_mmsn2d} also compares two different radial wavenumbers, 
-  $k_x = 10/H$ and $50/H$.  In the inner disk, the higher wavenumber mode cools faster, due to radiative diffusion.
-  Thus in the inner disk, shorter wavelength VSI modes are more like to grow. In the outer disk, the cooling time is the 
-  same for different $k_x$ and $z$, because optically thin cooling is independent of both lengthscale and density.
-  Thus the outer barrier to growth, beyond $\sim 150$ AU in this model, is independent of  wavelength. 
-This example highlights the fact that optically thin cooling sets a lower limit to the cooling time; a fact that is sometimes obscured when 
-the radiative diffusion approximation is made at the outset.  
+  $k_x = 10/H$ and $50/H$.  In the inner disk, the higher wavenumber
+  mode cools faster, due to radiative diffusion. 
+  Thus in the inner disk, shorter wavelength VSI modes are more likely
+  to grow. In the outer disk, the cooling time is the  
+  same for different $k_x$ and $z$, because optically thin cooling is
+  independent of both lengthscale and density. 
+  Thus the outer barrier to growth, beyond $\sim 150$ AU in this
+  model, is independent of  wavelength.  
+This example highlights the fact that optically thin cooling sets a
+lower limit to the cooling time; a fact that is sometimes obscured
+when  
+the radiative diffusion approximation is made at the outset.   
  
  
 % Since cooling by radiative diffusion depends on a perturbation's lengthscale, we
