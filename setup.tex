@@ -78,8 +78,9 @@ A unique solution requires additional assumptions about disk structure.  We choo
  T(r,0) &\equiv T_0(r) = T_{00}\left(\frac{r}{r_0}\right)^q, \\
  P(r,z) & = K(r)\rho^{\Gamma}(r,z). \label{eqm_press}
 \end{align} \end{subequations}
-where $r_0$ is a fiducial radius and $p$ and $q$ are the standard powerlaw indices
-for midplane density and temperature, respectively.  
+where $r_0$ is a fiducial radius and $p$ and $q$ are the standard power-law indices
+for midplane density and temperature, respectively. Without loss of
+generality we take $q<0$, as is typical in PPDs.   
 The polytropic index $\Gamma$ 
 parametrizes the vertical stratification with $\Gamma = 1$ ($\Gamma = \gamma$)
 describing vertically isothermal (adiabatic) disks, respectively.  The ideal gas
@@ -153,9 +154,9 @@ where $\rho(r,H_s)=0$; and $H_s \simeq \sqrt{2/(\Gamma-1)}H$ for $h\ll 1$.
 % \end{align}
 
 The vertically isothermal case, $\Gamma = 1$, can be calculated either 
-as a special case or by taking the limit of Eq. \ref{eqm_dens},    
+as a special case or by taking the limit of Eq. \ref{eqm_dens} as $\Gamma\to 1$,    
 \begin{subequations}\begin{align}
-\lim_{\Gamma\to1}  \frac{\rho(r,z)}{\rho_0(r)} &=
+ \frac{\rho(r,z)}{\rho_0(r)} &=
   \exp{\left[\frac{1}{ h^2}\left(\frac{1}{\sqrt{1+z^2/r^2}}-1\right)\right]},   \\
   & \simeq \exp {\left( - {z^2 \over 2 H^2}\right)} \quad\text{for } |z|\ll r \label{rhoisothin}. 
   \end{align}\end{subequations}
@@ -282,15 +283,19 @@ using Eq. \ref{vertical_shear} for $\p_zj^2$  we find that
     -s\left(\gamma-\Gamma\right)\frac{\p\ln{\rho}}{\p\ln{r}} \right]
 \end{align} 
 implies stability. For typical model parameters, the right hand
-side (RHS) is $O( h^2) \ll 1$.  The left hand side is positive and order unity ($O(0.1)$ at least) if the disk is convectively stable, and not very close to convective instability.  This stable stratification is expected for irradiated disks  \citep{chiang97}.
-Thus adiabatic disturbances are stable to a disk's vertical shear, explaining why the VSI requires cooling. 
+side is $O(h^2) \lesssim 10^{-2}$. The left hand side is positive and order
+unity ($O(0.1)$ at least) if the disk is convectively stable, and not
+very close to convective instability.  This stable stratification is
+expected for irradiated disks  \citep{chiang97}. 
+Thus adiabatic disturbances are stable to a disk's vertical shear,
+explaining why the VSI requires cooling.  
 
 \section{Linear problem}\label{linear} 
 This section presents the two sets of equations we use to study the
 linear development of the VSI.  Both sets are radially local and vertically global 
 with a finite cooling time.
 The first set, presented in \S\ref{sec:radlocal}, is more general and used 
-for precise numerical calculations.  The second set, in \S\ref{sec:simplified}, makes
+for numerical calculations.  The second set, in \S\ref{sec:simplified}, makes
 additional approximations  about disk structure and wave frequency.  This simplified
 set is used to obtain analytic results.
 
@@ -348,8 +353,8 @@ This is a set of ordinary differential equations (ODEs) in
 $z$.  %boundary conditions for well posed problem 
 Solutions to these 
 are presented in \S\ref{numerical} and \S\ref{application}.   The coefficient $ \zeta = 1$ is 
-introduced simply to label terms containing radial gradients of the equilibrium state, 
-which again are evaluated at $(r_0, z)$. For clarity, hereafter we drop the subcript $0$.    
+introduced simply to label terms with explicit radial gradients of the equilibrium state, 
+which again are evaluated at $(r_0, z)$. For clarity, hereafter we drop the subscript $0$.    
 We will consider the effects of ignoring these radial gradients below. 
 
 

@@ -154,7 +154,7 @@ gradients are ignored except where it appears
 implicitly in the expression for the vertical shear rate $\p_z\Omega$
 (via Eq. \ref{vertical_shear}).  This is done by neglecting the terms proportional to $\zeta$
 in Eq. \ref{lin_mass}, \ref{lin_vx} and \ref{lin_energy}, i.e. setting 
-$\zeta=0$. (Nomially $\zeta=1$, which is used in our numerical study.) 
+$\zeta=0$. (Nominally $\zeta=1$, which is used in our numerical study.) 
 
 
 For a power-law disk, the neglected radial gradients   
@@ -166,7 +166,7 @@ following sections that the fully-radially-local approximation only
 becomes invalid in the adiabatic limit, which is not the relevant
 regime for the VSI. 
 
-We comment that this approximtaion is equivalent to 
+We comment that this approximation is equivalent to 
 that adopted in the vertically global shearing box formalism
 \citepalias[VGSB,][]{mcnally14}, which is an 
 extension of the standard shearing box \citep{goldreich65} to
@@ -436,11 +436,15 @@ vertical shear rate in the domain considered,
 \begin{align}
   |\sigma| < \mathrm{max} \left|r\frac{d\Omega}{dz}\right|, 
 \end{align}
-as expected on physical grounds. %A similar conclusion can be reached in the
+as expected on physical grounds. Note that if the thin-disk
+approximation is used in an infinite domain, then the maximum growth
+rate is unbounded (since in that case $\mathrm{max}|f|\to\infty$). 
+
+%A similar conclusion can be reached in the
 %equivalent linear problem in global cylindrical disk geometry.  
 
 In practice, one might consider a vertical domain of a few scale 
-heights in a thin disk with $|q|=O(1)$. In this case, $|h\zhat|\ll1$ and  
+heights in a thin disk with $|q|=O(1)$. Then 
 $f\simeq \zhat$, so that $\mathrm{max}|f| = O(1)$, implying a
 maximum growth rate $O(h \OmK)$, consistent with numerical
 results. 
@@ -523,9 +527,9 @@ frequency branch. Then
        \hat{k}}{L+1+\hat{k}^2}\right), \label{simple_growth2}
 \end{align}
 which is equivalent to Eq. 34 of \citetalias{barker15} in the limit
-$\khat^2\gg L$. This signifies instability for
+$\khat^2\gg L,\,1$. This signifies instability for
 $L\geq1$ since we can choose the sign 
-of the square root to make $\hat{\sigma} = \imag\hat{\upsilon}>0$.  These
+of the square root to make $\imag\hat{\upsilon}>0$.  These
 are the low frequency unstable modes seen in
 Fig. \ref{compare_modes_iso_kx10} and
 Fig. \ref{compare_modes_iso_kx30}, for which $\sigma\propto|\omega|$.  
@@ -645,7 +649,7 @@ This result highlights the importance of the fundamental mode
 cooling. Furthermore, for $M=0$ we may obtain the expression  
 for $\beta_\mathrm{crit}$ from the dispersion relations 
 Eq. \ref{relax_cond1}---\ref{relax_cond2} without  
-assuming it is much less than unity from the onset or place
+assuming it is much less than unity at the outset or place
 restrictions on $\theta$.  
  
 % restrictions on $| h q \khat|$. 

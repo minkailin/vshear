@@ -3,7 +3,7 @@ This section investigates the linear growth of the VSI with fixed
 cooling times, $\beta\OmK^{-1}$, that are independent of height.  
 We solve the radially local model of Eqs.\ \ref{lin_all} with
 $\zeta=1$, i.e.\ retaining  radial gradients of the background disk
-structure. The equilbrium disk structure given is in \S\ref{eqm}. This
+structure. The equilibrium disk structure given is in \S\ref{eqm}. This
 numerical study does not make the simplifying approximations  
 used in \S\ref{analytical}. 
 
@@ -25,7 +25,7 @@ converts the linear system of differential equations to a set of
 algebraic equations,  which we solve using LAPACK matrix
 routines\footnote{Available at \url{http://www.netlib.org/lapack/}.}.  
 
-Unless otherwise stated, we adopt fiducial disk parameters are 
+Unless otherwise stated, we adopt fiducial disk parameters 
 $(\gamma, \Gamma) = (1.4, 1.011)$, $(p,q, h)=(-1.5,-1,0.05)$, and 
 vertical domain size $\zmax=5H$. This setup is effectively vertically
 isothermal since $c_s^2(\zmax) \simeq 0.9c_s^2(0)$.\footnote{While this model
@@ -47,7 +47,7 @@ we expect that $\beta < \beta_\mathrm{crit} = 0.125$ is needed for VSI growth in
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/compare_modes_iso_kx10_analytic.ps}
-  \caption{Growth rate, $\sigma$, vs.\ osciallation frequency, $\omega$, for
+  \caption{Growth rate, $\sigma$, vs.\ oscillation frequency, $\omega$, for
   VSI modes with wavenumber $k_x = \khat/H=10/H$ in the fiducial disk model
     with rapid cooling, $\beta=10^{-3}$. %  a disk with 
     % $(\gamma,\Gamma)=(1.4,1.011)$, $(p,q, h)=(-1.5,-1,0.1)$ and
@@ -184,7 +184,7 @@ The need for vertically extended domains to capture the largest VSI
 growth rates is problematic, especially for hydrodynamic simulations.
 This  complication is mitigated by at least two factors.  First, we
 show below that with slower cooling, the growth of higher order modes
-is preferentially damped, consistent with the analytic analysis in
+is preferentially damped, consistent with the analysis in
 \S\ref{iso_vsi_beta_crit}.  Second, the fastest growing modes may not
 dominate transport when they operate in very low density  surface
 layers, i.e. at many $H$. Quantifying which modes will contribute
@@ -242,7 +242,7 @@ density stratification.
 \subsubsection{Surface modes of the VSI}\label{surf_comment} 
 The surface modes mentioned above are more prominent for larger
 wavenumbers. Fig. \ref{compare_modes_iso_kx30} maps the $\khat = 30$
-eigenvalues, with the surface modes labelled.  The surface modes
+eigenvalues, with the surface modes labeled.  The surface modes
 strongly depend on the location of the imposed vertical boundary, and
 disagree with the analytic models, which lack an imposed surface. We
 thus discount the physical significance of surface modes for our
@@ -251,7 +251,7 @@ model, as we explain further below.
 Surface modes are a well known feature of the VSI in finite vertical
 domains \citepalias{nelson13, mcnally14}. \citetalias{barker15} show
 that surface modes arise whether the surface is artificial (as for our
-imposed $\zmax$) or natural (for disk models with a zero density surface).
+imposed $\zmax$) or natural (for disk models with a zero-density surface).
 Physical surface modes are in principle possible; BL15 mention
 surfaces between a disk's interior and corona.  In models where the
 surface is imposed, like ours, surface modes are a numerical
@@ -421,7 +421,7 @@ why larger $\beta$ values produce more complex vertical structure.
 
 Fig. \ref{compare_modes_cool_kx30} shows how cooling affects higher wavenumber
 modes, specifically $\khat=30$.   We only show the larger domains with $\zmax = 5H, 7H$. 
-These cases again show good convergence for $\beta \geq 0.03$, which the
+These cases again show good convergence for $\beta \geq 0.03$, which 
 the smaller domain with  $\zmax = 3H$ lacks.
 
 With slower cooling, the wave frequency shows a more complex 
@@ -431,7 +431,7 @@ dependence on mode order, both analytically and numerically. For $\beta = 0.1$,
 Moreover, the fundamental mode is no longer the fastest growing mode for $\beta \geq 0.03$, or even 
 for $\beta = 0.1$.  This complication is not actually surprising since $|hq\khat| = 1.5$ is no longer less than unity,
 as required in the analytic derivation of \S\ref{iso_vsi_beta_crit}.  Though  inconvenient,  given that the 
-fundemental mode is easy to identify and the most numerically converged, this complication is not ultimately significant
+fundamental mode is easy to identify and the most numerically converged, this complication is not ultimately significant
 for the operability of the VSI.  
 
 Fig. \ref{compare_modes_cool_kx30} also demonstrates that artificial surface modes are damped for $\beta \geq 0.03$.
@@ -485,7 +485,7 @@ discontinuity in some curves occurs when the fastest growth switches to a differ
 
 For $\khat = 5, 10$, the growth rate drops to zero at the expected $\beta = \beta_\mathrm{crit}$.
 For longer wavelength modes, with $\khat = 1$, growth persists to slightly longer cooling times.  
-This difference is not surprising since our analytic derivation assumed $\khat^2 \gg1$, and 
+This difference is not surprising since our analytic derivation assumed $\khat^2 \gg1$, but  
 the change is quantitatively minor.
 
 For shorter wavelengths, with $\khat \geq 30$, growth persists for $\beta$ significantly larger
@@ -501,7 +501,7 @@ boundary has little effect on the critical cooling time.  This agreement occurs 
 differ as $\beta \to 0$.  We are thus confident that artificial boundary effects, including surface modes, do not
 affect our analysis of the critical cooling time.
 
-Our results agree with the vertically isothermal analysis of \citetalias{nelson13} 
+Our results agree with the vertically isothermal simulations of \citetalias{nelson13} 
 which used the same disk parameters as our fiducial model.  The expected $\beta_\mathrm{crit} = 0.125$ 
 is consistent with the simulations shown in their Fig.\ 12.  \citetalias{nelson13}  
 found nonlinear VSI growth for $\beta = 0.06< \beta_\mathrm{crit}$ but no growth for 
@@ -533,10 +533,11 @@ Eq.\ \ref{iso_vsi_cond} is quite good, confirming the applicability of our criti
 vertically isothermal disks.
 
 
-\subsection{Vertically non-isothermal disk model} 
+\subsection{Vertically non-isothermal disk model}\label{nonvertiso}
 We now generalize our critical cooling time by considering disks which
 are not vertically isothermal.  We rely on physical arguments for this generalization.
-In disks with weaker vertical stratification, i.e.\ $\Gamma > 1$, we expect $\beta_\mathrm{crit}$ to be larger.
+In disks with weaker vertical stratification, i.e.\ $\Gamma > 1$ for
+fixed $\gamma$, we expect $\beta_\mathrm{crit}$ to be larger.
 We thus transform $1/(\gamma -1) \to 1/(\gamma - \Gamma)$.  
 
 We also expect $\beta_\mathrm{crit}$ to scale with the vertical shear.   
@@ -545,16 +546,16 @@ entropy gradient, see Eq.\ \ref{vertical_shear_ex}.  We thus
  transform $q \to s = q +p(1-\Gamma)$.
  
 Our estimate for the generalized cooling 
- time criterion -- valid for both vertically isothermal and non-isothermal disks (cf.\ Eq.\ \ref{iso_vsi_cond}) -- is thus
+ time criterion --- valid for both vertically isothermal and non-isothermal disks (cf.\ Eq.\ \ref{iso_vsi_cond}) --- is thus
 \begin{align}\label{bcrit_noniso}
- \beta_\mathrm{crit}\to\beta_\mathrm{crit, noniso} =
+ \beta_\mathrm{crit}\to\beta_\mathrm{crit, gen} =
  \frac{h|s|}{\gamma - \Gamma}. 
 \end{align}
 
-We test $\beta_\mathrm{crit, noniso}$ using a disk model with 
+We test $\beta_\mathrm{crit, gen}$ using a disk model with 
 $(p,q, h)=(-0.5,-1,0.05)$ and $(\gamma,
 \Gamma)=(1.4,1.3)$. For this setup, $s=-0.85$ and
-$\beta_\mathrm{crit,noniso}=0.425$, which is $\sim 3$ times larger than
+$\beta_\mathrm{crit,gen}=0.425$, which is $\sim 3$ times larger than
 our fiducial, vertically isothermal disk with $\beta_\mathrm{crit}=0.125$. 
 
 We set the vertical domain size just inside the
@@ -569,7 +570,7 @@ qualitatively similar to the vertically isothermal case, Fig. \ref{compare_modes
 larger $\beta$ values rapidly
 stabilize higher order modes.  For sufficiently large $\beta$ only the fundamental mode is unstable, with a growth rate
 that decreases as $\beta$ approaches 
-$\beta_\mathrm{crit,noniso}$.
+$\beta_\mathrm{crit,gen}$.
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
@@ -581,9 +582,9 @@ $\beta_\mathrm{crit,noniso}$.
 
 Fig.\ \ref{bcrit_compare2} shows how maximum VSI growth
 rates vary with $\beta$ in the vertically non-isothermal model. The qualitative
-behavior similar to Fig.\ \ref{bcrit_compare1} for the vertically
+behavior is similar to Fig.\ \ref{bcrit_compare1} for the vertically
 isothermal disk. For $\khat=O(10)$, growth rates drop to zero at the
-predicted $\beta_\mathrm{crit,noniso}$.  As in the vertically isothermal case,
+predicted $\beta_\mathrm{crit,gen}$.  As in the vertically isothermal case,
 modes with both lower and higher wavenumbers  exhibit slow growth rates 
 beyond the critical cooling time. As argued in \S\ref{bcrit_num_test},
 the critical cooling time is useful despite not being an absolute stability limit.
@@ -595,7 +596,7 @@ the critical cooling time is useful despite not being an absolute stability limi
     $t_c=\beta\OmK^{-1}$. The vertical dashed line is the critical thermal
     timescale given by Eq. \ref{iso_vsi_cond}. A conjectured critical thermal
     timescale accounting for a non-isothermal background, given by 
-     $\beta_\mathrm{crit,noniso}= 0.425$ (see Eq. \ref{bcrit_noniso}),   
+     $\beta_\mathrm{crit,gen}= 0.425$ (see Eq. \ref{bcrit_noniso}),   
     is also shown as the vertical dotted line. 
     \label{bcrit_compare2}}   
 \end{figure} 
@@ -603,7 +604,7 @@ the critical cooling time is useful despite not being an absolute stability limi
 The generalized cooling time criterion in Eq.\ \ref{bcrit_noniso}
 thus appears to be valid.  If a disk's vertical structure is
 not characterized by a single polytropic index, $\Gamma$, we 
-expect that a density weighted average of  $\beta_\mathrm{crit,noniso}$
+expect that a density weighted average of  $\beta_\mathrm{crit,gen}$
 should be a good approximation.  This expectation remains to be tested.
 
 
