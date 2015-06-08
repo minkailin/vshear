@@ -39,7 +39,7 @@
 
 \begin{abstract}
   We quantify the thermodynamic requirement for the Vertical Shear
-  Instability, and evaluate its relevance to realistic protoplanetary
+  Instability and evaluate its relevance to realistic protoplanetary 
   disks as a potential route to hydrodynamic turbulence. 
  
 \keywords{accretion, accretion disks, hydrodynamics, instabilities, methods: analytical}
@@ -53,10 +53,10 @@ for the evolution of cold protoplanetary disks and solids within
 them. One such candidate is the Vertical Shear Instability (VSI) 
 operating in disks where the orbital frequency $\Omega$ depends on the
 height $z$ away from the disk midplane. While astrophysical disks generally
-possess such vertical shear, VSI also requires short thermal 
+possess vertical shear, VSI also requires short thermal 
 timescales. We determine a quantitative thermodynamic requirement for
 the VSI, and apply our results to realistic disk conditions. We find 
-the VSI can operate at $5$---$50$AU in a typical protoplanetary disk,
+the VSI can operate effectively at $5$---$50$AU in a typical protoplanetary disk,
 with characteristic growth times of $30$ orbits.  
 
 
@@ -65,9 +65,10 @@ with characteristic growth times of $30$ orbits.
 Astrophysical disks generally have vertical shear, $\p_z\Omega\neq
 0$. This is a source of free energy, and may thus lead to
 instability (\cite[Goldreic \& Schubert 1967]{goldreich67};
-\cite[Urpin 2003]{urpin03}; \cite[Barker \& Latter 2015]{barker15}).  
-However, if the disk is stably stratified, as is typical
-in irradiated protoplanetary disks, the VSI also requires rapid
+\cite[Urpin 2003]{urpin03}; \cite[Barker \& Latter 2015]{barker15}),
+provided the disturbance vertical lengthscale is much larger than its
+radial lengthscale. However, if the disk is stably stratified, as is typical
+for irradiated protoplanetary disks, the VSI also requires rapid
 cooling to overcome the stabilizing influence of vertical buoyancy
 (\cite[Nelson et al. 2013]{nelson13}).  
 
@@ -82,7 +83,6 @@ operate effectively:
 where $\Omega_\mathrm{K}$ is the Keplerian frequency, $h$  is the disk
 aspect ratio, and $\gamma$ is the adiabatic index (\cite[Lin \& Youdin
 2015]{lin15}). 
-
 Since protoplanetary disks are typically thin, $h\ll 1$,
 Eq. \ref{crit} implies that $t_c \ll \Omega_\mathrm{K}$ is required
 for the VSI. That is, the thermal timescale must be significantly
@@ -94,7 +94,7 @@ strongly stabilizing.
 
 % \begin{figure}
 %   \begin{center}
-%     \includegraphics[width=0.5\linewidth]{gcorr_compare_iso_maxrate_z5.ps} 
+%     \includegraphics[width=\linewidth]{gcorr_compare_iso_maxrate_z5.ps} 
 %     \caption{Maximum VSI growth rates in a vertically isothermal disk
 %       with $(h,q,\gamma)=(0.05,-1,1.4)$ as a function of the
 %       dimensionless cooling timescale
@@ -106,19 +106,46 @@ strongly stabilizing.
 
 
 \section{Applicability of the VSI in realistic protoplanetary disks} 
+We solve the linear stability problem for axisymmetric
+disturbances in a model of the Solar Nebula described in \cite[Chiang
+\& Youdin (2010)]{chiang10}. We include in the energy equation a
+realistic cooling function, based on dust opacity, which depends on
+$z$ as well as the disturbance lengthscale.  
+
+In Fig. \ref{mmsn} we plot characteristic VSI growth times for a range
+of radial perturbation wavenumbers. Growth times increase rapidly at $\lesssim5$AU
+and $\gtrsim 100$AU as the cooling times violate Eq. \ref{crit} in
+these regions. Thus, the VSI is most effective at intermediate
+radii. Notice also the growth times are strongly dependent on
+lengthscale toward the optically-thick inner disk, with smaller-scale
+disturbances being able to operate further inwards. In the
+optically-thin outer disk, cooling times are independent of scale and
+all scales are stabilized beyond approximate the same radius.  
+
 
 \begin{figure}
   \begin{center}
     \includegraphics[width=\linewidth]{eigen_compare_grow.ps} 
-    \caption{stuff
+    \caption{Characteristic growth times of the Vertical Shear
+      Instability in a typical protoplanetary disk model. Here, $k_x$
+      is the wavenumber of the disturbance and $H$ is the disk
+      scale-height. 
       \label{mmsn}}
   \end{center}
 \end{figure}
 
-
-
-
 \section{Conclusions}
+Vertical shear is ubiquitous in astrophysical disks. Such
+configurations are unstable if the cooling timescales are
+significantly shorter than the dynamical timescale (Eq. \ref{crit}). 
+This can be satisified for small-scale disturbances at few 10s
+of AU in typical protoplanetary disk 
+models with realistic cooling. The VSI is thus dynamically important
+in the outer disk, with potentially significantly implications for
+transport and dust evolution. 
+
+
+
 
 
 \begin{thebibliography}{}
@@ -134,7 +161,7 @@ strongly stabilizing.
   {Goldreich}, P., \& {Schubert}, G. 1967, \apj, 150, 571
   
 \bibitem[{{Lin} \& {Youdin}(2015)}]{lin15}
-  {Lin}, M.-L., \& {Youdin}, A.~N. 2015, \mnras, submitted, ArXiv: 1505.02163
+  {Lin}, M.-K., \& {Youdin}, A.~N. 2015, \apj, submitted, ArXiv: 1505.02163
   
 \bibitem[{{Nelson} {et~al.}(2013){Nelson}, {Gressel}, \& {Umurhan}}]{nelson13}
   {Nelson}, R.~P., {Gressel}, O., \& {Umurhan}, O.~M. 2013, \mnras, 435, 2610
