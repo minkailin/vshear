@@ -12,7 +12,7 @@ perturbations in Chebyshev polynomials $T_l$ up to $l=512$
 and discretizing the equations on a grid with
 $z\in[-\zmax,\zmax]$. Our standard boundary conditions at the vertical
 boundaries is a free surface,  
-\begin{align}
+\begin{align}\label{bc}
   \Delta P \equiv \delta P + \bm{\xi}\cdot\nabla P= 0 \quad \text{at } z=\pm\zmax,
 \end{align}
 % note that there are g_c terms in the boundary condition
@@ -125,7 +125,7 @@ finite cooling time model in a familiar context.
     perturbation $\delta v_z$ of the fundamental VSI with 
     $\khat=10$ in the fiducial disk with rapid thermal relaxation $\beta=10^{-3}$. The real  
     (imaginary) parts of $W$ and $\delta v_z$ are plotted as solid 
-    (dotted) lines.  
+    (dotted) lines.
     \label{lowfreq_eigenfunc}
   }
 \end{figure}
@@ -136,10 +136,13 @@ finite cooling time model in a familiar context.
 %  0cm]{figures/result2d_mom} 
   \includegraphics[width=\linewidth]{figures/result2d_iso}
   \caption{Visualization of the fundamental VSI mode in
-    Fig. \ref{lowfreq_eigenfunc}. The color scale corresponds to the
-    pressure perturbation $\delta P=\rho W$ scaled by its maximum value.
-    Arrows show the flow, scaled as $\sqrt{\rho}(\delta
-    v_x,\delta v_z)$. The horizontal axis has been stretched 
+    Fig. \ref{lowfreq_eigenfunc}. {\bf For this plot the mode has been
+    transformed back to real space. Thus, the color scale corresponds to the
+    \emph{real} 
+    pressure perturbation scaled by its maximum value.
+    Arrows show the \emph{real} meridional flow  multiplied by
+    $\sqrt{\rho}$.}
+  The horizontal axis has been stretched 
     for clarity.  
     \label{lowfreq_eigenfunc_2d}
   }
@@ -213,7 +216,10 @@ scope of this work.
 %unless $\zmax$ is increased. 
 
 Fig. \ref{lowfreq_eigenfunc} shows 
-eigenfunctions $W = \delta P/\rho$ and $\delta   v_z$ for the lowest order fundamental mode.  
+eigenfunctions $W = \delta P/\rho$ and $\delta   v_z$ for the lowest
+order fundamental mode.  {\bf (In this and similar plots below, we
+  normalize eigenfunctions such that its maximum amplitude is unity
+  and vanishing imaginary part at the lower boundary.)} 
 Fig. \ref{lowfreq_eigenfunc_2d} maps the pressure perturbation and meridional flow,
 scaled by $\sqrt{\rho}$ to reflect the contribution to kinetic
 energy. Notice the stretched $x$ axis. Radial velocities are in fact typically much 
@@ -242,7 +248,7 @@ density stratification.
 \subsubsection{Surface modes of the VSI}\label{surf_comment} 
 The surface modes mentioned above are more prominent for larger
 wavenumbers. Fig. \ref{compare_modes_iso_kx30} maps the $\khat = 30$
-eigenvalues, with the surface modes labeled.  The surface modes
+eigenvalues, with the surface modes labeled.  Surface modes
 strongly depend on the location of the imposed vertical boundary, and
 disagree with the analytic models, which lack an imposed surface. We
 thus discount the physical significance of surface modes for our
@@ -250,20 +256,29 @@ model, as we explain further below.
 
 Surface modes are a well known feature of the VSI in finite vertical
 domains \citepalias{nelson13, mcnally14}. \citetalias{barker15} show
-that surface modes arise whether the surface is artificial (as for our
-imposed $\zmax$) or natural (for disk models with a zero-density surface).
-Physical surface modes are in principle possible; BL15 mention
-surfaces between a disk's interior and corona.  In models where the
-surface is imposed, like ours, surface modes are a numerical
-artifact. 
+that surface modes arise whether the surface is {\bf imposed (as in
+  our models)} or natural (for disk models with a zero-density surface).
+{\bf BL15 mention the interface between a disk's interior and corona
+  as a physical site for surface modes develop. While surface modes in
+  our current disk model are a genuine mathematical feature of the 
+  problem defined by Eq. \ref{lin_all} and Eq. \ref{bc}, they are
+  artificial in the sense that there is no natural choice for $\zmax$.  
+}
+
+%Physical surface modes are in principle possible; BL15 mention
+%surfaces between a disk's interior and corona. In models where the
+%surface is imposed, like ours, surface modes are {\bf artificial.}
+%{\bf They are, however, a genuine mathematical feature of the linear
+ % problem defined by Eq. \ref{lin_all} and Eq. \ref{bc}.} 
 
 The possibility of artificial surface modes seeding growth in
 numerical simulations of the VSI  merits further study. Indeed
 \citetalias{nelson13} find that the initial growth of perturbations
 primarily occurs near the vertical boundaries. 
 The motion in surface modes is indeed concentrated near the surface,
-as shown in Fig. \ref{lowfreq_eigenfunc_surf}.   
-Thus even if surface modes were physical, their contribution to
+as shown in Fig. \ref{lowfreq_eigenfunc_surf}, {\bf where the density
+  is low.} 
+Thus, their contribution to
 transport might (by themselves) be weak,  following the arguments in 
 \S\ref{k10}.  Moreover surface modes, like all modes with large
 wavenumbers, are more prone to viscous damping, as discussed in
@@ -272,7 +287,6 @@ wavenumbers, are more prone to viscous damping, as discussed in
 While the relatively large growth rates of surface modes is
 tantalizing, we dismiss them in disk models that lack a physical
 surface.  
-
 
 %...
 %This a class of unstable modes associated with vertical shear near the
@@ -498,7 +512,7 @@ are more significant for disk transport, see \S\ref{caveats_visc}.
 
 Comparing the $\zmax/H = 5, 7$ cases in Fig. \ref{bcrit_compare1}, we see that the location of the vertical
 boundary has little effect on the critical cooling time.  This agreement occurs despite the fact that peak growth rates
-differ as $\beta \to 0$.  We are thus confident that artificial boundary effects, including surface modes, do not
+differ as $\beta \to 0$.  We are thus confident that boundary effects, including surface modes, do not
 affect our analysis of the critical cooling time.
 
 Our results agree with the vertically isothermal simulations of \citetalias{nelson13} 
