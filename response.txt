@@ -17,23 +17,23 @@ The surface modes appear to be introduced by the adoption of the analytically sp
 
 The characterization used through the rest of the text of the surface modes as "artificial" might use some careful thought following this (see for example end of 6.2). Here, my interpretation is that the authors meaning to argue that the problem Eqs. (27)+(47) on a finite domain can be used as a good guide in some sense to the behaviour of Eqs. (27) on an infinite domain, as the surface modes introduced by Eq. (47) have a very small dynamical significance.
 *************************************************************************************************************
-We have revised the wording in Section 6.1.2 and refrain from referring to surface modes as numerical artifacts. We refer to them as artificial, but clarify that this is because in vertically isothermal disks without a natural surface, the upper disk boundary z_max is artifically imposed. 
+We acknowledge the potential confusion of referring to an artificially imposed boundary as a numerical artifact.  We have removed this confusing terminology and no longer refer to surface modes as “artifacts” of any kind.  We have made clearer in 6.1.2, that the issue is indeed one of physical interpretation of the artificially finite domain, not mathematical robustness. 
 
 *************************************************************************************************************
 3) Figure 5, and all other plots of modes:
 To ensure reproducibility, please state explicitly the complex normalization adopted for the modes shown in the figures.
 *************************************************************************************************************
-We state in Section 6.1.1, where such figures are first discussed, how the eigenfucntions are normalised. We choose to state this in the text to avoid repeating the same statement in each figure caption. 
+We state in Section 6.1.1, where such figures are first discussed, how the eigenfucntions are normalised. We choose to state this in the text to avoid repeating the same statement in each figure caption. While the normalization of linear modes is an arbitrary constant, we appreciate that stating this normalization is useful for reproducing our results.
 
 *************************************************************************************************************
 Other Suggestions ------
 
 Section 4.2, final paragraph: I think it would help the reader to have further foreshadowing the results of the $\beta \ltsim O(1)$ result here, stating that the unstable regime of VSI will be consistent with this, but that the fully-radially-local approximation can also introduce artificial instability at $\beta > O(1)$.
 *************************************************************************************************************
-This is now added at the end of Section 4.2.
+This helpful suggestion is now added at the end of Section 4.2 with an appropriate forward reference to appendix B1.
 
 *************************************************************************************************************
 Figure 5-6: Because of the convention adopted in Equation (26), it's is not obvious that the $\delta P$ in Figures 5 and 6 are related by a inverse Fourier transform in x. While Equation (26) keeps the notation of the paper clean, a reminder that the mode has been transformed back into real space would be useful here.
 *************************************************************************************************************
-The caption to Figure 5 has been revised to state that real perturbations are plotted. 
+The caption to Figure 6 has been revised to state that real perturbations are plotted. 
 *************************************************************************************************************
