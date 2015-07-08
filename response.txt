@@ -1,4 +1,5 @@
-We thank the reviewer for a clear and concise report. We have addressed the issued raised below in the revised manuscript, with changes made in bold. We further explain them below. 
+We thank the reviewer for a clear and concise report. We have addressed the issued raised below in the revised manuscript, with changes made in bold. We further explain them below. We have also edited the abstract in order to comply with the ApJ word limit.
+
 *************************************************************************************************************
 1) Section 3.3: Here the statement is made that:
 Thus adiabatic disturbances are stable to a disk's vertical shear, explaining why the VSI requires cooling.
@@ -8,29 +9,29 @@ perturbations in a thin, vertically isothermal disk would require |γ − 1| ≪
 Thus, it seems that the first statement should be more specific, that disks with adiabatic structure and perturbations are stable to a disk's vertical shear.
 (Also, in that above sentence from Appendix B.1, imply -> implies.)
 *************************************************************************************************************
-In Section 3.3 we have made the statement on stability more precise, by stating that because typical values of gamma - Gamma is an order-unity quantity, 
-Eq. 25 is generally satisfied in realistic disks.
+In Section 3.3 we have made the statement on stability more precise, by stating that because typical values of gamma - Gamma is an order-unity quantity, Eq. 25 is generally satisfied in realistic disks and are thus stable.  This result is inconsistent with that of Appendix B1 because there, instability is implied even if |gamma - 1| is not small. 
+
 *************************************************************************************************************
 2) Section 6.2: Surface modes as a "numerical artifact"
 The surface modes appear to be introduced by the adoption of the analytically specified boundary condition Eq. (47), not by the numerical method then used to solve the problem given by Eqs. (27)+(47). These modes are a genuine mathematical feature of the problem stated, not merely an artifact introduced by the discretization and numerical approximation of the solution to the problem. Moreover, if they are genuinely a numerical artifact, then there would be no need to discuss the physical possibility of such modes as done in this section. The fix for this would be to use some alternate wording to label them as occurring due to the choice of boundary condition and finite domain size, and not as a result of the numerical method.
 
 The characterization used through the rest of the text of the surface modes as "artificial" might use some careful thought following this (see for example end of 6.2). Here, my interpretation is that the authors meaning to argue that the problem Eqs. (27)+(47) on a finite domain can be used as a good guide in some sense to the behaviour of Eqs. (27) on an infinite domain, as the surface modes introduced by Eq. (47) have a very small dynamical significance.
 *************************************************************************************************************
-We have revised the wording in Section 6.1.2 and refrain from referring to surface modes as numerical artifacts. However, we refer to them as artificial because in vertically isothermal disks without a natural surface, the upper disk boundary z_max is artifically imposed. 
+We have revised the wording in Section 6.1.2 and refrain from referring to surface modes as numerical artifacts. We refer to them as artificial, but clarify that this is because in vertically isothermal disks without a natural surface, the upper disk boundary z_max is artifically imposed. 
+
 *************************************************************************************************************
-
-
 3) Figure 5, and all other plots of modes:
 To ensure reproducibility, please state explicitly the complex normalization adopted for the modes shown in the figures.
 *************************************************************************************************************
-We state in Section 6.1.1, where such figures are first discussed, how the eigenfucntions are normalised. We choose to state this in the text to avoid repeating the same statement in each
-figure caption. 
+We state in Section 6.1.1, where such figures are first discussed, how the eigenfucntions are normalised. We choose to state this in the text to avoid repeating the same statement in each figure caption. 
+
 *************************************************************************************************************
 Other Suggestions ------
 
 Section 4.2, final paragraph: I think it would help the reader to have further foreshadowing the results of the $\beta \ltsim O(1)$ result here, stating that the unstable regime of VSI will be consistent with this, but that the fully-radially-local approximation can also introduce artificial instability at $\beta > O(1)$.
 *************************************************************************************************************
 This is now added at the end of Section 4.2.
+
 *************************************************************************************************************
 Figure 5-6: Because of the convention adopted in Equation (26), it's is not obvious that the $\delta P$ in Figures 5 and 6 are related by a inverse Fourier transform in x. While Equation (26) keeps the notation of the paper clean, a reminder that the mode has been transformed back into real space would be useful here.
 *************************************************************************************************************
