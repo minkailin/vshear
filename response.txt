@@ -1,4 +1,4 @@
-We thank the reviewer for a clear and concise report. We have addressed the issued raised below in the revised manuscript, with changes made in bold. We further explain them below. We have also edited the abstract in order to comply with the ApJ word limit.
+We thank the reviewer for a clear and concise report. We have addressed the issues raised below in the revised manuscript, with changes made in bold. We further explain them below. We have also edited the abstract in order to comply with the ApJ word limit.
 
 *************************************************************************************************************
 1) Section 3.3: Here the statement is made that:
@@ -9,7 +9,7 @@ perturbations in a thin, vertically isothermal disk would require |γ − 1| ≪
 Thus, it seems that the first statement should be more specific, that disks with adiabatic structure and perturbations are stable to a disk's vertical shear.
 (Also, in that above sentence from Appendix B.1, imply -> implies.)
 *************************************************************************************************************
-In Section 3.3 we have made the statement on stability more precise, by stating that because typical values of gamma - Gamma is an order-unity quantity, Eq. 25 is generally satisfied in realistic disks and are thus stable.  This result is inconsistent with that of Appendix B1 because there, instability is implied even if |gamma - 1| is not small. 
+Response: In the section on S-H (actually 3.4) we have made the statement on stability more precise, clarifying that it applies to disks with strong vertical stratification.  The corresponding discussion of the result in B1, considering spurious growth in an approximate model with arbitrary vertical stratification, is also clarified.  
 
 *************************************************************************************************************
 2) Section 6.2: Surface modes as a "numerical artifact"
